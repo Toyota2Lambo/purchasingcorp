@@ -8,6 +8,18 @@
   let activeCat = 'iphone';
   let query = '';
 
+  // Try to load live data from the sheet via /api/pricing.
+  // Falls back to the hardcoded window.PRICING snapshot on any failure.
+  fetch('/api/pricing', { cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : Promise.reject(new Error('bad status'))))
+    .then((j) => {
+      if (j && j.ok && j.data) {
+        window.PRICING = j.data;
+        render();
+      }
+    })
+    .catch(() => { /* silent fall-through to snapshot */ });
+
   function setTabStyles() {
     tabs.forEach((t) => {
       const isActive = t.dataset.cat === activeCat;

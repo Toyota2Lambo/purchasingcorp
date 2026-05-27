@@ -47,6 +47,7 @@ export default async function handler(req) {
   const tasks = [];
   if (process.env.DISCORD_WEBHOOK_URL) tasks.push(sendDiscord(values, accepted));
   if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) tasks.push(sendTelegram(values, accepted));
+  if (process.env.NOTIFICATION_EMAIL) tasks.push(sendEmail(values, accepted));
 
   if (!tasks.length) return json({ error: 'No delivery channels configured' }, 500);
 
@@ -93,6 +94,30 @@ async function sendDiscord(v, files) {
 
   const r = await fetch(process.env.DISCORD_WEBHOOK_URL, { method: 'POST', body: out });
   if (!r.ok) throw new Error(`discord ${r.status}: ${(await r.text()).slice(0, 120)}`);
+  return true;
+}
+
+async function sendEmail(v, files) {
+  const to = process.env.NOTIFICATION_EMAIL;
+  const payload = {
+    _subject: `New quote: ${v.type} — ${v.model}`.slice(0, 120),
+    _template: 'box',
+    _captcha: 'false',
+  };
+  for (const [k, label] of Object.entries(FIELD_LABELS)) {
+    if (v[k]) payload[label] = v[k];
+  }
+  if (files.length) {
+    payload['Photos'] = `${files.length} photo${files.length === 1 ? '' : 's'} attached on Discord/Telegram (email channel doesn't carry images).`;
+  }
+  payload['_replyto'] = v.contact;
+
+  const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(to)}`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  if (!r.ok) throw new Error(`email ${r.status}: ${(await r.text()).slice(0, 120)}`);
   return true;
 }
 
