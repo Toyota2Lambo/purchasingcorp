@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PurchasingCorp — Turn idle devices into instant cash</title>
+<meta name="description" content="PurchasingCorp buys phones, laptops, consoles and more. Quoted prices, same-day payout, no games." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505',
+          900: '#0a0a0a',
+          850: '#0f0f10',
+          800: '#141416',
+          700: '#1c1c1f',
+          600: '#26262b',
+          500: '#3a3a40',
+          400: '#5a5a62',
+          300: '#8a8a92',
+          200: '#b6b6bc',
+          100: '#e6e6e8',
+        },
+      },
+      boxShadow: {
+        glow: '0 0 0 1px rgba(255,255,255,0.06), 0 10px 40px -10px rgba(0,0,0,0.6)',
+        inset: 'inset 0 1px 0 0 rgba(255,255,255,0.06)',
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<!-- Ambient background -->
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22 opacity=%220.5%22/></svg>')] opacity-[0.025] mix-blend-overlay"></div>
+</div>
+
+<!-- Nav -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/>
+        </svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-ink-200">
+      <li><a href="#we-buy" class="hover:text-white transition">We Buy</a></li>
+      <li><a href="#process" class="hover:text-white transition">Process</a></li>
+      <li><a href="#trust" class="hover:text-white transition">Trust</a></li>
+      <li><a href="#quote" class="hover:text-white transition">Get Quote</a></li>
+      <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+      <li><a href="pricing.html" class="hover:text-white transition">Full Pricing</a></li>
+    </ul>
+    <a href="#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+      Get a Quote
+      <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="relative pt-24 pb-20 md:pt-32 md:pb-32">
+  <div class="mx-auto max-w-6xl px-5 text-center">
+    <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-ink-200">
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      Quoting now — typical response under 30 min
+    </div>
+    <h1 class="mt-7 mx-auto max-w-4xl text-[44px] sm:text-6xl md:text-[80px] font-semibold tracking-[-0.04em] leading-[0.95]">
+      Turn idle devices<br/>into <span class="text-ink-300 italic font-serif font-normal">instant cash.</span>
+    </h1>
+    <p class="mx-auto mt-7 max-w-xl text-[15px] sm:text-[16px] text-ink-300 leading-relaxed">
+      The quoted price before you ship anything. Fair value. Fast inspection. Same-day payout.
+    </p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+        Get a Quote
+        <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="pricing.html" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-ink-100 hover:bg-white/[0.08] transition">
+        View Pricing
+      </a>
+    </div>
+    <div class="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[12px] text-ink-400">
+      <span>● Pre-quoted, no bait & switch</span>
+      <span>● Trusted in escrow + middleman deals</span>
+      <span>● Bulk lots welcome</span>
+    </div>
+  </div>
+</section>
+
+<!-- We Buy -->
+<section id="we-buy" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+          <span>◆</span> We Buy
+        </span>
+        <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+          Pretty much <span class="text-ink-300 italic font-serif font-normal">anything valuable</span>
+        </h2>
+        <p class="mt-3 max-w-md text-ink-300 text-[15px]">Not sure if we take it — ask, you'll have an answer in minutes.</p>
+      </div>
+      <a href="pricing.html" class="self-start md:self-end inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-ink-100 hover:bg-white/[0.08] transition">
+        Browse full catalog
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+      <!-- cards -->
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4 text-ink-100" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">Top buy</span>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Phones</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">iPhone, Galaxy, Pixel</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M2 20h20"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Laptops</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">MacBook, Surface, Dell XPS</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 9h2v2M9 9h6M15 9h2v2"/><rect x="3" y="7" width="18" height="10" rx="3"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Gaming Consoles</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">PS5, Xbox, Switch, Quest</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="1.5"/><path d="M7 8h10M7 12h6"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">GPUs</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">RTX 30/40/50 series</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="13" rx="1.5"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">MacBooks</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">Pro, Air — every gen</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Tablets</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">iPad, Galaxy Tab, Surface</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M9 7l1.5-2h3L15 7"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Cameras</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">Sony, Canon, Nikon, lenses</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8l1.5-3h11L19 8M5 8h14v11H5z"/></svg>
+          </div>
+        </div>
+        <div class="mt-5">
+          <h3 class="text-[15px] font-semibold">Gold</h3>
+          <p class="mt-1 text-[12.5px] text-ink-400">Jewelry, coins, bars</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 p-5 hover:border-white/15 transition lg:col-span-4 md:col-span-3 col-span-2">
+        <div class="flex items-center justify-between">
+          <div class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06]">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M5 6v13h14V6M9 10v6M15 10v6"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">Resellers welcome</span>
+        </div>
+        <div class="mt-5 flex flex-col md:flex-row md:items-end md:justify-between gap-1">
+          <div>
+            <h3 class="text-[15px] font-semibold">Bulk Lots</h3>
+            <p class="mt-1 text-[12.5px] text-ink-400">10+ devices? We pay competitive wholesale rates. Same-day quotes on mixed lots.</p>
+          </div>
+          <a href="#quote" class="text-[12.5px] text-ink-100 underline-offset-4 hover:underline">Submit a lot →</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-6 text-[12.5px] text-ink-400">Don't see it? <a class="text-ink-100 underline-offset-4 hover:underline" href="#">Message us on Discord</a> or <a class="text-ink-100 underline-offset-4 hover:underline" href="#">Telegram</a> — fast answer guaranteed.</p>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        How it works
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        5 steps. <span class="text-ink-300 italic font-serif font-normal">Done in hours.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px]">The simplest cashout process in the game. No paperwork, no delays, no surprises.</p>
+    </div>
+
+    <ol class="mt-12 grid md:grid-cols-5 gap-3">
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">01</span>
+          <span>Tell us</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Submit details</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Model, storage, condition. Add photos if you have them.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">02</span>
+          <span>Quote</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Locked offer</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">A firm price — not an estimate. Valid for 48 hours.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">03</span>
+          <span>Send</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Ship or drop off</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Free prepaid label, or meet us locally — your call.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">04</span>
+          <span>Inspect</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Transparent check</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Video inspection on request. Nothing hidden.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">05</span>
+          <span>Cash</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Same-day payout</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Zelle, Cash App, Venmo, PayPal, ACH, crypto.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Trust / Pricing teaser -->
+<section id="trust" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-12 gap-10 items-start">
+    <div class="md:col-span-5">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Sample rates
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Real prices.<br/><span class="text-ink-300 italic font-serif font-normal">No games.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] max-w-md">
+        These are actual buyback rates from this week, sheet-clean reseller terms with prices slightly lower — check the full guide for every model.
+      </p>
+      <a href="pricing.html" class="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-ink-100 hover:bg-white/[0.08] transition">
+        View Full Pricing
+        <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <div class="md:col-span-7">
+      <div class="rounded-2xl border border-white/[0.06] bg-ink-900 overflow-hidden">
+        <div class="flex items-center justify-between border-b border-white/[0.06] px-5 py-3 text-[12px] text-ink-400 uppercase tracking-wider">
+          <span>Model</span>
+          <span>Cash offer</span>
+        </div>
+        <ul class="divide-y divide-white/[0.06] text-[14px]">
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>iPhone 17 Pro Max 2TB — Unlocked</span>
+            <span class="font-semibold tabular-nums">$1,241</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>iPhone 17 Pro Max 1TB — Unlocked</span>
+            <span class="font-semibold tabular-nums">$1,050</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>iPhone 16 Pro Max 1TB — Unlocked</span>
+            <span class="font-semibold tabular-nums">$825</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>MacBook Pro 14" M4 Max 36GB 1TB</span>
+            <span class="font-semibold tabular-nums">50% MSRP</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>PlayStation 5 Pro</span>
+            <span class="font-semibold tabular-nums">$425</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4">
+            <span>Apple Watch Ultra 3 49mm Titanium</span>
+            <span class="font-semibold tabular-nums">$472</span>
+          </li>
+          <li class="flex items-center justify-between px-5 py-4 text-ink-300">
+            <span>+ 200 more models on the full pricing page</span>
+            <a href="pricing.html" class="text-ink-100 hover:underline underline-offset-4">See all →</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Built different -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-12 gap-10 items-start">
+    <div class="md:col-span-7 order-2 md:order-1">
+      <div class="rounded-2xl border border-white/[0.06] bg-ink-900 overflow-hidden">
+        <div class="grid grid-cols-12 border-b border-white/[0.06] px-5 py-3 text-[12px] text-ink-400 uppercase tracking-wider">
+          <div class="col-span-6">Feature</div>
+          <div class="col-span-3 text-center">PurchasingCorp</div>
+          <div class="col-span-3 text-center">Others</div>
+        </div>
+        <ul class="divide-y divide-white/[0.06] text-[14px]">
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Pre-quoted prices</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">—</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Time-stamped offers</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">—</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Same-day payout</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">3–10 days</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Devices answered fast</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">—</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Bulk lots accepted</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">—</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Carrier-locked OK</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">Often rejected</span></li>
+          <li class="grid grid-cols-12 items-center px-5 py-3.5"><span class="col-span-6">Transparent inspection</span><span class="col-span-3 grid place-items-center text-emerald-300">✓</span><span class="col-span-3 grid place-items-center text-ink-500">—</span></li>
+        </ul>
+        <div class="px-5 py-3 text-[12px] text-ink-400 border-t border-white/[0.06]">Based on public buyback portals — we'll match or beat any verified written offer.</div>
+      </div>
+    </div>
+    <div class="md:col-span-5 order-1 md:order-2">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Why PurchasingCorp
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Built different.<br/><span class="text-ink-300 italic font-serif font-normal">Actually.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] max-w-md">
+        Most cashout buyers have low payouts, hidden deductions, and vague pricing. We flipped every one of those — and added clear rates plus a chat, same-day payment, and escrow available for peace of mind on big deals.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <div class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+          <div class="text-[22px] font-semibold tabular-nums">200+</div>
+          <div class="text-[12px] text-ink-400">Models priced live</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+          <div class="text-[22px] font-semibold tabular-nums">&lt;30m</div>
+          <div class="text-[12px] text-ink-400">Median quote time</div>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+          <div class="text-[22px] font-semibold tabular-nums">$2.4M</div>
+          <div class="text-[12px] text-ink-400">Paid to sellers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote form -->
+<section id="quote" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-3xl px-5">
+    <div class="text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Get quote
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Send us your <span class="text-ink-300 italic font-serif font-normal">details.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px]">Fill this out and we'll reply with a firm offer — usually within a few hours.</p>
+    </div>
+
+    <form id="quoteForm" class="mt-10 rounded-2xl border border-white/[0.06] bg-ink-900 p-6 md:p-8" onsubmit="return submitQuote(event)">
+      <div class="grid md:grid-cols-2 gap-5">
+        <label class="block">
+          <span class="text-[12px] uppercase tracking-wider text-ink-400">Item type *</span>
+          <select required name="type" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] text-ink-100 focus:outline-none focus:ring-2 focus:ring-white/20">
+            <option value="">Select...</option>
+            <option>iPhone</option>
+            <option>Android Phone</option>
+            <option>MacBook</option>
+            <option>iPad / Tablet</option>
+            <option>Gaming Console</option>
+            <option>GPU</option>
+            <option>Camera</option>
+            <option>Gold</option>
+            <option>Bulk Lot</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class="text-[12px] uppercase tracking-wider text-ink-400">Make &amp; Model *</span>
+          <input required type="text" name="model" placeholder="e.g. iPhone 16 Pro Max 256GB" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20">
+        </label>
+      </div>
+
+      <div class="mt-5">
+        <span class="text-[12px] uppercase tracking-wider text-ink-400">Condition</span>
+        <div class="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup">
+          <label class="cursor-pointer">
+            <input type="radio" name="condition" value="New" class="peer sr-only">
+            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">New</div>
+          </label>
+          <label class="cursor-pointer">
+            <input type="radio" name="condition" value="Good" class="peer sr-only" checked>
+            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Good</div>
+          </label>
+          <label class="cursor-pointer">
+            <input type="radio" name="condition" value="Fair" class="peer sr-only">
+            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Fair</div>
+          </label>
+          <label class="cursor-pointer">
+            <input type="radio" name="condition" value="Broken" class="peer sr-only">
+            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">For Parts</div>
+          </label>
+        </div>
+      </div>
+
+      <label class="mt-5 block">
+        <span class="text-[12px] uppercase tracking-wider text-ink-400">Details</span>
+        <textarea name="details" rows="3" placeholder="Storage, color, carrier status, any scratches or issues…" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20"></textarea>
+      </label>
+
+      <div class="mt-5">
+        <span class="text-[12px] uppercase tracking-wider text-ink-400">Photos</span>
+        <label class="mt-2 flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-white/15 bg-ink-800/60 px-4 py-8 text-center cursor-pointer hover:bg-ink-800 transition">
+          <svg viewBox="0 0 24 24" class="h-6 w-6 text-ink-300" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12m0-12l-4 4m4-4l4 4M5 20h14"/></svg>
+          <div class="text-[13px] text-ink-200">Drop images here or <span class="underline underline-offset-4">browse</span></div>
+          <div class="text-[12px] text-ink-500">Optional — speeds up the quote</div>
+          <input type="file" multiple accept="image/*" class="hidden">
+        </label>
+      </div>
+
+      <div class="mt-5 grid md:grid-cols-2 gap-5">
+        <div>
+          <span class="text-[12px] uppercase tracking-wider text-ink-400">Preferred handoff</span>
+          <div class="mt-2 grid grid-cols-2 gap-2" role="radiogroup">
+            <label class="cursor-pointer">
+              <input type="radio" name="handoff" value="ship" class="peer sr-only" checked>
+              <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[13px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Ship — free label</div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="handoff" value="local" class="peer sr-only">
+              <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[13px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Local meetup</div>
+            </label>
+          </div>
+        </div>
+        <div>
+          <span class="text-[12px] uppercase tracking-wider text-ink-400">Discord / Telegram / Email *</span>
+          <input required type="text" name="contact" placeholder="username#0000, @handle, or email" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20">
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-[12px] text-ink-400">By submitting you agree to be contacted regarding your quote. No spam.</div>
+        <button type="submit" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+          Submit Quote
+          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+      </div>
+    </form>
+
+    <div id="quoteSuccess" class="hidden mt-6 rounded-2xl border border-white/[0.06] bg-ink-900 p-6 text-center">
+      <div class="mx-auto grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>
+      </div>
+      <h3 class="mt-4 text-lg font-semibold">Sent.</h3>
+      <p class="mt-1 text-[14px] text-ink-300">We got your request — expect a reply within a few hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        FAQ
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Common <span class="text-ink-300 italic font-serif font-normal">questions.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px] max-w-sm">Everything you need to know before you ship. If your question isn't here, ask directly — we respond fast.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <a href="#" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-black hover:bg-ink-100">Ask on Discord</a>
+        <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm hover:bg-white/[0.08]">Telegram</a>
+      </div>
+    </div>
+    <div class="md:col-span-7 divide-y divide-white/[0.06] border border-white/[0.06] rounded-2xl bg-ink-900">
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          How quickly do I get paid after sending my device?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">Once your device arrives at our facility, inspection takes ~1 hour — same business day for most. Payout goes out via Zelle/Cash App/Venmo/PayPal/ACH within the same day.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          Do you accept carrier-locked iPhones?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">Yes. We buy locked AT&amp;T, Verizon, T-Mobile, Sprint, Boost, Cricket, etc. — usually 25–30% below unlocked rates. Exact numbers are on the full pricing page.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          Is escrow or a middleman available?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">Absolutely. For orders of value, we'll fund the escrow or use a mutually agreed middleman. Just ask on Discord or Telegram to set it up.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          What condition does my device need to be in?
+          <span class="text-ink-400 group-open:rotate-43 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">We buy across the spectrum — new, used, even broken for parts. Be honest in your description and we'll honor the quote.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          How does shipping work? Do I have to pay for it?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">We email a free prepaid UPS or FedEx label for items over $100. Just print, box up, and drop off. Insurance is included.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          What payment methods do you accept?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">Zelle, Cash App, Venmo, PayPal G&amp;S, ACH bank transfer, USDC/BTC. Your pick at quote time.</p>
+      </details>
+      <details class="group p-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
+          Can I sell in bulk?
+          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="mt-3 text-[14px] text-ink-300">Yes — wholesale lots welcome. Send a spreadsheet or list and we'll quote within hours. Higher per-unit rates for resellers.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-3xl px-5">
+    <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-8 py-12 md:py-16 text-center">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Ready to <span class="text-ink-300 italic font-serif font-normal">cash out?</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Fill out the quote form, message us directly, or check the full pricing guide. We respond fast.</p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+          <svg viewBox="0 0 16 16" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5l5 4 5-4M2 4h12v8H2z"/></svg>
+          Fill Out Quote Form
+        </a>
+        <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
+          Discord
+        </a>
+        <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM5.5 11.7l11.6-4.5c.5-.2 1 .1.9.8l-2 9.3c-.1.6-.5.7-.9.4l-2.6-1.9-1.2 1.2c-.2.2-.3.3-.6.3l.2-2.9 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-7 w-7 place-items-center rounded-full bg-white text-black font-bold">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="text-[14px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      </div>
+      <p class="mt-3 text-[13px] text-ink-400 max-w-sm">Cash for phones, laptops, consoles, GPUs, gold — paid same-day, every day.</p>
+    </div>
+    <div class="md:col-span-4 grid grid-cols-2 gap-4 text-[13px]">
+      <ul class="space-y-2">
+        <li><a href="#we-buy" class="text-ink-300 hover:text-white">What we buy</a></li>
+        <li><a href="#process" class="text-ink-300 hover:text-white">Process</a></li>
+        <li><a href="pricing.html" class="text-ink-300 hover:text-white">Full pricing</a></li>
+        <li><a href="#faq" class="text-ink-300 hover:text-white">FAQ</a></li>
+      </ul>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="#" class="text-ink-300 hover:text-white">Telegram</a></li>
+        <li><a href="#quote" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500">
+      © <span id="year"></span> PurchasingCorp · All rights reserved
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function submitQuote(e){
+    e.preventDefault();
+    const form = e.target;
+    form.classList.add('hidden');
+    document.getElementById('quoteSuccess').classList.remove('hidden');
+    return false;
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length<2) return;
+      const el = document.querySelector(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+</script>
+</body>
+</html>
