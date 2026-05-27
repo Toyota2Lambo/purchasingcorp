@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Cashout Rates — PurchasingCorp</title>
 <meta name="description" content="Up-to-date buyback prices for iPhones, MacBooks, Apple Watch, iPad, gaming consoles and more." />
+<meta name="theme-color" content="#050505" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurchasingCorp" />
+<meta property="og:title" content="Cashout Rates — PurchasingCorp" />
+<meta property="og:description" content="Current buyback rates for iPhones, MacBooks, consoles, and more. Updated live from our pricing sheet." />
+<meta property="og:url" content="https://purchasingcorp.vercel.app/pricing" />
+<meta property="og:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="PurchasingCorp — Cashout Rates" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cashout Rates — PurchasingCorp" />
+<meta name="twitter:description" content="Current buyback rates for iPhones, MacBooks, consoles, and more." />
+<meta name="twitter:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
@@ -41,26 +65,26 @@ tailwind.config = {
 <header class="sticky top-0 z-50">
   <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
   <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
-    <a href="index.html" class="flex items-center gap-2.5">
+    <a href="/" class="flex items-center gap-2.5">
       <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
         <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
       </span>
       <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
     </a>
     <div class="hidden md:flex items-center gap-3 text-[13.5px]">
-      <a href="index.html#we-buy" class="text-ink-200 hover:text-white px-2.5 py-1">We Buy</a>
-      <a href="index.html#process" class="text-ink-200 hover:text-white px-2.5 py-1">Process</a>
-      <a href="index.html#trust" class="text-ink-200 hover:text-white px-2.5 py-1">Trust</a>
-      <a href="index.html#quote" class="text-ink-200 hover:text-white px-2.5 py-1">Get Quote</a>
-      <a href="index.html#faq" class="text-ink-200 hover:text-white px-2.5 py-1">FAQ</a>
-      <a href="pricing.html" class="rounded-full bg-white/10 px-2.5 py-1 text-white">Full Pricing</a>
+      <a href="/#we-buy" class="text-ink-200 hover:text-white px-2.5 py-1">We Buy</a>
+      <a href="/#process" class="text-ink-200 hover:text-white px-2.5 py-1">Process</a>
+      <a href="/#trust" class="text-ink-200 hover:text-white px-2.5 py-1">Trust</a>
+      <a href="/#quote" class="text-ink-200 hover:text-white px-2.5 py-1">Get Quote</a>
+      <a href="/#faq" class="text-ink-200 hover:text-white px-2.5 py-1">FAQ</a>
+      <a href="/pricing" class="rounded-full bg-white/10 px-2.5 py-1 text-white">Full Pricing</a>
     </div>
     <div class="flex items-center gap-2">
       <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[12.5px] hover:bg-white/[0.08] transition">
         <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
         Discord
       </a>
-      <a href="index.html#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-[13px] font-medium text-black hover:bg-ink-100 transition">
+      <a href="/#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-[13px] font-medium text-black hover:bg-ink-100 transition">
         Get a Quote
       </a>
     </div>
@@ -69,7 +93,7 @@ tailwind.config = {
 
 <section class="pt-14 pb-10 md:pt-20">
   <div class="mx-auto max-w-6xl px-5">
-    <a href="index.html" class="inline-flex items-center gap-1.5 text-[12.5px] text-ink-400 hover:text-white">
+    <a href="/" class="inline-flex items-center gap-1.5 text-[12.5px] text-ink-400 hover:text-white">
       <svg viewBox="0 0 16 16" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4l-4 4 4 4"/></svg>
       Back to home
     </a>
@@ -131,7 +155,7 @@ tailwind.config = {
           Discord
         </a>
         <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] hover:bg-white/[0.08]">Telegram</a>
-        <a href="index.html#quote" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] hover:bg-white/[0.08]">Quote Form</a>
+        <a href="/#quote" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] hover:bg-white/[0.08]">Quote Form</a>
       </div>
     </div>
   </div>
@@ -141,9 +165,9 @@ tailwind.config = {
   <div class="mx-auto max-w-6xl px-5 py-8 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-ink-500">
     <div>© <span id="year"></span> PurchasingCorp</div>
     <div class="flex gap-4">
-      <a href="index.html" class="hover:text-white">Home</a>
-      <a href="index.html#quote" class="hover:text-white">Quote</a>
-      <a href="index.html#faq" class="hover:text-white">FAQ</a>
+      <a href="/" class="hover:text-white">Home</a>
+      <a href="/#quote" class="hover:text-white">Quote</a>
+      <a href="/#faq" class="hover:text-white">FAQ</a>
     </div>
   </div>
 </footer>
