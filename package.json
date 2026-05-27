@@ -1,0 +1,23 @@
+{
+  "name": "purchasingcorp",
+  "version": "1.0.0",
+  "description": "PurchasingCorp — Turn idle devices into instant cash",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toyota2Lambo/purchasingcorp.git"
+  },
+  "keywords": ["buyback", "trade-in", "electronics"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toyota2Lambo/purchasingcorp/issues"
+  },
+  "homepage": "https://github.com/Toyota2Lambo/purchasingcorp#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
