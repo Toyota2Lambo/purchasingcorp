@@ -252,7 +252,7 @@ tailwind.config = {
       </div>
     </div>
 
-    <p class="mt-6 text-[12.5px] text-ink-400">Don't see it? <a class="text-ink-100 underline-offset-4 hover:underline" href="https://discord.gg/7RvqJJ8c" target="_blank" rel="noopener">Message us on Discord</a> or <a class="text-ink-100 underline-offset-4 hover:underline" href="#">Telegram</a> — fast answer guaranteed.</p>
+    <p class="mt-6 text-[12.5px] text-ink-400">Don't see it? <a class="text-ink-100 underline-offset-4 hover:underline" href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener">Message us on Discord</a> or <a class="text-ink-100 underline-offset-4 hover:underline" href="#">Telegram</a> — fast answer guaranteed.</p>
   </div>
 </section>
 
@@ -441,7 +441,7 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- Quote form -->
+<!-- Quote form (embedded CryptPad) -->
 <section id="quote" class="py-20 md:py-28 border-t border-white/[0.06]">
   <div class="mx-auto max-w-3xl px-5">
     <div class="text-center">
@@ -454,105 +454,54 @@ tailwind.config = {
       <p class="mt-3 text-ink-300 text-[15px]">Fill this out and we'll reply with a firm offer — usually within a few hours.</p>
     </div>
 
-    <form id="quoteForm" class="mt-10 rounded-2xl border border-white/[0.06] bg-ink-900 p-6 md:p-8" onsubmit="return submitQuote(event)">
-      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-      <div class="grid md:grid-cols-2 gap-5">
-        <label class="block">
-          <span class="text-[12px] uppercase tracking-wider text-ink-400">Item type *</span>
-          <select required name="type" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] text-ink-100 focus:outline-none focus:ring-2 focus:ring-white/20">
-            <option value="">Select...</option>
-            <option>iPhone</option>
-            <option>Android Phone</option>
-            <option>MacBook</option>
-            <option>iPad / Tablet</option>
-            <option>Gaming Console</option>
-            <option>GPU</option>
-            <option>Camera</option>
-            <option>Gold</option>
-            <option>Bulk Lot</option>
-            <option>Something else</option>
-          </select>
-        </label>
-        <label class="block">
-          <span class="text-[12px] uppercase tracking-wider text-ink-400">Make &amp; Model *</span>
-          <input required type="text" name="model" placeholder="e.g. iPhone 16 Pro Max 256GB" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20">
-        </label>
-      </div>
+    <div class="mt-10 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-6 py-10 md:p-12">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-      <div class="mt-5">
-        <span class="text-[12px] uppercase tracking-wider text-ink-400">Condition</span>
-        <div class="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup">
-          <label class="cursor-pointer">
-            <input type="radio" name="condition" value="New" class="peer sr-only">
-            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">New</div>
-          </label>
-          <label class="cursor-pointer">
-            <input type="radio" name="condition" value="Good" class="peer sr-only" checked>
-            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Good</div>
-          </label>
-          <label class="cursor-pointer">
-            <input type="radio" name="condition" value="Fair" class="peer sr-only">
-            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Fair</div>
-          </label>
-          <label class="cursor-pointer">
-            <input type="radio" name="condition" value="Broken" class="peer sr-only">
-            <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[14px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">For Parts</div>
-          </label>
+      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-8">
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">1</div>
+          <div class="mt-2 text-[12px] text-ink-300">Fill the form</div>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">2</div>
+          <div class="mt-2 text-[12px] text-ink-300">We quote you</div>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">3</div>
+          <div class="mt-2 text-[12px] text-ink-300">Get paid</div>
         </div>
       </div>
 
-      <label class="mt-5 block">
-        <span class="text-[12px] uppercase tracking-wider text-ink-400">Details</span>
-        <textarea name="details" rows="3" placeholder="Storage, color, carrier status, any scratches or issues…" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20"></textarea>
-      </label>
-
-      <div class="mt-5">
-        <span class="text-[12px] uppercase tracking-wider text-ink-400">Photos</span>
-        <label class="mt-2 flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-white/15 bg-ink-800/60 px-4 py-8 text-center cursor-pointer hover:bg-ink-800 transition">
-          <svg viewBox="0 0 24 24" class="h-6 w-6 text-ink-300" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12m0-12l-4 4m4-4l4 4M5 20h14"/></svg>
-          <div class="text-[13px] text-ink-200">Drop images here or <span class="underline underline-offset-4">browse</span></div>
-          <div class="text-[12px] text-ink-500">Optional — speeds up the quote</div>
-          <input type="file" name="photos" multiple accept="image/*" class="hidden">
-        </label>
+      <div class="text-center">
+        <div class="text-[15px] text-ink-100 font-medium">60-second secure form. Reply within 2 hours.</div>
+        <div class="mt-1 text-[12.5px] text-ink-400">Encrypted &amp; private — your details never go to a database we control.</div>
       </div>
 
-      <div class="mt-5 grid md:grid-cols-2 gap-5">
-        <div>
-          <span class="text-[12px] uppercase tracking-wider text-ink-400">Preferred handoff</span>
-          <div class="mt-2 grid grid-cols-2 gap-2" role="radiogroup">
-            <label class="cursor-pointer">
-              <input type="radio" name="handoff" value="ship" class="peer sr-only" checked>
-              <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[13px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Ship — free label</div>
-            </label>
-            <label class="cursor-pointer">
-              <input type="radio" name="handoff" value="local" class="peer sr-only">
-              <div class="rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-center text-[13px] peer-checked:border-white peer-checked:bg-white peer-checked:text-black transition">Local meetup</div>
-            </label>
-          </div>
-        </div>
-        <div>
-          <span class="text-[12px] uppercase tracking-wider text-ink-400">Discord / Telegram / Email *</span>
-          <input required type="text" name="contact" placeholder="username#0000, @handle, or email" class="mt-2 w-full rounded-xl border border-white/10 bg-ink-800 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/20">
-        </div>
-      </div>
-
-      <p id="quoteError" class="hidden mt-5 text-[13px] text-red-300"></p>
-
-      <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
-        <div class="text-[12px] text-ink-400">By submitting you agree to be contacted regarding your quote. No spam.</div>
-        <button id="quoteSubmit" type="submit" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
-          <span id="quoteSubmitLabel">Submit Quote</span>
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a href="https://cryptpad.fr/form/#/3/form/view/9bafb796db0a6196446fd7225771f687/" target="_blank" rel="noopener" class="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition">
+          Open Quote Form
           <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </button>
+        </a>
+        <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3.5 text-sm hover:bg-white/[0.08] transition">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
+          Or message Discord
+        </a>
       </div>
-    </form>
 
-    <div id="quoteSuccess" class="hidden mt-6 rounded-2xl border border-white/[0.06] bg-ink-900 p-6 text-center">
-      <div class="mx-auto grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
-        <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-[12px] text-ink-400">
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+          Photo uploads supported
+        </div>
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+          End-to-end encrypted
+        </div>
+        <div class="flex items-center gap-2">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+          No account needed
+        </div>
       </div>
-      <h3 class="mt-4 text-lg font-semibold">Sent.</h3>
-      <p class="mt-1 text-[14px] text-ink-300">We got your request — expect a reply within a few hours.</p>
     </div>
   </div>
 </section>
@@ -569,7 +518,7 @@ tailwind.config = {
       </h2>
       <p class="mt-3 text-ink-300 text-[15px] max-w-sm">Everything you need to know before you ship. If your question isn't here, ask directly — we respond fast.</p>
       <div class="mt-6 flex flex-wrap gap-2">
-        <a href="https://discord.gg/7RvqJJ8c" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-black hover:bg-ink-100">Ask on Discord</a>
+        <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-black hover:bg-ink-100">Ask on Discord</a>
         <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm hover:bg-white/[0.08]">Telegram</a>
       </div>
     </div>
@@ -674,7 +623,7 @@ tailwind.config = {
         <li><a href="#faq" class="text-ink-300 hover:text-white">FAQ</a></li>
       </ul>
       <ul class="space-y-2">
-        <li><a href="https://discord.gg/7RvqJJ8c" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
         <li><a href="#" class="text-ink-300 hover:text-white">Telegram</a></li>
         <li><a href="#quote" class="text-ink-300 hover:text-white">Get a quote</a></li>
         <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
@@ -688,32 +637,6 @@ tailwind.config = {
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  async function submitQuote(e){
-    e.preventDefault();
-    const form = e.target;
-    const btn = document.getElementById('quoteSubmit');
-    const lbl = document.getElementById('quoteSubmitLabel');
-    const err = document.getElementById('quoteError');
-    err.classList.add('hidden');
-    err.textContent = '';
-    btn.disabled = true;
-    lbl.textContent = 'Sending…';
-
-    try {
-      const res = await fetch('/api/quote', { method: 'POST', body: new FormData(form) });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok || !data.ok) throw new Error(data.error || 'Submission failed');
-      form.classList.add('hidden');
-      document.getElementById('quoteSuccess').classList.remove('hidden');
-    } catch (e) {
-      err.textContent = e.message + ' — message us on Discord or Telegram and we\'ll respond directly.';
-      err.classList.remove('hidden');
-      btn.disabled = false;
-      lbl.textContent = 'Submit Quote';
-    }
-    return false;
-  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
