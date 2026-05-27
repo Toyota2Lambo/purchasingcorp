@@ -65,6 +65,10 @@ tailwind.config = {
 };
 </script>
 <link rel="stylesheet" href="styles.css" />
+
+<!-- Vercel Web Analytics + Speed Insights -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
 
@@ -653,11 +657,44 @@ tailwind.config = {
         <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
       </ul>
     </div>
-    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500">
-      © <span id="year"></span> PurchasingCorp · All rights reserved
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500 space-y-1">
+      <div>© <span id="year"></span> PurchasingCorp · All rights reserved</div>
+      <div>
+        <a href="/privacy" class="hover:text-ink-300">Privacy Policy</a>
+        <span class="mx-1">·</span>
+        <a href="/privacy#terms" class="hover:text-ink-300">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- Consent + email signup banner -->
+<div id="consentBanner" class="fixed inset-x-3 bottom-3 z-[60] hidden">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
+    <div class="p-5 md:p-6">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <div class="flex-1 min-w-0">
+          <div class="text-[14px] font-semibold text-white">Get the best prices first.</div>
+          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">
+            Drop your email for price-drop alerts and high-payout days. By continuing you accept our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a> and use of cookies for analytics.
+          </p>
+        </div>
+        <form id="consentForm" class="flex flex-col sm:flex-row items-stretch gap-2 md:min-w-[360px]" onsubmit="return submitConsent(event, true)">
+          <input id="consentEmail" type="email" name="email" placeholder="you@email.com" autocomplete="email"
+            class="flex-1 min-w-0 rounded-full border border-white/10 bg-ink-800 px-4 py-2.5 text-[13.5px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
+            I Agree
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-[11.5px]">
+        <button type="button" onclick="submitConsent(null, false)" class="text-ink-400 hover:text-ink-200 underline underline-offset-4">No thanks, just essential cookies</button>
+        <span id="consentStatus" class="text-ink-400 hidden"></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
@@ -671,6 +708,69 @@ tailwind.config = {
       if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
     });
   });
+
+  // Consent banner
+  (function(){
+    var KEY = 'pc.consent.v1';
+    var banner = document.getElementById('consentBanner');
+    if (!banner) return;
+    if (localStorage.getItem(KEY)) return;
+    setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
+  })();
+
+  async function submitConsent(e, withEmail){
+    if (e) e.preventDefault();
+    var emailInput = document.getElementById('consentEmail');
+    var status = document.getElementById('consentStatus');
+    var banner = document.getElementById('consentBanner');
+    var email = withEmail ? (emailInput.value || '').trim() : '';
+
+    if (withEmail && !email) {
+      status.textContent = 'Enter an email or choose "No thanks".';
+      status.classList.remove('hidden');
+      emailInput.focus();
+      return false;
+    }
+
+    status.classList.remove('hidden');
+    status.textContent = 'Saving…';
+
+    try {
+      var r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email || null,
+          consent: true,
+          consent_marketing: withEmail,
+          path: location.pathname,
+          referrer: document.referrer || null,
+        }),
+      });
+      // Even if backend isn't configured yet, dismiss locally so the
+      // banner doesn't keep nagging the same user.
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+      }));
+      if (r.ok) {
+        status.textContent = email ? "You're in. Watch your inbox." : 'Saved. Thanks.';
+      } else {
+        status.textContent = 'Saved locally.';
+      }
+    } catch (err) {
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+        offline: true,
+      }));
+      status.textContent = 'Saved locally.';
+    }
+    setTimeout(function(){ banner.classList.add('hidden'); }, 1200);
+    return false;
+  }
 </script>
 </body>
 </html>
