@@ -429,6 +429,7 @@ tailwind.config = {
     </div>
 
     <form id="quoteForm" class="mt-10 rounded-2xl border border-white/[0.06] bg-ink-900 p-6 md:p-8" onsubmit="return submitQuote(event)">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
       <div class="grid md:grid-cols-2 gap-5">
         <label class="block">
           <span class="text-[12px] uppercase tracking-wider text-ink-400">Item type *</span>
@@ -485,7 +486,7 @@ tailwind.config = {
           <svg viewBox="0 0 24 24" class="h-6 w-6 text-ink-300" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v12m0-12l-4 4m4-4l4 4M5 20h14"/></svg>
           <div class="text-[13px] text-ink-200">Drop images here or <span class="underline underline-offset-4">browse</span></div>
           <div class="text-[12px] text-ink-500">Optional — speeds up the quote</div>
-          <input type="file" multiple accept="image/*" class="hidden">
+          <input type="file" name="photos" multiple accept="image/*" class="hidden">
         </label>
       </div>
 
@@ -509,10 +510,12 @@ tailwind.config = {
         </div>
       </div>
 
+      <p id="quoteError" class="hidden mt-5 text-[13px] text-red-300"></p>
+
       <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
         <div class="text-[12px] text-ink-400">By submitting you agree to be contacted regarding your quote. No spam.</div>
-        <button type="submit" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
-          Submit Quote
+        <button id="quoteSubmit" type="submit" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+          <span id="quoteSubmitLabel">Submit Quote</span>
           <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </button>
       </div>
@@ -660,11 +663,29 @@ tailwind.config = {
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  function submitQuote(e){
+  async function submitQuote(e){
     e.preventDefault();
     const form = e.target;
-    form.classList.add('hidden');
-    document.getElementById('quoteSuccess').classList.remove('hidden');
+    const btn = document.getElementById('quoteSubmit');
+    const lbl = document.getElementById('quoteSubmitLabel');
+    const err = document.getElementById('quoteError');
+    err.classList.add('hidden');
+    err.textContent = '';
+    btn.disabled = true;
+    lbl.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/api/quote', { method: 'POST', body: new FormData(form) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Submission failed');
+      form.classList.add('hidden');
+      document.getElementById('quoteSuccess').classList.remove('hidden');
+    } catch (e) {
+      err.textContent = e.message + ' — message us on Discord or Telegram and we\'ll respond directly.';
+      err.classList.remove('hidden');
+      btn.disabled = false;
+      lbl.textContent = 'Submit Quote';
+    }
     return false;
   }
 
