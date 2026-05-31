@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Trust &amp; Safety · PurchasingCorp</title>
+<meta name="description" content="Safe, verified, same-day payouts. How PurchasingCorp protects every seller, identity-verified transactions, device verification, signed bill of sale, and traceable payouts." />
+<meta name="theme-color" content="#050505" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurchasingCorp" />
+<meta property="og:title" content="Trust &amp; Safety · PurchasingCorp" />
+<meta property="og:description" content="Safe, verified, same-day payouts. See how every sale is protected." />
+<meta property="og:url" content="https://purchasingcorp.vercel.app/safety" />
+<meta property="og:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trust &amp; Safety · PurchasingCorp" />
+<meta name="twitter:description" content="Safe, verified, same-day payouts. See how every sale is protected." />
+<meta name="twitter:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505',
+          900: '#0a0a0a',
+          850: '#0f0f10',
+          800: '#141416',
+          700: '#1c1c1f',
+          600: '#26262b',
+          500: '#3a3a40',
+          400: '#5a5a62',
+          300: '#8a8a92',
+          200: '#b6b6bc',
+          100: '#e6e6e8',
+        },
+      },
+      boxShadow: {
+        glow: '0 0 0 1px rgba(255,255,255,0.06), 0 10px 40px -10px rgba(0,0,0,0.6)',
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Vercel Web Analytics + Speed Insights -->
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<!-- Ambient background -->
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
+</div>
+
+<!-- Nav (mirrors homepage; the "Safety" link is the current page) -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4">
+          <path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/>
+        </svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-ink-200">
+      <li><a href="/#we-buy" class="hover:text-white transition">We Buy</a></li>
+      <li><a href="/process" class="hover:text-white transition">Process</a></li>
+      <li><a href="/safety" class="text-white">Safety</a></li>
+      <li><a href="/#quote" class="hover:text-white transition">Get Quote</a></li>
+      <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+      <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
+    </ul>
+    <a href="/#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+      Get a Quote
+      <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="relative pt-20 pb-16 md:pt-28 md:pb-24">
+  <div class="mx-auto max-w-6xl px-5 text-center">
+    <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+      <span>◆</span> Trust &amp; Safety
+    </span>
+    <h1 class="mt-7 mx-auto max-w-4xl text-[40px] sm:text-5xl md:text-[72px] font-semibold tracking-[-0.04em] leading-[0.98]">
+      Safe, verified,<br/><span class="text-ink-300 italic font-serif font-normal">same-day payouts.</span>
+    </h1>
+    <p class="mx-auto mt-7 max-w-2xl text-[15px] sm:text-[16px] text-ink-300 leading-relaxed">
+      Every sale goes through the same four checks. You leave with cash in your account that day and a signed record of the transaction in your inbox. If anything ever needs to be sorted out later, you have proof and we're easy to reach.
+    </p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="/#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+        Start a quote
+        <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#protections" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-ink-100 hover:bg-white/[0.08] transition">
+        See how we protect you
+      </a>
+    </div>
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[12px] text-ink-400">
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Registered Maryland business</span>
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Identity-verified transactions</span>
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Traceable, documented payouts</span>
+    </div>
+  </div>
+</section>
+
+<!-- Protections -->
+<section id="protections" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Protections
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        How every sale <span class="text-ink-300 italic font-serif font-normal">is protected.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px]">
+        Four checks every sale runs through. Together they make sure the device is legitimate, your payout is locked, and you walk away with a paper record of the deal.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-4">
+      <!-- 1. Identity-verified transactions -->
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="flex items-center justify-between">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">For your protection</span>
+        </div>
+        <h3 class="mt-5 text-[20px] font-semibold tracking-tight">Identity-verified transactions</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          A quick verification step on both sides locks in who's selling and who's paying. It's how we guarantee your payout actually lands, prevents impersonation or chargeback fraud, and keeps the deal protected end-to-end.
+        </p>
+        <ul class="mt-4 space-y-1.5 text-[13px] text-ink-300">
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> One-time check at point of sale</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Both parties protected, never one-sided</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Stored securely, never shared, never sold</li>
+        </ul>
+      </div>
+
+      <!-- 2. Device verification -->
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="flex items-center justify-between">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M9.5 18.5h5"/><path d="M11 6h2"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">Clean device guaranteed</span>
+        </div>
+        <h3 class="mt-5 text-[20px] font-semibold tracking-tight">Device verification</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          We run every IMEI and serial through the CTIA stolen-phone registry and confirm Activation Lock, Find My, and Google FRP are cleared before payout. It keeps the resale market honest and means every device we hand out has a clean, traceable history.
+        </p>
+        <ul class="mt-4 space-y-1.5 text-[13px] text-ink-300">
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> CTIA Stolen Phone Checker lookup</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Activation Lock / Google FRP confirmed clear</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Carrier balance &amp; financing checked</li>
+        </ul>
+      </div>
+
+      <!-- 3. Signed bill of sale -->
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="flex items-center justify-between">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10l3 3v15H4V3h3z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">Paper record</span>
+        </div>
+        <h3 class="mt-5 text-[20px] font-semibold tracking-tight">Signed bill of sale</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          At the point of sale you get a signed bill of sale documenting the device, the price, the date, and both parties. That's your proof the transaction happened, that you got paid, and that ownership transferred over to us.
+        </p>
+        <ul class="mt-4 space-y-1.5 text-[13px] text-ink-300">
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Device make, model, IMEI/serial</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Agreed price + payout method</li>
+          <li class="flex gap-2"><span class="text-emerald-300">✓</span> Signed copy emailed to you on the spot</li>
+        </ul>
+      </div>
+
+      <!-- 4. Secure, traceable payouts -->
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="flex items-center justify-between">
+          <div class="grid h-11 w-11 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 6h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-ink-400">Your choice</span>
+        </div>
+        <h3 class="mt-5 text-[20px] font-semibold tracking-tight">Secure, traceable payouts</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          Pick how you get paid. Zelle, PayPal, ACH bank transfer, cash on receipt, or crypto if you prefer. Every payout is documented with a confirmation you can reference later, and nothing leaves our end until your device and the price are agreed.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[12px]">
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1">Zelle</span>
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1">PayPal G&amp;S</span>
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1">ACH bank transfer</span>
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1">Cash (with receipt)</span>
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1">USDC / BTC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Registered business -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-12 gap-10 items-start">
+    <div class="md:col-span-5">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Registered
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        A registered,<br/><span class="text-ink-300 italic font-serif font-normal">accountable business.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] max-w-md leading-relaxed">
+        PurchasingCorp is a registered business operating out of Maryland with a physical address, named ownership, and proper transaction records. If anything ever needs to be resolved after a sale, there's an actual company and a real person on the other end.
+      </p>
+    </div>
+
+    <div class="md:col-span-7 rounded-3xl border border-white/[0.06] bg-ink-900 p-7 md:p-8">
+      <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-[14px]">
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Registered business</dt>
+          <dd class="mt-1.5 text-white font-medium">PurchasingCorp <span class="text-ink-400 font-normal">[TODO: confirm exact registered legal entity name]</span></dd>
+        </div>
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Jurisdiction</dt>
+          <dd class="mt-1.5 text-white font-medium">State of Maryland, USA</dd>
+        </div>
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Address</dt>
+          <dd class="mt-1.5 text-ink-200">
+            [TODO: street address line 1]<br/>
+            [TODO: city, MD ZIP]
+          </dd>
+        </div>
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Hours</dt>
+          <dd class="mt-1.5 text-ink-200">[TODO: e.g. Mon–Sat, 10am–7pm ET]</dd>
+        </div>
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Contact</dt>
+          <dd class="mt-1.5 text-ink-200">
+            <a class="text-ink-100 hover:text-white underline-offset-4 hover:underline" href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener">discord.gg/HYAvpQ8V</a><br/>
+            <a class="text-ink-100 hover:text-white underline-offset-4 hover:underline" href="mailto:hello@purchasingcorp.com">hello@purchasingcorp.com</a>
+          </dd>
+        </div>
+        <div>
+          <dt class="text-[11px] uppercase tracking-wider text-ink-400">Recordkeeping</dt>
+          <dd class="mt-1.5 text-ink-200">Transaction records retained responsibly per applicable Maryland regulations.<br/><span class="text-ink-500 text-[12.5px]">[TODO: confirm specific statute/regulation references with attorney before publishing]</span></dd>
+        </div>
+      </dl>
+      <div class="mt-7 border-t border-white/[0.06] pt-5 flex items-start gap-3 text-[12.5px] text-ink-400">
+        <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+        <span>Every detail above is verifiable. If you'd like documentation before a sale, ask on Discord and we'll send it over.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Mission
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Keep tech in use.<br/><span class="text-ink-300 italic font-serif font-normal">Out of landfills.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px] leading-relaxed">
+        Every device that lives a second life is one less in a landfill and one more in someone's hands. We refurbish what we buy, sell it on at a fair price, and divert real e-waste from the trash. Buying from us, selling to us, both routes keep tech moving, and that's the whole point.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-4">
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Refurbish &amp; resell</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          Working devices get inspected, cleaned, data-wiped, and put back on the market at a price that beats new. Verified clean every time.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M5 6v13h14V6M9 10v6M15 10v6M9 3h6v3H9z"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Divert e-waste</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          What we can't refurbish goes to certified e-waste recyclers, not the trash. Batteries, boards, rare metals: pulled out and reused properly.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-4-7-12a7 7 0 0 1 14 0c0 8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Affordable, verified devices</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          Every device we resell carries the same verification stack, clean IMEI, locks cleared, tested working. People who can't afford new still get gear they can trust.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-3xl px-5">
+    <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-8 py-12 md:py-16 text-center">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Ready for a <span class="text-ink-300 italic font-serif font-normal">verified, safe sale?</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md leading-relaxed">
+        Fill the quote form and we'll come back with a firm offer. From there everything you just read kicks in the same day.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="/#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+          Start a quote
+          <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="/pricing" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+          See pricing first
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-7 w-7 place-items-center rounded-full bg-white text-black font-bold">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="text-[14px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      </div>
+      <p class="mt-3 text-[13px] text-ink-400 max-w-sm">Safe, verified, same-day payouts for phones, laptops, consoles, GPUs and more.</p>
+    </div>
+    <div class="md:col-span-4 grid grid-cols-2 gap-4 text-[13px]">
+      <ul class="space-y-2">
+        <li><a href="/#we-buy" class="text-ink-300 hover:text-white">What we buy</a></li>
+        <li><a href="/process" class="text-ink-300 hover:text-white">Process</a></li>
+        <li><a href="/safety" class="text-ink-300 hover:text-white">Safety</a></li>
+        <li><a href="/pricing" class="text-ink-300 hover:text-white">Full pricing</a></li>
+      </ul>
+      <ul class="space-y-2">
+        <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="/#quote" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
+        <li><a href="/privacy" class="text-ink-300 hover:text-white">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500">
+      © <span id="year"></span> PurchasingCorp · All rights reserved
+    </div>
+  </div>
+</footer>
+
+<!-- Consent + email signup banner (same as other pages) -->
+<div id="consentBanner" class="fixed inset-x-3 bottom-3 z-[60] hidden">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
+    <div class="p-5 md:p-6">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <div class="flex-1 min-w-0">
+          <div class="text-[14px] font-semibold text-white">Get the best prices first.</div>
+          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">
+            Drop your email for price-drop alerts and high-payout days. By continuing you accept our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a> and use of cookies for analytics.
+          </p>
+        </div>
+        <form id="consentForm" class="flex flex-col sm:flex-row items-stretch gap-2 md:min-w-[360px]" onsubmit="return submitConsent(event, true)">
+          <input id="consentEmail" type="email" name="email" placeholder="you@email.com" autocomplete="email"
+            class="flex-1 min-w-0 rounded-full border border-white/10 bg-ink-800 px-4 py-2.5 text-[13.5px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
+            I Agree
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-[11.5px]">
+        <button type="button" onclick="submitConsent(null, false)" class="text-ink-400 hover:text-ink-200 underline underline-offset-4">No thanks, just essential cookies</button>
+        <span id="consentStatus" class="text-ink-400 hidden"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function(){
+    var KEY = 'pc.consent.v1';
+    var banner = document.getElementById('consentBanner');
+    if (!banner) return;
+    if (localStorage.getItem(KEY)) return;
+    setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
+  })();
+
+  async function submitConsent(e, withEmail){
+    if (e) e.preventDefault();
+    var emailInput = document.getElementById('consentEmail');
+    var status = document.getElementById('consentStatus');
+    var banner = document.getElementById('consentBanner');
+    var email = withEmail ? (emailInput.value || '').trim() : '';
+    if (withEmail && !email) {
+      status.textContent = 'Enter an email or choose "No thanks".';
+      status.classList.remove('hidden');
+      emailInput.focus();
+      return false;
+    }
+    status.classList.remove('hidden');
+    status.textContent = 'Saving…';
+    try {
+      var r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email || null,
+          consent: true,
+          consent_marketing: withEmail,
+          path: location.pathname,
+          referrer: document.referrer || null,
+        }),
+      });
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+      }));
+      status.textContent = r.ok ? (email ? "You're in. Watch your inbox." : 'Saved. Thanks.') : 'Saved locally.';
+    } catch (err) {
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+        offline: true,
+      }));
+      status.textContent = 'Saved locally.';
+    }
+    setTimeout(function(){ banner.classList.add('hidden'); }, 1200);
+    return false;
+  }
+</script>
+</body>
+</html>

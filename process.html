@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How It Works · PurchasingCorp</title>
+<meta name="description" content="The 5-step PurchasingCorp cashout flow. Quote, send, inspect, paid. Most sales close in hours." />
+<meta name="theme-color" content="#050505" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurchasingCorp" />
+<meta property="og:title" content="How It Works · PurchasingCorp" />
+<meta property="og:description" content="The 5-step PurchasingCorp cashout flow. Quote, send, inspect, paid. Most sales close in hours." />
+<meta property="og:url" content="https://purchasingcorp.vercel.app/process" />
+<meta property="og:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How It Works · PurchasingCorp" />
+<meta name="twitter:description" content="The 5-step PurchasingCorp cashout flow. Quote, send, inspect, paid." />
+<meta name="twitter:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
+          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
+          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
+        },
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
+</div>
+
+<!-- Nav -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-ink-200">
+      <li><a href="/#we-buy" class="hover:text-white transition">We Buy</a></li>
+      <li><a href="/process" class="text-white">Process</a></li>
+      <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
+      <li><a href="/#quote" class="hover:text-white transition">Get Quote</a></li>
+      <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+      <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
+    </ul>
+    <a href="/#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+      Get a Quote
+      <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="relative pt-20 pb-12 md:pt-28 md:pb-16">
+  <div class="mx-auto max-w-6xl px-5 text-center">
+    <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+      How it works
+    </span>
+    <h1 class="mt-7 mx-auto max-w-4xl text-[40px] sm:text-5xl md:text-[72px] font-semibold tracking-[-0.04em] leading-[0.98]">
+      5 steps. <span class="text-ink-300 italic font-serif font-normal">Done in hours.</span>
+    </h1>
+    <p class="mx-auto mt-7 max-w-2xl text-[15px] sm:text-[16px] text-ink-300 leading-relaxed">
+      Most sales close the same day you start. No paperwork to mail. No back-and-forth haggling. Quote, send, get paid.
+    </p>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="py-12 md:py-16 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <ol class="grid md:grid-cols-5 gap-3">
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">01</span>
+          <span>Tell us</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Submit details</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Model, storage, condition. Add photos if you have them.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">02</span>
+          <span>Quote</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Locked offer</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">A firm price, not an estimate. Valid for 48 hours.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">03</span>
+          <span>Send</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Ship or drop off</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Free prepaid label, or meet us locally, your call.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">04</span>
+          <span>Inspect</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Transparent check</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Video inspection on request. Nothing hidden.</p>
+      </li>
+      <li class="rounded-2xl border border-white/[0.06] bg-ink-900 p-5">
+        <div class="flex items-center gap-2 text-[11px] text-ink-400 uppercase tracking-wider">
+          <span class="grid h-5 w-5 place-items-center rounded-full border border-white/10 text-[10px]">05</span>
+          <span>Cash</span>
+        </div>
+        <h3 class="mt-4 text-[15px] font-semibold">Same-day payout</h3>
+        <p class="mt-1.5 text-[12.5px] text-ink-400">Zelle, Cash App, Venmo, PayPal, ACH, crypto.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-3xl px-5">
+    <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-8 py-12 md:py-16 text-center">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Start at <span class="text-ink-300 italic font-serif font-normal">step one.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md leading-relaxed">
+        Fill out the quote form. We'll lock in your price within a few hours and walk you through the rest from there.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
+        <a href="/#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+          Start a quote
+          <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="/safety" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+          How we keep it safe
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-7 w-7 place-items-center rounded-full bg-white text-black font-bold">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="text-[14px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      </div>
+      <p class="mt-3 text-[13px] text-ink-400 max-w-sm">Cash for phones, laptops, consoles, and GPUs, paid same-day, every day.</p>
+    </div>
+    <div class="md:col-span-4 grid grid-cols-2 gap-4 text-[13px]">
+      <ul class="space-y-2">
+        <li><a href="/#we-buy" class="text-ink-300 hover:text-white">What we buy</a></li>
+        <li><a href="/process" class="text-ink-300 hover:text-white">Process</a></li>
+        <li><a href="/safety" class="text-ink-300 hover:text-white">Safety</a></li>
+        <li><a href="/pricing" class="text-ink-300 hover:text-white">Full pricing</a></li>
+      </ul>
+      <ul class="space-y-2">
+        <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="/#quote" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="/faq" class="text-ink-300 hover:text-white">FAQ</a></li>
+        <li><a href="/privacy" class="text-ink-300 hover:text-white">Privacy</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500">
+      © <span id="year"></span> PurchasingCorp · All rights reserved
+    </div>
+  </div>
+</footer>
+
+<!-- Consent banner -->
+<div id="consentBanner" class="fixed inset-x-3 bottom-3 z-[60] hidden">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
+    <div class="p-5 md:p-6">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <div class="flex-1 min-w-0">
+          <div class="text-[14px] font-semibold text-white">Get the best prices first.</div>
+          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">
+            Drop your email for price-drop alerts and high-payout days. By continuing you accept our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a> and use of cookies for analytics.
+          </p>
+        </div>
+        <form id="consentForm" class="flex flex-col sm:flex-row items-stretch gap-2 md:min-w-[360px]" onsubmit="return submitConsent(event, true)">
+          <input id="consentEmail" type="email" name="email" placeholder="you@email.com" autocomplete="email"
+            class="flex-1 min-w-0 rounded-full border border-white/10 bg-ink-800 px-4 py-2.5 text-[13.5px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
+            I Agree
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-[11.5px]">
+        <button type="button" onclick="submitConsent(null, false)" class="text-ink-400 hover:text-ink-200 underline underline-offset-4">No thanks, just essential cookies</button>
+        <span id="consentStatus" class="text-ink-400 hidden"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  (function(){
+    var KEY = 'pc.consent.v1';
+    var banner = document.getElementById('consentBanner');
+    if (!banner) return;
+    if (localStorage.getItem(KEY)) return;
+    setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
+  })();
+  async function submitConsent(e, withEmail){
+    if (e) e.preventDefault();
+    var emailInput = document.getElementById('consentEmail');
+    var status = document.getElementById('consentStatus');
+    var banner = document.getElementById('consentBanner');
+    var email = withEmail ? (emailInput.value || '').trim() : '';
+    if (withEmail && !email) {
+      status.textContent = 'Enter an email or choose "No thanks".';
+      status.classList.remove('hidden');
+      emailInput.focus();
+      return false;
+    }
+    status.classList.remove('hidden');
+    status.textContent = 'Saving…';
+    try {
+      var r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email || null, consent: true, consent_marketing: withEmail,
+          path: location.pathname, referrer: document.referrer || null,
+        }),
+      });
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(), email: email || null, marketing: !!withEmail,
+      }));
+      status.textContent = r.ok ? (email ? "You're in. Watch your inbox." : 'Saved. Thanks.') : 'Saved locally.';
+    } catch (err) {
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(), email: email || null, marketing: !!withEmail, offline: true,
+      }));
+      status.textContent = 'Saved locally.';
+    }
+    setTimeout(function(){ banner.classList.add('hidden'); }, 1200);
+    return false;
+  }
+</script>
+</body>
+</html>
