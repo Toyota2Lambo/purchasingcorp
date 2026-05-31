@@ -1,7 +1,7 @@
 html { scroll-behavior: smooth; }
 body { font-feature-settings: "cv11", "ss01", "ss03"; }
 
-/* Subtle scrollbar in dark mode */
+/* Subtle scrollbar (dark) */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: #050505; }
 ::-webkit-scrollbar-thumb { background: #1c1c1f; border-radius: 8px; border: 2px solid #050505; }
@@ -13,3 +13,141 @@ details > summary::-webkit-details-marker { display: none; }
 /* Fade-in on first paint */
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 section { animation: fadein 0.5s ease-out both; }
+
+/* ============================================================
+   Theme toggle icon visibility
+   (!important needed because Tailwind CDN's preflight sets
+    `svg { display: block }` which would otherwise win.)
+   ------------------------------------------------------------ */
+.icon-sun, .icon-moon { display: none !important; }
+html[data-theme="dark"]  .icon-sun  { display: block !important; }
+html[data-theme="light"] .icon-moon { display: block !important; }
+html:not([data-theme]) .icon-sun     { display: block !important; }
+
+/* ============================================================
+   LIGHT THEME OVERRIDES
+   The site is built around fixed dark tokens (bg-ink-950 etc.).
+   This block flips them to light equivalents whenever
+   <html data-theme="light"> is set. No HTML class changes needed.
+   ------------------------------------------------------------ */
+
+html[data-theme="light"] { color-scheme: light; }
+
+html[data-theme="light"] body {
+  background-color: #ffffff;
+  color: #18181b;
+}
+
+/* --- Scrollbar (light) --- */
+html[data-theme="light"] ::-webkit-scrollbar-track { background: #ffffff; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #d4d4d8; border-color: #ffffff; }
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #a1a1aa; }
+
+/* --- Solid ink backgrounds --- */
+html[data-theme="light"] .bg-ink-950 { background-color: #ffffff; }
+html[data-theme="light"] .bg-ink-900 { background-color: #fafafa; }
+html[data-theme="light"] .bg-ink-850 { background-color: #f4f4f5; }
+html[data-theme="light"] .bg-ink-800 { background-color: #f4f4f5; }
+html[data-theme="light"] .bg-ink-700 { background-color: #e4e4e7; }
+html[data-theme="light"] .bg-ink-600 { background-color: #d4d4d8; }
+
+/* --- Alpha ink backgrounds --- */
+html[data-theme="light"] .bg-ink-800\/60  { background-color: rgb(244 244 245 / 0.6); }
+html[data-theme="light"] .bg-ink-900\/60  { background-color: rgb(250 250 250 / 0.6); }
+html[data-theme="light"] .bg-ink-900\/95  { background-color: rgb(250 250 250 / 0.95); }
+html[data-theme="light"] .bg-ink-950\/60  { background-color: rgb(255 255 255 / 0.7); }
+
+/* --- Text --- */
+html[data-theme="light"] .text-ink-100 { color: #18181b; }
+html[data-theme="light"] .text-ink-200 { color: #27272a; }
+html[data-theme="light"] .text-ink-300 { color: #52525b; }
+html[data-theme="light"] .text-ink-400 { color: #71717a; }
+html[data-theme="light"] .text-ink-500 { color: #a1a1aa; }
+html[data-theme="light"] .text-white   { color: #18181b; }
+
+/* --- Primary CTA: bg-white text-black flips to dark on light --- */
+html[data-theme="light"] .bg-white      { background-color: #18181b; }
+html[data-theme="light"] .text-black    { color: #fafafa; }
+html[data-theme="light"] .hover\:bg-ink-100:hover { background-color: #3f3f46; }
+
+/* Selection */
+html[data-theme="light"] body::selection { background-color: #18181b; color: #ffffff; }
+html[data-theme="light"] ::selection     { background-color: #18181b; color: #ffffff; }
+
+/* --- White/X borders → black/X --- */
+html[data-theme="light"] .border-white\/5         { border-color: rgb(0 0 0 / 0.08); }
+html[data-theme="light"] .border-white\/10        { border-color: rgb(0 0 0 / 0.10); }
+html[data-theme="light"] .border-white\/15        { border-color: rgb(0 0 0 / 0.12); }
+html[data-theme="light"] .border-white\/\[0\.06\] { border-color: rgb(0 0 0 / 0.08); }
+html[data-theme="light"] .border-white\/\[0\.08\] { border-color: rgb(0 0 0 / 0.10); }
+
+/* Divide */
+html[data-theme="light"] .divide-white\/\[0\.05\] > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.07); }
+html[data-theme="light"] .divide-white\/\[0\.06\] > :not([hidden]) ~ :not([hidden]) { border-color: rgb(0 0 0 / 0.08); }
+
+/* --- White/X background tints → black with low alpha --- */
+html[data-theme="light"] .bg-white\/5         { background-color: rgb(0 0 0 / 0.04); }
+html[data-theme="light"] .bg-white\/\[0\.04\] { background-color: rgb(0 0 0 / 0.04); }
+html[data-theme="light"] .bg-white\/\[0\.05\] { background-color: rgb(0 0 0 / 0.05); }
+html[data-theme="light"] .bg-white\/\[0\.06\] { background-color: rgb(0 0 0 / 0.06); }
+html[data-theme="light"] .bg-white\/\[0\.08\] { background-color: rgb(0 0 0 / 0.08); }
+html[data-theme="light"] .hover\:bg-white\/\[0\.08\]:hover { background-color: rgb(0 0 0 / 0.08); }
+html[data-theme="light"] .hover\:bg-white\/5:hover { background-color: rgb(0 0 0 / 0.04); }
+
+/* --- Inputs --- */
+html[data-theme="light"] input.bg-ink-800,
+html[data-theme="light"] textarea.bg-ink-800,
+html[data-theme="light"] select.bg-ink-800 {
+  background-color: #f4f4f5;
+  color: #18181b;
+  border-color: rgb(0 0 0 / 0.10);
+}
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder { color: #a1a1aa; }
+html[data-theme="light"] .placeholder\:text-ink-500::placeholder { color: #a1a1aa; }
+
+/* --- Hero radial gradient overlays (white at low alpha on dark) --- */
+html[data-theme="light"] .bg-\[radial-gradient\(ellipse_at_top\,rgba\(255\,255\,255\,0\.06\)\,transparent_60\%\)\],
+html[data-theme="light"] .bg-\[radial-gradient\(ellipse_at_top\,rgba\(255\,255\,255\,0\.05\)\,transparent_60\%\)\],
+html[data-theme="light"] .bg-\[radial-gradient\(ellipse_at_top\,rgba\(255\,255\,255\,0\.04\)\,transparent_60\%\)\] {
+  background: radial-gradient(ellipse at top, rgba(0,0,0,0.04), transparent 60%) !important;
+}
+
+/* Floating soft circle / noise overlay — hide on light */
+html[data-theme="light"] .from-white\/\[0\.06\],
+html[data-theme="light"] .via-white\/\[0\.02\] { opacity: 0.4; }
+html[data-theme="light"] .mix-blend-overlay { opacity: 0 !important; }
+
+/* --- Final CTA card gradient (from-ink-900 to-ink-950 + via-white/20 top line) --- */
+html[data-theme="light"] .from-ink-900 {
+  --tw-gradient-from: #fafafa var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(250 250 250 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+html[data-theme="light"] .to-ink-950 {
+  --tw-gradient-to: #ffffff var(--tw-gradient-to-position);
+}
+html[data-theme="light"] .via-white\/20 {
+  --tw-gradient-via: rgb(0 0 0 / 0.18);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+/* --- Accent colors (slightly adjusted for light) --- */
+html[data-theme="light"] .bg-emerald-400\/15 { background-color: rgb(16 185 129 / 0.15); }
+html[data-theme="light"] .text-emerald-300   { color: #047857; }
+html[data-theme="light"] .text-emerald-400   { color: #059669; }
+html[data-theme="light"] .text-red-300       { color: #b91c1c; }
+
+/* Code inline in privacy page */
+html[data-theme="light"] code.bg-ink-800 { background-color: #f4f4f5; color: #18181b; }
+
+/* Theme toggle button itself: ensure border + bg show on white */
+html[data-theme="light"] #themeToggle {
+  border-color: rgb(0 0 0 / 0.10);
+  background-color: rgb(0 0 0 / 0.04);
+  color: #27272a;
+}
+html[data-theme="light"] #themeToggle:hover {
+  background-color: rgb(0 0 0 / 0.08);
+  color: #18181b;
+}

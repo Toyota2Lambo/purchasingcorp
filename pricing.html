@@ -3,6 +3,21 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('pc.theme');
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch(e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  })();
+  window.toggleTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('pc.theme', next); } catch(e) {}
+  };
+</script>
 <title>Cashout Rates · PurchasingCorp</title>
 <meta name="description" content="Up-to-date buyback prices for iPhones, MacBooks, Apple Watch, iPad, gaming consoles and more." />
 <meta name="theme-color" content="#050505" />
@@ -84,6 +99,11 @@ tailwind.config = {
       <a href="/pricing" class="rounded-full bg-white/10 px-2.5 py-1 text-white">Full Pricing</a>
     </div>
     <div class="flex items-center gap-2">
+      <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme"
+        class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-ink-200 hover:text-white transition">
+        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-[12.5px] hover:bg-white/[0.08] transition">
         <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
         Discord
