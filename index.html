@@ -112,7 +112,7 @@ tailwind.config = {
       <li><a href="#we-buy" class="hover:text-white transition">We Buy</a></li>
       <li><a href="/process" class="hover:text-white transition">Process</a></li>
       <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
-      <li><a href="#quote" class="hover:text-white transition">Get Quote</a></li>
+      <li><a href="/form" class="hover:text-white transition">Get Quote</a></li>
       <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
       <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
     </ul>
@@ -122,7 +122,7 @@ tailwind.config = {
         <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a href="#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+      <a href="/form" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
         Get a Quote
         <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
@@ -144,7 +144,7 @@ tailwind.config = {
       We pay way more than Apple, Best Buy, or any trade-in app. No haggling, no lowballs, paid same-day.
     </p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
-      <a href="#quote" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+      <a href="/form" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
         Get a Quote
         <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
@@ -292,7 +292,7 @@ tailwind.config = {
             <h3 class="text-[15px] font-semibold">Bulk Lots</h3>
             <p class="mt-1 text-[12.5px] text-ink-400">10+ devices? We pay competitive wholesale rates. Same-day quotes on mixed lots.</p>
           </div>
-          <a href="#quote" class="text-[12.5px] text-ink-100 underline-offset-4 hover:underline">Submit a lot →</a>
+          <a href="/form" class="text-[12.5px] text-ink-100 underline-offset-4 hover:underline">Submit a lot →</a>
         </div>
       </div>
     </div>
@@ -420,75 +420,10 @@ tailwind.config = {
         <div class="text-[18px] md:text-[20px] font-semibold tracking-tight">Stop letting that old phone collect dust.</div>
         <div class="mt-1 text-[13.5px] text-ink-300">Find out what it's actually worth, quote takes 60 seconds.</div>
       </div>
-      <a href="#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
+      <a href="/form" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
         Get my offer
         <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- Quote form (embedded CryptPad) -->
-<section id="quote" class="py-20 md:py-28 border-t border-white/[0.06]">
-  <div class="mx-auto max-w-3xl px-5">
-    <div class="text-center">
-      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
-        Get quote
-      </span>
-      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-        Send us your <span class="text-ink-300 italic font-serif font-normal">details.</span>
-      </h2>
-      <p class="mt-3 text-ink-300 text-[15px]">Fill this out and we'll reply with a firm offer, usually within a few hours.</p>
-    </div>
-
-    <div class="mt-10 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-6 py-10 md:p-12">
-      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-
-      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-8">
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">1</div>
-          <div class="mt-2 text-[12px] text-ink-300">Fill the form</div>
-        </div>
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">2</div>
-          <div class="mt-2 text-[12px] text-ink-300">We quote you</div>
-        </div>
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">3</div>
-          <div class="mt-2 text-[12px] text-ink-300">Get paid</div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <div class="text-[15px] text-ink-100 font-medium">60-second secure form. Reply within 2 hours.</div>
-        <div class="mt-1 text-[12.5px] text-ink-400">Encrypted &amp; private, your details never go to a database we control.</div>
-      </div>
-
-      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="https://cryptpad.fr/form/#/3/form/view/9bafb796db0a6196446fd7225771f687/" target="_blank" rel="noopener" class="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition">
-          Open Quote Form
-          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </a>
-        <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3.5 text-sm hover:bg-white/[0.08] transition">
-          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
-          Or message Discord
-        </a>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-[12px] text-ink-400">
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
-          Photo uploads supported
-        </div>
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
-          End-to-end encrypted
-        </div>
-        <div class="flex items-center gap-2">
-          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
-          No account needed
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -503,7 +438,7 @@ tailwind.config = {
       </h2>
       <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Fill out the quote form, message us directly, or check the full pricing guide. We respond fast.</p>
       <div class="mt-7 flex flex-wrap justify-center gap-3">
-        <a href="#quote" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+        <a href="/form" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
           <svg viewBox="0 0 16 16" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5l5 4 5-4M2 4h12v8H2z"/></svg>
           Fill Out Quote Form
         </a>
@@ -542,7 +477,7 @@ tailwind.config = {
       <ul class="space-y-2">
         <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
         <li><a href="#" class="text-ink-300 hover:text-white">Telegram</a></li>
-        <li><a href="#quote" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="/form" class="text-ink-300 hover:text-white">Get a quote</a></li>
         <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
       </ul>
     </div>

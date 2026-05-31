@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('pc.theme');
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch(e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  })();
+  window.toggleTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('pc.theme', next); } catch(e) {}
+  };
+</script>
+<title>Get a Quote · PurchasingCorp</title>
+<meta name="description" content="Tell us what you're selling and get a firm cash offer, usually within a couple of hours. Photos optional but get you a faster answer." />
+<meta name="theme-color" content="#050505" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PurchasingCorp" />
+<meta property="og:title" content="Get a Quote · PurchasingCorp" />
+<meta property="og:description" content="Tell us what you're selling and get a firm cash offer, usually within a couple of hours." />
+<meta property="og:url" content="https://purchasingcorp.vercel.app/form" />
+<meta property="og:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Get a Quote · PurchasingCorp" />
+<meta name="twitter:description" content="Tell us what you're selling and get a firm cash offer, usually within a couple of hours." />
+<meta name="twitter:image" content="https://purchasingcorp.vercel.app/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
+          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
+          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
+        },
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
+</div>
+
+<!-- Nav -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-ink-200">
+      <li><a href="/#we-buy" class="hover:text-white transition">We Buy</a></li>
+      <li><a href="/process" class="hover:text-white transition">Process</a></li>
+      <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
+      <li><a href="/form" class="text-white">Get Quote</a></li>
+      <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+      <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme"
+        class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-ink-200 hover:text-white transition">
+        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#quote-form" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+        Get a Quote
+        <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- Quote form -->
+<section class="relative pt-16 pb-20 md:pt-20 md:pb-28">
+  <div class="mx-auto max-w-3xl px-5">
+    <div class="text-center">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Get quote
+      </span>
+      <h1 class="mt-5 text-4xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.98]">
+        Get your <span class="text-ink-300 italic font-serif font-normal">offer.</span>
+      </h1>
+      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Tell us what you've got. We'll reply with a firm, no-games offer, usually within a couple of hours.</p>
+    </div>
+
+    <div id="quote-form" class="mt-10 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-6 py-10 md:p-12 scroll-mt-24">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-9">
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">1</div>
+          <div class="mt-2 text-[12px] text-ink-300">Fill the form</div>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">2</div>
+          <div class="mt-2 text-[12px] text-ink-300">We quote you</div>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">3</div>
+          <div class="mt-2 text-[12px] text-ink-300">Get paid</div>
+        </div>
+      </div>
+
+      <!-- Quote form: posts to /api/inquiry → Supabase -->
+      <form id="quoteForm" class="space-y-4" onsubmit="return submitInquiry(event)" novalidate>
+        <!-- Honeypot: hidden from real users, bots fill it -->
+        <div aria-hidden="true" class="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+          <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="q-type" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Item type</label>
+            <select id="q-type" name="type" required class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
+              <option value="" disabled selected>Select one…</option>
+              <option>iPhone</option>
+              <option>MacBook / Laptop</option>
+              <option>iPad / Tablet</option>
+              <option>Apple Watch</option>
+              <option>Mac mini / Desktop</option>
+              <option>Game console</option>
+              <option>Accessory</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="q-condition" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Condition</label>
+            <select id="q-condition" name="condition" class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
+              <option value="" disabled selected>Select one…</option>
+              <option>Like new</option>
+              <option>Good — light wear</option>
+              <option>Fair — visible wear</option>
+              <option>Damaged / for parts</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="q-model" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Make &amp; model</label>
+          <input id="q-model" name="model" type="text" required placeholder="e.g. iPhone 14 Pro 256GB, or MacBook Air M2 2022"
+            class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="q-handoff" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Handoff preference</label>
+            <select id="q-handoff" name="handoff" class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
+              <option value="" disabled selected>Select one…</option>
+              <option>Ship it in (prepaid label)</option>
+              <option>Local meetup</option>
+              <option>Either works</option>
+            </select>
+          </div>
+          <div>
+            <label for="q-contact" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">How should we reach you?</label>
+            <input id="q-contact" name="contact" type="text" required placeholder="Email, phone, Telegram, or Discord"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+        </div>
+
+        <div>
+          <label for="q-details" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Anything else? <span class="text-ink-500 font-normal">(optional)</span></label>
+          <textarea id="q-details" name="details" rows="3" placeholder="Storage, color, accessories included, cracks, battery health, how many you're selling…"
+            class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15 resize-y"></textarea>
+        </div>
+
+        <div>
+          <label for="q-photos" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Photos <span class="text-ink-500 font-normal">(optional — gets you a faster, firmer offer)</span></label>
+          <input id="q-photos" name="photos" type="file" accept="image/*" multiple
+            class="block w-full text-[13px] text-ink-300 file:mr-4 file:rounded-full file:border-0 file:bg-white file:px-4 file:py-2 file:text-[13px] file:font-medium file:text-black hover:file:bg-ink-100 file:cursor-pointer cursor-pointer">
+          <p class="mt-1.5 text-[11.5px] text-ink-500">Up to 4 images, 8MB each.</p>
+        </div>
+
+        <button id="q-submit" type="submit" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+          <span id="q-submit-label">Get my offer</span>
+          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+
+        <p id="q-status" class="text-center text-[12.5px] hidden"></p>
+
+        <p class="text-center text-[11.5px] text-ink-500">
+          By submitting you agree to our <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>. Prefer to chat?
+          <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 underline underline-offset-4 hover:text-white">Reach us on Discord</a>.
+        </p>
+      </form>
+
+      <!-- Success state (revealed after a successful submit) -->
+      <div id="quoteSuccess" class="hidden text-center py-6">
+        <div class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+        </div>
+        <h3 class="mt-4 text-2xl font-semibold tracking-[-0.02em]">Got it — offer incoming.</h3>
+        <p class="mt-2 text-ink-300 text-[14px] mx-auto max-w-sm">We'll review your details and reply with a firm offer, usually within a couple of hours. Keep an eye on the contact you gave us.</p>
+        <button type="button" onclick="resetInquiry()" class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] hover:bg-white/[0.08] transition">Send another</button>
+      </div>
+    </div>
+
+    <!-- Reassurance chips -->
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-[12px] text-ink-400">
+      <div class="flex items-center justify-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+        Reply within ~2 hours
+      </div>
+      <div class="flex items-center justify-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+        One firm offer, no haggling
+      </div>
+      <div class="flex items-center justify-center gap-2">
+        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+        Paid same day
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-7 w-7 place-items-center rounded-full bg-white text-black font-bold">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="text-[14px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      </div>
+      <p class="mt-3 text-[13px] text-ink-400 max-w-sm">Cash for phones, laptops, consoles, and GPUs, paid same-day, every day.</p>
+    </div>
+    <div class="md:col-span-4 grid grid-cols-2 gap-4 text-[13px]">
+      <ul class="space-y-2">
+        <li><a href="/#we-buy" class="text-ink-300 hover:text-white">What we buy</a></li>
+        <li><a href="/process" class="text-ink-300 hover:text-white">Process</a></li>
+        <li><a href="/pricing" class="text-ink-300 hover:text-white">Full pricing</a></li>
+        <li><a href="/faq" class="text-ink-300 hover:text-white">FAQ</a></li>
+      </ul>
+      <ul class="space-y-2">
+        <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="#" class="text-ink-300 hover:text-white">Telegram</a></li>
+        <li><a href="/form" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500 space-y-1">
+      <div>© <span id="year"></span> PurchasingCorp · All rights reserved</div>
+      <div>
+        <a href="/privacy" class="hover:text-ink-300">Privacy Policy</a>
+        <span class="mx-1">·</span>
+        <a href="/privacy#terms" class="hover:text-ink-300">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Consent + email signup banner -->
+<div id="consentBanner" class="fixed inset-x-3 bottom-3 z-[60] hidden">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
+    <div class="p-5 md:p-6">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <div class="flex-1 min-w-0">
+          <div class="text-[14px] font-semibold text-white">Get the best prices first.</div>
+          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">
+            Drop your email for price-drop alerts and high-payout days. By continuing you accept our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a> and use of cookies for analytics.
+          </p>
+        </div>
+        <form id="consentForm" class="flex flex-col sm:flex-row items-stretch gap-2 md:min-w-[360px]" onsubmit="return submitConsent(event, true)">
+          <input id="consentEmail" type="email" name="email" placeholder="you@email.com" autocomplete="email"
+            class="flex-1 min-w-0 rounded-full border border-white/10 bg-ink-800 px-4 py-2.5 text-[13.5px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
+            I Agree
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-[11.5px]">
+        <button type="button" onclick="submitConsent(null, false)" class="text-ink-400 hover:text-ink-200 underline underline-offset-4">No thanks, just essential cookies</button>
+        <span id="consentStatus" class="text-ink-400 hidden"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Smooth scroll for same-page anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length<2) return;
+      const el = document.querySelector(id);
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  // Consent banner
+  (function(){
+    var KEY = 'pc.consent.v1';
+    var banner = document.getElementById('consentBanner');
+    if (!banner) return;
+    if (localStorage.getItem(KEY)) return;
+    setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
+  })();
+
+  async function submitConsent(e, withEmail){
+    if (e) e.preventDefault();
+    var emailInput = document.getElementById('consentEmail');
+    var status = document.getElementById('consentStatus');
+    var banner = document.getElementById('consentBanner');
+    var email = withEmail ? (emailInput.value || '').trim() : '';
+
+    if (withEmail && !email) {
+      status.textContent = 'Enter an email or choose "No thanks".';
+      status.classList.remove('hidden');
+      emailInput.focus();
+      return false;
+    }
+
+    status.classList.remove('hidden');
+    status.textContent = 'Saving…';
+
+    try {
+      var r = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          email: email || null,
+          consent: true,
+          consent_marketing: withEmail,
+          path: location.pathname,
+          referrer: document.referrer || null,
+        }),
+      });
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+      }));
+      if (r.ok) {
+        status.textContent = email ? "You're in. Watch your inbox." : 'Saved. Thanks.';
+      } else {
+        status.textContent = 'Saved locally.';
+      }
+    } catch (err) {
+      localStorage.setItem('pc.consent.v1', JSON.stringify({
+        at: new Date().toISOString(),
+        email: email || null,
+        marketing: !!withEmail,
+        offline: true,
+      }));
+      status.textContent = 'Saved locally.';
+    }
+    setTimeout(function(){ banner.classList.add('hidden'); }, 1200);
+    return false;
+  }
+
+  // Quote form → /api/inquiry
+  async function submitInquiry(e){
+    e.preventDefault();
+    var form = document.getElementById('quoteForm');
+    var btn = document.getElementById('q-submit');
+    var label = document.getElementById('q-submit-label');
+    var status = document.getElementById('q-status');
+
+    var type = (form.querySelector('[name=type]').value || '').trim();
+    var model = (form.querySelector('[name=model]').value || '').trim();
+    var contact = (form.querySelector('[name=contact]').value || '').trim();
+
+    function fail(msg){
+      status.classList.remove('hidden');
+      status.classList.add('text-red-300');
+      status.textContent = msg;
+    }
+    status.classList.remove('text-red-300','text-emerald-300');
+
+    if (!type || !model || !contact) { fail('Please add the item type, model, and how to reach you.'); return false; }
+
+    var files = form.querySelector('[name=photos]').files;
+    if (files && files.length > 4) { fail('Please attach 4 photos or fewer.'); return false; }
+    for (var i=0;i<files.length;i++){
+      if (files[i].size > 8*1024*1024) { fail('Each photo must be under 8MB.'); return false; }
+    }
+
+    var data = new FormData(form);
+    data.append('path', location.pathname);
+    data.append('referrer', document.referrer || '');
+
+    btn.disabled = true;
+    label.textContent = 'Sending…';
+    status.classList.add('hidden');
+    status.textContent = '';
+
+    try {
+      var r = await fetch('/api/inquiry', { method:'POST', body: data });
+      var ok = r.ok;
+      try { var j = await r.json(); ok = ok && j && j.ok !== false; } catch(_){}
+      if (ok){
+        form.classList.add('hidden');
+        var ok2 = document.getElementById('quoteSuccess');
+        ok2.classList.remove('hidden');
+        ok2.scrollIntoView({behavior:'smooth', block:'center'});
+      } else {
+        throw new Error('rejected');
+      }
+    } catch(err){
+      btn.disabled = false;
+      label.textContent = 'Get my offer';
+      fail('Something went wrong. Try again, or reach us on Discord.');
+    }
+    return false;
+  }
+
+  function resetInquiry(){
+    var form = document.getElementById('quoteForm');
+    form.reset();
+    form.classList.remove('hidden');
+    document.getElementById('quoteSuccess').classList.add('hidden');
+    var btn = document.getElementById('q-submit');
+    btn.disabled = false;
+    document.getElementById('q-submit-label').textContent = 'Get my offer';
+    var status = document.getElementById('q-status');
+    status.classList.add('hidden');
+    status.textContent = '';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+export const config = { runtime: 'edge' };
+
+// POST /api/inquiry  (multipart/form-data)
+// Fields: type, model, condition, details, handoff, contact,
+//         photos[] (files), website (honeypot), path, referrer
+//
+// 1. Uploads any photos to the Supabase Storage bucket `inquiry-photos`.
+// 2. Inserts the inquiry (with the public photo URLs) into the Supabase
+//    `inquiries` table.
+// 3. If Discord / Telegram env vars are present, also fires a real-time
+//    notification so you get pinged the moment a lead comes in.
+//
+// Required env (Vercel → Project → Settings → Environment Variables):
+//   SUPABASE_URL                 e.g. https://xxxxxxxx.supabase.co
+//   SUPABASE_SERVICE_ROLE_KEY    Settings → API → service_role key
+// Optional notification env:
+//   DISCORD_WEBHOOK_URL
+//   TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID
+//
+// Storage prerequisite: create a PUBLIC bucket named `inquiry-photos`
+// and the table from the SQL in the project notes. If Supabase isn't
+// configured the endpoint still returns ok so customers aren't blocked,
+// but the lead is NOT saved — set the env vars before going live.
+
+const FIELD_LABELS = {
+  type: 'Type',
+  model: 'Make & Model',
+  condition: 'Condition',
+  handoff: 'Handoff',
+  contact: 'Contact',
+  details: 'Details',
+};
+
+const PHOTO_BUCKET = 'inquiry-photos';
+const MAX_FILES = 4;
+const MAX_FILE_BYTES = 8 * 1024 * 1024;
+const MAX_TOTAL_BYTES = 24 * 1024 * 1024;
+
+export default async function handler(req) {
+  if (req.method !== 'POST') return json({ error: 'Method not allowed' }, 405);
+
+  let form;
+  try {
+    form = await req.formData();
+  } catch {
+    return json({ error: 'Invalid form data' }, 400);
+  }
+
+  // Honeypot — real users never fill the hidden "website" field.
+  if (str(form.get('website'))) return json({ ok: true });
+
+  const v = {};
+  for (const k of Object.keys(FIELD_LABELS)) v[k] = str(form.get(k)).slice(0, 2000);
+  if (!v.type || !v.model || !v.contact) return json({ error: 'Missing required fields' }, 400);
+
+  const path = str(form.get('path')).slice(0, 256) || null;
+  const referrer = str(form.get('referrer')).slice(0, 512) || null;
+
+  // Collect photos within limits.
+  const photos = form.getAll('photos').filter((f) => f && typeof f === 'object' && f.size > 0);
+  const accepted = [];
+  let total = 0;
+  for (const f of photos.slice(0, MAX_FILES)) {
+    if (f.size > MAX_FILE_BYTES) continue;
+    if (total + f.size > MAX_TOTAL_BYTES) break;
+    total += f.size;
+    accepted.push(f);
+  }
+
+  const supaUrl = process.env.SUPABASE_URL;
+  const supaKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  let stored = false;
+  let photoUrls = [];
+  let storeError = null;
+
+  if (supaUrl && supaKey) {
+    const id = uuid();
+
+    // Upload photos to storage first (best-effort — a failed upload just
+    // means that URL is omitted; the inquiry is still saved).
+    photoUrls = await uploadPhotos(supaUrl, supaKey, id, accepted);
+
+    const row = {
+      id,
+      type: v.type,
+      model: v.model,
+      condition: v.condition || null,
+      handoff: v.handoff || null,
+      contact: v.contact,
+      details: v.details || null,
+      photo_urls: photoUrls,
+      status: 'new',
+      path,
+      referrer,
+      country: req.headers.get('x-vercel-ip-country') || null,
+      ip_hash: await anonIp(req.headers.get('x-forwarded-for')),
+      user_agent: (req.headers.get('user-agent') || '').slice(0, 512),
+    };
+
+    const r = await fetch(`${supaUrl}/rest/v1/inquiries`, {
+      method: 'POST',
+      headers: {
+        apikey: supaKey,
+        Authorization: `Bearer ${supaKey}`,
+        'content-type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify(row),
+    });
+    if (r.ok) stored = true;
+    else storeError = (await r.text()).slice(0, 200);
+  }
+
+  // Optional real-time notifications (best-effort, fire-and-report).
+  const tasks = [];
+  if (process.env.DISCORD_WEBHOOK_URL) tasks.push(sendDiscord(v, photoUrls));
+  if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) tasks.push(sendTelegram(v, photoUrls));
+  let notified = false;
+  if (tasks.length) {
+    const results = await Promise.allSettled(tasks);
+    notified = results.some((x) => x.status === 'fulfilled' && x.value === true);
+  }
+
+  // Configured but every channel failed → surface a real error.
+  if (supaUrl && supaKey && !stored && !notified) {
+    return json({ ok: false, error: 'Could not save your inquiry', detail: storeError }, 502);
+  }
+
+  return json({
+    ok: true,
+    stored,
+    notified,
+    photos: photoUrls.length,
+    ...(supaUrl && supaKey ? {} : { reason: 'supabase_not_configured' }),
+  });
+}
+
+// --- Supabase Storage ---------------------------------------------------
+
+async function uploadPhotos(supaUrl, key, id, files) {
+  const urls = [];
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i];
+    const objectPath = `${id}/${i + 1}.${extFor(f)}`;
+    try {
+      const r = await fetch(
+        `${supaUrl}/storage/v1/object/${PHOTO_BUCKET}/${objectPath}`,
+        {
+          method: 'POST',
+          headers: {
+            apikey: key,
+            Authorization: `Bearer ${key}`,
+            'content-type': f.type || 'application/octet-stream',
+            'cache-control': '3600',
+            'x-upsert': 'true',
+          },
+          body: f,
+        }
+      );
+      if (r.ok) {
+        urls.push(`${supaUrl}/storage/v1/object/public/${PHOTO_BUCKET}/${objectPath}`);
+      }
+    } catch {
+      // skip this photo, keep the rest
+    }
+  }
+  return urls;
+}
+
+// --- Notifications ------------------------------------------------------
+
+async function sendDiscord(v, photoUrls) {
+  const fields = Object.entries(FIELD_LABELS)
+    .filter(([k]) => v[k])
+    .map(([k, label]) => ({
+      name: label,
+      value: v[k].slice(0, 1024),
+      inline: k !== 'details' && k !== 'model',
+    }));
+  if (photoUrls.length) {
+    fields.push({
+      name: 'Photos',
+      value: photoUrls.map((u, i) => `[Photo ${i + 1}](${u})`).join('  ·  ').slice(0, 1024),
+      inline: false,
+    });
+  }
+
+  const embeds = [
+    {
+      title: 'New Quote Request',
+      color: 0xffffff,
+      fields,
+      footer: { text: 'purchasingcorp.com' },
+      timestamp: new Date().toISOString(),
+      ...(photoUrls[0] ? { image: { url: photoUrls[0] } } : {}),
+    },
+  ];
+  // Extra image-only embeds so multiple photos preview inline.
+  for (const u of photoUrls.slice(1, 4)) embeds.push({ color: 0xffffff, image: { url: u } });
+
+  const r = await fetch(process.env.DISCORD_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      content: `📥 **New quote** — ${v.type}: ${v.model.slice(0, 80)}`,
+      embeds,
+      allowed_mentions: { parse: [] },
+    }),
+  });
+  if (!r.ok) throw new Error(`discord ${r.status}`);
+  return true;
+}
+
+async function sendTelegram(v, photoUrls) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  const lines = ['📥 *New quote request*', ''];
+  for (const [k, label] of Object.entries(FIELD_LABELS)) {
+    if (v[k]) lines.push(`*${label}:* ${escapeMd(v[k])}`);
+  }
+  const caption = lines.join('\n').slice(0, 1024);
+
+  if (photoUrls.length) {
+    // Telegram fetches the public URLs itself — no need to re-upload bytes.
+    const media = photoUrls.slice(0, 4).map((u, i) => ({
+      type: 'photo',
+      media: u,
+      ...(i === 0 ? { caption, parse_mode: 'Markdown' } : {}),
+    }));
+    const r = await fetch(`https://api.telegram.org/bot${token}/sendMediaGroup`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, media }),
+    });
+    if (!r.ok) throw new Error(`telegram ${r.status}`);
+    return true;
+  }
+
+  const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text: caption, parse_mode: 'Markdown' }),
+  });
+  if (!r.ok) throw new Error(`telegram ${r.status}`);
+  return true;
+}
+
+// --- helpers ------------------------------------------------------------
+
+function str(v) {
+  return (v == null ? '' : v).toString().trim();
+}
+function json(body, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { 'content-type': 'application/json' },
+  });
+}
+function escapeMd(s) {
+  return s.replace(/([_*`\[\]])/g, '\\$1');
+}
+function extFor(f) {
+  const fromType = (f.type || '').split('/')[1];
+  if (fromType) {
+    const clean = fromType.replace(/[^a-z0-9]/gi, '').toLowerCase();
+    if (clean) return clean === 'jpeg' ? 'jpg' : clean.slice(0, 5);
+  }
+  const fromName = (f.name || '').split('.').pop();
+  return fromName && /^[a-z0-9]+$/i.test(fromName) ? fromName.toLowerCase() : 'bin';
+}
+function uuid() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return `${Date.now()}-${Math.random().toString(16).slice(2, 10)}`;
+}
+async function anonIp(xff) {
+  if (!xff) return null;
+  const ip = xff.split(',')[0].trim();
+  if (!ip) return null;
+  try {
+    const buf = new TextEncoder().encode(ip + '|purchasingcorp');
+    const hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.from(new Uint8Array(hash))
+      .slice(0, 8)
+      .map((b) => b.toString(16).padStart(2, '0'))
+      .join('');
+  } catch {
+    return null;
+  }
+}
