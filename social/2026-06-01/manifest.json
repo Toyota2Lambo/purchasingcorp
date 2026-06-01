@@ -1,0 +1,88 @@
+{
+  "rendered_at": "2026-06-01T20:58:14.761Z",
+  "content_file": "social/2026-06-01/content.json",
+  "base_path": "social/2026-06-01",
+  "scale": 2,
+  "posts": [
+    {
+      "index": 1,
+      "role": "Featured offer post",
+      "caption": "iPhone 17 Pro Max? We're paying up to $1,241 cash today. No store credit, no waiting. Real cash, same-day payout. Get your number at purchasingcorp.com/form.",
+      "hashtags": [
+        "#sellmyiphone",
+        "#iphonecash",
+        "#iphone17promax",
+        "#cashforphones",
+        "#tradein"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-01-slide-01.png"
+      ]
+    },
+    {
+      "index": 2,
+      "role": "Price board post",
+      "caption": "Current iPhone 17 Pro Max cash offers. These are real numbers, not vague 'up to' promises. Ship free or drop off locally, get paid the same day. purchasingcorp.com",
+      "hashtags": [
+        "#iphone17promax",
+        "#sellmyiphone",
+        "#cashforphones",
+        "#iphoneprices"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-02-slide-01.png"
+      ]
+    },
+    {
+      "index": 3,
+      "role": "Comparison post",
+      "caption": "Carrier trade-in credit sounds nice until you realize it's locked to a plan and a new phone. We pay actual cash. Get your real number at purchasingcorp.com/form.",
+      "hashtags": [
+        "#cashvscredit",
+        "#sellmyiphone",
+        "#tradein",
+        "#iphonecash"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-03-slide-01.png"
+      ]
+    },
+    {
+      "index": 4,
+      "role": "Educational carousel post",
+      "caption": "Never sold gear to us before? Here's exactly how it works, start to finish. No games, no surprises. Get started at purchasingcorp.com/form.",
+      "hashtags": [
+        "#howitsworks",
+        "#sellmyiphone",
+        "#cashforphones",
+        "#easyprocess"
+      ],
+      "size": "feed",
+      "is_carousel": true,
+      "files": [
+        "post-04-slide-01.png",
+        "post-04-slide-02.png",
+        "post-04-slide-03.png",
+        "post-04-slide-04.png"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "index": 1,
+      "template": "cover",
+      "file": "story-01.png"
+    },
+    {
+      "index": 2,
+      "template": "stat",
+      "file": "story-02.png"
+    }
+  ]
+}

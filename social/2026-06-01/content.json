@@ -1,0 +1,210 @@
+{
+  "generated_at": "2026-06-01T20:58:14.062235+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "how selling to us works, end to end",
+    "comparison_angle": "our cash offer vs. a typical carrier trade-in credit",
+    "featured_label": "iPhone"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-01T20:57:41.453Z",
+    "requested": {
+      "posts": 4,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured offer post",
+        "caption": "iPhone 17 Pro Max? We're paying up to $1,241 cash today. No store credit, no waiting. Real cash, same-day payout. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphonecash",
+          "#iphone17promax",
+          "#cashforphones",
+          "#tradein"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "We're buying",
+              "headline_html": "iPhone 17 Pro Max · up to <em>$1,241</em> cash",
+              "sub_html": "Same-day payout. More than Apple, more than the carriers.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Good – Flawless"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Price board post",
+        "caption": "Current iPhone 17 Pro Max cash offers. These are real numbers, not vague 'up to' promises. Ship free or drop off locally, get paid the same day. purchasingcorp.com",
+        "hashtags": [
+          "#iphone17promax",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#iphoneprices"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "June 2026 rates",
+              "title_html": "iPhone 17 Pro Max <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2TB",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1TB",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512GB",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256GB",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1TB",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512GB",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "Prices for good to flawless condition. Quote yours at purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison post",
+        "caption": "Carrier trade-in credit sounds nice until you realize it's locked to a plan and a new phone. We pay actual cash. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashvscredit",
+          "#sellmyiphone",
+          "#tradein",
+          "#iphonecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "iPhone 17 Pro Max 1TB · Good condition",
+              "title_html": "Cash offer vs. <em>carrier credit</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$1,050",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical carrier trade-in",
+                  "value": "~$800",
+                  "pct": 76,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Carrier figure is a typical trade-in credit estimate, often locked to a new device purchase. Our $1,050 is cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Educational carousel post",
+        "caption": "Never sold gear to us before? Here's exactly how it works, start to finish. No games, no surprises. Get started at purchasingcorp.com/form.",
+        "hashtags": [
+          "#howitsworks",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#easyprocess"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "Get a quote",
+              "eyebrow": "How selling to us works",
+              "headline_html": "Tell us what you've got",
+              "body_html": "Fill out the form at purchasingcorp.com/form. Device model, storage, condition. Takes <strong>under two minutes</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Ship or drop off",
+              "eyebrow": "How selling to us works",
+              "headline_html": "Send it our way",
+              "body_html": "We email a <strong>prepaid insured label</strong>. Print it, box it, drop it at UPS or USPS. Or arrange a local hand-off if you're nearby."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Inspection",
+              "eyebrow": "How selling to us works",
+              "headline_html": "We check it over",
+              "body_html": "We inspect your device the day it arrives. If it matches your description, the <strong>offer stands</strong>. No surprises, no haggling."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Get paid",
+              "eyebrow": "How selling to us works",
+              "headline_html": "Cash hits your account",
+              "body_html": "Same-day payout via Zelle, PayPal, or check. <strong>A real number, not a vague 'up to'</strong>. Done."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Monday, June 1",
+          "section": "IPHONE",
+          "headline_html": "<em>$1,241</em> for your iPhone 17 Pro Max",
+          "deck_html": "Cash today. No credit, no waiting.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Top iPhone payout this week",
+          "stat_value": "$1,241",
+          "stat_unit": "",
+          "caption_html": "iPhone 17 Pro Max 2TB. <em>Same-day cash</em>, not store credit.",
+          "source": "PurchasingCorp · June 2026"
+        }
+      }
+    ]
+  }
+}
