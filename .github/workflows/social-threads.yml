@@ -1,0 +1,79 @@
+name: social · threads
+
+# Publishes an already-rendered, already-deployed day to Meta Threads.
+# Reuses the SAME content/manifest and the SAME public Vercel-served PNGs
+# as "social · publish" (Instagram) — nothing extra is generated here.
+#
+# Run AFTER "social · daily" has committed and Vercel has deployed — the
+# publisher polls each PNG URL until it returns 200 (up to ~3 min) before
+# submitting, so a little overlap with the deploy is harmless. Scheduled an
+# hour after the Instagram publish so the two don't run simultaneously.
+#
+# Threads has no "stories" format, so feed posts are published by default
+# and stories are skipped. Set the `include_stories` input (or
+# THREADS_INCLUDE_STORIES=1) to also post story images as plain image posts.
+#
+# Use the `only` input to stagger a day across multiple runs, e.g.
+# "post:1" in the morning and "post:2,post:3" at noon.
+
+on:
+  schedule:
+    # 17:00 UTC — ~1h after the Instagram publish at 16:00.
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date YYYY-MM-DD (default: today, UTC)'
+        required: false
+      only:
+        description: "Filter, e.g. post:1 | posts (blank = all posts)"
+        required: false
+      include_stories:
+        description: 'Also post story images as plain image posts'
+        required: false
+        default: 'false'
+      dry_run:
+        description: 'Plan only, no real API calls'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: social-threads
+  cancel-in-progress: false
+
+jobs:
+  threads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Resolve target date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to Threads
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          IG_PUBLIC_BASE_URL: ${{ vars.IG_PUBLIC_BASE_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          THREADS_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          THREADS_INCLUDE_STORIES: ${{ github.event.inputs.include_stories }}
+        run: |
+          ARGS="--date ${{ steps.date.outputs.date }}"
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            ARGS="$ARGS --only ${{ github.event.inputs.only }}"
+          fi
+          python social/threads_publisher.py $ARGS

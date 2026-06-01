@@ -1,9 +1,9 @@
-# PurchasingCorp — Instagram automation
+# PurchasingCorp — Instagram + Threads automation
 
-Generates and publishes PurchasingCorp's daily Instagram content end to end:
+Generates and publishes PurchasingCorp's daily social content end to end:
 the buyback brand's offers, payout boards, competitor comparisons, and
 educational/lifestyle posts — rendered as on-brand PNGs and posted to
-Instagram on a schedule.
+Instagram and Threads on a schedule.
 
 It only ever quotes **real payout numbers** pulled from the site's own
 pricing data. The generator is hard-blocked from inventing a price;
@@ -28,6 +28,7 @@ social/<date>/*.png + manifest.json
    │  git commit + push  →  Vercel deploy    (PNGs become public URLs)
    ▼
 python social/ig_publisher.py        ← Instagram Graph API (creates + publishes)
+python social/threads_publisher.py   ← Threads API (same PNGs; feed posts)
 ```
 
 A post with **one** slide is a single image; **2+** slides is a carousel.
@@ -46,6 +47,8 @@ Add these in the GitHub repo under **Settings → Secrets and variables → Acti
 | `ANTHROPIC_API_KEY` | secret | generate / backfill | Anthropic API key — writes the captions & on-image copy. Get it at <https://console.anthropic.com> → API Keys. |
 | `IG_ACCESS_TOKEN` | secret | publish | Instagram Graph API access token (see setup below). |
 | `IG_BUSINESS_ACCOUNT_ID` | secret | publish | The Instagram **Business/Creator** account's numeric ID. |
+| `THREADS_ACCESS_TOKEN` | secret | threads | Threads API access token — separate from the IG token (see setup below). |
+| `THREADS_USER_ID` | secret | threads | The numeric **Threads** user ID to publish to. |
 
 ### Optional (sensible defaults if omitted)
 
@@ -78,6 +81,27 @@ Instagram posting requires the **Graph API** (not a personal login):
 > (re-exchange via the Graph API) and update the `IG_ACCESS_TOKEN` secret, or
 > publishing will start failing with an auth error.
 
+### Getting the Threads credentials
+
+Threads uses its **own** API (`graph.threads.net`) and its **own** token — the
+Instagram token does **not** work for it:
+
+1. The account must be a **Threads** account (sharing the Instagram login is
+   fine).
+2. At <https://developers.facebook.com>, add the **Threads API** use case to your
+   app and request the `threads_basic` and `threads_content_publish` scopes.
+3. Run the Threads OAuth flow to mint a **long-lived access token** (~60 days) →
+   set it as `THREADS_ACCESS_TOKEN`.
+4. Get your numeric **Threads user ID**
+   (`GET https://graph.threads.net/v1.0/me?fields=id`) → set it as
+   `THREADS_USER_ID`.
+
+> Threads is a text/image feed with **no stories**, so `social · threads`
+> publishes the feed **posts** only by default; story images are skipped unless
+> you opt in (`include_stories` input / `THREADS_INCLUDE_STORIES=1`), in which
+> case each is posted as a plain image. Post text is capped at 500 characters
+> (the Threads limit). The same ~60-day token-refresh caveat applies.
+
 ---
 
 ## GitHub Actions
@@ -86,6 +110,7 @@ Instagram posting requires the **Graph API** (not a personal login):
 |----------|---------|------|
 | `social · daily` | cron `0 13 * * *` + manual | dump pricing → generate → render → commit (Vercel deploys) |
 | `social · publish` | cron `0 16 * * *` + manual | publish the day to Instagram (waits for the PNG URLs to go live first) |
+| `social · threads` | cron `0 17 * * *` + manual | publish the day to **Threads** — feed posts (stories optional) |
 | `social · backfill` | manual only | generate + render a **range** of days in one run |
 
 Publishing is a separate workflow scheduled a few hours after generation so the
@@ -98,7 +123,12 @@ author Vercel is configured to deploy, or the deploy is skipped.
 
 **Staggering:** `social · publish` accepts an `only` input
 (`post:1`, `story:2`, `posts`, `stories`) so you can spread one day's content
-across multiple runs.
+across multiple runs. `social · threads` takes the same `only` input (feed
+posts only) plus an `include_stories` toggle.
+
+**Two channels, independent:** Instagram and Threads publish from the *same*
+rendered PNGs but in separate workflows, so one can fail or be re-run without
+touching the other.
 
 ---
 
@@ -123,6 +153,7 @@ node renderer.js --content 2026-06-01/content.json
 
 # 4. (optional) publish — dry run first
 IG_DRY_RUN=1 python ig_publisher.py --date 2026-06-01
+THREADS_DRY_RUN=1 python threads_publisher.py --date 2026-06-01
 ```
 
 ### No API keys handy?
@@ -131,6 +162,7 @@ IG_DRY_RUN=1 python ig_publisher.py --date 2026-06-01
 python social_generator.py --self-test --out /tmp/c.json   # uses the fixture, no API
 node renderer.js --sample                                   # renders sample-payloads.json
 IG_DRY_RUN=1 python ig_publisher.py --sample                # plans publish, no API
+THREADS_DRY_RUN=1 python threads_publisher.py --sample      # plans threads, no API
 ```
 
 ### Backfill a range
@@ -152,6 +184,7 @@ python backfill_generator.py --days 7            # last 7 days
 | `photo_fetcher.py` | resolves `PHOTO: <scene>` markers to a public image URL (Unsplash → Picsum) |
 | `renderer.js` | Puppeteer renders each slide/story to PNG + writes `manifest.json` |
 | `ig_publisher.py` | reads the manifest and publishes to Instagram (single / carousel / story) |
+| `threads_publisher.py` | reads the same manifest and publishes to Threads (single / carousel; stories optional) |
 | `templates-registry.js` | maps each template to its fields + builds the repeating HTML chunks |
 | `templates/*.html` | the 12 post/story designs; `_shared.css` is the design system |
 | `sample-payloads.json` | a full fixture exercising all 12 templates (used by `--self-test` / `--sample`) |
