@@ -1,0 +1,91 @@
+name: social · daily
+
+# Generates one day's content package, renders the PNGs, and commits them.
+# The commit lands on the default branch, which Vercel auto-deploys — so the
+# PNGs become public at https://<site>/social/<date>/<file>.png. The separate
+# "social · publish" workflow then pushes them to Instagram once they're live.
+
+on:
+  schedule:
+    # 13:00 UTC daily. Generation + render + commit only — publishing is a
+    # separate workflow scheduled later so the Vercel deploy has time to land.
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target date YYYY-MM-DD (default: today, UTC)'
+        required: false
+      posts:
+        description: 'Number of feed posts'
+        required: false
+        default: '4'
+      stories:
+        description: 'Number of stories'
+        required: false
+        default: '2'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        working-directory: social
+        run: |
+          npm install
+          pip install anthropic
+
+      - name: Resolve target date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dump pricing from the live site data
+        run: node social/dump_pricing.js
+
+      - name: Generate content package
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: |
+          python social/social_generator.py \
+            --date "${{ steps.date.outputs.date }}" \
+            --posts "${{ github.event.inputs.posts || '4' }}" \
+            --stories "${{ github.event.inputs.stories || '2' }}"
+
+      - name: Render PNGs
+        run: node social/renderer.js --content "social/${{ steps.date.outputs.date }}/content.json"
+
+      - name: Commit & push
+        run: |
+          DATE="${{ steps.date.outputs.date }}"
+          git config user.name "Toyota2Lambo"
+          git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
+          git add "social/$DATE"
+          if git diff --staged --quiet; then
+            echo "nothing to commit for $DATE"
+          else
+            git commit -m "social: content for $DATE"
+            git push
+          fi

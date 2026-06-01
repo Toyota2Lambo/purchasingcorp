@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Carousel Card</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* CAROUSEL CARD — a numbered slide for multi-card threads.
+     A ghosted Instrument-Serif numeral floats upper-right (01, 02...).
+     Brand top-left with a mono "STEP 0X" tag opposite. Body anchors
+     lower-left. Used for "how it works", "how to wipe your iPhone",
+     "what affects your payout" explainer threads. */
+
+  .stage { padding: 96px; justify-content: flex-start; }
+  .brand { margin-bottom: 0; }
+
+  .num-mark {
+    position: absolute;
+    top: 80px;
+    right: 96px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 320px;
+    line-height: .85;
+    letter-spacing: -.04em;
+    color: var(--accent);
+    opacity: .16;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  body[data-size="story"] .num-mark { font-size: 420px; top: 120px; }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .step-mono {
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .step-mono::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+
+  .body-area { margin: auto 0 40px; max-width: 720px; position: relative; z-index: 1; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 16px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .eyebrow::before { content: ""; width: 60px; height: 1px; background: var(--accent); }
+
+  .slide-headline {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 104px;
+    line-height: .96;
+    letter-spacing: -.035em;
+    color: var(--text);
+    margin-bottom: 36px;
+  }
+  .slide-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  body[data-size="story"] .slide-headline { font-size: 128px; }
+
+  .slide-body {
+    font-family: var(--body);
+    font-size: 30px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 24ch;
+  }
+  .slide-body strong { color: var(--text); font-weight: 600; }
+  .slide-body em { color: var(--accent); font-style: normal; font-weight: 600; }
+  body[data-size="story"] .slide-body { font-size: 34px; }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="num-mark">{{step_num}}</div>
+
+    <div class="header-row">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+      </div>
+      <div class="step-mono">{{step_label}}</div>
+    </div>
+
+    <div class="body-area">
+      <div class="eyebrow">{{eyebrow}}</div>
+      <div class="slide-headline">{{headline_html}}</div>
+      <div class="slide-body">{{body_html}}</div>
+    </div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">get your offer</span>
+    </div>
+
+  </div>
+</body>
+</html>

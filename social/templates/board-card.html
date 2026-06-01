@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Price Board</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* BOARD CARD — today's numbers for one category.
+     A clean price list: model on the left, our cash offer on the
+     right in emerald. Reads like a menu board / a quote sheet.
+     Pulls real model+price pairs from pricing.json so nothing on
+     this card is ever invented. */
+
+  .stage { padding: 96px; justify-content: flex-start; }
+  .brand { margin-bottom: 0; }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .board-eyebrow {
+    font-family: var(--mono);
+    font-size: 17px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 72px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .board-eyebrow::before {
+    content: "";
+    width: 52px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .board-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 92px;
+    line-height: .98;
+    letter-spacing: -.035em;
+    color: var(--text);
+    margin: 30px 0 48px;
+    max-width: 16ch;
+  }
+  .board-title em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  body[data-size="story"] .board-title { font-size: 108px; }
+
+  .board-rows { margin-bottom: 36px; }
+
+  .board-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+  }
+  .board-row:last-child { border-bottom: 1px solid var(--border); }
+
+  .row-model {
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 38px;
+    letter-spacing: -.01em;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .row-note {
+    display: block;
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 8px;
+  }
+  .row-price {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: -.02em;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .row-price.soft { color: var(--text-muted); }
+  body[data-size="story"] .row-model { font-size: 42px; }
+  body[data-size="story"] .row-price { font-size: 56px; }
+
+  .board-note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.3;
+    color: var(--text-muted);
+    margin-top: auto;
+    margin-bottom: 36px;
+    max-width: 30ch;
+  }
+  .board-note em { color: var(--accent); font-style: italic; }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="header-row">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+      </div>
+      <div class="tag">{{tag}}</div>
+    </div>
+
+    <div class="board-eyebrow">{{eyebrow}}</div>
+    <div class="board-title">{{title_html}}</div>
+
+    <div class="board-rows">
+      {{rows_html}}
+    </div>
+
+    <div class="board-note">{{note_html}}</div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">get your offer</span>
+    </div>
+
+  </div>
+</body>
+</html>

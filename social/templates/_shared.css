@@ -1,0 +1,393 @@
+/* ============================================================
+   PURCHASINGCORP — Social template shared CSS
+   ============================================================
+   Matches the site's visual identity exactly so the IG grid feels
+   like a continuation of purchasingcorp.vercel.app, not a separate
+   brand. Tokens pulled directly from index.html's Tailwind config.
+
+   Each template is rendered at one of two sizes:
+     - feed:  1080 x 1080  (square — grid posts + carousels)
+     - story: 1080 x 1920  (vertical — Story sequences)
+   The renderer sets <body data-size="feed"|"story">; templates
+   adjust internal layout accordingly.
+   ============================================================ */
+
+/* Fonts via the Google Fonts CSS API (evergreen — Google rotates the
+   hashed .woff2 URLs, so hardcoding them causes silent fallback to
+   Times/Courier). The site loads Inter + Instrument Serif; we add
+   JetBrains Mono for the spec/receipt texture (model numbers, payout
+   slips, data labels) that suits an electronics buyback.
+   display=block tells Puppeteer to wait (matches document.fonts.ready
+   in renderer.js) instead of painting with a fallback face. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=block');
+
+:root {
+  /* Color tokens — copied 1:1 from index.html's `ink` scale so a slide
+     on Instagram and a section on the site share the exact same palette. */
+  --bg:            #050505; /* ink-950 */
+  --bg-deep:       #0a0a0a; /* ink-900 */
+  --bg-elevated:   #0f0f10; /* ink-850 */
+  --bg-surface:    #141416; /* ink-800 */
+  --border:        #1c1c1f; /* ink-700 */
+  --border-strong: #26262b; /* ink-600 */
+  --text:          #e6e6e8; /* ink-100 */
+  --text-soft:     #b6b6bc; /* ink-200 */
+  --text-muted:    #8a8a92; /* ink-300 */
+  --text-dim:      #5a5a62; /* ink-400 */
+
+  /* Emerald is the brand's money / positive signal — "+$300", "PAID",
+     payouts, deltas. Used everywhere the site uses emerald. */
+  --accent:        #34d399;
+  --accent-dim:    #1f8f6a;
+  /* Competitor lowball figures render muted-red so the comparison reads
+     instantly. Never used for our own numbers. */
+  --neg:           #d96565;
+  --push:          #8a8a92;
+
+  /* Headlines are Inter, heavy + tight (the site's big white headings).
+     Instrument Serif italic is the *accent* face for emphasis words. */
+  --display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:    'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  /* Renderer sets the viewport to 1080x1080 or 1080x1920. We size the
+     body to match so the screenshot is exactly the post dimensions. */
+  width:  100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Ambient top glow — mirrors the site's radial white wash at the top of
+   the page. Faint; gives the dark canvas dimension without a hard edge. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 1100px 640px at 50% -8%, rgba(255,255,255,0.06), transparent 60%);
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* Soft vignette only — no SVG film-grain overlay. Grain looks intentional
+   on screen but Instagram's CDN re-encodes to JPEG and turns the fine
+   noise into visible compression artifacts in dark areas. A clean radial
+   vignette gives the same dimensional feel with nothing for JPEG to mangle. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, transparent 0%, transparent 56%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ============================================================
+   STAGE — the absolute container every template paints into.
+   Sized to fill the body exactly. Templates compose inside a
+   .stage so the screenshot captures a known viewport.
+   ============================================================ */
+.stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 96px;
+  position: relative;
+  isolation: isolate; /* keep absolute children (numeral watermark) scoped */
+}
+body[data-size="story"] .stage {
+  padding: 120px 96px 160px;
+}
+
+/* ============================================================
+   BRAND HEADER — every template carries the wordmark + a small
+   mono tag (e.g. "WE BUY · IPHONE"). Consistent placement makes
+   the grid recognizable.
+   ============================================================ */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: auto;
+}
+/* White circle holding the black return-arrow glyph — identical to the
+   site's nav mark (rounded-full, h-8 w-8, arrow path M4 7h12a4 4 0 0 1 0 8H7l-3 3). */
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.brand-mark svg {
+  width: 23px;
+  height: 23px;
+  display: block;
+}
+body[data-size="story"] .brand-mark { width: 52px; height: 52px; }
+body[data-size="story"] .brand-mark svg { width: 26px; height: 26px; }
+
+.brand-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 27px;
+  letter-spacing: -.02em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+.brand-name .muted { color: var(--text-muted); font-weight: 400; }
+body[data-size="story"] .brand-name { font-size: 30px; }
+
+.tag {
+  font-family: var(--mono);
+  font-size: 17px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tag::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ============================================================
+   FOOTER — bottom-fixed brand strip with the URL + a CTA hook.
+   Same on every template so the grid reads as a unit.
+   ============================================================ */
+.footer {
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.footer .dot {
+  color: var(--accent);
+  opacity: .8;
+}
+.footer .promo {
+  color: var(--accent);
+  font-weight: 700;
+}
+body[data-size="story"] .footer { font-size: 18px; }
+
+/* ============================================================
+   TYPE SCALE — kept large because IG aggressively downscales for
+   thumbnails. Small text becomes unreadable mush.
+   Headlines are Inter heavy + tight; the <em> accent flips to
+   Instrument Serif italic in emerald — the site's signature move.
+   ============================================================ */
+.headline {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -.03em;
+  line-height: 1.0;
+  color: var(--text);
+}
+.headline em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+.subhead {
+  font-family: var(--body);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   KEYWORD ACCENT — applied to currency, payouts, percentages,
+   turnaround times, and brand tokens (PAID / CASH / TODAY) inside
+   Claude-generated copy. The renderer wraps matched tokens in
+   <span class="kw">. Editorial emphasis on the things that matter
+   in a buyback post (the dollars, the speed) without coloring
+   every other word.
+   ============================================================ */
+.kw {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.kw.neg  { color: var(--neg); }
+.kw.push { color: var(--push); }
+
+/* ============================================================
+   EDITORIAL NUMERAL — a massive ghosted display digit behind the
+   headline (e.g. "01", "02" for carousel slides). Magazine-style
+   depth without competing for attention.
+   ============================================================ */
+.num-watermark {
+  position: absolute;
+  bottom: 60px;
+  right: 84px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 480px;
+  line-height: .85;
+  letter-spacing: -.04em;
+  color: var(--accent);
+  opacity: .06;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+body[data-size="story"] .num-watermark {
+  font-size: 620px;
+  bottom: 100px;
+  right: 96px;
+}
+
+/* ============================================================
+   HAIRLINE ACCENT — thin emerald rule used to separate sections
+   inside a slide.
+   ============================================================ */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent) 0, var(--accent) 80px, transparent 80px);
+  margin: 36px 0 0;
+}
+
+.mono {
+  font-family: var(--mono);
+  letter-spacing: .04em;
+}
+
+/* Vertical accent — anchors a key callout (the offer, the payout). */
+.callout {
+  border-left: 3px solid var(--accent);
+  padding: 28px 36px;
+  background: var(--bg-elevated);
+}
+.callout-label {
+  font-family: var(--mono);
+  font-size: 18px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.callout-value {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Signal-coloring helpers. */
+.pos  { color: var(--accent); }
+.neg  { color: var(--neg); }
+.push { color: var(--push); }
+
+/* Soft glow used to draw the eye on key panels — white, matching the
+   site's ambient wash (not a colored bloom). */
+.glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(64px);
+  opacity: .10;
+  background: #ffffff;
+  z-index: 0;
+}
+
+/* ============================================================
+   PHOTO-ATMOS — subtle atmospheric photo backdrop.
+   Opt-in: a template drops <div class="photo-atmos"><img
+   src="{{photo_url}}" alt=""></div> as the first child of its
+   .stage. The photo is desaturated, blurred, dimmed to a faint
+   texture, then a soft radial darken pushes the edges further
+   back. Present but never competing — typography stays the
+   protagonist. Templates using this lift their other .stage
+   children with z-index: 1 (and position: relative on static
+   elements) so they paint above the backdrop.
+   ============================================================ */
+.photo-atmos {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.photo-atmos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) blur(5px) brightness(0.42) contrast(1.05);
+  opacity: 0.30;
+}
+.photo-atmos::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(5,5,5,0.3) 60%,
+    rgba(5,5,5,0.68) 100%
+  );
+}
+/* No photo for this post? Hide the broken-image placeholder so nothing
+   renders and the layout collapses gracefully. */
+.photo-atmos img[src=""],
+.photo-atmos img:not([src]) {
+  display: none;
+}
+
+/* ============================================================
+   INSET-PHOTO — small treated thumbnail used inside compare-card.
+   Grayscale + dimmed so it reads as editorial texture, not a
+   product shot.
+   ============================================================ */
+.inset-photo {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+}
+.inset-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.82) contrast(1.05);
+}
+.inset-photo img[src=""],
+.inset-photo img:not([src]) { display: none; }
+body[data-size="story"] .inset-photo {
+  width: 180px;
+  height: 180px;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Meme</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* MEME POST — the off-duty, shareable one. Editorial restraint
+     instead of Impact-font chaos: an Instrument-Serif italic setup up
+     top, a clean CSS scene in the middle (a dead drawer device that
+     turns into emerald cash via the brand's own return-arrow), then the
+     punchline below. No stock meme image — the visual is drawn so it
+     stays on-brand and never reads as a borrowed reaction screenshot.
+     image_concept becomes a wry mono caption pinned under the scene. */
+
+  .stage { padding: 96px; justify-content: space-between; align-items: center; text-align: center; }
+  .brand { position: absolute; top: 80px; left: 96px; margin-bottom: 0; z-index: 2; }
+  .footer { position: absolute; bottom: 80px; left: 96px; right: 96px; margin-top: 0; }
+
+  .meme-top, .meme-bottom {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 1.12;
+    color: var(--text);
+    max-width: 17ch;
+    z-index: 1;
+  }
+  .meme-top { margin-top: 64px; }
+  .meme-bottom { margin-bottom: 96px; }
+  .meme-top em, .meme-bottom em { color: var(--accent); font-style: italic; }
+  body[data-size="story"] .meme-top, body[data-size="story"] .meme-bottom { font-size: 76px; }
+
+  /* center group: scene + caption, kept together */
+  .meme-center { display: flex; flex-direction: column; align-items: center; z-index: 1; }
+
+  .meme-scene {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  /* the dead drawer phone — muted, lifeless, dark screen */
+  .scene-device {
+    position: relative;
+    width: 150px;
+    height: 300px;
+    border: 3px solid var(--border-strong);
+    border-radius: 30px;
+    background: var(--bg-surface);
+    flex-shrink: 0;
+  }
+  .scene-device::before { /* notch */
+    content: "";
+    position: absolute;
+    top: 15px; left: 50%; transform: translateX(-50%);
+    width: 46px; height: 7px;
+    background: var(--text-dim);
+    border-radius: 4px;
+  }
+  .scene-device::after { /* dim, switched-off screen */
+    content: "";
+    position: absolute;
+    inset: 22px 14px 14px;
+    border-radius: 16px;
+    background: var(--bg-deep);
+  }
+  body[data-size="story"] .scene-device { width: 182px; height: 364px; }
+
+  /* the brand return-arrow as the transform */
+  .scene-arrow { color: var(--accent); flex-shrink: 0; }
+  .scene-arrow svg { width: 96px; height: 96px; display: block; }
+  body[data-size="story"] .scene-arrow svg { width: 116px; height: 116px; }
+
+  /* the cash it becomes — emerald banknote */
+  .scene-cash {
+    width: 244px;
+    height: 150px;
+    border: 3px solid var(--accent);
+    border-radius: 14px;
+    background: rgba(52, 211, 153, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .scene-cash .sym {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 96px;
+    color: var(--accent);
+    letter-spacing: -.04em;
+    line-height: 1;
+  }
+  body[data-size="story"] .scene-cash { width: 296px; height: 182px; }
+  body[data-size="story"] .scene-cash .sym { font-size: 116px; }
+
+  .meme-labels {
+    display: flex;
+    justify-content: center;
+    gap: 156px;
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  body[data-size="story"] .meme-labels { gap: 196px; }
+
+  .meme-concept {
+    margin-top: 60px;
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    max-width: 36ch;
+  }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+    </div>
+
+    <div class="meme-top">{{top_text}}</div>
+
+    <div class="meme-center">
+      <div class="meme-scene">
+        <div class="scene-device"></div>
+        <div class="scene-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </div>
+        <div class="scene-cash"><span class="sym">$</span></div>
+      </div>
+      <div class="meme-labels">
+        <span>drawer, 2 yrs</span>
+        <span>same day</span>
+      </div>
+      <div class="meme-concept">{{image_concept}}</div>
+    </div>
+
+    <div class="meme-bottom">{{bottom_text}}</div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">cash today</span>
+    </div>
+
+  </div>
+</body>
+</html>

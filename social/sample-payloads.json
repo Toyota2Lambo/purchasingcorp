@@ -1,0 +1,244 @@
+{
+  "generated_at": "2026-05-31T00:00:00Z",
+  "model": "sample",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "how it works",
+    "comparison_angle": "cash vs. carrier trade-in"
+  },
+  "source": {
+    "note": "Static fixture mirroring templates-registry.js samples. Every dollar figure is real (from pricing-data.js). Used to render all 12 templates without calling the API.",
+    "pricing_snapshot": "2026-05-31"
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "offer",
+        "caption": "Your iPhone 17 Pro Max is worth real money — up to $1,241 for the unlocked 2TB, and every other tier has its own number. Cash today, no games. Get your offer at purchasingcorp.com.",
+        "hashtags": ["#sellmyiphone", "#iphone17promax", "#cashforphones", "#purchasingcorp"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "WE BUY · IPHONE",
+              "eyebrow": "IPHONE 17 PRO MAX · UNLOCKED",
+              "headline_html": "Up to <em>$1,241</em> for your iPhone 17 Pro Max",
+              "sub_html": "Top tier, unlocked, 2TB. Every storage size has its own number — ask for yours.",
+              "c1_label": "TOP PAYOUT", "c1_value": "$1,241",
+              "c2_label": "TURNAROUND", "c2_value": "Same day",
+              "c3_label": "CONDITION", "c3_value": "New–Good"
+            }
+          }
+        ]
+      },
+      {
+        "role": "board",
+        "caption": "Today's iPhone 17 Pro Max board, unlocked. These are real numbers from our sheet — carrier-locked pays a little less. Lock yours at purchasingcorp.com.",
+        "hashtags": ["#iphonepriceguide", "#sellmyiphone", "#cashforphones"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "PRICE BOARD · IPHONE",
+              "eyebrow": "IPHONE 17 PRO MAX · UNLOCKED / APPLE",
+              "title_html": "iPhone 17 Pro Max, <em>today's</em> cash",
+              "rows": [
+                { "model": "2TB", "price": "$1,241" },
+                { "model": "1TB", "price": "$1,050" },
+                { "model": "512GB", "price": "$975" },
+                { "model": "256GB", "price": "$855" }
+              ],
+              "note_html": "Unlocked / Apple-financed. Carrier-locked pays a little less — ask for your exact tier."
+            }
+          }
+        ]
+      },
+      {
+        "role": "payout",
+        "caption": "Another one paid out same day. MacBook Air 15\" M4, excellent condition — $816 over Zelle. No lowball, no waiting. purchasingcorp.com.",
+        "hashtags": ["#sellmymacbook", "#cashtoday", "#purchasingcorp"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAID OUT",
+              "slip_title": "PAYOUT SLIP",
+              "slip_ref": "NO. 4471",
+              "device": "MacBook Air 15\" M4",
+              "condition": "Excellent · 16GB / 512GB",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$816",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "compare",
+        "caption": "Same iPhone 15 Pro, very different check. We pay $450 in cash — typical carrier trade-ins land around $320 in store credit. Cash beats credit. purchasingcorp.com.",
+        "hashtags": ["#tradein", "#sellmyiphone", "#wepaymore"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "WE PAY MORE",
+              "eyebrow": "IPHONE 15 PRO · 256GB",
+              "title_html": "Same phone. <em>Bigger</em> check.",
+              "bars": [
+                { "label": "PurchasingCorp", "value": "$450", "pct": 100, "kind": "us" },
+                { "label": "Carrier trade-in credit", "value": "~$320", "pct": 71, "kind": "alt" },
+                { "label": "Big-box gift card", "value": "~$300", "pct": 67, "kind": "alt" }
+              ],
+              "note_html": "Our number is cash, today. Competitor figures are typical trade-in estimates — usually store credit, not cash."
+            }
+          }
+        ]
+      },
+      {
+        "role": "index",
+        "caption": "We don't just buy phones. Eight categories, one offer, one payout — phones, laptops, tablets, watches, consoles, AirPods, and bulk lots. purchasingcorp.com/pricing.",
+        "hashtags": ["#whatwebuy", "#cashforelectronics", "#purchasingcorp"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "WHAT WE BUY",
+              "eyebrow": "EIGHT CATEGORIES · CASH FOR ALL",
+              "title_html": "We don't just buy <em>phones</em>",
+              "cells": [
+                { "label": "IPHONE", "num": "$1,241", "foot": "UP TO · 17 PRO MAX", "tone": "accent" },
+                { "label": "MACBOOK AIR", "num": "$976", "foot": "UP TO · 15\" M4", "tone": "accent" },
+                { "label": "MAC MINI", "num": "$675", "foot": "UP TO · M4 PRO", "tone": "accent" },
+                { "label": "APPLE WATCH", "num": "$473", "foot": "UP TO · ULTRA 3", "tone": "accent" },
+                { "label": "CONSOLES", "num": "$425", "foot": "UP TO · PS5 PRO", "tone": "accent" },
+                { "label": "IPAD · MORE", "num": "Cash", "foot": "AIRPODS · BULK LOTS", "tone": "" }
+              ],
+              "note_html": "Phones, laptops, tablets, watches, consoles, AirPods, and bulk lots — one offer, one payout."
+            }
+          }
+        ]
+      },
+      {
+        "role": "lifestyle",
+        "caption": "That phone you stopped using two upgrades ago? Still cash. It takes a few minutes to find out exactly how much. purchasingcorp.com.",
+        "hashtags": ["#declutter", "#sellmyphone", "#cashtoday"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "THE DRAWER FULL OF OLD PHONES",
+              "headline_html": "That old phone is <em>real cash</em>",
+              "sub_html": "The one you stopped using two upgrades ago still has value. A few minutes, a real number, same-day payout.",
+              "photo_url": "",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "meme",
+        "caption": "We've all done it. The good news: that drawer phone is still worth real money, and claiming it takes minutes. purchasingcorp.com.",
+        "hashtags": ["#relatable", "#sellmyphone", "#purchasingcorp"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "meme",
+            "fields": {
+              "top_text": "Letting a $400 phone die in a drawer",
+              "bottom_text": "because the trade-in felt like a whole project",
+              "image_concept": "drawer phone -> same-day cash"
+            }
+          }
+        ]
+      },
+      {
+        "role": "carousel",
+        "caption": "How it works, in three steps. No haggling, no \"mail it and hope\" — a real number up front and cash the same day. Swipe through, then get your offer at purchasingcorp.com.",
+        "hashtags": ["#howitworks", "#sellmyphone", "#cashforelectronics", "#purchasingcorp"],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "STEP 01",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Tell us <em>what you have</em>",
+              "body_html": "Pick your device and condition on the form. Takes a minute, and you get a <strong>real number</strong> back — not a vague \"up to\"."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "STEP 02",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Lock your <em>price</em>",
+              "body_html": "Like the offer? We confirm it and send a prepaid, insured label — or set up a local handoff. <strong>Your price is locked</strong> before anything ships."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "STEP 03",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Get paid <em>same day</em>",
+              "body_html": "We verify on arrival and pay out the <strong>same day</strong> by Zelle, PayPal, or cash. No games, no slow-walking."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "NO. 07",
+          "date_label": "MAY 2026",
+          "section": "PRICING",
+          "headline_html": "Cash <em>today</em>",
+          "deck_html": "Fresh numbers across iPhone, MacBook, iPad, and consoles — and the same same-day payout.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "MACBOOK PRO PAYOUT",
+          "stat_value": "50",
+          "stat_unit": "%",
+          "caption_html": "A current-gen MacBook Pro pays out around <em>half its MSRP</em> — in cash, same day.",
+          "source": "purchasingcorp.com/pricing"
+        }
+      },
+      {
+        "template": "quote",
+        "fields": {
+          "quote_text_html": "More than Apple. <em>More than Best Buy.</em>",
+          "quote_attrib": "The PurchasingCorp promise",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "photo-cover",
+        "fields": {
+          "tag": "SAME-DAY PAYOUT",
+          "eyebrow": "CASH FOR YOUR DEVICES",
+          "headline_html": "Your old tech is <em>money</em>",
+          "deck_html": "Phones, laptops, consoles — turned into cash the same day you send them in.",
+          "photo_url": "",
+          "photo_credit": "PHOTO · UNSPLASH"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Cover Card</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* COVER CARD — magazine-cover treatment.
+     A masthead strip (brand left, issue right), a thin rule, a mono
+     meta line (date | section), then a single page-dominating Inter
+     headline anchored low with an Instrument-Serif italic accent. A
+     short italic deck under a hairline contextualizes. The cinematic,
+     low-information slide for announcing something (price bumps, a new
+     category we now buy, a seasonal push). Optional photo backdrop. */
+
+  .stage { padding: 96px; justify-content: flex-start; }
+  .brand { margin-bottom: 0; }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .issue {
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .cover-meta {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .cover-meta .section { color: var(--text-dim); }
+
+  .cover-headline {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 196px;
+    line-height: .9;
+    letter-spacing: -.05em;
+    color: var(--text);
+    margin: auto 0 0;
+    max-width: 12ch;
+  }
+  .cover-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  body[data-size="story"] .cover-headline { font-size: 252px; max-width: 11ch; }
+
+  .cover-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.26;
+    color: var(--text-muted);
+    margin-top: 44px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    max-width: 32ch;
+    margin-bottom: 36px;
+  }
+  .cover-sub em { color: var(--accent); font-style: italic; }
+  body[data-size="story"] .cover-sub { font-size: 44px; }
+
+  .cover-top, .cover-meta, .cover-headline, .cover-sub, .footer {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="photo-atmos"><img src="{{photo_url}}" alt=""></div>
+
+    <div class="cover-top">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+      </div>
+      <div class="issue">{{issue}}</div>
+    </div>
+
+    <div class="cover-meta">
+      <span class="date">{{date_label}}</span>
+      <span class="section">{{section}}</span>
+    </div>
+
+    <div class="cover-headline">{{headline_html}}</div>
+
+    <div class="cover-sub">{{deck_html}}</div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">cash today, no games</span>
+    </div>
+
+  </div>
+</body>
+</html>

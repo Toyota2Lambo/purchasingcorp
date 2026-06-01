@@ -1,0 +1,105 @@
+name: social · backfill
+
+# Manual: generate (and render) a RANGE of days in one go — seed the queue
+# ahead of time, fill a missed day, or re-render after a template change.
+# Days that already exist are skipped unless "force" is true.
+#
+# Publishing is deliberately NOT part of this workflow: backfilled days are
+# committed + deployed here, then published via "social · publish" (run it
+# per date with the `date` input).
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: 'First day YYYY-MM-DD (use together with end)'
+        required: false
+      end:
+        description: 'Last day YYYY-MM-DD inclusive (use together with start)'
+        required: false
+      days:
+        description: 'N days ending at "until" (alternative to start/end)'
+        required: false
+      until:
+        description: 'Last day for "days" mode (default: today, UTC)'
+        required: false
+      posts:
+        description: 'Feed posts per day'
+        required: false
+        default: '4'
+      stories:
+        description: 'Stories per day'
+        required: false
+        default: '2'
+      force:
+        description: 'Overwrite days that already exist'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        working-directory: social
+        run: |
+          npm install
+          pip install anthropic
+
+      - name: Dump pricing from the live site data
+        run: node social/dump_pricing.js
+
+      - name: Backfill content packages
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+        run: |
+          ARGS="--posts ${{ github.event.inputs.posts || '4' }} --stories ${{ github.event.inputs.stories || '2' }}"
+          if [ -n "${{ github.event.inputs.start }}" ]; then ARGS="$ARGS --start ${{ github.event.inputs.start }}"; fi
+          if [ -n "${{ github.event.inputs.end }}" ]; then ARGS="$ARGS --end ${{ github.event.inputs.end }}"; fi
+          if [ -n "${{ github.event.inputs.days }}" ]; then ARGS="$ARGS --days ${{ github.event.inputs.days }}"; fi
+          if [ -n "${{ github.event.inputs.until }}" ]; then ARGS="$ARGS --until ${{ github.event.inputs.until }}"; fi
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          python social/backfill_generator.py $ARGS
+
+      - name: Render any new or changed days
+        run: |
+          shopt -s nullglob
+          for c in social/20*/content.json; do
+            d=$(dirname "$c")
+            # render if there's no manifest yet, or content.json is newer than it
+            if [ ! -f "$d/manifest.json" ] || [ "$c" -nt "$d/manifest.json" ]; then
+              echo "rendering $c"
+              node social/renderer.js --content "$c"
+            fi
+          done
+
+      - name: Commit & push
+        run: |
+          git config user.name "Toyota2Lambo"
+          git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
+          git add social/
+          if git diff --staged --quiet; then
+            echo "nothing to commit"
+          else
+            git commit -m "social: backfill content"
+            git push
+          fi

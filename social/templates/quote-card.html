@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Quote Card</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* QUOTE CARD — editorial pull-quote. Pure typography, centered,
+     an oversized Instrument-Serif italic body. The brand's tagline
+     voice ("More than Apple. More than Best Buy.") rendered as a
+     literary line on the grid. Optional photo backdrop. */
+
+  .stage { justify-content: center; align-items: center; text-align: center; padding: 130px 110px; }
+  .brand { margin-bottom: 0; position: absolute; top: 80px; left: 110px; z-index: 2; }
+  .footer { position: absolute; bottom: 80px; left: 110px; right: 110px; margin-top: 0; z-index: 2; }
+
+  .quote-wrap { position: relative; max-width: 760px; margin: 0 auto; z-index: 1; }
+
+  .quote-open {
+    font-family: var(--serif);
+    font-size: 280px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 0.5;
+    margin-bottom: 24px;
+    display: block;
+    opacity: .9;
+  }
+  body[data-size="story"] .quote-open { font-size: 360px; }
+
+  .quote-text {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 88px;
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    color: var(--text);
+  }
+  .quote-text em { font-style: italic; color: var(--accent); }
+  body[data-size="story"] .quote-text { font-size: 100px; }
+
+  .quote-attrib {
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 56px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .quote-attrib::before { content: ""; width: 32px; height: 1px; background: var(--accent); }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="photo-atmos"><img src="{{photo_url}}" alt=""></div>
+
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+    </div>
+
+    <div class="quote-wrap">
+      <span class="quote-open">&ldquo;</span>
+      <div class="quote-text">{{quote_text_html}}</div>
+      <div class="quote-attrib">{{quote_attrib}}</div>
+    </div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">cash today</span>
+    </div>
+
+  </div>
+</body>
+</html>

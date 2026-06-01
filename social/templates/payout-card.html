@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Payout Receipt</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* PAYOUT CARD — the proof post, styled as a payout receipt.
+     Perforated top edge, dashed rules, mono spec lines, and a big
+     emerald amount stamped PAID. Anonymized: device + condition +
+     method + amount only, never a name. The receipt aesthetic makes
+     "we actually pay" tangible without a testimonial face. */
+
+  .stage { padding: 84px; justify-content: center; align-items: center; }
+  .brand { position: absolute; top: 72px; left: 84px; margin-bottom: 0; z-index: 2; }
+  .tag   { position: absolute; top: 78px; right: 84px; z-index: 2; }
+
+  .receipt {
+    width: 100%;
+    max-width: 760px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 64px 64px 56px;
+    position: relative;
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.8);
+  }
+  /* perforated top edge */
+  .receipt::before {
+    content: "";
+    position: absolute;
+    top: -10px; left: 0; right: 0;
+    height: 20px;
+    background:
+      radial-gradient(circle 11px at 11px 50%, transparent 10px, var(--bg-elevated) 11px) repeat-x;
+    background-size: 36px 20px;
+    filter: drop-shadow(0 -1px 0 var(--border-strong));
+  }
+
+  .r-head {
+    font-family: var(--mono);
+    font-size: 16px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 28px;
+    border-bottom: 1px dashed var(--border-strong);
+  }
+  .r-head .ref { color: var(--text-dim); }
+
+  .r-device {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 58px;
+    letter-spacing: -.03em;
+    line-height: 1.05;
+    color: var(--text);
+    margin: 40px 0 10px;
+  }
+  .r-condition {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .r-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 22px;
+    letter-spacing: .04em;
+    color: var(--text-soft);
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .r-line .k { color: var(--text-dim); text-transform: uppercase; letter-spacing: .14em; font-size: 16px; }
+
+  .r-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .r-total-label {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .r-amount {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 104px;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--accent);
+  }
+  body[data-size="story"] .r-amount { font-size: 120px; }
+
+  .r-stamp {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 28px;
+    transform: rotate(-2deg);
+  }
+
+  .footer { position: absolute; bottom: 64px; left: 84px; right: 84px; margin-top: 0; }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+    </div>
+    <div class="tag">{{tag}}</div>
+
+    <div class="receipt">
+      <div class="r-head">
+        <span>{{slip_title}}</span>
+        <span class="ref">{{slip_ref}}</span>
+      </div>
+
+      <div class="r-device">{{device}}</div>
+      <div class="r-condition">{{condition}}</div>
+
+      <div class="r-line"><span class="k">Method</span><span>{{method}}</span></div>
+      <div class="r-line"><span class="k">Turnaround</span><span>{{turnaround}}</span></div>
+
+      <div class="r-total">
+        <span class="r-total-label">Paid out</span>
+        <span class="r-amount">{{amount}}</span>
+      </div>
+
+      <div class="r-stamp">{{status}}</div>
+    </div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">cash today, no games</span>
+    </div>
+
+  </div>
+</body>
+</html>

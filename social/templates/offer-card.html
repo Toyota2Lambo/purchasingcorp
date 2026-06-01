@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PurchasingCorp — Offer Card</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  /* OFFER CARD — the workhorse "we buy X" post.
+     Brand strip -> category/model eyebrow (mono) -> a giant Inter
+     headline stating the cash number with the price wrapped in
+     Instrument Serif italic emerald -> a three-cell data row
+     (top payout / turnaround / what we take). Reads like a clean
+     spec sheet: the dollar figure is the thumbstop, the grid
+     rewards anyone who opens the post. */
+
+  .stage { padding: 96px; justify-content: flex-start; }
+  .brand { margin-bottom: 0; }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .offer-eyebrow {
+    font-family: var(--mono);
+    font-size: 18px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 96px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .offer-eyebrow::before {
+    content: "";
+    width: 44px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .offer-headline {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 150px;
+    line-height: .92;
+    letter-spacing: -.04em;
+    color: var(--text);
+    margin: 36px 0 0;
+    max-width: 13ch;
+  }
+  .offer-headline em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--accent);
+  }
+  body[data-size="story"] .offer-headline { font-size: 178px; }
+
+  .offer-sub {
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--text-muted);
+    margin-top: 36px;
+    max-width: 24ch;
+  }
+  body[data-size="story"] .offer-sub { font-size: 38px; }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+  .offer-cell {
+    padding: 32px 28px 0 0;
+    border-right: 1px solid var(--border);
+  }
+  .offer-cell + .offer-cell { padding-left: 28px; }
+  .offer-cell:last-child { border-right: 0; }
+
+  .cell-label {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+  .cell-value {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1.04;
+    color: var(--text);
+    letter-spacing: -.02em;
+  }
+  .cell-value.accent { color: var(--accent); }
+  body[data-size="story"] .cell-value { font-size: 52px; }
+</style>
+</head>
+<body data-size="{{size}}">
+  <div class="stage">
+
+    <div class="header-row">
+      <div class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="brand-name">PURCHASING<span class="muted">CORP</span></span>
+      </div>
+      <div class="tag">{{tag}}</div>
+    </div>
+
+    <div class="offer-eyebrow">{{eyebrow}}</div>
+    <div class="offer-headline">{{headline_html}}</div>
+    <div class="offer-sub">{{sub_html}}</div>
+
+    <div class="offer-grid">
+      <div class="offer-cell">
+        <div class="cell-label">{{c1_label}}</div>
+        <div class="cell-value accent">{{c1_value}}</div>
+      </div>
+      <div class="offer-cell">
+        <div class="cell-label">{{c2_label}}</div>
+        <div class="cell-value">{{c2_value}}</div>
+      </div>
+      <div class="offer-cell">
+        <div class="cell-label">{{c3_label}}</div>
+        <div class="cell-value">{{c3_value}}</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      purchasingcorp.com <span class="dot">·</span>
+      <span class="promo">same-day payout</span>
+    </div>
+
+  </div>
+</body>
+</html>
