@@ -1,0 +1,91 @@
+{
+  "rendered_at": "2026-06-02T14:10:13.595Z",
+  "content_file": "social/2026-06-02/content.json",
+  "base_path": "social/2026-06-02",
+  "scale": 2,
+  "posts": [
+    {
+      "index": 1,
+      "role": "Post 1: Featured MacBook Air offer",
+      "caption": "MacBook Air collecting dust? Turn it into cash today. We pay up to $976 for a 15-inch M4 — same-day payout, no games. Get your real number at purchasingcorp.com/form.",
+      "hashtags": [
+        "#sellmymacbook",
+        "#macbookair",
+        "#cashformac",
+        "#applebuyback",
+        "#sellelectronics"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-01-slide-01.png"
+      ]
+    },
+    {
+      "index": 2,
+      "role": "Post 2: MacBook Air price board",
+      "caption": "Here's what we're paying for MacBook Air models right now. These are the real numbers — no vague ranges, no games. Ship free or drop off locally, get paid the same day. Start at purchasingcorp.com/form.",
+      "hashtags": [
+        "#macbookair",
+        "#sellmymac",
+        "#cashforlaptops",
+        "#applebuyback",
+        "#macbookprices"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-02-slide-01.png"
+      ]
+    },
+    {
+      "index": 3,
+      "role": "Post 3: Educational carousel on iPhone prep",
+      "caption": "Selling your iPhone? Do these four things first and you'll get paid faster with zero headaches. Takes ten minutes, saves hours of back-and-forth. Full walkthrough at purchasingcorp.com.",
+      "hashtags": [
+        "#sellmyiphone",
+        "#iphoneprep",
+        "#techtips",
+        "#cashforiphone",
+        "#applebuyback"
+      ],
+      "size": "feed",
+      "is_carousel": true,
+      "files": [
+        "post-03-slide-01.png",
+        "post-03-slide-02.png",
+        "post-03-slide-03.png",
+        "post-03-slide-04.png"
+      ]
+    },
+    {
+      "index": 4,
+      "role": "Post 4: Comparison post — our cash vs. big-box gift card",
+      "caption": "Big-box stores offer gift cards. We offer cash that spends anywhere. Here's the difference on a recent iPhone 17 Pro Max 512GB. Get your real cash offer at purchasingcorp.com/form.",
+      "hashtags": [
+        "#cashforiphone",
+        "#sellmyiphone",
+        "#applebuyback",
+        "#nocredithere",
+        "#realmoney"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-04-slide-01.png"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "index": 1,
+      "template": "cover",
+      "file": "story-01.png"
+    },
+    {
+      "index": 2,
+      "template": "stat",
+      "file": "story-02.png"
+    }
+  ]
+}

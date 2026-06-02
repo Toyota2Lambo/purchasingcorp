@@ -1,0 +1,214 @@
+{
+  "generated_at": "2026-06-02T14:10:12.901896+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "how to wipe and prep your iPhone before selling",
+    "comparison_angle": "our cash offer vs. a big-box store gift card",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-02T14:09:41.702Z",
+    "requested": {
+      "posts": 4,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Post 1: Featured MacBook Air offer",
+        "caption": "MacBook Air collecting dust? Turn it into cash today. We pay up to $976 for a 15-inch M4 — same-day payout, no games. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformac",
+          "#applebuyback",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CASH OFFER",
+              "headline_html": "Up to <em>$976</em> for your MacBook Air",
+              "sub_html": "Real cash, same-day payout. M4 or older — we buy them all.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Good to new"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 2: MacBook Air price board",
+        "caption": "Here's what we're paying for MacBook Air models right now. These are the real numbers — no vague ranges, no games. Ship free or drop off locally, get paid the same day. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macbookair",
+          "#sellmymac",
+          "#cashforlaptops",
+          "#applebuyback",
+          "#macbookprices"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CURRENT PRICES",
+              "title_html": "What we're paying <em>this week</em>",
+              "rows": [
+                {
+                  "model": "15\" M4 · 24GB · 512GB SSD",
+                  "price": "$976",
+                  "note": ""
+                },
+                {
+                  "model": "15\" M4 · 16GB · 512GB SSD",
+                  "price": "$816",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 · 24GB · 512GB SSD",
+                  "price": "$840",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 · 16GB · 512GB SSD",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 · 16GB · 256GB SSD",
+                  "price": "$560",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for good to excellent condition. Quote in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 3: Educational carousel on iPhone prep",
+        "caption": "Selling your iPhone? Do these four things first and you'll get paid faster with zero headaches. Takes ten minutes, saves hours of back-and-forth. Full walkthrough at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphoneprep",
+          "#techtips",
+          "#cashforiphone",
+          "#applebuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "BACK UP",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Back up your data <em>first</em>",
+              "body_html": "iCloud or Mac — your choice. Just make sure photos, contacts, and messages are safe <strong>before you wipe anything</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "SIGN OUT",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Sign out of <em>iCloud and Apple ID</em>",
+              "body_html": "Settings → [Your Name] → Sign Out. This removes Activation Lock so the phone isn't bricked when it arrives. <strong>Critical step.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "ERASE",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Erase <em>all content and settings</em>",
+              "body_html": "Settings → General → Transfer or Reset iPhone → Erase All Content. <strong>Factory-fresh in five minutes.</strong> No personal data left behind."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "SHIP",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Pack it up and <em>ship it free</em>",
+              "body_html": "We email a prepaid insured label. Drop it at UPS or USPS, and <strong>get paid the same day we receive it</strong>. Done."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 4: Comparison post — our cash vs. big-box gift card",
+        "caption": "Big-box stores offer gift cards. We offer cash that spends anywhere. Here's the difference on a recent iPhone 17 Pro Max 512GB. Get your real cash offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashforiphone",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#nocredithere",
+          "#realmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "CASH VS. GIFT CARD",
+              "title_html": "We pay <em>real money</em>, not store credit",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$725",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Big-box store (gift card)",
+                  "value": "~$550",
+                  "pct": 76,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Example: iPhone 17 Pro 512GB, good condition. Rival figure is a typical trade-in estimate."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "TUESDAY 02",
+          "section": "MACBOOK AIR",
+          "headline_html": "Up to <em>$976</em> cash today",
+          "deck_html": "M4 or older. Same-day payout. No store credit, no games.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "MACBOOK AIR",
+          "stat_value": "$976",
+          "stat_unit": "",
+          "caption_html": "Top payout for a 15-inch M4 with 24GB RAM. <em>Cash, not credit.</em> Get your quote in 60 seconds.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
