@@ -53,7 +53,7 @@
 #   THREADS_TEXT_LIMIT       max post length, default 500
 #   THREADS_MAX_TAGS         hashtags to append, default 1 (Threads-native)
 #   THREADS_STATE_MENTION=0  don't append a state-naming location line
-#   THREADS_STATES           comma-sep pool to rotate (default: 24 populous)
+#   THREADS_STATES           comma-sep pool to rotate (default: all 50 states)
 #   THREADS_ALT_TEXT=0       skip image alt text (accessibility; default on)
 #   DISCORD_WEBHOOK_URL      optional run summary
 #
@@ -262,13 +262,21 @@ def build_text(caption: str, hashtags) -> str:
     return text
 
 
-# Populous-first pool: naming a high-activity state casts a wider net. Every
-# line below keeps the nationwide truth, so this never claims state-only service.
+# All 50 states, population-ordered (bigger markets surface first each cycle).
+# The rotation below uses a different one for every post and won't repeat a
+# state for ~13 days, so naming "a different state every time" holds in
+# practice. Every phrasing keeps the nationwide truth, so this never claims
+# state-only service.
 _DEFAULT_STATES = [
     "California", "Texas", "Florida", "New York", "Pennsylvania", "Illinois",
     "Ohio", "Georgia", "North Carolina", "Michigan", "New Jersey", "Virginia",
     "Washington", "Arizona", "Tennessee", "Massachusetts", "Indiana", "Missouri",
-    "Maryland", "Colorado", "Minnesota", "Wisconsin", "Nevada", "Oregon",
+    "Maryland", "Wisconsin", "Colorado", "Minnesota", "South Carolina", "Alabama",
+    "Louisiana", "Kentucky", "Oregon", "Oklahoma", "Connecticut", "Utah",
+    "Iowa", "Nevada", "Arkansas", "Mississippi", "Kansas", "New Mexico",
+    "Nebraska", "Idaho", "West Virginia", "Hawaii", "New Hampshire", "Maine",
+    "Montana", "Rhode Island", "Delaware", "South Dakota", "North Dakota",
+    "Alaska", "Vermont", "Wyoming",
 ]
 
 # Each phrasing NAMES a state ({s}) and keeps the "all states / free shipping"
