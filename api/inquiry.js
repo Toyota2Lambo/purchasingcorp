@@ -56,6 +56,15 @@ export default async function handler(req) {
   const path = str(form.get('path')).slice(0, 256) || null;
   const referrer = str(form.get('referrer')).slice(0, 512) || null;
 
+  // Best-effort email for account-linking: an explicit `email` field if sent,
+  // otherwise the contact value when it looks like an email. Used by /api/claim
+  // to attach this quote to a matching, email-confirmed account later.
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const explicitEmail = str(form.get('email')).toLowerCase();
+  const email =
+    (EMAIL_RE.test(explicitEmail) && explicitEmail) ||
+    (EMAIL_RE.test(v.contact) ? v.contact.toLowerCase() : null);
+
   // Collect photos within limits.
   const photos = form.getAll('photos').filter((f) => f && typeof f === 'object' && f.size > 0);
   const accepted = [];
@@ -73,9 +82,13 @@ export default async function handler(req) {
   let stored = false;
   let photoUrls = [];
   let storeError = null;
+  let inquiryId = null;
+  let claimToken = null;
 
   if (supaUrl && supaKey) {
     const id = uuid();
+    inquiryId = id;
+    claimToken = uuid(); // secret handed back to the browser to claim later
 
     // Upload photos to storage first (best-effort — a failed upload just
     // means that URL is omitted; the inquiry is still saved).
@@ -89,6 +102,8 @@ export default async function handler(req) {
       handoff: v.handoff || null,
       contact: v.contact,
       details: v.details || null,
+      email,
+      claim_token: claimToken,
       photo_urls: photoUrls,
       status: 'new',
       path,
@@ -132,6 +147,9 @@ export default async function handler(req) {
     stored,
     notified,
     photos: photoUrls.length,
+    // Returned so the browser can link this quote to an account it creates
+    // afterward (stashed in localStorage, sent to /api/claim on sign-in).
+    ...(stored ? { id: inquiryId, claim_token: claimToken } : {}),
     ...(supaUrl && supaKey ? {} : { reason: 'supabase_not_configured' }),
   });
 }

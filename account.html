@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('pc.theme');
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch(e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  })();
+  window.toggleTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('pc.theme', next); } catch(e) {}
+  };
+</script>
+<title>Your Account · PurchasingCorp</title>
+<meta name="description" content="Sign in to track your quotes and download prepaid shipping labels for verified items." />
+<meta name="theme-color" content="#050505" />
+<meta name="robots" content="noindex" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
+          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
+          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
+        },
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+  <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
+</div>
+
+<!-- Nav -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/60 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+    </a>
+    <ul class="hidden md:flex items-center gap-7 text-[13.5px] text-ink-200">
+      <li><a href="/#we-buy" class="hover:text-white transition">We Buy</a></li>
+      <li><a href="/process" class="hover:text-white transition">Process</a></li>
+      <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
+      <li><a href="/form" class="hover:text-white transition">Get Quote</a></li>
+      <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+      <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
+      <li><a href="/account" class="text-white">Account</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme"
+        class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-ink-200 hover:text-white transition">
+        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/form" class="group inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-black hover:bg-ink-100 transition">
+        Get a Quote
+        <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="relative pt-16 pb-24 md:pt-20">
+  <div class="mx-auto max-w-3xl px-5">
+
+    <!-- Not configured -->
+    <div id="configError" class="hidden text-center py-20">
+      <h1 class="text-3xl font-semibold tracking-[-0.03em]">Accounts aren't set up yet</h1>
+      <p class="mt-3 text-ink-300 text-[14px] mx-auto max-w-md">Sign-in isn't configured on this site right now. Please check back soon, or <a href="/form" class="underline underline-offset-4 hover:text-white">request a quote</a> in the meantime — we'll still get right back to you.</p>
+    </div>
+
+    <!-- Auth (signed out) -->
+    <section id="authView" class="hidden">
+      <div class="text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+          Your account
+        </span>
+        <h1 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[0.98]">
+          Your <span class="text-ink-300 italic font-serif font-normal">dashboard.</span>
+        </h1>
+        <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Sign in to track your quotes and grab a prepaid shipping label the moment an item is verified.</p>
+      </div>
+
+      <div class="mt-9 mx-auto max-w-md relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-6 md:p-8">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+        <div class="flex gap-1.5 rounded-full border border-white/10 bg-white/[0.03] p-1">
+          <button id="tabSignin" type="button" class="flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition">Sign in</button>
+          <button id="tabSignup" type="button" class="flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition">Create account</button>
+        </div>
+
+        <h2 id="authTitle" class="mt-6 text-center text-xl font-semibold tracking-[-0.02em]">Welcome back</h2>
+
+        <form id="authForm" class="mt-5 space-y-3" novalidate>
+          <div>
+            <label for="authEmail" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Email</label>
+            <input id="authEmail" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+          <div>
+            <label for="authPassword" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Password</label>
+            <input id="authPassword" name="password" type="password" required autocomplete="current-password" placeholder="••••••••"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+          <button id="authSubmit" type="submit" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+            <span id="authSubmitLabel">Sign in</span>
+            <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+
+        <p id="authStatus" class="mt-3 text-center text-[12.5px] hidden"></p>
+
+        <p class="mt-4 text-center text-[11.5px] text-ink-500">
+          New accounts get a confirmation email — click the link, then sign in. By continuing you agree to our
+          <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Dashboard (signed in) -->
+    <section id="dashView" class="hidden">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-semibold tracking-[-0.03em]">Your quotes</h1>
+          <p class="mt-1.5 text-[13px] text-ink-400">Signed in as <span id="userEmail" class="text-ink-200"></span></p>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="/form" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-medium text-black hover:bg-ink-100 transition">New quote</a>
+          <button id="signOut" type="button" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] hover:bg-white/[0.08] transition">Sign out</button>
+        </div>
+      </div>
+
+      <div id="claimNote" class="hidden mt-5 rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] px-4 py-3 text-[12.5px] text-emerald-200"></div>
+
+      <div id="quotesEmpty" class="hidden mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-10 text-center">
+        <p class="text-[14px] text-ink-200 font-medium">No quotes linked to this account yet.</p>
+        <p class="mt-1.5 text-[12.5px] text-ink-500 mx-auto max-w-sm">Submit a quote from this browser, or use the same email you sign in with, and it'll show up here automatically.</p>
+        <a href="/form" class="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition">Get a quote</a>
+      </div>
+
+      <div id="quotesLoading" class="hidden mt-8 text-center text-[13px] text-ink-400">Loading your quotes…</div>
+
+      <div id="quotes" class="mt-8 space-y-4"></div>
+    </section>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-10 grid md:grid-cols-12 gap-8 items-center">
+    <div class="md:col-span-5">
+      <div class="flex items-center gap-2.5">
+        <span class="grid h-7 w-7 place-items-center rounded-full bg-white text-black font-bold">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </span>
+        <span class="text-[14px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      </div>
+      <p class="mt-3 text-[13px] text-ink-400 max-w-sm">Cash for phones, laptops, consoles, and GPUs, paid same-day, every day.</p>
+    </div>
+    <div class="md:col-span-4 grid grid-cols-2 gap-4 text-[13px]">
+      <ul class="space-y-2">
+        <li><a href="/#we-buy" class="text-ink-300 hover:text-white">What we buy</a></li>
+        <li><a href="/process" class="text-ink-300 hover:text-white">Process</a></li>
+        <li><a href="/pricing" class="text-ink-300 hover:text-white">Full pricing</a></li>
+        <li><a href="/faq" class="text-ink-300 hover:text-white">FAQ</a></li>
+      </ul>
+      <ul class="space-y-2">
+        <li><a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="text-ink-300 hover:text-white">Discord</a></li>
+        <li><a href="#" class="text-ink-300 hover:text-white">Telegram</a></li>
+        <li><a href="/form" class="text-ink-300 hover:text-white">Get a quote</a></li>
+        <li><a href="mailto:hello@purchasingcorp.com" class="text-ink-300 hover:text-white">Email</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-3 md:text-right text-[12px] text-ink-500 space-y-1">
+      <div>© <span id="year"></span> PurchasingCorp · All rights reserved</div>
+      <div>
+        <a href="/privacy" class="hover:text-ink-300">Privacy Policy</a>
+        <span class="mx-1">·</span>
+        <a href="/privacy#terms" class="hover:text-ink-300">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function () {
+    var PENDING_KEY = 'pc.pendingClaims';
+    var sb = null;
+    var mode = 'signin';        // 'signin' | 'signup'
+    var claimDone = false;      // claim runs at most once per signed-in load
+    var rendering = false, renderAgain = false;
+
+    function byId(id) { return document.getElementById(id); }
+    function show(el) { if (el) el.classList.remove('hidden'); }
+    function hide(el) { if (el) el.classList.add('hidden'); }
+
+    function esc(s) {
+      return (s == null ? '' : String(s)).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function money(n) {
+      if (n == null || n === '' || isNaN(Number(n))) return null;
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+    function fdate(s) {
+      if (!s) return '';
+      var d = new Date(s);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    var STATUS = {
+      new:         { label: 'Submitted',   cls: 'bg-white/10 text-ink-100' },
+      reviewing:   { label: 'In review',   cls: 'bg-amber-400/15 text-amber-200' },
+      quoted:      { label: 'Offer sent',  cls: 'bg-sky-400/15 text-sky-200' },
+      accepted:    { label: 'Accepted',    cls: 'bg-sky-400/15 text-sky-200' },
+      verified:    { label: 'Verified',    cls: 'bg-emerald-400/15 text-emerald-200' },
+      label_ready: { label: 'Label ready', cls: 'bg-emerald-400/15 text-emerald-200' },
+      shipped:     { label: 'Shipped',     cls: 'bg-emerald-400/15 text-emerald-200' },
+      received:    { label: 'Received',    cls: 'bg-emerald-400/15 text-emerald-200' },
+      paid:        { label: 'Paid',        cls: 'bg-emerald-400/15 text-emerald-200' },
+      completed:   { label: 'Completed',   cls: 'bg-emerald-400/15 text-emerald-200' },
+      declined:    { label: 'Closed',      cls: 'bg-white/10 text-ink-300' }
+    };
+    // Statuses where a shipping label is relevant (the item is "fully verified").
+    var LABEL_STATUSES = ['verified', 'label_ready', 'shipped', 'received', 'paid', 'completed'];
+
+    function statusMeta(s) {
+      if (s && STATUS[s]) return STATUS[s];
+      var label = s ? (s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g, ' ')) : 'Submitted';
+      return { label: label, cls: 'bg-white/10 text-ink-100' };
+    }
+
+    function getPending() {
+      try {
+        var a = JSON.parse(localStorage.getItem(PENDING_KEY) || '[]');
+        return Array.isArray(a) ? a : [];
+      } catch (e) { return []; }
+    }
+    function clearPending() {
+      try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
+    }
+
+    boot();
+
+    async function boot() {
+      var cfg = null;
+      try {
+        var r = await fetch('/api/config');
+        cfg = await r.json();
+      } catch (e) { cfg = null; }
+
+      if (!cfg || !cfg.configured || !window.supabase) {
+        show(byId('configError'));
+        return;
+      }
+
+      sb = window.supabase.createClient(cfg.url, cfg.anonKey, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      });
+
+      wireAuthUI();
+      byId('signOut').addEventListener('click', function () {
+        if (sb) sb.auth.signOut();
+      });
+
+      sb.auth.onAuthStateChange(function () { render(); });
+      render();
+    }
+
+    function setMode(m) {
+      mode = m;
+      var active = 'flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition bg-white text-black';
+      var idle = 'flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition text-ink-300 hover:text-white';
+      byId('tabSignin').className = (m === 'signin') ? active : idle;
+      byId('tabSignup').className = (m === 'signup') ? active : idle;
+      byId('authTitle').textContent = (m === 'signin') ? 'Welcome back' : 'Create your account';
+      byId('authSubmitLabel').textContent = (m === 'signin') ? 'Sign in' : 'Create account';
+      byId('authPassword').setAttribute('autocomplete', m === 'signin' ? 'current-password' : 'new-password');
+      authStatus('', '');
+    }
+
+    function wireAuthUI() {
+      byId('tabSignin').addEventListener('click', function () { setMode('signin'); });
+      byId('tabSignup').addEventListener('click', function () { setMode('signup'); });
+      setMode('signin');
+
+      byId('authForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var email = (byId('authEmail').value || '').trim().toLowerCase();
+        var password = byId('authPassword').value || '';
+        var btn = byId('authSubmit');
+
+        if (!email || !password) { authStatus('Enter your email and a password.', 'err'); return; }
+        if (mode === 'signup' && password.length < 8) { authStatus('Use at least 8 characters for your password.', 'err'); return; }
+
+        btn.disabled = true;
+        authStatus(mode === 'signin' ? 'Signing in…' : 'Creating your account…', '');
+
+        try {
+          if (mode === 'signup') {
+            var res = await sb.auth.signUp({
+              email: email,
+              password: password,
+              options: { emailRedirectTo: location.origin + '/account' }
+            });
+            if (res.error) throw res.error;
+            if (!res.data.session) {
+              authStatus('Almost there — check your email to confirm your account, then come back and sign in.', 'ok');
+              btn.disabled = false;
+              return;
+            }
+            // Session present (email confirmation disabled) → onAuthStateChange renders.
+          } else {
+            var res2 = await sb.auth.signInWithPassword({ email: email, password: password });
+            if (res2.error) throw res2.error;
+          }
+        } catch (err) {
+          authStatus((err && err.message) || 'Something went wrong. Try again.', 'err');
+          btn.disabled = false;
+        }
+      });
+    }
+
+    function authStatus(msg, kind) {
+      var el = byId('authStatus');
+      if (!el) return;
+      el.textContent = msg || '';
+      var base = 'mt-3 text-center text-[12.5px] ';
+      var tone = kind === 'err' ? 'text-red-300' : kind === 'ok' ? 'text-emerald-300' : 'text-ink-300';
+      el.className = base + tone + (msg ? '' : ' hidden');
+    }
+
+    function render() {
+      if (rendering) { renderAgain = true; return; }
+      rendering = true;
+      doRender().catch(function () {}).then(function () {
+        rendering = false;
+        if (renderAgain) { renderAgain = false; render(); }
+      });
+    }
+
+    async function doRender() {
+      var session = null;
+      try { var g = await sb.auth.getSession(); session = g.data.session; } catch (e) {}
+
+      if (!session) {
+        claimDone = false;
+        show(byId('authView'));
+        hide(byId('dashView'));
+        var b = byId('authSubmit'); if (b) b.disabled = false;
+        return;
+      }
+
+      hide(byId('authView'));
+      show(byId('dashView'));
+      byId('userEmail').textContent = (session.user && session.user.email) || '';
+
+      await claimPending(session);
+      await loadQuotes();
+    }
+
+    async function claimPending(session) {
+      if (claimDone) return;
+      var note = byId('claimNote');
+      try {
+        var r = await fetch('/api/claim', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            Authorization: 'Bearer ' + session.access_token
+          },
+          body: JSON.stringify({ tokens: getPending() })
+        });
+        if (r.ok) {
+          claimDone = true;
+          var j = await r.json();
+          clearPending();
+          if (j && j.claimed > 0) {
+            note.textContent = 'Linked ' + j.claimed + ' quote' + (j.claimed === 1 ? '' : 's') + ' to your account.';
+            show(note);
+          }
+        }
+      } catch (e) {
+        // Leave pending tokens in place; a later load retries.
+      }
+    }
+
+    async function loadQuotes() {
+      var list = byId('quotes');
+      var empty = byId('quotesEmpty');
+      var loading = byId('quotesLoading');
+      list.innerHTML = '';
+      hide(empty);
+      show(loading);
+
+      var data = null, error = null;
+      try {
+        var res = await sb.from('inquiries').select('*').order('created_at', { ascending: false });
+        data = res.data; error = res.error;
+      } catch (e) { error = e; }
+
+      hide(loading);
+
+      if (error) {
+        list.innerHTML = '<p class="text-center text-[13px] text-red-300">Could not load your quotes. Refresh to try again.</p>';
+        return;
+      }
+      if (!data || !data.length) { show(empty); return; }
+      data.forEach(function (q) { list.insertAdjacentHTML('beforeend', card(q)); });
+    }
+
+    function card(q) {
+      var meta = statusMeta(q.status);
+      var amount = money(q.offer_amount);
+      var hasLabel = q.shipping_label_url || LABEL_STATUSES.indexOf(q.status) !== -1;
+
+      var photos = '';
+      if (Array.isArray(q.photo_urls) && q.photo_urls.length) {
+        photos = '<div class="mt-3 flex gap-2 flex-wrap">' +
+          q.photo_urls.slice(0, 4).map(function (u) {
+            return '<img src="' + esc(u) + '" alt="" class="h-14 w-14 rounded-lg object-cover border border-white/10" loading="lazy">';
+          }).join('') + '</div>';
+      }
+
+      var label = '';
+      if (hasLabel && q.shipping_label_url) {
+        label =
+          '<div class="mt-4 rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] p-3.5">' +
+            '<div class="flex items-center justify-between gap-3 flex-wrap">' +
+              '<div class="text-[12.5px] text-emerald-200 font-medium">Verified — your prepaid shipping label is ready.</div>' +
+              '<a href="' + esc(q.shipping_label_url) + '" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[12.5px] font-medium text-black hover:bg-ink-100 transition">Download label' +
+                '<svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M4 7l4 4 4-4M3 14h10"/></svg></a>' +
+            '</div>' +
+            (q.tracking_number ? '<div class="mt-2 text-[11.5px] text-ink-300">Tracking: <span class="text-ink-100">' + esc((q.carrier ? q.carrier + ' · ' : '') + q.tracking_number) + '</span></div>' : '') +
+          '</div>';
+      } else if (hasLabel) {
+        label =
+          '<div class="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3.5 text-[12.5px] text-ink-300">' +
+            'Verified — your prepaid shipping label is being prepared. Check back shortly.' +
+          '</div>';
+      }
+
+      var subline = [q.type, q.condition].filter(Boolean).join(' · ');
+      if (q.created_at) subline = subline ? (subline + ' · ' + fdate(q.created_at)) : fdate(q.created_at);
+
+      return '' +
+        '<article class="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-5">' +
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div class="min-w-0">' +
+              '<h3 class="text-[15px] font-semibold tracking-[-0.01em] truncate">' + esc(q.model || q.type || 'Quote') + '</h3>' +
+              '<div class="mt-1 text-[12px] text-ink-400">' + esc(subline) + '</div>' +
+            '</div>' +
+            '<span class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ' + meta.cls + '">' + esc(meta.label) + '</span>' +
+          '</div>' +
+          (amount ? '<div class="mt-3 text-[13px] text-ink-300">Offer: <span class="text-white font-semibold text-[15px]">' + esc(amount) + '</span></div>' : '') +
+          (q.details ? '<p class="mt-2 text-[12.5px] text-ink-300 leading-relaxed">' + esc(q.details) + '</p>' : '') +
+          photos +
+          label +
+        '</article>';
+    }
+  })();
+</script>
+</body>
+</html>
