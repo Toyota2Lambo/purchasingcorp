@@ -18,7 +18,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 72px 0 auto;
+    margin: auto 0;            /* center the block — no dead zone below */
+    width: 100%;
   }
 
   .stat-eyebrow {
@@ -34,14 +35,20 @@
   }
   .stat-eyebrow::before { content: ""; width: 52px; height: 1px; background: var(--accent); }
 
+  /* The value auto-fits the canvas: it never exceeds the cap (440/560px),
+     but long strings ("$1,241") shrink to fit the ~888px content width
+     instead of overflowing. --len (char count) is set by the renderer;
+     ~0.62 approximates Inter-800's per-character advance. */
   .stat-number {
+    --len: 2;
     font-family: var(--display);
     font-weight: 800;
-    font-size: 440px;
+    font-size: min(440px, calc(888px / (var(--len) * 0.62)));
     line-height: .84;
     letter-spacing: -.06em;
     color: var(--accent);
     margin: 0;
+    max-width: 100%;
     display: flex;
     align-items: flex-start;
   }
@@ -53,7 +60,7 @@
     letter-spacing: -.02em;
     font-weight: 700;
   }
-  body[data-size="story"] .stat-number { font-size: 560px; }
+  body[data-size="story"] .stat-number { font-size: min(560px, calc(888px / (var(--len) * 0.62))); }
 
   .stat-caption {
     font-family: var(--serif);
@@ -71,7 +78,7 @@
 
   .stat-source {
     font-family: var(--mono);
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--text-dim);
@@ -81,6 +88,12 @@
     gap: 14px;
   }
   .stat-source::before { content: ""; width: 24px; height: 1px; background: var(--text-dim); }
+
+  /* Stories are tall (1920) — open up the rhythm so the block fills the
+     frame instead of floating in the upper third with a void below. */
+  body[data-size="story"] .stat-eyebrow { margin-bottom: 56px; }
+  body[data-size="story"] .stat-caption { margin-top: 80px; }
+  body[data-size="story"] .stat-source  { margin-top: 48px; }
 </style>
 </head>
 <body data-size="{{size}}">
@@ -95,7 +108,7 @@
 
     <div class="stat-wrap">
       <div class="stat-eyebrow">{{eyebrow}}</div>
-      <div class="stat-number">{{stat_value}}<span class="unit">{{stat_unit}}</span></div>
+      <div class="stat-number" style="--len: {{stat_len}}">{{stat_value}}<span class="unit">{{stat_unit}}</span></div>
       <div class="stat-caption">{{caption_html}}</div>
       <div class="stat-source">{{source}}</div>
     </div>

@@ -51,7 +51,13 @@
   }
   .step-mono::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
 
-  .body-area { margin: auto 0 40px; max-width: 720px; position: relative; z-index: 1; }
+  /* Body anchors lower-left: margin-top:auto is the only auto margin in
+     the column (footer override below cancels the shared one), so it eats
+     all free space and drops the text block to just above the footer. The
+     ghosted numeral fills the upper-right, giving a diagonal composition
+     that reads intentionally on the taller 4:5 canvas. */
+  .body-area { margin: auto 0 0; max-width: 720px; position: relative; z-index: 1; }
+  .footer { margin-top: 72px; }
 
   .eyebrow {
     font-family: var(--mono);

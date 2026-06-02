@@ -215,10 +215,19 @@ const TEMPLATES = {
   stat: {
     file: 'stat-card.html',
     role: 'One enormous number weaponized: a payout, a turnaround, a count. ' +
-      'Keep the value short (it renders at ~440px). Caption explains why it ' +
-      'matters; source line receipts it. Great as a story or feed.',
+      'The value auto-fits the canvas, but shorter reads bigger — a bare ' +
+      '"$1,241" or "50%" lands harder than a sentence. Caption explains why ' +
+      'it matters; source line receipts it. Great as a story or feed.',
     fields: ['eyebrow', 'stat_value', 'stat_unit', 'caption_html', 'source'],
-    expand: (f) => htmlPass(f),
+    // stat_len (chars in value+unit) drives a CSS auto-fit so long values
+    // like "$1,241" shrink to fit instead of overflowing the canvas width.
+    expand: (f) => {
+      const out = htmlPass(f);
+      const v = String(f.stat_value == null ? '' : f.stat_value);
+      const u = String(f.stat_unit == null ? '' : f.stat_unit);
+      out.stat_len = Math.max(1, v.length + u.length);
+      return out;
+    },
     sample: {
       eyebrow: 'MACBOOK PRO PAYOUT',
       stat_value: '50',

@@ -6,7 +6,7 @@
    brand. Tokens pulled directly from index.html's Tailwind config.
 
    Each template is rendered at one of two sizes:
-     - feed:  1080 x 1080  (square — grid posts + carousels)
+     - feed:  1080 x 1350  (4:5 portrait — grid posts + carousels)
      - story: 1080 x 1920  (vertical — Story sequences)
    The renderer sets <body data-size="feed"|"story">; templates
    adjust internal layout accordingly.
@@ -32,8 +32,11 @@
   --border-strong: #26262b; /* ink-600 */
   --text:          #e6e6e8; /* ink-100 */
   --text-soft:     #b6b6bc; /* ink-200 */
-  --text-muted:    #8a8a92; /* ink-300 */
-  --text-dim:      #5a5a62; /* ink-400 */
+  --text-muted:    #8a8a92; /* ink-300 — ~5.9:1 on --bg (WCAG AA) */
+  /* Bumped from #5a5a62 (~2.8:1, failed AA) to ~5:1 so the smallest mono
+     micro-labels (footer, source, row notes) stay legible after IG's
+     JPEG downscale. Still clearly the dimmest text tier. */
+  --text-dim:      #80808a; /* ink-400 */
 
   /* Emerald is the brand's money / positive signal — "+$300", "PAID",
      payouts, deltas. Used everywhere the site uses emerald. */
@@ -111,7 +114,11 @@ body::before {
   isolation: isolate; /* keep absolute children (numeral watermark) scoped */
 }
 body[data-size="story"] .stage {
-  padding: 120px 96px 160px;
+  /* Wider top/bottom gutters keep the wordmark and footer clear of
+     Instagram's Story chrome (the top ~250px holds the avatar/username,
+     the bottom ~250px the reply bar + reactions). Decorative bleed (the
+     numeral watermark, photo backdrops) can still extend to the edges. */
+  padding: 160px 96px 220px;
 }
 
 /* ============================================================

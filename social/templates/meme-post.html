@@ -27,8 +27,8 @@
     max-width: 17ch;
     z-index: 1;
   }
-  .meme-top { margin-top: 64px; }
-  .meme-bottom { margin-bottom: 96px; }
+  .meme-top { margin-top: 40px; }
+  .meme-bottom { margin-bottom: 64px; }
   .meme-top em, .meme-bottom em { color: var(--accent); font-style: italic; }
   body[data-size="story"] .meme-top, body[data-size="story"] .meme-bottom { font-size: 76px; }
 
@@ -39,16 +39,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 72px;
   }
 
   /* the dead drawer phone — muted, lifeless, dark screen */
   .scene-device {
     position: relative;
-    width: 150px;
-    height: 300px;
+    width: 172px;
+    height: 344px;
     border: 3px solid var(--border-strong);
-    border-radius: 30px;
+    border-radius: 34px;
     background: var(--bg-surface);
     flex-shrink: 0;
   }
@@ -67,19 +67,19 @@
     border-radius: 16px;
     background: var(--bg-deep);
   }
-  body[data-size="story"] .scene-device { width: 182px; height: 364px; }
+  body[data-size="story"] .scene-device { width: 200px; height: 400px; }
 
   /* the brand return-arrow as the transform */
   .scene-arrow { color: var(--accent); flex-shrink: 0; }
-  .scene-arrow svg { width: 96px; height: 96px; display: block; }
-  body[data-size="story"] .scene-arrow svg { width: 116px; height: 116px; }
+  .scene-arrow svg { width: 112px; height: 112px; display: block; }
+  body[data-size="story"] .scene-arrow svg { width: 128px; height: 128px; }
 
   /* the cash it becomes — emerald banknote */
   .scene-cash {
-    width: 244px;
-    height: 150px;
+    width: 280px;
+    height: 172px;
     border: 3px solid var(--accent);
-    border-radius: 14px;
+    border-radius: 16px;
     background: rgba(52, 211, 153, 0.12);
     display: flex;
     align-items: center;
@@ -89,13 +89,13 @@
   .scene-cash .sym {
     font-family: var(--display);
     font-weight: 800;
-    font-size: 96px;
+    font-size: 112px;
     color: var(--accent);
     letter-spacing: -.04em;
     line-height: 1;
   }
-  body[data-size="story"] .scene-cash { width: 296px; height: 182px; }
-  body[data-size="story"] .scene-cash .sym { font-size: 116px; }
+  body[data-size="story"] .scene-cash { width: 332px; height: 204px; }
+  body[data-size="story"] .scene-cash .sym { font-size: 132px; }
 
   .meme-labels {
     display: flex;
@@ -111,7 +111,7 @@
   body[data-size="story"] .meme-labels { gap: 196px; }
 
   .meme-concept {
-    margin-top: 60px;
+    margin-top: 44px;
     font-family: var(--mono);
     font-size: 15px;
     letter-spacing: .16em;

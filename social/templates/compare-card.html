@@ -46,34 +46,37 @@
   .cmp-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
   body[data-size="story"] .cmp-title { font-size: 110px; }
 
-  .bars { display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px; }
-  .bar-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  /* Bars are the hero proof — generous gaps + chunky tracks let the
+     three-bar comparison fill the taller 4:5 canvas instead of clustering
+     under the title with a void below. */
+  .bars { display: flex; flex-direction: column; gap: 60px; margin-bottom: 56px; }
+  .bar-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
   .bar-meta {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     font-family: var(--mono);
-    font-size: 19px;
+    font-size: 21px;
     letter-spacing: .08em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
   .bar-row.us .bar-meta { color: var(--text); }
-  .bar-value { font-family: var(--display); font-weight: 700; letter-spacing: -.02em; font-size: 30px; }
+  .bar-value { font-family: var(--display); font-weight: 700; letter-spacing: -.02em; font-size: 36px; }
   .bar-row.us  .bar-value { color: var(--accent); }
   .bar-row.alt .bar-value { color: var(--neg); }
 
   .bar-track {
-    height: 30px;
+    height: 46px;
     background: var(--bg-surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
     overflow: hidden;
   }
-  .bar-fill { height: 100%; width: var(--w, 0%); border-radius: 5px 0 0 5px; }
+  .bar-fill { height: 100%; width: var(--w, 0%); border-radius: 7px 0 0 7px; }
   .bar-row.us  .bar-fill { background: var(--accent); }
   .bar-row.alt .bar-fill { background: var(--neg); opacity: .55; }
-  body[data-size="story"] .bar-track { height: 36px; }
+  body[data-size="story"] .bar-track { height: 54px; }
 
   .cmp-note {
     font-family: var(--serif);

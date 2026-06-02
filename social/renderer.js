@@ -37,7 +37,11 @@ const TEMPLATES_DIR = path.join(HERE, 'templates');
 const SHARED_CSS = path.join(TEMPLATES_DIR, '_shared.css');
 
 const SIZES = {
-  feed: { width: 1080, height: 1080 },
+  // Feed is 4:5 portrait (1080x1350) — the modern IG default. It claims
+  // ~25% more vertical real estate than a 1:1 square in-feed and matches
+  // the portrait profile grid, so headlines and price lists get more room.
+  // Carousels inherit this (the first slide sets the ratio for all).
+  feed: { width: 1080, height: 1350 },
   story: { width: 1080, height: 1920 },
 };
 const SCALE = Number(process.env.RENDER_SCALE || 2); // device pixel ratio; 1 => exactly 1080px PNGs
