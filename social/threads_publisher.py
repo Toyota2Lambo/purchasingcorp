@@ -26,6 +26,16 @@
 # alt_text for screen readers. URLs in the caption stay put — Threads makes
 # them tappable, so the CTA link doubles as the post's link.
 #
+# State mention (Threads only): posts that NAME a specific US state tend to
+# get more reach with that state's audience, so each feed post appends one
+# short location line naming a state. The state + phrasing rotate
+# DETERMINISTICALLY by date + post index — same date/post always yields the
+# same text (so a re-run republishes identically; this publisher has no
+# dedupe) — while different posts in a day hit DIFFERENT states to widen the
+# net. Every line keeps the nationwide truth ("all 50 states" / "free
+# shipping"), so naming a state never implies we only serve it. The Instagram
+# publisher is intentionally left untouched. Toggle with THREADS_STATE_MENTION.
+#
 # The images must be reachable at PUBLIC URLs. The renderer's PNGs are
 # committed and served by Vercel, so we first poll each image URL until it
 # returns 200 (the deploy has landed) before handing it to Threads.
@@ -42,6 +52,8 @@
 #   THREADS_INCLUDE_STORIES=1  also post story images (default: posts only)
 #   THREADS_TEXT_LIMIT       max post length, default 500
 #   THREADS_MAX_TAGS         hashtags to append, default 1 (Threads-native)
+#   THREADS_STATE_MENTION=0  don't append a state-naming location line
+#   THREADS_STATES           comma-sep pool to rotate (default: 24 populous)
 #   THREADS_ALT_TEXT=0       skip image alt text (accessibility; default on)
 #   DISCORD_WEBHOOK_URL      optional run summary
 #
@@ -95,6 +107,9 @@ CONTAINER_POLL_DELAY_S = int(os.environ.get("THREADS_CONTAINER_POLL_DELAY_S", "3
 
 DRY_RUN = os.environ.get("THREADS_DRY_RUN", "").lower() in ("1", "true", "yes")
 INCLUDE_STORIES = os.environ.get("THREADS_INCLUDE_STORIES", "").lower() in ("1", "true", "yes")
+# Append a state-naming location line to each post (Threads reach booster).
+# On by default; set THREADS_STATE_MENTION=0 to disable.
+STATE_MENTION_ENABLED = os.environ.get("THREADS_STATE_MENTION", "1").lower() not in ("0", "false", "no")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
 
 UA = "PurchasingCorp-Social/1.0"
@@ -247,6 +262,59 @@ def build_text(caption: str, hashtags) -> str:
     return text
 
 
+# Populous-first pool: naming a high-activity state casts a wider net. Every
+# line below keeps the nationwide truth, so this never claims state-only service.
+_DEFAULT_STATES = [
+    "California", "Texas", "Florida", "New York", "Pennsylvania", "Illinois",
+    "Ohio", "Georgia", "North Carolina", "Michigan", "New Jersey", "Virginia",
+    "Washington", "Arizona", "Tennessee", "Massachusetts", "Indiana", "Missouri",
+    "Maryland", "Colorado", "Minnesota", "Wisconsin", "Nevada", "Oregon",
+]
+
+# Each phrasing NAMES a state ({s}) and keeps the "all states / free shipping"
+# truth. Wording rotates too, so a day's posts don't read as copy-paste.
+_STATE_LINES = [
+    "Serving {s} and all 50 states — same-day cash, free shipping.",
+    "In {s}? We buy from every state — get your real cash offer today.",
+    "Cash for your tech in {s} and nationwide, paid the same day.",
+    "From {s} to coast to coast — free shipping, cash today.",
+]
+
+
+def _states_pool():
+    raw = os.environ.get("THREADS_STATES", "")
+    pool = [s.strip() for s in raw.split(",") if s.strip()] if raw else list(_DEFAULT_STATES)
+    return pool or list(_DEFAULT_STATES)
+
+
+def state_line_for(date_str: str, idx: int) -> str:
+    """Pick the state-naming location line for one post.
+
+    Deterministic by date + 1-based post index: the same date/post always
+    yields the same state and phrasing (so a re-run republishes identical
+    text), while different posts in a day land on DIFFERENT states and the
+    window advances day to day.
+    """
+    pool = _states_pool()
+    try:
+        seed = dt.date.fromisoformat(date_str).toordinal()
+    except Exception:
+        seed = 0
+    idx = idx if isinstance(idx, int) and idx > 0 else 1
+    state = pool[(seed * 4 + (idx - 1)) % len(pool)]
+    line = _STATE_LINES[(seed + idx - 1) % len(_STATE_LINES)]
+    return line.format(s=state)
+
+
+def with_state_mention(caption: str, date_str: str, idx: int) -> str:
+    """Append the state-naming location line to a caption (no-op if disabled)."""
+    caption = (caption or "").strip()
+    if not STATE_MENTION_ENABLED:
+        return caption
+    line = state_line_for(date_str, idx)
+    return f"{caption}\n\n{line}" if caption else line
+
+
 def alt_text_for(post: dict, idx: int = 1, total: int = 1) -> str:
     """Build a concise screen-reader label for a post's image.
 
@@ -355,7 +423,8 @@ def run() -> int:
             continue
         files = post.get("files", [])
         urls = [image_url_for(base_path, f) for f in files]
-        text = build_text(post.get("caption", ""), post.get("hashtags"))
+        caption = with_state_mention(post.get("caption", ""), date_str, idx)
+        text = build_text(caption, post.get("hashtags"))
         is_carousel = len(urls) > 1
         alts = [alt_text_for(post, i + 1, len(urls)) for i in range(len(urls))]
         label = f"post {idx} ({post.get('role')}, {'carousel x' + str(len(urls)) if is_carousel else 'single'})"
@@ -366,6 +435,8 @@ def run() -> int:
             for u in urls:
                 print(f"            {u}")
             print(f"            text: {text[:90].replace(chr(10), ' ')}")
+            if STATE_MENTION_ENABLED:
+                print(f"            state: {state_line_for(date_str, idx)}")
             print(f"            alt:  {(alts[0] or '—')[:90]}")
             succeeded += 1
             continue
