@@ -63,6 +63,95 @@ TEMPLATE_NAMES = [
 # Templates whose photo_url field should be resolved to a real image URL.
 PHOTO_FIELDS = ("photo_url",)
 
+# Photo-FIRST templates: the image IS the card, so we ALWAYS bake a real
+# device photo in (an empty photo_url renders as a black/empty frame).
+PHOTO_TEMPLATES_FORCED = ("photo-cover", "lifestyle")
+# Templates with a subtle, OPT-IN blurred photo backdrop: only fill when the
+# model asked for one via a "PHOTO:" marker (empty hides gracefully).
+PHOTO_TEMPLATES_OPTIN = ("cover", "quote")
+
+# ------------------------------------------------------------
+# Device photo pool — popular CONSUMER ELECTRONICS scenes.
+#
+# The fetcher resolves each query to ONE stable Unsplash photo (deterministic
+# by query hash), so a LARGE pool of distinct queries == a large pool of
+# distinct photos. We rotate through it by date + slot (see device_query_for)
+# so the same image never shows up two days running and the whole catalog
+# cycles over weeks — no "same photo posted over and over".
+#
+# Real, searchable terms only — NEVER a fictional model number (Unsplash has
+# no "iPhone 17"); a miss there would fall back to a non-device placeholder.
+# ------------------------------------------------------------
+DEVICE_PHOTO_QUERIES = [
+    "iPhone on a wooden desk",
+    "smartphone in hand close up",
+    "modern smartphone on a marble table",
+    "smartphone flat lay on white background",
+    "smartphone on a dark surface",
+    "stack of smartphones on a table",
+    "MacBook laptop on a desk",
+    "MacBook Air on a white table",
+    "open laptop on a wooden desk",
+    "laptop and coffee on a desk",
+    "person typing on a laptop",
+    "silver laptop close up",
+    "sleek laptop in a dark room",
+    "iPad tablet on a table",
+    "tablet with stylus on a desk",
+    "person holding a tablet",
+    "tablet flat lay with accessories",
+    "Apple Watch on a wrist",
+    "smartwatch close up",
+    "smartwatch on a table",
+    "wireless earbuds on a desk",
+    "earbuds charging case in hand",
+    "wireless headphones on a desk",
+    "over-ear headphones close up",
+    "desktop computer on a clean desk",
+    "minimalist desk setup with monitor",
+    "home office desk with computer",
+    "computer monitor on a desk",
+    "PlayStation 5 console",
+    "game controller on a desk",
+    "DualSense controller in hand",
+    "gaming console close up",
+    "Xbox game console",
+    "Xbox controller on a table",
+    "Nintendo Switch handheld console",
+    "handheld game console in hand",
+    "handheld gaming PC",
+    "portable game console close up",
+    "VR headset on a table",
+    "person wearing a VR headset",
+    "gaming setup with RGB lights",
+    "mechanical keyboard and mouse",
+    "modern gaming desk setup",
+    "tech gadgets flat lay",
+    "electronics on a desk",
+    "smartphone and laptop on a desk",
+    "apple devices on a table",
+    "new gadgets flat lay",
+    "game controllers collection",
+    "smartphone with cash on a table",
+]
+# Stride is prime and > the most photos any single day can use, and is
+# coprime with the pool length (50) — so the per-day starting offset advances
+# cleanly and every query is reached as the date marches on, with no within-day
+# or day-boundary collisions.
+_PHOTO_STRIDE = 7
+
+
+def device_query_for(date_str: str, idx: int) -> str:
+    """Pick the idx-th device-photo query for a given day, rotating through the
+    whole pool so photos don't repeat day to day. Deterministic, so re-running a
+    day renders the identical image (stable PNGs / idempotent backfills)."""
+    pool = DEVICE_PHOTO_QUERIES
+    try:
+        seed = dt.date.fromisoformat(date_str).toordinal()
+    except Exception:
+        seed = 0
+    return pool[(seed * _PHOTO_STRIDE + idx) % len(pool)]
+
 # ------------------------------------------------------------
 # Daily theme rotation (deterministic by day-of-month so the grid
 # moves through categories/topics without repeating back to back).
@@ -179,7 +268,7 @@ stat (story or feed; one big number)
 
 quote (story or feed; editorial pull-quote)
   quote_text_html, quote_attrib, photo_url
-  Big serif line in the brand voice. photo_url = "" or "PHOTO: <short scene>".
+  Big serif line in the brand voice. photo_url = "" (no backdrop) or "PHOTO: device" for a subtle photo backdrop.
 
 index (single feed post; a 3x2 reference grid)
   tag, eyebrow, title_html, cells, note_html
@@ -191,15 +280,18 @@ carousel (use as the SLIDES of ONE feed carousel post; 3-4 slides)
 
 cover (story; a magazine-cover announcement)
   issue, date_label, section, headline_html, deck_html, photo_url
-  Short, page-dominating headline. photo_url = "" or "PHOTO: <scene>".
+  Short, page-dominating headline. photo_url = "" or "PHOTO: device" for a subtle photo backdrop.
 
 photo-cover (story or feed; atmospheric photo headline)
   tag, eyebrow, headline_html, deck_html, photo_url, photo_credit
-  photo_url = "PHOTO: <scene>" (REQUIRED — this template is a full-bleed photo). photo_credit like "PHOTO · UNSPLASH".
+  photo_url = "PHOTO: device" (REQUIRED — this template is a full-bleed device photo). A real device image is
+  auto-selected from our library and baked in, so keep the headline about the OUTCOME (cash today), not a model.
+  photo_credit like "PHOTO · UNSPLASH".
 
 lifestyle (feed or story; aspirational, outcome-forward)
   tag, eyebrow, headline_html, sub_html, photo_url, photo_credit
-  photo_url = "PHOTO: <scene>" (REQUIRED). Sells the feeling (that drawer phone is cash), not a spec.
+  photo_url = "PHOTO: device" (REQUIRED — a framed device photo is auto-selected and baked in). Sells the
+  feeling (that drawer phone is cash), not a spec. Keep the copy device-agnostic so any device photo fits.
 
 meme (single feed post; shareable, off-duty)
   top_text, bottom_text, image_concept
@@ -233,9 +325,14 @@ provide template + fields_json, where fields_json is a JSON OBJECT ENCODED AS A 
 COMPOSITION RULES
 - Exactly ONE post must be a carousel (size "feed") whose slides are 3-4 "carousel" cards walking
   through the day's educational topic. Every other post has exactly one slide.
-- Single feed posts: pick varied templates from offer, board, payout, compare, index, lifestyle, meme.
-  Feature the day's category in at least the offer or board post. If you include compare, use the
-  day's comparison angle.
+- Exactly ONE single feed post MUST be a PHOTO post: template "photo-cover" or "lifestyle", showing a
+  real photo of a popular consumer-electronics device (iPhone, MacBook, iPad, Apple Watch, AirPods,
+  PlayStation, Xbox, Nintendo Switch, and the like). Set its photo_url to "PHOTO: device" — the actual
+  image is auto-selected from our photo library and baked in. Keep this post's copy about the OUTCOME
+  (cash today), not a model number.
+- Feature the day's category in at least one offer or board post.
+- The remaining single feed posts: pick varied templates from offer, board, payout, compare, index, meme.
+  If you include compare, use the day's comparison angle.
 - Stories: pick varied templates from cover, stat, quote, photo-cover.
 - size is "feed" for all posts (1:1) and is not set on stories (always 9:16).
 
@@ -405,9 +502,71 @@ def validate_and_normalize(data: dict) -> dict:
 
 
 # ------------------------------------------------------------
-# Photo resolution — turn "PHOTO: query" markers into real public URLs.
+# Photo guarantee — make sure a real DEVICE photo lands in the grid.
 # ------------------------------------------------------------
-def resolve_photos(content: dict, skip: bool = False) -> None:
+# Single-slide feed posts we may safely repurpose into a photo post if the
+# model forgot to include one at all (last-resort guarantee). The carousel
+# (multi-slide) and the price "board" are never touched.
+_CONVERTIBLE_TO_PHOTO = ("compare", "index", "payout", "meme", "quote", "stat", "offer")
+
+
+def ensure_feed_photo(content: dict, theme: dict) -> None:
+    """Guarantee at least one FEED post is a photo post (photo-cover/lifestyle).
+    If the model emitted none, convert one eligible single-slide feed post into
+    a lifestyle card so a real device photo always shows up in the grid. The
+    photo URL itself is filled later by resolve_photos()."""
+    posts = content.get("posts", [])
+    for p in posts:
+        if p.get("size") == "feed":
+            for s in p.get("slides", []):
+                if s.get("template") in PHOTO_TEMPLATES_FORCED:
+                    return  # already have a feed photo post — nothing to do
+
+    # Pick a conversion target: the LAST single-slide feed post on a
+    # convertible template (keeps the carousel + price board + first hero).
+    target = None
+    for p in posts:
+        if p.get("size") != "feed":
+            continue
+        slides = p.get("slides", [])
+        if len(slides) == 1 and slides[0].get("template") in _CONVERTIBLE_TO_PHOTO:
+            target = p
+    if target is None:
+        return  # nothing safe to convert; leave the day as-is
+
+    target["slides"] = [{
+        "template": "lifestyle",
+        "fields": {
+            "tag": "BUYBACK",
+            "eyebrow": "CASH FOR YOUR TECH",
+            "headline_html": "That drawer device is <em>cash</em>",
+            "sub_html": "Phones, laptops, tablets, consoles — a real number, paid the same day.",
+            "photo_url": "",            # filled by resolve_photos()
+            "photo_credit": "PHOTO · UNSPLASH",
+        },
+    }]
+    target["role"] = "Photo post: device buyback"
+    target["caption"] = ("That old phone, laptop, or console in your drawer is cash. "
+                         "Get a real offer in 60 seconds and get paid the same day at "
+                         "purchasingcorp.com/form.")
+    if not target.get("hashtags"):
+        target["hashtags"] = ["#sellyourtech", "#cashforelectronics", "#applebuyback",
+                              "#sellmyiphone", "#sellmymacbook"]
+
+
+# ------------------------------------------------------------
+# Photo resolution — bake real DEVICE photos into the slides.
+#
+# photo-cover / lifestyle (PHOTO_TEMPLATES_FORCED): always get a device photo.
+# cover / quote (PHOTO_TEMPLATES_OPTIN): only when the model set a "PHOTO:"
+#   marker (their backdrop is subtle and optional).
+# Either way the SCENE is chosen from our rotating device pool — never the
+# model's free text — so every photo is a real device and no image repeats.
+# A running counter hands each photo a distinct query within the day.
+# ------------------------------------------------------------
+def resolve_photos(content: dict, date_str: str = None, skip: bool = False) -> None:
+    if not date_str:
+        date_str = dt.datetime.now(dt.timezone.utc).date().isoformat()
     try:
         from photo_fetcher import fetch_photo
     except Exception as e:  # pragma: no cover
@@ -416,31 +575,34 @@ def resolve_photos(content: dict, skip: bool = False) -> None:
                   file=sys.stderr)
         fetch_photo = None
 
-    def handle(fields: dict, size: str):
-        for key in PHOTO_FIELDS:
-            val = fields.get(key)
-            if not isinstance(val, str):
-                continue
-            m = re.match(r"\s*PHOTO\s*:\s*(.+)", val, re.IGNORECASE)
-            if not m:
-                # not a marker (empty string or already a URL) — leave as is
-                continue
-            query = m.group(1).strip()
-            if skip or fetch_photo is None:
-                fields[key] = ""
-                continue
-            orientation = "portrait" if size == "story" else "landscape"
-            try:
-                fields[key] = fetch_photo(query, orientation=orientation) or ""
-            except Exception as e:
-                print(f"[generator] photo fetch failed for '{query}': {e}", file=sys.stderr)
-                fields[key] = ""
+    counter = {"n": 0}
+
+    def assign(fields: dict, size: str):
+        query = device_query_for(date_str, counter["n"])
+        counter["n"] += 1
+        if skip or fetch_photo is None:
+            fields["photo_url"] = ""
+            return
+        orientation = "portrait" if size == "story" else "landscape"
+        try:
+            fields["photo_url"] = fetch_photo(query, orientation=orientation) or ""
+        except Exception as e:
+            print(f"[generator] photo fetch failed for '{query}': {e}", file=sys.stderr)
+            fields["photo_url"] = ""
+
+    def handle(template: str, fields: dict, size: str):
+        if template in PHOTO_TEMPLATES_FORCED:
+            assign(fields, size)                       # photo IS the card
+        elif template in PHOTO_TEMPLATES_OPTIN:
+            val = fields.get("photo_url")
+            if isinstance(val, str) and re.match(r"\s*PHOTO\s*:\s*\S", val, re.IGNORECASE):
+                assign(fields, size)                   # model opted into a backdrop
 
     for post in content.get("posts", []):
         for slide in post.get("slides", []):
-            handle(slide.get("fields", {}), post.get("size", "feed"))
+            handle(slide.get("template", ""), slide.get("fields", {}), post.get("size", "feed"))
     for story in content.get("stories", []):
-        handle(story.get("fields", {}), "story")
+        handle(story.get("template", ""), story.get("fields", {}), "story")
 
 
 # ------------------------------------------------------------
@@ -518,7 +680,9 @@ def generate_package(date: dt.date, posts: int = 4, stories: int = 2,
 
     raw = call_anthropic(system_prompt, user_prompt)
     content = validate_and_normalize(raw)
-    resolve_photos(content, skip=skip_photos)
+    if not skip_photos:
+        ensure_feed_photo(content, theme)
+    resolve_photos(content, date.isoformat(), skip=skip_photos)
 
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
