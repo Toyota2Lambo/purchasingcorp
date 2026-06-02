@@ -13,12 +13,18 @@
 # post each story image as a plain (text-less) image post.
 #
 # Publishing flow (per the Threads Content Publishing API):
-#   single image : create container (media_type=IMAGE, image_url[, text])
+#   single image : create container (media_type=IMAGE, image_url[, text, alt_text])
 #                  -> poll status == FINISHED -> threads_publish
 #   carousel     : create N item containers (media_type=IMAGE,
-#                     is_carousel_item=true)
+#                     is_carousel_item=true[, alt_text])
 #                  -> create parent (media_type=CAROUSEL, children=csv,
 #                     text) -> publish parent
+#
+# Threads-native text: unlike Instagram, Threads surfaces ONE topic tag per
+# post and treats a stack of hashtags as spam (which can suppress reach), so
+# we append at most THREADS_MAX_TAGS (default 1). Every image also gets
+# alt_text for screen readers. URLs in the caption stay put — Threads makes
+# them tappable, so the CTA link doubles as the post's link.
 #
 # The images must be reachable at PUBLIC URLs. The renderer's PNGs are
 # committed and served by Vercel, so we first poll each image URL until it
@@ -35,6 +41,8 @@
 #   THREADS_DRY_RUN=1        plan only, no API calls
 #   THREADS_INCLUDE_STORIES=1  also post story images (default: posts only)
 #   THREADS_TEXT_LIMIT       max post length, default 500
+#   THREADS_MAX_TAGS         hashtags to append, default 1 (Threads-native)
+#   THREADS_ALT_TEXT=0       skip image alt text (accessibility; default on)
 #   DISCORD_WEBHOOK_URL      optional run summary
 #
 # Usage:
@@ -72,6 +80,14 @@ TOKEN = os.environ.get("THREADS_ACCESS_TOKEN", "")
 USER_ID = os.environ.get("THREADS_USER_ID") or os.environ.get("THREADS_ACCOUNT_ID") or "me"
 
 TEXT_LIMIT = int(os.environ.get("THREADS_TEXT_LIMIT", "500"))
+# Threads surfaces ONE topic tag per post and reads a stack of hashtags as
+# spam (an Instagram habit), which can suppress reach. Keep at most this many,
+# most-relevant-first. Default 1; raise to 2-3 only with a deliberate reason.
+MAX_TAGS = int(os.environ.get("THREADS_MAX_TAGS", "1"))
+# Accessibility: alt text label per image. Threads documents no hard limit;
+# keep labels concise. Set THREADS_ALT_TEXT=0 to skip them.
+ALT_TEXT_ENABLED = os.environ.get("THREADS_ALT_TEXT", "1").lower() not in ("0", "false", "no")
+ALT_TEXT_LIMIT = int(os.environ.get("THREADS_ALT_TEXT_LIMIT", "420"))
 DELAY_BETWEEN_POSTS_S = int(os.environ.get("DELAY_BETWEEN_POSTS_S", "6"))
 IMAGE_DEPLOY_TIMEOUT_S = int(os.environ.get("IMAGE_DEPLOY_TIMEOUT_S", "180"))
 CONTAINER_POLL_TRIES = int(os.environ.get("THREADS_CONTAINER_POLL_TRIES", "30"))
@@ -169,22 +185,27 @@ def publish_container(creation_id: str) -> str:
     return data["id"]
 
 
-def publish_single_image(image_url: str, text: str) -> str:
+def publish_single_image(image_url: str, text: str, alt_text: str = "") -> str:
     params = {"media_type": "IMAGE", "image_url": image_url}
     if text:
         params["text"] = text
+    if alt_text:
+        params["alt_text"] = alt_text
     cid = create_container(params)
     wait_container(cid)
     return publish_container(cid)
 
 
-def publish_carousel(image_urls: list, text: str) -> str:
+def publish_carousel(image_urls: list, text: str, alts: list = None) -> str:
     if not (2 <= len(image_urls) <= 20):
         raise ValueError(f"carousel needs 2-20 images, got {len(image_urls)}")
+    alts = alts or []
     children = []
-    for url in image_urls:
-        cid = create_container({"media_type": "IMAGE", "image_url": url,
-                                "is_carousel_item": "true"})
+    for i, url in enumerate(image_urls):
+        item = {"media_type": "IMAGE", "image_url": url, "is_carousel_item": "true"}
+        if i < len(alts) and alts[i]:
+            item["alt_text"] = alts[i]  # alt_text lives on the item, not the parent
+        cid = create_container(item)
         wait_container(cid)
         children.append(cid)
     parent_params = {"media_type": "CAROUSEL", "children": ",".join(children)}
@@ -199,17 +220,53 @@ def publish_carousel(image_urls: list, text: str) -> str:
 # Helpers
 # ------------------------------------------------------------
 def build_text(caption: str, hashtags) -> str:
-    """Compose post text and cap it at the Threads length limit."""
+    """Compose a Threads post's text: caption + at most MAX_TAGS topic tags.
+
+    Threads is not Instagram. It surfaces a single topic tag per post and
+    treats a stack of hashtags as spam, which can suppress reach — so we keep
+    only the most-relevant tag(s) (MAX_TAGS, default 1) on their own line at
+    the end. Any URL in the caption is left intact: Threads makes it tappable.
+    """
     caption = (caption or "").strip()
-    tags = " ".join(hashtags or [])
-    text = f"{caption}\n\n{tags}".strip() if tags else caption
+    tags = []
+    for h in (hashtags or []):
+        h = (h or "").strip()
+        if not h:
+            continue
+        tags.append(h if h.startswith("#") else "#" + h)
+        if len(tags) >= MAX_TAGS:
+            break
+    tagline = " ".join(tags)
+    text = f"{caption}\n\n{tagline}".strip() if tagline else caption
     if len(text) > TEXT_LIMIT:
-        # Prefer to keep the caption whole; drop hashtags before truncating it.
+        # Prefer to keep the caption whole; drop tags before truncating it.
         if caption and len(caption) <= TEXT_LIMIT:
             text = caption
         if len(text) > TEXT_LIMIT:
             text = text[:TEXT_LIMIT].rstrip()
     return text
+
+
+def alt_text_for(post: dict, idx: int = 1, total: int = 1) -> str:
+    """Build a concise screen-reader label for a post's image.
+
+    The cards are mostly text rendered as an image, so we name the brand and
+    card type. Single images add the caption's opening line; carousel items
+    get a position ("slide 2 of 4") so the sequence stays navigable.
+    """
+    if not ALT_TEXT_ENABLED:
+        return ""
+    role = (post.get("role") or "post").strip().rstrip(".")
+    label = f"PurchasingCorp {role.lower()}"
+    if total > 1:
+        alt = f"{label}, slide {idx} of {total}"
+    else:
+        caption = (post.get("caption") or "").strip()
+        lead = caption.split(". ")[0].strip() if caption else ""
+        alt = f"{label}: {lead}" if lead else label
+    if len(alt) > ALT_TEXT_LIMIT:
+        alt = alt[:ALT_TEXT_LIMIT].rstrip(" .,;:—-")
+    return alt
 
 
 def image_url_for(base_path: str, file: str) -> str:
@@ -300,6 +357,7 @@ def run() -> int:
         urls = [image_url_for(base_path, f) for f in files]
         text = build_text(post.get("caption", ""), post.get("hashtags"))
         is_carousel = len(urls) > 1
+        alts = [alt_text_for(post, i + 1, len(urls)) for i in range(len(urls))]
         label = f"post {idx} ({post.get('role')}, {'carousel x' + str(len(urls)) if is_carousel else 'single'})"
         attempted += 1
 
@@ -308,6 +366,7 @@ def run() -> int:
             for u in urls:
                 print(f"            {u}")
             print(f"            text: {text[:90].replace(chr(10), ' ')}")
+            print(f"            alt:  {(alts[0] or '—')[:90]}")
             succeeded += 1
             continue
 
@@ -315,8 +374,8 @@ def run() -> int:
             for u in urls:
                 if not wait_for_url(u, IMAGE_DEPLOY_TIMEOUT_S):
                     raise RuntimeError(f"image not reachable: {u}")
-            media_id = (publish_carousel(urls, text) if is_carousel
-                        else publish_single_image(urls[0], text))
+            media_id = (publish_carousel(urls, text, alts) if is_carousel
+                        else publish_single_image(urls[0], text, alts[0]))
             print(f"[threads] OK {label} -> media {media_id}")
             succeeded += 1
         except Exception as e:
@@ -331,6 +390,8 @@ def run() -> int:
             if not (select_all or all_stories or idx in only_stories):
                 continue
             url = image_url_for(base_path, story.get("file"))
+            story_alt = (f"PurchasingCorp {story.get('template')} story"
+                         if ALT_TEXT_ENABLED else "")
             label = f"story {idx} ({story.get('template')})"
             attempted += 1
 
@@ -342,7 +403,7 @@ def run() -> int:
             try:
                 if not wait_for_url(url, IMAGE_DEPLOY_TIMEOUT_S):
                     raise RuntimeError(f"image not reachable: {url}")
-                media_id = publish_single_image(url, "")
+                media_id = publish_single_image(url, "", story_alt)
                 print(f"[threads] OK {label} -> media {media_id}")
                 succeeded += 1
             except Exception as e:
