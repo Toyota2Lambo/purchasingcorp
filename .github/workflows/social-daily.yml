@@ -7,9 +7,14 @@ name: social · daily
 
 on:
   schedule:
-    # 13:00 UTC daily. Generation + render + commit only — publishing is a
-    # separate workflow scheduled later so the Vercel deploy has time to land.
-    - cron: '0 13 * * *'
+    # 13:23 UTC daily — deliberately OFF the top of the hour. GitHub drops or
+    # delays far more cron runs scheduled at :00 (peak load) than at an odd
+    # minute, and a missed generate kills the whole day. Generation + render +
+    # commit only: the publish + threads workflows are now CHAINED to run the
+    # moment THIS workflow finishes successfully (see their workflow_run
+    # triggers), so they can never fire before the content exists and we no
+    # longer depend on three independent, unreliable clocks.
+    - cron: '23 13 * * *'
   workflow_dispatch:
     inputs:
       date:

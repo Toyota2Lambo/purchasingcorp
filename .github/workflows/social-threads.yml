@@ -4,22 +4,21 @@ name: social · threads
 # Reuses the SAME content/manifest and the SAME public Vercel-served PNGs
 # as "social · publish" (Instagram) — nothing extra is generated here.
 #
-# Run AFTER "social · daily" has committed and Vercel has deployed — the
-# publisher polls each PNG URL until it returns 200 (up to ~3 min) before
-# submitting, so a little overlap with the deploy is harmless. Scheduled an
-# hour after the Instagram publish so the two don't run simultaneously.
+# CHAINED off "social · daily" (same trigger as the Instagram publish), so IG
+# and Threads both fire the moment generation succeeds. They hit different
+# APIs and accounts, so running in parallel is fine — and Threads no longer
+# rides a separate fragile clock that, in practice, never fired.
 #
 # Threads has no "stories" format, so feed posts are published by default
 # and stories are skipped. Set the `include_stories` input (or
 # THREADS_INCLUDE_STORIES=1) to also post story images as plain image posts.
 #
-# Use the `only` input to stagger a day across multiple runs, e.g.
-# "post:1" in the morning and "post:2,post:3" at noon.
+# Use the `only` input on a manual run to stagger, e.g. "post:1".
 
 on:
-  schedule:
-    # 17:00 UTC — ~1h after the Instagram publish at 16:00.
-    - cron: '0 17 * * *'
+  workflow_run:
+    workflows: ["social · daily"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       date:
@@ -46,9 +45,16 @@ concurrency:
 
 jobs:
   threads:
+    # workflow_run fires for EVERY conclusion of the daily build — only publish
+    # when it actually succeeded (or when this was triggered manually).
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Take main's tip: "social · daily" pushes today's content as a NEW
+          # commit, which is not the SHA that triggered this workflow_run.
+          ref: main
 
       - uses: actions/setup-python@v5
         with:

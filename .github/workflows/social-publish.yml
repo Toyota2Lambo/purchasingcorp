@@ -1,17 +1,20 @@
 name: social · publish
 
 # Publishes an already-rendered, already-deployed day to Instagram.
-# Run AFTER "social · daily" has committed and Vercel has deployed — the
-# publisher polls each PNG URL until it returns 200 (up to ~3 min) before
+# CHAINED off "social · daily": this runs automatically the moment that
+# workflow finishes successfully, so it can NEVER run before the content
+# exists (the old fixed 16:00 UTC cron sometimes fired first and failed for
+# a missing manifest, and often never fired at all). The publisher polls each
+# PNG URL until it returns 200 (the Vercel deploy has landed) before
 # submitting, so a little overlap with the deploy is harmless.
 #
-# Use the `only` input to stagger a day across multiple runs, e.g.
-# "post:1" in the morning and "post:2,story:1" at noon.
+# Publishes ALL of the day's feed posts (singles + carousels) AND stories by
+# default. Use the `only` input on a manual run to stagger, e.g. "post:1".
 
 on:
-  schedule:
-    # 16:00 UTC — ~3h after the daily generate/commit.
-    - cron: '0 16 * * *'
+  workflow_run:
+    workflows: ["social · daily"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       date:
@@ -34,9 +37,16 @@ concurrency:
 
 jobs:
   publish:
+    # workflow_run fires for EVERY conclusion of the daily build — only publish
+    # when it actually succeeded (or when this was triggered manually).
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Take main's tip: "social · daily" pushes today's content as a NEW
+          # commit, which is not the SHA that triggered this workflow_run.
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
