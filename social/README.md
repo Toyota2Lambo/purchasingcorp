@@ -56,7 +56,7 @@ Add these in the GitHub repo under **Settings → Secrets and variables → Acti
 |------|------|---------|--------------|
 | `UNSPLASH_ACCESS_KEY` | secret | — | Enables real Unsplash photos on lifestyle/cover posts. Without it, the pipeline uses deterministic Picsum placeholders. Get it at <https://unsplash.com/developers>. |
 | `DISCORD_WEBHOOK_URL` | secret | — | Posts a publish summary to a Discord channel. |
-| `IG_PUBLIC_BASE_URL` | variable | `https://purchasingcorp.vercel.app` | Public base URL the rendered PNGs are served from. Override if the domain changes. |
+| `IG_PUBLIC_BASE_URL` | variable | `https://purchasingcorp.com` | Public base URL the rendered PNGs are served from. Override if the domain changes. |
 | `ANTHROPIC_MODEL` | variable | `claude-sonnet-4-5` | Override the generation model. |
 
 > Use **Secrets** for tokens/keys and **Variables** for non-sensitive config
