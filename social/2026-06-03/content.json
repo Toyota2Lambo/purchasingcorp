@@ -1,0 +1,189 @@
+{
+  "generated_at": "2026-06-03T18:06:52.826572+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "mac-mini",
+    "educational_topic": "what actually affects your payout (condition, storage, lock status)",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "featured_label": "Mac Mini"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-03T18:06:21.093Z",
+    "requested": {
+      "posts": 4,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Post 1: Featured offer — Mac Mini",
+        "caption": "Mac Mini collecting dust? We're paying up to $675 cash today for M4 Pro models. Real quote in two minutes, prepaid label, same-day payout once we check it. No store credit, no waiting. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#cashformac",
+          "#macminisale"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "M4 & M4 Pro",
+              "headline_html": "We pay up to <em>$675</em> cash",
+              "sub_html": "Real quote in 2 minutes · Same-day payout · No store credit",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$675",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Flawless–Good"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 2: Carousel — educational (what affects your payout)",
+        "caption": "Three things decide your payout: condition, storage, and lock status. We break it all down so you know exactly what to expect before you ship. Start your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#selltech",
+          "#applebuyback",
+          "#cashforphones",
+          "#techresale",
+          "#buybacktips"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "Condition",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "Physical condition matters most",
+              "body_html": "Flawless means zero scratches, no dents, perfect glass. Good allows minor wear. Cracked screens or bent frames drop the number — <strong>be honest and you'll never be surprised.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Storage",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "More storage = more cash",
+              "body_html": "A 1TB iPhone pays hundreds more than 256GB. Same device, different capacity, different payout. <strong>Check your model specs before you quote.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Lock Status",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "Unlocked devices pay more",
+              "body_html": "Carrier-locked phones limit resale. If you're still paying it off or it's tied to a contract, <strong>settle that first or expect a lower offer.</strong> Find My must be off, too."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "The Quote",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "You get a real number, not a range",
+              "body_html": "Answer six questions, get your exact cash offer. No vague 'up to' nonsense. <strong>If the device matches your description, that's what we pay.</strong> Same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 3: Photo post — lifestyle outcome",
+        "caption": "That drawer full of old gear is a stack of bills waiting to happen. Ship it free, get paid the same day, move on. Real cash, no store credit. Start at purchasingcorp.com.",
+        "hashtags": [
+          "#cashfortech",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#extracash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Turn old tech into real money",
+              "headline_html": "That drawer is <em>cash waiting</em>",
+              "sub_html": "Ship free · Get paid same day · No store credit",
+              "photo_url": "https://images.unsplash.com/photo-1696710257827-75e2e5954059?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxnYW1pbmclMjBzZXR1cCUyMHdpdGglMjBSR0IlMjBsaWdodHN8ZW58MXwwfHx8MTc4MDUxMDAxMnww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 4: Compare — cash now vs. marketplace waiting",
+        "caption": "List it on a marketplace and wait weeks for lowball offers and flaky buyers. Or get cash today with zero hassle. We'll take the instant payout. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#nocraiglist",
+          "#instantcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "CASH VS. WAITING",
+              "eyebrow": "iPhone 17 Pro Max 512GB · Flawless",
+              "title_html": "We pay <em>cash today</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace (weeks of waiting)",
+                  "value": "~$1,050",
+                  "pct": 85,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical listing estimate. Subtract fees, flakes, and weeks of your time — or take the cash now."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Wednesday, June 3",
+          "section": "BUYBACK",
+          "headline_html": "<em>$675</em> for Mac Mini M4 Pro",
+          "deck_html": "Same-day cash · No store credit · Real quote in 2 minutes",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "WHAT DECIDES YOUR PAYOUT",
+          "stat_value": "3",
+          "stat_unit": "factors",
+          "caption_html": "Condition, storage, lock status. <em>That's it.</em> Answer honestly, get your real number.",
+          "source": "PurchasingCorp quote engine"
+        }
+      }
+    ]
+  }
+}

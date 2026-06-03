@@ -1,0 +1,91 @@
+{
+  "rendered_at": "2026-06-03T18:06:53.482Z",
+  "content_file": "social/2026-06-03/content.json",
+  "base_path": "social/2026-06-03",
+  "scale": 2,
+  "posts": [
+    {
+      "index": 1,
+      "role": "Post 1: Featured offer — Mac Mini",
+      "caption": "Mac Mini collecting dust? We're paying up to $675 cash today for M4 Pro models. Real quote in two minutes, prepaid label, same-day payout once we check it. No store credit, no waiting. Get your number at purchasingcorp.com/form.",
+      "hashtags": [
+        "#macmini",
+        "#sellmymac",
+        "#applebuyback",
+        "#cashformac",
+        "#macminisale"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-01-slide-01.png"
+      ]
+    },
+    {
+      "index": 2,
+      "role": "Post 2: Carousel — educational (what affects your payout)",
+      "caption": "Three things decide your payout: condition, storage, and lock status. We break it all down so you know exactly what to expect before you ship. Start your quote at purchasingcorp.com/form.",
+      "hashtags": [
+        "#selltech",
+        "#applebuyback",
+        "#cashforphones",
+        "#techresale",
+        "#buybacktips"
+      ],
+      "size": "feed",
+      "is_carousel": true,
+      "files": [
+        "post-02-slide-01.png",
+        "post-02-slide-02.png",
+        "post-02-slide-03.png",
+        "post-02-slide-04.png"
+      ]
+    },
+    {
+      "index": 3,
+      "role": "Post 3: Photo post — lifestyle outcome",
+      "caption": "That drawer full of old gear is a stack of bills waiting to happen. Ship it free, get paid the same day, move on. Real cash, no store credit. Start at purchasingcorp.com.",
+      "hashtags": [
+        "#cashfortech",
+        "#sellmyiphone",
+        "#applebuyback",
+        "#techbuyback",
+        "#extracash"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-03-slide-01.png"
+      ]
+    },
+    {
+      "index": 4,
+      "role": "Post 4: Compare — cash now vs. marketplace waiting",
+      "caption": "List it on a marketplace and wait weeks for lowball offers and flaky buyers. Or get cash today with zero hassle. We'll take the instant payout. Quote at purchasingcorp.com/form.",
+      "hashtags": [
+        "#sellmyiphone",
+        "#cashforphones",
+        "#applebuyback",
+        "#nocraiglist",
+        "#instantcash"
+      ],
+      "size": "feed",
+      "is_carousel": false,
+      "files": [
+        "post-04-slide-01.png"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "index": 1,
+      "template": "cover",
+      "file": "story-01.png"
+    },
+    {
+      "index": 2,
+      "template": "stat",
+      "file": "story-02.png"
+    }
+  ]
+}
