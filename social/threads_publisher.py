@@ -46,7 +46,7 @@
 #   THREADS_USER_ID          numeric Threads user id to publish to (or "me")
 # Optional env:
 #   THREADS_PUBLIC_BASE_URL  default: IG_PUBLIC_BASE_URL or
-#                            https://purchasingcorp.vercel.app
+#                            https://purchasingcorp.com
 #   THREADS_API_VERSION      default v1.0
 #   THREADS_DRY_RUN=1        plan only, no API calls
 #   THREADS_INCLUDE_STORIES=1  also post story images (default: posts only)
@@ -85,7 +85,7 @@ GRAPH_BASE = f"https://graph.threads.net/{API_VERSION}"
 BASE_URL = (
     os.environ.get("THREADS_PUBLIC_BASE_URL")
     or os.environ.get("IG_PUBLIC_BASE_URL")
-    or "https://purchasingcorp.vercel.app"
+    or "https://purchasingcorp.com"
 ).rstrip("/")
 
 TOKEN = os.environ.get("THREADS_ACCESS_TOKEN", "")

@@ -22,7 +22,7 @@
 #   IG_ACCESS_TOKEN          long-lived Instagram Graph API token
 #   IG_BUSINESS_ACCOUNT_ID   the IG account id to publish to
 # Optional env:
-#   IG_PUBLIC_BASE_URL       default https://purchasingcorp.vercel.app
+#   IG_PUBLIC_BASE_URL       default https://purchasingcorp.com
 #   IG_API_VERSION           default v21.0
 #   IG_DRY_RUN=1             plan only, no API calls
 #   IG_SKIP_STORIES=1        publish posts only
@@ -53,7 +53,7 @@ ROOT = HERE.parent
 
 API_VERSION = os.environ.get("IG_API_VERSION", "v21.0")
 GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"
-BASE_URL = (os.environ.get("IG_PUBLIC_BASE_URL") or "https://purchasingcorp.vercel.app").rstrip("/")
+BASE_URL = (os.environ.get("IG_PUBLIC_BASE_URL") or "https://purchasingcorp.com").rstrip("/")
 
 TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")
 ACCOUNT_ID = os.environ.get("IG_BUSINESS_ACCOUNT_ID") or os.environ.get("IG_ACCOUNT_ID", "")
