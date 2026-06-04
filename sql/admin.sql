@@ -187,6 +187,29 @@ create policy "messages: admin update"
   with check (public.is_admin());
 
 -- ============================================================
+-- 6. ADMIN: RESOLVE ACCOUNT EMAILS
+-- ------------------------------------------------------------
+-- The browser uses the anon key and cannot read auth.users, so this
+-- SECURITY DEFINER function lets an admin map inquiry user_ids back to
+-- the login email of the account that submitted them.
+-- ============================================================
+create or replace function public.admin_account_emails(p_user_ids uuid[])
+returns table (user_id uuid, email text)
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select distinct u.id, u.email::text
+  from auth.users u
+  where public.is_admin()
+    and u.id = any(p_user_ids)
+    and exists (select 1 from public.inquiries i where i.user_id = u.id);
+$$;
+
+grant execute on function public.admin_account_emails(uuid[]) to authenticated;
+
+-- ============================================================
 -- BOOTSTRAP YOUR FIRST ADMIN
 -- ------------------------------------------------------------
 -- 1. Create a normal account on /account (sign up + confirm email).

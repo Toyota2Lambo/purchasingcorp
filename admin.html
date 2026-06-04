@@ -164,6 +164,7 @@ tailwind.config = {
     var me = null;                 // { id, email }
     var inquiries = [];            // all rows (admin sees everything)
     var unread = {};               // inquiry_id -> count of unread customer msgs
+    var acctEmails = {};           // user_id -> login email (admin-resolved)
     var selectedId = null;
     var filter = 'all';
     var search = '';
@@ -325,6 +326,7 @@ tailwind.config = {
       }
       inquiries = data || [];
       await loadUnread();
+      await loadAccountEmails();
       renderList();
       // Intentionally do NOT rebuild the open detail here: a background poll
       // must not wipe what the admin is typing (offer note, draft message).
@@ -340,6 +342,22 @@ tailwind.config = {
       try {
         var res = await sb.from('messages').select('inquiry_id').eq('sender_role','customer').is('read_at', null);
         (res.data || []).forEach(function(m){ unread[m.inquiry_id] = (unread[m.inquiry_id] || 0) + 1; });
+      } catch(e) {}
+    }
+
+    // Resolve user_id -> login email via an admin-only SECURITY DEFINER RPC
+    // (the anon/authenticated key can't read auth.users directly).
+    async function loadAccountEmails(){
+      var ids = [];
+      inquiries.forEach(function(q){
+        if (q.user_id && !(q.user_id in acctEmails)) ids.push(q.user_id);
+      });
+      if (!ids.length) return;
+      try {
+        var res = await sb.rpc('admin_account_emails', { p_user_ids: ids });
+        if (!res.error && Array.isArray(res.data)) {
+          res.data.forEach(function(r){ acctEmails[r.user_id] = r.email || ''; });
+        }
       } catch(e) {}
     }
 
@@ -435,6 +453,7 @@ tailwind.config = {
       }).join('');
 
       var linked = !!q.user_id;
+      var acctEmail = q.user_id ? (acctEmails[q.user_id] || '') : '';
       var statusOptions = STATUS_ORDER.map(function(s){
         return '<option value="' + s + '"' + ((q.status||'new') === s ? ' selected' : '') + '>' + esc(statusMeta(s).label) + '</option>';
       }).join('');
@@ -448,7 +467,9 @@ tailwind.config = {
             '<div class="min-w-0">' +
               '<h2 class="text-lg font-semibold tracking-[-0.02em] break-words">' + esc(q.model || q.type || 'Quote') + '</h2>' +
               '<div class="mt-1 text-[12px] text-ink-400">Submitted ' + esc(fdate(q.created_at)) + ' · ' +
-                (linked ? '<span class="text-emerald-300">linked to account</span>' : '<span class="text-ink-300">no account yet</span>') + '</div>' +
+                (linked
+                  ? '<span class="text-emerald-300">' + (acctEmail ? 'account: ' + esc(acctEmail) : 'linked to account') + '</span>'
+                  : '<span class="text-ink-300">no account yet</span>') + '</div>' +
             '</div>' +
             '<span class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ' + meta.cls + '">' + esc(meta.label) + '</span>' +
           '</div>' +
