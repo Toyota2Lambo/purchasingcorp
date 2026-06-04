@@ -228,6 +228,8 @@ tailwind.config = {
     var mode = 'signin';        // 'signin' | 'signup'
     var claimDone = false;      // claim runs at most once per signed-in load
     var rendering = false, renderAgain = false;
+    var currentUser = null;     // signed-in user (for chat sender_id)
+    var openChat = null;        // { id, timer } — at most one thread open at a time
 
     function byId(id) { return document.getElementById(id); }
     function show(el) { if (el) el.classList.remove('hidden'); }
@@ -248,6 +250,12 @@ tailwind.config = {
       if (isNaN(d.getTime())) return '';
       return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
     }
+    function ftime(s) {
+      if (!s) return '';
+      var d = new Date(s);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    }
 
     var STATUS = {
       new:         { label: 'Submitted',   cls: 'bg-white/10 text-ink-100' },
@@ -260,7 +268,7 @@ tailwind.config = {
       received:    { label: 'Received',    cls: 'bg-emerald-400/15 text-emerald-200' },
       paid:        { label: 'Paid',        cls: 'bg-emerald-400/15 text-emerald-200' },
       completed:   { label: 'Completed',   cls: 'bg-emerald-400/15 text-emerald-200' },
-      declined:    { label: 'Closed',      cls: 'bg-white/10 text-ink-300' }
+      declined:    { label: 'Declined',    cls: 'bg-white/10 text-ink-300' }
     };
     // Statuses where a shipping label is relevant (the item is "fully verified").
     var LABEL_STATUSES = ['verified', 'label_ready', 'shipped', 'received', 'paid', 'completed'];
@@ -386,12 +394,15 @@ tailwind.config = {
 
       if (!session) {
         claimDone = false;
+        currentUser = null;
+        closeChat();
         show(byId('authView'));
         hide(byId('dashView'));
         var b = byId('authSubmit'); if (b) b.disabled = false;
         return;
       }
 
+      currentUser = session.user || null;
       hide(byId('authView'));
       show(byId('dashView'));
       byId('userEmail').textContent = (session.user && session.user.email) || '';
@@ -430,6 +441,7 @@ tailwind.config = {
       var list = byId('quotes');
       var empty = byId('quotesEmpty');
       var loading = byId('quotesLoading');
+      closeChat();
       list.innerHTML = '';
       hide(empty);
       show(loading);
@@ -448,6 +460,135 @@ tailwind.config = {
       }
       if (!data || !data.length) { show(empty); return; }
       data.forEach(function (q) { list.insertAdjacentHTML('beforeend', card(q)); });
+      wireChat(list);
+      wireOffers(list);
+    }
+
+    function wireOffers(list) {
+      list.querySelectorAll('[data-offer-accept]').forEach(function (btn) {
+        btn.addEventListener('click', function () { respondToOffer(btn.getAttribute('data-offer-accept'), 'accepted'); });
+      });
+      list.querySelectorAll('[data-offer-decline]').forEach(function (btn) {
+        btn.addEventListener('click', function () { respondToOffer(btn.getAttribute('data-offer-decline'), 'declined'); });
+      });
+    }
+
+    var responding = false;
+    async function respondToOffer(id, decision) {
+      if (responding || !id) return;
+      if (decision === 'declined' && !window.confirm('Decline this offer? You can still accept it later if you change your mind.')) return;
+      responding = true;
+      var btns = document.querySelectorAll('[data-offer-accept="' + id + '"], [data-offer-decline="' + id + '"]');
+      btns.forEach(function (b) { b.disabled = true; });
+      try {
+        // SECURITY DEFINER RPC: flips only the status (accepted/declined) on the
+        // caller's own locked offer. The dollar amount is never customer-writable.
+        var res = await sb.rpc('respond_to_offer', { p_inquiry_id: id, p_decision: decision });
+        if (res.error) throw res.error;
+        await loadQuotes();
+      } catch (e) {
+        alert((e && e.message) || 'Could not update your response. Try again.');
+        btns.forEach(function (b) { b.disabled = false; });
+      } finally {
+        responding = false;
+      }
+    }
+
+    function wireChat(list) {
+      list.querySelectorAll('[data-chat-toggle]').forEach(function (btn) {
+        btn.addEventListener('click', function () { toggleChat(btn.getAttribute('data-chat-toggle')); });
+      });
+      list.querySelectorAll('[data-msg-send]').forEach(function (btn) {
+        var id = btn.getAttribute('data-msg-send');
+        btn.addEventListener('click', function () { sendCustomerMessage(id); });
+      });
+      list.querySelectorAll('[data-msg-input]').forEach(function (t) {
+        var id = t.getAttribute('data-msg-input');
+        t.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); sendCustomerMessage(id); }
+        });
+      });
+    }
+
+    function closeChat() {
+      if (openChat) { clearInterval(openChat.timer); openChat = null; }
+    }
+
+    function toggleChat(id) {
+      var panel = byId('chat-' + id);
+      var btn = document.querySelector('[data-chat-toggle="' + id + '"]');
+      if (!panel) return;
+      if (openChat && openChat.id === id) {
+        panel.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        closeChat();
+        return;
+      }
+      if (openChat) {
+        var prev = byId('chat-' + openChat.id);
+        if (prev) prev.classList.add('hidden');
+        var prevBtn = document.querySelector('[data-chat-toggle="' + openChat.id + '"]');
+        if (prevBtn) prevBtn.setAttribute('aria-expanded', 'false');
+        closeChat();
+      }
+      panel.classList.remove('hidden');
+      if (btn) btn.setAttribute('aria-expanded', 'true');
+      openChat = { id: id, timer: setInterval(function () { loadCustomerMessages(id, false); }, 6000) };
+      loadCustomerMessages(id, true);
+    }
+
+    var lastChatSig = '';
+    async function loadCustomerMessages(id, scroll) {
+      var thread = document.querySelector('[data-thread="' + id + '"]');
+      if (!thread) return;
+      try {
+        var res = await sb.from('messages').select('*').eq('inquiry_id', id).order('created_at', { ascending: true });
+        if (res.error) throw res.error;
+        var data = res.data || [];
+        // Skip redundant re-render on background polls (avoids scroll jumps).
+        var last = data.length ? data[data.length - 1] : null;
+        var sig = id + '|' + data.length + '|' + (last ? last.id : '');
+        if (!scroll && sig === lastChatSig) return;
+        lastChatSig = sig;
+        thread.innerHTML = data.length
+          ? data.map(bubble).join('')
+          : '<p class="text-[12px] text-ink-500">No messages yet. Send us a note about this quote and we\'ll reply here.</p>';
+        if (scroll) thread.scrollTop = thread.scrollHeight;
+      } catch (e) {
+        thread.innerHTML = '<p class="text-[12px] text-ink-500">Couldn\'t load messages right now.</p>';
+      }
+    }
+
+    function bubble(m) {
+      var mine = m.sender_role === 'customer';
+      return '<div class="flex ' + (mine ? 'justify-end' : 'justify-start') + '">' +
+        '<div class="max-w-[80%] rounded-2xl px-3.5 py-2 ' +
+          (mine ? 'bg-white text-black' : 'bg-white/[0.06] text-ink-100 border border-white/10') + '">' +
+          '<div class="text-[13px] leading-relaxed whitespace-pre-wrap break-words">' + esc(m.body) + '</div>' +
+          '<div class="mt-1 text-[10px] ' + (mine ? 'text-black/50' : 'text-ink-500') + '">' +
+            esc(mine ? 'You' : 'PurchasingCorp') + ' · ' + esc(ftime(m.created_at)) + '</div>' +
+        '</div></div>';
+    }
+
+    async function sendCustomerMessage(id) {
+      var input = document.querySelector('[data-msg-input="' + id + '"]');
+      var send = document.querySelector('[data-msg-send="' + id + '"]');
+      if (!input || !currentUser) return;
+      var body = (input.value || '').trim();
+      if (!body) return;
+      if (send) send.disabled = true;
+      try {
+        var res = await sb.from('messages').insert({
+          inquiry_id: id, sender_role: 'customer', sender_id: currentUser.id, body: body
+        });
+        if (res.error) throw res.error;
+        input.value = '';
+        await loadCustomerMessages(id, true);
+      } catch (e) {
+        alert((e && e.message) || 'Could not send your message. Try again.');
+      } finally {
+        if (send) send.disabled = false;
+      }
     }
 
     function card(q) {
@@ -484,6 +625,61 @@ tailwind.config = {
       var subline = [q.type, q.condition].filter(Boolean).join(' · ');
       if (q.created_at) subline = subline ? (subline + ' · ' + fdate(q.created_at)) : fdate(q.created_at);
 
+      var offerBlock = '';
+      if (amount && q.offer_locked_at) {
+        var st = q.status || 'new';
+        var primaryBtn = 'rounded-full bg-white px-4 py-2 text-[12.5px] font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed';
+        var ghostBtn = 'rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-[12.5px] font-medium text-ink-100 hover:bg-white/[0.08] transition disabled:opacity-60 disabled:cursor-not-allowed';
+        var linkBtn = 'text-[11.5px] text-ink-400 underline underline-offset-4 hover:text-white transition disabled:opacity-60 disabled:cursor-not-allowed';
+        var respondedOn = q.offer_response_at ? ' · ' + esc(fdate(q.offer_response_at)) : '';
+        var decision = '';
+        if (st === 'quoted') {
+          decision =
+            '<div class="mt-3 flex flex-wrap items-center gap-2">' +
+              '<button type="button" data-offer-accept="' + esc(q.id) + '" class="' + primaryBtn + '">Accept offer</button>' +
+              '<button type="button" data-offer-decline="' + esc(q.id) + '" class="' + ghostBtn + '">Decline</button>' +
+            '</div>';
+        } else if (st === 'accepted') {
+          decision =
+            '<div class="mt-3 flex items-center justify-between gap-3 flex-wrap">' +
+              '<div class="text-[12px] font-medium text-emerald-300">&#10003; You accepted this offer' + respondedOn + '</div>' +
+              '<button type="button" data-offer-decline="' + esc(q.id) + '" class="' + linkBtn + '">Decline instead</button>' +
+            '</div>';
+        } else if (st === 'declined') {
+          decision =
+            '<div class="mt-3 flex items-center justify-between gap-3 flex-wrap">' +
+              '<div class="text-[12px] text-ink-400">You declined this offer' + respondedOn + '</div>' +
+              '<button type="button" data-offer-accept="' + esc(q.id) + '" class="' + linkBtn + '">Accept instead</button>' +
+            '</div>';
+        }
+        offerBlock =
+          '<div class="mt-3 rounded-xl border border-sky-400/20 bg-sky-400/[0.06] p-3.5">' +
+            '<div class="flex items-center justify-between gap-3 flex-wrap">' +
+              '<div class="text-[11px] uppercase tracking-[0.14em] text-sky-200">Your locked-in offer</div>' +
+              '<div class="text-white font-semibold text-[18px]">' + esc(amount) + '</div>' +
+            '</div>' +
+            (q.offer_note ? '<div class="mt-1.5 text-[12px] text-ink-200">' + esc(q.offer_note) + '</div>' : '') +
+            '<div class="mt-1 text-[11px] text-ink-500">Locked ' + esc(fdate(q.offer_locked_at)) + " · we're holding this price for you.</div>" +
+            decision +
+          '</div>';
+      } else if (amount) {
+        offerBlock = '<div class="mt-3 text-[13px] text-ink-300">Offer: <span class="text-white font-semibold text-[15px]">' + esc(amount) + '</span></div>';
+      }
+
+      var chat =
+        '<div class="mt-4 border-t border-white/[0.06] pt-3.5">' +
+          '<button type="button" data-chat-toggle="' + esc(q.id) + '" aria-expanded="false" class="inline-flex items-center gap-1.5 text-[12.5px] text-ink-300 hover:text-white transition">' +
+            '<svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2.5 12.5V4a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 13.5 4v5A1.5 1.5 0 0 1 12 10.5H5l-2.5 2z"/></svg>' +
+            'Messages</button>' +
+          '<div id="chat-' + esc(q.id) + '" class="hidden mt-3">' +
+            '<div data-thread="' + esc(q.id) + '" class="max-h-72 overflow-y-auto space-y-2 pr-1"></div>' +
+            '<div class="mt-2.5 flex items-end gap-2">' +
+              '<textarea data-msg-input="' + esc(q.id) + '" rows="2" placeholder="Message us about this quote…" class="bg-ink-800 flex-1 resize-none rounded-xl border border-white/10 px-3 py-2 text-[13px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15"></textarea>' +
+              '<button type="button" data-msg-send="' + esc(q.id) + '" class="rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition disabled:opacity-60">Send</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
       return '' +
         '<article class="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-5">' +
           '<div class="flex items-start justify-between gap-3">' +
@@ -493,10 +689,11 @@ tailwind.config = {
             '</div>' +
             '<span class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ' + meta.cls + '">' + esc(meta.label) + '</span>' +
           '</div>' +
-          (amount ? '<div class="mt-3 text-[13px] text-ink-300">Offer: <span class="text-white font-semibold text-[15px]">' + esc(amount) + '</span></div>' : '') +
+          offerBlock +
           (q.details ? '<p class="mt-2 text-[12.5px] text-ink-300 leading-relaxed">' + esc(q.details) + '</p>' : '') +
           photos +
           label +
+          chat +
         '</article>';
     }
   })();

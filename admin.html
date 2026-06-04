@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('pc.theme');
+      var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch(e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  })();
+  window.toggleTheme = function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('pc.theme', next); } catch(e) {}
+  };
+</script>
+<title>Admin · PurchasingCorp</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#050505" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+      },
+      colors: {
+        ink: {
+          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
+          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
+          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
+        },
+      },
+    },
+  },
+};
+</script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
+
+<div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
+</div>
+
+<!-- Top bar -->
+<header class="sticky top-0 z-50">
+  <div class="absolute inset-0 bg-ink-950/70 backdrop-blur-xl border-b border-white/5"></div>
+  <nav class="relative mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
+    <a href="/" class="flex items-center gap-2.5">
+      <span class="grid h-8 w-8 place-items-center rounded-full bg-white text-black font-bold">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+      </span>
+      <span class="text-[15px] font-semibold tracking-tight">PURCHASING<span class="text-ink-300 font-normal">CORP</span></span>
+      <span class="ml-1 rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-ink-300">Admin</span>
+    </a>
+    <div class="flex items-center gap-2">
+      <span id="adminEmail" class="hidden md:inline text-[12.5px] text-ink-400"></span>
+      <button id="themeToggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme"
+        class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] hover:bg-white/[0.08] text-ink-200 hover:text-white transition">
+        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button id="signOut" type="button" class="hidden inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] hover:bg-white/[0.08] transition">Sign out</button>
+    </div>
+  </nav>
+</header>
+
+<main class="relative">
+
+  <!-- Not configured -->
+  <div id="configError" class="hidden mx-auto max-w-md px-5 py-24 text-center">
+    <h1 class="text-2xl font-semibold tracking-[-0.03em]">Admin isn't set up yet</h1>
+    <p class="mt-3 text-ink-300 text-[14px]">Supabase isn't configured on this deployment, so the admin console can't load.</p>
+  </div>
+
+  <!-- Sign in -->
+  <section id="authView" class="hidden mx-auto max-w-md px-5 py-20">
+    <div class="text-center">
+      <h1 class="text-3xl font-semibold tracking-[-0.03em]">Admin sign in</h1>
+      <p class="mt-3 text-ink-300 text-[14px]">Restricted to authorized accounts.</p>
+    </div>
+    <div class="mt-8 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-6 md:p-8">
+      <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+      <form id="authForm" class="space-y-3" novalidate>
+        <div>
+          <label for="authEmail" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Email</label>
+          <input id="authEmail" name="email" type="email" required autocomplete="email" placeholder="you@purchasingcorp.com"
+            class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+        </div>
+        <div>
+          <label for="authPassword" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Password</label>
+          <input id="authPassword" name="password" type="password" required autocomplete="current-password" placeholder="••••••••"
+            class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+        </div>
+        <button id="authSubmit" type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+          Sign in
+        </button>
+      </form>
+      <p id="authStatus" class="mt-3 text-center text-[12.5px] hidden"></p>
+    </div>
+  </section>
+
+  <!-- Not an admin -->
+  <section id="deniedView" class="hidden mx-auto max-w-md px-5 py-24 text-center">
+    <h1 class="text-2xl font-semibold tracking-[-0.03em]">Not authorized</h1>
+    <p class="mt-3 text-ink-300 text-[14px]">You're signed in as <span id="deniedEmail" class="text-ink-100"></span>, but this account doesn't have admin access.</p>
+    <button id="deniedSignOut" type="button" class="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] hover:bg-white/[0.08] transition">Sign out</button>
+  </section>
+
+  <!-- Admin console -->
+  <section id="adminView" class="hidden mx-auto max-w-7xl px-4 md:px-5 py-6">
+    <div class="grid gap-4 md:grid-cols-[minmax(0,380px)_1fr]">
+
+      <!-- List pane -->
+      <div id="listPane" class="md:block">
+        <div class="flex items-center justify-between gap-2">
+          <h1 class="text-[15px] font-semibold tracking-[-0.01em]">Inquiries <span id="listCount" class="text-ink-400 font-normal"></span></h1>
+          <button id="refreshBtn" type="button" class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12px] hover:bg-white/[0.08] transition">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2v3h-3"/></svg>
+            Refresh
+          </button>
+        </div>
+
+        <input id="searchInput" type="search" placeholder="Search model, contact, email…"
+          class="mt-3 bg-ink-800 w-full rounded-xl border border-white/10 px-3.5 py-2.5 text-[13px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+
+        <div id="statusFilter" class="mt-3 flex flex-wrap gap-1.5"></div>
+
+        <div id="listScroll" class="mt-3 space-y-2 md:max-h-[calc(100vh-220px)] md:overflow-y-auto md:pr-1">
+          <div id="listLoading" class="text-center text-[13px] text-ink-400 py-10">Loading…</div>
+          <div id="listEmpty" class="hidden text-center text-[13px] text-ink-500 py-10">No inquiries match.</div>
+          <div id="listRows"></div>
+        </div>
+      </div>
+
+      <!-- Detail pane -->
+      <div id="detailPane" class="hidden md:block">
+        <div id="detailEmpty" class="hidden md:flex h-full min-h-[60vh] items-center justify-center rounded-2xl border border-white/[0.06] bg-white/[0.02]">
+          <p class="text-[13px] text-ink-500">Select an inquiry to view details.</p>
+        </div>
+        <div id="detail" class="hidden"></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  (function () {
+    var sb = null;
+    var me = null;                 // { id, email }
+    var inquiries = [];            // all rows (admin sees everything)
+    var unread = {};               // inquiry_id -> count of unread customer msgs
+    var selectedId = null;
+    var filter = 'all';
+    var search = '';
+    var msgTimer = null, listTimer = null;
+
+    function byId(id){ return document.getElementById(id); }
+    function show(el){ if (el) el.classList.remove('hidden'); }
+    function hide(el){ if (el) el.classList.add('hidden'); }
+    function esc(s){
+      return (s == null ? '' : String(s)).replace(/[&<>"']/g, function(c){
+        return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+      });
+    }
+    function money(n){
+      if (n == null || n === '' || isNaN(Number(n))) return null;
+      return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    }
+    function fdate(s){
+      if (!s) return '';
+      var d = new Date(s); if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+    }
+    function ftime(s){
+      if (!s) return '';
+      var d = new Date(s); if (isNaN(d.getTime())) return '';
+      return d.toLocaleString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit' });
+    }
+
+    var STATUS = {
+      new:         { label:'Submitted',   cls:'bg-white/10 text-ink-100' },
+      reviewing:   { label:'In review',   cls:'bg-amber-400/15 text-amber-200' },
+      quoted:      { label:'Offer sent',  cls:'bg-sky-400/15 text-sky-200' },
+      accepted:    { label:'Accepted',    cls:'bg-sky-400/15 text-sky-200' },
+      verified:    { label:'Verified',    cls:'bg-emerald-400/15 text-emerald-200' },
+      label_ready: { label:'Label ready', cls:'bg-emerald-400/15 text-emerald-200' },
+      shipped:     { label:'Shipped',     cls:'bg-emerald-400/15 text-emerald-200' },
+      received:    { label:'Received',    cls:'bg-emerald-400/15 text-emerald-200' },
+      paid:        { label:'Paid',        cls:'bg-emerald-400/15 text-emerald-200' },
+      completed:   { label:'Completed',   cls:'bg-emerald-400/15 text-emerald-200' },
+      declined:    { label:'Declined',    cls:'bg-white/10 text-ink-300' }
+    };
+    var STATUS_ORDER = ['new','reviewing','quoted','accepted','verified','label_ready','shipped','received','paid','completed','declined'];
+    function statusMeta(s){
+      if (s && STATUS[s]) return STATUS[s];
+      var label = s ? (s.charAt(0).toUpperCase() + s.slice(1).replace(/_/g,' ')) : 'Submitted';
+      return { label: label, cls: 'bg-white/10 text-ink-100' };
+    }
+
+    boot();
+
+    async function boot(){
+      var cfg = null;
+      try { cfg = await (await fetch('/api/config')).json(); } catch(e) {}
+      if (!cfg || !cfg.configured || !window.supabase) { show(byId('configError')); return; }
+
+      sb = window.supabase.createClient(cfg.url, cfg.anonKey, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      });
+
+      byId('authForm').addEventListener('submit', onSignIn);
+      byId('signOut').addEventListener('click', doSignOut);
+      byId('deniedSignOut').addEventListener('click', doSignOut);
+      byId('refreshBtn').addEventListener('click', function(){ loadInquiries(true); });
+      byId('searchInput').addEventListener('input', function(e){ search = (e.target.value || '').toLowerCase().trim(); renderList(); });
+      buildStatusFilter();
+
+      sb.auth.onAuthStateChange(function(){ route(); });
+      route();
+    }
+
+    function doSignOut(){ stopPolling(); if (sb) sb.auth.signOut(); }
+
+    async function onSignIn(e){
+      e.preventDefault();
+      var email = (byId('authEmail').value || '').trim().toLowerCase();
+      var password = byId('authPassword').value || '';
+      var btn = byId('authSubmit');
+      if (!email || !password) { authStatus('Enter your email and password.', 'err'); return; }
+      btn.disabled = true; authStatus('Signing in…', '');
+      try {
+        var res = await sb.auth.signInWithPassword({ email: email, password: password });
+        if (res.error) throw res.error;
+      } catch (err) {
+        authStatus((err && err.message) || 'Sign in failed.', 'err');
+        btn.disabled = false;
+      }
+    }
+    function authStatus(msg, kind){
+      var el = byId('authStatus'); if (!el) return;
+      el.textContent = msg || '';
+      var tone = kind === 'err' ? 'text-red-300' : kind === 'ok' ? 'text-emerald-300' : 'text-ink-300';
+      el.className = 'mt-3 text-center text-[12.5px] ' + tone + (msg ? '' : ' hidden');
+    }
+
+    async function route(){
+      var session = null;
+      try { session = (await sb.auth.getSession()).data.session; } catch(e) {}
+
+      if (!session) {
+        stopPolling();
+        hide(byId('adminView')); hide(byId('deniedView')); hide(byId('signOut')); hide(byId('adminEmail'));
+        show(byId('authView'));
+        var b = byId('authSubmit'); if (b) b.disabled = false;
+        return;
+      }
+
+      me = { id: session.user.id, email: session.user.email || '' };
+
+      // Verify admin via SECURITY DEFINER RPC.
+      var admin = false;
+      try { var r = await sb.rpc('is_admin'); admin = (r && r.data === true); } catch(e) { admin = false; }
+
+      if (!admin) {
+        stopPolling();
+        hide(byId('authView')); hide(byId('adminView')); hide(byId('signOut'));
+        byId('deniedEmail').textContent = me.email;
+        show(byId('deniedView'));
+        return;
+      }
+
+      hide(byId('authView')); hide(byId('deniedView'));
+      byId('adminEmail').textContent = me.email; show(byId('adminEmail'));
+      show(byId('signOut')); show(byId('adminView'));
+      await loadInquiries(true);
+      startListPolling();
+    }
+
+    function buildStatusFilter(){
+      var wrap = byId('statusFilter');
+      var opts = ['all'].concat(STATUS_ORDER);
+      wrap.innerHTML = opts.map(function(s){
+        var label = s === 'all' ? 'All' : statusMeta(s).label;
+        return '<button type="button" data-status="' + s + '" class="filter-chip rounded-full border px-2.5 py-1 text-[11.5px] transition">' + esc(label) + '</button>';
+      }).join('');
+      wrap.querySelectorAll('.filter-chip').forEach(function(btn){
+        btn.addEventListener('click', function(){ filter = btn.getAttribute('data-status'); paintFilter(); renderList(); });
+      });
+      paintFilter();
+    }
+    function paintFilter(){
+      byId('statusFilter').querySelectorAll('.filter-chip').forEach(function(btn){
+        var on = btn.getAttribute('data-status') === filter;
+        btn.className = 'filter-chip rounded-full border px-2.5 py-1 text-[11.5px] transition ' +
+          (on ? 'border-white/0 bg-white text-black' : 'border-white/10 bg-white/[0.03] text-ink-300 hover:text-white');
+      });
+    }
+
+    async function loadInquiries(showLoading){
+      if (showLoading) { show(byId('listLoading')); }
+      var data = null, error = null;
+      try {
+        var res = await sb.from('inquiries').select('*').order('created_at', { ascending: false });
+        data = res.data; error = res.error;
+      } catch(e) { error = e; }
+      hide(byId('listLoading'));
+      if (error) {
+        byId('listRows').innerHTML = '<p class="text-center text-[13px] text-red-300 py-6">Could not load inquiries.</p>';
+        return;
+      }
+      inquiries = data || [];
+      await loadUnread();
+      renderList();
+      // Intentionally do NOT rebuild the open detail here: a background poll
+      // must not wipe what the admin is typing (offer note, draft message).
+      // The open thread refreshes itself via its own short poll. If the
+      // selected inquiry somehow disappeared, fall back to the list.
+      if (selectedId && !inquiries.some(function(q){ return q.id === selectedId; })) {
+        backToList();
+      }
+    }
+
+    async function loadUnread(){
+      unread = {};
+      try {
+        var res = await sb.from('messages').select('inquiry_id').eq('sender_role','customer').is('read_at', null);
+        (res.data || []).forEach(function(m){ unread[m.inquiry_id] = (unread[m.inquiry_id] || 0) + 1; });
+      } catch(e) {}
+    }
+
+    function visibleRows(){
+      return inquiries.filter(function(q){
+        if (filter !== 'all' && (q.status || 'new') !== filter) return false;
+        if (search) {
+          var hay = [q.model, q.type, q.contact, q.email, q.condition, q.details].filter(Boolean).join(' ').toLowerCase();
+          if (hay.indexOf(search) === -1) return false;
+        }
+        return true;
+      });
+    }
+
+    function renderList(){
+      var rows = visibleRows();
+      var newCount = inquiries.filter(function(q){ return (q.status||'new') === 'new'; }).length;
+      byId('listCount').textContent = '· ' + inquiries.length + (newCount ? ' (' + newCount + ' new)' : '');
+      var host = byId('listRows');
+      if (!rows.length) { host.innerHTML = ''; show(byId('listEmpty')); return; }
+      hide(byId('listEmpty'));
+      host.innerHTML = rows.map(rowHtml).join('');
+      host.querySelectorAll('[data-id]').forEach(function(el){
+        el.addEventListener('click', function(){ selectInquiry(el.getAttribute('data-id')); });
+      });
+    }
+
+    function rowHtml(q){
+      var meta = statusMeta(q.status);
+      var amount = money(q.offer_amount);
+      var u = unread[q.id] || 0;
+      var sel = q.id === selectedId;
+      var sub = [q.type, q.contact || q.email].filter(Boolean).join(' · ');
+      return '' +
+        '<button type="button" data-id="' + esc(q.id) + '" class="w-full text-left rounded-xl border p-3 transition ' +
+          (sel ? 'border-white/20 bg-white/[0.06]' : 'border-white/[0.07] bg-white/[0.02] hover:bg-white/[0.04]') + '">' +
+          '<div class="flex items-start justify-between gap-2">' +
+            '<div class="min-w-0">' +
+              '<div class="flex items-center gap-1.5">' +
+                (u ? '<span class="h-2 w-2 shrink-0 rounded-full bg-sky-400"></span>' : '') +
+                '<span class="text-[13.5px] font-medium truncate">' + esc(q.model || q.type || 'Quote') + '</span>' +
+              '</div>' +
+              '<div class="mt-0.5 text-[11.5px] text-ink-400 truncate">' + esc(sub) + '</div>' +
+            '</div>' +
+            '<span class="shrink-0 rounded-full px-2 py-0.5 text-[10.5px] font-medium ' + meta.cls + '">' + esc(meta.label) + '</span>' +
+          '</div>' +
+          '<div class="mt-1.5 flex items-center justify-between gap-2 text-[11px] text-ink-500">' +
+            '<span>' + esc(fdate(q.created_at)) + '</span>' +
+            (amount ? '<span class="text-ink-200 font-medium">' + esc(amount) + (q.offer_locked_at ? ' · locked' : '') + '</span>' : '') +
+          '</div>' +
+        '</button>';
+    }
+
+    function selectInquiry(id){
+      selectedId = id;
+      // Mobile: show detail, hide list.
+      byId('listPane').classList.add('hidden');
+      byId('detailPane').classList.remove('hidden');
+      renderList(); // repaint selection highlight
+      renderDetail();
+      startMsgPolling();
+    }
+    function backToList(){
+      stopMsgPolling();
+      selectedId = null;
+      byId('detailPane').classList.add('hidden');
+      byId('listPane').classList.remove('hidden');
+      renderList();
+    }
+
+    function current(){ return inquiries.find(function(q){ return q.id === selectedId; }) || null; }
+
+    function renderDetail(){
+      var q = current();
+      var box = byId('detail');
+      hide(byId('detailEmpty'));
+      show(box);
+      if (!q) { box.innerHTML = ''; return; }
+
+      var meta = statusMeta(q.status);
+      var photos = (Array.isArray(q.photo_urls) && q.photo_urls.length)
+        ? '<div class="mt-3 flex flex-wrap gap-2">' + q.photo_urls.map(function(u){
+            return '<a href="' + esc(u) + '" target="_blank" rel="noopener"><img src="' + esc(u) + '" alt="" class="h-20 w-20 rounded-lg object-cover border border-white/10" loading="lazy"></a>';
+          }).join('') + '</div>'
+        : '<div class="mt-3 text-[12px] text-ink-500">No photos attached.</div>';
+
+      var info = [
+        ['Type', q.type], ['Condition', q.condition], ['Handoff', q.handoff],
+        ['Contact', q.contact], ['Email', q.email], ['Country', q.country]
+      ].filter(function(p){ return p[1]; }).map(function(p){
+        return '<div><dt class="text-[11px] uppercase tracking-[0.12em] text-ink-500">' + esc(p[0]) + '</dt>' +
+               '<dd class="mt-0.5 text-[13px] text-ink-100 break-words">' + esc(p[1]) + '</dd></div>';
+      }).join('');
+
+      var linked = !!q.user_id;
+      var statusOptions = STATUS_ORDER.map(function(s){
+        return '<option value="' + s + '"' + ((q.status||'new') === s ? ' selected' : '') + '>' + esc(statusMeta(s).label) + '</option>';
+      }).join('');
+
+      box.innerHTML = '' +
+        '<button id="backBtn" type="button" class="md:hidden mb-3 inline-flex items-center gap-1.5 text-[13px] text-ink-300 hover:text-white">' +
+          '<svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4 6 8l4 4"/></svg> All inquiries</button>' +
+
+        '<div class="rounded-2xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-5">' +
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div class="min-w-0">' +
+              '<h2 class="text-lg font-semibold tracking-[-0.02em] break-words">' + esc(q.model || q.type || 'Quote') + '</h2>' +
+              '<div class="mt-1 text-[12px] text-ink-400">Submitted ' + esc(fdate(q.created_at)) + ' · ' +
+                (linked ? '<span class="text-emerald-300">linked to account</span>' : '<span class="text-ink-300">no account yet</span>') + '</div>' +
+            '</div>' +
+            '<span class="shrink-0 rounded-full px-2.5 py-1 text-[11px] font-medium ' + meta.cls + '">' + esc(meta.label) + '</span>' +
+          '</div>' +
+          '<dl class="mt-4 grid grid-cols-2 gap-x-4 gap-y-3">' + info + '</dl>' +
+          (q.details ? '<div class="mt-4"><dt class="text-[11px] uppercase tracking-[0.12em] text-ink-500">Details</dt><dd class="mt-1 text-[13px] text-ink-200 leading-relaxed whitespace-pre-wrap break-words">' + esc(q.details) + '</dd></div>' : '') +
+          photos +
+        '</div>' +
+
+        // Offer
+        '<div class="mt-4 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">' +
+          '<h3 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-ink-300">Locked offer</h3>' +
+          (q.offer_locked_at
+            ? '<p class="mt-2 text-[12.5px] text-emerald-300">Current locked offer: <span class="font-semibold text-white">' + esc(money(q.offer_amount) || '—') + '</span> · sent ' + esc(fdate(q.offer_locked_at)) + '</p>'
+            : '<p class="mt-2 text-[12.5px] text-ink-400">No offer locked in yet.</p>') +
+          (q.offer_response_at && (q.status === 'accepted' || q.status === 'declined')
+            ? '<p class="mt-1 text-[12.5px] ' + (q.status === 'accepted' ? 'text-emerald-300' : 'text-amber-200') + '">Customer ' + (q.status === 'accepted' ? 'accepted' : 'declined') + ' this offer on ' + esc(ftime(q.offer_response_at)) + '.</p>'
+            : '') +
+          '<div class="mt-3 flex flex-wrap items-end gap-2">' +
+            '<div><label class="block text-[11px] text-ink-400 mb-1">Amount (USD)</label>' +
+              '<input id="offerAmount" type="number" min="0" step="0.01" value="' + esc(q.offer_amount != null ? q.offer_amount : '') + '" placeholder="0.00" class="bg-ink-800 w-36 rounded-lg border border-white/10 px-3 py-2 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15"></div>' +
+            '<div class="flex-1 min-w-[160px]"><label class="block text-[11px] text-ink-400 mb-1">Note (optional, shown to customer)</label>' +
+              '<input id="offerNote" type="text" maxlength="400" value="' + esc(q.offer_note || '') + '" placeholder="e.g. Based on photos, pending inspection" class="bg-ink-800 w-full rounded-lg border border-white/10 px-3 py-2 text-[13px] focus:outline-none focus:ring-2 focus:ring-white/15"></div>' +
+            '<button id="lockOfferBtn" type="button" class="rounded-full bg-white px-4 py-2 text-[13px] font-medium text-black hover:bg-ink-100 transition">' + (q.offer_locked_at ? 'Update offer' : 'Lock & send offer') + '</button>' +
+          '</div>' +
+          '<p id="offerMsg" class="mt-2 text-[12px] hidden"></p>' +
+        '</div>' +
+
+        // Status + shipping
+        '<div class="mt-4 grid gap-4 sm:grid-cols-2">' +
+          '<div class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">' +
+            '<h3 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-ink-300">Status</h3>' +
+            '<div class="mt-3 flex items-center gap-2">' +
+              '<select id="statusSel" class="bg-ink-800 flex-1 rounded-lg border border-white/10 px-3 py-2 text-[13px] focus:outline-none focus:ring-2 focus:ring-white/15">' + statusOptions + '</select>' +
+              '<button id="statusBtn" type="button" class="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[13px] hover:bg-white/[0.1] transition">Save</button>' +
+            '</div>' +
+            '<p id="statusMsg" class="mt-2 text-[12px] hidden"></p>' +
+          '</div>' +
+          '<div class="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">' +
+            '<h3 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-ink-300">Shipping label</h3>' +
+            '<div class="mt-3 space-y-2">' +
+              '<input id="labelUrl" type="url" value="' + esc(q.shipping_label_url || '') + '" placeholder="Label URL (PDF link)" class="bg-ink-800 w-full rounded-lg border border-white/10 px-3 py-2 text-[12.5px] focus:outline-none focus:ring-2 focus:ring-white/15">' +
+              '<div class="flex gap-2">' +
+                '<input id="carrier" type="text" maxlength="40" value="' + esc(q.carrier || '') + '" placeholder="Carrier" class="bg-ink-800 w-1/3 rounded-lg border border-white/10 px-3 py-2 text-[12.5px] focus:outline-none focus:ring-2 focus:ring-white/15">' +
+                '<input id="tracking" type="text" maxlength="80" value="' + esc(q.tracking_number || '') + '" placeholder="Tracking #" class="bg-ink-800 flex-1 rounded-lg border border-white/10 px-3 py-2 text-[12.5px] focus:outline-none focus:ring-2 focus:ring-white/15">' +
+              '</div>' +
+              '<button id="shipBtn" type="button" class="w-full rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[13px] hover:bg-white/[0.1] transition">Save shipping</button>' +
+            '</div>' +
+            '<p id="shipMsg" class="mt-2 text-[12px] hidden"></p>' +
+          '</div>' +
+        '</div>' +
+
+        // Chat
+        '<div class="mt-4 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">' +
+          '<h3 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-ink-300">Chat with customer</h3>' +
+          (linked ? '' : '<p class="mt-2 text-[12px] text-amber-200/80">This quote isn\'t linked to a customer account yet, so the customer can\'t see in-app messages. Reach them via the contact above.</p>') +
+          '<div id="msgThread" class="mt-3 max-h-80 overflow-y-auto space-y-2 pr-1"></div>' +
+          '<div class="mt-3 flex items-end gap-2">' +
+            '<textarea id="msgInput" rows="2" ' + (linked ? '' : 'disabled') + ' placeholder="' + (linked ? 'Type a message…' : 'Available once the customer has an account') + '" class="bg-ink-800 flex-1 resize-none rounded-xl border border-white/10 px-3 py-2 text-[13px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15 disabled:opacity-50"></textarea>' +
+            '<button id="msgSend" type="button" ' + (linked ? '' : 'disabled') + ' class="rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition disabled:opacity-50">Send</button>' +
+          '</div>' +
+        '</div>';
+
+      // Wire detail controls
+      var back = byId('backBtn'); if (back) back.addEventListener('click', backToList);
+      byId('lockOfferBtn').addEventListener('click', saveOffer);
+      byId('statusBtn').addEventListener('click', saveStatus);
+      byId('shipBtn').addEventListener('click', saveShipping);
+      byId('msgSend').addEventListener('click', sendMessage);
+      byId('msgInput').addEventListener('keydown', function(e){
+        if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); sendMessage(); }
+      });
+
+      loadMessages(true);
+    }
+
+    function fieldMsg(id, msg, kind){
+      var el = byId(id); if (!el) return;
+      el.textContent = msg || '';
+      var tone = kind === 'err' ? 'text-red-300' : kind === 'ok' ? 'text-emerald-300' : 'text-ink-400';
+      el.className = 'mt-2 text-[12px] ' + tone + (msg ? '' : ' hidden');
+    }
+
+    async function patchInquiry(patch){
+      var res = await sb.from('inquiries').update(patch).eq('id', selectedId).select();
+      if (res.error) throw res.error;
+      // Reflect locally so the UI updates without a full reload.
+      var row = (res.data && res.data[0]) || null;
+      if (row) {
+        var i = inquiries.findIndex(function(q){ return q.id === selectedId; });
+        if (i !== -1) inquiries[i] = row;
+      }
+      return row;
+    }
+
+    async function saveOffer(){
+      var q = current(); if (!q) return;
+      var amtRaw = (byId('offerAmount').value || '').trim();
+      var note = (byId('offerNote').value || '').trim();
+      var amt = Number(amtRaw);
+      if (!amtRaw || isNaN(amt) || amt < 0) { fieldMsg('offerMsg', 'Enter a valid offer amount.', 'err'); return; }
+      var btn = byId('lockOfferBtn'); btn.disabled = true; fieldMsg('offerMsg', 'Saving…', '');
+      // Locking an offer advances a not-yet-quoted item to "Offer sent".
+      var advance = (['new','reviewing'].indexOf(q.status || 'new') !== -1);
+      var patch = { offer_amount: amt, offer_note: note || null, offer_locked_at: new Date().toISOString() };
+      if (advance) patch.status = 'quoted';
+      try {
+        await patchInquiry(patch);
+        renderList(); renderDetail();
+        fieldMsg('offerMsg', 'Offer locked and visible to the customer.', 'ok');
+      } catch(err) {
+        fieldMsg('offerMsg', (err && err.message) || 'Could not save offer.', 'err');
+        btn.disabled = false;
+      }
+    }
+
+    async function saveStatus(){
+      var sel = byId('statusSel'); var btn = byId('statusBtn');
+      var status = sel.value; btn.disabled = true; fieldMsg('statusMsg', 'Saving…', '');
+      try {
+        await patchInquiry({ status: status });
+        renderList(); renderDetail();
+        fieldMsg('statusMsg', 'Status updated.', 'ok');
+      } catch(err) {
+        fieldMsg('statusMsg', (err && err.message) || 'Could not update status.', 'err');
+        btn.disabled = false;
+      }
+    }
+
+    async function saveShipping(){
+      var btn = byId('shipBtn'); btn.disabled = true; fieldMsg('shipMsg', 'Saving…', '');
+      var patch = {
+        shipping_label_url: (byId('labelUrl').value || '').trim() || null,
+        carrier: (byId('carrier').value || '').trim() || null,
+        tracking_number: (byId('tracking').value || '').trim() || null
+      };
+      try {
+        await patchInquiry(patch);
+        renderList(); renderDetail();
+        fieldMsg('shipMsg', 'Shipping details saved.', 'ok');
+      } catch(err) {
+        fieldMsg('shipMsg', (err && err.message) || 'Could not save shipping.', 'err');
+        btn.disabled = false;
+      }
+    }
+
+    var lastMsgSig = '';
+    async function loadMessages(scroll){
+      var thread = byId('msgThread'); if (!thread || !selectedId) return;
+      var data = null;
+      try {
+        var res = await sb.from('messages').select('*').eq('inquiry_id', selectedId).order('created_at', { ascending: true });
+        if (res.error) throw res.error;
+        data = res.data || [];
+      } catch(e) {
+        thread.innerHTML = '<p class="text-[12px] text-ink-500">No messages yet.</p>';
+        return;
+      }
+      // Skip a redundant re-render on background polls (avoids scroll jumps).
+      var last = data.length ? data[data.length - 1] : null;
+      var sig = selectedId + '|' + data.length + '|' + (last ? last.id : '');
+      if (!scroll && sig === lastMsgSig) { markCustomerRead(data); return; }
+      lastMsgSig = sig;
+      if (!data.length) {
+        thread.innerHTML = '<p class="text-[12px] text-ink-500">No messages yet. Start the conversation below.</p>';
+      } else {
+        thread.innerHTML = data.map(bubble).join('');
+        if (scroll) thread.scrollTop = thread.scrollHeight;
+      }
+      markCustomerRead(data);
+    }
+
+    function bubble(m){
+      var mine = m.sender_role === 'admin';
+      return '<div class="flex ' + (mine ? 'justify-end' : 'justify-start') + '">' +
+        '<div class="max-w-[80%] rounded-2xl px-3.5 py-2 ' +
+          (mine ? 'bg-white text-black' : 'bg-white/[0.06] text-ink-100 border border-white/10') + '">' +
+          '<div class="text-[13px] leading-relaxed whitespace-pre-wrap break-words">' + esc(m.body) + '</div>' +
+          '<div class="mt-1 text-[10px] ' + (mine ? 'text-black/50' : 'text-ink-500') + '">' + esc(mine ? 'You' : 'Customer') + ' · ' + esc(ftime(m.created_at)) + '</div>' +
+        '</div></div>';
+    }
+
+    async function markCustomerRead(msgs){
+      var anyUnread = (msgs || []).some(function(m){ return m.sender_role === 'customer' && !m.read_at; });
+      if (!anyUnread) return;
+      try {
+        await sb.from('messages').update({ read_at: new Date().toISOString() })
+          .eq('inquiry_id', selectedId).eq('sender_role','customer').is('read_at', null);
+        if (unread[selectedId]) { delete unread[selectedId]; renderList(); }
+      } catch(e) {}
+    }
+
+    async function sendMessage(){
+      var input = byId('msgInput'); var send = byId('msgSend');
+      var body = (input.value || '').trim();
+      if (!body) return;
+      send.disabled = true;
+      try {
+        var res = await sb.from('messages').insert({
+          inquiry_id: selectedId, sender_role: 'admin', sender_id: me.id, body: body
+        });
+        if (res.error) throw res.error;
+        input.value = '';
+        await loadMessages(true);
+      } catch(err) {
+        alert((err && err.message) || 'Could not send message.');
+      } finally {
+        send.disabled = false;
+      }
+    }
+
+    // --- polling ---
+    function startMsgPolling(){ stopMsgPolling(); msgTimer = setInterval(function(){ if (selectedId) loadMessages(false); }, 5000); }
+    function stopMsgPolling(){ if (msgTimer) { clearInterval(msgTimer); msgTimer = null; } }
+    function startListPolling(){ stopListPolling(); listTimer = setInterval(function(){ loadInquiries(false); }, 30000); }
+    function stopListPolling(){ if (listTimer) { clearInterval(listTimer); listTimer = null; } }
+    function stopPolling(){ stopMsgPolling(); stopListPolling(); }
+  })();
+</script>
+</body>
+</html>
