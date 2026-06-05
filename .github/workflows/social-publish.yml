@@ -11,23 +11,26 @@ name: social · publish
 # first slot below is comfortably after that. A manual run still publishes
 # EVERYTHING by default (blank `only`), or a single item via the `only` input.
 #
-# Times are UTC. ET/PT shown for reference (ET = UTC-4 in summer / -5 winter).
+# Times are UTC. ET shown for reference (ET = UTC-4 in summer / -5 winter).
+# The last three slots fall after 00:00 UTC, so they belong to the PREVIOUS
+# UTC day's batch and target "yesterday" — otherwise date -u would roll over
+# to a day whose manifest does not exist yet.
 #
 # NOTE: this slot map assumes 10 feed posts + 2 stories per day. If you change
 # --posts in social-daily.yml, update the slots here AND in social-threads.yml.
 
 on:
   schedule:
-    - cron: '45 14 * * *'   # post 1 (+ story 1)   10:45 AM ET / 7:45 AM PT
-    - cron: '5 16 * * *'    # post 2               12:05 PM ET / 9:05 AM PT
-    - cron: '25 17 * * *'   # post 3                1:25 PM ET / 10:25 AM PT
-    - cron: '45 18 * * *'   # post 4                2:45 PM ET / 11:45 AM PT
-    - cron: '5 20 * * *'    # post 5 (+ story 2)    4:05 PM ET / 1:05 PM PT
-    - cron: '25 21 * * *'   # post 6                5:25 PM ET / 2:25 PM PT
-    - cron: '45 22 * * *'   # post 7                6:45 PM ET / 3:45 PM PT
-    - cron: '5 0 * * *'     # post 8                8:05 PM ET / 5:05 PM PT
-    - cron: '25 1 * * *'    # post 9                9:25 PM ET / 6:25 PM PT
-    - cron: '45 2 * * *'    # post 10              10:45 PM ET / 7:45 PM PT
+    - cron: '45 14 * * *'   # post 1 (+ story 1)  10:45 AM ET   (same UTC day)
+    - cron: '5 16 * * *'    # post 2              12:05 PM ET
+    - cron: '25 17 * * *'   # post 3               1:25 PM ET
+    - cron: '45 18 * * *'   # post 4               2:45 PM ET
+    - cron: '5 20 * * *'    # post 5 (+ story 2)   4:05 PM ET
+    - cron: '25 21 * * *'   # post 6               5:25 PM ET
+    - cron: '45 22 * * *'   # post 7               6:45 PM ET
+    - cron: '5 0 * * *'     # post 8               8:05 PM ET   (prev UTC day)
+    - cron: '25 1 * * *'    # post 9               9:25 PM ET   (prev UTC day)
+    - cron: '45 2 * * *'    # post 10             10:45 PM ET   (prev UTC day)
   workflow_dispatch:
     inputs:
       date:
@@ -61,20 +64,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Resolve target date
-        id: date
+      - name: Resolve target date and item(s)
+        id: plan
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Resolve which item(s) to publish
-        id: filter
-        run: |
-          # Scheduled run: map the cron string to ONE post (some slots also
-          # carry a story). Manual run: honor the `only` input (blank = all).
+          # Each scheduled slot defines WHICH post (and which content-day) it
+          # targets. Slots after 00:00 UTC belong to the previous UTC day's
+          # batch, so they target "yesterday". Manual runs honor the inputs
+          # (blank `only` = publish everything).
+          DATE_IN="${{ github.event.inputs.date }}"
+          ONLY_IN="${{ github.event.inputs.only }}"
+          DAY="today"
           case "${{ github.event.schedule }}" in
             "45 14 * * *") ONLY="post:1,story:1" ;;
             "5 16 * * *")  ONLY="post:2" ;;
@@ -83,11 +82,19 @@ jobs:
             "5 20 * * *")  ONLY="post:5,story:2" ;;
             "25 21 * * *") ONLY="post:6" ;;
             "45 22 * * *") ONLY="post:7" ;;
-            "5 0 * * *")   ONLY="post:8" ;;
-            "25 1 * * *")  ONLY="post:9" ;;
-            "45 2 * * *")  ONLY="post:10" ;;
-            *)             ONLY="${{ github.event.inputs.only }}" ;;
+            "5 0 * * *")   ONLY="post:8";  DAY="yesterday" ;;
+            "25 1 * * *")  ONLY="post:9";  DAY="yesterday" ;;
+            "45 2 * * *")  ONLY="post:10"; DAY="yesterday" ;;
+            *)             ONLY="$ONLY_IN" ;;
           esac
+          if [ -n "$DATE_IN" ]; then
+            DATE="$DATE_IN"
+          elif [ "$DAY" = "yesterday" ]; then
+            DATE="$(date -u -d 'yesterday' +%F)"
+          else
+            DATE="$(date -u +%F)"
+          fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
           echo "only=$ONLY" >> "$GITHUB_OUTPUT"
 
       - name: Publish to Instagram
@@ -98,8 +105,8 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           IG_DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
-          ARGS="--date ${{ steps.date.outputs.date }}"
-          ONLY="${{ steps.filter.outputs.only }}"
+          ARGS="--date ${{ steps.plan.outputs.date }}"
+          ONLY="${{ steps.plan.outputs.only }}"
           if [ -n "$ONLY" ]; then
             ARGS="$ARGS --only $ONLY"
           fi
