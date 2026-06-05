@@ -23,7 +23,7 @@ on:
       posts:
         description: 'Number of feed posts'
         required: false
-        default: '4'
+        default: '10'
       stories:
         description: 'Number of stories'
         required: false
@@ -76,7 +76,7 @@ jobs:
         run: |
           python social/social_generator.py \
             --date "${{ steps.date.outputs.date }}" \
-            --posts "${{ github.event.inputs.posts || '4' }}" \
+            --posts "${{ github.event.inputs.posts || '10' }}" \
             --stories "${{ github.event.inputs.stories || '2' }}"
 
       - name: Render PNGs
