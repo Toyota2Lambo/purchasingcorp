@@ -1,24 +1,33 @@
 name: social · threads
 
-# Publishes an already-rendered, already-deployed day to Meta Threads.
-# Reuses the SAME content/manifest and the SAME public Vercel-served PNGs
-# as "social · publish" (Instagram) — nothing extra is generated here.
+# Publishes an already-rendered, already-deployed day to Meta Threads —
+# STAGGERED across the day, mirroring "social · publish" (Instagram). Each
+# scheduled slot publishes ONE feed post (mapped from its cron string below),
+# reusing the SAME content/manifest and the SAME public Vercel-served PNGs as
+# the Instagram publish — nothing extra is generated here. The publisher polls
+# each PNG URL until it returns 200 before submitting.
 #
-# CHAINED off "social · daily" (same trigger as the Instagram publish), so IG
-# and Threads both fire the moment generation succeeds. They hit different
-# APIs and accounts, so running in parallel is fine — and Threads no longer
-# rides a separate fragile clock that, in practice, never fired.
+# Threads has no "stories" format, so only feed posts are staggered here; set
+# the `include_stories` input (or THREADS_INCLUDE_STORIES=1) on a manual run to
+# also post story images as plain image posts.
 #
-# Threads has no "stories" format, so feed posts are published by default
-# and stories are skipped. Set the `include_stories` input (or
-# THREADS_INCLUDE_STORIES=1) to also post story images as plain image posts.
+# Times are UTC. ET/PT shown for reference (ET = UTC-4 in summer / -5 winter).
 #
-# Use the `only` input on a manual run to stagger, e.g. "post:1".
+# NOTE: this slot map assumes 10 feed posts per day. If you change --posts in
+# social-daily.yml, update the slots here AND in social-publish.yml.
 
 on:
-  workflow_run:
-    workflows: ["social · daily"]
-    types: [completed]
+  schedule:
+    - cron: '45 14 * * *'   # post 1    10:45 AM ET / 7:45 AM PT
+    - cron: '5 16 * * *'    # post 2    12:05 PM ET / 9:05 AM PT
+    - cron: '25 17 * * *'   # post 3     1:25 PM ET / 10:25 AM PT
+    - cron: '45 18 * * *'   # post 4     2:45 PM ET / 11:45 AM PT
+    - cron: '5 20 * * *'    # post 5     4:05 PM ET / 1:05 PM PT
+    - cron: '25 21 * * *'   # post 6     5:25 PM ET / 2:25 PM PT
+    - cron: '45 22 * * *'   # post 7     6:45 PM ET / 3:45 PM PT
+    - cron: '5 0 * * *'     # post 8     8:05 PM ET / 5:05 PM PT
+    - cron: '25 1 * * *'    # post 9     9:25 PM ET / 6:25 PM PT
+    - cron: '45 2 * * *'    # post 10   10:45 PM ET / 7:45 PM PT
   workflow_dispatch:
     inputs:
       date:
@@ -45,15 +54,11 @@ concurrency:
 
 jobs:
   threads:
-    # workflow_run fires for EVERY conclusion of the daily build — only publish
-    # when it actually succeeded (or when this was triggered manually).
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          # Take main's tip: "social · daily" pushes today's content as a NEW
-          # commit, which is not the SHA that triggered this workflow_run.
+          # main's tip holds today's content (committed by "social · daily").
           ref: main
 
       - uses: actions/setup-python@v5
@@ -69,6 +74,26 @@ jobs:
             echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Resolve which post to publish
+        id: filter
+        run: |
+          # Scheduled run: map the cron string to ONE post. Manual run: honor
+          # the `only` input (blank = all posts).
+          case "${{ github.event.schedule }}" in
+            "45 14 * * *") ONLY="post:1" ;;
+            "5 16 * * *")  ONLY="post:2" ;;
+            "25 17 * * *") ONLY="post:3" ;;
+            "45 18 * * *") ONLY="post:4" ;;
+            "5 20 * * *")  ONLY="post:5" ;;
+            "25 21 * * *") ONLY="post:6" ;;
+            "45 22 * * *") ONLY="post:7" ;;
+            "5 0 * * *")   ONLY="post:8" ;;
+            "25 1 * * *")  ONLY="post:9" ;;
+            "45 2 * * *")  ONLY="post:10" ;;
+            *)             ONLY="${{ github.event.inputs.only }}" ;;
+          esac
+          echo "only=$ONLY" >> "$GITHUB_OUTPUT"
+
       - name: Publish to Threads
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
@@ -79,7 +104,8 @@ jobs:
           THREADS_INCLUDE_STORIES: ${{ github.event.inputs.include_stories }}
         run: |
           ARGS="--date ${{ steps.date.outputs.date }}"
-          if [ -n "${{ github.event.inputs.only }}" ]; then
-            ARGS="$ARGS --only ${{ github.event.inputs.only }}"
+          ONLY="${{ steps.filter.outputs.only }}"
+          if [ -n "$ONLY" ]; then
+            ARGS="$ARGS --only $ONLY"
           fi
           python social/threads_publisher.py $ARGS

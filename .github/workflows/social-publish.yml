@@ -1,20 +1,33 @@
 name: social · publish
 
-# Publishes an already-rendered, already-deployed day to Instagram.
-# CHAINED off "social · daily": this runs automatically the moment that
-# workflow finishes successfully, so it can NEVER run before the content
-# exists (the old fixed 16:00 UTC cron sometimes fired first and failed for
-# a missing manifest, and often never fired at all). The publisher polls each
-# PNG URL until it returns 200 (the Vercel deploy has landed) before
-# submitting, so a little overlap with the deploy is harmless.
+# Publishes an already-rendered, already-deployed day to Instagram —
+# STAGGERED across the day. Each scheduled slot publishes ONE feed post
+# (mapped from its cron string below), so the day's posts trickle out instead
+# of landing in a single burst. The publisher polls each PNG URL until it
+# returns 200 (i.e. the Vercel deploy has landed) before submitting, so a slot
+# that fires while the deploy is still propagating simply waits.
 #
-# Publishes ALL of the day's feed posts (singles + carousels) AND stories by
-# default. Use the `only` input on a manual run to stagger, e.g. "post:1".
+# Generation ("social · daily") writes the day's manifest at 13:23 UTC; the
+# first slot below is comfortably after that. A manual run still publishes
+# EVERYTHING by default (blank `only`), or a single item via the `only` input.
+#
+# Times are UTC. ET/PT shown for reference (ET = UTC-4 in summer / -5 winter).
+#
+# NOTE: this slot map assumes 10 feed posts + 2 stories per day. If you change
+# --posts in social-daily.yml, update the slots here AND in social-threads.yml.
 
 on:
-  workflow_run:
-    workflows: ["social · daily"]
-    types: [completed]
+  schedule:
+    - cron: '45 14 * * *'   # post 1 (+ story 1)   10:45 AM ET / 7:45 AM PT
+    - cron: '5 16 * * *'    # post 2               12:05 PM ET / 9:05 AM PT
+    - cron: '25 17 * * *'   # post 3                1:25 PM ET / 10:25 AM PT
+    - cron: '45 18 * * *'   # post 4                2:45 PM ET / 11:45 AM PT
+    - cron: '5 20 * * *'    # post 5 (+ story 2)    4:05 PM ET / 1:05 PM PT
+    - cron: '25 21 * * *'   # post 6                5:25 PM ET / 2:25 PM PT
+    - cron: '45 22 * * *'   # post 7                6:45 PM ET / 3:45 PM PT
+    - cron: '5 0 * * *'     # post 8                8:05 PM ET / 5:05 PM PT
+    - cron: '25 1 * * *'    # post 9                9:25 PM ET / 6:25 PM PT
+    - cron: '45 2 * * *'    # post 10              10:45 PM ET / 7:45 PM PT
   workflow_dispatch:
     inputs:
       date:
@@ -37,15 +50,11 @@ concurrency:
 
 jobs:
   publish:
-    # workflow_run fires for EVERY conclusion of the daily build — only publish
-    # when it actually succeeded (or when this was triggered manually).
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          # Take main's tip: "social · daily" pushes today's content as a NEW
-          # commit, which is not the SHA that triggered this workflow_run.
+          # main's tip holds today's content (committed by "social · daily").
           ref: main
 
       - uses: actions/setup-python@v5
@@ -61,6 +70,26 @@ jobs:
             echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Resolve which item(s) to publish
+        id: filter
+        run: |
+          # Scheduled run: map the cron string to ONE post (some slots also
+          # carry a story). Manual run: honor the `only` input (blank = all).
+          case "${{ github.event.schedule }}" in
+            "45 14 * * *") ONLY="post:1,story:1" ;;
+            "5 16 * * *")  ONLY="post:2" ;;
+            "25 17 * * *") ONLY="post:3" ;;
+            "45 18 * * *") ONLY="post:4" ;;
+            "5 20 * * *")  ONLY="post:5,story:2" ;;
+            "25 21 * * *") ONLY="post:6" ;;
+            "45 22 * * *") ONLY="post:7" ;;
+            "5 0 * * *")   ONLY="post:8" ;;
+            "25 1 * * *")  ONLY="post:9" ;;
+            "45 2 * * *")  ONLY="post:10" ;;
+            *)             ONLY="${{ github.event.inputs.only }}" ;;
+          esac
+          echo "only=$ONLY" >> "$GITHUB_OUTPUT"
+
       - name: Publish to Instagram
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -70,7 +99,8 @@ jobs:
           IG_DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: |
           ARGS="--date ${{ steps.date.outputs.date }}"
-          if [ -n "${{ github.event.inputs.only }}" ]; then
-            ARGS="$ARGS --only ${{ github.event.inputs.only }}"
+          ONLY="${{ steps.filter.outputs.only }}"
+          if [ -n "$ONLY" ]; then
+            ARGS="$ARGS --only $ONLY"
           fi
           python social/ig_publisher.py $ARGS
