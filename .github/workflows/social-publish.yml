@@ -1,36 +1,30 @@
 name: social · publish
 
-# Publishes an already-rendered, already-deployed day to Instagram —
-# STAGGERED across the day. Each scheduled slot publishes ONE feed post
-# (mapped from its cron string below), so the day's posts trickle out instead
-# of landing in a single burst. The publisher polls each PNG URL until it
-# returns 200 (i.e. the Vercel deploy has landed) before submitting, so a slot
-# that fires while the deploy is still propagating simply waits.
+# Publishes an already-rendered, already-deployed day to Instagram — STAGGERED.
 #
-# Generation ("social · daily") writes the day's manifest at 13:23 UTC; the
-# first slot below is comfortably after that. A manual run still publishes
-# EVERYTHING by default (blank `only`), or a single item via the `only` input.
+# CHAINED off "social · daily": this runs the moment generation finishes
+# successfully (EVENT-DRIVEN), so it never depends on GitHub firing a clock on
+# time. It then publishes the day's posts ONE AT A TIME with a gap between each
+# (SOCIAL_STAGGER_SECONDS, default 1800 = 30 min), spreading the ~10 posts over
+# ~4.5 hours instead of in a single burst. The publisher polls each PNG URL
+# until it returns 200 before submitting.
 #
-# Times are UTC. ET shown for reference (ET = UTC-4 in summer / -5 winter).
-# The last three slots fall after 00:00 UTC, so they belong to the PREVIOUS
-# UTC day's batch and target "yesterday" — otherwise date -u would roll over
-# to a day whose manifest does not exist yet.
+# Why in-job sleeps instead of 10 separate cron slots: GitHub delays and drops
+# scheduled events badly here (generation alone runs 3-5h late), so 10 precise
+# daily crons never fire reliably. One event-driven job that sleeps between
+# posts does. The repo is public, so the idle runner minutes are free.
 #
-# NOTE: this slot map assumes 10 feed posts + 2 stories per day. If you change
-# --posts in social-daily.yml, update the slots here AND in social-threads.yml.
+# A MANUAL run publishes immediately with no stagger: blank `only` = everything,
+# or a single item via the `only` input.
+#
+# Tuning: set repo variable SOCIAL_STAGGER_SECONDS to change spacing. Keep the
+# total (≈ 9 × gap + posting time) under the 6h job cap — i.e. gap ≤ ~2200s for
+# 10 posts. To widen the window further, split into chained jobs.
 
 on:
-  schedule:
-    - cron: '45 14 * * *'   # post 1 (+ story 1)  10:45 AM ET   (same UTC day)
-    - cron: '5 16 * * *'    # post 2              12:05 PM ET
-    - cron: '25 17 * * *'   # post 3               1:25 PM ET
-    - cron: '45 18 * * *'   # post 4               2:45 PM ET
-    - cron: '5 20 * * *'    # post 5 (+ story 2)   4:05 PM ET
-    - cron: '25 21 * * *'   # post 6               5:25 PM ET
-    - cron: '45 22 * * *'   # post 7               6:45 PM ET
-    - cron: '5 0 * * *'     # post 8               8:05 PM ET   (prev UTC day)
-    - cron: '25 1 * * *'    # post 9               9:25 PM ET   (prev UTC day)
-    - cron: '45 2 * * *'    # post 10             10:45 PM ET   (prev UTC day)
+  workflow_run:
+    workflows: ["social · daily"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       date:
@@ -53,7 +47,11 @@ concurrency:
 
 jobs:
   publish:
+    # workflow_run fires for EVERY conclusion of the daily build — only publish
+    # when it actually succeeded (or when triggered manually).
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 360   # the staggered loop sleeps for ~4.5h; 6h is the cap
     steps:
       - uses: actions/checkout@v4
         with:
@@ -64,38 +62,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Resolve target date and item(s)
-        id: plan
+      - name: Resolve target date
+        id: date
         run: |
-          # Each scheduled slot defines WHICH post (and which content-day) it
-          # targets. Slots after 00:00 UTC belong to the previous UTC day's
-          # batch, so they target "yesterday". Manual runs honor the inputs
-          # (blank `only` = publish everything).
-          DATE_IN="${{ github.event.inputs.date }}"
-          ONLY_IN="${{ github.event.inputs.only }}"
-          DAY="today"
-          case "${{ github.event.schedule }}" in
-            "45 14 * * *") ONLY="post:1,story:1" ;;
-            "5 16 * * *")  ONLY="post:2" ;;
-            "25 17 * * *") ONLY="post:3" ;;
-            "45 18 * * *") ONLY="post:4" ;;
-            "5 20 * * *")  ONLY="post:5,story:2" ;;
-            "25 21 * * *") ONLY="post:6" ;;
-            "45 22 * * *") ONLY="post:7" ;;
-            "5 0 * * *")   ONLY="post:8";  DAY="yesterday" ;;
-            "25 1 * * *")  ONLY="post:9";  DAY="yesterday" ;;
-            "45 2 * * *")  ONLY="post:10"; DAY="yesterday" ;;
-            *)             ONLY="$ONLY_IN" ;;
-          esac
-          if [ -n "$DATE_IN" ]; then
-            DATE="$DATE_IN"
-          elif [ "$DAY" = "yesterday" ]; then
-            DATE="$(date -u -d 'yesterday' +%F)"
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
           else
-            DATE="$(date -u +%F)"
+            echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
           fi
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"
-          echo "only=$ONLY" >> "$GITHUB_OUTPUT"
 
       - name: Publish to Instagram
         env:
@@ -104,10 +78,32 @@ jobs:
           IG_PUBLIC_BASE_URL: ${{ vars.IG_PUBLIC_BASE_URL }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           IG_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          STAGGER_SECONDS: ${{ vars.SOCIAL_STAGGER_SECONDS || '1800' }}
         run: |
-          ARGS="--date ${{ steps.plan.outputs.date }}"
-          ONLY="${{ steps.plan.outputs.only }}"
-          if [ -n "$ONLY" ]; then
-            ARGS="$ARGS --only $ONLY"
+          set -u
+          DATE="${{ steps.date.outputs.date }}"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual run: publish immediately, honoring `only` (blank = all).
+            ARGS="--date $DATE"
+            ONLY="${{ github.event.inputs.only }}"
+            if [ -n "$ONLY" ]; then ARGS="$ARGS --only $ONLY"; fi
+            python social/ig_publisher.py $ARGS
+            exit 0
           fi
-          python social/ig_publisher.py $ARGS
+
+          # Auto (chained off generation): publish one slot, then sleep, repeat.
+          # Stories ride with posts 1 and 5 so they spread too.
+          SLOTS=( "post:1,story:1" "post:2" "post:3" "post:4" "post:5,story:2" \
+                  "post:6" "post:7" "post:8" "post:9" "post:10" )
+          N=${#SLOTS[@]}
+          for i in "${!SLOTS[@]}"; do
+            echo "::group::[$(( i + 1 ))/$N] publishing ${SLOTS[$i]}"
+            python social/ig_publisher.py --date "$DATE" --only "${SLOTS[$i]}" \
+              || echo "WARN: ${SLOTS[$i]} failed; continuing with the rest"
+            echo "::endgroup::"
+            if [ "$i" -lt "$(( N - 1 ))" ]; then
+              echo "sleeping ${STAGGER_SECONDS}s before the next post…"
+              sleep "$STAGGER_SECONDS"
+            fi
+          done
