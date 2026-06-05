@@ -1,0 +1,419 @@
+{
+  "generated_at": "2026-06-05T16:11:58.721622+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "consoles",
+    "educational_topic": "why cash today beats a carrier trade-in credit",
+    "comparison_angle": "our cash offer vs. a typical carrier trade-in credit",
+    "featured_label": "Consoles"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-05T16:10:57.505Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured console offer",
+        "caption": "Switch 2, PS5 Pro, ROG Ally—we buy them all for cash today. Real offers, same-day payout, no store credit games. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforgaming",
+          "#ps5pro",
+          "#switch2",
+          "#gamingbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "Gaming gear · Same-day payout",
+              "headline_html": "We pay up to <em>$475</em> for your console",
+              "sub_html": "PlayStation, Xbox, Nintendo, ROG Ally, Steam Deck — cash today, no trade-in credit.",
+              "c1_label": "Top payout",
+              "c1_value": "$475",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to good"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Console board",
+        "caption": "Current console payouts. These are real numbers—not vague estimates. Ship free or drop off locally, get paid the same day. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#consolebuyback",
+          "#switch2",
+          "#ps5pro",
+          "#cashforgaming",
+          "#sellmyconsole"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "Current payouts · June 2026",
+              "title_html": "What we pay for <em>consoles</em> today",
+              "rows": [
+                {
+                  "model": "ASUS ROG Ally X 1TB Z1 Extreme",
+                  "price": "$475"
+                },
+                {
+                  "model": "PlayStation 5 Pro",
+                  "price": "$425"
+                },
+                {
+                  "model": "Nintendo Switch 2 — Mario Kart World Bundle",
+                  "price": "$400"
+                },
+                {
+                  "model": "Nintendo Switch 2",
+                  "price": "$370"
+                },
+                {
+                  "model": "Nintendo Switch OLED",
+                  "price": "$240"
+                },
+                {
+                  "model": "Nintendo Switch",
+                  "price": "$200"
+                }
+              ],
+              "note_html": "All prices assume good working condition. Contact for other models."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Educational carousel",
+        "caption": "Carrier trade-in credits lock you into a contract and spread the value over months. We pay cash today—no strings, no installment plans, no upgrades required. See the difference at purchasingcorp.com.",
+        "hashtags": [
+          "#cashvscredit",
+          "#tradetips",
+          "#sellmyiphone",
+          "#nocredit",
+          "#cashtoday"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "The credit trap",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Carrier credits aren't <em>money</em>",
+              "body_html": "They're <strong>bill credits spread over 24–36 months</strong>, and you're locked into a contract. Miss a month or leave early? You forfeit what's left."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "The fine print",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "You must <em>upgrade</em> to unlock it",
+              "body_html": "Most carrier trade-ins require a <strong>new device purchase on installment</strong>. You're trading one phone for another payment plan."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Cash today",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "We pay <em>real money</em>, same day",
+              "body_html": "No contract, no new phone required, no waiting. <strong>Ship free, get paid the day we receive it.</strong> Spend it anywhere, anytime."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "The math",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Cash you control beats <em>locked credit</em>",
+              "body_html": "A $600 credit over 24 months is $25/month off a bill you might not want. <strong>$600 cash today is yours</strong>—invest it, save it, or buy what you actually need."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison post",
+        "caption": "Carrier trade-in credits spread the value over years and lock you in. We pay cash today—more money, zero strings. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashvscredit",
+          "#sellmyiphone",
+          "#nocredit",
+          "#cashtoday",
+          "#tradetips"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARE",
+              "eyebrow": "iPhone 17 Pro Max 256GB · Good condition",
+              "title_html": "Cash today vs. <em>carrier credit</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash, today)",
+                  "value": "$855",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical carrier trade-in (24-mo. credit)",
+                  "value": "~$650",
+                  "pct": 76,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Carrier figure is a typical trade-in estimate spread over 24 months; requires new device purchase and contract."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout receipt proof",
+        "caption": "Same-day payout, every time. This PlayStation 5 Pro shipped Monday, paid Monday. No waiting, no games. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#samedaypayout",
+          "#cashforgaming",
+          "#ps5pro",
+          "#sellmyconsole",
+          "#proof"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PROOF",
+              "slip_title": "Payout receipt",
+              "slip_ref": "#26050603",
+              "device": "PlayStation 5 Pro",
+              "condition": "Good",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$425",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone offer",
+        "caption": "iPhone 17 Pro Max paying up to $1,241 cash today. More than Apple, more than Best Buy, more than any carrier credit. Real offer in two minutes at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphone17promax",
+          "#cashtoday",
+          "#iphonebuyback",
+          "#samedaypayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "iPHONE",
+              "eyebrow": "iPhone 17 Pro Max · Cash today",
+              "headline_html": "Up to <em>$1,241</em> for your iPhone",
+              "sub_html": "A real number, not a vague 'up to'. Ship free, get paid the same day we receive it.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to fair"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Mac Mini board",
+        "caption": "Mac Mini M4 and M4 Pro payouts—real numbers, cash today. Ship with our prepaid label or drop off locally, get paid the same day. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymac",
+          "#macmini",
+          "#m4mac",
+          "#cashtoday",
+          "#macbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "M4 & M4 Pro · Same-day payout",
+              "title_html": "What we pay for <em>Mac Mini</em> today",
+              "rows": [
+                {
+                  "model": "Mac Mini M4 Pro 24GB 512GB (MCX44LL/A)",
+                  "price": "$675"
+                },
+                {
+                  "model": "Mac Mini M4 24GB 512GB (MCYT4LL/A)",
+                  "price": "$450"
+                },
+                {
+                  "model": "Mac Mini M4 16GB 512GB (MU9E3LL/A)",
+                  "price": "$375"
+                },
+                {
+                  "model": "Mac Mini M4 16GB 256GB (MU9D3LL/A)",
+                  "price": "$300"
+                }
+              ],
+              "note_html": "All prices assume good working condition. Contact for other configs."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo-cover device post",
+        "caption": "That drawer phone is cash today. Ship it free, get paid the same day—no trade-in credit, no waiting. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashtoday",
+          "#sellmyphone",
+          "#drawerphone",
+          "#samedaypayout",
+          "#nocredit"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Same-day payout",
+              "headline_html": "Turn that drawer phone into <em>cash today</em>",
+              "deck_html": "Real money, not credit. Ship free, get paid the day we receive it.",
+              "photo_url": "https://images.unsplash.com/photo-1770795263316-45cdc8fe3bca?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMXx8c21hcnRwaG9uZSUyMG9uJTIwYSUyMGRhcmslMjBzdXJmYWNlfGVufDF8MHx8fDE3ODA2NzU5MTd8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index reference grid",
+        "caption": "Six categories, same-day cash. These are today's top payouts—real numbers, not estimates. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashtoday",
+          "#buybackprices",
+          "#sellmytech",
+          "#samedaypayout",
+          "#realoffers"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "INDEX",
+              "eyebrow": "Top payouts · June 5, 2026",
+              "title_html": "What we're paying <em>today</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15'' M4 24GB",
+                  "tone": ""
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG Ally X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "M4 Pro 24GB",
+                  "tone": ""
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 49mm",
+                  "tone": ""
+                },
+                {
+                  "label": "Same-day",
+                  "num": "100",
+                  "foot": "% payouts",
+                  "tone": "accent"
+                }
+              ],
+              "note_html": "All prices assume good working condition. Quote any device at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Meme post",
+        "caption": "When the carrier says trade-in credit and you realize it's spread over 36 months. We pay cash today—no contracts, no fine print. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#tradeinmemes",
+          "#cashvscredit",
+          "#nocredit",
+          "#cashtoday",
+          "#sellmyphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "meme",
+            "fields": {
+              "top_text": "Carrier: We'll give you $800 trade-in credit!",
+              "bottom_text": "Me: Cool, when do I get it? Carrier: Over the next 36 months.",
+              "image_concept": "Disappointed guy at desk meme"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Thursday, June 5",
+          "section": "CONSOLES",
+          "headline_html": "Gaming gear pays <em>cash today</em>",
+          "deck_html": "PlayStation, Xbox, Nintendo, ROG Ally — same-day payout, no credit.",
+          "photo_url": "https://images.unsplash.com/photo-1618606105801-f49a43277144?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxfHxzdGFjayUyMG9mJTIwc21hcnRwaG9uZXMlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDF8fHwxNzgwNjc1OTE4fDA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Same-day payouts",
+          "stat_value": "$675",
+          "stat_unit": "",
+          "caption_html": "Top Mac Mini payout today. <em>Cash</em>, not credit.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
