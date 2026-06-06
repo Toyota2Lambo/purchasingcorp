@@ -23,9 +23,10 @@
   }
 
   .stat-eyebrow {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 17px;
-    letter-spacing: .24em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--accent);
     display: flex;
@@ -63,23 +64,24 @@
   body[data-size="story"] .stat-number { font-size: min(560px, calc(888px / (var(--len) * 0.62))); }
 
   .stat-caption {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 58px;
-    line-height: 1.12;
-    letter-spacing: -.01em;
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 1.15;
+    letter-spacing: -.02em;
     color: var(--text);
     max-width: 18ch;
     margin-top: 52px;
   }
-  .stat-caption em { color: var(--accent); font-style: italic; }
+  .stat-caption em { color: var(--accent); font-style: normal; font-weight: 700; }
   body[data-size="story"] .stat-caption { font-size: 70px; }
 
   .stat-source {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 500;
     font-size: 16px;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--text-dim);
     margin-top: 28px;

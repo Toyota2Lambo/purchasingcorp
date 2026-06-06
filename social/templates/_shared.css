@@ -1,11 +1,25 @@
 /* ============================================================
    PURCHASINGCORP — Social template shared CSS
    ============================================================
-   Matches the site's visual identity exactly so the IG grid feels
-   like a continuation of purchasingcorp.com, not a separate
-   brand. Tokens pulled directly from index.html's Tailwind config.
+   Matches the site's visual identity so the IG grid feels like a
+   continuation of purchasingcorp.com, not a separate brand. Tokens
+   pulled from index.html's Tailwind config.
 
-   Each template is rendered at one of two sizes:
+   Design system (2026 refresh — modeled on how Back Market / Best Buy
+   / eBay present today: clean sans hierarchy, restrained accents,
+   breathing room):
+     - ONE typeface for everything visible — Inter. Headlines heavy +
+       tight; labels are the SAME face, just uppercase + tracked.
+     - Emphasis = WEIGHT + EMERALD, never a second decorative face and
+       never italic. The dollar figure pops because it's bolder and
+       green, not because it's set in a swash serif.
+     - Monospace is reserved for ONE genuine use: the payout-receipt
+       card, where a slip legitimately reads as monospaced data.
+     - The canvas is a deep charcoal, NOT pure black, and text is a
+       soft off-white — enough contrast to stay crisp through IG's JPEG
+       downscale, without the brittle pure-#000-on-#fff glare.
+
+   Each template renders at one of two sizes:
      - feed:  1080 x 1350  (4:5 portrait — grid posts + carousels)
      - story: 1080 x 1920  (vertical — Story sequences)
    The renderer sets <body data-size="feed"|"story">; templates
@@ -14,32 +28,32 @@
 
 /* Fonts via the Google Fonts CSS API (evergreen — Google rotates the
    hashed .woff2 URLs, so hardcoding them causes silent fallback to
-   Times/Courier). The site loads Inter + Instrument Serif; we add
-   JetBrains Mono for the spec/receipt texture (model numbers, payout
-   slips, data labels) that suits an electronics buyback.
+   Times/Courier). We load Inter (the whole type system) plus JetBrains
+   Mono for the single receipt-texture use on the payout card.
    display=block tells Puppeteer to wait (matches document.fonts.ready
    in renderer.js) instead of painting with a fallback face. */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=block');
 
 :root {
-  /* Color tokens — copied 1:1 from index.html's `ink` scale so a slide
-     on Instagram and a section on the site share the exact same palette. */
-  --bg:            #050505; /* ink-950 */
-  --bg-deep:       #0a0a0a; /* ink-900 */
-  --bg-elevated:   #0f0f10; /* ink-850 */
-  --bg-surface:    #141416; /* ink-800 */
-  --border:        #1c1c1f; /* ink-700 */
-  --border-strong: #26262b; /* ink-600 */
-  --text:          #e6e6e8; /* ink-100 */
-  --text-soft:     #b6b6bc; /* ink-200 */
-  --text-muted:    #8a8a92; /* ink-300 — ~5.9:1 on --bg (WCAG AA) */
-  /* Bumped from #5a5a62 (~2.8:1, failed AA) to ~5:1 so the smallest mono
-     micro-labels (footer, source, row notes) stay legible after IG's
-     JPEG downscale. Still clearly the dimmest text tier. */
-  --text-dim:      #80808a; /* ink-400 */
+  /* Color tokens. The base canvas is lifted off pure black to a deep
+     charcoal so the grid reads "premium dark" (Linear / Vercel / modern
+     fintech) rather than brittle high-contrast. Still clearly the site's
+     near-black ink world, just one notch warmer and less glaring. */
+  --bg:            #111419; /* canvas — lifted from #050505 */
+  --bg-deep:       #0c0e12; /* recessed wells, switched-off screens */
+  --bg-elevated:   #181c23; /* cards, callouts, the receipt */
+  --bg-surface:    #1f242c; /* chips, bar tracks */
+  --border:        #2a2f39; /* hairline rules */
+  --border-strong: #3a4150; /* stronger separators, card edges */
+
+  --text:          #e9eaed; /* primary — headlines + body. ~13:1 on --bg */
+  --text-soft:     #c3c7ce; /* secondary copy */
+  --text-muted:    #969ba6; /* eyebrows, captions — ~6:1 (WCAG AA) */
+  --text-dim:      #7e848f; /* smallest labels — ~4.5:1 after downscale */
 
   /* Emerald is the brand's money / positive signal — "+$300", "PAID",
-     payouts, deltas. Used everywhere the site uses emerald. */
+     payouts, deltas, and the emphasis word in any headline. Used exactly
+     where the site uses emerald. */
   --accent:        #34d399;
   --accent-dim:    #1f8f6a;
   /* Competitor lowball figures render muted-red so the comparison reads
@@ -47,18 +61,23 @@
   --neg:           #d96565;
   --push:          #8a8a92;
 
-  /* Headlines are Inter, heavy + tight (the site's big white headings).
-     Instrument Serif italic is the *accent* face for emphasis words. */
+  /* ONE family does all visible work. --serif is kept only as a defensive
+     alias (any stray var(--serif) stays Inter, never falls back to Times)
+     now that the decorative serif has been retired. */
   --display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
   --body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --mono:    'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+
+  /* The label recipe — every eyebrow / tag / footer / cell-label uses
+     this instead of monospace: Inter, uppercase, tracked, semibold. */
+  --label-spacing: .16em;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body {
-  /* Renderer sets the viewport to 1080x1080 or 1080x1920. We size the
+  /* Renderer sets the viewport to 1080x1350 or 1080x1920. We size the
      body to match so the screenshot is exactly the post dimensions. */
   width:  100%;
   height: 100%;
@@ -66,7 +85,10 @@ html, body {
 }
 
 body {
-  background: var(--bg);
+  /* A whisper of a vertical gradient gives the charcoal depth without
+     a wide luminance sweep (which IG's JPEG would band). Kept inside a
+     narrow band around --bg. */
+  background: linear-gradient(178deg, #13171d 0%, #0f1216 100%);
   color: var(--text);
   font-family: var(--body);
   font-weight: 400;
@@ -81,28 +103,26 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 1100px 640px at 50% -8%, rgba(255,255,255,0.06), transparent 60%);
+  background: radial-gradient(ellipse 1100px 640px at 50% -8%, rgba(255,255,255,0.05), transparent 60%);
   pointer-events: none;
   z-index: 99;
 }
 
-/* Soft vignette only — no SVG film-grain overlay. Grain looks intentional
-   on screen but Instagram's CDN re-encodes to JPEG and turns the fine
-   noise into visible compression artifacts in dark areas. A clean radial
-   vignette gives the same dimensional feel with nothing for JPEG to mangle. */
+/* Soft vignette only — gentle now that the base is a charcoal, so the
+   corners settle a little deeper without snapping back to a black void
+   (which would re-introduce the harsh contrast we just removed). No SVG
+   grain: IG's CDN turns fine noise into visible JPEG artifacts in darks. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 40%, transparent 0%, transparent 56%, rgba(0,0,0,0.55) 100%);
+  background: radial-gradient(ellipse at 50% 42%, transparent 0%, transparent 60%, rgba(0,0,0,0.32) 100%);
   pointer-events: none;
   z-index: 100;
 }
 
 /* ============================================================
    STAGE — the absolute container every template paints into.
-   Sized to fill the body exactly. Templates compose inside a
-   .stage so the screenshot captures a known viewport.
    ============================================================ */
 .stage {
   width: 100%;
@@ -115,15 +135,15 @@ body::before {
 }
 body[data-size="story"] .stage {
   /* Wider top/bottom gutters keep the wordmark and footer clear of
-     Instagram's Story chrome (the top ~250px holds the avatar/username,
-     the bottom ~250px the reply bar + reactions). Decorative bleed (the
-     numeral watermark, photo backdrops) can still extend to the edges. */
+     Instagram's Story chrome (top ~250px holds avatar/username, bottom
+     ~250px the reply bar + reactions). Decorative bleed can still extend
+     to the edges. */
   padding: 160px 96px 220px;
 }
 
 /* ============================================================
    BRAND HEADER — every template carries the wordmark + a small
-   mono tag (e.g. "WE BUY · IPHONE"). Consistent placement makes
+   label (e.g. "WE BUY · IPHONE"). Consistent placement makes
    the grid recognizable.
    ============================================================ */
 .brand {
@@ -163,10 +183,13 @@ body[data-size="story"] .brand-mark svg { width: 26px; height: 26px; }
 .brand-name .muted { color: var(--text-muted); font-weight: 400; }
 body[data-size="story"] .brand-name { font-size: 30px; }
 
+/* The small contextual label opposite the wordmark. Inter, uppercase,
+   tracked — NOT monospace. */
 .tag {
-  font-family: var(--mono);
+  font-family: var(--display);
+  font-weight: 600;
   font-size: 17px;
-  letter-spacing: .18em;
+  letter-spacing: var(--label-spacing);
   text-transform: uppercase;
   color: var(--accent);
   display: flex;
@@ -185,7 +208,8 @@ body[data-size="story"] .brand-name { font-size: 30px; }
    Same on every template so the grid reads as a unit.
    ============================================================ */
 .footer {
-  font-family: var(--mono);
+  font-family: var(--display);
+  font-weight: 500;
   font-size: 16px;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -209,9 +233,9 @@ body[data-size="story"] .footer { font-size: 18px; }
 
 /* ============================================================
    TYPE SCALE — kept large because IG aggressively downscales for
-   thumbnails. Small text becomes unreadable mush.
-   Headlines are Inter heavy + tight; the <em> accent flips to
-   Instrument Serif italic in emerald — the site's signature move.
+   thumbnails. Headlines are Inter heavy + tight; the <em> accent
+   is the SAME face, just heavier and emerald — emphasis through
+   weight + color, never a swash serif or italic.
    ============================================================ */
 .headline {
   font-family: var(--display);
@@ -221,10 +245,10 @@ body[data-size="story"] .footer { font-size: 18px; }
   color: var(--text);
 }
 .headline em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -.03em;
   color: var(--accent);
 }
 
@@ -239,9 +263,8 @@ body[data-size="story"] .footer { font-size: 18px; }
    KEYWORD ACCENT — applied to currency, payouts, percentages,
    turnaround times, and brand tokens (PAID / CASH / TODAY) inside
    Claude-generated copy. The renderer wraps matched tokens in
-   <span class="kw">. Editorial emphasis on the things that matter
-   in a buyback post (the dollars, the speed) without coloring
-   every other word.
+   <span class="kw">. Emphasis on the things that matter (the
+   dollars, the speed) without coloring every other word.
    ============================================================ */
 .kw {
   color: var(--accent);
@@ -253,34 +276,33 @@ body[data-size="story"] .footer { font-size: 18px; }
 
 /* ============================================================
    EDITORIAL NUMERAL — a massive ghosted display digit behind the
-   headline (e.g. "01", "02" for carousel slides). Magazine-style
-   depth without competing for attention.
+   headline (e.g. "01", "02" for carousel slides). Now a bold Inter
+   numeral, not an italic serif — magazine depth without the swash.
    ============================================================ */
 .num-watermark {
   position: absolute;
   bottom: 60px;
   right: 84px;
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 480px;
+  font-family: var(--display);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 460px;
   line-height: .85;
-  letter-spacing: -.04em;
+  letter-spacing: -.05em;
   color: var(--accent);
-  opacity: .06;
+  opacity: .07;
   z-index: 0;
   pointer-events: none;
   user-select: none;
 }
 body[data-size="story"] .num-watermark {
-  font-size: 620px;
+  font-size: 600px;
   bottom: 100px;
   right: 96px;
 }
 
 /* ============================================================
-   HAIRLINE ACCENT — thin emerald rule used to separate sections
-   inside a slide.
+   HAIRLINE ACCENT — thin emerald rule used to separate sections.
    ============================================================ */
 .hairline {
   height: 1px;
@@ -300,15 +322,16 @@ body[data-size="story"] .num-watermark {
   background: var(--bg-elevated);
 }
 .callout-label {
-  font-family: var(--mono);
+  font-family: var(--display);
+  font-weight: 600;
   font-size: 18px;
-  letter-spacing: .14em;
+  letter-spacing: var(--label-spacing);
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 14px;
 }
 .callout-value {
-  font-family: var(--mono);
+  font-family: var(--display);
   font-weight: 700;
   color: var(--text);
 }
@@ -337,9 +360,7 @@ body[data-size="story"] .num-watermark {
    .stage. The photo is desaturated, blurred, dimmed to a faint
    texture, then a soft radial darken pushes the edges further
    back. Present but never competing — typography stays the
-   protagonist. Templates using this lift their other .stage
-   children with z-index: 1 (and position: relative on static
-   elements) so they paint above the backdrop.
+   protagonist.
    ============================================================ */
 .photo-atmos {
   position: absolute;
@@ -362,8 +383,8 @@ body[data-size="story"] .num-watermark {
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
-    rgba(5,5,5,0.3) 60%,
-    rgba(5,5,5,0.68) 100%
+    rgba(12,14,18,0.32) 60%,
+    rgba(12,14,18,0.70) 100%
   );
 }
 /* No photo for this post? Hide the broken-image placeholder so nothing

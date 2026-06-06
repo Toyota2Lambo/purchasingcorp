@@ -17,37 +17,38 @@
   .quote-wrap { position: relative; max-width: 760px; margin: 0 auto; z-index: 1; }
 
   .quote-open {
-    font-family: var(--serif);
-    font-size: 280px;
-    font-weight: 400;
-    font-style: italic;
+    font-family: var(--display);
+    font-size: 170px;
+    font-weight: 900;
+    font-style: normal;
     color: var(--accent);
-    line-height: 0.5;
-    margin-bottom: 24px;
+    line-height: 0.7;
+    margin-bottom: 36px;
     display: block;
-    opacity: .9;
+    opacity: .85;
   }
-  body[data-size="story"] .quote-open { font-size: 360px; }
+  body[data-size="story"] .quote-open { font-size: 210px; }
 
   .quote-text {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: 88px;
-    line-height: 1.08;
-    letter-spacing: -.01em;
+    font-family: var(--display);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 84px;
+    line-height: 1.1;
+    letter-spacing: -.03em;
     color: var(--text);
   }
-  .quote-text em { font-style: italic; color: var(--accent); }
-  body[data-size="story"] .quote-text { font-size: 100px; }
+  .quote-text em { font-style: normal; font-weight: 800; color: var(--accent); }
+  body[data-size="story"] .quote-text { font-size: 96px; }
 
   .quote-attrib {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 15px;
-    letter-spacing: .2em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-top: 56px;
+    margin-top: 48px;
     display: inline-flex;
     align-items: center;
     gap: 16px;

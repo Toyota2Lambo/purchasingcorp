@@ -241,7 +241,7 @@ def build_pricing_context(pricing: dict, featured: str) -> str:
 # Claude must emit fields_json containing exactly these keys.
 # ------------------------------------------------------------
 FIELD_CONTRACT = """\
-TEMPLATE FIELD CONTRACTS — fields_json for each template must contain EXACTLY these keys:
+TEMPLATE FIELD CONTRACTS. fields_json for each template must contain EXACTLY these keys:
 
 offer (single feed post; the workhorse "we buy X")
   tag, eyebrow, headline_html, sub_html, c1_label, c1_value, c2_label, c2_value, c3_label, c3_value
@@ -253,7 +253,7 @@ board (single feed post; a price list for one category)
   rows = ARRAY of {"model","price","note"(optional),"soft"(optional true/false)}. 4-6 REAL model+price pairs.
   Use "soft": true to mute a non-dollar price like "Contact".
 
-payout (single feed post; a payout receipt — PROOF)
+payout (single feed post; a payout receipt, PROOF)
   tag, slip_title, slip_ref, device, condition, method, turnaround, amount, status
   amount = a REAL dollar figure from the data. status usually "PAID". Anonymized: never a person's name.
 
@@ -284,13 +284,13 @@ cover (story; a magazine-cover announcement)
 
 photo-cover (story or feed; atmospheric photo headline)
   tag, eyebrow, headline_html, deck_html, photo_url, photo_credit
-  photo_url = "PHOTO: device" (REQUIRED — this template is a full-bleed device photo). A real device image is
+  photo_url = "PHOTO: device" (REQUIRED: this template is a full-bleed device photo). A real device image is
   auto-selected from our library and baked in, so keep the headline about the OUTCOME (cash today), not a model.
   photo_credit like "PHOTO · UNSPLASH".
 
 lifestyle (feed or story; aspirational, outcome-forward)
   tag, eyebrow, headline_html, sub_html, photo_url, photo_credit
-  photo_url = "PHOTO: device" (REQUIRED — a framed device photo is auto-selected and baked in). Sells the
+  photo_url = "PHOTO: device" (REQUIRED: a framed device photo is auto-selected and baked in). Sells the
   feeling (that drawer phone is cash), not a spec. Keep the copy device-agnostic so any device photo fits.
 
 meme (single feed post; shareable, off-duty)
@@ -308,10 +308,10 @@ PurchasingCorp pays CASH for used and new Apple and gaming gear: iPhones, MacBoo
 iPads, Apple Watch, Mac mini, game consoles (PlayStation, Xbox, Nintendo, Steam Deck, ROG Ally,
 Meta Quest), AirPods and accessories, and bulk lots. People get a real offer, ship with a prepaid
 insured label or hand off locally, and get paid the SAME DAY. The business does NOT buy gold or
-jewelry anymore — never mention gold. Site: purchasingcorp.com (quote form at purchasingcorp.com/form).
+jewelry anymore, so never mention gold. Site: purchasingcorp.com (quote form at purchasingcorp.com/form).
 
 BRAND VOICE
-Direct, confident, benefit-led — a sharp human who runs a buyback shop, not a corporate account.
+Direct, confident, benefit-led. A sharp human who runs a buyback shop, not a corporate account.
 House lines you can lean on: "cash today", "no games", "same-day payout", "a real number, not a
 vague 'up to'", "more than Apple, more than Best Buy". Be specific and a little swaggering, never
 fluffy.
@@ -327,7 +327,7 @@ COMPOSITION RULES
   through the day's educational topic. Every other post has exactly one slide.
 - Exactly ONE single feed post MUST be a PHOTO post: template "photo-cover" or "lifestyle", showing a
   real photo of a popular consumer-electronics device (iPhone, MacBook, iPad, Apple Watch, AirPods,
-  PlayStation, Xbox, Nintendo Switch, and the like). Set its photo_url to "PHOTO: device" — the actual
+  PlayStation, Xbox, Nintendo Switch, and the like). Set its photo_url to "PHOTO: device". The actual
   image is auto-selected from our photo library and baked in. Keep this post's copy about the OUTCOME
   (cash today), not a model number.
 - Feature the day's category in at least one offer or board post.
@@ -339,19 +339,25 @@ COMPOSITION RULES
 HONESTY (hard rules)
 - Use ONLY dollar figures present in the PRICING DATA in the user message. Never invent, inflate, or
   round to a nicer number. Quote a price that exists.
-- For quote-only categories (iPad, accessories — they show "Contact"): do NOT state a dollar figure.
+- For quote-only categories (iPad, accessories, which show "Contact"): do NOT state a dollar figure.
   Either feature a category that has prices, or say "Contact for your number".
 - Competitor numbers are ALWAYS estimates: prefix with "~", call them "typical" trade-in or store-credit
   values, and never present a precise fabricated rival quote.
 
 FORMATTING
-- In *_html fields, wrap ONE key phrase in <em>...</em> (it renders as an elegant emerald serif italic).
-  Use <strong>...</strong> for a single bold phrase inside body_html. No other HTML, ever.
-- Captions: 1-3 short sentences plus a CTA to purchasingcorp.com or the form. PLAIN TEXT — no markdown,
+- In *_html fields, wrap ONE key phrase in <em>...</em> (it renders as a bold emerald highlight in the
+  brand accent color, upright). Use <strong>...</strong> for a single bold phrase inside body_html. No other HTML, ever.
+- Captions: 1-3 short sentences plus a CTA to purchasingcorp.com or the form. PLAIN TEXT, no markdown,
   no HTML, no emoji.
-- hashtags: 3-5 entries, lowercase, no spaces, no '#'-less words (e.g. "#sellmyiphone", "#cashforphones").
+- hashtags: 20-28 entries for maximum Instagram reach. Mix THREE kinds: (a) high-volume broad tags
+  (#applebuyback, #sellmyiphone, #cashforphones), (b) specific device/buyer-intent tags tied to today's
+  theme (#sellmacbookpro, #cashformacmini, #sellmyipad), (c) a few local/intent tags (#sellmytech,
+  #electronicsbuyback). Lowercase, no spaces, each starting with '#'. Instagram rejects a caption with
+  more than 30 tags, so NEVER exceed 28. No duplicates.
 - Never write AI-tell filler: avoid "in today's fast-paced world", "look no further", "unlock"/"unleash"/
   "elevate", "game-changer", "dive in", "we've got you covered", "rest assured", "the world of".
+- Never use em dashes (the long "—") or en dashes ("–"); they read as AI-written. Use periods, commas,
+  colons, or parentheses instead. Ordinary hyphens in compound words (same-day, carrier-locked, trade-in) are fine.
 """
 
 
@@ -425,11 +431,44 @@ _AI_TELLS = [
 ]
 
 
+_EMDASH_RE = re.compile(r"\s*[—―]\s*")        # em dash / horizontal bar
+_ENDASH_SPACED_RE = re.compile(r"\s+–\s+")    # en dash used as a clause break
+
+
+def _strip_dashes(s: str) -> str:
+    """Em/en dashes read as 'AI wrote this'. The prompt forbids them, but models
+    slip, so strip them from every caption and rendered field as a hard
+    guarantee. Ordinary hyphens (same-day, trade-in) are left untouched."""
+    if not isinstance(s, str) or (
+        "—" not in s and "―" not in s and "–" not in s
+    ):
+        return s
+    s = _EMDASH_RE.sub(", ", s)
+    s = _ENDASH_SPACED_RE.sub(", ", s)
+    s = s.replace("–", "-")                    # tight en dash (ranges) -> hyphen
+    s = re.sub(r",\s*,", ", ", s)              # collapse doubled commas
+    s = re.sub(r"\s+([,.;:!?])", r"\1", s)     # no space before punctuation
+    s = re.sub(r"[ \t]{2,}", " ", s).strip()
+    return s
+
+
+def _sanitize_dashes(v):
+    """Recursively apply _strip_dashes to every string in a fields object."""
+    if isinstance(v, str):
+        return _strip_dashes(v)
+    if isinstance(v, list):
+        return [_sanitize_dashes(x) for x in v]
+    if isinstance(v, dict):
+        return {k: _sanitize_dashes(x) for k, x in v.items()}
+    return v
+
+
 def clean_caption(s: str) -> str:
     if not s:
         return ""
     s = (s.replace("’", "'").replace("‘", "'")
            .replace("“", '"').replace("”", '"'))
+    s = _strip_dashes(s)
     s = re.sub(r"\*\*(.+?)\*\*", r"\1", s)   # strip stray markdown bold
     s = re.sub(r"[ \t]+", " ", s).strip()
     low = s.lower()
@@ -451,7 +490,10 @@ def clean_hashtags(tags) -> list:
         t = re.sub(r"[^#a-z0-9_]", "", t)
         if len(t) > 1 and t not in out:
             out.append(t)
-    return out[:6]
+    # Instagram allows at most 30 hashtags in a caption; cap there. (Threads
+    # applies its own much smaller MAX_TAGS at publish time, so this generous
+    # cap only ever fills out the IG caption.)
+    return out[:30]
 
 
 def parse_fields(fields_json: str, template: str) -> dict:
@@ -461,7 +503,7 @@ def parse_fields(fields_json: str, template: str) -> dict:
         raise ValueError(f"fields_json for '{template}' is not valid JSON: {e}")
     if not isinstance(obj, dict):
         raise ValueError(f"fields_json for '{template}' did not decode to an object")
-    return obj
+    return _sanitize_dashes(obj)
 
 
 def validate_and_normalize(data: dict) -> dict:
@@ -540,7 +582,7 @@ def ensure_feed_photo(content: dict, theme: dict) -> None:
             "tag": "BUYBACK",
             "eyebrow": "CASH FOR YOUR TECH",
             "headline_html": "That drawer device is <em>cash</em>",
-            "sub_html": "Phones, laptops, tablets, consoles — a real number, paid the same day.",
+            "sub_html": "Phones, laptops, tablets, consoles, a real number, paid the same day.",
             "photo_url": "",            # filled by resolve_photos()
             "photo_credit": "PHOTO · UNSPLASH",
         },
@@ -550,8 +592,13 @@ def ensure_feed_photo(content: dict, theme: dict) -> None:
                          "Get a real offer in 60 seconds and get paid the same day at "
                          "purchasingcorp.com/form.")
     if not target.get("hashtags"):
-        target["hashtags"] = ["#sellyourtech", "#cashforelectronics", "#applebuyback",
-                              "#sellmyiphone", "#sellmymacbook"]
+        target["hashtags"] = [
+            "#sellyourtech", "#cashforelectronics", "#applebuyback", "#sellmyiphone",
+            "#sellmymacbook", "#sellmymac", "#cashforphones", "#techbuyback",
+            "#sellmyipad", "#cashformacbook", "#sellmyapplewatch", "#tradein",
+            "#sellmyphone", "#getpaidfast", "#sellelectronics", "#cashfortech",
+            "#applebuyer", "#samedaypayout",
+        ]
 
 
 # ------------------------------------------------------------

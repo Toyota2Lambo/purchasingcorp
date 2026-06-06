@@ -24,9 +24,10 @@
     border-bottom: 1px solid var(--border);
   }
   .issue {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 15px;
-    letter-spacing: .26em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--accent);
   }
@@ -36,9 +37,10 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 500;
     font-size: 13px;
-    letter-spacing: .22em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
@@ -54,23 +56,23 @@
     margin: auto 0 0;
     max-width: 12ch;
   }
-  .cover-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .cover-headline em { font-family: var(--display); font-style: normal; font-weight: 800; color: var(--accent); }
   body[data-size="story"] .cover-headline { font-size: 252px; max-width: 11ch; }
 
   .cover-sub {
-    font-family: var(--serif);
-    font-style: italic;
+    font-family: var(--display);
+    font-style: normal;
     font-weight: 400;
-    font-size: 40px;
-    line-height: 1.26;
+    font-size: 36px;
+    line-height: 1.4;
     color: var(--text-muted);
     margin-top: 44px;
     padding-top: 28px;
     border-top: 1px solid var(--border);
-    max-width: 32ch;
+    max-width: 36ch;
     margin-bottom: 36px;
   }
-  .cover-sub em { color: var(--accent); font-style: italic; }
+  .cover-sub em { color: var(--accent); font-style: normal; font-weight: 600; }
   body[data-size="story"] .cover-sub { font-size: 44px; }
 
   .cover-top, .cover-meta, .cover-headline, .cover-sub, .footer {

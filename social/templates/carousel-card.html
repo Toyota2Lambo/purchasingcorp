@@ -18,19 +18,19 @@
     position: absolute;
     top: 80px;
     right: 96px;
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 320px;
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 300px;
     line-height: .85;
-    letter-spacing: -.04em;
+    letter-spacing: -.05em;
     color: var(--accent);
-    opacity: .16;
+    opacity: .09;
     z-index: 0;
     pointer-events: none;
     user-select: none;
   }
-  body[data-size="story"] .num-mark { font-size: 420px; top: 120px; }
+  body[data-size="story"] .num-mark { font-size: 400px; top: 120px; }
 
   .header-row {
     display: flex;
@@ -40,9 +40,10 @@
     z-index: 1;
   }
   .step-mono {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 15px;
-    letter-spacing: .24em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--accent);
     display: flex;
@@ -60,9 +61,10 @@
   .footer { margin-top: 72px; }
 
   .eyebrow {
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 600;
     font-size: 16px;
-    letter-spacing: .24em;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--text-muted);
     display: flex;
@@ -81,7 +83,7 @@
     color: var(--text);
     margin-bottom: 36px;
   }
-  .slide-headline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .slide-headline em { font-family: var(--display); font-style: normal; font-weight: 800; color: var(--accent); }
   body[data-size="story"] .slide-headline { font-size: 128px; }
 
   .slide-body {

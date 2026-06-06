@@ -18,18 +18,19 @@
   .footer { position: absolute; bottom: 80px; left: 96px; right: 96px; margin-top: 0; }
 
   .meme-top, .meme-bottom {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 62px;
-    line-height: 1.12;
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 58px;
+    line-height: 1.18;
+    letter-spacing: -.02em;
     color: var(--text);
-    max-width: 17ch;
+    max-width: 18ch;
     z-index: 1;
   }
   .meme-top { margin-top: 40px; }
   .meme-bottom { margin-bottom: 64px; }
-  .meme-top em, .meme-bottom em { color: var(--accent); font-style: italic; }
+  .meme-top em, .meme-bottom em { color: var(--accent); font-style: normal; font-weight: 700; }
   body[data-size="story"] .meme-top, body[data-size="story"] .meme-bottom { font-size: 76px; }
 
   /* center group: scene + caption, kept together */
@@ -102,9 +103,10 @@
     justify-content: center;
     gap: 156px;
     margin-top: 24px;
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 500;
     font-size: 13px;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--text-dim);
   }
@@ -112,9 +114,10 @@
 
   .meme-concept {
     margin-top: 44px;
-    font-family: var(--mono);
+    font-family: var(--display);
+    font-weight: 500;
     font-size: 15px;
-    letter-spacing: .16em;
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--text-muted);
     max-width: 36ch;
