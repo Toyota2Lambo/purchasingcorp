@@ -171,7 +171,7 @@ tailwind.config = {
             <input id="authEmail" name="email" type="email" required autocomplete="email" placeholder="you@email.com"
               class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
           </div>
-          <div>
+          <div id="passwordField">
             <label for="authPassword" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Password</label>
             <input id="authPassword" name="password" type="password" required autocomplete="current-password" placeholder="••••••••"
               class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
@@ -182,12 +182,57 @@ tailwind.config = {
           </button>
         </form>
 
+        <div class="mt-3 text-center">
+          <button id="forgotLink" type="button" class="text-[12.5px] text-ink-300 underline underline-offset-4 hover:text-white">Forgot your password?</button>
+          <button id="backToSignin" type="button" class="hidden text-[12.5px] text-ink-300 underline underline-offset-4 hover:text-white">&larr; Back to sign in</button>
+        </div>
+
         <p id="authStatus" class="mt-3 text-center text-[12.5px] hidden"></p>
 
-        <p class="mt-4 text-center text-[11.5px] text-ink-500">
+        <p id="authHelp" class="mt-4 text-center text-[11.5px] text-ink-500">
           New accounts get a confirmation email — click the link, then sign in. By continuing you agree to our
           <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.
         </p>
+      </div>
+    </section>
+
+    <!-- Reset password (arrived via a recovery link) -->
+    <section id="resetView" class="hidden">
+      <div class="text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+          Reset password
+        </span>
+        <h1 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[0.98]">
+          Set a <span class="text-ink-300 italic font-serif font-normal">new password.</span>
+        </h1>
+        <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Choose a new password for your account — you'll be signed in right after.</p>
+      </div>
+
+      <div class="mt-9 mx-auto max-w-md relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-6 md:p-8">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+        <form id="resetForm" class="space-y-3" novalidate>
+          <div>
+            <label for="resetPassword" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">New password</label>
+            <input id="resetPassword" name="new-password" type="password" required autocomplete="new-password" placeholder="••••••••"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+          <div>
+            <label for="resetPassword2" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Confirm new password</label>
+            <input id="resetPassword2" name="confirm-password" type="password" required autocomplete="new-password" placeholder="••••••••"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+          <button id="resetSubmit" type="submit" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+            <span>Update password</span>
+            <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </form>
+
+        <p id="resetStatus" class="mt-3 text-center text-[12.5px] hidden"></p>
+
+        <div class="mt-4 text-center">
+          <button id="resetCancel" type="button" class="text-[12.5px] text-ink-300 underline underline-offset-4 hover:text-white">Cancel</button>
+        </div>
       </div>
     </section>
 
@@ -285,7 +330,9 @@ tailwind.config = {
   (function () {
     var PENDING_KEY = 'pc.pendingClaims';
     var sb = null;
-    var mode = 'signin';        // 'signin' | 'signup'
+    var mode = 'signin';        // 'signin' | 'signup' | 'forgot'
+    var recoveryMode = false;   // true while a password-recovery link is active
+    var pendingAuthError = null;// message from an expired/invalid auth link
     var claimDone = false;      // claim runs at most once per signed-in load
     var rendering = false, renderAgain = false;
     var currentUser = null;     // signed-in user (for chat sender_id)
@@ -367,12 +414,32 @@ tailwind.config = {
         auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
       });
 
+      // A password-recovery deep link lands here with `type=recovery` in the
+      // URL. Flag it synchronously so we never flash the dashboard before the
+      // "set new password" form (the PASSWORD_RECOVERY event also sets this).
+      if (/type=recovery/.test(location.hash) || /type=recovery/.test(location.search)) {
+        recoveryMode = true;
+      }
+
+      // An expired/invalid recovery or confirmation link comes back with an
+      // error in the URL fragment instead. Surface it on the sign-in form.
+      var errMatch = /error_description=([^&]+)/.exec(location.hash) ||
+                     /error_description=([^&]+)/.exec(location.search);
+      if (errMatch) {
+        pendingAuthError = decodeURIComponent(errMatch[1].replace(/\+/g, ' '));
+        if (history.replaceState) history.replaceState(null, '', location.pathname);
+      }
+
       wireAuthUI();
+      wireResetUI();
       byId('signOut').addEventListener('click', function () {
         if (sb) sb.auth.signOut();
       });
 
-      sb.auth.onAuthStateChange(function () { render(); });
+      sb.auth.onAuthStateChange(function (event) {
+        if (event === 'PASSWORD_RECOVERY') recoveryMode = true;
+        render();
+      });
       render();
     }
 
@@ -382,15 +449,37 @@ tailwind.config = {
       var idle = 'flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition text-ink-300 hover:text-white';
       byId('tabSignin').className = (m === 'signin') ? active : idle;
       byId('tabSignup').className = (m === 'signup') ? active : idle;
-      byId('authTitle').textContent = (m === 'signin') ? 'Welcome back' : 'Create your account';
-      byId('authSubmitLabel').textContent = (m === 'signin') ? 'Sign in' : 'Create account';
+
+      var titles = { signin: 'Welcome back', signup: 'Create your account', forgot: 'Reset your password' };
+      var labels = { signin: 'Sign in', signup: 'Create account', forgot: 'Send reset link' };
+      byId('authTitle').textContent = titles[m];
+      byId('authSubmitLabel').textContent = labels[m];
+
+      // The password field is irrelevant when only requesting a reset link.
+      (m === 'forgot' ? hide : show)(byId('passwordField'));
       byId('authPassword').setAttribute('autocomplete', m === 'signin' ? 'current-password' : 'new-password');
+
+      // "Forgot password?" only makes sense from the sign-in tab; the back
+      // link only shows while requesting a reset.
+      (m === 'signin' ? show : hide)(byId('forgotLink'));
+      (m === 'forgot' ? show : hide)(byId('backToSignin'));
+
+      var help = byId('authHelp');
+      if (m === 'forgot') {
+        help.textContent = "Enter your account email and we'll send a link to set a new password.";
+      } else {
+        help.innerHTML = 'New accounts get a confirmation email — click the link, then sign in. By continuing you agree to our ' +
+          '<a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.';
+      }
+
       authStatus('', '');
     }
 
     function wireAuthUI() {
       byId('tabSignin').addEventListener('click', function () { setMode('signin'); });
       byId('tabSignup').addEventListener('click', function () { setMode('signup'); });
+      byId('forgotLink').addEventListener('click', function () { setMode('forgot'); });
+      byId('backToSignin').addEventListener('click', function () { setMode('signin'); });
       setMode('signin');
 
       byId('authForm').addEventListener('submit', async function (e) {
@@ -398,6 +487,24 @@ tailwind.config = {
         var email = (byId('authEmail').value || '').trim().toLowerCase();
         var password = byId('authPassword').value || '';
         var btn = byId('authSubmit');
+
+        // Forgot-password: just email the reset link, no password needed.
+        if (mode === 'forgot') {
+          if (!email) { authStatus('Enter your account email.', 'err'); return; }
+          btn.disabled = true;
+          authStatus('Sending reset link…', '');
+          try {
+            var resR = await sb.auth.resetPasswordForEmail(email, {
+              redirectTo: location.origin + '/account'
+            });
+            if (resR.error) throw resR.error;
+            authStatus("If an account exists for that email, a password-reset link is on its way. Check your inbox (and spam).", 'ok');
+          } catch (err0) {
+            authStatus((err0 && err0.message) || 'Could not send the reset link. Try again.', 'err');
+          }
+          btn.disabled = false;
+          return;
+        }
 
         if (!email || !password) { authStatus('Enter your email and a password.', 'err'); return; }
         if (mode === 'signup' && password.length < 8) { authStatus('Use at least 8 characters for your password.', 'err'); return; }
@@ -439,6 +546,52 @@ tailwind.config = {
       el.className = base + tone + (msg ? '' : ' hidden');
     }
 
+    function wireResetUI() {
+      byId('resetForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var p1 = byId('resetPassword').value || '';
+        var p2 = byId('resetPassword2').value || '';
+        var btn = byId('resetSubmit');
+
+        if (p1.length < 8) { resetStatus('Use at least 8 characters for your password.', 'err'); return; }
+        if (p1 !== p2) { resetStatus('Those passwords don’t match.', 'err'); return; }
+
+        btn.disabled = true;
+        resetStatus('Updating your password…', '');
+        try {
+          var res = await sb.auth.updateUser({ password: p1 });
+          if (res.error) throw res.error;
+          recoveryMode = false;
+          // Drop the recovery tokens from the URL so a refresh won't re-enter
+          // recovery, then fall through to the signed-in dashboard.
+          if (history.replaceState) history.replaceState(null, '', location.pathname);
+          resetStatus('Password updated — you’re signed in.', 'ok');
+          render();
+        } catch (err) {
+          resetStatus((err && err.message) ||
+            'Could not update your password. The link may have expired — request a new one.', 'err');
+          btn.disabled = false;
+        }
+      });
+
+      byId('resetCancel').addEventListener('click', async function () {
+        recoveryMode = false;
+        if (history.replaceState) history.replaceState(null, '', location.pathname);
+        try { await sb.auth.signOut(); } catch (e) {}
+        setMode('signin');
+        render();
+      });
+    }
+
+    function resetStatus(msg, kind) {
+      var el = byId('resetStatus');
+      if (!el) return;
+      el.textContent = msg || '';
+      var base = 'mt-3 text-center text-[12.5px] ';
+      var tone = kind === 'err' ? 'text-red-300' : kind === 'ok' ? 'text-emerald-300' : 'text-ink-300';
+      el.className = base + tone + (msg ? '' : ' hidden');
+    }
+
     function render() {
       if (rendering) { renderAgain = true; return; }
       rendering = true;
@@ -449,6 +602,18 @@ tailwind.config = {
     }
 
     async function doRender() {
+      // A password-recovery session is active: show the "set new password"
+      // form instead of the dashboard, even though a session technically exists.
+      if (recoveryMode) {
+        closeChat();
+        hide(byId('authView'));
+        hide(byId('dashView'));
+        show(byId('resetView'));
+        var rb = byId('resetSubmit'); if (rb) rb.disabled = false;
+        return;
+      }
+      hide(byId('resetView'));
+
       var session = null;
       try { var g = await sb.auth.getSession(); session = g.data.session; } catch (e) {}
 
@@ -459,6 +624,7 @@ tailwind.config = {
         show(byId('authView'));
         hide(byId('dashView'));
         var b = byId('authSubmit'); if (b) b.disabled = false;
+        if (pendingAuthError) { authStatus(pendingAuthError, 'err'); pendingAuthError = null; }
         return;
       }
 
