@@ -18,26 +18,29 @@
     try { localStorage.setItem('pc.theme', next); } catch(e) {}
   };
 </script>
-<title>FAQ · PurchasingCorp</title>
-<meta name="description" content="Common questions about selling devices to PurchasingCorp. Payout timing, carrier-locked phones, shipping, payment methods, bulk lots, escrow." />
+<title>Our Mission · PurchasingCorp</title>
+<meta name="description" content="Keep tech in use, out of landfills. PurchasingCorp refurbishes and resells the devices it buys, diverts real e-waste to certified recyclers, and puts affordable, verified gear back in people's hands." />
 <meta name="theme-color" content="#050505" />
 
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PurchasingCorp" />
-<meta property="og:title" content="FAQ · PurchasingCorp" />
-<meta property="og:description" content="Common questions about selling to PurchasingCorp. Payouts, shipping, carrier-locked devices, bulk lots." />
-<meta property="og:url" content="https://purchasingcorp.com/faq" />
+<meta property="og:title" content="Our Mission · PurchasingCorp" />
+<meta property="og:description" content="Keep tech in use, out of landfills. Refurbished, resold, and responsibly recycled, every device that comes through us." />
+<meta property="og:url" content="https://purchasingcorp.com/mission" />
 <meta property="og:image" content="https://purchasingcorp.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="FAQ · PurchasingCorp" />
-<meta name="twitter:description" content="Common questions about selling to PurchasingCorp." />
+<meta name="twitter:title" content="Our Mission · PurchasingCorp" />
+<meta name="twitter:description" content="Keep tech in use, out of landfills. Refurbished, resold, and responsibly recycled." />
 <meta name="twitter:image" content="https://purchasingcorp.com/og-image.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,11 +67,13 @@ tailwind.config = {
 </script>
 <link rel="stylesheet" href="styles.css" />
 
+<!-- Vercel Web Analytics + Speed Insights -->
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
 
+<!-- Ambient background -->
 <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.06),transparent_60%)]"></div>
   <div class="absolute -top-40 left-1/2 h-[640px] w-[1100px] -translate-x-1/2 rounded-full bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent blur-3xl"></div>
@@ -89,7 +94,7 @@ tailwind.config = {
       <li><a href="/process" class="hover:text-white transition">Process</a></li>
       <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
       <li><a href="/form" class="hover:text-white transition">Get Quote</a></li>
-      <li><a href="/faq" class="text-white">FAQ</a></li>
+      <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
       <li><a href="/pricing" class="hover:text-white transition">Full Pricing</a></li>
       <li><a href="/account" class="hover:text-white transition">Account</a></li>
     </ul>
@@ -108,77 +113,126 @@ tailwind.config = {
 </header>
 
 <!-- Hero -->
-<section class="relative pt-20 pb-12 md:pt-28 md:pb-16">
+<section class="relative pt-20 pb-16 md:pt-28 md:pb-24">
   <div class="mx-auto max-w-6xl px-5 text-center">
     <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
-      FAQ
+      Our Mission
     </span>
     <h1 class="mt-7 mx-auto max-w-4xl text-[40px] sm:text-5xl md:text-[72px] font-semibold tracking-[-0.04em] leading-[0.98]">
-      Common <span class="text-ink-300 italic font-serif font-normal">questions.</span>
+      Keep tech in use.<br/><span class="text-emerald-300">Out of landfills.</span>
     </h1>
     <p class="mx-auto mt-7 max-w-2xl text-[15px] sm:text-[16px] text-ink-300 leading-relaxed">
-      The things people ask before they ship. If yours isn't here, message us on Discord and we'll get back fast.
+      Every device that lives a second life is one less in a landfill and one more in someone's hands. We refurbish what we buy, sell it on at a fair price, and divert real e-waste from the trash. Buying from us, selling to us, both routes keep tech moving, and that's the whole point.
     </p>
-    <div class="mt-7 flex flex-wrap justify-center gap-2">
-      <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-black hover:bg-ink-100">Ask on Discord</a>
-      <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm hover:bg-white/[0.08]">Telegram</a>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="/form" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+        Sell a device
+        <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#loop" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-medium text-ink-100 hover:bg-white/[0.08] transition">
+        See how the loop works
+      </a>
+    </div>
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-[12px] text-ink-400">
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Refurbished and resold</span>
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> E-waste diverted</span>
+      <span class="inline-flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span> Verified every time</span>
     </div>
   </div>
 </section>
 
-<!-- Questions -->
-<section class="py-12 md:py-16 border-t border-white/[0.06]">
-  <div class="mx-auto max-w-3xl px-5">
-    <div class="divide-y divide-white/[0.06] border border-white/[0.06] rounded-2xl bg-ink-900">
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          How quickly do I get paid after sending my device?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">Once your device arrives at our facility, inspection takes around an hour, same business day for most. Payout goes out via Zelle, Cash App, Venmo, PayPal, or ACH within the same day.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          Do you accept carrier-locked iPhones?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">Yes. We buy locked AT&amp;T, Verizon, T-Mobile, Sprint, Boost, and Cricket phones, usually 25 to 30 percent below unlocked rates. Exact numbers are on the full pricing page.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          Is escrow or a middleman available?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">Absolutely. For orders of value, we'll fund the escrow or use a mutually agreed middleman. Just ask on Discord or Telegram to set it up.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          What condition does my device need to be in?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">We buy across the spectrum: new, used, even broken for parts. Be honest in your description and we'll honor the quote.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          How does shipping work? Do I have to pay for it?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">We email a free prepaid UPS or FedEx label for items over $100. Just print, box up, and drop off. Insurance is included.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          What payment methods do you accept?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">Zelle, Cash App, Venmo, PayPal G&amp;S, ACH bank transfer, USDC/BTC. Your pick at quote time.</p>
-      </details>
-      <details class="group p-5">
-        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-medium">
-          Can I sell in bulk?
-          <span class="text-ink-400 group-open:rotate-45 transition">+</span>
-        </summary>
-        <p class="mt-3 text-[14px] text-ink-300">Yes. Wholesale lots welcome. Send a spreadsheet or list and we'll quote within hours. Higher per-unit rates for resellers.</p>
-      </details>
+<!-- The loop -->
+<section id="loop" class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        The loop
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        Every device earns a <span class="text-emerald-300">second life.</span>
+      </h2>
+      <p class="mt-3 text-ink-300 text-[15px] leading-relaxed">
+        Whatever you send us goes one of two ways: back into someone's hands, or broken down responsibly for the parts that still matter. Nothing useful sits dead in a drawer, and nothing recyclable ends up in the trash.
+      </p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-3 gap-4">
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Refurbish &amp; resell</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          Working devices get inspected, cleaned, data-wiped, and put back on the market at a price that beats new. Verified clean every time.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M5 6v13h14V6M9 10v6M15 10v6M9 3h6v3H9z"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Divert e-waste</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          What we can't refurbish goes to certified e-waste recyclers, not the trash. Batteries, boards, rare metals: pulled out and reused properly.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-white/[0.06] bg-ink-900 p-7">
+        <div class="grid h-10 w-10 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-4-7-12a7 7 0 0 1 14 0c0 8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold tracking-tight">Affordable, verified devices</h3>
+        <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
+          Every device we resell carries the same verification stack, clean IMEI, locks cleared, tested working. People who can't afford new still get gear they can trust.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why it matters -->
+<section class="py-20 md:py-28 border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-12 gap-10 items-start">
+    <div class="md:col-span-5">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
+        Why it matters
+      </span>
+      <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
+        The greenest device is the one <span class="text-emerald-300">already made.</span>
+      </h2>
+      <p class="mt-4 text-ink-300 text-[15px] max-w-md leading-relaxed">
+        Most of a phone's lifetime footprint is spent before it ever turns on, mined, shipped, and manufactured. Keeping a working device in circulation skips all of that. A fair payout to you is also the lowest-impact thing that drawer phone will ever do.
+      </p>
+    </div>
+
+    <div class="md:col-span-7 rounded-3xl border border-white/[0.06] bg-ink-900 p-7 md:p-8">
+      <ul class="space-y-5 text-[14px]">
+        <li class="flex gap-4">
+          <span class="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <div>
+            <div class="font-semibold text-white">Reuse beats recycling</div>
+            <p class="mt-1 text-ink-300 leading-relaxed">A device resold whole keeps far more value, and far more material, in play than one shredded for scrap. We try resale first, always.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <div>
+            <div class="font-semibold text-white">Nothing goes to the curb</div>
+            <p class="mt-1 text-ink-300 leading-relaxed">When a device truly can't be saved, it goes to certified recyclers who recover the batteries, boards, and metals properly.</p>
+          </div>
+        </li>
+        <li class="flex gap-4">
+          <span class="mt-0.5 grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300">
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          <div>
+            <div class="font-semibold text-white">Access, not just disposal</div>
+            <p class="mt-1 text-ink-300 leading-relaxed">Refurbished gear at a fair price means more people get reliable tech they can actually afford. The loop helps both ends.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
@@ -189,18 +243,18 @@ tailwind.config = {
     <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-8 py-12 md:py-16 text-center">
       <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
       <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-        Still <span class="text-ink-300 italic font-serif font-normal">have a question?</span>
+        Sell smart. <span class="text-emerald-300">Keep tech alive.</span>
       </h2>
       <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md leading-relaxed">
-        Hit us on Discord. Most messages get a real human reply within the hour.
+        Get a firm offer on the device sitting in your drawer. You get paid the same day, and it gets a second life instead of a landfill.
       </p>
       <div class="mt-7 flex flex-wrap justify-center gap-3">
-        <a href="https://discord.gg/HYAvpQ8V" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
-          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
-          Open Discord
+        <a href="/form" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
+          Start a quote
+          <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
-        <a href="/form" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
-          Get a quote
+        <a href="/safety" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+          How we keep it safe
         </a>
       </div>
     </div>

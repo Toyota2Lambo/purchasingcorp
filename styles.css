@@ -151,3 +151,34 @@ html[data-theme="light"] #themeToggle:hover {
   background-color: rgb(0 0 0 / 0.08);
   color: #18181b;
 }
+
+/* ============================================================
+   STRICT TYPE
+   Across the site, emphasized phrases used
+   `text-ink-300 italic font-serif font-normal` — exactly the
+   italic + serif + low-contrast accent the strict design rules
+   reject. Rather than hand-edit 18 spans across 9 files, the
+   combination is neutralized here: clean Inter (no italic, no
+   serif), with emphasis carried by emerald color at the
+   surrounding text weight.
+
+   Only these accent spans ever use BOTH `italic` AND `font-serif`
+   together, so this combo selector touches nothing else. Pages
+   authored to the strict rules (e.g. /mission) already use
+   text-emerald-300 directly and are unaffected.
+
+   Specificity note: `.italic.font-serif` (0,2,0) outranks the
+   single Tailwind utilities it overrides (`.italic`, `.font-serif`,
+   `.text-ink-300`, all 0,1,0). The light-theme color rule below is
+   scoped under html[data-theme="light"] so it also outranks the
+   existing `html[data-theme="light"] .text-ink-300` override.
+   ------------------------------------------------------------ */
+.italic.font-serif {
+  font-style: normal;
+  font-family: inherit;   /* drop Instrument Serif, fall back to Inter */
+  font-weight: inherit;   /* match the heading weight, not a forced 400 */
+  color: #6ee7b7;         /* emerald-300 */
+}
+html[data-theme="light"] .italic.font-serif {
+  color: #047857;         /* readable emerald on white */
+}
