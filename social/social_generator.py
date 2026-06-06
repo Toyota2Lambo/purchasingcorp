@@ -41,6 +41,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -51,8 +52,17 @@ SAMPLE_PAYLOADS = HERE / "sample-payloads.json"
 # `or` (not get's default) so an empty env var — e.g. an unset CI
 # variable that still renders as "" — falls back instead of blanking out.
 MODEL = os.environ.get("ANTHROPIC_MODEL") or "claude-sonnet-4-5"
-MAX_TOKENS = int(os.environ.get("SOCIAL_MAX_TOKENS") or "4096")
+# A full day is 10 posts (each with a caption + 20-28 hashtags + slide
+# fields) plus 2 stories. That JSON blows well past 4096 output tokens, and
+# a forced tool call that hits the cap comes back TRUNCATED — the posts[]/
+# stories[] arrays arrive partial or missing and validation hard-fails,
+# killing the whole day. 16000 gives comfortable headroom; still overridable.
+MAX_TOKENS = int(os.environ.get("SOCIAL_MAX_TOKENS") or "16000")
 TEMPERATURE = float(os.environ.get("SOCIAL_TEMPERATURE") or "0.7")
+# How many times to re-ask the model if a response comes back truncated or
+# otherwise unparseable. Generation is non-deterministic, so a transient bad
+# roll should never sink the day's run.
+GEN_ATTEMPTS = int(os.environ.get("SOCIAL_GEN_ATTEMPTS") or "4")
 
 # Must match the keys in templates-registry.js exactly.
 TEMPLATE_NAMES = [
@@ -680,6 +690,15 @@ def call_anthropic(system_prompt: str, user_prompt: str) -> dict:
         tool_choice={"type": "tool", "name": "emit_content"},
         messages=[{"role": "user", "content": user_prompt}],
     )
+    # A response that stopped on `max_tokens` has a truncated tool_use input:
+    # the JSON is cut off, so posts[]/stories[] come back partial or missing.
+    # Treat it as a retryable failure rather than letting validation blow up
+    # on garbage. (With MAX_TOKENS=16000 this should essentially never fire.)
+    if getattr(resp, "stop_reason", None) == "max_tokens":
+        raise RuntimeError(
+            f"response truncated at max_tokens={MAX_TOKENS}; "
+            "raise SOCIAL_MAX_TOKENS or lower --posts"
+        )
     for block in resp.content:
         if getattr(block, "type", None) == "tool_use" and block.name == "emit_content":
             return block.input
@@ -725,8 +744,29 @@ def generate_package(date: dt.date, posts: int = 4, stories: int = 2,
     system_prompt = build_system_prompt()
     user_prompt = build_user_prompt(theme, pricing_ctx, date, posts, stories)
 
-    raw = call_anthropic(system_prompt, user_prompt)
-    content = validate_and_normalize(raw)
+    # Generation is non-deterministic: an occasional response is truncated or
+    # malformed. Re-ask a few times before giving up so one bad roll doesn't
+    # kill the whole day (this was the every-other-day CI failure). Hard config
+    # errors inside call_anthropic (missing key/package) raise SystemExit, which
+    # is NOT an Exception subclass, so they still abort immediately.
+    content = None
+    last_err: Exception | None = None
+    for attempt in range(1, GEN_ATTEMPTS + 1):
+        try:
+            raw = call_anthropic(system_prompt, user_prompt)
+            content = validate_and_normalize(raw)
+            break
+        except Exception as e:
+            last_err = e
+            print(f"[generator] attempt {attempt}/{GEN_ATTEMPTS} failed: {e}",
+                  file=sys.stderr)
+            if attempt < GEN_ATTEMPTS:
+                time.sleep(min(2 ** attempt, 20))
+    if content is None:
+        raise RuntimeError(
+            f"generation failed after {GEN_ATTEMPTS} attempts: {last_err}"
+        )
+
     if not skip_photos:
         ensure_feed_photo(content, theme)
     resolve_photos(content, date.isoformat(), skip=skip_photos)
