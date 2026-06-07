@@ -56,6 +56,10 @@ html[data-theme="light"] .bg-ink-800\/60  { background-color: rgb(244 244 245 / 
 html[data-theme="light"] .bg-ink-900\/60  { background-color: rgb(250 250 250 / 0.6); }
 html[data-theme="light"] .bg-ink-900\/95  { background-color: rgb(250 250 250 / 0.95); }
 html[data-theme="light"] .bg-ink-950\/60  { background-color: rgb(255 255 255 / 0.7); }
+/* Scrolled header: JS adds `!bg-ink-950/85` (an !important dark fill) past 8px.
+   Flip it to translucent white so the sticky header doesn't turn into a dark
+   bar on light pages. !important is required to beat the utility's own. */
+html[data-theme="light"] .\!bg-ink-950\/85 { background-color: rgb(255 255 255 / 0.9) !important; }
 
 /* --- Text --- */
 html[data-theme="light"] .text-ink-100 { color: #18181b; }
