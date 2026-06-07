@@ -1,0 +1,71 @@
+name: social · comment
+
+# Leaves on-brand, contextual comments on recent Instagram posts
+# in the electronics/buyback niche via hashtag discovery.
+#
+# Runs once a day at 20:00 UTC (3 pm ET / 12 pm PT) — good engagement window.
+# Also supports manual dispatch with optional overrides.
+#
+# The comment_log.json is committed back after each run so media IDs that
+# were already commented on are never revisited across runs.
+
+on:
+  schedule:
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+    inputs:
+      hashtags:
+        description: 'Comma-sep hashtags to target (no #). Blank = defaults.'
+        required: false
+      max_comments:
+        description: 'Max comments to post this run (default 5)'
+        required: false
+        default: '5'
+      dry_run:
+        description: 'Plan only, no real API calls'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-comment
+  cancel-in-progress: false
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Post comments
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          IG_TARGET_HASHTAGS: ${{ github.event.inputs.hashtags }}
+          IG_COMMENTS_PER_RUN: ${{ github.event.inputs.max_comments || '10' }}
+          IG_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+        run: python social/ig_commenter.py
+
+      - name: Commit updated comment log
+        run: |
+          git config user.name  "Toyota2Lambo"
+          git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
+          git add social/comment_log.json
+          if git diff --cached --quiet; then
+            echo "No changes to comment_log.json — nothing to commit."
+          else
+            git commit -m "social: update comment log $(date -u +%F)"
+            git push
+          fi
