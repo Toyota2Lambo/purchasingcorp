@@ -182,3 +182,38 @@ html[data-theme="light"] #themeToggle:hover {
 html[data-theme="light"] .italic.font-serif {
   color: #047857;         /* readable emerald on white */
 }
+
+/* ============================================================
+   LOGO BREATHE
+   The header wordmark gently inhales/exhales so the site feels alive
+   instead of static. Scoped to the home link inside the sticky header,
+   so the footer mark and mobile-menu wordmark stay still. The badge
+   scales + glows + brightens; the "PURCHASINGCORP" text brightens in
+   sync (brightness only, no scale) so it dims and lights up with the
+   breath without ever reflowing or shifting position.
+   ------------------------------------------------------------ */
+@keyframes pc-breathe {
+  0%, 100% { transform: scale(1);    filter: brightness(0.55); box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+  50%      { transform: scale(1.06); filter: brightness(1.45); box-shadow: 0 0 16px 1px var(--pc-glow); }
+}
+@keyframes pc-breathe-text {
+  0%, 100% { filter: brightness(0.55); }
+  50%      { filter: brightness(1.45); }
+}
+#siteHeader a[href="/"] > span:first-child {
+  --pc-glow: rgba(255,255,255,0.28);
+  transform-origin: center;
+  animation: pc-breathe 4s ease-in-out infinite;
+  will-change: transform;
+}
+#siteHeader a[href="/"] > span:last-child {
+  animation: pc-breathe-text 4s ease-in-out infinite;
+  will-change: filter;
+}
+html[data-theme="light"] #siteHeader a[href="/"] > span:first-child {
+  --pc-glow: rgba(0,0,0,0.16);
+}
+@media (prefers-reduced-motion: reduce) {
+  #siteHeader a[href="/"] > span:first-child,
+  #siteHeader a[href="/"] > span:last-child { animation: none; }
+}
