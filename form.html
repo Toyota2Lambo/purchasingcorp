@@ -19,7 +19,7 @@
   };
 </script>
 <title>Get a Quote · PurchasingCorp</title>
-<meta name="description" content="Tell us what you're selling and get a firm cash offer, usually within a couple of hours. Photos optional but get you a faster answer." />
+<meta name="description" content="Pick what you're selling and see a real cash number in under 2 minutes. No lowball, same-day payout, free insured shipping." />
 <meta name="theme-color" content="#050505" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -66,6 +66,7 @@ tailwind.config = {
 
 <script defer src="/_vercel/insights/script.js"></script>
 <script defer src="/_vercel/speed-insights/script.js"></script>
+<script src="/pricing-data.js"></script>
 </head>
 <body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
 
@@ -147,82 +148,139 @@ tailwind.config = {
   </div>
 </div>
 
-<!-- Quote form -->
+<!-- Quote wizard -->
 <section class="relative pt-16 pb-20 md:pt-20 md:pb-28">
   <div class="mx-auto max-w-3xl px-5">
     <div class="text-center">
       <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-ink-300">
-        Get quote
+        Instant estimate
       </span>
       <h1 class="mt-5 text-4xl md:text-6xl font-semibold tracking-[-0.04em] leading-[0.98]">
-        Get your <span class="text-ink-300 italic font-serif font-normal">offer.</span>
+        Turn it into <span class="text-ink-300 italic font-serif font-normal">cash.</span>
       </h1>
-      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Tell us what you've got. We'll reply with a firm, no-games offer, usually within a couple of hours.</p>
+      <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Pick what you've got and see a real number in under 2 minutes. No lowball, no waiting around.</p>
     </div>
 
-    <div id="quote-form" class="mt-10 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-6 py-10 md:p-12 scroll-mt-24">
+    <div id="quote-form" class="mt-10 relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-5 py-8 md:p-10 scroll-mt-24">
       <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
 
-      <div class="grid grid-cols-3 gap-4 max-w-md mx-auto mb-9">
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">1</div>
-          <div class="mt-2 text-[12px] text-ink-300">Fill the form</div>
+      <!-- Honeypot: hidden from real users, bots fill it -->
+      <div aria-hidden="true" class="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label>Leave this empty<input id="q-website" type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <!-- Progress -->
+      <div id="wiz-progress" class="mb-8">
+        <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-ink-400">
+          <span id="wiz-step-label">Step 1 of 4 · Device</span>
+          <span id="wiz-step-count">1 / 4</span>
         </div>
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">2</div>
-          <div class="mt-2 text-[12px] text-ink-300">We quote you</div>
-        </div>
-        <div class="text-center">
-          <div class="mx-auto grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-[13px] font-semibold">3</div>
-          <div class="mt-2 text-[12px] text-ink-300">Get paid</div>
+        <div class="mt-2.5 h-1 w-full overflow-hidden rounded-full bg-white/[0.07]">
+          <div id="wiz-bar" class="h-full rounded-full bg-white transition-all duration-300" style="width:25%"></div>
         </div>
       </div>
 
-      <!-- Quote form: posts to /api/inquiry → Supabase -->
-      <form id="quoteForm" class="space-y-4" onsubmit="return submitInquiry(event)" novalidate>
-        <!-- Honeypot: hidden from real users, bots fill it -->
-        <div aria-hidden="true" class="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
-          <label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <!-- STEP 1 — Category -->
+      <div id="step-1" class="wiz-step">
+        <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">What are you selling?</h2>
+        <p class="mt-1 text-[13px] text-ink-400">Tap a category to get started.</p>
+        <div id="cat-grid" class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-2.5"></div>
+      </div>
+
+      <!-- STEP 2 — Model -->
+      <div id="step-2" class="wiz-step hidden">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">Which one exactly?</h2>
+            <p class="mt-1 text-[13px] text-ink-400">Pick the closest match — we confirm the rest on inspection.</p>
+          </div>
+          <button type="button" onclick="wizBack()" class="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12px] text-ink-200 hover:bg-white/[0.08] transition">
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+            Back
+          </button>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-4">
-          <div>
-            <label for="q-type" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Item type</label>
-            <select id="q-type" name="type" required class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
-              <option value="" disabled selected>Select one…</option>
-              <option>iPhone</option>
-              <option>MacBook / Laptop</option>
-              <option>iPad / Tablet</option>
-              <option>Apple Watch</option>
-              <option>Mac mini / Desktop</option>
-              <option>Game console</option>
-              <option>Accessory</option>
-              <option>Other</option>
-            </select>
+        <!-- Known-model path -->
+        <div id="model-known">
+          <div class="mt-5 relative">
+            <svg class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-ink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input id="model-search" type="text" placeholder="Search models…" autocomplete="off"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 pl-11 pr-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
           </div>
-          <div>
-            <label for="q-condition" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Condition</label>
-            <select id="q-condition" name="condition" class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
-              <option value="" disabled selected>Select one…</option>
-              <option>New — sealed / unopened</option>
-              <option>Like new</option>
-              <option>Good — light wear</option>
-              <option>Fair — visible wear</option>
-              <option>Damaged / for parts</option>
-              <option>Not sure</option>
-            </select>
-          </div>
+          <ul id="model-list" class="mt-3 max-h-[320px] overflow-y-auto divide-y divide-white/[0.06] rounded-xl border border-white/[0.06]"></ul>
+          <p id="model-empty" class="mt-4 hidden text-center text-[13px] text-ink-400">No match. <button type="button" onclick="pickOther()" class="text-ink-100 underline underline-offset-4">Enter it manually →</button></p>
         </div>
 
-        <div>
-          <label for="q-model" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Make &amp; model</label>
-          <input id="q-model" name="model" type="text" required placeholder="e.g. iPhone 14 Pro 256GB, or MacBook Air M2 2022"
+        <!-- Free-text path (Something else / manual) -->
+        <div id="model-free" class="hidden">
+          <label for="model-free-input" class="mt-5 block text-[12.5px] font-medium text-ink-200 mb-1.5">Make &amp; model</label>
+          <input id="model-free-input" type="text" placeholder="e.g. RTX 4080, Sony A7 IV, Galaxy S24 Ultra"
             class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          <p class="mt-2 text-[12px] text-ink-400">No instant number for this one, but we'll send a real offer fast.</p>
+          <button type="button" onclick="fromFreeNext()" class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition">
+            Continue
+            <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3 — Condition -->
+      <div id="step-3" class="wiz-step hidden">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">What kind of shape is it in?</h2>
+            <p id="step-3-sub" class="mt-1 text-[13px] text-ink-400">Be honest — it only changes the final number a little.</p>
+          </div>
+          <button type="button" onclick="wizBack()" class="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12px] text-ink-200 hover:bg-white/[0.08] transition">
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+            Back
+          </button>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Carrier toggle (iPhone only) -->
+        <div id="carrier-row" class="mt-5 hidden">
+          <div class="text-[12.5px] font-medium text-ink-200 mb-1.5">Is it carrier-locked?</div>
+          <div class="grid grid-cols-2 gap-2.5">
+            <button type="button" data-carrier="Unlocked" class="carrier-opt rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-[13.5px] text-ink-100 hover:bg-white/[0.08] transition">Unlocked</button>
+            <button type="button" data-carrier="Carrier-locked" class="carrier-opt rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-[13.5px] text-ink-100 hover:bg-white/[0.08] transition">Carrier-locked</button>
+          </div>
+        </div>
+
+        <div class="mt-5 text-[12.5px] font-medium text-ink-200 mb-1.5">Condition</div>
+        <div id="cond-grid" class="grid sm:grid-cols-2 gap-2.5"></div>
+      </div>
+
+      <!-- STEP 4 — Offer + contact -->
+      <div id="step-4" class="wiz-step hidden">
+        <div class="flex items-start justify-between gap-3">
+          <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">Here's your number.</h2>
+          <button type="button" onclick="wizBack()" class="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12px] text-ink-200 hover:bg-white/[0.08] transition">
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+            Back
+          </button>
+        </div>
+
+        <!-- Estimate card -->
+        <div class="mt-5 rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 text-center">
+          <div class="text-[11px] uppercase tracking-[0.18em] text-ink-400" id="est-eyebrow">Your estimated offer</div>
+          <div id="est-amount" class="mt-2 text-5xl md:text-6xl font-semibold tracking-[-0.04em]">—</div>
+          <div id="est-summary" class="mt-3 text-[13px] text-ink-300"></div>
+          <div id="est-note" class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11.5px] text-ink-400">
+            <svg class="h-3 w-3 text-emerald-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
+            Locked in after a 2-minute inspection
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form id="quoteForm" class="mt-6 space-y-4" onsubmit="return submitInquiry(event)" novalidate>
           <div>
-            <label for="q-handoff" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Handoff preference</label>
+            <label for="q-contact" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Where do we send your offer?</label>
+            <input id="q-contact" name="contact" type="text" required placeholder="Email, phone, Telegram, or Discord"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+          </div>
+
+          <div>
+            <label for="q-handoff" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">How do you want to hand it off?</label>
             <select id="q-handoff" name="handoff" class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] focus:outline-none focus:ring-2 focus:ring-white/15">
               <option value="" disabled selected>Select one…</option>
               <option>Ship it in (prepaid label)</option>
@@ -230,38 +288,33 @@ tailwind.config = {
               <option>Either works</option>
             </select>
           </div>
+
           <div>
-            <label for="q-contact" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">How should we reach you?</label>
-            <input id="q-contact" name="contact" type="text" required placeholder="Email, phone, Telegram, or Discord"
-              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+            <label for="q-details" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Anything else? <span class="text-ink-500 font-normal">(optional)</span></label>
+            <textarea id="q-details" name="details" rows="2" placeholder="Color, accessories included, cracks, battery health, how many you're selling…"
+              class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15 resize-y"></textarea>
           </div>
-        </div>
 
-        <div>
-          <label for="q-details" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Anything else? <span class="text-ink-500 font-normal">(optional)</span></label>
-          <textarea id="q-details" name="details" rows="3" placeholder="Storage, color, accessories included, cracks, battery health, how many you're selling…"
-            class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15 resize-y"></textarea>
-        </div>
+          <div>
+            <label for="q-photos" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Photos <span class="text-ink-500 font-normal">(optional — locks your offer faster)</span></label>
+            <input id="q-photos" name="photos" type="file" accept="image/*" multiple
+              class="block w-full text-[13px] text-ink-300 file:mr-4 file:rounded-full file:border-0 file:bg-white file:px-4 file:py-2 file:text-[13px] file:font-medium file:text-black hover:file:bg-ink-100 file:cursor-pointer cursor-pointer">
+            <p class="mt-1.5 text-[11.5px] text-ink-500">Up to 4 images, 8MB each.</p>
+          </div>
 
-        <div>
-          <label for="q-photos" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Photos <span class="text-ink-500 font-normal">(optional — gets you a faster, firmer offer)</span></label>
-          <input id="q-photos" name="photos" type="file" accept="image/*" multiple
-            class="block w-full text-[13px] text-ink-300 file:mr-4 file:rounded-full file:border-0 file:bg-white file:px-4 file:py-2 file:text-[13px] file:font-medium file:text-black hover:file:bg-ink-100 file:cursor-pointer cursor-pointer">
-          <p class="mt-1.5 text-[11.5px] text-ink-500">Up to 4 images, 8MB each.</p>
-        </div>
+          <button id="q-submit" type="submit" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+            <span id="q-submit-label">Lock in my offer</span>
+            <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
 
-        <button id="q-submit" type="submit" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
-          <span id="q-submit-label">Get my offer</span>
-          <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-        </button>
+          <p id="q-status" class="text-center text-[12.5px] hidden"></p>
 
-        <p id="q-status" class="text-center text-[12.5px] hidden"></p>
-
-        <p class="text-center text-[11.5px] text-ink-500">
-          By submitting you agree to our <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>. Prefer to chat?
-          <a href="https://discord.gg/XresQdPQv9" target="_blank" rel="noopener" class="text-ink-300 underline underline-offset-4 hover:text-white">Reach us on Discord</a>.
-        </p>
-      </form>
+          <p class="text-center text-[11.5px] text-ink-500">
+            By submitting you agree to our <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>. Prefer to chat?
+            <a href="https://discord.gg/XresQdPQv9" target="_blank" rel="noopener" class="text-ink-300 underline underline-offset-4 hover:text-white">Reach us on Discord</a>.
+          </p>
+        </form>
+      </div>
 
       <!-- Success state (revealed after a successful submit) -->
       <div id="quoteSuccess" class="hidden text-center py-6">
@@ -269,7 +322,7 @@ tailwind.config = {
           <svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
         </div>
         <h3 class="mt-4 text-2xl font-semibold tracking-[-0.02em]">Got it — offer incoming.</h3>
-        <p class="mt-2 text-ink-300 text-[14px] mx-auto max-w-sm">We'll review your details and reply with a firm offer, usually within a couple of hours. Keep an eye on the contact you gave us.</p>
+        <p id="success-line" class="mt-2 text-ink-300 text-[14px] mx-auto max-w-sm">We'll confirm your offer and reply fast on the contact you gave us. Usually within a couple of hours.</p>
 
         <div class="mt-6 mx-auto max-w-sm rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 text-left">
           <div class="text-[13.5px] font-semibold text-white">Track this quote in your dashboard</div>
@@ -280,7 +333,7 @@ tailwind.config = {
           </a>
         </div>
 
-        <button type="button" onclick="resetInquiry()" class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] hover:bg-white/[0.08] transition">Send another</button>
+        <button type="button" onclick="resetInquiry()" class="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-[13px] hover:bg-white/[0.08] transition">Sell something else</button>
       </div>
     </div>
 
@@ -288,11 +341,11 @@ tailwind.config = {
     <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-[12px] text-ink-400">
       <div class="flex items-center justify-center gap-2">
         <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
-        Reply within ~2 hours
+        Top cash offer, guaranteed
       </div>
       <div class="flex items-center justify-center gap-2">
         <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
-        One firm offer, no haggling
+        Free insured shipping
       </div>
       <div class="flex items-center justify-center gap-2">
         <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-emerald-300" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4 10-10"/></svg>
@@ -462,85 +515,358 @@ tailwind.config = {
     return false;
   }
 
-  // Quote form → /api/inquiry
-  async function submitInquiry(e){
-    e.preventDefault();
-    var form = document.getElementById('quoteForm');
-    var btn = document.getElementById('q-submit');
-    var label = document.getElementById('q-submit-label');
-    var status = document.getElementById('q-status');
+  // ---- Quote wizard ----
+  (function(){
+    var CATS = [
+      { key:'iphone',       label:'iPhone',         sub:'Locked or unlocked',   icon:'phone'   },
+      { key:'macbook-pro',  label:'MacBook Pro',    sub:'M1 – M5',              icon:'laptop'  },
+      { key:'macbook-air',  label:'MacBook Air',    sub:'M2 – M4',              icon:'laptop'  },
+      { key:'ipad',         label:'iPad',           sub:'Pro · Air · Mini',     icon:'tablet'  },
+      { key:'apple-watch',  label:'Apple Watch',    sub:'SE · Series · Ultra',  icon:'watch'   },
+      { key:'mac-mini',     label:'Mac mini',       sub:'M4 & M4 Pro',          icon:'desktop' },
+      { key:'consoles',     label:'Game console',   sub:'PS5 · Xbox · Switch',  icon:'console' },
+      { key:'accessories',  label:'AirPods & more', sub:'Pencil · Max · AirTag',icon:'audio'   },
+      { key:'__other',      label:'Something else', sub:'GPUs · cameras · lots',icon:'spark'   }
+    ];
+    var ICONS = {
+      phone:'<rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/>',
+      laptop:'<rect x="3" y="5" width="18" height="11" rx="1.5"/><path d="M2 20h20"/>',
+      tablet:'<rect x="4" y="3" width="16" height="18" rx="2"/>',
+      watch:'<rect x="7" y="7" width="10" height="10" rx="3"/><path d="M9 7l.5-3h5l.5 3M9 17l.5 3h5l.5-3"/>',
+      desktop:'<rect x="3" y="4" width="18" height="13" rx="1.5"/><path d="M9 21h6M12 17v4"/>',
+      console:'<path d="M7 9h2v2M9 9h6M15 9h2v2"/><rect x="3" y="7" width="18" height="10" rx="3"/>',
+      audio:'<path d="M5 13a7 7 0 0 1 14 0M4 13.5a2 2 0 0 1 2 2v2a2 2 0 1 1-4 0v-2a2 2 0 0 1 2-2zM20 13.5a2 2 0 0 1 2 2v2a2 2 0 1 1-4 0v-2a2 2 0 0 1 2-2z"/>',
+      spark:'<path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8z"/>'
+    };
+    var CONDS = [
+      { v:'New — sealed / unopened', t:'Sealed',   d:'Brand new, never opened' },
+      { v:'Like new',                t:'Like new', d:'No marks, everything there' },
+      { v:'Good — light wear',       t:'Good',     d:'Minor scuffs, works great' },
+      { v:'Fair — visible wear',     t:'Fair',     d:'Visible wear, fully working' },
+      { v:'Damaged / for parts',     t:'Damaged',  d:'Cracks or faults' },
+      { v:'Not sure',                t:'Not sure', d:'We’ll help you figure it out' }
+    ];
 
-    var type = (form.querySelector('[name=type]').value || '').trim();
-    var model = (form.querySelector('[name=model]').value || '').trim();
-    var contact = (form.querySelector('[name=contact]').value || '').trim();
+    var state = { catKey:null, catLabel:null, model:null, row:null, carrier:null, condition:null, est:null };
+    var step = 1;
 
-    function fail(msg){
-      status.classList.remove('hidden');
-      status.classList.add('text-red-300');
-      status.textContent = msg;
+    var $ = function(id){ return document.getElementById(id); };
+
+    function priceNum(s){
+      var m = String(s == null ? '' : s).match(/\$\s*([0-9][0-9,]*)/);
+      return m ? parseInt(m[1].replace(/,/g,''), 10) : null;
     }
-    status.classList.remove('text-red-300','text-emerald-300');
+    function catMax(key){
+      var d = (window.PRICING || {})[key];
+      if (!d || !d.rows) return null;
+      var max = null;
+      d.rows.forEach(function(r){ var n = priceNum(r[1]); if (n != null && (max == null || n > max)) max = n; });
+      return max;
+    }
+    function fmt(n){ return '$' + n.toLocaleString('en-US'); }
+    function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-    if (!type || !model || !contact) { fail('Please add the item type, model, and how to reach you.'); return false; }
-
-    var files = form.querySelector('[name=photos]').files;
-    if (files && files.length > 4) { fail('Please attach 4 photos or fewer.'); return false; }
-    for (var i=0;i<files.length;i++){
-      if (files[i].size > 8*1024*1024) { fail('Each photo must be under 8MB.'); return false; }
+    // ---- Step 1: categories ----
+    function renderCats(){
+      var grid = $('cat-grid'); if (!grid) return;
+      grid.innerHTML = CATS.map(function(c){
+        var max = c.key === '__other' ? null : catMax(c.key);
+        var pill = max != null
+          ? '<span class="text-[11px] font-semibold text-emerald-300 tabular-nums">Up to ' + fmt(max) + '</span>'
+          : '<span class="text-[11px] text-ink-400">' + (c.key === '__other' ? 'Custom quote' : 'Instant quote') + '</span>';
+        return '<button type="button" data-cat="' + c.key + '" class="cat-tile group text-left rounded-2xl border border-white/[0.07] bg-ink-900 p-4 hover:border-white/20 hover:bg-ink-850 transition">' +
+            '<div class="flex items-center justify-between">' +
+              '<span class="grid h-9 w-9 place-items-center rounded-lg bg-white/[0.06] border border-white/[0.06] text-ink-100">' +
+                '<svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">' + ICONS[c.icon] + '</svg>' +
+              '</span>' +
+              '<svg class="h-4 w-4 text-ink-500 transition group-hover:translate-x-0.5 group-hover:text-ink-200" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' +
+            '</div>' +
+            '<div class="mt-3 text-[14px] font-semibold">' + esc(c.label) + '</div>' +
+            '<div class="mt-0.5 text-[12px] text-ink-400">' + esc(c.sub) + '</div>' +
+            '<div class="mt-2">' + pill + '</div>' +
+          '</button>';
+      }).join('');
+      Array.prototype.forEach.call(grid.querySelectorAll('.cat-tile'), function(b){
+        b.addEventListener('click', function(){ selectCat(b.getAttribute('data-cat')); });
+      });
     }
 
-    var data = new FormData(form);
-    data.append('path', location.pathname);
-    data.append('referrer', document.referrer || '');
-
-    btn.disabled = true;
-    label.textContent = 'Sending…';
-    status.classList.add('hidden');
-    status.textContent = '';
-
-    try {
-      var r = await fetch('/api/inquiry', { method:'POST', body: data });
-      var ok = r.ok;
-      var j = null;
-      try { j = await r.json(); ok = ok && j && j.ok !== false; } catch(_){}
-      if (ok){
-        // Stash this quote's claim token so /account can link it once the
-        // visitor signs up (works even before they have an account).
-        if (j && j.id && j.claim_token) {
-          try {
-            var pend = JSON.parse(localStorage.getItem('pc.pendingClaims') || '[]');
-            if (!Array.isArray(pend)) pend = [];
-            pend.push({ id: j.id, token: j.claim_token });
-            localStorage.setItem('pc.pendingClaims', JSON.stringify(pend.slice(-25)));
-          } catch(_){}
-        }
-        form.classList.add('hidden');
-        var ok2 = document.getElementById('quoteSuccess');
-        ok2.classList.remove('hidden');
-        ok2.scrollIntoView({behavior:'smooth', block:'center'});
+    function selectCat(key){
+      var c = CATS.filter(function(x){ return x.key === key; })[0];
+      state.catKey = key;
+      state.catLabel = c ? c.label : 'Other';
+      state.model = null; state.row = null; state.carrier = null; state.condition = null; state.est = null;
+      if (key === '__other'){
+        $('model-known').classList.add('hidden');
+        $('model-free').classList.remove('hidden');
+        $('model-free-input').value = '';
       } else {
-        throw new Error('rejected');
+        $('model-known').classList.remove('hidden');
+        $('model-free').classList.add('hidden');
+        $('model-search').value = '';
+        renderModels('');
+        setTimeout(function(){ try { $('model-search').focus(); } catch(_){} }, 60);
       }
-    } catch(err){
-      btn.disabled = false;
-      label.textContent = 'Get my offer';
-      fail('Something went wrong. Try again, or reach us on Discord.');
+      goStep(2);
     }
-    return false;
-  }
 
-  function resetInquiry(){
-    var form = document.getElementById('quoteForm');
-    form.reset();
-    form.classList.remove('hidden');
-    document.getElementById('quoteSuccess').classList.add('hidden');
-    var btn = document.getElementById('q-submit');
-    btn.disabled = false;
-    document.getElementById('q-submit-label').textContent = 'Get my offer';
-    var status = document.getElementById('q-status');
-    status.classList.add('hidden');
-    status.textContent = '';
-  }
+    // ---- Step 2: models ----
+    function renderModels(filter){
+      var list = $('model-list'); if (!list) return;
+      var d = (window.PRICING || {})[state.catKey];
+      var rows = (d && d.rows) ? d.rows : [];
+      var q = (filter || '').trim().toLowerCase();
+      var shown = q ? rows.filter(function(r){ return r[0].toLowerCase().indexOf(q) > -1; }) : rows;
+      $('model-empty').classList.toggle('hidden', shown.length > 0);
+      list.innerHTML = shown.map(function(r){
+        var n = priceNum(r[1]);
+        var right = n != null
+          ? '<span class="text-[13px] font-semibold text-emerald-300 tabular-nums">' + fmt(n) + '</span>'
+          : '<span class="text-[12px] text-ink-400">' + esc(r[1]) + '</span>';
+        return '<li><button type="button" data-model="' + esc(r[0]) + '" class="model-row w-full flex items-center justify-between gap-3 px-4 py-3 text-left hover:bg-white/[0.03] transition">' +
+            '<span class="text-[13.5px] text-ink-100">' + esc(r[0]) + '</span>' + right +
+          '</button></li>';
+      }).join('');
+      Array.prototype.forEach.call(list.querySelectorAll('.model-row'), function(b){
+        b.addEventListener('click', function(){
+          var name = b.getAttribute('data-model');
+          var row = rows.filter(function(r){ return r[0] === name; })[0];
+          selectModel(row);
+        });
+      });
+    }
+
+    function selectModel(row){
+      state.model = row[0];
+      state.row = row;
+      state.carrier = null;
+      state.condition = null;
+      setupConditionStep();
+      goStep(3);
+    }
+
+    function pickOther(){
+      $('model-known').classList.add('hidden');
+      $('model-free').classList.remove('hidden');
+      setTimeout(function(){ try { $('model-free-input').focus(); } catch(_){} }, 60);
+    }
+
+    function fromFreeNext(){
+      var v = ($('model-free-input').value || '').trim();
+      if (!v){ $('model-free-input').focus(); return; }
+      state.model = v;
+      state.row = null;
+      state.carrier = null;
+      state.condition = null;
+      setupConditionStep();
+      goStep(3);
+    }
+
+    // ---- Step 3: condition ----
+    function setupConditionStep(){
+      var isPhone = state.catKey === 'iphone';
+      $('carrier-row').classList.toggle('hidden', !isPhone);
+      // reset carrier highlight
+      Array.prototype.forEach.call(document.querySelectorAll('.carrier-opt'), function(b){
+        b.classList.remove('!border-white','!bg-white','!text-black');
+      });
+      renderConds();
+    }
+
+    function renderConds(){
+      var grid = $('cond-grid'); if (!grid) return;
+      grid.innerHTML = CONDS.map(function(c){
+        return '<button type="button" data-cond="' + esc(c.v) + '" class="cond-opt text-left rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 hover:bg-white/[0.08] transition">' +
+            '<div class="text-[13.5px] font-medium text-ink-100">' + esc(c.t) + '</div>' +
+            '<div class="text-[12px] text-ink-400 mt-0.5">' + esc(c.d) + '</div>' +
+          '</button>';
+      }).join('');
+      Array.prototype.forEach.call(grid.querySelectorAll('.cond-opt'), function(b){
+        b.addEventListener('click', function(){ selectCond(b.getAttribute('data-cond')); });
+      });
+    }
+
+    function selectCond(v){
+      if (state.catKey === 'iphone' && !state.carrier){
+        var row = $('carrier-row');
+        row.classList.add('ring-2','ring-white/30','rounded-xl','p-2','-m-2');
+        setTimeout(function(){ row.classList.remove('ring-2','ring-white/30','p-2','-m-2'); }, 900);
+        return;
+      }
+      state.condition = v;
+      computeEstimate();
+      goStep(4);
+    }
+
+    // carrier buttons
+    Array.prototype.forEach.call(document.querySelectorAll('.carrier-opt'), function(b){
+      b.addEventListener('click', function(){
+        state.carrier = b.getAttribute('data-carrier');
+        Array.prototype.forEach.call(document.querySelectorAll('.carrier-opt'), function(x){
+          x.classList.toggle('!border-white', x === b);
+          x.classList.toggle('!bg-white', x === b);
+          x.classList.toggle('!text-black', x === b);
+        });
+      });
+    });
+
+    // ---- Step 4: estimate ----
+    function computeEstimate(){
+      var amt = $('est-amount'), eye = $('est-eyebrow'), sum = $('est-summary'), note = $('est-note');
+      var est = null;
+      if (state.row){
+        if (state.catKey === 'iphone'){
+          est = priceNum(state.carrier === 'Carrier-locked' ? state.row[2] : state.row[1]);
+        } else {
+          est = priceNum(state.row[1]);
+        }
+      }
+      state.est = est;
+
+      var bits = [state.model];
+      if (state.carrier) bits.push(state.carrier);
+      if (state.condition) bits.push(state.condition.split('—')[0].trim());
+      sum.textContent = bits.join('  ·  ');
+
+      if (est != null){
+        eye.textContent = 'Your estimated offer';
+        amt.textContent = 'Up to ' + fmt(est);
+        note.classList.remove('hidden');
+      } else {
+        eye.textContent = 'We price this one by hand';
+        amt.textContent = 'Fast quote';
+        amt.classList.add('text-3xl','md:text-4xl');
+        amt.classList.remove('text-5xl','md:text-6xl');
+        note.classList.add('hidden');
+      }
+    }
+
+    // ---- Navigation ----
+    var LABELS = ['Device', 'Model', 'Condition', 'Your offer'];
+    function goStep(n){
+      step = n;
+      for (var i = 1; i <= 4; i++){
+        $('step-' + i).classList.toggle('hidden', i !== n);
+      }
+      $('wiz-bar').style.width = (n * 25) + '%';
+      $('wiz-step-label').textContent = 'Step ' + n + ' of 4 · ' + LABELS[n-1];
+      $('wiz-step-count').textContent = n + ' / 4';
+      try { $('quote-form').scrollIntoView({ behavior:'smooth', block:'start' }); } catch(_){}
+    }
+
+    function wizBack(){
+      if (step === 4) return goStep(3);
+      if (step === 3) return goStep(2);
+      if (step === 2) return goStep(1);
+    }
+
+    // ---- Submit → /api/inquiry ----
+    async function submitInquiry(e){
+      e.preventDefault();
+      var btn = $('q-submit'), label = $('q-submit-label'), status = $('q-status');
+      var contact = ($('q-contact').value || '').trim();
+      var handoff = ($('q-handoff').value || '').trim();
+      var details = ($('q-details').value || '').trim();
+      var honey   = ($('q-website') ? $('q-website').value : '') || '';
+      var files   = $('q-photos').files;
+
+      function fail(msg){ status.classList.remove('hidden'); status.classList.add('text-red-300'); status.textContent = msg; }
+      status.classList.remove('text-red-300','text-emerald-300');
+
+      if (!state.catLabel || !state.model){ fail('Pick what you’re selling first.'); return false; }
+      if (!contact){ fail('Add how we should reach you.'); $('q-contact').focus(); return false; }
+      if (files && files.length > 4){ fail('Please attach 4 photos or fewer.'); return false; }
+      for (var i = 0; i < files.length; i++){
+        if (files[i].size > 8*1024*1024){ fail('Each photo must be under 8MB.'); return false; }
+      }
+
+      var meta = [];
+      if (state.carrier) meta.push('Carrier: ' + state.carrier);
+      if (state.est != null) meta.push('Est: up to ' + fmt(state.est));
+      var fullDetails = [details, meta.join(' · ')].filter(Boolean).join('  —  ');
+
+      var data = new FormData();
+      data.append('type', state.catLabel);
+      data.append('model', state.model);
+      data.append('condition', state.condition || '');
+      data.append('handoff', handoff);
+      data.append('contact', contact);
+      data.append('details', fullDetails);
+      data.append('website', honey);
+      data.append('path', location.pathname);
+      data.append('referrer', document.referrer || '');
+      for (var k = 0; k < files.length; k++){ data.append('photos', files[k]); }
+
+      btn.disabled = true; label.textContent = 'Sending…';
+      status.classList.add('hidden'); status.textContent = '';
+
+      try {
+        var r = await fetch('/api/inquiry', { method:'POST', body: data });
+        var ok = r.ok, j = null;
+        try { j = await r.json(); ok = ok && j && j.ok !== false; } catch(_){}
+        if (ok){
+          if (j && j.id && j.claim_token){
+            try {
+              var pend = JSON.parse(localStorage.getItem('pc.pendingClaims') || '[]');
+              if (!Array.isArray(pend)) pend = [];
+              pend.push({ id: j.id, token: j.claim_token });
+              localStorage.setItem('pc.pendingClaims', JSON.stringify(pend.slice(-25)));
+            } catch(_){}
+          }
+          var sl = $('success-line');
+          if (sl) sl.textContent = 'We’ll confirm your ' + state.model + ' offer and reply fast on the contact you gave us — usually within a couple of hours.';
+          $('step-4').classList.add('hidden');
+          $('wiz-progress').classList.add('hidden');
+          var done = $('quoteSuccess');
+          done.classList.remove('hidden');
+          done.scrollIntoView({ behavior:'smooth', block:'center' });
+        } else { throw new Error('rejected'); }
+      } catch(err){
+        btn.disabled = false; label.textContent = 'Lock in my offer';
+        fail('Something went wrong. Try again, or reach us on Discord.');
+      }
+      return false;
+    }
+
+    function resetInquiry(){
+      state = { catKey:null, catLabel:null, model:null, row:null, carrier:null, condition:null, est:null };
+      $('q-contact').value = ''; $('q-handoff').selectedIndex = 0; $('q-details').value = ''; $('q-photos').value = '';
+      var amt = $('est-amount');
+      amt.classList.add('text-5xl','md:text-6xl'); amt.classList.remove('text-3xl','md:text-4xl');
+      var btn = $('q-submit'); btn.disabled = false; $('q-submit-label').textContent = 'Lock in my offer';
+      var status = $('q-status'); status.classList.add('hidden'); status.textContent = '';
+      $('quoteSuccess').classList.add('hidden');
+      $('wiz-progress').classList.remove('hidden');
+      goStep(1);
+    }
+
+    // Expose handlers used by inline onclick / onsubmit
+    window.wizBack = wizBack;
+    window.pickOther = pickOther;
+    window.fromFreeNext = fromFreeNext;
+    window.submitInquiry = submitInquiry;
+    window.resetInquiry = resetInquiry;
+
+    // Search wiring + init
+    var search = $('model-search');
+    if (search) search.addEventListener('input', function(e){ renderModels(e.target.value || ''); });
+    var freeInput = $('model-free-input');
+    if (freeInput) freeInput.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); fromFreeNext(); } });
+
+    renderCats();
+
+    // Refresh with live sheet prices, then re-render the parts that show $.
+    fetch('/api/pricing', { cache:'no-store' })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(j){
+        if (j && j.ok && j.data){
+          window.PRICING = j.data;
+          if (step === 1) renderCats();
+          else if (step === 2 && state.catKey !== '__other') renderModels(($('model-search').value) || '');
+        }
+      })
+      .catch(function(){});
+  })();
 </script>
 <script>
   (function(){
