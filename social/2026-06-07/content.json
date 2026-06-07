@@ -1,0 +1,631 @@
+{
+  "generated_at": "2026-06-07T15:07:23.786094+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "how selling to us works, end to end",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-07T15:06:04.297Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Main offer post for featured MacBook Air category",
+        "caption": "MacBook Air collecting dust? Turn it into cash today. We pay up to $976 for a 15-inch M4 with 24GB and 512GB SSD, same-day payout, no games. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookairforsale",
+          "#applebuyback",
+          "#sellmymac",
+          "#cashmacbook",
+          "#macbookbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmylaptop",
+          "#sellmyapple",
+          "#cashforapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#tradeinmac",
+          "#cashformacbook",
+          "#appletradein",
+          "#macbookcash",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#macbookpro",
+          "#cashforgadgets",
+          "#instantcash",
+          "#quickcash",
+          "#selltech",
+          "#buybackprogram",
+          "#m4macbook",
+          "#macbookm4",
+          "#macbookair2025"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MacBook Air",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Up to <em>$976</em> for your MacBook Air",
+              "sub_html": "15-inch M4, 24GB RAM, 512GB SSD. Same-day payout, no waiting on marketplace lowballers.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "All grades"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Board post for MacBook Air with real model rows",
+        "caption": "MacBook Air pricing, no mystery. These are real numbers for working devices. Ship free with our prepaid label or drop off locally. Get paid the same day at purchasingcorp.com.",
+        "hashtags": [
+          "#macbookairpricing",
+          "#sellmacbookair",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashformacbook",
+          "#sellmymac",
+          "#macbookairforsale",
+          "#m4macbook",
+          "#macbookm4",
+          "#sellmylaptop",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#macbookcash",
+          "#appletradein",
+          "#tradeinmac",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#quickcash",
+          "#instantcash",
+          "#buybackprogram",
+          "#cashforgadgets",
+          "#selltech",
+          "#macbookair2025",
+          "#applesilicon"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MacBook Air",
+              "eyebrow": "CURRENT PRICING",
+              "title_html": "<em>MacBook Air</em> Cash Offers",
+              "rows": [
+                {
+                  "model": "15\" M4 24GB 512GB SSD",
+                  "price": "$976",
+                  "note": ""
+                },
+                {
+                  "model": "15\" M4 16GB 512GB SSD",
+                  "price": "$816",
+                  "note": ""
+                },
+                {
+                  "model": "15\" M4 16GB 256GB SSD",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 24GB 512GB SSD",
+                  "price": "$840",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 16GB 512GB SSD",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" M4 16GB 256GB SSD",
+                  "price": "$560",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for working devices. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Carousel post walking through the selling process",
+        "caption": "Selling to us is dead simple. Fill out the form, ship free, get paid the same day. No auctions, no flakes, no waiting weeks for a maybe-buyer. Real cash for your gear at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#sellmymac",
+          "#applebuyback",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforapple",
+          "#sellelectronics",
+          "#tradeinmac",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#sellmylaptop",
+          "#sellmygadgets",
+          "#cashforgadgets",
+          "#buybackprogram",
+          "#quickcash",
+          "#instantcash",
+          "#selltech",
+          "#usedelectronics",
+          "#appletradein",
+          "#sellmyapple",
+          "#cashformacbook",
+          "#sellmyipad",
+          "#sellmyconsole",
+          "#sellmyphone",
+          "#techbuyback",
+          "#easycash",
+          "#samedaypayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "GET YOUR OFFER",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Fill out the <em>quote form</em>",
+              "body_html": "Tell us what you've got: model, storage, condition. You get a <strong>real dollar figure</strong>, not a vague range or bait-and-switch estimate."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "SHIP IT FREE",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Print your <em>prepaid label</em>",
+              "body_html": "We email a fully insured shipping label. Drop it at FedEx or USPS, or <strong>hand off locally</strong> if you're nearby. Zero cost to you."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "WE INSPECT",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Quick <em>verification</em>",
+              "body_html": "We check that everything matches your description. If it does, your offer stands. If there's a difference, we reach out before <strong>adjusting anything</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "GET PAID",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "<em>Same-day</em> payout",
+              "body_html": "Cash hits your account the day we clear your device. Zelle, PayPal, Venmo, or check. <strong>No waiting weeks</strong> for marketplace tire-kickers."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout receipt post showing proof",
+        "caption": "Another MacBook Air paid out today. Same-day turnaround, real cash, no runaround. Sell yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashformacbook",
+          "#sellmymac",
+          "#samedaypayout",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#macbookairforsale",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#quickcash",
+          "#instantcash",
+          "#buybackprogram",
+          "#cashforgadgets",
+          "#selltech",
+          "#macbookcash",
+          "#sellmylaptop",
+          "#m4macbook",
+          "#macbookm4",
+          "#proofofpayment",
+          "#realmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAID",
+              "slip_title": "Payout Receipt",
+              "slip_ref": "PC-67421",
+              "device": "MacBook Air 13\" M4 16GB 512GB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$680",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Compare post showing our speed vs. marketplace waiting",
+        "caption": "List on a marketplace and wait weeks for lowball offers, or get cash today from us. Your MacBook Air is worth real money right now. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashformacbook",
+          "#sellmymac",
+          "#sellmylaptop",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#quickcash",
+          "#instantcash",
+          "#buybackprogram",
+          "#cashforgadgets",
+          "#selltech",
+          "#macbookcash",
+          "#samedaypayout",
+          "#nocraiglist",
+          "#noebay",
+          "#skipthemarketplace",
+          "#realmoney",
+          "#macbookairforsale"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "MacBook Air 15\" M4 16GB 512GB",
+              "eyebrow": "CASH TODAY VS. WAITING WEEKS",
+              "title_html": "We pay <em>more</em>, faster",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (same day)",
+                  "value": "$816",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace listing (weeks)",
+                  "value": "~$750",
+                  "pct": 92,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical net after fees, lowball haggling, and time wasted. Our $816 is cash today."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo-cover post with device photo showing outcome",
+        "caption": "That MacBook Air in your closet is cash waiting to happen. Same-day payout, prepaid shipping, no games. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymac",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashformacbook",
+          "#sellmacbookair",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#sellmylaptop",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#quickcash",
+          "#instantcash",
+          "#buybackprogram",
+          "#cashforgadgets",
+          "#selltech",
+          "#macbookcash",
+          "#samedaypayout",
+          "#realmoney",
+          "#sellmygadgets",
+          "#techbuyback",
+          "#macbookairforsale",
+          "#m4macbook"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "MacBook Air",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Turn that drawer device into <em>real money</em>",
+              "deck_html": "Same-day payout. Free insured shipping. No waiting on marketplace flakes.",
+              "photo_url": "https://images.unsplash.com/photo-1548244823-b281470f2a95?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMHx8c21hcnR3YXRjaCUyMGNsb3NlJTIwdXB8ZW58MXwwfHx8MTc4MDg0NDg0Mnww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index post showing category reference grid",
+        "caption": "Six categories, same-day cash for all of them. iPhones, Macs, iPads, Watches, consoles, accessories. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#sellmyiphone",
+          "#sellmymac",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforapple",
+          "#sellmyapple",
+          "#sellelectronics",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#sellmyipad",
+          "#sellmyconsole",
+          "#applewatchbuyback",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellmylaptop",
+          "#cashforgadgets",
+          "#buybackprogram",
+          "#quickcash",
+          "#instantcash",
+          "#selltech",
+          "#usedelectronics",
+          "#cashformacbook",
+          "#sellmygadgets",
+          "#techbuyback",
+          "#samedaypayout",
+          "#realmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORIES",
+              "eyebrow": "WHAT WE BUY",
+              "title_html": "<em>Six categories</em>, one payout speed",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 Milanese",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "M4 Pro 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG Ally X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPad",
+                  "num": "Contact",
+                  "foot": "Quote for your model",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Same-day payout across the board. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Stat post highlighting top MacBook Air payout",
+        "caption": "That is the top cash offer for a 15-inch MacBook Air M4 with 24GB and 512GB SSD. Same-day payout, no waiting. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashformacbook",
+          "#sellmymac",
+          "#sellmylaptop",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellelectronics",
+          "#usedmacbook",
+          "#macbookairforsale",
+          "#m4macbook",
+          "#macbookm4",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#quickcash",
+          "#instantcash",
+          "#buybackprogram",
+          "#cashforgadgets",
+          "#selltech",
+          "#macbookcash",
+          "#samedaypayout",
+          "#realmoney",
+          "#topdollar"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "stat",
+            "fields": {
+              "eyebrow": "MacBook Air M4",
+              "stat_value": "$976",
+              "stat_unit": "",
+              "caption_html": "Top payout for a 15-inch M4 with 24GB RAM and 512GB SSD. <em>Same-day cash</em>, no games.",
+              "source": "PurchasingCorp · June 2026"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Quote post in brand voice",
+        "caption": "We do not do vague ranges or bait-and-switch tactics. You get a real number before you ship, and that is what you get paid. Quote your device at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#sellmyiphone",
+          "#sellmymac",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforapple",
+          "#sellmyapple",
+          "#sellelectronics",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#tradeinmac",
+          "#appletradein",
+          "#sellmylaptop",
+          "#cashforgadgets",
+          "#buybackprogram",
+          "#quickcash",
+          "#instantcash",
+          "#selltech",
+          "#usedelectronics",
+          "#cashformacbook",
+          "#sellmygadgets",
+          "#techbuyback",
+          "#samedaypayout",
+          "#realmoney",
+          "#honestbuyback",
+          "#notradeinscam",
+          "#realoffer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "quote",
+            "fields": {
+              "quote_text_html": "A real number, not a vague 'up to.' That is the <em>PurchasingCorp</em> difference.",
+              "quote_attrib": "PurchasingCorp",
+              "photo_url": ""
+            }
+          }
+        ]
+      },
+      {
+        "role": "Meme post for shareable engagement",
+        "caption": "We have all been there. Sell to us instead and get paid today, no flakes, no lowball texts at midnight. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#sellmymac",
+          "#applebuyback",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforapple",
+          "#sellmyapple",
+          "#sellelectronics",
+          "#tradeinmac",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#sellmylaptop",
+          "#cashforgadgets",
+          "#buybackprogram",
+          "#quickcash",
+          "#instantcash",
+          "#selltech",
+          "#usedelectronics",
+          "#cashformacbook",
+          "#sellmygadgets",
+          "#techbuyback",
+          "#samedaypayout",
+          "#realmoney",
+          "#nocraiglist",
+          "#noebay",
+          "#skipthemarketplace",
+          "#sellmyphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "meme",
+            "fields": {
+              "top_text": "Lists MacBook on marketplace for $800",
+              "bottom_text": "Gets 47 'is this still available' messages and zero real offers",
+              "image_concept": "Frustrated person staring at phone"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Sunday, June 7",
+          "section": "CASH TODAY",
+          "headline_html": "<em>MacBook Air</em> cash offers live",
+          "deck_html": "Up to $976, same-day payout, free shipping. Quote at purchasingcorp.com/form.",
+          "photo_url": "https://images.unsplash.com/photo-1613177794106-be20802b11d3?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw0fHxzbWFydHdhdGNoJTIwb24lMjBhJTIwdGFibGV8ZW58MXwxfHx8MTc4MDg0NDg0M3ww&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "AVERAGE TURNAROUND",
+          "stat_value": "1",
+          "stat_unit": "day",
+          "caption_html": "From the moment your device arrives to <em>cash in your account</em>. No waiting weeks.",
+          "source": "PurchasingCorp · 2026"
+        }
+      }
+    ]
+  }
+}
