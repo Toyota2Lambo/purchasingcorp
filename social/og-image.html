@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--
+  Source for /og-image.png (link-share preview, 1200x630).
+  Rendered with: node social/render-og.js
+  Uses the same design tokens as social/templates/_shared.css and the site:
+  charcoal canvas, Inter only, emphasis via weight + emerald (no italic serif,
+  no emoji). Layout is flexbox so text never needs hand-placed coordinates.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=block');
+
+:root{
+  --bg:#111419; --bg-elevated:#181c23;
+  --border:#2a2f39;
+  --text:#e9eaed; --text-soft:#c3c7ce; --text-muted:#969ba6; --text-dim:#7e848f;
+  --accent:#34d399;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{width:1200px;height:630px;overflow:hidden;}
+body{
+  font-family:var(--font);
+  background:linear-gradient(165deg,#161a20 0%,#0f1216 60%,#0c0e12 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
+.glow-top{position:absolute;inset:0;background:radial-gradient(ellipse 900px 420px at 30% -14%,rgba(255,255,255,0.06),transparent 60%);pointer-events:none;}
+.glow-chip{position:absolute;right:-40px;top:150px;width:430px;height:430px;border-radius:50%;background:var(--accent);filter:blur(130px);opacity:0.07;pointer-events:none;}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 46%,transparent 0%,transparent 62%,rgba(0,0,0,0.34) 100%);pointer-events:none;}
+
+.stage{position:relative;z-index:1;width:100%;height:100%;padding:58px 64px;display:flex;flex-direction:column;}
+
+.top{display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-mark{width:44px;height:44px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.brand-mark svg{width:22px;height:22px;display:block;}
+.brand-name{font-weight:600;font-size:25px;letter-spacing:-0.02em;text-transform:uppercase;}
+.brand-name .muted{color:var(--text-muted);font-weight:400;}
+.status{display:flex;align-items:center;gap:10px;padding:9px 17px;border-radius:999px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);font-size:14px;color:var(--text-soft);}
+.status .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(52,211,153,0.18);}
+
+.hero{flex:1;display:flex;align-items:center;gap:52px;}
+.copy{flex:1;min-width:0;}
+.eyebrow{display:flex;align-items:center;gap:14px;font-size:15px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--accent);}
+.headline{font-weight:800;font-size:72px;line-height:1.04;letter-spacing:-0.035em;color:var(--text);}
+.headline em{font-style:normal;color:var(--accent);}
+.subhead{margin-top:22px;font-size:23px;line-height:1.45;color:var(--text-muted);max-width:540px;}
+
+.chips{width:332px;flex-shrink:0;display:flex;flex-direction:column;gap:14px;}
+.chip{display:flex;align-items:center;justify-content:space-between;background:var(--bg-elevated);border:1px solid var(--border);border-radius:16px;padding:16px 20px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04);}
+.chip-model{font-size:14px;color:var(--text-muted);margin-bottom:5px;}
+.chip-price{font-size:27px;font-weight:700;letter-spacing:-0.02em;color:var(--text);}
+.chip-delta{font-size:15px;font-weight:700;color:var(--accent);white-space:nowrap;}
+
+.footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:24px;font-size:14px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);}
+.footer .url{color:var(--text-soft);}
+.footer .bul{color:var(--accent);margin:0 10px;}
+</style>
+</head>
+<body>
+  <div class="glow-top"></div>
+  <div class="glow-chip"></div>
+  <div class="vignette"></div>
+  <div class="stage">
+    <div class="top">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h12a4 4 0 0 1 0 8H7l-3 3"/></svg>
+        </div>
+        <div class="brand-name">PURCHASING<span class="muted">CORP</span></div>
+      </div>
+      <div class="status"><span class="pulse"></span>Quoting now · under 30 min</div>
+    </div>
+
+    <div class="hero">
+      <div class="copy">
+        <div class="eyebrow">Cash for phones · laptops · consoles</div>
+        <div class="headline">Turn idle devices<br>into <em>instant cash.</em></div>
+        <div class="subhead">More than Apple. More than Best Buy.<br>Paid same-day &mdash; no haggling.</div>
+      </div>
+      <div class="chips">
+        <div class="chip"><div><div class="chip-model">iPhone 17 Pro Max 1TB</div><div class="chip-price">$1,050</div></div><div class="chip-delta">+$300</div></div>
+        <div class="chip"><div><div class="chip-model">16&Prime; MacBook Pro M4 Max</div><div class="chip-price">$1,425</div></div><div class="chip-delta">+$595</div></div>
+        <div class="chip"><div><div class="chip-model">PlayStation 5 Pro</div><div class="chip-price">$425</div></div><div class="chip-delta">paid today</div></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="url">purchasingcorp.com</div>
+      <div><span>Top dollar paid</span><span class="bul">·</span><span>Same-day payout</span><span class="bul">·</span><span>Zero haggling</span></div>
+    </div>
+  </div>
+</body>
+</html>
