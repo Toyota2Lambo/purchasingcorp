@@ -50,7 +50,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 API_VERSION = os.environ.get("IG_API_VERSION", "v21.0")
-GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"
+GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"   # publishing
+FB_GRAPH_BASE = f"https://graph.facebook.com/{API_VERSION}" # hashtag search
 
 TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")
 ACCOUNT_ID = os.environ.get("IG_BUSINESS_ACCOUNT_ID", "")
@@ -225,8 +226,13 @@ def save_log(commented: set) -> None:
 # Instagram Graph API helpers
 # ------------------------------------------------------------
 
+def fb_get(path: str, params: dict):
+    qs = urllib.parse.urlencode(params)
+    return _request("GET", f"{FB_GRAPH_BASE}/{path}?{qs}")
+
+
 def resolve_hashtag_id(hashtag: str) -> str | None:
-    status, data = graph_get("ig-hashtag-search", {
+    status, data = fb_get("ig-hashtag-search", {
         "user_id": ACCOUNT_ID,
         "q": hashtag,
         "access_token": TOKEN,
@@ -239,7 +245,7 @@ def resolve_hashtag_id(hashtag: str) -> str | None:
 
 
 def fetch_recent_media(hashtag_id: str) -> list:
-    status, data = graph_get(f"{hashtag_id}/recent_media", {
+    status, data = fb_get(f"{hashtag_id}/recent_media", {
         "user_id": ACCOUNT_ID,
         "fields": "id,caption,timestamp,media_type",
         "access_token": TOKEN,
