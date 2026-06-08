@@ -1,9 +1,9 @@
-# PurchasingCorp — Instagram + Threads automation
+# PurchasingCorp — Instagram + Threads + Twitter automation
 
 Generates and publishes PurchasingCorp's daily social content end to end:
 the buyback brand's offers, payout boards, competitor comparisons, and
 educational/lifestyle posts — rendered as on-brand PNGs and posted to
-Instagram and Threads on a schedule.
+Instagram, Threads and Twitter / X on a schedule.
 
 It only ever quotes **real payout numbers** pulled from the site's own
 pricing data. The generator is hard-blocked from inventing a price;
@@ -29,10 +29,18 @@ social/<date>/*.png + manifest.json
    ▼
 python social/ig_publisher.py        ← Instagram Graph API (creates + publishes)
 python social/threads_publisher.py   ← Threads API (same PNGs; feed posts)
+python social/twitter_publisher.py   ← Twitter/X API (uploads the PNG bytes)
 ```
 
 A post with **one** slide is a single image; **2+** slides is a carousel.
 Stories are always 1080×1920.
+
+> **Instagram & Threads vs. Twitter:** Meta *fetches* a public image URL, so
+> those two publishers hand it the Vercel-served PNG link and poll until the
+> deploy is live. Twitter has no URL-fetch — it requires the image **bytes**,
+> so `twitter_publisher.py` reads the committed PNGs **locally** from the repo
+> checkout and uploads them. Twitter also caps a tweet at **4 images**, so a
+> carousel with >4 slides is posted as a reply **thread** (4 images per tweet).
 
 ---
 
@@ -49,6 +57,10 @@ Add these in the GitHub repo under **Settings → Secrets and variables → Acti
 | `IG_BUSINESS_ACCOUNT_ID` | secret | publish | The Instagram **Business/Creator** account's numeric ID. |
 | `THREADS_ACCESS_TOKEN` | secret | threads | Threads API access token — separate from the IG token (see setup below). |
 | `THREADS_USER_ID` | secret | threads | The numeric **Threads** user ID to publish to. |
+| `TWITTER_API_KEY` | secret | twitter | Twitter/X app **consumer key** (API Key). |
+| `TWITTER_API_SECRET` | secret | twitter | Twitter/X app **consumer secret** (API Secret). |
+| `TWITTER_ACCESS_TOKEN` | secret | twitter | Twitter/X user **access token** — must be minted while the app is **Read+Write**. |
+| `TWITTER_ACCESS_SECRET` | secret | twitter | Twitter/X user **access token secret**. |
 
 ### Optional (sensible defaults if omitted)
 
@@ -102,6 +114,41 @@ Instagram token does **not** work for it:
 > case each is posted as a plain image. Post text is capped at 500 characters
 > (the Threads limit). The same ~60-day token-refresh caveat applies.
 
+### Getting the Twitter / X credentials
+
+Twitter does **not** have a single long-lived bearer token for posting like
+Meta does — posting + media upload use **OAuth 1.0a** (four keys):
+
+1. Apply for API access at <https://developer.twitter.com> (the **Free** tier
+   allows posting). Create a **Project** and an **App** inside it.
+2. In the App's **Settings → User authentication settings**, set **App
+   permissions** to **Read and Write**. Do this **first** — the access token
+   inherits the permission level at the moment it is generated.
+3. In **Keys and tokens**, copy the **API Key** and **API Key Secret** →
+   `TWITTER_API_KEY` / `TWITTER_API_SECRET`.
+4. In the same tab, generate the **Access Token and Secret** (it should read
+   "Created with Read and Write") → `TWITTER_ACCESS_TOKEN` /
+   `TWITTER_ACCESS_SECRET`.
+
+> [!warning] Read+Write ordering
+> If you generated the access token while the app was still **Read-only**,
+> posting fails with `403`. Switch the app to Read+Write, then
+> **regenerate** the access token/secret and update the two secrets.
+
+> Twitter is a text/image feed with **no stories**, so `social · twitter`
+> publishes the feed **posts** only by default (`include_stories` /
+> `TWITTER_INCLUDE_STORIES=1` posts each story image as a plain image tweet).
+> Tweet text is capped at **280** characters and hashtags are kept to
+> `TWITTER_MAX_TAGS` (default **2**) — a hashtag stack reads as spam. A
+> carousel with **>4 slides** is posted as a reply **thread**.
+
+> [!note] Free-tier limits
+> The Free tier currently allows on the order of ~1,500 posts/month (write).
+> Ten posts/day ≈ 300/month, comfortably within that — but the limits shift,
+> so if posting starts returning `429`/`403`, check the dashboard; **Basic**
+> ($100/mo) raises the cap. Unlike Meta tokens, OAuth 1.0a tokens don't expire
+> on a 60-day clock (they last until revoked or the app secret is rotated).
+
 ---
 
 ## GitHub Actions
@@ -110,7 +157,8 @@ Instagram token does **not** work for it:
 |----------|---------|------|
 | `social · daily` | cron `0 13 * * *` + manual | dump pricing → generate → render → commit (Vercel deploys) |
 | `social · publish` | cron `0 16 * * *` + manual | publish the day to Instagram (waits for the PNG URLs to go live first) |
-| `social · threads` | cron `0 17 * * *` + manual | publish the day to **Threads** — feed posts (stories optional) |
+| `social · threads` | chained off `social · daily` + manual | publish the day to **Threads** — feed posts (stories optional), staggered |
+| `social · twitter` | chained off `social · daily` + manual | publish the day to **Twitter / X** — feed posts (stories optional), staggered |
 | `social · backfill` | manual only | generate + render a **range** of days in one run |
 
 Publishing is a separate workflow scheduled a few hours after generation so the
@@ -123,12 +171,12 @@ author Vercel is configured to deploy, or the deploy is skipped.
 
 **Staggering:** `social · publish` accepts an `only` input
 (`post:1`, `story:2`, `posts`, `stories`) so you can spread one day's content
-across multiple runs. `social · threads` takes the same `only` input (feed
-posts only) plus an `include_stories` toggle.
+across multiple runs. `social · threads` and `social · twitter` take the same
+`only` input (feed posts only) plus an `include_stories` toggle.
 
-**Two channels, independent:** Instagram and Threads publish from the *same*
-rendered PNGs but in separate workflows, so one can fail or be re-run without
-touching the other.
+**Three channels, independent:** Instagram, Threads and Twitter publish from the
+*same* rendered PNGs but in separate workflows, so one can fail or be re-run
+without touching the others.
 
 ---
 
@@ -154,6 +202,7 @@ node renderer.js --content 2026-06-01/content.json
 # 4. (optional) publish — dry run first
 IG_DRY_RUN=1 python ig_publisher.py --date 2026-06-01
 THREADS_DRY_RUN=1 python threads_publisher.py --date 2026-06-01
+TWITTER_DRY_RUN=1 python twitter_publisher.py --date 2026-06-01
 ```
 
 ### No API keys handy?
@@ -163,6 +212,7 @@ python social_generator.py --self-test --out /tmp/c.json   # uses the fixture, n
 node renderer.js --sample                                   # renders sample-payloads.json
 IG_DRY_RUN=1 python ig_publisher.py --sample                # plans publish, no API
 THREADS_DRY_RUN=1 python threads_publisher.py --sample      # plans threads, no API
+TWITTER_DRY_RUN=1 python twitter_publisher.py --sample      # plans tweets, no API
 ```
 
 ### Backfill a range
@@ -185,6 +235,7 @@ python backfill_generator.py --days 7            # last 7 days
 | `renderer.js` | Puppeteer renders each slide/story to PNG + writes `manifest.json` |
 | `ig_publisher.py` | reads the manifest and publishes to Instagram (single / carousel / story) |
 | `threads_publisher.py` | reads the same manifest and publishes to Threads (single / carousel; stories optional) |
+| `twitter_publisher.py` | reads the same manifest and publishes to Twitter/X — **uploads local PNG bytes** (OAuth 1.0a); >4 slides become a reply thread |
 | `templates-registry.js` | maps each template to its fields + builds the repeating HTML chunks |
 | `templates/*.html` | the 12 post/story designs; `_shared.css` is the design system |
 | `sample-payloads.json` | a full fixture exercising all 12 templates (used by `--self-test` / `--sample`) |

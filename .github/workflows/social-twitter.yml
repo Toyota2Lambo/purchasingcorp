@@ -1,0 +1,127 @@
+name: social · twitter
+
+# Publishes an already-rendered, already-committed day to Twitter / X —
+# STAGGERED, mirroring "social · publish" (Instagram) and "social · threads".
+# Reuses the SAME content/manifest and the SAME rendered PNGs.
+#
+# DIFFERENCE from the Meta publishers: Twitter does not fetch a public image
+# URL — it requires the image BYTES to be uploaded. So this job reads the PNGs
+# straight from the repo checkout (they were committed by "social · daily").
+# No Vercel deploy / URL polling is involved.
+#
+# CHAINED off "social · daily": runs the moment generation finishes
+# successfully (EVENT-DRIVEN), so it never depends on GitHub firing a clock on
+# time. It then publishes the day's posts ONE AT A TIME with a gap between each
+# (SOCIAL_STAGGER_SECONDS, default 1800 = 30 min), spreading the ~10 posts over
+# ~4.5 hours instead of in a single burst.
+#
+# Why in-job sleeps instead of 10 separate cron slots: GitHub delays and drops
+# scheduled events badly here (generation alone runs 3-5h late), so 10 precise
+# daily crons never fire reliably. One event-driven job that sleeps between
+# posts does. The repo is public, so the idle runner minutes are free.
+#
+# Twitter has no "stories" format, so only feed posts are staggered here. On a
+# MANUAL run, set `include_stories` (or TWITTER_INCLUDE_STORIES=1) to also post
+# the day's story images as plain image tweets. A manual run publishes
+# immediately with no stagger: blank `only` = everything, or a single item via
+# the `only` input.
+#
+# NOTE: this loop assumes 10 feed posts per day. If you change --posts in
+# social-daily.yml, update the SLOTS here AND in the other publish workflows.
+#
+# Tuning: set repo variable SOCIAL_STAGGER_SECONDS to change spacing. Keep the
+# total (≈ 9 × gap + posting time) under the 6h job cap — i.e. gap ≤ ~2200s for
+# 10 posts.
+
+on:
+  workflow_run:
+    workflows: ["social · daily"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date YYYY-MM-DD (default: today, UTC)'
+        required: false
+      only:
+        description: "Filter, e.g. post:1 | posts (blank = all posts)"
+        required: false
+      include_stories:
+        description: 'Also post story images as plain image tweets'
+        required: false
+        default: 'false'
+      dry_run:
+        description: 'Plan only, no real API calls'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: social-twitter
+  cancel-in-progress: false
+
+jobs:
+  twitter:
+    # workflow_run fires for EVERY conclusion of the daily build — only publish
+    # when it actually succeeded (or when triggered manually).
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360   # the staggered loop sleeps for ~4.5h; 6h is the cap
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # main's tip holds today's content + PNGs (committed by "social · daily").
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Resolve target date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "date=${{ github.event.inputs.date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to Twitter
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TWITTER_DRY_RUN: ${{ github.event.inputs.dry_run }}
+          TWITTER_INCLUDE_STORIES: ${{ github.event.inputs.include_stories }}
+          STAGGER_SECONDS: ${{ vars.SOCIAL_STAGGER_SECONDS || '1800' }}
+        run: |
+          set -u
+          DATE="${{ steps.date.outputs.date }}"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual run: publish immediately, honoring `only` (blank = all).
+            ARGS="--date $DATE"
+            ONLY="${{ github.event.inputs.only }}"
+            if [ -n "$ONLY" ]; then ARGS="$ARGS --only $ONLY"; fi
+            python social/twitter_publisher.py $ARGS
+            exit 0
+          fi
+
+          # Auto (chained off generation): publish one post, then sleep, repeat.
+          # Twitter has no stories, so feed posts only.
+          SLOTS=( "post:1" "post:2" "post:3" "post:4" "post:5" \
+                  "post:6" "post:7" "post:8" "post:9" "post:10" )
+          N=${#SLOTS[@]}
+          for i in "${!SLOTS[@]}"; do
+            echo "::group::[$(( i + 1 ))/$N] publishing ${SLOTS[$i]}"
+            python social/twitter_publisher.py --date "$DATE" --only "${SLOTS[$i]}" \
+              || echo "WARN: ${SLOTS[$i]} failed; continuing with the rest"
+            echo "::endgroup::"
+            if [ "$i" -lt "$(( N - 1 ))" ]; then
+              echo "sleeping ${STAGGER_SECONDS}s before the next post…"
+              sleep "$STAGGER_SECONDS"
+            fi
+          done
