@@ -178,6 +178,12 @@ EDU_TOPICS = [
     "unlocked vs. carrier-locked: why it changes your offer",
     "why cash today beats a carrier trade-in credit",
     "how we keep your sale safe (data wipe, insured label, same-day pay)",
+    "why your 'old' device is worth more than you think: real prices for models people assume are worthless",
+    "the true cost of selling on eBay or Facebook Marketplace: fees, time, and risk broken down",
+    "how device prices depreciate month by month and why timing your sale now matters",
+    "what 'condition' actually means in a buyback quote and how to maximize your payout",
+    "how to sell a bulk lot: multiple devices at once, one quote, one same-day payout",
+    "what happens to your personal data: our wipe process before we pay you",
 ]
 
 COMPARE_ANGLES = [
@@ -185,6 +191,27 @@ COMPARE_ANGLES = [
     "our cash offer vs. a big-box store gift card",
     "our cash offer vs. waiting weeks on a marketplace listing",
     "same-day cash vs. mail-in services that pay later",
+    "our cash offer vs. eBay: the real number after 15% fees, shipping costs, and weeks of waiting",
+    "our cash offer vs. Facebook Marketplace: real cash vs. no-shows, lowballers, and strangers at your door",
+    "selling now vs. holding it: what a specific model loses in value every month you wait",
+    "our cash offer vs. Apple trade-in: real cash in your hand vs. store credit you're forced to spend",
+]
+
+# Psychological angles that target a specific frustration, fear, or objection.
+# One is injected per day; Claude is told to work it into at least two posts.
+AUDIENCE_ANGLES = [
+    "the drawer device: most people have $200+ in old tech at home right now, sitting there losing value",
+    "the data security guarantee: personal data is wiped before we pay, no exceptions, every device",
+    "price drop urgency: show how much a specific real model has lost per month and what it pays TODAY",
+    "the marketplace grind: eBay fees, no-shows, scammers, buyer disputes — vs. one real offer, done in a day",
+    "the trade-in regret: carriers give $50 in store credit you're forced to spend; we give real cash",
+    "the upgrade enabler: sell your old device, get real cash, spend it on anything — not locked to one store",
+    "fast cash, real cash: some people need money this week, not in 3 weeks when a listing finally closes",
+    "condition anxiety: cracked screen, dead battery, water damage — we still quote a real number, not zero",
+    "the no-surprise promise: the number we quote is the number we pay. no bait-and-switch, no 'actually...' at the door",
+    "the hidden value reveal: name real prices for devices people assume are worthless (iPhone X, older MacBooks, etc.)",
+    "the bulk pile: offices and families sitting on 5-15 old devices — one quote covers all of them, one payout",
+    "the carrier math: that 'trade-in deal' is a lease credit locked to one carrier; our cash is yours to keep",
 ]
 
 
@@ -195,6 +222,7 @@ def pick_theme(date: dt.date) -> dict:
         "featured_category": cat,
         "educational_topic": EDU_TOPICS[d % len(EDU_TOPICS)],
         "comparison_angle": COMPARE_ANGLES[d % len(COMPARE_ANGLES)],
+        "audience_angle": AUDIENCE_ANGLES[d % len(AUDIENCE_ANGLES)],
     }
 
 
@@ -326,6 +354,29 @@ House lines you can lean on: "cash today", "no games", "same-day payout", "a rea
 vague 'up to'", "more than Apple, more than Best Buy". Be specific and a little swaggering, never
 fluffy.
 
+AUDIENCE (know who you are writing to)
+Your reader wants to sell their electronics but hesitates for specific reasons. Write to their
+actual mental state:
+
+Frustrations: carrier trade-ins paid them $50 store credit for a phone worth $400 in cash;
+selling on eBay or Marketplace is a part-time job (photos, no-shows, lowballers, disputes, 15%
+fees after the sale); they got quoted one price and paid less at the door (bait-and-switch);
+their device has sat in a drawer for months losing value while they "meant to get around to it."
+
+Fears: personal photos and data won't be properly wiped; offer drops when the device arrives;
+payment gets reversed or never comes; meeting a stranger from Craigslist feels unsafe.
+
+Objections: "I can get more on eBay" (only before fees, time, and risk are accounted for); "my
+phone is too old to be worth anything" (show the real number, it usually surprises them); "this
+seems like a hassle" (the actual process is: 60-second quote, free prepaid label, same-day pay).
+
+Desired outcome: the MOST money of any option, in hand TODAY, with zero drama and zero data risk.
+
+Write directly to these truths. Name a specific frustration and then resolve it. "That cracked
+iPhone 12 still pays $X here" lands harder than "we accept all conditions." "The number we quote
+is the number we pay" is more powerful than "no surprises." The most effective caption names
+exactly what they fear, then kills that fear in one sentence.
+
 OUTPUT
 Call the emit_content tool exactly once with posts[] and stories[]. For every slide and story you
 provide template + fields_json, where fields_json is a JSON OBJECT ENCODED AS A STRING.
@@ -359,11 +410,17 @@ FORMATTING
   brand accent color, upright). Use <strong>...</strong> for a single bold phrase inside body_html. No other HTML, ever.
 - Captions: 1-3 short sentences plus a CTA to purchasingcorp.com or the form. PLAIN TEXT, no markdown,
   no HTML, no emoji.
-- hashtags: 20-28 entries for maximum Instagram reach. Mix THREE kinds: (a) high-volume broad tags
-  (#applebuyback, #sellmyiphone, #cashforphones), (b) specific device/buyer-intent tags tied to today's
-  theme (#sellmacbookpro, #cashformacmini, #sellmyipad), (c) a few local/intent tags (#sellmytech,
-  #electronicsbuyback). Lowercase, no spaces, each starting with '#'. Instagram rejects a caption with
-  more than 30 tags, so NEVER exceed 28. No duplicates.
+- hashtags: 20-28 entries for maximum Instagram reach. Mix FOUR kinds:
+  (a) high-volume selling-intent tags (#sellmyiphone, #cashforphones, #applebuyback, #sellmyphone,
+  #techbuyback, #sellmymacbook),
+  (b) specific device/buyer-intent tags tied to today's theme (#sellmacbookpro, #cashformacmini,
+  #iphone14tradevalue, #sellmyipad, #sellmyapplewatch),
+  (c) pain-point and comparison tags sellers actively search (#tradein, #tradeinvalue, #phonetrade,
+  #sellingelectronics, #besttradinvalue, #electronicsbuyback, #sellmytech),
+  (d) outcome and speed tags (#samedaypayout, #getpaidtoday, #cashfortech, #instacash,
+  #fastcash, #sellquick).
+  Lowercase, no spaces, each starting with '#'. Instagram rejects a caption with more than 30 tags,
+  so NEVER exceed 28. No duplicates.
 - Never write AI-tell filler: avoid "in today's fast-paced world", "look no further", "unlock"/"unleash"/
   "elevate", "game-changer", "dive in", "we've got you covered", "rest assured", "the world of".
 - Never use em dashes (the long "—") or en dashes ("–"); they read as AI-written. Use periods, commas,
@@ -381,6 +438,7 @@ TODAY'S THEME
 - Featured category: {label} [{theme['featured_category']}]
 - Educational topic (use for the carousel): {theme['educational_topic']}
 - Comparison angle (use if you make a compare post): {theme['comparison_angle']}
+- Audience angle (weave this into at least 2 posts/captions today, directly and specifically): {theme['audience_angle']}
 
 TARGET COUNTS
 - {n_posts} posts total, INCLUDING exactly one carousel post (3-4 carousel slides).
