@@ -1,0 +1,653 @@
+{
+  "generated_at": "2026-06-08T16:56:25.071108+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "mac-mini",
+    "educational_topic": "how to wipe and prep your iPhone before selling",
+    "comparison_angle": "same-day cash vs. mail-in services that pay later",
+    "featured_label": "Mac Mini"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-08T16:55:15.121Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured Mac Mini offer",
+        "caption": "Mac Mini M4 sitting in a drawer? Turn it into cash today. We pay up to $675 for the M4 Pro, same-day payout, no games. Get your real number in two minutes at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macmini",
+          "#sellmacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#applebuyback",
+          "#sellmymac",
+          "#macbuyback",
+          "#cashforapple",
+          "#sellmyapple",
+          "#electronicsbuyback",
+          "#cashforelectronics",
+          "#sellmytech",
+          "#techbuyback",
+          "#appletradein",
+          "#m4macmini",
+          "#macminipro",
+          "#cashfortech",
+          "#buybackprogram",
+          "#sellelectronics",
+          "#instantcash",
+          "#samedaypayout",
+          "#cashinhand",
+          "#nocreditjustcash",
+          "#realcash",
+          "#quickcash",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellmygadgets"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "M4 & M4 Pro",
+              "headline_html": "Up to <em>$675 cash</em> for your Mac Mini",
+              "sub_html": "More than Apple, more than Best Buy. A real number, not a vague 'up to'. Ship free or drop off locally.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Mac Mini price board",
+        "caption": "Mac Mini M4 price list. Real numbers, same-day payout, no waiting around. Quote takes two minutes at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macmini",
+          "#macminibuyback",
+          "#sellmacmini",
+          "#cashformacmini",
+          "#m4macmini",
+          "#macminipro",
+          "#applebuyback",
+          "#sellmymac",
+          "#macbuyback",
+          "#cashforapple",
+          "#sellmyapple",
+          "#appleprices",
+          "#macprices",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#realprices",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#quickcash",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "M4 & M4 Pro, June 2026",
+              "title_html": "<em>Current</em> Mac Mini prices",
+              "rows": [
+                {
+                  "model": "Mac Mini M4 Pro 24GB 512GB",
+                  "price": "$675",
+                  "note": "MCX44LL/A"
+                },
+                {
+                  "model": "Mac Mini M4 24GB 512GB",
+                  "price": "$450",
+                  "note": "MCYT4LL/A"
+                },
+                {
+                  "model": "Mac Mini M4 16GB 512GB",
+                  "price": "$375",
+                  "note": "MU9E3LL/A"
+                },
+                {
+                  "model": "Mac Mini M4 16GB 256GB",
+                  "price": "$300",
+                  "note": "MU9D3LL/A"
+                }
+              ],
+              "note_html": "Prices for working units. Ship free with our prepaid label or hand off locally."
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone payout receipt (proof)",
+        "caption": "Paid this morning. Same-day payout is the standard here, not a marketing gimmick. See what your iPhone is worth at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#iphonepayout",
+          "#samedaypayout",
+          "#proofofpayment",
+          "#realcash",
+          "#applebuyback",
+          "#sellmyapple",
+          "#cashforapple",
+          "#instantcash",
+          "#cashinhand",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#iphonetradin",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellmygadgets",
+          "#phonebuyback",
+          "#cashforphones",
+          "#sellmyphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PROOF",
+              "slip_title": "Payout Receipt",
+              "slip_ref": "#PC-60826-A",
+              "device": "iPhone 17 Pro Max 512GB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$975",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison: same-day vs. mail-in later",
+        "caption": "Most mail-in services pay you days or weeks after they receive your device. We pay the same day we confirm condition. Cash today, not eventually. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#samedaypayout",
+          "#instantcash",
+          "#cashtoday",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#realcash",
+          "#cashinhand",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#buybackprogram",
+          "#sellelectronics",
+          "#cashforelectronics",
+          "#iphonebuyback",
+          "#macbookbuyback",
+          "#cashforapple",
+          "#sellmyapple",
+          "#techmoney",
+          "#gadgetcash",
+          "#phonebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#tradeincash",
+          "#betterthanapple",
+          "#betterthanbuy"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARISON",
+              "eyebrow": "iPhone 17 Pro Max 512GB",
+              "title_html": "<em>Same-day cash</em> vs. mail-in wait",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (paid today)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical mail-in service (paid 5-10 days)",
+                  "value": "~$920",
+                  "pct": 94,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Rival figure is a typical estimate for services that pay after inspection. We pay the same day we confirm condition."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch price index",
+        "caption": "Apple Watch price grid. Ultra 3, Series 11, all models. Real numbers, same-day payout. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applewatchbuyback",
+          "#sellapplewatch",
+          "#cashforapplewatch",
+          "#applewatchprices",
+          "#applewatchtradin",
+          "#applebuyback",
+          "#sellmyapple",
+          "#cashforapple",
+          "#applewatchultra",
+          "#applewatchseries11",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#realprices",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#quickcash",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#wearablesbuyback",
+          "#smartwatchbuyback",
+          "#cashforwearables"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Ultra 3 & Series 11, June 2026",
+              "title_html": "<em>Current</em> Apple Watch prices",
+              "cells": [
+                {
+                  "label": "Ultra 3 49mm Milanese",
+                  "num": "$473",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Ultra 3 49mm Black/Natural",
+                  "num": "$450",
+                  "foot": "",
+                  "tone": ""
+                },
+                {
+                  "label": "Series 11 46mm Titanium",
+                  "num": "$315",
+                  "foot": "",
+                  "tone": ""
+                },
+                {
+                  "label": "Series 11 42mm Titanium",
+                  "num": "$293",
+                  "foot": "",
+                  "tone": ""
+                },
+                {
+                  "label": "Series 11 46mm Aluminum",
+                  "num": "$210",
+                  "foot": "",
+                  "tone": ""
+                },
+                {
+                  "label": "Series 11 42mm Aluminum",
+                  "num": "$195",
+                  "foot": "",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Prices for working units. Ship free or drop off locally. Same-day payout."
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air offer",
+        "caption": "MacBook Air M4 collecting dust? Turn it into cash today. We pay up to $976 for the 15-inch model, same-day payout, no waiting. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macbookair",
+          "#sellmacbookair",
+          "#macbookairbuyback",
+          "#cashformacbookair",
+          "#m4macbookair",
+          "#applebuyback",
+          "#sellmymac",
+          "#macbookbuyback",
+          "#cashforapple",
+          "#sellmyapple",
+          "#macbuyback",
+          "#laptopbuyback",
+          "#selllaptop",
+          "#cashforlaptop",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#quickcash",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "M4, 13\" & 15\"",
+              "headline_html": "Up to <em>$976 cash</em> for your MacBook Air",
+              "sub_html": "More than Apple trade-in, more than Best Buy. A real number in two minutes. Ship free or drop off locally.",
+              "c1_label": "Top payout",
+              "c1_value": "$976",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo lifestyle post",
+        "caption": "That old iPhone in your drawer is cash today. Same-day payout, no games, no waiting around. Get your real number in two minutes at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#sellmyapple",
+          "#cashforapple",
+          "#phonebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#realcash",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#sellmygadgets",
+          "#iphonetradin",
+          "#betterthanapple",
+          "#cashnotcredit"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Turn your drawer into dollars",
+              "headline_html": "<em>Same-day payout</em> for your old phone",
+              "sub_html": "No trade-in credit, no waiting weeks. Real cash, same day we confirm condition. Ship free or hand off locally.",
+              "photo_url": "https://images.unsplash.com/photo-1621743018966-29194999d736?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxtaW5pbWFsaXN0JTIwZGVzayUyMHNldHVwJTIwd2l0aCUyMG1vbml0b3J8ZW58MXwwfHx8MTc4MDkzNzc4NHww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Meme post",
+        "caption": "If you know, you know. Turn that upgrade into cash at purchasingcorp.com/form.",
+        "hashtags": [
+          "#techmemes",
+          "#applememes",
+          "#iphonememes",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#cashforiphone",
+          "#sellmyapple",
+          "#cashforapple",
+          "#phonebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#techhumor",
+          "#phonehumor",
+          "#relatablecontent"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "meme",
+            "fields": {
+              "top_text": "Me: I need the new iPhone",
+              "bottom_text": "Also me: sells last year's model for same-day cash",
+              "image_concept": "brain expanding meme"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Carousel: how to wipe and prep your iPhone",
+        "caption": "Selling your iPhone? Wipe it the right way. Four steps to prep your device before shipping or handing it off. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#howtoselliphone",
+          "#wipeiphone",
+          "#resetiphone",
+          "#iphoneprep",
+          "#applebuyback",
+          "#sellmyapple",
+          "#cashforiphone",
+          "#cashforapple",
+          "#phonebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#iphonetips",
+          "#techtips",
+          "#howto",
+          "#instantcash",
+          "#samedaypayout",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "Back up your data",
+              "eyebrow": "Prep your iPhone",
+              "headline_html": "<em>iCloud or Mac</em> backup first",
+              "body_html": "Go to Settings, tap your name, then iCloud, then Back Up Now. Or plug into a Mac and back up via Finder. <strong>Never skip this step.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Sign out of iCloud",
+              "eyebrow": "Prep your iPhone",
+              "headline_html": "<em>Remove Activation Lock</em> before shipping",
+              "body_html": "Go to Settings, tap your name, scroll down, and tap Sign Out. Enter your Apple ID password. <strong>This turns off Find My and removes the lock.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Erase all content",
+              "eyebrow": "Prep your iPhone",
+              "headline_html": "<em>Factory reset</em> wipes everything",
+              "body_html": "Go to Settings, General, Transfer or Reset iPhone, then Erase All Content and Settings. Confirm. <strong>The phone will restart as new.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Remove SIM and ship",
+              "eyebrow": "Prep your iPhone",
+              "headline_html": "<em>Pop out the SIM</em> and pack it up",
+              "body_html": "Use a SIM tool or paperclip to eject the tray. Keep your SIM for your next phone. <strong>Ship with our prepaid label or drop off locally.</strong>"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Console offer",
+        "caption": "Nintendo Switch 2, PlayStation 5 Pro, ROG Ally, all the consoles. We pay cash, same day. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#consolebuyback",
+          "#cashforconsoles",
+          "#nintendoswitch2",
+          "#ps5pro",
+          "#rogally",
+          "#switchbuyback",
+          "#playstationbuyback",
+          "#xboxbuyback",
+          "#gamingbuyback",
+          "#sellmyswitch",
+          "#sellmyps5",
+          "#cashforgaming",
+          "#techbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#instantcash",
+          "#samedaypayout",
+          "#quickcash",
+          "#nocreditjustcash",
+          "#cashinhand",
+          "#techmoney",
+          "#gadgetcash",
+          "#sellelectronics",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#gamingcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "PlayStation, Xbox, Nintendo, PC handhelds",
+              "title_html": "<em>Current</em> console prices",
+              "rows": [
+                {
+                  "model": "ASUS ROG Ally X 1TB Z1 Extreme",
+                  "price": "$475"
+                },
+                {
+                  "model": "PlayStation 5 Pro",
+                  "price": "$425"
+                },
+                {
+                  "model": "Nintendo Switch 2, Mario Kart Bundle",
+                  "price": "$400"
+                },
+                {
+                  "model": "Nintendo Switch 2",
+                  "price": "$370"
+                },
+                {
+                  "model": "Nintendo Switch OLED",
+                  "price": "$240"
+                },
+                {
+                  "model": "Nintendo Switch",
+                  "price": "$200"
+                }
+              ],
+              "note_html": "Prices for working units. Ship free with our prepaid label or hand off locally."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Monday, June 8",
+          "section": "MAC MINI",
+          "headline_html": "<em>$675 cash</em> for M4 Pro",
+          "deck_html": "Same-day payout. No games. More than Apple, more than Best Buy.",
+          "photo_url": "https://images.unsplash.com/photo-1658856183566-7a6ea4d4d6cb?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw5fHxob21lJTIwb2ZmaWNlJTIwZGVzayUyMHdpdGglMjBjb21wdXRlcnxlbnwxfDF8fHwxNzgwOTM3Nzg0fDA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Featured category",
+          "stat_value": "$675",
+          "stat_unit": "",
+          "caption_html": "Top payout for a <em>Mac Mini M4 Pro</em> 24GB 512GB. Same-day cash, no waiting.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
