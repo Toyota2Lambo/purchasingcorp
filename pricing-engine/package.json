@@ -1,0 +1,14 @@
+{
+  "name": "purchasingcorp-pricing-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dynamic pricing engine — pulls market comps (eBay + competitors), applies margin/guard rules, and emits the site's window.PRICING data. Zero runtime dependencies.",
+  "scripts": {
+    "build": "node build-prices.js",
+    "build:dry": "node build-prices.js --dry-run",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

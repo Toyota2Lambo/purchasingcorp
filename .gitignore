@@ -10,3 +10,9 @@ social/pricing.json
 social/.photo-cache.json
 social/_sample/
 social/**/.render-tmp/
+
+# pricing engine — derived/local artifacts (regenerated each run)
+pricing-engine/data/
+pricing-engine/out/
+# ...but keep the env TEMPLATE (the .env.* rule above would hide it)
+!pricing-engine/.env.example

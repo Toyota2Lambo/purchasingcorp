@@ -1,0 +1,77 @@
+name: pricing · refresh
+
+# Pulls fresh market comps and regenerates the window.PRICING data.
+#
+# SAFE BY DESIGN: this workflow does NOT modify the live site. It builds
+# into pricing-engine/out/ and uploads that as an artifact for review.
+# Promoting a generated file to the live /pricing-data.js (or wiring
+# /api/pricing to it) is a DELIBERATE, reviewed step you do by hand —
+# see pricing-engine/README.md "Going live". This keeps a human in the
+# loop, which the audit (PRICING_MIGRATION_PLAN.md) flagged as required
+# before prices can move automatically.
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # 09:00 UTC daily
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Limit to categories, e.g. iphone,consoles (blank = all)'
+        required: false
+      dry_run:
+        description: 'Run the pipeline but write nothing'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pricing-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: pricing-engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Unit tests (margin math + guard rails)
+        run: node --test
+
+      - name: Build prices
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          EBAY_ENV: ${{ vars.EBAY_ENV || 'production' }}
+          EBAY_MARKETPLACE_ID: ${{ vars.EBAY_MARKETPLACE_ID || 'EBAY_US' }}
+          EBAY_MARKETPLACE_INSIGHTS: ${{ vars.EBAY_MARKETPLACE_INSIGHTS || '0' }}
+          BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
+          BESTBUY_ENABLED: ${{ vars.BESTBUY_ENABLED || '0' }}
+          COMPETITORS_ENABLED: ${{ vars.COMPETITORS_ENABLED || '0' }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node build-prices.js --dry-run ${{ github.event.inputs.only && format('--only {0}', github.event.inputs.only) || '' }}
+          else
+            node build-prices.js ${{ github.event.inputs.only && format('--only {0}', github.event.inputs.only) || '' }}
+          fi
+
+      - name: Upload generated pricing for review
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-${{ github.run_id }}
+          path: |
+            pricing-engine/out/pricing-data.generated.js
+            pricing-engine/out/pricing.json
+            pricing-engine/data/latest.json
+          if-no-files-found: warn
+          retention-days: 14
