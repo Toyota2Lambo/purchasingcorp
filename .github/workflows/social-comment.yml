@@ -14,8 +14,8 @@ on:
     - cron: '0 20 * * *'
   workflow_dispatch:
     inputs:
-      hashtags:
-        description: 'Comma-sep hashtags to target (no #). Blank = defaults.'
+      accounts:
+        description: 'Comma-sep account usernames to target (no @). Blank = defaults.'
         required: false
       max_comments:
         description: 'Max comments to post this run (default 5)'
@@ -52,7 +52,7 @@ jobs:
           IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          IG_TARGET_HASHTAGS: ${{ github.event.inputs.hashtags }}
+          IG_TARGET_ACCOUNTS: ${{ github.event.inputs.accounts }}
           IG_COMMENTS_PER_RUN: ${{ github.event.inputs.max_comments || '10' }}
           IG_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
           ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}

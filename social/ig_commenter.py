@@ -2,25 +2,28 @@
 # ============================================================
 # PURCHASINGCORP — Instagram commenter
 # ============================================================
-# Discovers recent posts on target hashtags and leaves on-brand,
+# Discovers recent posts from target accounts and leaves on-brand,
 # contextual comments via the Instagram Graph API.
+#
+# Uses the Business Discovery API — works with the same token as
+# the publisher, no extra permissions needed.
 #
 # Flow:
 #   1. Load comment_log.json — skip already-commented media IDs.
-#   2. For each target hashtag, resolve its IG hashtag ID.
-#   3. Fetch recent posts (id, caption, timestamp, media_type).
-#   4. Filter: skip already-commented, skip own posts.
-#   5. Ask Claude to write a short, genuine comment per candidate.
-#   6. POST /{media-id}/comments with the generated text.
-#   7. Save updated comment_log.json.
+#   2. For each target account username, fetch their recent posts
+#      via the Business Discovery API.
+#   3. Filter: skip already-commented posts.
+#   4. Ask Claude to write a short, genuine comment per candidate.
+#   5. POST /{media-id}/comments with the generated text.
+#   6. Save updated comment_log.json.
 #
 # Required env:
 #   IG_ACCESS_TOKEN              long-lived Instagram Graph API token
-#   IG_BUSINESS_ACCOUNT_ID       the IG business account id
+#   IG_BUSINESS_ACCOUNT_ID       your IG business account id
 #   ANTHROPIC_API_KEY            for comment generation
 # Optional env:
-#   IG_TARGET_HASHTAGS           comma-sep hashtags (no #), see DEFAULTS below
-#   IG_COMMENTS_PER_RUN          max comments to post per run (default 10)
+#   IG_TARGET_ACCOUNTS           comma-sep usernames to target (overrides list below)
+#   IG_COMMENTS_PER_RUN          max comments to post per run (default 5)
 #   IG_COMMENT_DELAY_S           seconds between comments (default 4)
 #   IG_COMMENT_LOG               path to JSON log (default social/comment_log.json)
 #   IG_API_VERSION               default v21.0
@@ -31,7 +34,7 @@
 # Usage:
 #   python social/ig_commenter.py
 #   IG_DRY_RUN=1 python social/ig_commenter.py
-#   python social/ig_commenter.py --hashtags sellmyphone,tradein
+#   python social/ig_commenter.py --accounts decluttr,backmarket
 # ============================================================
 
 from __future__ import annotations
@@ -50,8 +53,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 API_VERSION = os.environ.get("IG_API_VERSION", "v21.0")
-GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"   # publishing
-FB_GRAPH_BASE = f"https://graph.facebook.com/{API_VERSION}" # hashtag search
+GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"
 
 TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")
 ACCOUNT_ID = os.environ.get("IG_BUSINESS_ACCOUNT_ID", "")
@@ -67,45 +69,24 @@ DRY_RUN = os.environ.get("IG_DRY_RUN", "").lower() in ("1", "true", "yes")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
 
 # ============================================================
-# TARGET HASHTAGS — edit this list to control where we comment
+# TARGET ACCOUNTS — edit this list to control where we comment
 # ============================================================
-# Add or remove hashtags (no # symbol). The script searches each
-# one in order and collects recent posts to comment on. Instagram
-# allows up to 30 unique hashtag lookups per 7 days per account,
-# so keep this list at 30 or fewer.
-TARGET_HASHTAGS = [
-    # --- buyback / trade-in intent ---
-    "sellmyphone",
-    "sellyourphone",
-    "tradein",
-    "tradeinyourphone",
-    "phonebuyback",
-    "sellmyiphone",
-    "sellmysamsung",
-    "sellmymacbook",
-    "sellmyipad",
-    "electronicsbuyback",
-    "devicebuyback",
-    # --- device / reseller community ---
-    "usediphone",
-    "usedphones",
-    "usedmacbook",
-    "usedsamsung",
-    "phonereseller",
-    "techreseller",
-    "refurbishedphones",
-    # --- upgrade cycle ---
-    "phoneupgrade",
-    "newphone",
-    "iphone16",
-    "iphone15",
-    "samsung galaxy",
-    "macbookpro",
-    # --- deals / cash ---
-    "makemoney",
-    "extracash",
-    "phonedeal",
-    "techdeals",
+# Add Instagram usernames (no @) of accounts whose recent posts
+# you want to comment on. Stick to public Business or Creator
+# accounts in the electronics/buyback/resell niche.
+TARGET_ACCOUNTS = [
+    # --- buyback competitors ---
+    "decluttr",
+    "backmarket",
+    "gazelle",
+    "swappie",
+    # --- electronics resellers ---
+    "techbuyback",
+    "musicmagpie",
+    # --- electronics retailers (high follower activity) ---
+    "bestbuy",
+    "apple",
+    "samsung",
     # --- ADD YOUR OWN BELOW ---
 ]
 # ============================================================
@@ -223,37 +204,25 @@ def save_log(commented: set) -> None:
 
 
 # ------------------------------------------------------------
-# Instagram Graph API helpers
+# Instagram Business Discovery API
 # ------------------------------------------------------------
 
-def fb_get(path: str, params: dict):
-    qs = urllib.parse.urlencode(params)
-    return _request("GET", f"{FB_GRAPH_BASE}/{path}?{qs}")
-
-
-def resolve_hashtag_id(hashtag: str) -> str | None:
-    status, data = fb_get("ig-hashtag-search", {
-        "user_id": ACCOUNT_ID,
-        "q": hashtag,
-        "access_token": TOKEN,
-    })
-    if status >= 300 or not data.get("data"):
-        print(f"[comment] hashtag #{hashtag}: lookup failed ({status}): {data}",
-              file=sys.stderr)
-        return None
-    return data["data"][0]["id"]
-
-
-def fetch_recent_media(hashtag_id: str) -> list:
-    status, data = fb_get(f"{hashtag_id}/recent_media", {
-        "user_id": ACCOUNT_ID,
-        "fields": "id,caption,timestamp,media_type",
+def fetch_account_media(username: str) -> list:
+    """Fetch recent posts from a public Business/Creator account by username."""
+    status, data = graph_get(ACCOUNT_ID, {
+        "fields": "business_discovery.fields(media{id,caption,media_type,timestamp})",
+        "username": username,
         "access_token": TOKEN,
     })
     if status >= 300:
-        print(f"[comment] recent_media failed ({status}): {data}", file=sys.stderr)
+        print(f"[comment] @{username}: discovery failed ({status}): {data}",
+              file=sys.stderr)
         return []
-    return data.get("data", [])
+    try:
+        return data["business_discovery"]["media"]["data"]
+    except (KeyError, TypeError):
+        print(f"[comment] @{username}: no media in response", file=sys.stderr)
+        return []
 
 
 def post_comment(media_id: str, text: str) -> str:
@@ -284,8 +253,8 @@ def notify_discord(summary: str) -> None:
 # ------------------------------------------------------------
 
 def run() -> int:
-    ap = argparse.ArgumentParser(description="Comment on recent IG posts by hashtag.")
-    ap.add_argument("--hashtags", help="Comma-sep hashtags (no #). Overrides env.")
+    ap = argparse.ArgumentParser(description="Comment on recent posts from target IG accounts.")
+    ap.add_argument("--accounts", help="Comma-sep usernames (no @). Overrides env/list.")
     args = ap.parse_args()
 
     if not DRY_RUN and (not TOKEN or not ACCOUNT_ID):
@@ -297,38 +266,34 @@ def run() -> int:
               file=sys.stderr)
         return 1
 
-    raw_tags = args.hashtags or os.environ.get("IG_TARGET_HASHTAGS") or ""
-    hashtags = [h.strip().lstrip("#") for h in raw_tags.split(",") if h.strip()] \
-               or TARGET_HASHTAGS
+    raw_accounts = args.accounts or os.environ.get("IG_TARGET_ACCOUNTS") or ""
+    accounts = [a.strip().lstrip("@") for a in raw_accounts.split(",") if a.strip()] \
+               or TARGET_ACCOUNTS
 
-    print(f"[comment] {'DRY RUN — ' if DRY_RUN else ''}target hashtags: "
-          f"{', '.join('#' + h for h in hashtags)}")
+    print(f"[comment] {'DRY RUN — ' if DRY_RUN else ''}target accounts: "
+          f"{', '.join('@' + a for a in accounts)}")
     print(f"[comment] max comments per run: {MAX_COMMENTS}")
 
     already_commented = load_log()
     candidates: list[dict] = []
 
-    for tag in hashtags:
+    for username in accounts:
         if len(candidates) >= MAX_COMMENTS * 3:
             break
-        print(f"[comment] resolving #{tag}…")
-        htag_id = resolve_hashtag_id(tag) if not DRY_RUN else f"fake-id-{tag}"
-        if not htag_id:
-            continue
-        media = fetch_recent_media(htag_id) if not DRY_RUN else [
-            {"id": f"fake-media-{tag}-1", "caption": f"Just sold my old iPhone! #{tag}", "media_type": "IMAGE"},
-            {"id": f"fake-media-{tag}-2", "caption": f"Trade in season 🔥 #{tag}", "media_type": "IMAGE"},
+        print(f"[comment] fetching @{username}…")
+        media = fetch_account_media(username) if not DRY_RUN else [
+            {"id": f"fake-{username}-1", "caption": f"Just got the new iPhone in! Great condition.", "media_type": "IMAGE"},
+            {"id": f"fake-{username}-2", "caption": f"Trade in your old device today and get cash fast 💰", "media_type": "IMAGE"},
         ]
         for post in media:
             mid = post.get("id")
             if not mid or mid in already_commented:
                 continue
+            post["_account"] = username
             candidates.append(post)
         time.sleep(0.5)
 
-    # Shuffle-ish: sort by id string so order is deterministic but varied across hashtags
-    candidates.sort(key=lambda p: p.get("id", ""))
-    # Dedupe by media ID (same post can appear in multiple hashtag results)
+    # Dedupe by media ID
     seen: set[str] = set()
     unique: list[dict] = []
     for p in candidates:
@@ -345,7 +310,7 @@ def run() -> int:
     for post in batch:
         mid = post["id"]
         caption = post.get("caption", "")
-        label = f"media {mid} ({post.get('media_type', '?')})"
+        label = f"@{post.get('_account')} media {mid} ({post.get('media_type', '?')})"
 
         try:
             comment_text = generate_comment(caption)
