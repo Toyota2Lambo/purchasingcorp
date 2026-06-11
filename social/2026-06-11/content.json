@@ -1,0 +1,648 @@
+{
+  "generated_at": "2026-06-11T17:05:43.842999+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "why cash today beats a carrier trade-in credit",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "featured_label": "iPhone"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-11T17:04:37.133Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured iPhone offer",
+        "caption": "iPhone 17 Pro Max sitting in a drawer? That's $1,241 cash today. Real number, same-day payout, no games. More than Apple, more than Best Buy. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#iphone17promax",
+          "#sellmyiphone17",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#selliphone",
+          "#tradeiniphone",
+          "#iphonetradeinforsale",
+          "#sellmyphone",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#instantcash",
+          "#quickcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#iphoneforsale",
+          "#usediphoneforsale"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "iPhone",
+              "eyebrow": "iPhone 17 Pro Max 2TB",
+              "headline_html": "<em>$1,241</em> cash today",
+              "sub_html": "Real number, same-day payout. More than Apple, more than Best Buy.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Flawless to Fair"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone price board",
+        "caption": "Real iPhone 17 Pro Max prices. Pick your model, get a quote in two minutes, and we pay the same day. No vague ranges, no waiting weeks. purchasingcorp.com/form",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphone17promax",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#applebuyback",
+          "#sellmyiphone17",
+          "#iphonetradeinforsale",
+          "#cashforphones",
+          "#selliphone",
+          "#tradeiniphone",
+          "#iphonecash",
+          "#phonetradeincash",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#appletradeincash",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#sellmyapple",
+          "#iphoneforsale",
+          "#usediphoneforsale",
+          "#cashforelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "iPhone",
+              "eyebrow": "iPhone 17 Pro Max",
+              "title_html": "Cash offers, <em>today</em>",
+              "rows": [
+                {
+                  "model": "2TB",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "1TB",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "512GB",
+                  "price": "$975"
+                },
+                {
+                  "model": "256GB",
+                  "price": "$855"
+                }
+              ],
+              "note_html": "Flawless to Fair condition. Same-day payout."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof",
+        "caption": "Another iPhone 17 Pro Max paid out today. Same-day turnaround, no hoops. Ship free or drop off locally. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#cashforiphone",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#samedaypayout",
+          "#cashforphones",
+          "#selliphone",
+          "#tradeiniphone",
+          "#iphonetradeinforsale",
+          "#sellmyiphone17",
+          "#iphone17promax",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#phonesforcash",
+          "#quickcash",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#usediphoneforsale",
+          "#iphoneforsale"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "Payout",
+              "slip_title": "Payout Receipt",
+              "slip_ref": "PC-2026-0611-A",
+              "device": "iPhone 17 Pro Max 1TB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$1,050",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison: our cash vs. marketplace waiting",
+        "caption": "Listing your iPhone on a marketplace means weeks of lowball offers and flaky buyers. Or you can have cash today. Real number, same-day payout, no games. purchasingcorp.com/form",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#cashforphones",
+          "#selliphone",
+          "#tradeiniphone",
+          "#iphonetradeinforsale",
+          "#sellmyiphone17",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#usediphoneforsale",
+          "#iphoneforsale",
+          "#nowaiting"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "Compare",
+              "eyebrow": "iPhone 17 Pro 512GB",
+              "title_html": "<em>Cash today</em> vs. marketplace waiting",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (today)",
+                  "value": "$725",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace (weeks)",
+                  "value": "~$650",
+                  "pct": 90,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical final sale after fees and lowball offers."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index grid",
+        "caption": "Six categories, same-day cash. iPhones, MacBooks, iPads, Apple Watch, consoles, accessories. Get a real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#selliphone",
+          "#tradeiniphone",
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#sellmyipad",
+          "#ipadbuyback",
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#sellmyconsole",
+          "#consolebuyback",
+          "#techbuyback",
+          "#buybackprogram",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#appletradeincash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "Index",
+              "eyebrow": "PurchasingCorp",
+              "title_html": "What we buy, <em>cash today</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPad",
+                  "num": "Contact",
+                  "foot": "Quote",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Same-day payout. No games."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Lifestyle photo post",
+        "caption": "That drawer phone is cash today. Ship free with our prepaid label or drop off locally. Same-day payout, no hoops. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#cashforiphone",
+          "#selliphone",
+          "#tradeiniphone",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#usediphoneforsale",
+          "#iphoneforsale",
+          "#iphonetradeinforsale",
+          "#selloldphone",
+          "#phoneupgrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "Lifestyle",
+              "eyebrow": "PurchasingCorp",
+              "headline_html": "Turn that drawer phone into <em>cash today</em>",
+              "sub_html": "Same-day payout. Free shipping. No games.",
+              "photo_url": "https://images.unsplash.com/photo-1656078411660-05f2cf994d33?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwzfHxhcHBsZSUyMGRldmljZXMlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDB8fHwxNzgxMTk3NTQzfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Carousel: why cash today beats carrier trade-in credit",
+        "caption": "Carrier trade-in credits sound good until you read the fine print. Cash today is simpler, faster, and yours to spend anywhere. Here's why. Learn more at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#cashforphones",
+          "#selliphone",
+          "#tradeiniphone",
+          "#iphonetradeinforsale",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#usediphoneforsale",
+          "#iphoneforsale",
+          "#carriertradein",
+          "#tradeinvscash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "Credits lock you in",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Carrier credits <em>lock you in</em>",
+              "body_html": "Trade-in credits are <strong>bill credits over 24-36 months</strong>. Leave early? You forfeit the balance. Cash is yours, no strings."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Credits take months",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Credits arrive <em>over months</em>",
+              "body_html": "Bill credits trickle in month by month. <strong>Cash today means same-day payout</strong>, in your account before dinner."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Credits force upgrades",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Credits force <em>new phone plans</em>",
+              "body_html": "Most carrier promos require <strong>expensive unlimited plans and a new device purchase</strong>. Cash lets you spend anywhere or keep your old plan."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Cash is freedom",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Cash is <em>freedom</em>",
+              "body_html": "Use it for rent, savings, a trip, or nothing. <strong>No contract, no waiting, no fine print.</strong> Get your quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air board",
+        "caption": "MacBook Air prices, real numbers. Get a quote in two minutes and we pay the same day. More than Apple, more than Best Buy. purchasingcorp.com/form",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#applebuyback",
+          "#macbookair",
+          "#sellmacbookair",
+          "#tradeiniphone",
+          "#sellmytech",
+          "#electronicsbuyback",
+          "#techbuyback",
+          "#buybackprogram",
+          "#sellusedmacbook",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#quickcash",
+          "#cashforelectronics",
+          "#macbookforsale",
+          "#usedmacbook",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#cashforlaptop",
+          "#macbooktradein",
+          "#applelaptop",
+          "#m4macbook",
+          "#macbookm4"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MacBook Air",
+              "eyebrow": "MacBook Air M4",
+              "title_html": "Cash offers, <em>same day</em>",
+              "rows": [
+                {
+                  "model": "15\" M4 24GB 512GB",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" M4 16GB 512GB",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" M4 16GB 256GB",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" M4 24GB 512GB",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" M4 16GB 512GB",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" M4 16GB 256GB",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Flawless to Fair condition. Same-day payout."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch payout",
+        "caption": "Apple Watch Ultra 3 paid out today. Same-day turnaround, no hoops. Ship free or drop off locally. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#applewatchultra",
+          "#sellmyapplewatch",
+          "#applewatchtradein",
+          "#sellmytech",
+          "#electronicsbuyback",
+          "#techbuyback",
+          "#buybackprogram",
+          "#sellusedapplewatch",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#quickcash",
+          "#cashforelectronics",
+          "#applewatchforsale",
+          "#usedapplewatch",
+          "#applewatchultra3",
+          "#sellmywatch",
+          "#watchbuyback",
+          "#cashforwatch",
+          "#applewatch",
+          "#smartwatchbuyback",
+          "#sellsmartwatch"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "Payout",
+              "slip_title": "Payout Receipt",
+              "slip_ref": "PC-2026-0611-B",
+              "device": "Apple Watch Ultra 3 49mm",
+              "condition": "Excellent",
+              "method": "PayPal",
+              "turnaround": "Same day",
+              "amount": "$450",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Meme",
+        "caption": "When your carrier says trade-in credit but you want actual money. Get cash today at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#cashforphones",
+          "#selliphone",
+          "#tradeiniphone",
+          "#phonetradeincash",
+          "#iphonecash",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#techbuyback",
+          "#sellusedphone",
+          "#instantcash",
+          "#cashtoday",
+          "#samedaypayout",
+          "#phonesforcash",
+          "#quickcash",
+          "#appletradeincash",
+          "#sellmyapple",
+          "#cashforelectronics",
+          "#usediphoneforsale",
+          "#iphoneforsale",
+          "#carriertradein",
+          "#tradeinvscash",
+          "#techmemes"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "meme",
+            "fields": {
+              "top_text": "Carrier: We'll give you $800 credit over 36 months",
+              "bottom_text": "Me: I just want cash today",
+              "image_concept": "Confused person looking at phone bill"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Thursday, June 11",
+          "section": "IPHONE",
+          "headline_html": "<em>$1,241</em> cash today",
+          "deck_html": "iPhone 17 Pro Max. Same-day payout. No games.",
+          "photo_url": "https://images.unsplash.com/photo-1756705533779-105bf34e0722?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxuZXclMjBnYWRnZXRzJTIwZmxhdCUyMGxheXxlbnwxfDF8fHwxNzgxMTk3NTQzfDA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Same-day payout",
+          "stat_value": "$1,241",
+          "stat_unit": "",
+          "caption_html": "Top iPhone payout. <em>Cash today</em>, not credit over months.",
+          "source": "PurchasingCorp · June 2026"
+        }
+      }
+    ]
+  }
+}
