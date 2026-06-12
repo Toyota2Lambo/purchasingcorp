@@ -250,7 +250,57 @@ tailwind.config = {
         <div id="cond-grid" class="grid sm:grid-cols-2 gap-2.5"></div>
       </div>
 
-      <!-- STEP 4 — Offer + contact -->
+      <!-- STEP 4 — Account (required to unlock the offer) -->
+      <div id="step-acct" class="wiz-step hidden">
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">Your number is ready.</h2>
+            <p class="mt-1 text-[13px] text-ink-400">Offers are locked to an account — create yours to claim it and finish up.</p>
+          </div>
+          <button type="button" onclick="wizBack()" class="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[12px] text-ink-200 hover:bg-white/[0.08] transition">
+            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4 3 8l4 4"/></svg>
+            Back
+          </button>
+        </div>
+
+        <!-- Account gate -->
+        <div id="auth-gate" class="mt-6">
+          <div class="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 md:p-6">
+            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+            <div class="text-center">
+              <h3 id="gate-title" class="text-lg md:text-xl font-semibold tracking-[-0.02em]">Lock in <span class="text-ink-300 italic font-serif font-normal">your offer.</span></h3>
+              <p id="gate-sub" class="mt-1.5 text-[12.5px] text-ink-400 mx-auto max-w-sm">Create a free account and this quote is saved to your dashboard — track it, message us, and grab your prepaid label. Takes about 20 seconds.</p>
+            </div>
+            <div class="mt-4 mx-auto max-w-sm flex gap-1.5 rounded-full border border-white/10 bg-white/[0.03] p-1">
+              <button id="gate-tab-signup" type="button" class="flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition">Create account</button>
+              <button id="gate-tab-signin" type="button" class="flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition">Sign in</button>
+            </div>
+            <div class="mt-4 mx-auto max-w-sm space-y-3">
+              <div>
+                <label for="gate-auth-email" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Email</label>
+                <input id="gate-auth-email" type="email" autocomplete="email" placeholder="you@email.com"
+                  class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+              </div>
+              <div>
+                <label for="gate-auth-password" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Password</label>
+                <input id="gate-auth-password" type="password" autocomplete="new-password" placeholder="••••••••"
+                  class="bg-ink-800 w-full rounded-xl border border-white/10 px-4 py-3 text-[14px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
+              </div>
+              <button id="gate-submit" type="button" class="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-medium text-black hover:bg-ink-100 transition disabled:opacity-60 disabled:cursor-not-allowed">
+                <span id="gate-submit-label">Create account &amp; see my offer</span>
+                <svg class="h-3.5 w-3.5 transition group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </button>
+              <p id="gate-status" class="text-center text-[12.5px] hidden"></p>
+              <p class="text-center text-[11.5px] text-ink-500">
+                Forgot your password? <a href="/account" class="text-ink-300 underline underline-offset-4 hover:text-white">Reset it here</a>. By continuing you agree to our
+                <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 — Offer + contact -->
       <div id="step-4" class="wiz-step hidden">
         <div class="flex items-start justify-between gap-3">
           <h2 class="text-xl md:text-2xl font-semibold tracking-[-0.02em]">Here's your number.</h2>
@@ -273,6 +323,10 @@ tailwind.config = {
 
         <!-- Contact form -->
         <form id="quoteForm" class="mt-6 space-y-4" onsubmit="return submitInquiry(event)" novalidate>
+          <div id="gate-signedin" class="hidden items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-[12px] text-ink-300">
+            <span>Sending as <span id="gate-email" class="text-ink-100"></span></span>
+            <button type="button" id="gate-signout" class="underline underline-offset-4 hover:text-white">Sign out</button>
+          </div>
           <div>
             <label for="q-contact" class="block text-[12.5px] font-medium text-ink-200 mb-1.5">Where do we send your offer?</label>
             <input id="q-contact" name="contact" type="text" required placeholder="Email, phone, Telegram, or Discord"
@@ -325,10 +379,10 @@ tailwind.config = {
         <p id="success-line" class="mt-2 text-ink-300 text-[14px] mx-auto max-w-sm">We'll confirm your offer and reply fast on the contact you gave us. Usually within a couple of hours.</p>
 
         <div class="mt-6 mx-auto max-w-sm rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 text-left">
-          <div class="text-[13.5px] font-semibold text-white">Track this quote in your dashboard</div>
-          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">Create a free account to follow this quote's status and download your prepaid shipping label once it's verified.</p>
+          <div class="text-[13.5px] font-semibold text-white">It's in your dashboard</div>
+          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">This quote is saved to your account — follow its status, message us, and grab your prepaid shipping label once it's verified.</p>
           <a href="/account" class="mt-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-medium text-black hover:bg-ink-100 transition">
-            Create your account
+            Open your dashboard
             <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
         </div>
@@ -441,6 +495,7 @@ tailwind.config = {
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -695,7 +750,8 @@ tailwind.config = {
       }
       state.condition = v;
       computeEstimate();
-      goStep(4);
+      // Signed out → the account step stands between them and the offer.
+      goStep(accountGated() ? 4 : 5);
     }
 
     // carrier buttons
@@ -739,26 +795,186 @@ tailwind.config = {
         amt.classList.remove('text-5xl','md:text-6xl');
         note.classList.add('hidden');
       }
+
+      // Mirror the number into the account gate, so creating an account
+      // reads as the way to lock in THIS offer, not generic sign-up friction.
+      var gt = $('gate-title'), gs = $('gate-sub');
+      if (gt && gs){
+        if (est != null){
+          gt.innerHTML = 'Lock in <span class="text-ink-300 italic font-serif font-normal">up to ' + fmt(est) + '.</span>';
+          gs.textContent = 'Create your free account and we hold this offer for your ' + state.model +
+            ' — it lands in your dashboard the second you send it. Takes about 20 seconds.';
+        } else {
+          gt.innerHTML = 'Lock in <span class="text-ink-300 italic font-serif font-normal">your offer.</span>';
+          gs.textContent = 'Create your free account and your ' + state.model +
+            ' quote goes straight to our team — your real offer lands in your dashboard, usually within a couple of hours.';
+        }
+      }
     }
 
     // ---- Navigation ----
-    var LABELS = ['Device', 'Model', 'Condition', 'Your offer'];
+    // Logical steps: 1 Device, 2 Model, 3 Condition, 4 Account, 5 Offer.
+    // The account step only exists for signed-out visitors; signed-in users
+    // jump 3 → 5 and the progress bar counts 4 steps for them.
+    var STEP_IDS = ['step-1', 'step-2', 'step-3', 'step-acct', 'step-4'];
+    var LABELS = ['Device', 'Model', 'Condition', 'Account', 'Your offer'];
+    function accountGated(){ return !!(sb && !authedUser); }
     function goStep(n){
       step = n;
-      for (var i = 1; i <= 4; i++){
-        $('step-' + i).classList.toggle('hidden', i !== n);
-      }
-      $('wiz-bar').style.width = (n * 25) + '%';
-      $('wiz-step-label').textContent = 'Step ' + n + ' of 4 · ' + LABELS[n-1];
-      $('wiz-step-count').textContent = n + ' / 4';
+      STEP_IDS.forEach(function(id, i){
+        $(id).classList.toggle('hidden', i + 1 !== n);
+      });
+      var total = accountGated() ? 5 : 4;
+      var disp = (!accountGated() && n === 5) ? 4 : n;
+      $('wiz-bar').style.width = Math.round(disp / total * 100) + '%';
+      $('wiz-step-label').textContent = 'Step ' + disp + ' of ' + total + ' · ' + LABELS[n-1];
+      $('wiz-step-count').textContent = disp + ' / ' + total;
       try { $('quote-form').scrollIntoView({ behavior:'smooth', block:'start' }); } catch(_){}
     }
 
     function wizBack(){
+      if (step === 5) return goStep(3);
       if (step === 4) return goStep(3);
       if (step === 3) return goStep(2);
       if (step === 2) return goStep(1);
     }
+
+    // ---- Account gate: an account is required to submit ----
+    var sb = null, authedUser = null, gateMode = 'signup';
+    var PENDING_QUOTE_KEY = 'pc.pendingQuote';
+
+    function setGateMode(m){
+      gateMode = m;
+      var active = 'flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition bg-white text-black';
+      var idle = 'flex-1 rounded-full px-4 py-2 text-[13px] font-medium transition text-ink-300 hover:text-white';
+      $('gate-tab-signup').className = (m === 'signup') ? active : idle;
+      $('gate-tab-signin').className = (m === 'signin') ? active : idle;
+      $('gate-submit-label').textContent = m === 'signup' ? 'Create account & see my offer' : 'Sign in & see my offer';
+      $('gate-auth-password').setAttribute('autocomplete', m === 'signup' ? 'new-password' : 'current-password');
+      gateStatus('', '');
+    }
+
+    function gateStatus(msg, kind){
+      var el = $('gate-status'); if (!el) return;
+      el.textContent = msg || '';
+      var tone = kind === 'err' ? 'text-red-300' : kind === 'ok' ? 'text-emerald-300' : 'text-ink-300';
+      el.className = 'text-center text-[12.5px] ' + tone + (msg ? '' : ' hidden');
+    }
+
+    async function refreshGate(){
+      if (!sb) return;
+      var session = null;
+      try { var g = await sb.auth.getSession(); session = g.data.session; } catch(_){}
+      authedUser = session ? session.user : null;
+      var chip = $('gate-signedin');
+      chip.classList.toggle('hidden', !authedUser);
+      chip.classList.toggle('flex', !!authedUser);
+      if (authedUser){
+        $('gate-email').textContent = authedUser.email || '';
+        var c = $('q-contact');
+        if (c && !c.value && authedUser.email) c.value = authedUser.email;
+        if (step === 4) goStep(5);      // account created mid-flow → reveal the offer
+      } else if (step === 5){
+        goStep(4);                       // signed out on the offer step → back to the gate
+      }
+    }
+
+    // The quote survives the trip to the inbox and back: stash it before
+    // sign-up sends the confirmation email, restore it once they're back
+    // here with a session.
+    function savePendingQuote(){
+      try {
+        localStorage.setItem(PENDING_QUOTE_KEY, JSON.stringify({
+          state: state,
+          handoff: $('q-handoff').value || '',
+          details: $('q-details').value || '',
+          contact: $('q-contact').value || ''
+        }));
+      } catch(_){}
+    }
+
+    function restorePendingQuote(){
+      if (!authedUser) return;
+      var raw = null;
+      try { raw = localStorage.getItem(PENDING_QUOTE_KEY); } catch(_){}
+      if (!raw) return;
+      try {
+        var p = JSON.parse(raw);
+        localStorage.removeItem(PENDING_QUOTE_KEY);
+        if (p && p.state && p.state.model){
+          state = p.state;
+          if (p.handoff) $('q-handoff').value = p.handoff;
+          if (p.details) $('q-details').value = p.details;
+          if (p.contact) $('q-contact').value = p.contact;
+          computeEstimate();
+          goStep(5);
+        }
+      } catch(_){}
+    }
+
+    async function gateSubmit(){
+      if (!sb) return;
+      var email = ($('gate-auth-email').value || '').trim().toLowerCase();
+      var password = $('gate-auth-password').value || '';
+      var btn = $('gate-submit');
+      if (!email || !password){ gateStatus('Enter your email and a password.', 'err'); return; }
+      if (gateMode === 'signup' && password.length < 8){ gateStatus('Use at least 8 characters for your password.', 'err'); return; }
+      btn.disabled = true;
+      gateStatus(gateMode === 'signup' ? 'Creating your account…' : 'Signing in…', '');
+      try {
+        if (gateMode === 'signup'){
+          savePendingQuote();
+          var res = await sb.auth.signUp({
+            email: email,
+            password: password,
+            options: { emailRedirectTo: location.origin + '/form' }
+          });
+          if (res.error) throw res.error;
+          if (!res.data.session){
+            gateStatus('Almost there — confirm your email, then come right back. Your quote is saved and waiting.', 'ok');
+            btn.disabled = false;
+            return;
+          }
+          // Session present (email confirmation disabled) → fall through.
+        } else {
+          var res2 = await sb.auth.signInWithPassword({ email: email, password: password });
+          if (res2.error) throw res2.error;
+        }
+        await refreshGate();
+        gateStatus('', '');
+      } catch(err){
+        gateStatus((err && err.message) || 'Something went wrong. Try again.', 'err');
+      }
+      btn.disabled = false;
+    }
+
+    (function wireGate(){
+      if (!$('auth-gate')) return;
+      $('gate-tab-signup').addEventListener('click', function(){ setGateMode('signup'); });
+      $('gate-tab-signin').addEventListener('click', function(){ setGateMode('signin'); });
+      $('gate-submit').addEventListener('click', gateSubmit);
+      ['gate-auth-email', 'gate-auth-password'].forEach(function(id){
+        $(id).addEventListener('keydown', function(e){
+          if (e.key === 'Enter'){ e.preventDefault(); gateSubmit(); }
+        });
+      });
+      $('gate-signout').addEventListener('click', function(){ if (sb) sb.auth.signOut(); });
+      setGateMode('signup');
+    })();
+
+    (async function initAuth(){
+      var cfg = null;
+      try { var r = await fetch('/api/config'); cfg = await r.json(); } catch(_){}
+      // Accounts not set up (or CDN blocked) → leave the form open so the
+      // funnel still works; the API only enforces auth when configured.
+      if (!cfg || !cfg.configured || !window.supabase) return;
+      sb = window.supabase.createClient(cfg.url, cfg.anonKey, {
+        auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
+      });
+      sb.auth.onAuthStateChange(function(){ refreshGate().then(restorePendingQuote); });
+      await refreshGate();
+      restorePendingQuote();
+    })();
 
     // ---- Submit → /api/inquiry ----
     async function submitInquiry(e){
@@ -780,8 +996,20 @@ tailwind.config = {
         if (files[i].size > 8*1024*1024){ fail('Each photo must be under 8MB.'); return false; }
       }
 
+      // Accounts are required — grab a fresh access token for the API.
+      var headers = {};
+      if (sb){
+        var tok = null;
+        try { var g = await sb.auth.getSession(); tok = g.data.session && g.data.session.access_token; } catch(_){}
+        if (!tok){
+          await refreshGate(); // bounces step 5 → the account step
+          gateStatus('Sign in to finish locking in your offer.', 'err');
+          return false;
+        }
+        headers.Authorization = 'Bearer ' + tok;
+      }
+
       var meta = [];
-      if (state.carrier) meta.push('Carrier: ' + state.carrier);
       if (state.est != null) meta.push('Est: up to ' + fmt(state.est));
       var fullDetails = [details, meta.join(' · ')].filter(Boolean).join('  —  ');
 
@@ -789,6 +1017,7 @@ tailwind.config = {
       data.append('type', state.catLabel);
       data.append('model', state.model);
       data.append('condition', state.condition || '');
+      data.append('carrier', state.carrier || '');
       data.append('handoff', handoff);
       data.append('contact', contact);
       data.append('details', fullDetails);
@@ -801,7 +1030,7 @@ tailwind.config = {
       status.classList.add('hidden'); status.textContent = '';
 
       try {
-        var r = await fetch('/api/inquiry', { method:'POST', body: data });
+        var r = await fetch('/api/inquiry', { method:'POST', body: data, headers: headers });
         var ok = r.ok, j = null;
         try { j = await r.json(); ok = ok && j && j.ok !== false; } catch(_){}
         if (ok){
@@ -814,7 +1043,18 @@ tailwind.config = {
             } catch(_){}
           }
           var sl = $('success-line');
-          if (sl) sl.textContent = 'We’ll confirm your ' + state.model + ' offer and reply fast on the contact you gave us — usually within a couple of hours.';
+          // Engine first offer: show it only when it doesn't undercut the
+          // "Up to $X" estimate the customer just saw (server sends the
+          // allowed ratio). Otherwise keep the manual-confirm message —
+          // the owner still gets the engine number in the notification.
+          var fo = (j && typeof j.first_offer === 'number') ? j.first_offer : null;
+          var ratio = (j && j.first_offer_min_ratio) || 0.75;
+          var showOffer = fo != null && (state.est == null || fo >= state.est * ratio);
+          if (sl) {
+            sl.textContent = showOffer
+              ? 'Our first offer for your ' + state.model + ' is ' + fmt(fo) + ' as described. Reply on the contact you gave us to accept — clean photos can push it higher.'
+              : 'We’ll confirm your ' + state.model + ' offer and reply fast on the contact you gave us — usually within a couple of hours.';
+          }
           $('step-4').classList.add('hidden');
           $('wiz-progress').classList.add('hidden');
           var done = $('quoteSuccess');
@@ -837,6 +1077,7 @@ tailwind.config = {
       var status = $('q-status'); status.classList.add('hidden'); status.textContent = '';
       $('quoteSuccess').classList.add('hidden');
       $('wiz-progress').classList.remove('hidden');
+      if (sb) refreshGate();
       goStep(1);
     }
 
