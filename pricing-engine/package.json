@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node build-prices.js",
     "build:dry": "node build-prices.js --dry-run",
+    "refresh-snapshot": "node refresh-snapshot.js",
     "test": "node --test"
   },
   "engines": {

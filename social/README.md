@@ -142,12 +142,18 @@ Meta does — posting + media upload use **OAuth 1.0a** (four keys):
 > `TWITTER_MAX_TAGS` (default **2**) — a hashtag stack reads as spam. A
 > carousel with **>4 slides** is posted as a reply **thread**.
 
-> [!note] Free-tier limits
-> The Free tier currently allows on the order of ~1,500 posts/month (write).
-> Ten posts/day ≈ 300/month, comfortably within that — but the limits shift,
-> so if posting starts returning `429`/`403`, check the dashboard; **Basic**
-> ($100/mo) raises the cap. Unlike Meta tokens, OAuth 1.0a tokens don't expire
-> on a 60-day clock (they last until revoked or the app secret is rotated).
+> [!warning] X requires API credits to post (402 CreditsDepleted)
+> X has moved to a **pay-per-use credits model**. `POST /2/tweets` returns
+> `402 CreditsDepleted` ("your enrolled account does not have any credits")
+> until the account has a funded credit balance — this hits the "Free" tier
+> too, even with 0 posts used. Auth and **media upload still work without
+> credits**; only tweet creation is gated. Fix is account-side, not code:
+> add credits / enable billing at <https://console.x.com> → **Billing**, or
+> move to a paid tier. Confirmed 2026-06-08: OAuth 1.0a + image upload
+> succeeded, tweet creation returned 402.
+>
+> Token note: unlike Meta tokens, OAuth 1.0a tokens don't expire on a 60-day
+> clock (they last until revoked or the app secret is rotated).
 
 ---
 

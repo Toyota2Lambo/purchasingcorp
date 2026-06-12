@@ -19,19 +19,27 @@ module.exports = {
   // 1) MARGIN — what fraction of the market price we offer.
   // ----------------------------------------------------------
   margins: {
+    // Owner's target: ~20% profit on each buy. Buy at B, resell at the
+    // estimated market price R => profit = R - B = 0.2·B, so B = R / 1.2.
+    // (The active-listing haircut below converts asks -> est. resale R
+    // BEFORE this is applied, so the 20% is against realistic resale,
+    // not inflated asks.)
+    profitTarget: 0.20,
     // Per high-level category. Site categories map to these in catalog.js
     // (iphone->phones, macbook*/mac-mini->laptops, ipad->tablets, etc.).
+    // All categories currently use the uniform profit target; override a
+    // category here if it needs a different spread.
     byCategory: {
-      phones: 0.75,
-      laptops: 0.72,
-      tablets: 0.70,
-      consoles: 0.70,
-      watches: 0.68,
-      audio: 0.65,
-      other: 0.65,
+      phones: 1 / 1.2,
+      laptops: 1 / 1.2,
+      tablets: 1 / 1.2,
+      consoles: 1 / 1.2,
+      watches: 1 / 1.2,
+      audio: 1 / 1.2,
+      other: 1 / 1.2,
     },
     // Fallback when a category isn't listed above.
-    defaultCategory: 0.68,
+    defaultCategory: 1 / 1.2,
 
     // Per condition tier. Multiplies on top of the category margin.
     // These are the four tiers the requirement asked for. The quote
@@ -48,6 +56,12 @@ module.exports = {
     // Which condition tier is the public "Up to $X" headline shown in
     // the existing quote tool / pricing table (best realistic case).
     headlineCondition: 'like new',
+
+    // Carrier-locked iPhones: priced as a fraction of the UNLOCKED market
+    // price, not from their own eBay query — keyword search for "carrier
+    // locked" mostly matches "Unlocked - any carrier" listings and skews
+    // high. ~0.72 reproduces the spread baked into the manual sheet.
+    carrierLockedFactor: 0.72,
   },
 
   // ----------------------------------------------------------
@@ -108,6 +122,12 @@ module.exports = {
       // own condition multipliers). Default = used + refurb.
       // 1000 New · 2000/2500 refurb · 3000 Used · 7000 For parts.
       conditionIds: '3000|2000|2500',
+      // When the basis is ACTIVE listings (no Marketplace Insights yet),
+      // asks run hotter than what items actually sell for. This factor
+      // converts ask -> estimated sold price before margins apply, so the
+      // profit target is computed against realistic resale. Ignored once
+      // EBAY_MARKETPLACE_INSIGHTS=1 (true sold comps need no haircut).
+      activeListingHaircut: 0.90,
       // Cap comps pulled per variant.
       maxResults: 60,
       // Only keep listings within this price sanity window (USD) to drop
@@ -169,6 +189,12 @@ module.exports = {
     // market data — i.e. devices you insist on pricing by hand. Empty by
     // default. Example: ['accessories'].
     alwaysContact: [],
+    // Customer-facing first offer (success screen): only shown when the
+    // engine offer is at least this fraction of the sheet's "Up to $X"
+    // estimate the customer just saw. Below that the success screen keeps
+    // the "we'll confirm and reply fast" message (no bait-and-switch),
+    // while the owner STILL gets the engine number in the notification.
+    customerDisplayMinRatio: 0.75,
   },
 
   // Map the quote wizard's 6 condition labels (form.html CONDS) onto our

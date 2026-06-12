@@ -28,7 +28,7 @@ const { createEbaySource } = require('./sources/ebay');
 const { createBestBuySource } = require('./sources/bestbuy');
 const { createCompetitorSource } = require('./sources/competitors');
 const { writeRun } = require('./store');
-const { buildPricing, writeOutputs } = require('./output');
+const { buildPricing, writeOutputs, buildOffers, writeOffers } = require('./output');
 
 function parseArgs(argv) {
   const args = { dryRun: false, limit: 0, only: null };
@@ -60,30 +60,60 @@ async function run() {
   console.log(`[build] ${variants.length} variants · sources: ${sources.map((s) => s.name).join(', ') || 'NONE (offline → all Contact)'}`);
 
   const results = new Map();   // variantKey -> headline result {status, offer}
+  const byConditionMap = new Map(); // variantKey -> full per-condition offers
   const runVariants = [];      // full audit records
   let priced = 0;
   let manual = 0;
 
-  for (const v of variants) {
-    // Gather comps from every enabled source. Only basis-eligible
-    // sources (eBay used/sold, competitor offers) feed the offer median;
-    // reference sources (Best Buy retail) are recorded but excluded so
-    // retail-new asks don't inflate the buyback offer.
-    const sourceResults = [];
-    const allPrices = [];
-    for (const s of sources) {
-      // eslint-disable-next-line no-await-in-loop
-      const r = await s.fetchComps(v);
-      sourceResults.push(r);
-      if (r.basisEligible !== false) {
-        for (const p of r.prices || []) allPrices.push(p);
-      }
-    }
+  const unlockedSummaries = new Map(); // `${siteCategory}|${rowName}` -> summary
 
-    const summary = summarize(allPrices, CONFIG.stats.trimFraction);
+  for (const v of variants) {
+    let summary;
+    let sourceResults = [];
+
+    if (v.carrier === 'locked') {
+      // Locked iPhones: derive from the sibling unlocked market price.
+      // A "carrier locked" keyword query mostly matches "Unlocked - any
+      // carrier" listings, so its comps are unusable.
+      const sib = unlockedSummaries.get(`${v.siteCategory}|${v.rowName}`);
+      const f = CONFIG.margins.carrierLockedFactor || 1;
+      summary = sib
+        ? {
+            sampleSize: sib.sampleSize,
+            median: sib.median != null ? sib.median * f : null,
+            trimmedMean: sib.trimmedMean != null ? sib.trimmedMean * f : null,
+            min: sib.min != null ? sib.min * f : null,
+            max: sib.max != null ? sib.max * f : null,
+          }
+        : summarize([], CONFIG.stats.trimFraction); // no unlocked basis -> manual
+      sourceResults = [{ source: 'derived', basis: 'unlocked_x_locked_factor', prices: [], note: `factor ${f}` }];
+    } else {
+      // Gather comps from every enabled source. Only basis-eligible
+      // sources (eBay used/sold, competitor offers) feed the offer median;
+      // reference sources (Best Buy retail) are recorded but excluded so
+      // retail-new asks don't inflate the buyback offer.
+      const allPrices = [];
+      for (const s of sources) {
+        // eslint-disable-next-line no-await-in-loop
+        const r = await s.fetchComps(v);
+        sourceResults.push(r);
+        if (r.basisEligible !== false) {
+          // Active-listing asks run hotter than sold prices; haircut them to
+          // estimated resale so margins compute against reality (config
+          // sources.ebay.activeListingHaircut). True sold comps pass through.
+          const haircut = r.basis === 'active_listing_proxy'
+            ? (CONFIG.sources.ebay.activeListingHaircut || 1)
+            : 1;
+          for (const p of r.prices || []) allPrices.push(p * haircut);
+        }
+      }
+      summary = summarize(allPrices, CONFIG.stats.trimFraction);
+      if (v.carrier === 'unlocked') unlockedSummaries.set(`${v.siteCategory}|${v.rowName}`, summary);
+    }
     const offers = computeVariantOffers({ summary, category: v.marginCategory, config: CONFIG });
     const headline = offers.headline;
     results.set(v.variantKey, { status: headline.status, offer: headline.offer });
+    byConditionMap.set(v.variantKey, offers.byCondition);
 
     if (headline.status === 'priced') priced++; else manual++;
 
@@ -134,9 +164,22 @@ async function run() {
     sources: sources.map((s) => s.name).length ? sources.map((s) => s.name) : ['offline'],
   });
 
+  // Condition-aware first offers for /api/inquiry. Skipped on partial
+  // builds (--only/--limit) so a scoped run can't clobber the full ladder.
+  let offersOut = null;
+  if (!args.only && !args.limit) {
+    const offersData = buildOffers(catalog, byConditionMap, CONFIG, {
+      updated: finishedAt,
+      sources: sources.map((s) => s.name),
+    });
+    offersOut = writeOffers(offersData);
+  }
+
   console.log(`[build] raw    -> ${stored.rawPath}`);
   console.log(`[build] output -> ${out.jsPath}`);
   console.log(`[build] output -> ${out.jsonPath}`);
+  if (offersOut) console.log(`[build] offers -> ${offersOut.apiPath}`);
+  else console.log('[build] offers skipped (partial build)');
 }
 
 run().catch((e) => {

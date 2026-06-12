@@ -12,7 +12,33 @@ node build-prices.js            # full run -> writes out/ + data/
 node build-prices.js --dry-run  # run the pipeline, write nothing
 node build-prices.js --only iphone,consoles --limit 20
 npm test                        # node --test (margin math + guards + stats)
+node refresh-snapshot.js        # re-sync ../pricing-data.js (the site's static
+                                # fallback) from the LIVE /api/pricing — fixes
+                                # the stale-fallback risk without touching the
+                                # market-data path. --dry-run supported.
+node check-deltas.js A.js B.js  # circuit-breaker: compares two generated
+                                # offers modules; non-zero exit if any offer
+                                # moved >30% or the priced count shrank >20%.
 ```
+
+## First offers (live)
+
+`build-prices.js` also emits **`api/_pricing/offers.generated.js`** — the
+condition-aware offer ladder (like new / good / fair / broken, unlocked +
+locked for iPhones). `/api/inquiry` bundles it and attaches an engine first
+offer to every lead (Discord/Telegram + DB row + success screen). The
+success screen only shows it when it's ≥ `output.customerDisplayMinRatio`
+(default 0.75) of the "Up to $X" estimate the customer saw — otherwise the
+customer gets the normal "we'll confirm" message and only the owner sees
+the number. Margins encode the owner's **20% profit target**
+(`offer = est. resale / 1.2`), with `activeListingHaircut` converting
+active-listing asks to estimated resale and `carrierLockedFactor` deriving
+locked iPhone prices from unlocked comps (a "carrier locked" eBay query
+matches "Unlocked - any carrier" junk).
+
+The `pricing-refresh.yml` workflow rebuilds every 6 hours and **commits**
+the refreshed offers (auto-deploying via Vercel) unless `check-deltas.js`
+trips; the public "Up to $X" table stays sheet-driven.
 
 ## How it works
 

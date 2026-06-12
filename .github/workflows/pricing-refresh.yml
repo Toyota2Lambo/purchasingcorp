@@ -1,30 +1,40 @@
 name: pricing · refresh
 
-# Pulls fresh market comps and regenerates the window.PRICING data.
+# Pulls fresh market comps, regenerates the engine outputs, and — when the
+# circuit-breaker passes — COMMITS the refreshed offers so Vercel redeploys
+# with current pricing:
 #
-# SAFE BY DESIGN: this workflow does NOT modify the live site. It builds
-# into pricing-engine/out/ and uploads that as an artifact for review.
-# Promoting a generated file to the live /pricing-data.js (or wiring
-# /api/pricing to it) is a DELIBERATE, reviewed step you do by hand —
-# see pricing-engine/README.md "Going live". This keeps a human in the
-# loop, which the audit (PRICING_MIGRATION_PLAN.md) flagged as required
-# before prices can move automatically.
+#   api/_pricing/offers.generated.js   condition-aware first offers used by
+#                                      /api/inquiry (customer + owner ping)
+#   pricing-data.js                    the site's static fallback, re-synced
+#                                      from the live sheet-backed /api/pricing
+#
+# GUARDED BY DESIGN: pricing-engine/check-deltas.js blocks the commit when
+# any offer moves more than 30% or the priced-offer count shrinks more than
+# 20% vs what's currently deployed — a bad scrape can't go live. A tripped
+# run still uploads its artifact for review. The public "Up to $X" price
+# table remains sheet-driven; promoting engine prices to the public table is
+# still a deliberate manual step (see pricing-engine/README.md).
 
 on:
   schedule:
-    - cron: '0 9 * * *'   # 09:00 UTC daily
+    - cron: '0 */6 * * *'   # every 6 hours
   workflow_dispatch:
     inputs:
       only:
-        description: 'Limit to categories, e.g. iphone,consoles (blank = all)'
+        description: 'Limit to categories, e.g. iphone,consoles (blank = all; partial builds are never committed)'
         required: false
       dry_run:
         description: 'Run the pipeline but write nothing'
         required: false
         default: 'false'
+      force_publish:
+        description: 'Commit even if the circuit-breaker trips (after reviewing!)'
+        required: false
+        default: 'false'
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: pricing-refresh
@@ -47,6 +57,9 @@ jobs:
       - name: Unit tests (margin math + guard rails)
         run: node --test
 
+      - name: Keep a copy of the currently deployed offers
+        run: cp ../api/_pricing/offers.generated.js /tmp/offers.deployed.js || echo "no previous offers (first run)"
+
       - name: Build prices
         env:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
@@ -64,7 +77,44 @@ jobs:
             node build-prices.js ${{ github.event.inputs.only && format('--only {0}', github.event.inputs.only) || '' }}
           fi
 
-      - name: Upload generated pricing for review
+      - name: Re-sync static fallback from live sheet
+        if: ${{ github.event.inputs.dry_run != 'true' && !github.event.inputs.only }}
+        run: node refresh-snapshot.js
+
+      - name: Circuit-breaker (block publish on suspicious deltas)
+        id: breaker
+        if: ${{ github.event.inputs.dry_run != 'true' && !github.event.inputs.only }}
+        env:
+          PRICE_MAX_PCT_DELTA: ${{ vars.PRICE_MAX_PCT_DELTA || 30 }}
+          PRICE_MAX_SHRINK_PCT: ${{ vars.PRICE_MAX_SHRINK_PCT || 20 }}
+        run: |
+          if [ ! -f /tmp/offers.deployed.js ]; then
+            echo "first publish — nothing to compare"
+          elif node check-deltas.js /tmp/offers.deployed.js ../api/_pricing/offers.generated.js; then
+            echo "breaker passed"
+          elif [ "${{ github.event.inputs.force_publish }}" = "true" ]; then
+            echo "::warning::circuit-breaker TRIPPED but force_publish=true — publishing anyway"
+          else
+            echo "tripped=true" >> "$GITHUB_OUTPUT"
+            echo "::error::circuit-breaker tripped — offers NOT published; inspect the artifact"
+          fi
+
+      - name: Commit refreshed pricing (deploys via Vercel)
+        if: ${{ github.event.inputs.dry_run != 'true' && !github.event.inputs.only && steps.breaker.outputs.tripped != 'true' }}
+        working-directory: .
+        run: |
+          git config user.name 'pricing-bot'
+          git config user.email 'pricing-bot@users.noreply.github.com'
+          git add api/_pricing/offers.generated.js pricing-data.js
+          if git diff --cached --quiet; then
+            echo "no pricing changes this run"
+          else
+            git commit -m "pricing: refresh offers $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
+
+      - name: Upload run artifact (always, for review/rollback)
         if: ${{ github.event.inputs.dry_run != 'true' }}
         uses: actions/upload-artifact@v4
         with:
@@ -72,6 +122,7 @@ jobs:
           path: |
             pricing-engine/out/pricing-data.generated.js
             pricing-engine/out/pricing.json
+            pricing-engine/out/offers.json
             pricing-engine/data/latest.json
           if-no-files-found: warn
           retention-days: 14
