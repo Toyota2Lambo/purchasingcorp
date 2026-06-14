@@ -1,0 +1,47 @@
+{
+  "_comment": "Daily video pool for the autoposter. `pick_daily_video.py` rotates through `pool` in order, never repeating a clip until the whole pool has cycled. Edit captions/hashtags freely; add new entries when you render more videos into ~/videos/_vault and copy them here.",
+  "base_url": "https://purchasingcorp.com/videos",
+  "default_hashtags": ["sellyourtech", "buyback", "techresale", "getpaid"],
+  "pool": [
+    {
+      "file": "purchasingcorp-trust.mp4",
+      "caption": "The price we quote is the price you get. 60-second quote, inspected within the hour, paid before bedtime. No surprise deductions, ever. Get your offer at purchasingcorp.com",
+      "hashtags": ["sellyourtech", "buyback", "nolowball", "getpaid"]
+    },
+    {
+      "file": "purchasingcorp-iphone.mp4",
+      "caption": "Apple offers $650 for your iPhone. We pay $855. Same phone, same day, hundreds more in your pocket. Any model, any carrier. Get your real number at purchasingcorp.com",
+      "hashtags": ["iphone", "sellyouriphone", "applealternative", "buyback"]
+    },
+    {
+      "file": "purchasingcorp-gpu.mp4",
+      "caption": "That GPU collecting dust is worth real money. We pay top dollar for RTX cards, mining rigs and whole lots. 60-second quote, cash the same day. purchasingcorp.com",
+      "hashtags": ["gpu", "rtx", "sellyourgpu", "pcbuild"]
+    },
+    {
+      "file": "purchasingcorp-macbook.mp4",
+      "caption": "Your old MacBook is worth more than you think — up to $595 more than the trade-in counter. MacBook Pros, Airs, even older ones. 60-second quote, paid same day. purchasingcorp.com",
+      "hashtags": ["macbook", "sellyourmac", "apple", "buyback"]
+    },
+    {
+      "file": "purchasingcorp-console.mp4",
+      "caption": "That console you stopped playing? Someone's paying cash for it today. PS5, Xbox, Switch, Steam Deck — we buy them all. 60-second quote, money same day. purchasingcorp.com",
+      "hashtags": ["ps5", "xbox", "nintendoswitch", "sellyourconsole"]
+    },
+    {
+      "file": "purchasingcorp-camera.mp4",
+      "caption": "That camera losing value in your bag? Bodies, lenses, the whole kit — we buy it all at real market prices. No lowball trade-in nonsense. 60-second quote, same-day cash. purchasingcorp.com",
+      "hashtags": ["camera", "sellyourgear", "photography", "buyback"]
+    },
+    {
+      "file": "purchasingcorp-tablet.mp4",
+      "caption": "That tablet you never use is worth real cash. iPads, Galaxy Tabs, any tablet — we pay top dollar, same day. 60-second quote at purchasingcorp.com",
+      "hashtags": ["ipad", "selltablet", "tablet", "buyback"]
+    },
+    {
+      "file": "purchasingcorp-phone-deal.mp4",
+      "caption": "Don't let Apple lowball your iPhone. They offer $650 — we pay $855, money the same day, your choice of Zelle, Cash App or Venmo. purchasingcorp.com",
+      "hashtags": ["iphone", "sellyouriphone", "getpaid", "buyback"]
+    }
+  ]
+}
