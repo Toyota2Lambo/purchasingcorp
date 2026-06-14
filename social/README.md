@@ -246,10 +246,51 @@ python backfill_generator.py --days 7            # last 7 days
 | `templates/*.html` | the 12 post/story designs; `_shared.css` is the design system |
 | `sample-payloads.json` | a full fixture exercising all 12 templates (used by `--self-test` / `--sample`) |
 
-### The 12 templates
+### The templates
 
 `offer`, `board`, `payout`, `compare`, `stat`, `quote`, `index`, `carousel`,
-`cover`, `photo-cover`, `lifestyle`, `meme`.
+`cover`, `photo-cover`, `lifestyle`.
+
+> `meme` was **retired** (didn't convert) — removed from the generator's
+> vocabulary and prompt so the model never selects it. `meme-post.html` and its
+> registry entry are left in place but dead.
+
+---
+
+## Daily video autoposter (Reels / Threads / X / TikTok)
+
+Separate from the image pipeline above. Posts **one ad video per day** from a
+fixed pool, rotating so none repeats until the whole pool has cycled.
+
+```
+videos/*.mp4                         (the vault renders, committed → Vercel-served)
+videos/captions.json                 (the pool: file + caption + hashtags)
+   │  python social/pick_daily_video.py     ← rotates, writes selection.json + state
+   ▼
+videos/selection.json                (today's clip: video_url, caption, local_path)
+   │  python social/video_publisher.py
+   ▼
+Instagram Reels · Threads video · X (chunked) · TikTok (dormant)
+```
+
+- **IG / Threads / TikTok** are handed the public `video_url`
+  (`https://purchasingcorp.com/videos/<file>.mp4`) and fetch it — so the MP4 must
+  be committed + deployed (it is; the pool is committed once and reused).
+- **X** uploads the local bytes via chunked v1.1 upload (`tweet_video`), then
+  tweets with the `media_id` — same OAuth 1.0a creds as the image poster.
+- Runs daily via `.github/workflows/social-video.yml` (17:07 UTC). Manual run
+  supports `dry_run` and an `only` platform filter.
+- **Add more videos:** render into `~/videos/_vault`, copy the MP4 into
+  `videos/`, add an entry to `videos/captions.json`. The rotation picks it up.
+
+### Extra secret for video
+
+| Name | Kind | Used by | What it is |
+|------|------|---------|------------|
+| `TIKTOK_ACCESS_TOKEN` | secret | video (TikTok) | OAuth access token for TikTok's **Content Posting API**. Until it's set (and your app is approved + domain verified for `PULL_FROM_URL`), TikTok is **skipped** and the other three still post. |
+
+IG/Threads/X reuse the **same secrets** the image poster already uses — no new
+setup needed for those three.
 
 ---
 

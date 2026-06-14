@@ -1,0 +1,80 @@
+name: social · video
+
+# Posts ONE vault ad video per day to Instagram (Reels), Threads, X, and TikTok.
+#
+# The MP4 pool lives in /videos (committed once, served by Vercel at
+# https://purchasingcorp.com/videos/<file>.mp4). Each run:
+#   1. pick_daily_video.py rotates to the next clip (no repeat until the pool
+#      has cycled) and writes videos/selection.json + advances rotation_state.json
+#   2. that state is committed back so tomorrow continues the cycle
+#   3. video_publisher.py posts the clip everywhere creds exist.
+#
+# IG / Threads / TikTok FETCH the public video_url; X uploads the local bytes.
+# TikTok stays dormant until TIKTOK_ACCESS_TOKEN is added (its Content Posting
+# API needs app review first) — it simply reports "skipped" until then.
+
+on:
+  schedule:
+    # 17:07 UTC daily — deliberately off the top of the hour (GitHub drops far
+    # fewer odd-minute crons) and clear of the image pipeline at 13:23.
+    - cron: '7 17 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Limit platforms, e.g. ig,threads,x,tiktok (blank = all)"
+        required: false
+      dry_run:
+        description: 'Plan only, no real posts'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-video
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pick today's video (advance rotation)
+        run: python social/pick_daily_video.py
+
+      - name: Commit rotation state
+        run: |
+          git config user.name "Toyota2Lambo"
+          git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
+          git add videos/rotation_state.json videos/selection.json
+          if git diff --staged --quiet; then
+            echo "no rotation change to commit"
+          else
+            git commit -m "social: video rotation $(date -u +%F)"
+            git push
+          fi
+
+      - name: Publish video to all platforms
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          VIDEO_DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
+          VIDEO_ONLY: ${{ github.event.inputs.only }}
+        run: python social/video_publisher.py

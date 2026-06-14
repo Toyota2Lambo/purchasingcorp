@@ -67,7 +67,7 @@ GEN_ATTEMPTS = int(os.environ.get("SOCIAL_GEN_ATTEMPTS") or "4")
 # Must match the keys in templates-registry.js exactly.
 TEMPLATE_NAMES = [
     "offer", "board", "payout", "compare", "stat", "quote",
-    "index", "carousel", "cover", "photo-cover", "lifestyle", "meme",
+    "index", "carousel", "cover", "photo-cover", "lifestyle",
 ]
 
 # Templates whose photo_url field should be resolved to a real image URL.
@@ -302,10 +302,6 @@ lifestyle (feed or story; aspirational, outcome-forward)
   tag, eyebrow, headline_html, sub_html, photo_url, photo_credit
   photo_url = "PHOTO: device" (REQUIRED: a framed device photo is auto-selected and baked in). Sells the
   feeling (that drawer phone is cash), not a spec. Keep the copy device-agnostic so any device photo fits.
-
-meme (single feed post; shareable, off-duty)
-  top_text, bottom_text, image_concept
-  PLAIN TEXT only (no HTML). Short relatable setup/punchline; never mean. image_concept is a tiny caption.
 """
 
 
@@ -341,7 +337,7 @@ COMPOSITION RULES
   image is auto-selected from our photo library and baked in. Keep this post's copy about the OUTCOME
   (cash today), not a model number.
 - Feature the day's category in at least one offer or board post.
-- The remaining single feed posts: pick varied templates from offer, board, payout, compare, index, meme.
+- The remaining single feed posts: pick varied templates from offer, board, payout, compare, index.
   If you include compare, use the day's comparison angle.
 - Stories: pick varied templates from cover, stat, quote, photo-cover.
 - size is "feed" for all posts (1:1) and is not set on stories (always 9:16).
@@ -559,7 +555,7 @@ def validate_and_normalize(data: dict) -> dict:
 # Single-slide feed posts we may safely repurpose into a photo post if the
 # model forgot to include one at all (last-resort guarantee). The carousel
 # (multi-slide) and the price "board" are never touched.
-_CONVERTIBLE_TO_PHOTO = ("compare", "index", "payout", "meme", "quote", "stat", "offer")
+_CONVERTIBLE_TO_PHOTO = ("compare", "index", "payout", "quote", "stat", "offer")
 
 
 def ensure_feed_photo(content: dict, theme: dict) -> None:
