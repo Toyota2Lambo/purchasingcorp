@@ -2,18 +2,19 @@
 # ============================================================
 # PURCHASINGCORP — Instagram commenter
 # ============================================================
-# Discovers recent posts from target accounts and leaves on-brand,
-# contextual comments via the Instagram Graph API.
+# Reads target_posts.json, generates a contextual comment for
+# each post via Claude, and posts it via the Instagram Graph API.
 #
-# Uses the Business Discovery API — works with the same token as
-# the publisher, no extra permissions needed.
+# To add posts to comment on:
+#   1. Open social/target_posts.json
+#   2. Add the Instagram post URL (copy from any public post)
+#   3. Optionally add a "context" note to help Claude write better
 #
 # Flow:
-#   1. Load comment_log.json — skip already-commented media IDs.
-#   2. For each target account username, fetch their recent posts
-#      via the Business Discovery API.
-#   3. Filter: skip already-commented posts.
-#   4. Ask Claude to write a short, genuine comment per candidate.
+#   1. Load comment_log.json — skip already-commented posts.
+#   2. Read target_posts.json for the list of posts to comment on.
+#   3. Resolve each URL to an Instagram media ID via the oEmbed API.
+#   4. Ask Claude to write a short, genuine comment.
 #   5. POST /{media-id}/comments with the generated text.
 #   6. Save updated comment_log.json.
 #
@@ -22,7 +23,6 @@
 #   IG_BUSINESS_ACCOUNT_ID       your IG business account id
 #   ANTHROPIC_API_KEY            for comment generation
 # Optional env:
-#   IG_TARGET_ACCOUNTS           comma-sep usernames to target (overrides list below)
 #   IG_COMMENTS_PER_RUN          max comments to post per run (default 5)
 #   IG_COMMENT_DELAY_S           seconds between comments (default 4)
 #   IG_COMMENT_LOG               path to JSON log (default social/comment_log.json)
@@ -34,7 +34,6 @@
 # Usage:
 #   python social/ig_commenter.py
 #   IG_DRY_RUN=1 python social/ig_commenter.py
-#   python social/ig_commenter.py --accounts decluttr,backmarket
 # ============================================================
 
 from __future__ import annotations
@@ -43,6 +42,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -53,94 +53,102 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 
 API_VERSION = os.environ.get("IG_API_VERSION", "v21.0")
-GRAPH_BASE = f"https://graph.instagram.com/{API_VERSION}"
+GRAPH_BASE  = f"https://graph.instagram.com/{API_VERSION}"
 
-TOKEN = os.environ.get("IG_ACCESS_TOKEN", "")
+TOKEN      = os.environ.get("IG_ACCESS_TOKEN", "")
 ACCOUNT_ID = os.environ.get("IG_BUSINESS_ACCOUNT_ID", "")
-ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-MODEL = os.environ.get("ANTHROPIC_MODEL") or "claude-haiku-4-5-20251001"
+ANTH_KEY   = os.environ.get("ANTHROPIC_API_KEY", "")
+MODEL      = os.environ.get("ANTHROPIC_MODEL") or "claude-haiku-4-5-20251001"
 
-MAX_COMMENTS = int(os.environ.get("IG_COMMENTS_PER_RUN", "5"))
-COMMENT_DELAY_S = int(os.environ.get("IG_COMMENT_DELAY_S", "4"))
-LOG_PATH = Path(os.environ.get("IG_COMMENT_LOG") or HERE / "comment_log.json")
-LOG_CAP = 2000  # keep last N media IDs to bound file size
+MAX_COMMENTS  = int(os.environ.get("IG_COMMENTS_PER_RUN", "5"))
+COMMENT_DELAY = int(os.environ.get("IG_COMMENT_DELAY_S",  "4"))
+LOG_PATH      = Path(os.environ.get("IG_COMMENT_LOG") or HERE / "comment_log.json")
+POSTS_PATH    = HERE / "target_posts.json"
+LOG_CAP       = 2000
 
-DRY_RUN = os.environ.get("IG_DRY_RUN", "").lower() in ("1", "true", "yes")
+DRY_RUN             = os.environ.get("IG_DRY_RUN", "").lower() in ("1", "true", "yes")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", "")
-
-# ============================================================
-# TARGET ACCOUNTS — edit this list to control where we comment
-# ============================================================
-# Add Instagram usernames (no @) of accounts whose recent posts
-# you want to comment on. Stick to public Business or Creator
-# accounts in the electronics/buyback/resell niche.
-TARGET_ACCOUNTS = [
-    # --- buyback competitors ---
-    "decluttr",
-    "backmarket",
-    "gazelle",
-    "swappie",
-    # --- electronics resellers ---
-    "techbuyback",
-    "musicmagpie",
-    # --- electronics retailers (high follower activity) ---
-    "bestbuy",
-    "apple",
-    "samsung",
-    # --- ADD YOUR OWN BELOW ---
-]
-# ============================================================
 
 UA = "PurchasingCorp-Social/1.0"
 
-COMMENT_SYSTEM = """You are a social media manager for PurchasingCorp, an electronics buyback company. We pay top dollar for used iPhones, Samsung phones, MacBooks, iPads, and other devices — free shipping, fast payment, ships to all 50 states.
+COMMENT_SYSTEM = """You are a social media manager for PurchasingCorp, an electronics buyback company. We pay top dollar for used iPhones, Samsung phones, MacBooks, iPads — free shipping, fast payment, all 50 states.
 
-Given an Instagram post caption, write ONE short, genuine comment (under 150 characters).
+Given context about an Instagram post, write ONE short, genuine comment (under 150 characters).
 
 Rules:
 - Sound like a real person, not a brand
-- Be relevant to the actual post content
-- Use this mix roughly: 60% purely engage with no brand mention, 30% soft brand mention, 10% friendly CTA
+- Be relevant to the post content or context provided
+- Mix it up: 60% pure engagement, 30% soft brand mention, 10% friendly CTA
 - Soft mention examples: "we pay top dollar for those 👀" / "love seeing this — btw we buy these 🙌"
 - CTA examples: "We pay market rate if you ever want to sell!" / "DM us — we buy those fast 🔥"
-- No hashtags in the comment
-- Casual, friendly tone; 1–2 emojis max
-- Never be spammy or pushy
-- If the caption is empty or unrelated to electronics, just give a warm generic engagement comment
+- No hashtags; 1–2 emojis max; casual friendly tone
+- Never be pushy or spammy
 
 Reply with ONLY the comment text, nothing else."""
 
 
 # ------------------------------------------------------------
-# HTTP plumbing (stdlib only, matching ig_publisher.py)
+# HTTP plumbing
 # ------------------------------------------------------------
 
-def _request(method: str, url: str, data: dict = None):
+def _request(method: str, url: str, data: dict = None, headers: dict = None):
     body = urllib.parse.urlencode(data).encode() if data is not None else None
-    req = urllib.request.Request(url, data=body, method=method,
-                                 headers={"User-Agent": UA})
+    h    = {"User-Agent": UA}
+    if headers:
+        h.update(headers)
+    req = urllib.request.Request(url, data=body, method=method, headers=h)
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             raw = r.read().decode()
             return r.status, (json.loads(raw) if raw else {})
     except urllib.error.HTTPError as e:
         raw = e.read().decode()
-        try:
-            parsed = json.loads(raw)
-        except Exception:
-            parsed = {"raw": raw}
+        try:    parsed = json.loads(raw)
+        except: parsed = {"raw": raw}
         return e.code, parsed
     except Exception as e:
         return 0, {"error": str(e)}
 
 
-def graph_get(path: str, params: dict):
-    qs = urllib.parse.urlencode(params)
-    return _request("GET", f"{GRAPH_BASE}/{path}?{qs}")
-
-
 def graph_post(path: str, params: dict):
     return _request("POST", f"{GRAPH_BASE}/{path}", params)
+
+
+# ------------------------------------------------------------
+# Resolve Instagram URL → media ID
+# ------------------------------------------------------------
+
+def extract_shortcode(url: str) -> str | None:
+    m = re.search(r'/(?:p|reel|tv)/([A-Za-z0-9_-]+)', url)
+    return m.group(1) if m else None
+
+
+def resolve_media_id(url: str) -> str | None:
+    """Use the Instagram oEmbed API to get the media ID from a post URL."""
+    shortcode = extract_shortcode(url)
+    if not shortcode:
+        print(f"[comment] could not parse shortcode from URL: {url}", file=sys.stderr)
+        return None
+
+    # oEmbed endpoint — no auth needed for public posts
+    oembed_url = (
+        f"https://graph.facebook.com/v{API_VERSION.lstrip('v')}/instagram_oembed"
+        f"?url={urllib.parse.quote(url, safe='')}"
+        f"&access_token={TOKEN}"
+    )
+    status, data = _request("GET", oembed_url)
+    if status >= 300:
+        # Fall back: shortcode can sometimes be used directly as media ID
+        print(f"[comment] oEmbed lookup failed ({status}) for {url} — "
+              f"trying shortcode as media id", file=sys.stderr)
+        return shortcode
+
+    # oEmbed gives us the media ID in some API versions
+    media_id = data.get("media_id") or data.get("id")
+    if not media_id:
+        # Last resort: return the shortcode and let the Graph API reject if wrong
+        return shortcode
+    return str(media_id)
 
 
 # ------------------------------------------------------------
@@ -149,15 +157,14 @@ def graph_post(path: str, params: dict):
 
 def _anthropic_post(payload: dict) -> dict:
     body = json.dumps(payload).encode()
-    req = urllib.request.Request(
+    req  = urllib.request.Request(
         "https://api.anthropic.com/v1/messages",
-        data=body,
-        method="POST",
+        data=body, method="POST",
         headers={
-            "x-api-key": ANTHROPIC_KEY,
+            "x-api-key":         ANTH_KEY,
             "anthropic-version": "2023-06-01",
-            "content-type": "application/json",
-            "User-Agent": UA,
+            "content-type":      "application/json",
+            "User-Agent":        UA,
         },
     )
     try:
@@ -167,13 +174,15 @@ def _anthropic_post(payload: dict) -> dict:
         raise RuntimeError(f"Anthropic API error {e.code}: {e.read().decode()}")
 
 
-def generate_comment(caption: str) -> str:
-    caption_snippet = (caption or "").strip()[:500] or "(no caption)"
+def generate_comment(post_url: str, context: str) -> str:
+    user_msg = f"Post URL: {post_url}"
+    if context:
+        user_msg += f"\nContext about this post: {context}"
     data = _anthropic_post({
-        "model": MODEL,
+        "model":      MODEL,
         "max_tokens": 80,
-        "system": COMMENT_SYSTEM,
-        "messages": [{"role": "user", "content": f"Post caption:\n{caption_snippet}"}],
+        "system":     COMMENT_SYSTEM,
+        "messages":   [{"role": "user", "content": user_msg}],
     })
     try:
         return data["content"][0]["text"].strip().strip('"')
@@ -182,7 +191,7 @@ def generate_comment(caption: str) -> str:
 
 
 # ------------------------------------------------------------
-# Comment log (deduplication state)
+# Comment log
 # ------------------------------------------------------------
 
 def load_log() -> set:
@@ -198,36 +207,18 @@ def load_log() -> set:
 def save_log(commented: set) -> None:
     entries = list(commented)[-LOG_CAP:]
     LOG_PATH.write_text(json.dumps({
-        "commented": entries,
+        "commented":    entries,
         "last_updated": dt.datetime.now(dt.timezone.utc).isoformat(),
     }, indent=2))
 
 
 # ------------------------------------------------------------
-# Instagram Business Discovery API
+# Post a comment
 # ------------------------------------------------------------
-
-def fetch_account_media(username: str) -> list:
-    """Fetch recent posts from a public Business/Creator account by username."""
-    status, data = graph_get(ACCOUNT_ID, {
-        "fields": "business_discovery.fields(media{id,caption,media_type,timestamp})",
-        "username": username,
-        "access_token": TOKEN,
-    })
-    if status >= 300:
-        print(f"[comment] @{username}: discovery failed ({status}): {data}",
-              file=sys.stderr)
-        return []
-    try:
-        return data["business_discovery"]["media"]["data"]
-    except (KeyError, TypeError):
-        print(f"[comment] @{username}: no media in response", file=sys.stderr)
-        return []
-
 
 def post_comment(media_id: str, text: str) -> str:
     status, data = graph_post(f"{media_id}/comments", {
-        "message": text,
+        "message":      text,
         "access_token": TOKEN,
     })
     if status >= 300 or "id" not in data:
@@ -253,67 +244,54 @@ def notify_discord(summary: str) -> None:
 # ------------------------------------------------------------
 
 def run() -> int:
-    ap = argparse.ArgumentParser(description="Comment on recent posts from target IG accounts.")
-    ap.add_argument("--accounts", help="Comma-sep usernames (no @). Overrides env/list.")
-    args = ap.parse_args()
+    argparse.ArgumentParser(description="Comment on specific IG posts from target_posts.json.").parse_args()
 
     if not DRY_RUN and (not TOKEN or not ACCOUNT_ID):
         print("[comment] IG_ACCESS_TOKEN and IG_BUSINESS_ACCOUNT_ID are required "
               "(or set IG_DRY_RUN=1).", file=sys.stderr)
         return 1
-    if not DRY_RUN and not ANTHROPIC_KEY:
+    if not DRY_RUN and not ANTH_KEY:
         print("[comment] ANTHROPIC_API_KEY is required (or set IG_DRY_RUN=1).",
               file=sys.stderr)
         return 1
 
-    raw_accounts = args.accounts or os.environ.get("IG_TARGET_ACCOUNTS") or ""
-    accounts = [a.strip().lstrip("@") for a in raw_accounts.split(",") if a.strip()] \
-               or TARGET_ACCOUNTS
+    if not POSTS_PATH.exists():
+        print(f"[comment] {POSTS_PATH} not found. Create it with your target post URLs.",
+              file=sys.stderr)
+        return 1
 
-    print(f"[comment] {'DRY RUN — ' if DRY_RUN else ''}target accounts: "
-          f"{', '.join('@' + a for a in accounts)}")
-    print(f"[comment] max comments per run: {MAX_COMMENTS}")
+    raw        = json.loads(POSTS_PATH.read_text())
+    all_posts  = [p for p in raw.get("posts", []) if "example" not in p.get("url", "")]
+
+    if not all_posts:
+        print("[comment] No posts in target_posts.json (remove the example entry and add real URLs).",
+              file=sys.stderr)
+        return 1
 
     already_commented = load_log()
-    candidates: list[dict] = []
 
-    for username in accounts:
-        if len(candidates) >= MAX_COMMENTS * 3:
-            break
-        print(f"[comment] fetching @{username}…")
-        media = fetch_account_media(username) if not DRY_RUN else [
-            {"id": f"fake-{username}-1", "caption": f"Just got the new iPhone in! Great condition.", "media_type": "IMAGE"},
-            {"id": f"fake-{username}-2", "caption": f"Trade in your old device today and get cash fast 💰", "media_type": "IMAGE"},
-        ]
-        for post in media:
-            mid = post.get("id")
-            if not mid or mid in already_commented:
-                continue
-            post["_account"] = username
-            candidates.append(post)
-        time.sleep(0.5)
+    # Filter already-commented by URL (use URL as the dedup key since we may not have media ID yet)
+    pending = [p for p in all_posts if p["url"] not in already_commented][:MAX_COMMENTS]
 
-    # Dedupe by media ID
-    seen: set[str] = set()
-    unique: list[dict] = []
-    for p in candidates:
-        if p["id"] not in seen:
-            seen.add(p["id"])
-            unique.append(p)
-
-    batch = unique[:MAX_COMMENTS]
-    print(f"[comment] {len(unique)} candidates found, will comment on {len(batch)}")
+    print(f"[comment] {'DRY RUN — ' if DRY_RUN else ''}"
+          f"{len(all_posts)} posts in config, {len(pending)} pending, "
+          f"max {MAX_COMMENTS} per run")
 
     succeeded = 0
     failures: list[str] = []
 
-    for post in batch:
-        mid = post["id"]
-        caption = post.get("caption", "")
-        label = f"@{post.get('_account')} media {mid} ({post.get('media_type', '?')})"
+    for entry in pending:
+        url     = entry["url"]
+        context = entry.get("context") or entry.get("note") or ""
+        label   = f"post {url}"
 
+        # Skip placeholder notes
+        if "replace" in context.lower():
+            context = ""
+
+        # Generate comment first
         try:
-            comment_text = generate_comment(caption)
+            comment_text = generate_comment(url, context)
         except Exception as e:
             print(f"[comment] SKIP {label}: generate failed: {e}", file=sys.stderr)
             failures.append(f"generate {label}: {e}")
@@ -321,26 +299,33 @@ def run() -> int:
 
         if DRY_RUN:
             print(f"[comment] PLAN {label}")
-            print(f"            caption: {caption[:80].replace(chr(10), ' ')}")
-            print(f"            comment: {comment_text}")
-            already_commented.add(mid)
+            print(f"            context : {context or '(none)'}")
+            print(f"            comment : {comment_text}")
+            already_commented.add(url)
             succeeded += 1
             continue
 
+        # Resolve URL → media ID
+        media_id = resolve_media_id(url)
+        if not media_id:
+            print(f"[comment] SKIP {label}: could not resolve media ID", file=sys.stderr)
+            failures.append(f"resolve {label}")
+            continue
+
         try:
-            comment_id = post_comment(mid, comment_text)
+            comment_id = post_comment(media_id, comment_text)
             print(f"[comment] OK {label} -> comment {comment_id}: {comment_text}")
-            already_commented.add(mid)
+            already_commented.add(url)
             succeeded += 1
         except Exception as e:
             print(f"[comment] FAIL {label}: {e}", file=sys.stderr)
             failures.append(f"{label}: {e}")
 
-        time.sleep(COMMENT_DELAY_S)
+        time.sleep(COMMENT_DELAY)
 
     save_log(already_commented)
 
-    summary = (f"PurchasingCorp IG comments: {succeeded}/{len(batch)} posted"
+    summary = (f"PurchasingCorp IG comments: {succeeded}/{len(pending)} posted"
                + (f", {len(failures)} failed" if failures else ""))
     print(f"[comment] {summary}")
     if failures:
@@ -348,7 +333,7 @@ def run() -> int:
     elif succeeded and not DRY_RUN:
         notify_discord(summary)
 
-    if batch and succeeded == 0:
+    if pending and succeeded == 0:
         return 2
     return 0
 
