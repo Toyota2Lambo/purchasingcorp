@@ -1,15 +1,17 @@
 {
   "date": "2026-06-15",
-  "file": "purchasingcorp-trust.mp4",
-  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-trust.mp4",
-  "local_path": "videos/purchasingcorp-trust.mp4",
-  "caption": "The price we quote is the price you get. 60-second quote, inspected within the hour, paid before bedtime. No surprise deductions, ever. Get your offer at purchasingcorp.com",
+  "file": "purchasingcorp-iphone.mp4",
+  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-iphone.mp4",
+  "local_path": "videos/purchasingcorp-iphone.mp4",
+  "caption": "Apple offers $650 for your iPhone. We pay $855. Same phone, same day, hundreds more in your pocket. Any model, any carrier. Get your real number at purchasingcorp.com",
   "hashtags": [
-    "sellyourtech",
+    "iphone",
+    "sellyouriphone",
+    "applealternative",
     "buyback",
-    "nolowball",
-    "getpaid",
-    "techresale"
+    "sellyourtech",
+    "techresale",
+    "getpaid"
   ],
   "cycle_position": "1 of pool size 8"
 }
