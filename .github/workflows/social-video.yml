@@ -1,6 +1,6 @@
 name: social · video
 
-# Posts ONE vault ad video per day to Instagram (Reels), Threads, X, and TikTok.
+# Posts 1-2 vault ad videos per day to Instagram (Reels), Threads, X, and TikTok.
 #
 # The MP4 pool lives in /videos (committed once, served by Vercel at
 # https://purchasingcorp.com/videos/<file>.mp4). Each run:
@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name "Toyota2Lambo"
           git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
-          git add videos/rotation_state.json videos/selection.json
+          git add videos/rotation_state.json videos/selection.json videos/selections.json
           if git diff --staged --quiet; then
             echo "no rotation change to commit"
           else
@@ -77,4 +77,4 @@ jobs:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           VIDEO_DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
           VIDEO_ONLY: ${{ github.event.inputs.only }}
-        run: python social/video_publisher.py
+        run: python social/video_publisher.py --all

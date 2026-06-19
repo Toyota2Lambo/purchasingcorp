@@ -43,6 +43,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 SELECTION = os.path.join(REPO, "videos", "selection.json")
+SELECTIONS = os.path.join(REPO, "videos", "selections.json")
 UA = "PurchasingCorp-Social/1.0"
 
 DRY_RUN = os.environ.get("VIDEO_DRY_RUN", "").lower() in ("1", "true", "yes") or "--dry-run" in sys.argv
@@ -310,27 +311,10 @@ def notify_discord(summary):
         pass
 
 
-def main():
-    args = sys.argv[1:]
-    only = os.environ.get("VIDEO_ONLY", "")
-    if "--only" in args:
-        only = args[args.index("--only") + 1]
-    sel_path = SELECTION
-    if "--file" in args:
-        sel_path = args[args.index("--file") + 1]
-    if not os.path.exists(sel_path):
-        print(f"[video] no selection at {sel_path}; run pick_daily_video.py first", file=sys.stderr)
-        return 1
-    sel = json.load(open(sel_path))
-
-    chosen = {p.strip().lower() for p in only.split(",") if p.strip()} if only else None
-    runners = [(name, fn) for name, fn in ORDER
-               if (not chosen or name in chosen or (name == "x" and "twitter" in chosen)
-                   or (name == "instagram" and "ig" in chosen))]
-
+def publish_one(sel, runners):
+    """Post a single selection to every runner; returns (results, failed)."""
     print(f"[video] {sel['date']} → {sel['file']}  ({sel['video_url']})")
     print(f"[video] {'DRY RUN — ' if DRY_RUN else ''}posting to: {', '.join(n for n, _ in runners)}")
-
     results, failed = [], 0
     for name, fn in runners:
         try:
@@ -342,10 +326,47 @@ def main():
         results.append((plat, status, detail))
         if status == "error":
             failed += 1
-
     summary = (f"📹 PurchasingCorp video — {sel['file']} ({sel['date']})\n" +
                "\n".join(f"{p}: {s}" for p, s, _ in results))
     notify_discord(summary)
+    return results, failed
+
+
+def load_selections(args):
+    """All selections to post: --all → selections.json list; --file → that one;
+    else selection.json (single). Always returns a list."""
+    if "--all" in args:
+        if os.path.exists(SELECTIONS):
+            return json.load(open(SELECTIONS))
+        if os.path.exists(SELECTION):           # fall back to the single pick
+            return [json.load(open(SELECTION))]
+        return []
+    sel_path = args[args.index("--file") + 1] if "--file" in args else SELECTION
+    return [json.load(open(sel_path))] if os.path.exists(sel_path) else []
+
+
+def main():
+    args = sys.argv[1:]
+    only = os.environ.get("VIDEO_ONLY", "")
+    if "--only" in args:
+        only = args[args.index("--only") + 1]
+
+    sels = load_selections(args)
+    if not sels:
+        print("[video] no selection(s); run pick_daily_video.py first", file=sys.stderr)
+        return 1
+
+    chosen = {p.strip().lower() for p in only.split(",") if p.strip()} if only else None
+    runners = [(name, fn) for name, fn in ORDER
+               if (not chosen or name in chosen or (name == "x" and "twitter" in chosen)
+                   or (name == "instagram" and "ig" in chosen))]
+
+    failed = 0
+    for i, sel in enumerate(sels):
+        if i:
+            print()
+        _, f = publish_one(sel, runners)
+        failed += f
     return 1 if failed else 0
 
 
