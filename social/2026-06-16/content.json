@@ -1,0 +1,648 @@
+{
+  "generated_at": "2026-06-16T18:13:14.550527+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "unlocked vs. carrier-locked: why it changes your offer",
+    "comparison_angle": "same-day cash vs. mail-in services that pay later",
+    "featured_label": "iPhone"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-16T18:12:03.693Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "hero offer",
+        "caption": "iPhone 17 Pro Max, 2TB, unlocked? That's $1,241 cash today. Same-day payout, no games, no store credit. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#iphone17promax",
+          "#applebuyback",
+          "#sellphone",
+          "#cashforphones",
+          "#iphonetradeinn",
+          "#selliphone17",
+          "#buybackprogram",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#iphonecash",
+          "#phonebuyback",
+          "#appletradeinn",
+          "#sameidaycash",
+          "#selltech",
+          "#cashforelectronics",
+          "#techbuyback",
+          "#usediphone",
+          "#sellmyapple",
+          "#instantcash",
+          "#iphoneresale",
+          "#applecash",
+          "#tradeinphone",
+          "#quickcash",
+          "#phoneresale",
+          "#cashtoday"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "iPhone 17 Pro Max · 2TB",
+              "headline_html": "Unlocked? <em>$1,241 cash</em> today.",
+              "sub_html": "More than Apple, more than Best Buy. A real number, not a vague 'up to'.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Flawless to Fair"
+            }
+          }
+        ]
+      },
+      {
+        "role": "price board",
+        "caption": "iPhone 17 pricing, no guessing. These are the real numbers you'll see today. Unlocked models pay more. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#iphonepricing",
+          "#sellmyiphone",
+          "#iphone17",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#iphone17pro",
+          "#iphone17promax",
+          "#applebuyback",
+          "#sellphone",
+          "#iphonecash",
+          "#phonebuyback",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#iphonetradeinn",
+          "#sellmytech",
+          "#appletradeinn",
+          "#techbuyback",
+          "#usediphone",
+          "#sellmyapple",
+          "#phoneresale",
+          "#tradeinphone",
+          "#iphoneresale",
+          "#applecash",
+          "#sameidaycash",
+          "#cashtoday",
+          "#quickcash",
+          "#instantcash",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "Current iPhone 17 Pricing",
+              "title_html": "What we pay <em>right now</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2TB",
+                  "price": "$1,241",
+                  "note": "Unlocked"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1TB",
+                  "price": "$1,050",
+                  "note": "Unlocked"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512GB",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256GB",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1TB",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512GB",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "Prices for unlocked, flawless units. Carrier-locked phones quoted separately."
+            }
+          }
+        ]
+      },
+      {
+        "role": "educational carousel",
+        "caption": "Unlocked vs. carrier-locked: why it changes your offer. Unlocked phones are worth more because they work on any network. Check your status before you quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#unlockedphone",
+          "#carrierunlock",
+          "#sellmyiphone",
+          "#iphoneunlocked",
+          "#phonebuyback",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#sellphone",
+          "#applebuyback",
+          "#unlockedvscarrierlocked",
+          "#phonetradeinn",
+          "#iphonecash",
+          "#cashforphones",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#techbuyback",
+          "#iphonetradeinn",
+          "#phonetips",
+          "#selliphone",
+          "#appletradeinn",
+          "#usediphone",
+          "#phoneresale",
+          "#sellmyapple",
+          "#tradeinphone",
+          "#iphoneresale",
+          "#cashtoday",
+          "#sameidaycash",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "What it means",
+              "eyebrow": "Unlocked vs. Carrier-Locked",
+              "headline_html": "<em>Unlocked</em> works on any carrier",
+              "body_html": "An unlocked iPhone can jump between AT&T, Verizon, T-Mobile, or any global network. A <strong>carrier-locked phone is tied to one carrier</strong> until you pay it off or request an unlock."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Why it matters",
+              "eyebrow": "Unlocked vs. Carrier-Locked",
+              "headline_html": "Unlocked phones are <em>worth more</em>",
+              "body_html": "Buyers pay a premium for flexibility. An unlocked device has a bigger resale market, so <strong>your cash offer is higher</strong>. Carrier-locked phones still have value, just less."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "How to check",
+              "eyebrow": "Unlocked vs. Carrier-Locked",
+              "headline_html": "Check in <em>Settings</em> before you sell",
+              "body_html": "Go to Settings > General > About > Carrier Lock. If it says <strong>No SIM restrictions</strong>, you're unlocked. If it shows a carrier name, it's locked. Quote accordingly."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Get your quote",
+              "eyebrow": "Unlocked vs. Carrier-Locked",
+              "headline_html": "Tell us your <em>status</em>, get paid today",
+              "body_html": "Our form asks for lock status so you get an accurate number. <strong>Unlocked or not, we buy both.</strong> Same-day payout either way. Start at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "payout proof",
+        "caption": "iPhone 17 Pro Max, 1TB, flawless. Quoted Friday morning, paid Friday afternoon. Same-day payout, no waiting. Get yours at purchasingcorp.com.",
+        "hashtags": [
+          "#sameidaypayout",
+          "#cashforiphone",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#paidtoday",
+          "#proofofpayment",
+          "#applebuyback",
+          "#cashforphones",
+          "#phonebuyback",
+          "#electronicsbuyback",
+          "#sellphone",
+          "#iphonecash",
+          "#quickcash",
+          "#instantcash",
+          "#sellmytech",
+          "#techbuyback",
+          "#iphonetradeinn",
+          "#appletradeinn",
+          "#usediphone",
+          "#phoneresale",
+          "#tradeinphone",
+          "#sellmyapple",
+          "#cashtoday",
+          "#fastpayout",
+          "#nochecks",
+          "#realcash",
+          "#trustedbuyer",
+          "#legitimatebuyer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT",
+              "slip_title": "Payout Receipt",
+              "slip_ref": "PC-20260616-1847",
+              "device": "iPhone 17 Pro Max 1TB",
+              "condition": "Flawless",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$1,050",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "comparison",
+        "caption": "Same-day cash vs. mail-in services that pay you next week or later. We pay the same day your device arrives. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sameidaycash",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#phonebuyback",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#quickcash",
+          "#instantcash",
+          "#sellphone",
+          "#nochecks",
+          "#fastpayout",
+          "#sameidaypayout",
+          "#sellmytech",
+          "#techbuyback",
+          "#phoneresale",
+          "#tradeinphone",
+          "#iphonecash",
+          "#cashforphones",
+          "#usediphone",
+          "#sellmyapple",
+          "#appletradeinn",
+          "#iphonetradeinn",
+          "#trustedbuyer",
+          "#legitimatebuyer",
+          "#bestbuyback",
+          "#betterthantradein"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARE",
+              "eyebrow": "Same-Day Cash vs. Mail-In Services",
+              "title_html": "We pay <em>today</em>, not next week",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (same-day)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical mail-in service",
+                  "value": "~$850",
+                  "pct": 87,
+                  "kind": "alt"
+                },
+                {
+                  "label": "Paid 7-10 days later",
+                  "value": "~$850",
+                  "pct": 87,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Rival figures are typical estimates for a comparable iPhone 17 Pro Max 512GB. We pay the same day your device arrives."
+            }
+          }
+        ]
+      },
+      {
+        "role": "photo post",
+        "caption": "That iPhone in your drawer is cash today. Flawless or fair, unlocked or locked, we buy it and pay same-day. Start your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#phonebuyback",
+          "#applebuyback",
+          "#cashforphones",
+          "#sellphone",
+          "#electronicsbuyback",
+          "#iphonecash",
+          "#usediphone",
+          "#sellmytech",
+          "#techbuyback",
+          "#phoneresale",
+          "#tradeinphone",
+          "#iphonetradeinn",
+          "#appletradeinn",
+          "#sellmyapple",
+          "#cashtoday",
+          "#sameidaycash",
+          "#quickcash",
+          "#instantcash",
+          "#oldphone",
+          "#upgradetime",
+          "#phoneupgrade",
+          "#drawerphone",
+          "#unusedphone",
+          "#fastcash",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "Drawer phone?",
+              "headline_html": "That's <em>cash today</em>.",
+              "deck_html": "Flawless or fair, unlocked or locked. Same-day payout, no games.",
+              "photo_url": "https://images.unsplash.com/photo-1591631368886-bb78ae96ee13?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMnx8Z2FtaW5nJTIwY29uc29sZSUyMGNsb3NlJTIwdXB8ZW58MXwwfHx8MTc4MTYzMzU5M3ww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "index grid",
+        "caption": "Six categories, real payouts, same-day cash. iPhones, MacBooks, Apple Watch, consoles, and more. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforelectronics",
+          "#techbuyback",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#sellmacbook",
+          "#cashforiphone",
+          "#phonebuyback",
+          "#consolebuyback",
+          "#sellconsole",
+          "#sellmyapplewatch",
+          "#sellmymac",
+          "#cashforphones",
+          "#iphonebuyback",
+          "#macbookbuyback",
+          "#applewatchbuyback",
+          "#cashtoday",
+          "#sameidaycash",
+          "#quickcash",
+          "#instantcash",
+          "#tradeintech",
+          "#selltech",
+          "#usedelectronics",
+          "#buybackprogram",
+          "#trustedbuyer",
+          "#legitimatebuyer",
+          "#bestbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "INDEX",
+              "eyebrow": "What We Buy",
+              "title_html": "Six categories, <em>same-day cash</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Accessories",
+                  "num": "Contact",
+                  "foot": "quote-only",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Real payouts for flawless, unlocked units. Quote your device at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "lifestyle post",
+        "caption": "Upgrade without the wait. Sell your old gear, get cash today, buy the new model tonight. Same-day payout makes it simple. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#upgradenow",
+          "#sellmytech",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#techbuyback",
+          "#sellmyiphone",
+          "#sellmacbook",
+          "#applebuyback",
+          "#phonebuyback",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#sameidaycash",
+          "#cashtoday",
+          "#quickcash",
+          "#instantcash",
+          "#sellphone",
+          "#sellmyapple",
+          "#phoneupgrade",
+          "#techupgrade",
+          "#newphone",
+          "#upgradetime",
+          "#fastcash",
+          "#nochecks",
+          "#tradeintech",
+          "#selltech",
+          "#usedelectronics",
+          "#realcash",
+          "#trustedbuyer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "LIFESTYLE",
+              "eyebrow": "Upgrade Without the Wait",
+              "headline_html": "Sell today, <em>buy tonight</em>.",
+              "sub_html": "Same-day payout means your old gear turns into cash before dinner. No waiting, no store credit, no games.",
+              "photo_url": "https://images.unsplash.com/photo-1600861194942-f883de0dfe96?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwyfHxYYm94JTIwZ2FtZSUyMGNvbnNvbGV8ZW58MXwwfHx8MTc4MTYzMzU5M3ww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "mac mini offer",
+        "caption": "Mac Mini MCX44LL/A PRO, 24GB, 512GB. That's $675 cash, same day. More than Apple, more than Best Buy. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacmini",
+          "#macminibuyback",
+          "#cashformac",
+          "#macbuyback",
+          "#applebuyback",
+          "#sellmymac",
+          "#macminicash",
+          "#sellmytech",
+          "#electronicsbuyback",
+          "#techbuyback",
+          "#appletradeinn",
+          "#mactradeinn",
+          "#cashforelectronics",
+          "#sameidaycash",
+          "#cashtoday",
+          "#quickcash",
+          "#instantcash",
+          "#usedmac",
+          "#sellmyapple",
+          "#applecash",
+          "#macresale",
+          "#tradeinnmac",
+          "#macpro",
+          "#macstudio",
+          "#fastcash",
+          "#realcash",
+          "#trustedbuyer",
+          "#legitimatebuyer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Mac Mini · MCX44LL/A PRO",
+              "headline_html": "24GB, 512GB? <em>$675 cash</em> today.",
+              "sub_html": "Same-day payout, no store credit, no waiting. A real number, not a vague 'up to'.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Flawless to Fair"
+            }
+          }
+        ]
+      },
+      {
+        "role": "apple watch offer",
+        "caption": "Apple Watch Ultra 3, 49mm, Milanese loop. That's $473 cash today, same-day payout. Get your real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#sellmyapplewatch",
+          "#applewatchcash",
+          "#watchbuyback",
+          "#applewatchtradeinn",
+          "#sellmytech",
+          "#electronicsbuyback",
+          "#techbuyback",
+          "#appletradeinn",
+          "#cashforelectronics",
+          "#applewatchultra",
+          "#sameidaycash",
+          "#cashtoday",
+          "#quickcash",
+          "#instantcash",
+          "#usedapplewatch",
+          "#sellmyapple",
+          "#applecash",
+          "#watchresale",
+          "#tradeinnwatch",
+          "#applewatchtrade",
+          "#fastcash",
+          "#realcash",
+          "#trustedbuyer",
+          "#legitimatebuyer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Apple Watch Ultra 3 · 49mm",
+              "headline_html": "Milanese loop? <em>$473 cash</em> today.",
+              "sub_html": "More than Apple, more than Best Buy. Same-day payout, no games.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Flawless to Fair"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 16",
+          "date_label": "2026",
+          "section": "IPHONE BUYBACK",
+          "headline_html": "<em>Unlocked</em> pays more",
+          "deck_html": "Why carrier status changes your cash offer.",
+          "photo_url": "https://images.unsplash.com/photo-1693346223942-e692c7528486?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw4fHxYYm94JTIwY29udHJvbGxlciUyMG9uJTIwYSUyMHRhYmxlfGVufDF8MXx8fDE3ODE2MzM1OTR8MA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Same-Day Payout",
+          "stat_value": "$1,241",
+          "stat_unit": "",
+          "caption_html": "Top payout for an <em>unlocked</em> iPhone 17 Pro Max, 2TB. Paid today.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}

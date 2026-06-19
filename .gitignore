@@ -16,3 +16,6 @@ pricing-engine/data/
 pricing-engine/out/
 # ...but keep the env TEMPLATE (the .env.* rule above would hide it)
 !pricing-engine/.env.example
+
+# ux-audit — local only, never pushed
+ux-audit/

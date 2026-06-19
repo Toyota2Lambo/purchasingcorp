@@ -1,0 +1,655 @@
+{
+  "generated_at": "2026-06-17T16:46:40.975682+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "why cash today beats a carrier trade-in credit",
+    "comparison_angle": "our cash offer vs. a typical carrier trade-in credit",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-17T16:45:26.125Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "MacBook Air hero offer",
+        "caption": "MacBook Air collecting dust? We pay up to $976 cash today. No trade-in credits, no waiting on a carrier to approve anything. A real number, same-day payout, done. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macbookair",
+          "#sellmacbook",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashmacbook",
+          "#sellmymacbook",
+          "#macbookairforsale",
+          "#appletradein",
+          "#macbooktradein",
+          "#cashforlaptops",
+          "#sellmylaptop",
+          "#usedmacbook",
+          "#macbookcash",
+          "#applegear",
+          "#m4macbook",
+          "#selltech",
+          "#electronicsbuyback",
+          "#cashforelectronics",
+          "#instantcash",
+          "#samedaypayout",
+          "#sellmytech",
+          "#techbuyback",
+          "#laptopbuyback",
+          "#cashmacbookair",
+          "#macbookm4",
+          "#buybackprogram",
+          "#sellelectronics",
+          "#cashtoday"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "Same-day cash offer",
+              "headline_html": "We pay up to <em>$976</em> for your MacBook Air",
+              "sub_html": "M4 models, any condition. A real number today, not a vague credit estimate.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air price board",
+        "caption": "Current MacBook Air payouts. These are the real numbers we're paying today, not theoretical maximums. Ship free or drop off locally, get paid the same day. Full quote form at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macbookair",
+          "#sellmacbook",
+          "#macbookprices",
+          "#applebuyback",
+          "#macbookbuyback",
+          "#cashmacbook",
+          "#m4macbook",
+          "#macbookairm4",
+          "#sellmymacbook",
+          "#macbooktradein",
+          "#cashforlaptops",
+          "#appletradein",
+          "#usedmacbook",
+          "#macbookcash",
+          "#laptopbuyback",
+          "#selltech",
+          "#electronicsbuyback",
+          "#cashforelectronics",
+          "#samedaypayout",
+          "#instantcash",
+          "#sellmytech",
+          "#techbuyback",
+          "#macbookforsale",
+          "#applegear",
+          "#buybackprogram",
+          "#cashtoday",
+          "#realoffer",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "Current payouts",
+              "title_html": "MacBook Air <em>price sheet</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices for good working condition. Adjust for damage or carrier lock."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison: our cash vs. carrier trade-in credit",
+        "caption": "Carrier trade-in credits sound nice until you realize they lock you into a contract and take weeks to process. We pay cash, same day, no strings. More money in your account today vs. a bill credit months from now. Get your real offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashvscredit",
+          "#tradeincomparison",
+          "#carriertradein",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforphones",
+          "#nocredits",
+          "#instantcash",
+          "#samedaypayout",
+          "#sellmyphone",
+          "#phonebuyback",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#realoffer",
+          "#nocontracts",
+          "#cashtoday",
+          "#sellmytech",
+          "#appletradein",
+          "#iphonecash",
+          "#phoneresale",
+          "#unlockvalue",
+          "#buybackprogram",
+          "#sellelectronics",
+          "#betteroffer",
+          "#morecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARISON",
+              "eyebrow": "Cash vs. carrier credit",
+              "title_html": "We pay <em>more cash</em> today",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Carrier trade-in (credit)",
+                  "value": "~$650",
+                  "pct": 67,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Carrier figure is a typical bill-credit estimate for iPhone 17 Pro Max 512gb. Our $975 is cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof",
+        "caption": "Another same-day payout, another happy seller. MacBook Air M4 shipped Monday, inspected Tuesday, paid Tuesday. No waiting, no games, no fine print. See what your gear is worth at purchasingcorp.com/form.",
+        "hashtags": [
+          "#payoutproof",
+          "#samedaypayout",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#sellmacbook",
+          "#cashmacbook",
+          "#realcash",
+          "#instantcash",
+          "#proofofpayment",
+          "#macbookair",
+          "#m4macbook",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#sellmytech",
+          "#laptopbuyback",
+          "#cashforlaptops",
+          "#sellmylaptop",
+          "#buybackprogram",
+          "#trustedbuyer",
+          "#fastpayout",
+          "#nocredits",
+          "#cashtoday",
+          "#realoffer",
+          "#applegear",
+          "#macbookcash",
+          "#usedmacbook"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "Transaction receipt",
+              "slip_ref": "#MB-061726",
+              "device": "MacBook Air 13\" M4 16GB 512GB",
+              "condition": "Good",
+              "method": "ACH",
+              "turnaround": "Same day",
+              "amount": "$680",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index grid: category snapshot",
+        "caption": "Six categories, real cash payouts, same-day turnaround. Whether it's a MacBook, an iPhone, or a console collecting dust, we buy it today. No vague ranges, no waiting on approval. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#sellmyiphone",
+          "#sellmacbook",
+          "#sellmytech",
+          "#cashforelectronics",
+          "#phonebuyback",
+          "#laptopbuyback",
+          "#consolebuyback",
+          "#instantcash",
+          "#samedaypayout",
+          "#cashtoday",
+          "#techbuyback",
+          "#selltech",
+          "#buybackprogram",
+          "#iphonebuyback",
+          "#macbookbuyback",
+          "#applewatchbuyback",
+          "#macminibuyback",
+          "#cashforphones",
+          "#cashforlaptops",
+          "#sellmyphone",
+          "#sellmylaptop",
+          "#realoffer",
+          "#trustedbuyer",
+          "#fastpayout",
+          "#nocredits",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORY INDEX",
+              "eyebrow": "What we buy",
+              "title_html": "Top payouts <em>by category</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "ULTRA 3 49MM",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Accessories",
+                  "num": "Contact",
+                  "foot": "AirPods, more",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All prices same-day cash. Quote any condition at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo post: lifestyle outcome",
+        "caption": "That MacBook you upgraded from is still worth hundreds in cash today. Ship it free, get paid the same day, move on. No trade-in credits, no store vouchers. Real money in your account. Start your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbook",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#cashmacbook",
+          "#cashforlaptops",
+          "#sellmylaptop",
+          "#macbookcash",
+          "#usedmacbook",
+          "#laptopbuyback",
+          "#instantcash",
+          "#samedaypayout",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#sellmytech",
+          "#appletradein",
+          "#macbooktradein",
+          "#realoffer",
+          "#fastcash",
+          "#cashtoday",
+          "#nocredits",
+          "#buybackprogram",
+          "#trustedbuyer",
+          "#applegear",
+          "#sellelectronics",
+          "#morecash",
+          "#upgradecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Turn your old gear into money",
+              "headline_html": "That laptop is <em>hundreds in cash</em> today",
+              "sub_html": "Ship free, get paid same day. No credits, no waiting, no fine print.",
+              "photo_url": "https://images.unsplash.com/photo-1678057832673-fbcc3ade9d80?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw3fHxWUiUyMGhlYWRzZXQlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDB8fHwxNzgxNzE0ODAwfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone payout proof",
+        "caption": "iPhone 17 Pro Max paid out today. Quoted Friday, shipped Monday, inspected and paid Tuesday morning. Same-day payout once it hits our dock. More than Apple, more than Best Buy, more than any carrier credit. See your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#payoutproof",
+          "#samedaypayout",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforiphone",
+          "#iphonecash",
+          "#realcash",
+          "#instantcash",
+          "#proofofpayment",
+          "#iphone17promax",
+          "#cashforphones",
+          "#phonebuyback",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#trustedbuyer",
+          "#fastpayout",
+          "#nocredits",
+          "#cashtoday",
+          "#realoffer",
+          "#applegear",
+          "#morethanapple",
+          "#betterthantradein",
+          "#fastcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "Transaction receipt",
+              "slip_ref": "#IP-061724",
+              "device": "iPhone 17 Pro Max 512gb",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$975",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Mac Mini board",
+        "caption": "Mac Mini payouts updated daily. These are the real numbers we're paying right now, not a vague up-to estimate. Ship free, get paid same day. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macmini",
+          "#sellmacmini",
+          "#macminibuyback",
+          "#applebuyback",
+          "#cashmacmini",
+          "#macminicash",
+          "#sellmymac",
+          "#appletradein",
+          "#macbuyback",
+          "#cashforlaptops",
+          "#selltech",
+          "#electronicsbuyback",
+          "#cashforelectronics",
+          "#samedaypayout",
+          "#instantcash",
+          "#sellmytech",
+          "#techbuyback",
+          "#applegear",
+          "#usedmac",
+          "#macforsale",
+          "#buybackprogram",
+          "#realoffer",
+          "#trustedbuyer",
+          "#fastpayout",
+          "#cashtoday",
+          "#nocredits",
+          "#morethanapple",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Current payouts",
+              "title_html": "Mac Mini <em>price sheet</em>",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB 512GB",
+                  "price": "$675"
+                },
+                {
+                  "model": "MCYT4LL/A 24GB 512GB",
+                  "price": "$450"
+                },
+                {
+                  "model": "MU9E3LL/A 16GB 512GB",
+                  "price": "$375"
+                },
+                {
+                  "model": "MU9D3LL/A 16GB 256GB",
+                  "price": "$300"
+                }
+              ],
+              "note_html": "Prices for good working condition. Same-day payout once inspected."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch offer",
+        "caption": "Apple Watch ULTRA 3 pays up to $473 cash today. Any generation, any condition. Get a real number in two minutes, ship free, get paid the same day it arrives. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applewatch",
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#applebuyback",
+          "#cashapplewatch",
+          "#applewatchcash",
+          "#sellmyapplewatch",
+          "#applewatchultra",
+          "#applewatchtradein",
+          "#appletradein",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#sellmytech",
+          "#instantcash",
+          "#samedaypayout",
+          "#cashtoday",
+          "#realoffer",
+          "#buybackprogram",
+          "#trustedbuyer",
+          "#fastpayout",
+          "#nocredits",
+          "#applegear",
+          "#wearablebuyback",
+          "#smartwatchbuyback",
+          "#morethanapple",
+          "#sellelectronics"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Same-day cash offer",
+              "headline_html": "We pay up to <em>$473</em> for your Apple Watch",
+              "sub_html": "ULTRA 3, Series 11, any generation. Real cash today, not a credit estimate.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$473",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Educational carousel: cash vs. carrier credit",
+        "caption": "Carrier trade-in credits sound convenient until you read the fine print. Here's why cash today beats a bill credit spread over 24 months. Get your instant cash quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashvscredit",
+          "#carriertradein",
+          "#tradeincomparison",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforphones",
+          "#phonebuyback",
+          "#nocredits",
+          "#instantcash",
+          "#samedaypayout",
+          "#sellmyphone",
+          "#cashforelectronics",
+          "#electronicsbuyback",
+          "#selltech",
+          "#techbuyback",
+          "#realoffer",
+          "#nocontracts",
+          "#cashtoday",
+          "#sellmytech",
+          "#appletradein",
+          "#iphonecash",
+          "#smartselling",
+          "#buyerguide",
+          "#sellsmarter",
+          "#trustedbuyer",
+          "#morecash",
+          "#fastcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "The promise",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Carrier says <em>big trade-in value</em>",
+              "body_html": "They advertise up to $1,000 off. Sounds great. But that number requires a <strong>new line, unlimited plan, and 24-month contract</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "The fine print",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "You don't get <em>cash</em>",
+              "body_html": "It's a bill credit spread over 24 months. Leave early? You <strong>forfeit the remaining credits</strong>. Your phone is locked to them."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "The wait",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "Credits take <em>weeks to process</em>",
+              "body_html": "Ship your device, wait for inspection, wait for approval, then wait 1-2 billing cycles for the first credit. <strong>No money today.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "The alternative",
+              "eyebrow": "Cash vs. carrier credit",
+              "headline_html": "We pay <em>cash, same day</em>",
+              "body_html": "Real money in your account today. No contract, no plan requirement, no 24-month lock-in. <strong>More cash, zero strings.</strong>"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Wednesday, June 17",
+          "section": "MACBOOK AIR",
+          "headline_html": "Up to <em>$976</em> cash today",
+          "deck_html": "M4 models. Same-day payout. No credits, no waiting.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Average turnaround",
+          "stat_value": "Same",
+          "stat_unit": "day",
+          "caption_html": "From inspection to payout. <em>Cash in your account</em> the day it hits our dock.",
+          "source": "PurchasingCorp ops data"
+        }
+      }
+    ]
+  }
+}

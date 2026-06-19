@@ -1,0 +1,9 @@
+{
+  "_comment": "Add Instagram post URLs you want to comment on. Copy the link from any public post.",
+  "posts": [
+    {
+      "url": "https://www.instagram.com/p/EXAMPLE1/",
+      "note": "example — replace with a real post URL"
+    }
+  ]
+}
