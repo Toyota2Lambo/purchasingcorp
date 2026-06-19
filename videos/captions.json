@@ -1,157 +1,352 @@
 {
   "_comment": "Daily video pool for the autoposter. `pick_daily_video.py` rotates through `pool` in order, never repeating a clip until the whole pool has cycled. Edit captions/hashtags freely; add new entries when you render more videos into ~/videos/_vault and copy them here.",
   "base_url": "https://purchasingcorp.com/videos",
-  "default_hashtags": ["sellyourtech", "buyback", "techresale", "getpaid"],
+  "default_hashtags": [
+    "sellyourtech",
+    "buyback",
+    "techresale",
+    "getpaid"
+  ],
   "pool": [
     {
       "file": "purchasingcorp-ugc-brandon.mp4",
       "caption": "I had an old iPhone sitting in my drawer for a YEAR. PurchasingCorp quoted me in 60 seconds and paid me $855 the same day — Zelle, Cash App, whatever you want. If you've got old tech lying around, get a quote at purchasingcorp.com",
-      "hashtags": ["sellyourtech", "sellyouriphone", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "sellyouriphone",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-caroline.mp4",
       "caption": "That old phone in your drawer is worth real money. 60-second quote, cash the same day — I got $855. Stop letting it collect dust and get yours at purchasingcorp.com",
-      "hashtags": ["sellyourtech", "extracash", "declutter", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "extracash",
+        "declutter",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-marcus.mp4",
       "caption": "Don't toss your old devices — they're worth cash. I got a 60-second quote and $855 the same day, paid however I wanted. Old phones, laptops, tablets, consoles. purchasingcorp.com",
-      "hashtags": ["sellyourtech", "buyback", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "buyback",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-trust.mp4",
       "caption": "The price we quote is the price you get. 60-second quote, inspected within the hour, paid before bedtime. No surprise deductions, ever. Get your offer at purchasingcorp.com",
-      "hashtags": ["sellyourtech", "buyback", "nolowball", "getpaid"]
+      "hashtags": [
+        "sellyourtech",
+        "buyback",
+        "nolowball",
+        "getpaid"
+      ]
     },
     {
       "file": "purchasingcorp-iphone.mp4",
       "caption": "Apple offers $650 for your iPhone. We pay $855. Same phone, same day, hundreds more in your pocket. Any model, any carrier. Get your real number at purchasingcorp.com",
-      "hashtags": ["iphone", "sellyouriphone", "applealternative", "buyback"]
+      "hashtags": [
+        "iphone",
+        "sellyouriphone",
+        "applealternative",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-gpu.mp4",
       "caption": "That GPU collecting dust is worth real money. We pay top dollar for RTX cards, mining rigs and whole lots. 60-second quote, cash the same day. purchasingcorp.com",
-      "hashtags": ["gpu", "rtx", "sellyourgpu", "pcbuild"]
+      "hashtags": [
+        "gpu",
+        "rtx",
+        "sellyourgpu",
+        "pcbuild"
+      ]
     },
     {
       "file": "purchasingcorp-macbook.mp4",
       "caption": "Your old MacBook is worth more than you think — up to $595 more than the trade-in counter. MacBook Pros, Airs, even older ones. 60-second quote, paid same day. purchasingcorp.com",
-      "hashtags": ["macbook", "sellyourmac", "apple", "buyback"]
+      "hashtags": [
+        "macbook",
+        "sellyourmac",
+        "apple",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-console.mp4",
       "caption": "That console you stopped playing? Someone's paying cash for it today. PS5, Xbox, Switch, Steam Deck — we buy them all. 60-second quote, money same day. purchasingcorp.com",
-      "hashtags": ["ps5", "xbox", "nintendoswitch", "sellyourconsole"]
+      "hashtags": [
+        "ps5",
+        "xbox",
+        "nintendoswitch",
+        "sellyourconsole"
+      ]
     },
     {
       "file": "purchasingcorp-camera.mp4",
       "caption": "That camera losing value in your bag? Bodies, lenses, the whole kit — we buy it all at real market prices. No lowball trade-in nonsense. 60-second quote, same-day cash. purchasingcorp.com",
-      "hashtags": ["camera", "sellyourgear", "photography", "buyback"]
+      "hashtags": [
+        "camera",
+        "sellyourgear",
+        "photography",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-tablet.mp4",
       "caption": "That tablet you never use is worth real cash. iPads, Galaxy Tabs, any tablet — we pay top dollar, same day. 60-second quote at purchasingcorp.com",
-      "hashtags": ["ipad", "selltablet", "tablet", "buyback"]
+      "hashtags": [
+        "ipad",
+        "selltablet",
+        "tablet",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-phone-deal.mp4",
       "caption": "Don't let Apple lowball your iPhone. They offer $650 — we pay $855, money the same day, your choice of Zelle, Cash App or Venmo. purchasingcorp.com",
-      "hashtags": ["iphone", "sellyouriphone", "getpaid", "buyback"]
+      "hashtags": [
+        "iphone",
+        "sellyouriphone",
+        "getpaid",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-review-iphone-17-pro-max.mp4",
       "caption": "iPhone 17 Pro Max review: the best phone money can buy — 9/10. A19 Pro chip, the brightest 120Hz screen yet, real all-day battery. Best part? It holds its value. See what your current iPhone is still worth at purchasingcorp.com",
-      "hashtags": ["iphone17promax", "techreview", "shouldyoubuy", "resalevalue"]
+      "hashtags": [
+        "iphone17promax",
+        "techreview",
+        "shouldyoubuy",
+        "resalevalue"
+      ]
     },
     {
       "file": "purchasingcorp-review-top5-phones.mp4",
       "caption": "The 5 best phones you can buy right now — ranked. From the Pixel 10 Pro to the iPhone 17 Pro Max at #1. Thinking of upgrading? Find out what your old phone is worth first at purchasingcorp.com",
-      "hashtags": ["bestphones", "top5", "techreview", "phonetok"]
+      "hashtags": [
+        "bestphones",
+        "top5",
+        "techreview",
+        "phonetok"
+      ]
     },
     {
       "file": "purchasingcorp-review-macbook-pro-m4.mp4",
       "caption": "MacBook Pro M4 review: the pro laptop to beat — 9.2/10. Silent, blistering M4 Pro performance, a stunning 1600-nit display and a 24-hour battery. And it holds its value better than almost anything. Check yours at purchasingcorp.com",
-      "hashtags": ["macbookpro", "m4", "techreview", "resalevalue"]
+      "hashtags": [
+        "macbookpro",
+        "m4",
+        "techreview",
+        "resalevalue"
+      ]
     },
     {
       "file": "purchasingcorp-pov-overpay.mp4",
       "caption": "POV: you're about to pay full price for a new phone — and nobody's told you what the one in your pocket is still worth. Spoiler: it's hundreds. Check before you buy at purchasingcorp.com",
-      "hashtags": ["sellyouriphone", "techtok", "moneytok", "buyback"]
+      "hashtags": [
+        "sellyouriphone",
+        "techtok",
+        "moneytok",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-react-hottake.mp4",
       "caption": "\"Flagship phones aren't worth it.\" Wrong. They're worth it when they hold their value — and the good ones still pay you over $1,000 back. Proof at purchasingcorp.com",
-      "hashtags": ["iphone", "techreview", "resalevalue", "sellyourtech"]
+      "hashtags": [
+        "iphone",
+        "techreview",
+        "resalevalue",
+        "sellyourtech"
+      ]
     },
     {
       "file": "purchasingcorp-show-dont-say.mp4",
       "caption": "Brand new: $1,199. Thirty days later, still worth $1,319 to the right buyer. That gap is the whole game. See what yours is worth at purchasingcorp.com",
-      "hashtags": ["resalevalue", "techtok", "sellyourtech", "moneytips"]
+      "hashtags": [
+        "resalevalue",
+        "techtok",
+        "sellyourtech",
+        "moneytips"
+      ]
     },
     {
       "file": "purchasingcorp-top5-value-laptops.mp4",
       "caption": "The 5 laptops that actually hold their value — ranked. The MacBook Pro M4 Max takes #1. Thinking of buying or selling one? Check the real resale number at purchasingcorp.com",
-      "hashtags": ["bestlaptops", "macbookpro", "top5", "resalevalue"]
+      "hashtags": [
+        "bestlaptops",
+        "macbookpro",
+        "top5",
+        "resalevalue"
+      ]
     },
     {
       "file": "purchasingcorp-stitch-reply.mp4",
       "caption": "\"Trade-ins are a scam.\" Let's check: your carrier offers $430, we pay $855 for the same phone. Not a scam — you just have to shop the offer around. Compare yours at purchasingcorp.com",
-      "hashtags": ["tradein", "sellyouriphone", "nolowball", "buyback"]
+      "hashtags": [
+        "tradein",
+        "sellyouriphone",
+        "nolowball",
+        "buyback"
+      ]
     },
     {
       "file": "purchasingcorp-before-after.mp4",
       "caption": "I bought this MacBook for $1,599. A year later I got $1,180 back — a year of a pro laptop cost me less than a phone. See what yours is worth at purchasingcorp.com",
-      "hashtags": ["macbook", "resalevalue", "sellyourmac", "moneytips"]
+      "hashtags": [
+        "macbook",
+        "resalevalue",
+        "sellyourmac",
+        "moneytips"
+      ]
     },
     {
       "file": "purchasingcorp-tutorial-howto.mp4",
       "caption": "How I check resale value before buying anything: 1) search the exact model, 2) compare new vs resale, 3) only buy what holds value. Or skip the math — we show it for you at purchasingcorp.com",
-      "hashtags": ["techtips", "resalevalue", "moneytok", "sellyourtech"]
+      "hashtags": [
+        "techtips",
+        "resalevalue",
+        "moneytok",
+        "sellyourtech"
+      ]
     },
     {
       "file": "purchasingcorp-rapidfire-facts.mp4",
       "caption": "5 resale facts in 15 seconds: iPhones hold ~70% a year, Android drops twice as fast, keeping the box adds ~10%, and cracked phones STILL pay cash. Full breakdown at purchasingcorp.com",
-      "hashtags": ["techtips", "resalevalue", "phonetok", "sellyourtech"]
+      "hashtags": [
+        "techtips",
+        "resalevalue",
+        "phonetok",
+        "sellyourtech"
+      ]
     },
     {
       "file": "purchasingcorp-dont-buy.mp4",
       "caption": "Don't buy this — and if you already did, return it this week. Nice screen, but the resale falls off a cliff and you'll lose money. Buy what actually holds value at purchasingcorp.com",
-      "hashtags": ["techtok", "dontbuy", "resalevalue", "buysmarter"]
+      "hashtags": [
+        "techtok",
+        "dontbuy",
+        "resalevalue",
+        "buysmarter"
+      ]
     },
     {
       "file": "purchasingcorp-storytime-mistake.mp4",
       "caption": "Storytime: how I threw away $400. I took the first trade-in offer I saw — turns out the same phone was worth $425 more. Don't be past me. Get your real offer at purchasingcorp.com",
-      "hashtags": ["storytime", "tradein", "sellyouriphone", "moneytok"]
+      "hashtags": [
+        "storytime",
+        "tradein",
+        "sellyouriphone",
+        "moneytok"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-jin.mp4",
       "caption": "Found my old iPhone in a drawer and almost forgot it existed. Quote in 60 seconds, $855 in my account the same day — Zelle, Cash App, whatever you want. Got old tech sitting around? purchasingcorp.com",
-      "hashtags": ["sellyourtech", "sellyouriphone", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "sellyouriphone",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-vernon.mp4",
       "caption": "Wasn't expecting much for an old phone I never used. PurchasingCorp quoted me in a minute and paid $855 that same day. Stop letting your tech rot in a drawer — purchasingcorp.com",
-      "hashtags": ["sellyourtech", "buyback", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "buyback",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-bahar.mp4",
       "caption": "Old phone, sitting in a drawer doing nothing. One 60-second quote later I had $855, paid the same day however I wanted. Your old tech is worth real cash — purchasingcorp.com",
-      "hashtags": ["sellyourtech", "extracash", "declutter", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "extracash",
+        "declutter",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-caroline.mp4",
       "caption": "Real talk: that phone in your junk drawer is worth money. I got a 60-second quote and $855 the same day. Don't let it collect dust — purchasingcorp.com",
-      "hashtags": ["sellyourtech", "declutter", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "declutter",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-marcus.mp4",
       "caption": "Didn't think my old phone was worth anything. PurchasingCorp paid me $855 the same day — Zelle, Cash App, your choice. Old phones, laptops, consoles, they buy it all. purchasingcorp.com",
-      "hashtags": ["sellyourtech", "buyback", "getpaid", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "buyback",
+        "getpaid",
+        "ugc"
+      ]
     },
     {
       "file": "purchasingcorp-ugc-pip-brandon.mp4",
       "caption": "That drawer of old tech? It's cash you haven't claimed yet. 60-second quote, $855 paid the same day. Find out what yours is worth at purchasingcorp.com",
-      "hashtags": ["sellyourtech", "sellyouriphone", "extracash", "ugc"]
+      "hashtags": [
+        "sellyourtech",
+        "sellyouriphone",
+        "extracash",
+        "ugc"
+      ]
+    },
+    {
+      "file": "purchasingcorp-gta6-fund-your-setup.mp4",
+      "caption": "POV: GTA 6 drops and your console can't run it. Before you panic-buy a new setup, cash out the old one — it covers most of the upgrade. Check what your gear's worth at purchasingcorp.com",
+      "hashtags": [
+        "gta6",
+        "gta6countdown",
+        "sellyourtech",
+        "gaming"
+      ]
+    },
+    {
+      "file": "purchasingcorp-gta6-console-showdown.mp4",
+      "caption": "Before you buy a new console for GTA 6, sell the old one — just not at the trade-in counter. They offer $180, we pay $330 for the same console. See yours at purchasingcorp.com",
+      "hashtags": [
+        "gta6",
+        "ps5",
+        "tradein",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-gta6-gpu-upgrade.mp4",
+      "caption": "GTA 6 on PC is going to demand a serious upgrade — and new GPUs aren't cheap. Your old card still pays ~$290 toward it. Sell it and be game-ready before launch at purchasingcorp.com",
+      "hashtags": [
+        "gta6",
+        "pcgaming",
+        "gpu",
+        "sellyourgpu"
+      ]
+    },
+    {
+      "file": "purchasingcorp-gta6-rapidfire-countdown.mp4",
+      "caption": "GTA 6 is almost here — fund your whole setup in 15 seconds. Old console, drawer phone, old GPU: it all pays. Sell before launch week tanks trade-in prices. Start at purchasingcorp.com",
+      "hashtags": [
+        "gta6",
+        "gta6countdown",
+        "sellyourtech",
+        "getpaid"
+      ]
     }
   ]
 }
