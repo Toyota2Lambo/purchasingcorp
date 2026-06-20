@@ -1,0 +1,682 @@
+{
+  "generated_at": "2026-06-20T15:21:07.797481+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "consoles",
+    "educational_topic": "how to wipe and prep your iPhone before selling",
+    "comparison_angle": "same-day cash vs. mail-in services that pay later",
+    "featured_label": "Consoles"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-20T15:19:47.670Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Post 1: Featured category offer (Consoles)",
+        "caption": "Cash for consoles, same day. Nintendo Switch 2, ROG Ally, Meta Quest, all the classics. Ship free or drop off local, get paid the same day. Real offers at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#nintendoswitchbuyback",
+          "#sellnintendoswitch",
+          "#rogallybuyback",
+          "#metaquestbuyback",
+          "#consolebuyback",
+          "#gamingbuyback",
+          "#sellmygamingconsole",
+          "#cashforgaming",
+          "#sellmyswitch",
+          "#sellrogally",
+          "#sellmetaquest",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#gamerbuyback",
+          "#tradeinswitch",
+          "#cashforelectronics",
+          "#buybackprogram",
+          "#gaminggear",
+          "#consoletradein",
+          "#switchbuyback",
+          "#questbuyback",
+          "#gamingconsole",
+          "#sellmygear",
+          "#techbuyback",
+          "#instantcash",
+          "#samedaypayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "Up to <em>$475</em> for your console",
+              "sub_html": "Nintendo Switch 2, ROG Ally, Meta Quest. A real number, not a vague estimate.",
+              "c1_label": "Top payout",
+              "c1_value": "$475",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Good to New"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 2: Console board (price list)",
+        "caption": "June console prices. Switch 2, OLED, Lite, Meta Quest 2. No games, just cash today. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#consolebuyback",
+          "#sellnintendoswitch",
+          "#cashforconsoles",
+          "#switch2buyback",
+          "#switcholedbuyback",
+          "#switchlitebuyback",
+          "#metaquestbuyback",
+          "#sellmyconsole",
+          "#cashforgaming",
+          "#gamingbuyback",
+          "#sellmyswitch",
+          "#consoletradein",
+          "#switchbuyback",
+          "#gamerbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#gaminggear",
+          "#tradeinswitch",
+          "#questbuyback",
+          "#nintendoswitchsell",
+          "#techbuyback",
+          "#instantcash",
+          "#samedaypayout",
+          "#sellmygear",
+          "#consoleprice",
+          "#gamingconsole"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "JUNE 2026 PRICING",
+              "title_html": "Console <em>buyback</em> rates",
+              "rows": [
+                {
+                  "model": "Nintendo Switch 2 Mario Kart World Bundle",
+                  "price": "$400"
+                },
+                {
+                  "model": "Nintendo Switch 2",
+                  "price": "$370"
+                },
+                {
+                  "model": "Nintendo Switch OLED",
+                  "price": "$240"
+                },
+                {
+                  "model": "Nintendo Switch",
+                  "price": "$200"
+                },
+                {
+                  "model": "Nintendo Switch Lite",
+                  "price": "$140"
+                },
+                {
+                  "model": "Oculus Meta Quest 2 128gb",
+                  "price": "$150"
+                }
+              ],
+              "note_html": "Prices for good to excellent condition. Quote in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 3: Payout receipt (proof)",
+        "caption": "Another same-day payout. Ship your gear, get cash the day we receive it. No waiting, no store credit. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#samedaypayout",
+          "#cashforiphone",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforphones",
+          "#phonebuyback",
+          "#buybackprogram",
+          "#instantcash",
+          "#sellmyapple",
+          "#techbuyback",
+          "#cashforelectronics",
+          "#sellmydevice",
+          "#iphonebuyer",
+          "#applebuyer",
+          "#phonesell",
+          "#tradeiphone",
+          "#sellphone",
+          "#buybackservice",
+          "#cashtoday",
+          "#fastpayout",
+          "#realcash",
+          "#nocredit",
+          "#techsell",
+          "#devicebuyback",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT",
+              "slip_title": "TRANSACTION RECEIPT",
+              "slip_ref": "PC-062026-1847",
+              "device": "iPhone 17 Pro Max 512GB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$975",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 4: Compare (same-day cash vs mail-in)",
+        "caption": "We pay cash the same day. Most mail-in services make you wait days or weeks after they receive your device. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#samedaypayout",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#applebuyback",
+          "#cashforiphone",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#instantcash",
+          "#fastpayout",
+          "#phonebuyback",
+          "#sellmyapple",
+          "#techbuyback",
+          "#cashforelectronics",
+          "#applebuyer",
+          "#iphonebuyer",
+          "#nocredit",
+          "#realcash",
+          "#sellphone",
+          "#tradeiphone",
+          "#devicebuyback",
+          "#quickcash",
+          "#bestbuyback",
+          "#phonesell",
+          "#techsell",
+          "#cashforphones",
+          "#buybackservice"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARISON",
+              "eyebrow": "SAME-DAY CASH",
+              "title_html": "We pay <em>today</em>, not next week",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (iPhone 17 Pro Max 512GB)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical mail-in service (7-10 day hold)",
+                  "value": "~$920",
+                  "pct": 80,
+                  "kind": "alt"
+                },
+                {
+                  "label": "Typical mail-in service (14 day hold)",
+                  "value": "~$900",
+                  "pct": 75,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Rival figures are typical estimates for mail-in services that delay payout. We pay same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 5: MacBook Air board",
+        "caption": "June MacBook Air pricing. M4 13-inch and 15-inch, all configs. Same-day cash, no store credit. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookairbuyback",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#m4macbook",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#macbooksell",
+          "#applebuyer",
+          "#techbuyback",
+          "#sellmyapple",
+          "#macbooktradein",
+          "#instantcash",
+          "#samedaypayout",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#cashforlaptop",
+          "#macbookpro",
+          "#applelaptop",
+          "#techsell",
+          "#devicebuyback",
+          "#sellmymac",
+          "#macbuyback",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "JUNE 2026 PRICING",
+              "title_html": "MacBook Air <em>M4</em> rates",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices for good to excellent condition. Quote in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 6: Photo-cover (lifestyle, outcome-forward)",
+        "caption": "That old phone in your drawer is cash today. Ship free, get paid same day. No store credit, no waiting. Start at purchasingcorp.com.",
+        "hashtags": [
+          "#cashforphones",
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#samedaypayout",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforiphone",
+          "#phonebuyback",
+          "#buybackprogram",
+          "#instantcash",
+          "#sellmyapple",
+          "#techbuyback",
+          "#cashforelectronics",
+          "#sellmydevice",
+          "#iphonebuyer",
+          "#applebuyer",
+          "#phonesell",
+          "#tradeiphone",
+          "#sellphone",
+          "#buybackservice",
+          "#cashtoday",
+          "#fastpayout",
+          "#realcash",
+          "#nocredit",
+          "#techsell",
+          "#devicebuyback",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "SAME-DAY PAYOUT",
+              "headline_html": "Your drawer <em>phone</em> is cash",
+              "deck_html": "Ship free. Get paid the same day we receive it. No games.",
+              "photo_url": "https://images.unsplash.com/photo-1601485770245-9abd905abc7b?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw3fHxsYXB0b3AlMjBhbmQlMjBjb2ZmZWUlMjBvbiUyMGElMjBkZXNrfGVufDF8MHx8fDE3ODE5Njg4NjZ8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 7: Index (3x2 category grid)",
+        "caption": "June top payouts across six categories. iPhones, MacBook Air, consoles, Apple Watch, Mac mini. Real numbers, same-day cash. Get yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#cashforelectronics",
+          "#buybackprogram",
+          "#sellmyiphone",
+          "#sellmacbook",
+          "#consolebuyback",
+          "#applewatchbuyback",
+          "#macminibuyback",
+          "#iphonebuyback",
+          "#macbookbuyback",
+          "#cashforconsoles",
+          "#cashforiphone",
+          "#samedaypayout",
+          "#techbuyback",
+          "#instantcash",
+          "#sellmyapple",
+          "#devicebuyback",
+          "#applebuyer",
+          "#sellmygear",
+          "#cashtoday",
+          "#phonebuyback",
+          "#gamingbuyback",
+          "#techsell",
+          "#buybackservice",
+          "#realcash",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORY INDEX",
+              "eyebrow": "JUNE 2026",
+              "title_html": "Top <em>payouts</em> by category",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG Ally X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 49mm",
+                  "tone": ""
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "Pro 24GB 512GB",
+                  "tone": ""
+                },
+                {
+                  "label": "Categories",
+                  "num": "50+",
+                  "foot": "Devices accepted",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All prices for excellent condition. Quote any device in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 8: Apple Watch offer",
+        "caption": "Cash for Apple Watch, same day. Ultra 3, Series 11, all generations. Ship free or drop off, get paid today. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#watchbuyback",
+          "#applewatchsell",
+          "#sellmywatch",
+          "#cashforelectronics",
+          "#techbuyback",
+          "#applebuyer",
+          "#instantcash",
+          "#samedaypayout",
+          "#applewatchtradein",
+          "#sellmyapple",
+          "#devicebuyback",
+          "#techsell",
+          "#applewatchbuyer",
+          "#watchsell",
+          "#cashtoday",
+          "#realcash",
+          "#quickcash",
+          "#buybackservice",
+          "#sellmygear",
+          "#applewatchultra",
+          "#applewatchseries"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "Up to <em>$473</em> for your Apple Watch",
+              "sub_html": "Ultra 3, Series 11, all generations. A real number, not a vague estimate.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Good to New"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 9: Mac mini board",
+        "caption": "Mac mini pricing for June. Pro and standard configs. Same-day cash, no store credit. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#applebuyback",
+          "#sellmymac",
+          "#macbuyback",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#buybackprogram",
+          "#cashforelectronics",
+          "#techbuyback",
+          "#applebuyer",
+          "#sellmyapple",
+          "#instantcash",
+          "#samedaypayout",
+          "#macminitradein",
+          "#devicebuyback",
+          "#techsell",
+          "#macminisell",
+          "#applemac",
+          "#sellmycomputer",
+          "#computerbuyback",
+          "#cashtoday",
+          "#realcash",
+          "#quickcash",
+          "#buybackservice",
+          "#sellmygear",
+          "#macminibuyer"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "JUNE 2026 PRICING",
+              "title_html": "Mac mini <em>buyback</em> rates",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB Memory 512GB",
+                  "price": "$675"
+                },
+                {
+                  "model": "MCYT4LL/A 24GB Memory - 512GB",
+                  "price": "$450"
+                },
+                {
+                  "model": "MU9E3LL/A 16GB Memory - 512GB",
+                  "price": "$375"
+                },
+                {
+                  "model": "MU9D3LL/A 16GB Memory - 256GB",
+                  "price": "$300"
+                }
+              ],
+              "note_html": "Prices for good to excellent condition. Quote in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 10: Carousel (educational: how to wipe and prep iPhone before selling)",
+        "caption": "How to wipe and prep your iPhone before selling. Four steps, two minutes, then ship it for same-day cash. Start your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#applebuyback",
+          "#howtosellmyiphone",
+          "#wipeiphone",
+          "#resetiphone",
+          "#iphoneprep",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonebuyback",
+          "#buybackprogram",
+          "#cashforphones",
+          "#sellmyapple",
+          "#techbuyback",
+          "#iphonebuyer",
+          "#applebuyer",
+          "#iphonips",
+          "#sellphone",
+          "#tradeiphone",
+          "#devicebuyback",
+          "#samedaypayout",
+          "#instantcash",
+          "#cashtoday",
+          "#phonesell",
+          "#techsell",
+          "#buybackservice",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "BACKUP",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Back up to <em>iCloud</em> or Mac",
+              "body_html": "Settings → [Your Name] → iCloud → iCloud Backup → <strong>Back Up Now</strong>. Wait for it to finish. Your photos, contacts, and data are safe."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "SIGN OUT",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Sign out of <em>iCloud</em> and Apple ID",
+              "body_html": "Settings → [Your Name] → <strong>Sign Out</strong>. Enter your Apple ID password. This removes Activation Lock so we can test and resell your device."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "ERASE",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Erase <em>all content</em> and settings",
+              "body_html": "Settings → General → Transfer or Reset iPhone → <strong>Erase All Content and Settings</strong>. Confirm. The phone will restart as new, ready to ship."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "SHIP",
+              "eyebrow": "PREP YOUR IPHONE",
+              "headline_html": "Pack it up and <em>ship free</em>",
+              "body_html": "Use our prepaid insured label. Drop it at UPS or USPS. We inspect, confirm your quote, and <strong>pay the same day</strong> we receive it. Cash today, no games."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 2026",
+          "date_label": "Saturday, June 20",
+          "section": "CONSOLES",
+          "headline_html": "Cash for <em>consoles</em> today",
+          "deck_html": "Nintendo Switch 2, ROG Ally, Meta Quest. Same-day payout, no store credit.",
+          "photo_url": "https://images.unsplash.com/photo-1636304229039-d3b95008c29f?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwdHlwaW5nJTIwb24lMjBhJTIwbGFwdG9wfGVufDF8MXx8fDE3ODE5Njg4Njd8MA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "TOP CONSOLE PAYOUT",
+          "stat_value": "$475",
+          "stat_unit": "",
+          "caption_html": "ASUS ROG Ally X 1TB. <em>Same-day cash</em>, no waiting.",
+          "source": "PurchasingCorp June 2026"
+        }
+      }
+    ]
+  }
+}
