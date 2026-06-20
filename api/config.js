@@ -3,7 +3,7 @@ export const config = { runtime: 'edge' };
 // GET /api/config
 // Exposes only the PUBLIC Supabase config the browser needs to run auth:
 // the project URL and the anon (publishable) key. The anon key is safe to
-// ship to the client — on its own it only grants what Row Level Security
+// ship to the client, on its own it only grants what Row Level Security
 // allows, and our policy lets a signed-in user read just their own quotes.
 //
 // Required env (Vercel → Project → Settings → Environment Variables):

@@ -117,7 +117,7 @@ html[data-theme="light"] .bg-\[radial-gradient\(ellipse_at_top\,rgba\(255\,255\,
   background: radial-gradient(ellipse at top, rgba(0,0,0,0.04), transparent 60%) !important;
 }
 
-/* Floating soft circle / noise overlay — hide on light */
+/* Floating soft circle / noise overlay, hide on light */
 html[data-theme="light"] .from-white\/\[0\.06\],
 html[data-theme="light"] .via-white\/\[0\.02\] { opacity: 0.4; }
 html[data-theme="light"] .mix-blend-overlay { opacity: 0 !important; }
@@ -156,68 +156,3 @@ html[data-theme="light"] #themeToggle:hover {
   color: #18181b;
 }
 
-/* ============================================================
-   STRICT TYPE
-   Across the site, emphasized phrases used
-   `text-ink-300 italic font-serif font-normal` — exactly the
-   italic + serif + low-contrast accent the strict design rules
-   reject. Rather than hand-edit 18 spans across 9 files, the
-   combination is neutralized here: clean Inter (no italic, no
-   serif), with emphasis carried by emerald color at the
-   surrounding text weight.
-
-   Only these accent spans ever use BOTH `italic` AND `font-serif`
-   together, so this combo selector touches nothing else. Pages
-   authored to the strict rules (e.g. /mission) already use
-   text-emerald-300 directly and are unaffected.
-
-   Specificity note: `.italic.font-serif` (0,2,0) outranks the
-   single Tailwind utilities it overrides (`.italic`, `.font-serif`,
-   `.text-ink-300`, all 0,1,0). The light-theme color rule below is
-   scoped under html[data-theme="light"] so it also outranks the
-   existing `html[data-theme="light"] .text-ink-300` override.
-   ------------------------------------------------------------ */
-.italic.font-serif {
-  font-style: normal;
-  font-family: inherit;   /* drop Instrument Serif, fall back to Inter */
-  font-weight: inherit;   /* match the heading weight, not a forced 400 */
-  color: #6ee7b7;         /* emerald-300 */
-}
-html[data-theme="light"] .italic.font-serif {
-  color: #047857;         /* readable emerald on white */
-}
-
-/* ============================================================
-   LOGO BREATHE
-   The header wordmark gently inhales/exhales so the site feels alive
-   instead of static. Scoped to the home link inside the sticky header,
-   so the footer mark and mobile-menu wordmark stay still. The badge
-   scales + glows + brightens; the "PURCHASINGCORP" text brightens in
-   sync (brightness only, no scale) so it dims and lights up with the
-   breath without ever reflowing or shifting position.
-   ------------------------------------------------------------ */
-@keyframes pc-breathe {
-  0%, 100% { transform: scale(1);    filter: brightness(0.55); box-shadow: 0 0 0 0 rgba(0,0,0,0); }
-  50%      { transform: scale(1.06); filter: brightness(1.45); box-shadow: 0 0 16px 1px var(--pc-glow); }
-}
-@keyframes pc-breathe-text {
-  0%, 100% { filter: brightness(0.55); }
-  50%      { filter: brightness(1.45); }
-}
-#siteHeader a[href="/"] > span:first-child {
-  --pc-glow: rgba(255,255,255,0.28);
-  transform-origin: center;
-  animation: pc-breathe 4s ease-in-out infinite;
-  will-change: transform;
-}
-#siteHeader a[href="/"] > span:last-child {
-  animation: pc-breathe-text 4s ease-in-out infinite;
-  will-change: filter;
-}
-html[data-theme="light"] #siteHeader a[href="/"] > span:first-child {
-  --pc-glow: rgba(0,0,0,0.16);
-}
-@media (prefers-reduced-motion: reduce) {
-  #siteHeader a[href="/"] > span:first-child,
-  #siteHeader a[href="/"] > span:last-child { animation: none; }
-}

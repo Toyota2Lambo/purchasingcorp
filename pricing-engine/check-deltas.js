@@ -1,6 +1,6 @@
 'use strict';
 // ============================================================
-// CIRCUIT BREAKER — gate auto-publishing of refreshed offers.
+// CIRCUIT BREAKER, gate auto-publishing of refreshed offers.
 //
 //   node check-deltas.js <old-offers.js> <new-offers.js>
 //
@@ -75,7 +75,7 @@ function main() {
   if (trippedDelta || trippedShrink) {
     if (trippedDelta) console.error(`[deltas] TRIPPED: |${worst.pct.toFixed(1)}%| > ${MAX_PCT}% on ${worst.key}`);
     if (trippedShrink) console.error(`[deltas] TRIPPED: priced offers shrank ${shrinkPct.toFixed(1)}% > ${MAX_SHRINK}%`);
-    console.error('[deltas] NOT publishing — review the run artifact, then re-run manually or raise thresholds.');
+    console.error('[deltas] NOT publishing, review the run artifact, then re-run manually or raise thresholds.');
     process.exit(1);
   }
   console.log('[deltas] ok to publish');

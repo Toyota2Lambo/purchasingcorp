@@ -191,7 +191,7 @@ function humanize(s) {
 }
 
 function formatPrice(s) {
-  if (!s) return '—';
+  if (!s) return '-';
   if (/CONTACT/i.test(s)) return 'Contact';
   if (s.includes('%')) return `${s.replace(/[^\d.%]/g, '')} off MSRP`;
   // Drop cents if .00, keep otherwise
@@ -204,7 +204,7 @@ function formatPrice(s) {
 }
 
 function formatNote(s) {
-  if (!s) return '—';
+  if (!s) return '-';
   if (/first offer/i.test(s)) return 'Negotiable';
-  return s.replace(/\*/g, '').trim() || '—';
+  return s.replace(/\*/g, '').trim() || '-';
 }

@@ -28,25 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      },
-      colors: {
-        ink: {
-          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
-          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
-          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
-        },
-      },
-    },
-  },
-};
-</script>
+<link rel="stylesheet" href="/tailwind.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-ink-950 text-ink-100 font-sans antialiased selection:bg-white selection:text-black">
@@ -481,7 +463,7 @@ tailwind.config = {
         '<div class="mt-4 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5">' +
           '<h3 class="text-[13px] font-semibold uppercase tracking-[0.12em] text-ink-300">Locked offer</h3>' +
           (q.offer_locked_at
-            ? '<p class="mt-2 text-[12.5px] text-emerald-300">Current locked offer: <span class="font-semibold text-white">' + esc(money(q.offer_amount) || '—') + '</span> · sent ' + esc(fdate(q.offer_locked_at)) + '</p>'
+            ? '<p class="mt-2 text-[12.5px] text-emerald-300">Current locked offer: <span class="font-semibold text-white">' + esc(money(q.offer_amount) || '-') + '</span> · sent ' + esc(fdate(q.offer_locked_at)) + '</p>'
             : '<p class="mt-2 text-[12.5px] text-ink-400">No offer locked in yet.</p>') +
           (q.offer_response_at && (q.status === 'accepted' || q.status === 'declined')
             ? '<p class="mt-1 text-[12.5px] ' + (q.status === 'accepted' ? 'text-emerald-300' : 'text-amber-200') + '">Customer ' + (q.status === 'accepted' ? 'accepted' : 'declined') + ' this offer on ' + esc(ftime(q.offer_response_at)) + '.</p>'

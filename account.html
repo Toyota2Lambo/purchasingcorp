@@ -23,6 +23,7 @@
 <meta name="theme-color" content="#050505" />
 <meta name="robots" content="noindex" />
 
+<link rel="canonical" href="https://purchasingcorp.com/account" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -30,25 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      },
-      colors: {
-        ink: {
-          950: '#050505', 900: '#0a0a0a', 850: '#0f0f10', 800: '#141416',
-          700: '#1c1c1f', 600: '#26262b', 500: '#3a3a40', 400: '#5a5a62',
-          300: '#8a8a92', 200: '#b6b6bc', 100: '#e6e6e8',
-        },
-      },
-    },
-  },
-};
-</script>
+<link rel="stylesheet" href="/tailwind.css" />
 <link rel="stylesheet" href="styles.css" />
 
 <script defer src="/_vercel/insights/script.js"></script>
@@ -75,6 +58,7 @@ tailwind.config = {
       <li><a href="/#we-buy" class="hover:text-white transition">We Buy</a></li>
       <li><a href="/pricing" class="hover:text-white transition">Pricing</a></li>
       <li><a href="/process" class="hover:text-white transition">Process</a></li>
+      <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
       <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
     </ul>
     <div class="hidden md:flex items-center gap-2">
@@ -98,7 +82,7 @@ tailwind.config = {
         <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <button id="menuBtn" type="button" onclick="openMenu()" aria-label="Open menu"
+      <button id="menuBtn" type="button" onclick="openMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
         class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] text-ink-100 transition">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -129,7 +113,7 @@ tailwind.config = {
         Get a Quote
         <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
-      <p class="mt-3 text-center text-[12px] text-ink-400">Typical reply under 30 min</p>
+      <p class="mt-3 text-center text-[12px] text-ink-400">Typical reply within the hour</p>
     </div>
   </div>
 </div>
@@ -140,7 +124,7 @@ tailwind.config = {
     <!-- Not configured -->
     <div id="configError" class="hidden text-center py-20">
       <h1 class="text-3xl font-semibold tracking-[-0.03em]">Accounts aren't set up yet</h1>
-      <p class="mt-3 text-ink-300 text-[14px] mx-auto max-w-md">Sign-in isn't configured on this site right now. Please check back soon, or <a href="/form" class="underline underline-offset-4 hover:text-white">request a quote</a> in the meantime — we'll still get right back to you.</p>
+      <p class="mt-3 text-ink-300 text-[14px] mx-auto max-w-md">Sign-in isn't configured on this site right now. Please check back soon, or <a href="/form" class="underline underline-offset-4 hover:text-white">request a quote</a> in the meantime, we'll still get right back to you.</p>
     </div>
 
     <!-- Auth (signed out) -->
@@ -150,7 +134,7 @@ tailwind.config = {
           Your account
         </span>
         <h1 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[0.98]">
-          Your <span class="text-ink-300 italic font-serif font-normal">dashboard.</span>
+          Your <span class="text-emerald-300">dashboard.</span>
         </h1>
         <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Sign in to track your quotes and grab a prepaid shipping label the moment an item is verified.</p>
       </div>
@@ -190,7 +174,7 @@ tailwind.config = {
         <p id="authStatus" class="mt-3 text-center text-[12.5px] hidden"></p>
 
         <p id="authHelp" class="mt-4 text-center text-[11.5px] text-ink-500">
-          New accounts get a confirmation email — click the link, then sign in. By continuing you agree to our
+          New accounts get a confirmation email, click the link, then sign in. By continuing you agree to our
           <a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.
         </p>
       </div>
@@ -203,9 +187,9 @@ tailwind.config = {
           Reset password
         </span>
         <h1 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.04em] leading-[0.98]">
-          Set a <span class="text-ink-300 italic font-serif font-normal">new password.</span>
+          Set a <span class="text-emerald-300">new password.</span>
         </h1>
-        <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Choose a new password for your account — you'll be signed in right after.</p>
+        <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Choose a new password for your account, you'll be signed in right after.</p>
       </div>
 
       <div class="mt-9 mx-auto max-w-md relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 p-6 md:p-8">
@@ -253,7 +237,7 @@ tailwind.config = {
 
       <div id="quotesEmpty" class="hidden mt-8 rounded-2xl border border-white/[0.08] bg-white/[0.02] p-10 text-center">
         <p class="text-[14px] text-ink-200 font-medium">No quotes linked to this account yet.</p>
-        <p class="mt-1.5 text-[12.5px] text-ink-500 mx-auto max-w-sm">Quotes you submit while signed in land here automatically — start one and it'll show up the moment you send it.</p>
+        <p class="mt-1.5 text-[12.5px] text-ink-500 mx-auto max-w-sm">Quotes you submit while signed in land here automatically, start one and it'll show up the moment you send it.</p>
         <a href="/form" class="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition">Get a quote</a>
       </div>
 
@@ -314,7 +298,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-ink-500">
-      <div>&copy; <span id="year"></span> PurchasingCorp &middot; All rights reserved</div>
+      <div>&copy; <span id="year"></span> PurchasingCorp &middot; Registered Maryland business &middot; All rights reserved</div>
       <div class="flex items-center gap-4">
         <a href="/privacy" class="hover:text-ink-200 transition">Privacy Policy</a>
         <a href="/privacy#terms" class="hover:text-ink-200 transition">Terms</a>
@@ -336,7 +320,7 @@ tailwind.config = {
     var claimDone = false;      // claim runs at most once per signed-in load
     var rendering = false, renderAgain = false;
     var currentUser = null;     // signed-in user (for chat sender_id)
-    var openChat = null;        // { id, timer } — at most one thread open at a time
+    var openChat = null;        // { id, timer }, at most one thread open at a time
 
     function byId(id) { return document.getElementById(id); }
     function show(el) { if (el) el.classList.remove('hidden'); }
@@ -468,7 +452,7 @@ tailwind.config = {
       if (m === 'forgot') {
         help.textContent = "Enter your account email and we'll send a link to set a new password.";
       } else {
-        help.innerHTML = 'New accounts get a confirmation email — click the link, then sign in. By continuing you agree to our ' +
+        help.innerHTML = 'New accounts get a confirmation email, click the link, then sign in. By continuing you agree to our ' +
           '<a href="/privacy" class="text-ink-300 underline underline-offset-4 hover:text-white">Privacy Policy</a>.';
       }
 
@@ -521,7 +505,7 @@ tailwind.config = {
             });
             if (res.error) throw res.error;
             if (!res.data.session) {
-              authStatus('Almost there — check your email to confirm your account, then come back and sign in.', 'ok');
+              authStatus('Almost there, check your email to confirm your account, then come back and sign in.', 'ok');
               btn.disabled = false;
               return;
             }
@@ -565,11 +549,11 @@ tailwind.config = {
           // Drop the recovery tokens from the URL so a refresh won't re-enter
           // recovery, then fall through to the signed-in dashboard.
           if (history.replaceState) history.replaceState(null, '', location.pathname);
-          resetStatus('Password updated — you’re signed in.', 'ok');
+          resetStatus('Password updated, you’re signed in.', 'ok');
           render();
         } catch (err) {
           resetStatus((err && err.message) ||
-            'Could not update your password. The link may have expired — request a new one.', 'err');
+            'Could not update your password. The link may have expired, request a new one.', 'err');
           btn.disabled = false;
         }
       });
@@ -835,7 +819,7 @@ tailwind.config = {
         label =
           '<div class="mt-4 rounded-xl border border-emerald-400/20 bg-emerald-400/[0.06] p-3.5">' +
             '<div class="flex items-center justify-between gap-3 flex-wrap">' +
-              '<div class="text-[12.5px] text-emerald-200 font-medium">Verified — your prepaid shipping label is ready.</div>' +
+              '<div class="text-[12.5px] text-emerald-200 font-medium">Verified, your prepaid shipping label is ready.</div>' +
               '<a href="' + esc(q.shipping_label_url) + '" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[12.5px] font-medium text-black hover:bg-ink-100 transition">Download label' +
                 '<svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v8M4 7l4 4 4-4M3 14h10"/></svg></a>' +
             '</div>' +
@@ -844,7 +828,7 @@ tailwind.config = {
       } else if (hasLabel) {
         label =
           '<div class="mt-4 rounded-xl border border-white/10 bg-white/[0.03] p-3.5 text-[12.5px] text-ink-300">' +
-            'Verified — your prepaid shipping label is being prepared. Check back shortly.' +
+            'Verified, your prepaid shipping label is being prepared. Check back shortly.' +
           '</div>';
       }
 
@@ -930,18 +914,24 @@ tailwind.config = {
     var mm = document.getElementById('mobileMenu');
     var mp = document.getElementById('menuPanel');
     var mb = document.getElementById('menuBackdrop');
+    var menuBtn = document.getElementById('menuBtn');
     window.openMenu = function(){
       if(!mm) return;
       mm.classList.remove('hidden');
       requestAnimationFrame(function(){ mb.classList.add('opacity-100'); mp.classList.remove('-translate-y-full'); });
       document.body.style.overflow = 'hidden';
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
     };
     window.closeMenu = function(){
       if(!mm) return;
       mb.classList.remove('opacity-100'); mp.classList.add('-translate-y-full');
       document.body.style.overflow = '';
       setTimeout(function(){ mm.classList.add('hidden'); }, 300);
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     };
+    addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && mm && !mm.classList.contains('hidden')) closeMenu();
+    });
     var ov = document.getElementById('headerOverlay');
     addEventListener('scroll', function(){
       if(!ov) return;

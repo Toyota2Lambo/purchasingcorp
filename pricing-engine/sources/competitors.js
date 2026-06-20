@@ -9,7 +9,7 @@
 // robots.txt is ENFORCED for every site, every run:
 //   - we fetch /robots.txt and check our path against it;
 //   - if disallowed (or robots is unreachable / 5xx), the site is
-//     SKIPPED with a logged reason — never scraped.
+//     SKIPPED with a logged reason, never scraped.
 //
 // This is best-effort corroboration. Verify each site's markup AND
 // terms of service before enabling. Selectors/patterns live in the

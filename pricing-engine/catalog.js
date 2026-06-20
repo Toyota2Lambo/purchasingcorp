@@ -1,9 +1,9 @@
 'use strict';
 // ============================================================
-// CATALOG — the list of devices we price.
+// CATALOG, the list of devices we price.
 //
 // The set of devices (the model list) still comes from the site's
-// /pricing-data.js — we evaluate it in a fake `window` sandbox (the
+// /pricing-data.js, we evaluate it in a fake `window` sandbox (the
 // same trick social/dump_pricing.js uses) and turn each display row
 // into one or more structured VARIANTS (model + storage + carrier).
 //

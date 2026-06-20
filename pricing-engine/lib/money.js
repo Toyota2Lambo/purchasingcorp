@@ -47,7 +47,7 @@ function roundTo(n, step = 1) {
 
 /**
  * Best-effort extraction of ALL dollar amounts embedded anywhere in a
- * blob of HTML/text — used by competitor adapters that don't have a
+ * blob of HTML/text, used by competitor adapters that don't have a
  * precise selector. Returns number[] (may be empty).
  * NOTE: deliberately conservative; verify per-site before trusting.
  */

@@ -1,6 +1,6 @@
 'use strict';
 // ============================================================
-// PRICING CORE  —  market price  ->  our buy offer
+// PRICING CORE ,  market price  ->  our buy offer
 //
 // Pure functions only (no network, no fs) so they're trivially
 // testable. See test/pricing.test.js.

@@ -16,7 +16,7 @@ export const config = { runtime: 'edge' };
 //      When an eBay user closes their account, eBay POSTs here so apps
 //      can purge that user's data. WE STORE NO eBay USER DATA (the
 //      pricing engine only reads public market comps), so there is
-//      nothing to delete — we just acknowledge with 200.
+//      nothing to delete, we just acknowledge with 200.
 //
 // Required env (Vercel -> Project -> Settings -> Environment Variables):
 //   EBAY_VERIFICATION_TOKEN   the 32-80 char token you also paste into
@@ -56,7 +56,7 @@ export default async function handler(req) {
 
   // ---- 2) Deletion notification (acknowledge; nothing stored) ------------
   if (req.method === 'POST') {
-    // We intentionally do NOT persist or log the payload — it contains an
+    // We intentionally do NOT persist or log the payload, it contains an
     // eBay user's username/userId, and we keep no eBay user data to purge.
     // eBay only needs a prompt 2xx to consider the notice delivered.
     return new Response(null, { status: 200 });
