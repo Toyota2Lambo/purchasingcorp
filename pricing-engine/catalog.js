@@ -41,6 +41,52 @@ function loadPricingData(file) {
   return { PRICING: win.PRICING || {}, CATEGORY_LABELS: win.CATEGORY_LABELS || {} };
 }
 
+// Product-family anchors prepended to the eBay query when the sheet's
+// display name omits them. Watch / Mac mini / MacBook rows are written as
+// bare specs ("ULTRA 3 GEN 49MM ...", "MCX44LL/A PRO 24GB Memory 512GB"),
+// so an eBay search has no product to anchor on and returns nothing.
+// iPhone / iPad / accessories names already carry their family and price
+// fine, so they are intentionally left untouched (see buildQuery).
+const QUERY_FAMILY = {
+  'macbook-pro': 'MacBook Pro',
+  'macbook-air': 'MacBook Air',
+  'mac-mini': 'Mac mini',
+  'apple-watch': 'Apple Watch',
+};
+
+// Strip marketing/noise tokens that don't appear in real eBay listing
+// titles and only shrink the comp set. Storage, screen size, chip and
+// "(Nth gen)" are deliberately preserved (those narrow correctly).
+function cleanQueryName(name) {
+  let s = String(name);
+  // Apple order/part numbers ("MCX44LL/A") almost never appear in eBay
+  // listing titles — drop them before they poison the search. The {4,8}
+  // length and trailing "/A"|"A" keep this from ever eating an "M4"/"M5"
+  // chip token.
+  s = s.replace(/\bM[A-Z0-9]{4,8}\/?A\b/g, ' ');
+  s = s.replace(/\(\s*new model\s*\)/gi, ' '); // "( NEW MODEL)"
+  s = s.replace(/\b20\d{2}\b/g, ' ');          // standalone year e.g. 2025
+  s = s.replace(/\bmemory\b/gi, ' ');          // "24GB Memory 512GB"
+  s = s.replace(/\bgeneration\b/gi, ' ');
+  s = s.replace(/\b\d+gen\b/gi, ' ');          // redundant "3gen" next to "3RD"
+  // standalone "GEN" but NOT the "gen" inside "(6th gen)" (preserved).
+  s = s.replace(/\bgen\b(?!\s*\))/gi, ' ');
+  s = s.replace(/\s*\/\s*/g, ' ');             // "BLACK / NATURAL" -> spaces
+  s = s.replace(/\s{2,}/g, ' ').trim();
+  return s;
+}
+
+// Build the eBay search query for a variant. Only the families in
+// QUERY_FAMILY are normalized; every other category keeps its exact
+// historical query so the 200+ already-working variants don't regress.
+function buildQuery(siteCategory, displayName) {
+  const family = QUERY_FAMILY[siteCategory];
+  if (!family) return displayName;
+  const cleaned = cleanQueryName(displayName);
+  const hasFamily = new RegExp(family.replace(/\s+/g, '\\s+'), 'i').test(cleaned);
+  return (hasFamily ? cleaned : `${family} ${cleaned}`).trim();
+}
+
 /** Best-effort storage size (prefers TB, then the largest GB token). */
 function extractStorage(name) {
   const tokens = String(name).match(/(\d+(?:\.\d+)?)\s?(TB|GB)/gi) || [];
@@ -86,20 +132,20 @@ function buildCatalog(opts = {}) {
         variants.push(makeVariant({
           siteCategory, marginCategory, displayName, model, storage,
           carrier: 'unlocked', outputColumn: 1,
-          query: `${displayName} unlocked`,
+          query: `${buildQuery(siteCategory, displayName)} unlocked`,
           sourcePrice: row[1], sourceNote: null,
         }));
         variants.push(makeVariant({
           siteCategory, marginCategory, displayName, model, storage,
           carrier: 'locked', outputColumn: 2,
-          query: `${displayName} carrier locked`,
+          query: `${buildQuery(siteCategory, displayName)} carrier locked`,
           sourcePrice: row[2], sourceNote: null,
         }));
       } else {
         variants.push(makeVariant({
           siteCategory, marginCategory, displayName, model, storage,
           carrier: 'n/a', outputColumn: 1,
-          query: displayName,
+          query: buildQuery(siteCategory, displayName),
           sourcePrice: row[1],
           sourceNote: row[2] != null ? String(row[2]) : null, // preserve note col
         }));
