@@ -1,54 +1,52 @@
 [
   {
-    "date": "2026-06-19",
-    "file": "purchasingcorp-react-hottake.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-react-hottake.mp4",
-    "local_path": "videos/purchasingcorp-react-hottake.mp4",
-    "caption": "\"Flagship phones aren't worth it.\" Wrong. They're worth it when they hold their value \u2014 and the good ones still pay you over $1,000 back. Proof at purchasingcorp.com",
-    "hashtags": [
-      "iphone",
-      "techreview",
-      "resalevalue",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 44"
-  },
-  {
-    "date": "2026-06-19",
-    "file": "purchasingcorp-gta6-storytime-sold-early.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-storytime-sold-early.mp4",
-    "local_path": "videos/purchasingcorp-gta6-storytime-sold-early.mp4",
-    "caption": "Storytime: I rushed my old console to the trade-in counter for GTA 6 and lost $180. Same console, way more cash at PurchasingCorp. Check the real number first at purchasingcorp.com",
+    "date": "2026-06-20",
+    "file": "purchasingcorp-gta6-myth-buy-new.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-myth-buy-new.mp4",
+    "local_path": "videos/purchasingcorp-gta6-myth-buy-new.mp4",
+    "caption": "Biggest GTA 6 myth: you have to buy everything new. You don't \u2014 the average gamer's closet is sitting on $500+ in unused tech. That's your GTA 6 fund. Find it at purchasingcorp.com",
     "hashtags": [
       "gta6",
-      "storytime",
-      "tradein",
-      "sellyourconsole",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 44"
-  },
-  {
-    "date": "2026-06-19",
-    "file": "purchasingcorp-gta6-fund-your-setup.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-fund-your-setup.mp4",
-    "local_path": "videos/purchasingcorp-gta6-fund-your-setup.mp4",
-    "caption": "POV: GTA 6 drops and your console can't run it. Before you panic-buy a new setup, cash out the old one \u2014 it covers most of the upgrade. Check what your gear's worth at purchasingcorp.com",
-    "hashtags": [
-      "gta6",
-      "gta6countdown",
-      "sellyourtech",
       "gaming",
+      "sellyourtech",
+      "getpaid",
+      "buyback",
+      "techresale"
+    ],
+    "cycle_position": "1 of pool size 54"
+  },
+  {
+    "date": "2026-06-20",
+    "file": "purchasingcorp-gta6-tutorial-3-steps.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-tutorial-3-steps.mp4",
+    "local_path": "videos/purchasingcorp-gta6-tutorial-3-steps.mp4",
+    "caption": "How to fund your GTA 6 upgrade in 3 steps: 1) grab your old gear 2) 60-second quote 3) get paid same day. That's your GTA 6 budget. Start at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "howto",
+      "sellyourtech",
+      "extracash",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 44"
+    "cycle_position": "1 of pool size 54"
+  },
+  {
+    "date": "2026-06-20",
+    "file": "purchasingcorp-gta6-preorder-junk-drawer.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-preorder-junk-drawer.mp4",
+    "local_path": "videos/purchasingcorp-gta6-preorder-junk-drawer.mp4",
+    "caption": "POV: you pre-ordered GTA 6 and it cost you nothing \u2014 the junk drawer covered it. A spare phone, old earbuds, a smartwatch all add up, paid same day. Cash yours out at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "pov",
+      "sellyourtech",
+      "extracash",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 54"
   }
 ]
