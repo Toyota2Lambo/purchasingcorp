@@ -1,9 +1,9 @@
 'use strict';
 // ============================================================
-// Tiny .env loader — zero dependencies (repo has no build step).
+// Tiny .env loader, zero dependencies (repo has no build step).
 // Loads pricing-engine/.env into process.env if present. Existing
 // process.env values win (so CI secrets are never overwritten).
-// In CI you don't need a .env at all — the workflow injects secrets.
+// In CI you don't need a .env at all, the workflow injects secrets.
 // ============================================================
 
 const fs = require('fs');

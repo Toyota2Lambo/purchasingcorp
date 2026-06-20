@@ -1,6 +1,6 @@
 'use strict';
 // ============================================================
-// REFRESH SNAPSHOT — re-generate the site's static fallback
+// REFRESH SNAPSHOT, re-generate the site's static fallback
 // (/pricing-data.js) from the LIVE /api/pricing endpoint.
 //
 // Why: pricing-data.js is what the quote tool falls back to when the

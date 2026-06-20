@@ -6,7 +6,7 @@
 // prices for NEW (and sometimes open-box / refurb) inventory:
 //   https://api.bestbuy.com/v1/products(<filter>)?apiKey=...&format=json
 //
-// IMPORTANT — what this signal IS and ISN'T:
+// IMPORTANT, what this signal IS and ISN'T:
 //   * It is an authoritative *new retail* anchor for a device.
 //   * It is NOT a used/sold comp. A buyback offer should sit well
 //     below it. Dumping retail-new prices into the same median pool
@@ -20,7 +20,7 @@
 // "offer = % of current retail" model.
 //
 // Auth: a single API key passed as the ?apiKey= query parameter
-// (Best Buy's required mechanism — there is no header/OAuth option):
+// (Best Buy's required mechanism, there is no header/OAuth option):
 //   BESTBUY_API_KEY=...    (from https://developer.bestbuy.com)
 // No key -> source disables itself gracefully (no crash).
 // ============================================================
@@ -125,7 +125,7 @@ function createBestBuySource(cfg, env = process.env) {
       if (!enabled) {
         return { source: 'bestbuy', prices: [], basis: 'disabled', basisEligible: false, query: '' };
       }
-      // Use the clean device name (no carrier suffix) — Best Buy retail
+      // Use the clean device name (no carrier suffix), Best Buy retail
       // is carrier-agnostic; variant.query carries eBay-specific suffixes.
       const name = variant.displayName || variant.rowName || variant.query;
       try {

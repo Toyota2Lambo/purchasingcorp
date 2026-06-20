@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 // ============================================================
-// ORCHESTRATOR — the one command you run (or CI runs):
+// ORCHESTRATOR, the one command you run (or CI runs):
 //
 //   node build-prices.js [--dry-run] [--limit N] [--only iphone,consoles]
 //
@@ -14,7 +14,7 @@
 //
 // With no API keys / sources disabled, it still runs end-to-end and
 // emits a valid file where every device is "Contact" (the existing
-// hand-priced path) — proving the format/contract without network.
+// hand-priced path), proving the format/contract without network.
 // ============================================================
 
 const { loadEnv } = require('./lib/env');

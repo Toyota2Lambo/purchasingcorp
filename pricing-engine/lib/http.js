@@ -1,6 +1,6 @@
 'use strict';
 // ============================================================
-// Fetch helpers — built on Node 18+ global fetch (no deps).
+// Fetch helpers, built on Node 18+ global fetch (no deps).
 // Adds timeout, a default User-Agent, JSON parsing, and a couple
 // of polite retries on 429/5xx with backoff.
 // ============================================================

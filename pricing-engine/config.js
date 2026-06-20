@@ -1,6 +1,6 @@
 'use strict';
 // ============================================================
-// PurchasingCorp — Pricing Engine CONFIG
+// PurchasingCorp, Pricing Engine CONFIG
 // ------------------------------------------------------------
 // THIS is the one file you edit to tune offers. No code changes
 // needed elsewhere. Everything here is read by pricing.js.
@@ -9,14 +9,14 @@
 //   then clamped into [ floor , market_median ] and rounded.
 //
 // If we have fewer than `guards.minSampleSize` sold comps for a
-// device, we DO NOT guess — it is flagged "needs manual price"
+// device, we DO NOT guess, it is flagged "needs manual price"
 // and rendered as "Contact" in the quote tool (which already has
 // a hand-pricing path for that string).
 // ============================================================
 
 module.exports = {
   // ----------------------------------------------------------
-  // 1) MARGIN — what fraction of the market price we offer.
+  // 1) MARGIN, what fraction of the market price we offer.
   // ----------------------------------------------------------
   margins: {
     // Owner's target: ~20% profit on each buy. Buy at B, resell at the
@@ -58,7 +58,7 @@ module.exports = {
     headlineCondition: 'like new',
 
     // Carrier-locked iPhones: priced as a fraction of the UNLOCKED market
-    // price, not from their own eBay query — keyword search for "carrier
+    // price, not from their own eBay query, keyword search for "carrier
     // locked" mostly matches "Unlocked - any carrier" listings and skews
     // high. ~0.72 reproduces the spread baked into the manual sheet.
     carrierLockedFactor: 0.72,
@@ -108,7 +108,7 @@ module.exports = {
   sources: {
     ebay: {
       enabled: true,
-      // 'production' | 'sandbox' — selects eBay API base URLs.
+      // 'production' | 'sandbox', selects eBay API base URLs.
       env: process.env.EBAY_ENV || 'production',
       // Marketplace Insights returns *sold* comps but needs special
       // access approval. When false (or no access), we fall back to the
@@ -136,7 +136,7 @@ module.exports = {
       maxItemPrice: 6000,
     },
     bestbuy: {
-      // Best Buy Products API. Returns CURRENT NEW RETAIL prices — an
+      // Best Buy Products API. Returns CURRENT NEW RETAIL prices, an
       // authoritative anchor, but NOT a used/sold comp.
       //
       // By default this is a REFERENCE source: prices are fetched and
@@ -186,7 +186,7 @@ module.exports = {
   // ----------------------------------------------------------
   output: {
     // Site categories that should ALWAYS render as "Contact" regardless of
-    // market data — i.e. devices you insist on pricing by hand. Empty by
+    // market data, i.e. devices you insist on pricing by hand. Empty by
     // default. Example: ['accessories'].
     alwaysContact: [],
     // Customer-facing first offer (success screen): only shown when the
@@ -200,10 +200,10 @@ module.exports = {
   // Map the quote wizard's 6 condition labels (form.html CONDS) onto our
   // 4 pricing tiers. Anything unmapped uses defaultCondition.
   CONDITION_ALIASES: {
-    'new — sealed / unopened': 'like new',
+    'new, sealed / unopened': 'like new',
     'like new': 'like new',
-    'good — light wear': 'good',
-    'fair — visible wear': 'fair',
+    'good, light wear': 'good',
+    'fair, visible wear': 'fair',
     'damaged / for parts': 'broken',
     'not sure': 'good', // conservative middle when unknown
   },

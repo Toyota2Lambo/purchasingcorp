@@ -34,13 +34,13 @@ export default async function handler(req) {
   if (!consent) return json({ error: 'Consent required' }, 400);
   if (email && !EMAIL_RE.test(email)) return json({ error: 'Invalid email' }, 400);
 
-  // Crude honeypot — frontend never sends "url"
+  // Crude honeypot, frontend never sends "url"
   if (body.url) return json({ ok: true });
 
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) {
-    // Not configured yet — accept silently so banner dismisses.
+    // Not configured yet, accept silently so banner dismisses.
     return json({ ok: true, stored: false, reason: 'not_configured' });
   }
 
@@ -60,7 +60,7 @@ export default async function handler(req) {
     user_agent: ua,
   };
 
-  // Use Supabase REST upsert — if email already exists, update consent fields.
+  // Use Supabase REST upsert, if email already exists, update consent fields.
   // For null-email rows (cookie-only consent) we just insert.
   const endpoint = `${url}/rest/v1/subscribers${email ? '?on_conflict=email' : ''}`;
   const r = await fetch(endpoint, {

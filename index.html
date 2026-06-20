@@ -21,8 +21,10 @@
   };
 </script>
 <title>Sell Your Device for Instant Cash · PurchasingCorp</title>
-<meta name="description" content="PurchasingCorp buys phones, laptops, consoles, MacBooks, and more. Quoted prices, same-day payout, no games." />
+<meta name="description" content="PurchasingCorp buys phones, laptops, consoles, MacBooks, and more. Published prices, same-day payout, and a signed record of every sale." />
 <meta name="theme-color" content="#050505" />
+
+<link rel="canonical" href="https://purchasingcorp.com/" />
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -33,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PurchasingCorp" />
 <meta property="og:title" content="Turn idle devices into instant cash" />
-<meta property="og:description" content="We pay more than Apple, Best Buy, or any trade-in app. No haggling, no lowballs, paid same-day." />
+<meta property="og:description" content="We pay more than the major trade-in programs. Published prices, firm offers, same-day payout." />
 <meta property="og:url" content="https://purchasingcorp.com/" />
 <meta property="og:image" content="https://purchasingcorp.com/og-image.png?v=2" />
 <meta property="og:image:width" content="1200" />
@@ -43,44 +45,18 @@
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Turn idle devices into instant cash" />
-<meta name="twitter:description" content="We pay more than Apple, Best Buy, or any trade-in app. Cash today, no haggling." />
+<meta name="twitter:description" content="We pay more than the major trade-in programs. Published prices, same-day payout." />
 <meta name="twitter:image" content="https://purchasingcorp.com/og-image.png?v=2" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-      },
-      colors: {
-        ink: {
-          950: '#050505',
-          900: '#0a0a0a',
-          850: '#0f0f10',
-          800: '#141416',
-          700: '#1c1c1f',
-          600: '#26262b',
-          500: '#3a3a40',
-          400: '#5a5a62',
-          300: '#8a8a92',
-          200: '#b6b6bc',
-          100: '#e6e6e8',
-        },
-      },
-      boxShadow: {
-        glow: '0 0 0 1px rgba(255,255,255,0.06), 0 10px 40px -10px rgba(0,0,0,0.6)',
-        inset: 'inset 0 1px 0 0 rgba(255,255,255,0.06)',
-      },
-    },
-  },
-};
-</script>
+<link rel="stylesheet" href="/tailwind.css" />
 <link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PurchasingCorp","url":"https://purchasingcorp.com/","logo":"https://purchasingcorp.com/apple-touch-icon.png","email":"hello@purchasingcorp.com","address":{"@type":"PostalAddress","addressRegion":"MD","addressCountry":"US"},"sameAs":["https://discord.gg/XresQdPQv9"]}
+</script>
 
 <!-- Vercel Web Analytics + Speed Insights -->
 <script defer src="/_vercel/insights/script.js"></script>
@@ -109,6 +85,7 @@ tailwind.config = {
       <li><a href="/#we-buy" aria-current="page" class="text-white transition">We Buy</a></li>
       <li><a href="/pricing" class="hover:text-white transition">Pricing</a></li>
       <li><a href="/process" class="hover:text-white transition">Process</a></li>
+      <li><a href="/safety" class="hover:text-white transition">Safety</a></li>
       <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
     </ul>
     <div class="hidden md:flex items-center gap-2">
@@ -132,7 +109,7 @@ tailwind.config = {
         <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <button id="menuBtn" type="button" onclick="openMenu()" aria-label="Open menu"
+      <button id="menuBtn" type="button" onclick="openMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
         class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-white/10 bg-white/[0.04] text-ink-100 transition">
         <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -163,7 +140,7 @@ tailwind.config = {
         Get a Quote
         <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
-      <p class="mt-3 text-center text-[12px] text-ink-400">Typical reply under 30 min</p>
+      <p class="mt-3 text-center text-[12px] text-ink-400">Typical reply within the hour</p>
     </div>
   </div>
 </div>
@@ -173,13 +150,13 @@ tailwind.config = {
   <div class="mx-auto max-w-6xl px-5 text-center">
     <div class="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-ink-200">
       <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      Quoting now. Typical response under 30 min
+      Quoting now · Typical reply within the hour
     </div>
     <h1 class="mt-7 mx-auto max-w-4xl text-[44px] sm:text-6xl md:text-[80px] font-semibold tracking-[-0.04em] leading-[0.95]">
-      Turn idle devices<br/>into <span class="text-ink-300 italic font-serif font-normal">instant cash.</span>
+      Turn idle devices<br/>into <span class="text-emerald-300">instant cash.</span>
     </h1>
     <p class="mx-auto mt-7 max-w-xl text-[15px] sm:text-[16px] text-ink-300 leading-relaxed">
-      We pay way more than Apple, Best Buy, or any trade-in app. No haggling, no lowballs, paid same-day.
+      We pay more than the major trade-in programs, and our full rate sheet is public, so you can verify it. Firm offers, same-day payout.
     </p>
     <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
       <a href="/form" class="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition">
@@ -197,16 +174,16 @@ tailwind.config = {
     </a>
     <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
       <div class="rounded-2xl border border-white/[0.06] bg-ink-900/60 px-5 py-4 text-left">
-        <div class="text-[15px] font-semibold">More money in your pocket</div>
-        <div class="mt-1 text-[12.5px] text-ink-400">Apple lowballs. We pay top dollar.</div>
+        <div class="text-[15px] font-semibold">Published prices</div>
+        <div class="mt-1 text-[12.5px] text-ink-400">Our full rate sheet is public. Compare us before you ship anything.</div>
       </div>
       <div class="rounded-2xl border border-white/[0.06] bg-ink-900/60 px-5 py-4 text-left">
-        <div class="text-[15px] font-semibold">Paid before bedtime</div>
-        <div class="mt-1 text-[12.5px] text-ink-400">Zelle, Cash App, Venmo, money hits your phone the same day.</div>
+        <div class="text-[15px] font-semibold">Paid the same day</div>
+        <div class="mt-1 text-[12.5px] text-ink-400">Zelle, Cash App, Venmo, or PayPal, sent as soon as inspection clears.</div>
       </div>
       <div class="rounded-2xl border border-white/[0.06] bg-ink-900/60 px-5 py-4 text-left">
-        <div class="text-[15px] font-semibold">Zero haggling</div>
-        <div class="mt-1 text-[12.5px] text-ink-400">One firm offer up front. No surprises when the box arrives.</div>
+        <div class="text-[15px] font-semibold">One firm offer</div>
+        <div class="mt-1 text-[12.5px] text-ink-400">The price we quote is the price you’re paid. No surprise deductions.</div>
       </div>
     </div>
   </div>
@@ -221,7 +198,7 @@ tailwind.config = {
           <span>◆</span> We Buy
         </span>
         <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-          Pretty much <span class="text-ink-300 italic font-serif font-normal">anything valuable</span>
+          Pretty much <span class="text-emerald-300">anything valuable</span>
         </h2>
         <p class="mt-3 max-w-md text-ink-300 text-[15px]">Not sure if we take it, ask, you'll have an answer in minutes.</p>
       </div>
@@ -237,7 +214,7 @@ tailwind.config = {
       <!-- Phones -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1709528922440-4fc4f05ef110?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="iPhone" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/phones.jpg" width="640" height="360" alt="iPhone" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           <span class="absolute right-3 top-3 rounded-full border border-white/10 bg-black/40 backdrop-blur px-2 py-0.5 text-[10px] uppercase tracking-wider text-white">Top buy</span>
         </div>
@@ -250,7 +227,7 @@ tailwind.config = {
       <!-- Laptops -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="Laptop" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/laptops.jpg" width="640" height="360" alt="Laptop" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -262,7 +239,7 @@ tailwind.config = {
       <!-- Gaming Consoles -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1693929291343-f38cb7519d5d?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="Game controller" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/consoles.jpg" width="640" height="360" alt="Game controller" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -274,7 +251,7 @@ tailwind.config = {
       <!-- GPUs -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="Graphics card" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/gpus.jpg" width="640" height="360" alt="Graphics card" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -286,7 +263,7 @@ tailwind.config = {
       <!-- MacBooks -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1615788189819-bee84874da4b?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="MacBook" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/macbooks.jpg" width="640" height="360" alt="MacBook" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -298,7 +275,7 @@ tailwind.config = {
       <!-- Tablets -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1662893170097-d6563d0093d3?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="Tablet" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/tablets.jpg" width="640" height="360" alt="Tablet" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -310,7 +287,7 @@ tailwind.config = {
       <!-- Cameras -->
       <div class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-ink-900 hover:border-white/15 transition">
         <div class="relative h-28 overflow-hidden border-b border-white/[0.05] bg-ink-850">
-          <img src="https://images.unsplash.com/photo-1650937727767-7f092cb8791f?w=640&h=360&fit=crop&crop=entropy&q=70&auto=format" alt="Camera" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+          <img src="/img/cameras.jpg" width="640" height="360" alt="Camera" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
           <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
         </div>
         <div class="p-5">
@@ -333,14 +310,14 @@ tailwind.config = {
             </div>
           </div>
           <div class="order-1 md:order-2 relative h-28 md:h-auto md:w-60 overflow-hidden border-b md:border-b-0 md:border-l border-white/[0.05] bg-ink-850">
-            <img src="https://images.unsplash.com/photo-1672413514634-4781b15fd89e?w=640&h=480&fit=crop&crop=entropy&q=70&auto=format" alt="Phones for resale" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <img src="/img/bulk.jpg" width="640" height="480" alt="Phones for resale" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
             <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:bg-gradient-to-l"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <p class="mt-6 text-[12.5px] text-ink-400">Don't see it? <a class="text-ink-100 underline-offset-4 hover:underline" href="https://discord.gg/XresQdPQv9" target="_blank" rel="noopener">Message us on Discord</a> or <a class="text-ink-100 underline-offset-4 hover:underline" href="#">Telegram</a>, fast answer guaranteed.</p>
+    <p class="mt-6 text-[12.5px] text-ink-400">Don't see it? <a class="text-ink-100 underline-offset-4 hover:underline" href="https://discord.gg/XresQdPQv9" target="_blank" rel="noopener">Message us on Discord</a>. Fast answer, usually within the hour.</p>
   </div>
 </section>
 
@@ -352,7 +329,7 @@ tailwind.config = {
         We pay more
       </span>
       <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-        Why settle for less <span class="text-ink-300 italic font-serif font-normal">than you deserve?</span>
+        Why settle for less <span class="text-emerald-300">than you deserve?</span>
       </h2>
       <p class="mt-4 text-ink-300 text-[15px]">
         See what Apple, Best Buy, and trade-in apps would give you, versus what you'd actually walk away with from us.
@@ -399,7 +376,7 @@ tailwind.config = {
       </ul>
       <div class="border-t border-white/[0.06] bg-gradient-to-b from-transparent to-white/[0.02] px-5 md:px-8 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div class="text-[13.5px] text-ink-200">
-          That's hundreds of dollars left on the table. <span class="text-white font-medium">Stop giving it away.</span>
+          Often hundreds of dollars of difference on a single device. <span class="text-white font-medium">Compare your model before you trade it in.</span>
         </div>
         <a href="/pricing" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[13px] font-medium text-black hover:bg-ink-100 transition">
           See your model's price
@@ -407,7 +384,29 @@ tailwind.config = {
         </a>
       </div>
     </div>
-    <p class="mt-4 text-center text-[11.5px] text-ink-500">Comparison amounts based on Apple Trade-In published estimates for like-new devices. Your offer may be higher.</p>
+    <p class="mt-4 text-center text-[11.5px] text-ink-500">Comparison amounts based on Apple Trade-In published estimates for like-new devices, as of June 2026. Your offer may be higher.</p>
+  </div>
+</section>
+
+<!-- Trust band -->
+<section class="border-t border-white/[0.06]">
+  <div class="mx-auto max-w-6xl px-5 py-8 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-5">
+    <a href="/safety" class="group flex items-center gap-3 text-[12.5px] text-ink-300 hover:text-white transition">
+      <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      Registered Maryland business
+    </a>
+    <a href="/safety" class="group flex items-center gap-3 text-[12.5px] text-ink-300 hover:text-white transition">
+      <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M9.5 18.5h5"/></svg></span>
+      CTIA stolen-device checks on every IMEI
+    </a>
+    <a href="/safety" class="group flex items-center gap-3 text-[12.5px] text-ink-300 hover:text-white transition">
+      <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10l3 3v15H4V3h3z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+      Signed bill of sale on every deal
+    </a>
+    <a href="/safety" class="group flex items-center gap-3 text-[12.5px] text-ink-300 hover:text-white transition">
+      <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-emerald-400/15 text-emerald-300"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M5 6h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg></span>
+      Documented same-day payouts
+    </a>
   </div>
 </section>
 
@@ -419,10 +418,10 @@ tailwind.config = {
         Why PurchasingCorp
       </span>
       <h2 class="mt-5 text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-        Win bigger.<br/><span class="text-ink-300 italic font-serif font-normal">Today.</span>
+        A better way<br/><span class="text-emerald-300">to sell.</span>
       </h2>
       <p class="mt-4 text-ink-300 text-[15px]">
-        Every other buyback is a lowball, a hassle, or a week-long wait. Not us. Here's what selling to PurchasingCorp actually feels like.
+        Most buyback programs are slow, opaque, or both. Here’s how we run every sale instead.
       </p>
     </div>
 
@@ -433,7 +432,7 @@ tailwind.config = {
         </div>
         <h3 class="mt-5 text-[20px] font-semibold tracking-tight">You walk away with more.</h3>
         <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
-          We don't nickel-and-dime. We pay what your device is actually worth, often hundreds more than Apple, Best Buy, or Gazelle. Why give that money away?
+          We pay what your device is actually worth, often hundreds more than the big trade-in programs. Our rates are published, so you can verify that before you ship.
         </p>
       </div>
 
@@ -443,7 +442,7 @@ tailwind.config = {
         </div>
         <h3 class="mt-5 text-[20px] font-semibold tracking-tight">Cash today. Not next week.</h3>
         <p class="mt-2 text-[14px] text-ink-300 leading-relaxed">
-          Send it in, we inspect within the hour, money hits your phone before bedtime. Zelle, Cash App, Venmo, PayPal, your choice.
+          We inspect the same day your device arrives and the payout goes out the same day. Zelle, Cash App, Venmo, PayPal, or ACH, your choice.
         </p>
       </div>
 
@@ -460,8 +459,8 @@ tailwind.config = {
 
     <div class="mt-8 rounded-2xl border border-white/[0.06] bg-gradient-to-b from-ink-900 to-ink-950 px-6 py-6 md:py-7 flex flex-col md:flex-row items-center md:justify-between gap-4 text-center md:text-left">
       <div>
-        <div class="text-[18px] md:text-[20px] font-semibold tracking-tight">Stop letting that old phone collect dust.</div>
-        <div class="mt-1 text-[13.5px] text-ink-300">Find out what it's actually worth, quote takes 60 seconds.</div>
+        <div class="text-[18px] md:text-[20px] font-semibold tracking-tight">Find out what your devices are actually worth.</div>
+        <div class="mt-1 text-[13.5px] text-ink-300">A quote takes about 60 seconds, firm offer, same-day payout.</div>
       </div>
       <a href="/form" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
         Get my offer
@@ -477,7 +476,7 @@ tailwind.config = {
     <div class="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-ink-900 to-ink-950 px-8 py-12 md:py-16 text-center">
       <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
       <h2 class="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">
-        Ready to <span class="text-ink-300 italic font-serif font-normal">cash out?</span>
+        Ready to <span class="text-emerald-300">cash out?</span>
       </h2>
       <p class="mt-4 text-ink-300 text-[15px] mx-auto max-w-md">Fill out the quote form, message us directly, or check the full pricing guide. We respond fast.</p>
       <div class="mt-7 flex flex-wrap justify-center gap-3">
@@ -485,13 +484,9 @@ tailwind.config = {
           <svg viewBox="0 0 16 16" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5l5 4 5-4M2 4h12v8H2z"/></svg>
           Fill Out Quote Form
         </a>
-        <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
+        <a href="https://discord.gg/XresQdPQv9" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 16 3.1l-.2.4a16 16 0 0 0-3.6 0L12 3.1a19.8 19.8 0 0 0-4.3 1.3A19.6 19.6 0 0 0 4 16.7a19.9 19.9 0 0 0 5.7 2.9l.7-1a14 14 0 0 1-2-1l.4-.4a14 14 0 0 0 12.4 0l.4.4a14 14 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 5.7-2.9 19.6 19.6 0 0 0-3.7-12.3zM10 14.4c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1zm4 0c-1 0-2-1-2-2.1 0-1.2 1-2.1 2-2.1s2 .9 2 2.1c0 1.2-1 2.1-2 2.1z"/></svg>
           Discord
-        </a>
-        <a href="#" class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm hover:bg-white/[0.08] transition">
-          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM5.5 11.7l11.6-4.5c.5-.2 1 .1.9.8l-2 9.3c-.1.6-.5.7-.9.4l-2.6-1.9-1.2 1.2c-.2.2-.3.3-.6.3l.2-2.9 5.4-4.9c.2-.2 0-.3-.3-.1l-6.7 4.2-2.9-.9c-.6-.2-.6-.6.1-.9z"/></svg>
-          Telegram
         </a>
       </div>
     </div>
@@ -547,7 +542,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-12 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-ink-500">
-      <div>&copy; <span id="year"></span> PurchasingCorp &middot; All rights reserved</div>
+      <div>&copy; <span id="year"></span> PurchasingCorp &middot; Registered Maryland business &middot; All rights reserved</div>
       <div class="flex items-center gap-4">
         <a href="/privacy" class="hover:text-ink-200 transition">Privacy Policy</a>
         <a href="/privacy#terms" class="hover:text-ink-200 transition">Terms</a>
@@ -556,29 +551,16 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- Consent + email signup banner -->
+<!-- Cookie consent (analytics only, newsletter moved out of the banner) -->
 <div id="consentBanner" class="fixed inset-x-3 bottom-3 z-[60] hidden">
-  <div class="mx-auto max-w-3xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
-    <div class="p-5 md:p-6">
-      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
-        <div class="flex-1 min-w-0">
-          <div class="text-[14px] font-semibold text-white">Get the best prices first.</div>
-          <p class="mt-1 text-[12.5px] text-ink-300 leading-relaxed">
-            Drop your email for price-drop alerts and high-payout days. By continuing you accept our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a> and use of cookies for analytics.
-          </p>
-        </div>
-        <form id="consentForm" class="flex flex-col sm:flex-row items-stretch gap-2 md:min-w-[360px]" onsubmit="return submitConsent(event, true)">
-          <input id="consentEmail" type="email" name="email" placeholder="you@email.com" autocomplete="email"
-            class="flex-1 min-w-0 rounded-full border border-white/10 bg-ink-800 px-4 py-2.5 text-[13.5px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15">
-          <button type="submit" class="inline-flex items-center justify-center gap-1.5 rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition whitespace-nowrap">
-            I Agree
-            <svg class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </button>
-        </form>
-      </div>
-      <div class="mt-3 flex items-center justify-between text-[11.5px]">
-        <button type="button" onclick="submitConsent(null, false)" class="text-ink-400 hover:text-ink-200 underline underline-offset-4">No thanks, just essential cookies</button>
-        <span id="consentStatus" class="text-ink-400 hidden"></span>
+  <div class="mx-auto max-w-xl rounded-2xl border border-white/[0.08] bg-ink-900/95 backdrop-blur-xl shadow-2xl">
+    <div class="p-4 md:p-5 flex flex-col sm:flex-row sm:items-center gap-3">
+      <p class="flex-1 text-[12.5px] text-ink-300 leading-relaxed">
+        We use cookies for basic analytics only, no ad tracking. Details in our <a href="/privacy" class="text-ink-100 underline underline-offset-4 hover:text-white">Privacy Policy</a>.
+      </p>
+      <div class="flex items-center gap-2 shrink-0">
+        <button type="button" onclick="acceptConsent(true)" class="inline-flex items-center justify-center rounded-full bg-white px-4 py-2 text-[12.5px] font-medium text-black hover:bg-ink-100 transition">OK</button>
+        <button type="button" onclick="acceptConsent(false)" class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[12.5px] text-ink-200 hover:bg-white/[0.08] transition">Essential only</button>
       </div>
     </div>
   </div>
@@ -606,58 +588,19 @@ tailwind.config = {
     setTimeout(function(){ banner.classList.remove('hidden'); }, 800);
   })();
 
-  async function submitConsent(e, withEmail){
-    if (e) e.preventDefault();
-    var emailInput = document.getElementById('consentEmail');
-    var status = document.getElementById('consentStatus');
-    var banner = document.getElementById('consentBanner');
-    var email = withEmail ? (emailInput.value || '').trim() : '';
-
-    if (withEmail && !email) {
-      status.textContent = 'Enter an email or choose "No thanks".';
-      status.classList.remove('hidden');
-      emailInput.focus();
-      return false;
-    }
-
-    status.classList.remove('hidden');
-    status.textContent = 'Saving…';
-
+  async function acceptConsent(analytics){
     try {
-      var r = await fetch('/api/subscribe', {
+      localStorage.setItem('pc.consent.v1', JSON.stringify({ at: new Date().toISOString(), analytics: !!analytics }));
+    } catch(_){}
+    var banner = document.getElementById('consentBanner');
+    if (banner) banner.classList.add('hidden');
+    try {
+      await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          email: email || null,
-          consent: true,
-          consent_marketing: withEmail,
-          path: location.pathname,
-          referrer: document.referrer || null,
-        }),
+        body: JSON.stringify({ email: null, consent: true, consent_marketing: false, path: location.pathname, referrer: document.referrer || null }),
       });
-      // Even if backend isn't configured yet, dismiss locally so the
-      // banner doesn't keep nagging the same user.
-      localStorage.setItem('pc.consent.v1', JSON.stringify({
-        at: new Date().toISOString(),
-        email: email || null,
-        marketing: !!withEmail,
-      }));
-      if (r.ok) {
-        status.textContent = email ? "You're in. Watch your inbox." : 'Saved. Thanks.';
-      } else {
-        status.textContent = 'Saved locally.';
-      }
-    } catch (err) {
-      localStorage.setItem('pc.consent.v1', JSON.stringify({
-        at: new Date().toISOString(),
-        email: email || null,
-        marketing: !!withEmail,
-        offline: true,
-      }));
-      status.textContent = 'Saved locally.';
-    }
-    setTimeout(function(){ banner.classList.add('hidden'); }, 1200);
-    return false;
+    } catch(_){}
   }
 </script>
 <script>
@@ -666,18 +609,24 @@ tailwind.config = {
     var mm = document.getElementById('mobileMenu');
     var mp = document.getElementById('menuPanel');
     var mb = document.getElementById('menuBackdrop');
+    var menuBtn = document.getElementById('menuBtn');
     window.openMenu = function(){
       if(!mm) return;
       mm.classList.remove('hidden');
       requestAnimationFrame(function(){ mb.classList.add('opacity-100'); mp.classList.remove('-translate-y-full'); });
       document.body.style.overflow = 'hidden';
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
     };
     window.closeMenu = function(){
       if(!mm) return;
       mb.classList.remove('opacity-100'); mp.classList.add('-translate-y-full');
       document.body.style.overflow = '';
       setTimeout(function(){ mm.classList.add('hidden'); }, 300);
+      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
     };
+    addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && mm && !mm.classList.contains('hidden')) closeMenu();
+    });
     var ov = document.getElementById('headerOverlay');
     addEventListener('scroll', function(){
       if(!ov) return;
@@ -711,7 +660,7 @@ tailwind.config = {
           var model = norm(li.getAttribute('data-teaser-model'));
           var row = cat.rows.find(function(r){ return norm(r[0]) === model; });
           var ours = row && priceNum(row[1]);
-          if (ours == null) return; // "Contact" / missing — keep fallback
+          if (ours == null) return; // "Contact" / missing, keep fallback
           var oursEl = li.querySelector('[data-teaser-ours]');
           var deltaEl = li.querySelector('[data-teaser-delta]');
           var theirs = priceNum((li.querySelector('[data-teaser-theirs]')||{}).textContent);
