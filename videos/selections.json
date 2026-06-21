@@ -1,13 +1,31 @@
 [
   {
-    "date": "2026-06-20",
-    "file": "purchasingcorp-gta6-myth-buy-new.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-myth-buy-new.mp4",
-    "local_path": "videos/purchasingcorp-gta6-myth-buy-new.mp4",
-    "caption": "Biggest GTA 6 myth: you have to buy everything new. You don't \u2014 the average gamer's closet is sitting on $500+ in unused tech. That's your GTA 6 fund. Find it at purchasingcorp.com",
+    "date": "2026-06-21",
+    "file": "purchasingcorp-gta6-gpu-upgrade.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-gpu-upgrade.mp4",
+    "local_path": "videos/purchasingcorp-gta6-gpu-upgrade.mp4",
+    "caption": "GTA 6 on PC is going to demand a serious upgrade \u2014 and new GPUs aren't cheap. Your old card still pays ~$290 toward it. Sell it and be game-ready before launch at purchasingcorp.com",
     "hashtags": [
       "gta6",
-      "gaming",
+      "pcgaming",
+      "gpu",
+      "sellyourgpu",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 54"
+  },
+  {
+    "date": "2026-06-21",
+    "file": "purchasingcorp-gta6-rapidfire-countdown.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-rapidfire-countdown.mp4",
+    "local_path": "videos/purchasingcorp-gta6-rapidfire-countdown.mp4",
+    "caption": "GTA 6 is almost here \u2014 fund your whole setup in 15 seconds. Old console, drawer phone, old GPU: it all pays. Sell before launch week tanks trade-in prices. Start at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "gta6countdown",
       "sellyourtech",
       "getpaid",
       "buyback",
@@ -16,36 +34,18 @@
     "cycle_position": "1 of pool size 54"
   },
   {
-    "date": "2026-06-20",
-    "file": "purchasingcorp-gta6-tutorial-3-steps.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-tutorial-3-steps.mp4",
-    "local_path": "videos/purchasingcorp-gta6-tutorial-3-steps.mp4",
-    "caption": "How to fund your GTA 6 upgrade in 3 steps: 1) grab your old gear 2) 60-second quote 3) get paid same day. That's your GTA 6 budget. Start at purchasingcorp.com",
+    "date": "2026-06-21",
+    "file": "purchasingcorp-ugc-pip-caroline.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-caroline.mp4",
+    "local_path": "videos/purchasingcorp-ugc-pip-caroline.mp4",
+    "caption": "Real talk: that phone in your junk drawer is worth money. I got a 60-second quote and $855 the same day. Don't let it collect dust \u2014 purchasingcorp.com",
     "hashtags": [
-      "gta6",
-      "howto",
       "sellyourtech",
-      "extracash",
+      "declutter",
+      "getpaid",
+      "ugc",
       "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 54"
-  },
-  {
-    "date": "2026-06-20",
-    "file": "purchasingcorp-gta6-preorder-junk-drawer.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-preorder-junk-drawer.mp4",
-    "local_path": "videos/purchasingcorp-gta6-preorder-junk-drawer.mp4",
-    "caption": "POV: you pre-ordered GTA 6 and it cost you nothing \u2014 the junk drawer covered it. A spare phone, old earbuds, a smartwatch all add up, paid same day. Cash yours out at purchasingcorp.com",
-    "hashtags": [
-      "gta6",
-      "pov",
-      "sellyourtech",
-      "extracash",
-      "buyback",
-      "techresale",
-      "getpaid"
+      "techresale"
     ],
     "cycle_position": "1 of pool size 54"
   }
