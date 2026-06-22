@@ -1,0 +1,626 @@
+{
+  "generated_at": "2026-06-22T17:59:50.336533+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "what 'condition' actually means in a buyback quote and how to maximize your payout",
+    "comparison_angle": "our cash offer vs. Facebook Marketplace: real cash vs. no-shows, lowballers, and strangers at your door",
+    "audience_angle": "the hidden value reveal: name real prices for devices people assume are worthless (iPhone X, older MacBooks, etc.)",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-06-22T17:58:44.820Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Post 1: Offer (MacBook Air featured)",
+        "caption": "That M4 MacBook Air in your bag is worth more than you think. Get a real number in 60 seconds, ship free, cash the same day. No store credit, no games. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookairtradevalue",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyappledevice",
+          "#macbooktradein",
+          "#sellmacbookair",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#cashforphones",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmylaptop",
+          "#laptopbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "M4 MacBook Air",
+              "headline_html": "Up to <em>$976 cash</em> today",
+              "sub_html": "15\" and 13\" models. All specs, all conditions. The number we quote is the number we pay.",
+              "c1_label": "Top payout",
+              "c1_value": "$976",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 2: Board (MacBook Air price list)",
+        "caption": "Real MacBook Air prices, right now. No vague ranges, no bait-and-switch. The number you see is the number you get. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookairtradevalue",
+          "#cashformacbook",
+          "#sellmymacbook",
+          "#applebuyback",
+          "#macbooktradein",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#m4macbook",
+          "#macbookm4",
+          "#sellmyappledevice"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "M4 MacBook Air",
+              "title_html": "<em>Cash</em> offers today",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices shown for Excellent condition. Quote yours in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 3: Payout (proof of same-day payment)",
+        "caption": "Quoted Friday morning, paid Friday afternoon. No waiting, no surprises, no games. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#applebuyback",
+          "#macbooktradein",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#cashforphones",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmyappledevice",
+          "#macbookairtradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT",
+              "slip_title": "MacBook Air M4",
+              "slip_ref": "PC-062226-MA",
+              "device": "MacBook Air 13\" 16GB 512GB M4",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$680",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 4: Compare (PurchasingCorp vs. Facebook Marketplace)",
+        "caption": "Facebook Marketplace might look tempting until you factor in the no-shows, the lowballers, and the strangers at your door. We pay real cash, same day, no drama. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#applebuyback",
+          "#macbooktradein",
+          "#appletradein",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#cashforphones",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmyappledevice",
+          "#macbookairtradevalue",
+          "#facebookmarketplace"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARISON",
+              "eyebrow": "MacBook Air 13\" 16GB 512GB M4",
+              "title_html": "<em>Real cash</em> vs. the hassle",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash today)",
+                  "value": "$680",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Facebook Marketplace (after no-shows)",
+                  "value": "~$550",
+                  "pct": 81,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical final sale price after lowball offers, no-shows, and time lost. Our number is guaranteed, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 5: Index (category reference grid)",
+        "caption": "Six categories, same-day cash, zero drama. That device in your drawer is worth more than you think. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#phonetrade",
+          "#cashformacbook",
+          "#appletradein",
+          "#sellmyapplewatch",
+          "#sellmyappledevice",
+          "#sellmyconsole",
+          "#sellmymacmini",
+          "#macbookairtradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORIES",
+              "eyebrow": "What we buy",
+              "title_html": "<em>Cash</em> for your gear",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 49mm",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG Ally X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Accessories",
+                  "num": "Quote",
+                  "foot": "AirPods, more",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Top payouts shown. All models, all conditions. Quote yours in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 6: Photo-cover (lifestyle photo post with device)",
+        "caption": "That MacBook collecting dust is cash today. Same-day payout, free prepaid label, zero hassle. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#applebuyback",
+          "#macbooktradein",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmylaptop",
+          "#laptopbuyback",
+          "#macbookairtradevalue",
+          "#sellmyappledevice",
+          "#cashforphones",
+          "#sellmyphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "MACBOOK",
+              "eyebrow": "Turn your tech into cash",
+              "headline_html": "<em>Cash today</em>, not someday",
+              "deck_html": "Free shipping. Same-day payout. No games.",
+              "photo_url": "https://images.unsplash.com/photo-1520005258079-0b2cfc298a22?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxvdmVyLWVhciUyMGhlYWRwaG9uZXMlMjBjbG9zZSUyMHVwfGVufDF8MHx8fDE3ODIxNTExOTB8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 7: Offer (hidden value reveal: iPhone X)",
+        "caption": "Think your iPhone X is too old to be worth anything? Think again. Real cash, same day, even for older models. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#iphonetradevalue",
+          "#iphone14tradevalue",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#phonetrade",
+          "#appletradein",
+          "#sellmyappledevice",
+          "#oldiphonevalue",
+          "#selloldphone",
+          "#iphonecash",
+          "#iphonebuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "iPhone 17 Pro Max",
+              "headline_html": "Up to <em>$1,241 cash</em> today",
+              "sub_html": "All iPhone models, even older ones like iPhone X, iPhone 11, iPhone 12. That drawer phone is worth more than you think.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 8: Offer (Mac Mini)",
+        "caption": "That Mac Mini sitting under your desk is worth real cash. Get a quote in 60 seconds, ship free, cash the same day. No store credit, no waiting. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#cashformacmini",
+          "#macminitradein",
+          "#applebuyback",
+          "#sellmyappledevice",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#sellmyphone",
+          "#cashforphones",
+          "#phonetrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Mac Mini",
+              "headline_html": "Up to <em>$675 cash</em> today",
+              "sub_html": "PRO and standard models. All specs, all conditions. The number we quote is the number we pay.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 9: Board (Mac Mini price list)",
+        "caption": "Real Mac Mini prices, right now. No vague ranges, no surprises. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#cashformacmini",
+          "#macminitradein",
+          "#applebuyback",
+          "#sellmyappledevice",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#macbookcash",
+          "#appletradein",
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#sellmyphone",
+          "#cashforphones",
+          "#phonetrade",
+          "#macminicash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Mac Mini",
+              "title_html": "<em>Cash</em> offers today",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB 512GB",
+                  "price": "$675"
+                },
+                {
+                  "model": "MCYT4LL/A 24GB 512GB",
+                  "price": "$450"
+                },
+                {
+                  "model": "MU9E3LL/A 16GB 512GB",
+                  "price": "$375"
+                },
+                {
+                  "model": "MU9D3LL/A 16GB 256GB",
+                  "price": "$300"
+                }
+              ],
+              "note_html": "Prices shown for Excellent condition. Quote yours in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Post 10: Carousel (educational: condition guide)",
+        "caption": "What does Excellent vs. Good actually mean in a buyback quote? Here is how to grade your device and maximize your payout. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#sellmytech",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#phonetrade",
+          "#cashformacbook",
+          "#appletradein",
+          "#sellmyappledevice",
+          "#iphonetradevalue",
+          "#macbookairtradevalue",
+          "#sellmyconsole",
+          "#devicecondition"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "CONDITION",
+              "eyebrow": "What condition means",
+              "headline_html": "<em>Excellent</em>: looks new",
+              "body_html": "No scratches, no dents, no scuffs. Screen is perfect. <strong>Powers on and functions 100%.</strong> This is the top-tier grade and pays the most."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "CONDITION",
+              "eyebrow": "What condition means",
+              "headline_html": "<em>Good</em>: light wear",
+              "body_html": "Minor scratches or scuffs on the body. Screen may have light micro-scratches. <strong>Powers on and functions 100%.</strong> Still worth real cash."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "CONDITION",
+              "eyebrow": "What condition means",
+              "headline_html": "<em>Fair</em>: visible damage",
+              "body_html": "Dents, deep scratches, cracked screen, or heavy wear. <strong>Powers on and functions.</strong> We still buy it. Quote yours to see the real number."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "MAXIMIZE",
+              "eyebrow": "Maximize your payout",
+              "headline_html": "Three things that <em>boost</em> your offer",
+              "body_html": "1. Factory reset and sign out of iCloud. 2. Include the original box and charger if you have them. 3. <strong>Be honest about condition</strong> so there are no surprises when it arrives."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JUNE 22, 2026",
+          "date_label": "Monday",
+          "section": "MACBOOK AIR",
+          "headline_html": "<em>$976</em> for your M4 Air",
+          "deck_html": "Same-day cash. No games. Quote in 60 seconds.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Hidden value",
+          "stat_value": "$680",
+          "stat_unit": "",
+          "caption_html": "What that <em>older MacBook</em> in your closet is still worth. Real cash, same day.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
