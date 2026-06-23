@@ -1,53 +1,52 @@
 [
   {
-    "date": "2026-06-22",
-    "file": "purchasingcorp-pov-overpay.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-pov-overpay.mp4",
-    "local_path": "videos/purchasingcorp-pov-overpay.mp4",
-    "caption": "POV: you're about to pay full price for a new phone \u2014 and nobody's told you what the one in your pocket is still worth. Spoiler: it's hundreds. Check before you buy at purchasingcorp.com",
+    "date": "2026-06-23",
+    "file": "purchasingcorp-review-iphone-17-pro-max.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-review-iphone-17-pro-max.mp4",
+    "local_path": "videos/purchasingcorp-review-iphone-17-pro-max.mp4",
+    "caption": "iPhone 17 Pro Max review: the best phone money can buy \u2014 9/10. A19 Pro chip, the brightest 120Hz screen yet, real all-day battery. Best part? It holds its value. See what your current iPhone is still worth at purchasingcorp.com",
     "hashtags": [
-      "sellyouriphone",
-      "techtok",
-      "moneytok",
-      "buyback",
+      "iphone17promax",
+      "techreview",
+      "shouldyoubuy",
+      "resalevalue",
       "sellyourtech",
+      "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 54"
+    "cycle_position": "1 of pool size 59"
   },
   {
-    "date": "2026-06-22",
-    "file": "purchasingcorp-gta6-react-obsolete.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-react-obsolete.mp4",
-    "local_path": "videos/purchasingcorp-gta6-react-obsolete.mp4",
-    "caption": "Hot take: GTA 6 makes your current console obsolete. Maybe to you \u2014 but it's still cash to us, and that cash funds the next one. See what yours pays at purchasingcorp.com",
-    "hashtags": [
-      "gta6",
-      "hottake",
-      "sellyourconsole",
-      "buyback",
-      "sellyourtech",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 54"
-  },
-  {
-    "date": "2026-06-22",
-    "file": "purchasingcorp-ugc-pip-brandon.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-brandon.mp4",
-    "local_path": "videos/purchasingcorp-ugc-pip-brandon.mp4",
-    "caption": "That drawer of old tech? It's cash you haven't claimed yet. 60-second quote, $855 paid the same day. Find out what yours is worth at purchasingcorp.com",
+    "date": "2026-06-23",
+    "file": "purchasingcorp-ugc-brandon.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-brandon.mp4",
+    "local_path": "videos/purchasingcorp-ugc-brandon.mp4",
+    "caption": "I had an old iPhone sitting in my drawer for a YEAR. PurchasingCorp quoted me in 60 seconds and paid me $855 the same day \u2014 Zelle, Cash App, whatever you want. If you've got old tech lying around, get a quote at purchasingcorp.com",
     "hashtags": [
       "sellyourtech",
       "sellyouriphone",
-      "extracash",
+      "getpaid",
       "ugc",
       "buyback",
-      "techresale",
-      "getpaid"
+      "techresale"
     ],
-    "cycle_position": "1 of pool size 54"
+    "cycle_position": "1 of pool size 59"
+  },
+  {
+    "date": "2026-06-23",
+    "file": "purchasingcorp-reel-cracked-still-pays.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-cracked-still-pays.mp4",
+    "local_path": "videos/purchasingcorp-reel-cracked-still-pays.mp4",
+    "caption": "Cracked screen? Dead battery? Water damage? Don't toss that phone. We paid $410 for a broken one last week \u2014 the trash gives you $0. Get a quote at purchasingcorp.com",
+    "hashtags": [
+      "sellyourtech",
+      "brokenphone",
+      "crackedscreen",
+      "getpaid",
+      "buyback",
+      "techresale"
+    ],
+    "cycle_position": "1 of pool size 59"
   }
 ]
