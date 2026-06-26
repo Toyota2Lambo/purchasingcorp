@@ -1,30 +1,14 @@
 [
   {
-    "date": "2026-06-25",
-    "file": "purchasingcorp-ugc-pip-marcus.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-marcus.mp4",
-    "local_path": "videos/purchasingcorp-ugc-pip-marcus.mp4",
-    "caption": "Didn't think my old phone was worth anything. PurchasingCorp paid me $855 the same day \u2014 Zelle, Cash App, your choice. Old phones, laptops, consoles, they buy it all. purchasingcorp.com",
+    "date": "2026-06-26",
+    "file": "purchasingcorp-tutorial-howto.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-tutorial-howto.mp4",
+    "local_path": "videos/purchasingcorp-tutorial-howto.mp4",
+    "caption": "How I check resale value before buying anything: 1) search the exact model, 2) compare new vs resale, 3) only buy what holds value. Or skip the math \u2014 we show it for you at purchasingcorp.com",
     "hashtags": [
-      "sellyourtech",
-      "buyback",
-      "getpaid",
-      "ugc",
-      "techresale"
-    ],
-    "cycle_position": "1 of pool size 59"
-  },
-  {
-    "date": "2026-06-25",
-    "file": "purchasingcorp-gta6-before-after-setup.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-before-after-setup.mp4",
-    "local_path": "videos/purchasingcorp-gta6-before-after-setup.mp4",
-    "caption": "Before: $1,100 of new parts for a GTA 6 rig. After: $720 back from selling my old GPU + console. The upgrade barely cost me anything. Your turn at purchasingcorp.com",
-    "hashtags": [
-      "gta6",
-      "pcgaming",
-      "beforeandafter",
-      "sellyourgpu",
+      "techtips",
+      "resalevalue",
+      "moneytok",
       "sellyourtech",
       "buyback",
       "techresale",
@@ -33,18 +17,38 @@
     "cycle_position": "1 of pool size 59"
   },
   {
-    "date": "2026-06-25",
-    "file": "purchasingcorp-reel-gta6-fund-setup.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gta6-fund-setup.mp4",
-    "local_path": "videos/purchasingcorp-reel-gta6-fund-setup.mp4",
-    "caption": "GTA 6 is coming \u2014 fund your dream setup for FREE. That old GPU, console, and controllers in a box? One seller got $980. Sell your old gear at purchasingcorp.com",
+    "date": "2026-06-26",
+    "file": "purchasingcorp-review-top5-phones.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-review-top5-phones.mp4",
+    "local_path": "videos/purchasingcorp-review-top5-phones.mp4",
+    "caption": "The 5 best phones you can buy right now \u2014 ranked. From the Pixel 10 Pro to the iPhone 17 Pro Max at #1. Thinking of upgrading? Find out what your old phone is worth first at purchasingcorp.com",
+    "hashtags": [
+      "bestphones",
+      "top5",
+      "techreview",
+      "phonetok",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 59"
+  },
+  {
+    "date": "2026-06-26",
+    "file": "purchasingcorp-gta6-xbox-series-x.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-xbox-series-x.mp4",
+    "local_path": "videos/purchasingcorp-gta6-xbox-series-x.mp4",
+    "caption": "Still on a Series S? GTA 6 is going to make you want the Series X \u2014 just don't pay full price. Your Series S pays ~$220 toward it, saves carry over. See your Xbox value at purchasingcorp.com",
     "hashtags": [
       "gta6",
-      "gaming",
+      "xbox",
+      "seriesx",
+      "sellyourconsole",
       "sellyourtech",
-      "getpaid",
       "buyback",
-      "techresale"
+      "techresale",
+      "getpaid"
     ],
     "cycle_position": "1 of pool size 59"
   }

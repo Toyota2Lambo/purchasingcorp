@@ -1,15 +1,17 @@
 {
-  "date": "2026-06-25",
-  "file": "purchasingcorp-ugc-pip-marcus.mp4",
-  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-marcus.mp4",
-  "local_path": "videos/purchasingcorp-ugc-pip-marcus.mp4",
-  "caption": "Didn't think my old phone was worth anything. PurchasingCorp paid me $855 the same day \u2014 Zelle, Cash App, your choice. Old phones, laptops, consoles, they buy it all. purchasingcorp.com",
+  "date": "2026-06-26",
+  "file": "purchasingcorp-tutorial-howto.mp4",
+  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-tutorial-howto.mp4",
+  "local_path": "videos/purchasingcorp-tutorial-howto.mp4",
+  "caption": "How I check resale value before buying anything: 1) search the exact model, 2) compare new vs resale, 3) only buy what holds value. Or skip the math \u2014 we show it for you at purchasingcorp.com",
   "hashtags": [
+    "techtips",
+    "resalevalue",
+    "moneytok",
     "sellyourtech",
     "buyback",
-    "getpaid",
-    "ugc",
-    "techresale"
+    "techresale",
+    "getpaid"
   ],
   "cycle_position": "1 of pool size 59"
 }
