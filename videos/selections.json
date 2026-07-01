@@ -1,30 +1,15 @@
 [
   {
-    "date": "2026-06-30",
-    "file": "purchasingcorp-gta6-whole-rig-list.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-whole-rig-list.mp4",
-    "local_path": "videos/purchasingcorp-gta6-whole-rig-list.mp4",
-    "caption": "The gear in your closet can pay for your entire GTA 6 setup. Old console, old GPU, drawer phone, dead laptop \u2014 it all pays, same day. Check it at purchasingcorp.com",
+    "date": "2026-07-01",
+    "file": "purchasingcorp-review-macbook-pro-m4.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-review-macbook-pro-m4.mp4",
+    "local_path": "videos/purchasingcorp-review-macbook-pro-m4.mp4",
+    "caption": "MacBook Pro M4 review: the pro laptop to beat \u2014 9.2/10. Silent, blistering M4 Pro performance, a stunning 1600-nit display and a 24-hour battery. And it holds its value better than almost anything. Check yours at purchasingcorp.com",
     "hashtags": [
-      "gta6",
-      "gaming",
-      "sellyourtech",
-      "getpaid",
-      "buyback",
-      "techresale"
-    ],
-    "cycle_position": "1 of pool size 59"
-  },
-  {
-    "date": "2026-06-30",
-    "file": "purchasingcorp-rapidfire-facts.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-rapidfire-facts.mp4",
-    "local_path": "videos/purchasingcorp-rapidfire-facts.mp4",
-    "caption": "5 resale facts in 15 seconds: iPhones hold ~70% a year, Android drops twice as fast, keeping the box adds ~10%, and cracked phones STILL pay cash. Full breakdown at purchasingcorp.com",
-    "hashtags": [
-      "techtips",
+      "macbookpro",
+      "m4",
+      "techreview",
       "resalevalue",
-      "phonetok",
       "sellyourtech",
       "buyback",
       "techresale",
@@ -33,18 +18,37 @@
     "cycle_position": "1 of pool size 59"
   },
   {
-    "date": "2026-06-30",
-    "file": "purchasingcorp-phone-deal.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-phone-deal.mp4",
-    "local_path": "videos/purchasingcorp-phone-deal.mp4",
-    "caption": "Don't let Apple lowball your iPhone. They offer $650 \u2014 we pay $855, money the same day, your choice of Zelle, Cash App or Venmo. purchasingcorp.com",
+    "date": "2026-07-01",
+    "file": "purchasingcorp-gta6-parent-gift.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-parent-gift.mp4",
+    "local_path": "videos/purchasingcorp-gta6-parent-gift.mp4",
+    "caption": "Parents: GTA 6 is THE gift every kid will ask for \u2014 but a console plus the game adds up fast. The old phones and tablets around the house can knock $300 off. Gift smarter at purchasingcorp.com",
     "hashtags": [
-      "iphone",
-      "sellyouriphone",
-      "getpaid",
-      "buyback",
+      "gta6",
+      "parents",
       "sellyourtech",
-      "techresale"
+      "holidaygift",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 59"
+  },
+  {
+    "date": "2026-07-01",
+    "file": "purchasingcorp-gta6-cash-not-credit.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-cash-not-credit.mp4",
+    "local_path": "videos/purchasingcorp-gta6-cash-not-credit.mp4",
+    "caption": "Trading your old console for store credit before GTA 6 is a trap. Credit locks you into one store \u2014 cash spends anywhere, and usually beats the credit anyway. Get a cash offer at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "tradein",
+      "sellyourconsole",
+      "cashnotcredit",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
     ],
     "cycle_position": "1 of pool size 59"
   }
