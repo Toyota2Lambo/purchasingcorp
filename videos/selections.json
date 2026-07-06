@@ -1,47 +1,14 @@
 [
   {
-    "date": "2026-07-05",
-    "file": "purchasingcorp-gta6-coop-two-consoles.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-coop-two-consoles.mp4",
-    "local_path": "videos/purchasingcorp-gta6-coop-two-consoles.mp4",
-    "caption": "Upgrading for GTA 6 with your roommate? Two old consoles = two payouts. The trade-in counter offers $300 for the pair \u2014 we pay $610. Quote both at purchasingcorp.com",
+    "date": "2026-07-06",
+    "file": "purchasingcorp-reel-halo-ps5-jump.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-halo-ps5-jump.mp4",
+    "local_path": "videos/purchasingcorp-reel-halo-ps5-jump.mp4",
+    "caption": "Halo's on PS5 now. Jumping ship? Your old Xbox Series X is $315 cash toward a new PS5 \u2014 don't let it gather dust. Trade up at purchasingcorp.com",
     "hashtags": [
-      "gta6",
-      "coop",
-      "sellyourconsole",
-      "tradein",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 59"
-  },
-  {
-    "date": "2026-07-05",
-    "file": "purchasingcorp-ugc-pip-jin.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-jin.mp4",
-    "local_path": "videos/purchasingcorp-ugc-pip-jin.mp4",
-    "caption": "Found my old iPhone in a drawer and almost forgot it existed. Quote in 60 seconds, $855 in my account the same day \u2014 Zelle, Cash App, whatever you want. Got old tech sitting around? purchasingcorp.com",
-    "hashtags": [
-      "sellyourtech",
-      "sellyouriphone",
-      "getpaid",
-      "ugc",
-      "buyback",
-      "techresale"
-    ],
-    "cycle_position": "1 of pool size 59"
-  },
-  {
-    "date": "2026-07-05",
-    "file": "purchasingcorp-reel-switch2-beat-the-hike.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-switch2-beat-the-hike.mp4",
-    "local_path": "videos/purchasingcorp-reel-switch2-beat-the-hike.mp4",
-    "caption": "Switch 2 is $399 right now \u2014 before the September price hike. Grab it, and let your old Switch cover nearly half ($150 for a Switch OLED). What's yours worth? purchasingcorp.com",
-    "hashtags": [
-      "nintendoswitch",
-      "switch2",
+      "ps5",
+      "xbox",
+      "halo",
       "gaming",
       "sellyourtech",
       "buyback",
@@ -49,5 +16,38 @@
       "getpaid"
     ],
     "cycle_position": "1 of pool size 59"
+  },
+  {
+    "date": "2026-07-06",
+    "file": "purchasingcorp-gta6-phone-funds-it.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-phone-funds-it.mp4",
+    "local_path": "videos/purchasingcorp-gta6-phone-funds-it.mp4",
+    "caption": "Your old phone can buy GTA 6 and then some. That drawer iPhone isn't dead \u2014 it's a $300+ deposit waiting to happen. See your phone's value at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "sellyouriphone",
+      "sellyourtech",
+      "extracash",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 59"
+  },
+  {
+    "date": "2026-07-06",
+    "file": "purchasingcorp-gta6-whole-rig-list.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-whole-rig-list.mp4",
+    "local_path": "videos/purchasingcorp-gta6-whole-rig-list.mp4",
+    "caption": "The gear in your closet can pay for your entire GTA 6 setup. Old console, old GPU, drawer phone, dead laptop \u2014 it all pays, same day. Check it at purchasingcorp.com",
+    "hashtags": [
+      "gta6",
+      "gaming",
+      "sellyourtech",
+      "getpaid",
+      "buyback",
+      "techresale"
+    ],
+    "cycle_position": "2 of pool size 59"
   }
 ]
