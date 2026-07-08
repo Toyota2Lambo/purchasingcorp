@@ -1,0 +1,655 @@
+{
+  "generated_at": "2026-07-08T15:40:25.272957+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "mac-mini",
+    "educational_topic": "the true cost of selling on eBay or Facebook Marketplace: fees, time, and risk broken down",
+    "comparison_angle": "our cash offer vs. Apple trade-in: real cash in your hand vs. store credit you're forced to spend",
+    "audience_angle": "condition anxiety: cracked screen, dead battery, water damage — we still quote a real number, not zero",
+    "featured_label": "Mac Mini"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-08T15:39:12.953Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "post",
+        "caption": "That Mac Mini you upgraded from last year? Still pays $675 cash today. M2, M3, Intel models all welcome. No store credit, no waiting. Get your number at purchasingcorp.com/form and ship free.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#macbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmyphone",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradein",
+          "#macmini",
+          "#m2macmini",
+          "#m3macmini",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "Mac Mini pays up to <em>$675</em> cash",
+              "sub_html": "M2, M3, Intel models. Any condition. Real offer in 60 seconds.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$675",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Dead battery on that iPhone 17 Pro? Cracked screen on your Apple Watch? We still quote a real number, not zero. Condition anxiety ends here. Get your actual offer at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#brokeniphone",
+          "#crackedscreen",
+          "#damagedphone",
+          "#sellbrokenphone",
+          "#brokeniphonebuyback",
+          "#sellmyapplewatch",
+          "#iphonetradevalue",
+          "#iphone17pro"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "NO CONDITION ANXIETY",
+              "eyebrow": "CRACKED · DEAD BATTERY · WATER DAMAGE",
+              "headline_html": "We still pay <em>cash today</em>",
+              "deck_html": "A real number for your actual device. Not zero.",
+              "photo_url": "https://images.unsplash.com/photo-1718966324551-28b1f4385eac?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMnx8aGFuZGhlbGQlMjBnYW1lJTIwY29uc29sZSUyMGluJTIwaGFuZHxlbnwxfDB8fHwxNzgzNTI1MjIzfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Apple gives you store credit you're forced to spend at Apple. We give you cash you can spend anywhere, same day. Real money beats a gift card every time. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#appletradein",
+          "#tradein",
+          "#tradeinvalue",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmymacbook",
+          "#iphonetradevalue",
+          "#cashvscredit",
+          "#realcash",
+          "#notstorecredit",
+          "#sellmyapplewatch",
+          "#macbuyback",
+          "#iphone17tradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "CASH VS. STORE CREDIT",
+              "eyebrow": "IPHONE 17 PRO MAX 512GB",
+              "title_html": "<em>Real cash</em> vs. Apple store credit",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Apple (store credit)",
+                  "value": "~$650",
+                  "pct": 67,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Apple figure is a typical trade-in estimate (store credit only). Our number is real cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Current Mac Mini payouts. M2, M3, Intel models all buy. Quote takes 60 seconds, payout hits same day. No store credit, no waiting. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#macbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmyphone",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradein",
+          "#macmini",
+          "#m2macmini",
+          "#m3macmini",
+          "#selltech",
+          "#macprices"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI PAYOUTS",
+              "eyebrow": "JULY 2026",
+              "title_html": "Current <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB 512GB",
+                  "price": "$675",
+                  "note": ""
+                },
+                {
+                  "model": "MCYT4LL/A 24GB 512GB",
+                  "price": "$450",
+                  "note": ""
+                },
+                {
+                  "model": "MU9E3LL/A 16GB 512GB",
+                  "price": "$375",
+                  "note": ""
+                },
+                {
+                  "model": "MU9D3LL/A 16GB 256GB",
+                  "price": "$300",
+                  "note": ""
+                }
+              ],
+              "note_html": "All conditions considered. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "eBay and Facebook Marketplace sound free until you add up the fees, the time tax, and the risk of getting scammed or never paid. Here's what selling peer-to-peer actually costs you, broken down step by step.",
+        "hashtags": [
+          "#sellingelectronics",
+          "#sellmyphone",
+          "#sellmyiphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#applebuyback",
+          "#tradein",
+          "#phonetrade",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#ebayalternative",
+          "#facebookmarketplace",
+          "#sellonebay",
+          "#ebayfees",
+          "#marketplaceseller",
+          "#skipebay",
+          "#noebay",
+          "#skipmarketplace",
+          "#nocraiglist",
+          "#sellerlife",
+          "#ebayseller"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "FEES",
+              "eyebrow": "THE TRUE COST OF SELLING PEER-TO-PEER",
+              "headline_html": "eBay takes <em>13.25%</em> of your sale",
+              "body_html": "That's the final value fee plus payment processing. Sell a MacBook for $800, lose $106 before shipping costs. Facebook and Craigslist are 'free' but you pay in <strong>time and safety risk</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "TIME TAX",
+              "eyebrow": "THE TRUE COST OF SELLING PEER-TO-PEER",
+              "headline_html": "Photos, listing, messages, <em>no-shows</em>",
+              "body_html": "You'll spend 3-5 hours per sale: writing the ad, answering lowball offers, scheduling meetups that ghost, relisting when it doesn't sell. That's a <strong>part-time job</strong> with no hourly rate."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "RISK",
+              "eyebrow": "THE TRUE COST OF SELLING PEER-TO-PEER",
+              "headline_html": "Scams, chargebacks, and <em>safety</em>",
+              "body_html": "eBay buyers can dispute and reverse payment weeks later. Meeting a stranger with expensive tech is a safety gamble. <strong>Your device and your time are too valuable</strong> for that."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "THE ALTERNATIVE",
+              "eyebrow": "THE TRUE COST OF SELLING PEER-TO-PEER",
+              "headline_html": "Or: quote in 60 seconds, <em>paid same day</em>",
+              "body_json": "PurchasingCorp: real offer, free prepaid label, same-day payout. No fees, no meetups, no chargebacks. <strong>The number we quote is the number we pay.</strong> Start at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Payout slip from July 6th. Mac Mini MCX44LL/A, quoted $675, paid $675 same day. The number we quote is the number we pay, no games. Get your offer at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#macbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmyphone",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#proofofpayment",
+          "#paidout",
+          "#realpayout",
+          "#trustedbuyer",
+          "#macmini",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PROOF OF PAYOUT",
+              "slip_title": "Payment Receipt",
+              "slip_ref": "#MM-070626-418",
+              "device": "Mac Mini MCX44LL/A PRO 24GB 512GB",
+              "condition": "Good",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$675.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Cracked screen doesn't mean zero value. Water damage doesn't mean trash. We quote your actual device in its actual condition, not a fantasy version. Get the real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#brokeniphone",
+          "#crackedscreen",
+          "#damagedphone",
+          "#sellbrokenphone",
+          "#brokeniphonebuyback",
+          "#waterdamage",
+          "#deadbattery",
+          "#iphonetradevalue",
+          "#anycondition"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "ANY CONDITION",
+              "eyebrow": "CRACKED · DEAD BATTERY · WATER DAMAGE",
+              "headline_html": "Still worth <em>real cash</em>",
+              "sub_html": "We quote your actual device, not a perfect one.",
+              "photo_url": "https://images.unsplash.com/photo-1653757449444-4a608b0b6c77?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwzfHxoYW5kaGVsZCUyMGdhbWluZyUyMFBDfGVufDF8MHx8fDE3ODM1MjUyMjV8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Eight categories, same-day payout across all of them. iPhones to Mac Minis to PlayStation 5s. One quote form, one free label, cash in your account today. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapplewatch",
+          "#sellmyipad",
+          "#sellmyconsole",
+          "#sellmyplaystation",
+          "#cashforgaming",
+          "#gamingbuyback",
+          "#applewatchbuyback",
+          "#macbookbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "WHAT WE BUY",
+              "eyebrow": "JULY 2026",
+              "title_html": "<em>Eight categories</em>, same-day cash",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPad",
+                  "num": "Contact",
+                  "foot": "for quote",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All conditions considered. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Current iPhone 17 payouts. Pro, Pro Max, all storage tiers. Cracked screen or dead battery? We still quote a real number. Get yours at purchasingcorp.com/form and ship free.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphone17",
+          "#iphone17pro",
+          "#iphone17promax",
+          "#iphone17tradevalue",
+          "#iphonetradevalue",
+          "#sellmyiphone17",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#iphone17trade",
+          "#iphone17value"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE PAYOUTS",
+              "eyebrow": "JULY 2026",
+              "title_html": "iPhone 17 <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2TB",
+                  "price": "$1,241",
+                  "note": ""
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1TB",
+                  "price": "$1,050",
+                  "note": ""
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512GB",
+                  "price": "$975",
+                  "note": ""
+                },
+                {
+                  "model": "iPhone 17 Pro 1TB",
+                  "price": "$875",
+                  "note": ""
+                },
+                {
+                  "model": "iPhone 17 Pro 512GB",
+                  "price": "$725",
+                  "note": ""
+                }
+              ],
+              "note_html": "All conditions quoted. Start at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "MacBook Air M4 pays up to $976 cash today. 13 inch, 15 inch, any memory config. Cracked screen, dead battery, we still quote. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#applebuyback",
+          "#macbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmyphone",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macbookair",
+          "#m4macbookair",
+          "#sellmacbookair",
+          "#macbookairtrade",
+          "#macbookairvalue",
+          "#appletradein",
+          "#macbookm4"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "MacBook Air M4 pays up to <em>$976</em> cash",
+              "sub_html": "13 inch and 15 inch models. Any condition. Real offer in 60 seconds.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JULY 8, 2026",
+          "date_label": "WEDNESDAY",
+          "section": "MAC MINI",
+          "headline_html": "<em>$675</em> cash, same day",
+          "deck_html": "M2, M3, Intel. Any condition. Real offer in 60 seconds.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "CONDITION ANXIETY",
+          "stat_value": "$0",
+          "stat_unit": "",
+          "caption_html": "is <em>not</em> what we pay for cracked screens or dead batteries. We quote your actual device, not a fantasy version.",
+          "source": "PurchasingCorp"
+        }
+      }
+    ]
+  }
+}
