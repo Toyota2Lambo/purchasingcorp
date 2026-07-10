@@ -19,3 +19,4 @@ pricing-engine/out/
 
 # ux-audit — local only, never pushed
 ux-audit/
+.env*

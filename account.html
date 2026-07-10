@@ -788,10 +788,17 @@
       if (!body) return;
       if (send) send.disabled = true;
       try {
-        var res = await sb.from('messages').insert({
-          inquiry_id: id, sender_role: 'customer', sender_id: currentUser.id, body: body
+        // Route through the server so we get an email notification of your reply.
+        var tok = null;
+        try { tok = (await sb.auth.getSession()).data.session.access_token; } catch (_) {}
+        if (!tok) throw new Error('Your session expired. Sign in again.');
+        var r = await fetch('/api/message', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + tok },
+          body: JSON.stringify({ inquiry_id: id, body: body })
         });
-        if (res.error) throw res.error;
+        var j = null; try { j = await r.json(); } catch (_) {}
+        if (!r.ok || !j || j.ok === false) throw new Error((j && j.error) || 'Could not send your message. Try again.');
         input.value = '';
         await loadCustomerMessages(id, true);
       } catch (e) {
