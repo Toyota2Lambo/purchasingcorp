@@ -20,9 +20,15 @@ export function siteUrl() {
   return (process.env.SITE_URL || 'https://purchasingcorp.com').replace(/\/+$/, '');
 }
 
+// One or more owner inboxes for notifications. OWNER_EMAIL may be a single
+// address or a comma-separated list (e.g. "me@gmail.com,hello@purchasingcorp.com").
+// Returns an array of addresses, or null when unset.
 export function ownerEmail() {
-  const e = (process.env.OWNER_EMAIL || '').trim();
-  return e || null;
+  const list = (process.env.OWNER_EMAIL || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return list.length ? list : null;
 }
 
 // Low-level send. Best-effort: returns true on a 2xx from Resend, false on any
