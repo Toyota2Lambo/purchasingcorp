@@ -1,31 +1,15 @@
 [
   {
-    "date": "2026-07-10",
-    "file": "purchasingcorp-ugc-pip-marcus.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-marcus.mp4",
-    "local_path": "videos/purchasingcorp-ugc-pip-marcus.mp4",
-    "caption": "Didn't think my old phone was worth anything. PurchasingCorp paid me $855 the same day \u2014 Zelle, Cash App, your choice. Old phones, laptops, consoles, they buy it all. purchasingcorp.com",
+    "date": "2026-07-11",
+    "file": "purchasingcorp-ugc-pip-bahar.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-bahar.mp4",
+    "local_path": "videos/purchasingcorp-ugc-pip-bahar.mp4",
+    "caption": "Old phone, sitting in a drawer doing nothing. One 60-second quote later I had $855, paid the same day however I wanted. Your old tech is worth real cash \u2014 purchasingcorp.com",
     "hashtags": [
       "sellyourtech",
-      "buyback",
-      "getpaid",
+      "extracash",
+      "declutter",
       "ugc",
-      "techresale"
-    ],
-    "cycle_position": "2 of pool size 59"
-  },
-  {
-    "date": "2026-07-10",
-    "file": "purchasingcorp-console.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-console.mp4",
-    "local_path": "videos/purchasingcorp-console.mp4",
-    "caption": "That console you stopped playing? Someone's paying cash for it today. PS5, Xbox, Switch, Steam Deck \u2014 we buy them all. 60-second quote, money same day. purchasingcorp.com",
-    "hashtags": [
-      "ps5",
-      "xbox",
-      "nintendoswitch",
-      "sellyourconsole",
-      "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
@@ -33,18 +17,34 @@
     "cycle_position": "2 of pool size 59"
   },
   {
-    "date": "2026-07-10",
-    "file": "purchasingcorp-before-after.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-before-after.mp4",
-    "local_path": "videos/purchasingcorp-before-after.mp4",
-    "caption": "I bought this MacBook for $1,599. A year later I got $1,180 back \u2014 a year of a pro laptop cost me less than a phone. See what yours is worth at purchasingcorp.com",
+    "date": "2026-07-11",
+    "file": "purchasingcorp-gta6-zero-dollar-setup.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-zero-dollar-setup.mp4",
+    "local_path": "videos/purchasingcorp-gta6-zero-dollar-setup.mp4",
+    "caption": "POV: you built a GTA 6 setup and paid almost nothing. The trick isn't buying \u2014 it's trading up. New setup $560, old gear sold $520. Net cost: almost zero. Start at purchasingcorp.com",
     "hashtags": [
-      "macbook",
-      "resalevalue",
-      "sellyourmac",
-      "moneytips",
+      "gta6",
+      "pov",
       "sellyourtech",
+      "gaming",
       "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "2 of pool size 59"
+  },
+  {
+    "date": "2026-07-11",
+    "file": "purchasingcorp-iphone.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-iphone.mp4",
+    "local_path": "videos/purchasingcorp-iphone.mp4",
+    "caption": "Apple offers $650 for your iPhone. We pay $855. Same phone, same day, hundreds more in your pocket. Any model, any carrier. Get your real number at purchasingcorp.com",
+    "hashtags": [
+      "iphone",
+      "sellyouriphone",
+      "applealternative",
+      "buyback",
+      "sellyourtech",
       "techresale",
       "getpaid"
     ],
