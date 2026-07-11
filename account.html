@@ -718,6 +718,32 @@
           if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); sendCustomerMessage(id); }
         });
       });
+      list.querySelectorAll('[data-msg-attach]').forEach(function (btn) {
+        var id = btn.getAttribute('data-msg-attach');
+        btn.addEventListener('click', function () {
+          var fileEl = document.querySelector('[data-msg-file="' + id + '"]');
+          if (fileEl) fileEl.click();
+        });
+      });
+      list.querySelectorAll('[data-msg-file]').forEach(function (fileEl) {
+        var id = fileEl.getAttribute('data-msg-file');
+        fileEl.addEventListener('change', function () { renderMsgPreview(id); });
+      });
+    }
+
+    function renderMsgPreview(id) {
+      var fileEl = document.querySelector('[data-msg-file="' + id + '"]');
+      var box = document.querySelector('[data-msg-files="' + id + '"]');
+      if (!fileEl || !box) return;
+      var files = fileEl.files ? Array.prototype.slice.call(fileEl.files, 0, 4) : [];
+      if (!files.length) { box.classList.add('hidden'); box.innerHTML = ''; return; }
+      box.classList.remove('hidden');
+      box.innerHTML = files.map(function (f) {
+        return '<img src="' + URL.createObjectURL(f) + '" alt="" class="h-12 w-12 rounded-lg object-cover border border-white/10">';
+      }).join('') +
+        '<button type="button" data-msg-clear="' + esc(id) + '" class="ml-1 self-center text-[11px] text-ink-400 underline underline-offset-2 hover:text-white transition">Clear</button>';
+      var clr = box.querySelector('[data-msg-clear]');
+      if (clr) clr.addEventListener('click', function () { fileEl.value = ''; renderMsgPreview(id); });
     }
 
     function closeChat() {
@@ -771,35 +797,58 @@
 
     function bubble(m) {
       var mine = m.sender_role === 'customer';
+      var text = m.body
+        ? '<div class="text-[13px] leading-relaxed whitespace-pre-wrap break-words">' + esc(m.body) + '</div>'
+        : '';
       return '<div class="flex ' + (mine ? 'justify-end' : 'justify-start') + '">' +
         '<div class="max-w-[80%] rounded-2xl px-3.5 py-2 ' +
           (mine ? 'bg-white text-black' : 'bg-white/[0.06] text-ink-100 border border-white/10') + '">' +
-          '<div class="text-[13px] leading-relaxed whitespace-pre-wrap break-words">' + esc(m.body) + '</div>' +
+          text +
+          attachHtml(m.attachments, mine, !!m.body) +
           '<div class="mt-1 text-[10px] ' + (mine ? 'text-black/50' : 'text-ink-500') + '">' +
             esc(mine ? 'You' : 'PurchasingCorp') + ' · ' + esc(ftime(m.created_at)) + '</div>' +
         '</div></div>';
     }
 
+    function attachHtml(atts, mine, hasBody) {
+      if (!Array.isArray(atts) || !atts.length) return '';
+      var border = mine ? 'border-black/10' : 'border-white/10';
+      return '<div class="' + (hasBody ? 'mt-2 ' : '') + 'flex flex-wrap gap-1.5">' +
+        atts.slice(0, 4).map(function (u) {
+          return '<a href="' + esc(u) + '" target="_blank" rel="noopener" class="block">' +
+            '<img src="' + esc(u) + '" alt="Attached photo" class="h-20 w-20 rounded-lg object-cover border ' + border + '" loading="lazy"></a>';
+        }).join('') + '</div>';
+    }
+
     async function sendCustomerMessage(id) {
       var input = document.querySelector('[data-msg-input="' + id + '"]');
       var send = document.querySelector('[data-msg-send="' + id + '"]');
+      var fileEl = document.querySelector('[data-msg-file="' + id + '"]');
       if (!input || !currentUser) return;
       var body = (input.value || '').trim();
-      if (!body) return;
+      var files = fileEl && fileEl.files ? Array.prototype.slice.call(fileEl.files, 0, 4) : [];
+      if (!body && !files.length) return;
       if (send) send.disabled = true;
       try {
-        // Route through the server so we get an email notification of your reply.
+        // Route through the server so we get an email notification of your reply
+        // and photos are uploaded with the service-role key.
         var tok = null;
         try { tok = (await sb.auth.getSession()).data.session.access_token; } catch (_) {}
         if (!tok) throw new Error('Your session expired. Sign in again.');
+        var fd = new FormData();
+        fd.append('inquiry_id', id);
+        fd.append('body', body);
+        files.forEach(function (f) { fd.append('photos', f); });
         var r = await fetch('/api/message', {
           method: 'POST',
-          headers: { 'content-type': 'application/json', Authorization: 'Bearer ' + tok },
-          body: JSON.stringify({ inquiry_id: id, body: body })
+          headers: { Authorization: 'Bearer ' + tok }, // no content-type: browser sets the multipart boundary
+          body: fd
         });
         var j = null; try { j = await r.json(); } catch (_) {}
         if (!r.ok || !j || j.ok === false) throw new Error((j && j.error) || 'Could not send your message. Try again.');
         input.value = '';
+        if (fileEl) fileEl.value = '';
+        renderMsgPreview(id);
         await loadCustomerMessages(id, true);
       } catch (e) {
         alert((e && e.message) || 'Could not send your message. Try again.');
@@ -890,10 +939,15 @@
             'Messages</button>' +
           '<div id="chat-' + esc(q.id) + '" class="hidden mt-3">' +
             '<div data-thread="' + esc(q.id) + '" class="max-h-72 overflow-y-auto space-y-2 pr-1"></div>' +
+            '<div data-msg-files="' + esc(q.id) + '" class="mt-2.5 hidden flex-wrap items-center gap-1.5"></div>' +
             '<div class="mt-2.5 flex items-end gap-2">' +
+              '<button type="button" data-msg-attach="' + esc(q.id) + '" title="Attach photos" aria-label="Attach photos" class="shrink-0 rounded-full border border-white/10 bg-ink-800 p-2.5 text-ink-300 hover:text-white hover:bg-white/[0.06] transition">' +
+                '<svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.5 7.5l-5.6 5.6a2.5 2.5 0 0 1-3.5-3.5l6.3-6.3a3.5 3.5 0 0 1 5 5l-6.4 6.4a4.5 4.5 0 0 1-6.4-6.4"/></svg>' +
+              '</button>' +
               '<textarea data-msg-input="' + esc(q.id) + '" rows="2" placeholder="Message us about this quote…" class="bg-ink-800 flex-1 resize-none rounded-xl border border-white/10 px-3 py-2 text-[13px] placeholder:text-ink-500 focus:outline-none focus:ring-2 focus:ring-white/15"></textarea>' +
               '<button type="button" data-msg-send="' + esc(q.id) + '" class="rounded-full bg-white px-4 py-2.5 text-[13px] font-medium text-black hover:bg-ink-100 transition disabled:opacity-60">Send</button>' +
             '</div>' +
+            '<input type="file" data-msg-file="' + esc(q.id) + '" accept="image/*" multiple class="hidden">' +
           '</div>' +
         '</div>';
 

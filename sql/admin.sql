@@ -124,17 +124,35 @@ create policy "inquiries: admin update all"
   with check (public.is_admin());
 
 -- 5. Messages (per-inquiry chat) -------------------------------------------
+-- Chat photos reuse the PUBLIC `inquiry-photos` Storage bucket (no new bucket
+-- needed); their public URLs are stored in `attachments`. A message must carry
+-- text, at least one photo, or both.
 create table if not exists public.messages (
   id          uuid primary key default gen_random_uuid(),
   inquiry_id  uuid not null references public.inquiries(id) on delete cascade,
   sender_role text not null check (sender_role in ('admin', 'customer')),
   sender_id   uuid references auth.users(id) on delete set null,
-  body        text not null check (char_length(body) between 1 and 4000),
+  body        text,
+  attachments jsonb not null default '[]'::jsonb,
   created_at  timestamptz not null default now(),
-  read_at     timestamptz
+  read_at     timestamptz,
+  constraint messages_content_check check (
+    (body is not null and char_length(body) between 1 and 4000)
+    or jsonb_array_length(attachments) > 0
+  )
 );
 
 create index if not exists messages_inquiry_idx on public.messages (inquiry_id, created_at);
+
+-- Migration for installs created before chat photos (idempotent):
+alter table public.messages add column if not exists attachments jsonb not null default '[]'::jsonb;
+alter table public.messages alter column body drop not null;
+alter table public.messages drop constraint if exists messages_body_check;
+alter table public.messages drop constraint if exists messages_content_check;
+alter table public.messages add constraint messages_content_check check (
+  (body is not null and char_length(body) between 1 and 4000)
+  or jsonb_array_length(attachments) > 0
+);
 
 alter table public.messages enable row level security;
 

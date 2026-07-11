@@ -119,32 +119,52 @@ export function inquiryConfirmationEmail({ device, condition, offer }) {
   };
 }
 
+// A "N photos attached" line for chat notifications, or '' when there are none.
+function photoLineHtml(photos) {
+  if (!photos) return '';
+  const label = `${photos} photo${photos > 1 ? 's' : ''} attached`;
+  return `<p style="margin:0 0 20px;color:#9a9aa2;font-size:13px;">&#128247; ${label} — view ${photos > 1 ? 'them' : 'it'} on your dashboard.</p>`;
+}
+function photoLineText(photos) {
+  if (!photos) return '';
+  return `[${photos} photo${photos > 1 ? 's' : ''} attached]`;
+}
+// Renders the message snippet block, or the photo line alone for photo-only messages.
+function snippetBlockHtml(snippet) {
+  if (!snippet) return '';
+  return `<div style="margin:0 0 20px;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#e6e6e8;font-size:14px;white-space:pre-wrap;">${esc(snippet)}</div>`;
+}
+
 // Sent to the customer when an admin replies in their inquiry thread.
-export function adminReplyEmail({ device, snippet }) {
+export function adminReplyEmail({ device, snippet, photos }) {
   const acct = `${siteUrl()}/account`;
   const inner = `
     <p style="margin:0 0 14px;color:#e6e6e8;font-size:16px;font-weight:600;">New reply about your ${esc(device)}</p>
-    <div style="margin:0 0 20px;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#e6e6e8;font-size:14px;white-space:pre-wrap;">${esc(snippet)}</div>
+    ${snippetBlockHtml(snippet)}
+    ${photoLineHtml(photos)}
     <p style="margin:0 0 22px;">Reply back and see the full conversation on your dashboard.</p>
     <p style="margin:0 0 6px;">${button(acct, 'Open the conversation')}</p>`;
+  const textBody = [snippet, photoLineText(photos)].filter(Boolean).join('\n\n');
   return {
     subject: `PurchasingCorp replied about your ${device}`,
     html: shell(inner),
-    text: `New reply about your ${device}:\n\n${snippet}\n\nReply from your dashboard: ${acct}`,
+    text: `New reply about your ${device}:\n\n${textBody}\n\nReply from your dashboard: ${acct}`,
   };
 }
 
 // Owner-copy: sent to OWNER_EMAIL when a customer replies in a thread.
-export function customerReplyEmail({ device, contact, snippet }) {
+export function customerReplyEmail({ device, contact, snippet, photos }) {
   const admin = `${siteUrl()}/admin`;
   const inner = `
     <p style="margin:0 0 14px;color:#e6e6e8;font-size:16px;font-weight:600;">Customer replied — ${esc(device)}</p>
     ${contact ? `<p style="margin:0 0 12px;color:#9a9aa2;font-size:13px;">${esc(contact)}</p>` : ''}
-    <div style="margin:0 0 20px;padding:14px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#e6e6e8;font-size:14px;white-space:pre-wrap;">${esc(snippet)}</div>
+    ${snippetBlockHtml(snippet)}
+    ${photoLineHtml(photos)}
     <p style="margin:0 0 6px;">${button(admin, 'Reply in admin')}</p>`;
+  const textBody = [snippet, photoLineText(photos)].filter(Boolean).join('\n\n');
   return {
     subject: `Customer replied — ${device}`,
     html: shell(inner),
-    text: `Customer replied about ${device}${contact ? ` (${contact})` : ''}:\n\n${snippet}\n\nReply in admin: ${admin}`,
+    text: `Customer replied about ${device}${contact ? ` (${contact})` : ''}:\n\n${textBody}\n\nReply in admin: ${admin}`,
   };
 }
