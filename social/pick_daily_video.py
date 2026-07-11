@@ -13,6 +13,12 @@ at RANDOM. This still cycles the whole set evenly (nothing repeats until every
 clip has been posted the same number of times) but the order within each cycle is
 shuffled, so the feed no longer marches through the pool in a fixed sequence.
 
+Within that least-posted tier the random pick is WEIGHTED by past performance:
+w = 0.25 + score from videos/video_scores.json (written by social/score.py).
+Unscored files default to 0.5, and with no scores file every weight is equal —
+identical behavior to the unweighted picker. The 0.25 floor keeps low scorers
+in rotation so the loop can't collapse onto early winners.
+
 Usage:
   python social/pick_daily_video.py                 # advance + write selection(s)
   python social/pick_daily_video.py --count 2       # force two
@@ -34,6 +40,7 @@ CAPTIONS = os.path.join(VIDEOS, "captions.json")
 STATE = os.path.join(VIDEOS, "rotation_state.json")
 SELECTION = os.path.join(VIDEOS, "selection.json")
 SELECTIONS = os.path.join(VIDEOS, "selections.json")
+SCORES = os.environ.get("VIDEO_SCORES_PATH") or os.path.join(VIDEOS, "video_scores.json")
 
 
 def load_json(path, default):
@@ -49,6 +56,13 @@ def arg_value(flag):
         if i + 1 < len(sys.argv):
             return sys.argv[i + 1]
     return None
+
+
+def load_scores():
+    """file → score from score.py's output; missing file/entries → 0.5, which
+    makes every weight equal (identical to the old unweighted picker)."""
+    data = load_json(SCORES, {})
+    return {f: v.get("score", 0.5) for f, v in (data.get("videos") or {}).items()}
 
 
 def daily_count(today):
@@ -99,6 +113,9 @@ def main():
     # Among the least-posted entries, pick at RANDOM (so the cycle order is
     # shuffled instead of fixed). Pick `count` distinct entries, bumping the
     # working count as we go so each further pick comes from the next-fewest tier.
+    # Within the tier the pick is performance-weighted (w = 0.25 + score);
+    # the tier gate itself is untouched, so rotation fairness is preserved.
+    scores = load_scores()
     work = dict(counts)
     selections = []
     chosen_files = set()
@@ -106,7 +123,7 @@ def main():
         avail = [e["file"] for e in pool if e["file"] not in chosen_files]
         floor = min(work[f] for f in avail)
         tier = [f for f in avail if work[f] == floor]
-        pick = random.choice(tier)
+        pick = random.choices(tier, weights=[0.25 + scores.get(f, 0.5) for f in tier])[0]
         chosen = next(e for e in pool if e["file"] == pick)
         selections.append(build_selection(chosen, counts, base_url, default_tags, today, len(pool)))
         chosen_files.add(pick)

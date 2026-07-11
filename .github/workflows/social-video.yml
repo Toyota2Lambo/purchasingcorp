@@ -2,12 +2,14 @@ name: social · video
 
 # Posts 1-2 vault ad videos per day to Instagram (Reels), Threads, X, and TikTok.
 #
-# The MP4 pool lives in /videos (committed once, served by Vercel at
+# The MP4 pool lives in /videos (served by Vercel at
 # https://purchasingcorp.com/videos/<file>.mp4). Each run:
-#   1. pick_daily_video.py rotates to the next clip (no repeat until the pool
-#      has cycled) and writes videos/selection.json + advances rotation_state.json
+#   1. pick_daily_video.py picks the day's clip(s) and writes
+#      videos/selection(s).json + advances rotation_state.json
 #   2. that state is committed back so tomorrow continues the cycle
-#   3. video_publisher.py posts the clip everywhere creds exist.
+#   3. video_publisher.py posts the clip everywhere creds exist, then RETIRES
+#      every successfully posted clip (deletes the MP4 + its captions.json
+#      entry) so nothing repeats — refill the pool from the factory vault.
 #
 # IG / Threads / TikTok FETCH the public video_url; X uploads the local bytes.
 # TikTok stays dormant until TIKTOK_ACCESS_TOKEN is added (its Content Posting
@@ -78,3 +80,19 @@ jobs:
           VIDEO_DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '' }}
           VIDEO_ONLY: ${{ github.event.inputs.only }}
         run: python social/video_publisher.py --all
+
+      # The publisher RETIRES each successfully posted clip (deletes the MP4 +
+      # drops its captions.json entry) and appends to videos/posts_ledger.json.
+      # Commit those even if one platform errored (partial posts still retire).
+      - name: Commit retired videos + posts ledger
+        if: always()
+        run: |
+          git config user.name "Toyota2Lambo"
+          git config user.email "258973343+Toyota2Lambo@users.noreply.github.com"
+          git add -A videos
+          if git diff --staged --quiet; then
+            echo "no retirements to commit"
+          else
+            git commit -m "social: retire posted videos $(date -u +%F)"
+            git push
+          fi
