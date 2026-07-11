@@ -1,0 +1,659 @@
+{
+  "generated_at": "2026-07-11T14:35:35.858641+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "how to sell a bulk lot: multiple devices at once, one quote, one same-day payout",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "audience_angle": "the bulk pile: offices and families sitting on 5-15 old devices — one quote covers all of them, one payout",
+    "featured_label": "iPhone"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-11T14:34:19.399Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "feed",
+        "caption": "That cracked iPhone 13 in your desk and the iPhone 11 your kid outgrew? One quote covers both. Ship them together, get paid same-day for the lot. No marketplace haggling, no separate listings, no drama. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#iphone17promax",
+          "#iphone17pro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "We buy iPhones",
+              "headline_html": "iPhone 17 Pro Max pays up to <em>$1,241 cash</em>",
+              "sub_html": "All carriers. All conditions. Bulk lots welcome.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to cracked"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Real numbers for every iPhone 17 Pro Max configuration. The number you see is the number we pay, no games. Quote the whole stack at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#iphone17promax",
+          "#iphone17pro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#cashforiphone",
+          "#selloldphones",
+          "#quickcash",
+          "#iphone17",
+          "#appletradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "Current pricing",
+              "title_html": "iPhone 17 Pro Max <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2tb",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1tb",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512gb",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256gb",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1tb",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512gb",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "Prices for good working condition. Cracked and iCloud-locked also accepted at adjusted rates."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Your office upgraded and now you have eight old iPhones collecting dust. One quote covers the entire lot. Ship them in one box with our prepaid label, get paid same-day for all eight. That drawer pile is cash today at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash",
+          "#bulkphones",
+          "#sellbulkiphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "BULK LOTS",
+              "eyebrow": "One quote. One payout.",
+              "headline_html": "That drawer pile is <em>cash today</em>",
+              "deck_html": "Multiple devices, one same-day payout. No separate listings, no marketplace drama.",
+              "photo_url": "https://images.unsplash.com/photo-1578601789053-1c00ea465c7b?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMnx8TWFjQm9vayUyMGxhcHRvcCUyMG9uJTIwYSUyMGRlc2t8ZW58MXwwfHx8MTc4Mzc4MDUzNXww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Listing five phones on a marketplace means five sets of photos, five lowball offers, five no-shows. Or one 60-second quote here and cash same-day. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash",
+          "#bulkphones",
+          "#sellbulkiphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "Submit",
+              "eyebrow": "How to sell a bulk lot",
+              "headline_html": "List every device in <em>one quote form</em>",
+              "body_html": "iPhone 12, iPad Air, Apple Watch, MacBook. Add each model and condition to the form. Takes <strong>60 seconds</strong> for the entire lot."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "Review",
+              "eyebrow": "How to sell a bulk lot",
+              "headline_html": "Get <em>one total offer</em> for everything",
+              "body_html": "We quote the whole stack. A real number for all devices combined, not a vague range. You see <strong>exactly what you'll be paid</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "Ship",
+              "eyebrow": "How to sell a bulk lot",
+              "headline_html": "Pack it all in <em>one box</em>",
+              "body_html": "We send one prepaid insured label. Toss everything in, drop it off. <strong>No separate shipments</strong>, no extra trips."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Get paid",
+              "eyebrow": "How to sell a bulk lot",
+              "headline_html": "<em>Same-day payout</em> for the lot",
+              "body_html": "We inspect, confirm the quote, and pay the same day the box arrives. <strong>One deposit</strong> for everything. Done."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "This payout covered an iPhone 17 Pro 1tb and an Apple Watch S11 in one transaction. Same-day deposit, no separate listings, no drama. See what your lot pays at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash",
+          "#proofofpayment",
+          "#realpayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "Bulk lot payout",
+              "slip_ref": "PC-20260711-8847",
+              "device": "iPhone 17 Pro 1tb + Apple Watch S11 46mm",
+              "condition": "Good working",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$1,085",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Marketplace listings sit for weeks while you field lowball offers and reschedule no-shows. We quote in 60 seconds and pay same-day. More money, zero drama. Get your number at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash",
+          "#marketplacesucks",
+          "#nohagglers"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARISON",
+              "eyebrow": "iPhone 17 Pro 512gb",
+              "title_html": "We pay <em>more cash</em>, weeks faster",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash, same day)",
+                  "value": "$725",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace listing (after weeks, fees, haggling)",
+                  "value": "~$650",
+                  "pct": 90,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical final sale price after 15% fees, lowball offers, and time cost. Our $725 is the real cash offer, paid same-day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Six categories, real top payouts. iPhones, MacBooks, Apple Watch, Mac mini, consoles, and bulk lots all pay cash same-day. Quote anything at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#cashformacmini",
+          "#sellmyapplewatch",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "REFERENCE",
+              "eyebrow": "What we buy",
+              "title_html": "<em>Top cash offers</em> by category",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 49mm",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Bulk lots",
+                  "num": "Quote",
+                  "foot": "Multiple devices",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All prices same-day payout. Bulk lots: one quote for your entire stack."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "MacBook Air M4 models pay up to $976 cash, same-day. All specs, all conditions. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#macbookair",
+          "#macbookairm4",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmacbookair",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#macbooktradevalue",
+          "#sellmymacbookair",
+          "#appletradevalue",
+          "#selloldmacbook",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "Current pricing",
+              "title_html": "MacBook Air M4 <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices for good working condition. Cosmetic damage and older models also accepted."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Mac mini PRO with 24GB memory and 512GB storage pays $675 cash, same-day. No appointment, no store credit, just cash. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#macmini",
+          "#cashformacmini",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmacmini",
+          "#macminibuyback",
+          "#cashformac",
+          "#appletradevalue",
+          "#selloldmac",
+          "#quickcash",
+          "#macminipro",
+          "#sellmymac"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "We buy Mac mini",
+              "headline_html": "Mac mini PRO pays up to <em>$675 cash</em>",
+              "sub_html": "All configurations. All conditions. Same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to used"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "That stack of old devices is losing value every month it sits. One quote, one payout, cash today. Stop waiting and start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#bulklot",
+          "#sellmultiplephones",
+          "#cashforiphone",
+          "#iphonetradevalue",
+          "#selliphonefast",
+          "#iphonebuyback",
+          "#selloldphones",
+          "#quickcash",
+          "#bulkphones",
+          "#sellbulkiphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "BULK LOTS",
+              "eyebrow": "Stop waiting",
+              "headline_html": "<em>Cash today</em> for the whole stack",
+              "sub_html": "Multiple devices, one quote, one same-day payout. No marketplace drama.",
+              "photo_url": "https://images.unsplash.com/photo-1657222738773-8fdfc1087df8?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMXx8TWFjQm9vayUyMEFpciUyMG9uJTIwYSUyMHdoaXRlJTIwdGFibGV8ZW58MXwwfHx8MTc4Mzc4MDUzNXww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "BULK LOTS",
+          "date_label": "July 11, 2026",
+          "section": "Featured",
+          "headline_html": "One quote for <em>the entire lot</em>",
+          "deck_html": "Multiple devices. One same-day payout. No separate listings.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Bulk lots welcome",
+          "stat_value": "1",
+          "stat_unit": "quote",
+          "caption_html": "One quote covers your entire stack. <em>One same-day payout</em> for everything.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
