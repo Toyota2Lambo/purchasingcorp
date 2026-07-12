@@ -1,53 +1,53 @@
 [
   {
-    "date": "2026-07-11",
-    "file": "purchasingcorp-ugc-pip-bahar.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-ugc-pip-bahar.mp4",
-    "local_path": "videos/purchasingcorp-ugc-pip-bahar.mp4",
-    "caption": "Old phone, sitting in a drawer doing nothing. One 60-second quote later I had $855, paid the same day however I wanted. Your old tech is worth real cash \u2014 purchasingcorp.com",
+    "date": "2026-07-12",
+    "file": "purchasingcorp-reel-remake-wave-top3.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-remake-wave-top3.mp4",
+    "local_path": "videos/purchasingcorp-reel-remake-wave-top3.mp4",
+    "caption": "Black Flag is back, and every remake sends people console shopping. 3 things to sell before the wave: old headset $90, spare controllers $120, the console itself up to $430. purchasingcorp.com",
     "hashtags": [
+      "blackflag",
+      "gaming",
+      "consoledeals",
       "sellyourtech",
-      "extracash",
-      "declutter",
-      "ugc",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "2 of pool size 59"
+    "cycle_position": "1 of pool size 21"
   },
   {
-    "date": "2026-07-11",
-    "file": "purchasingcorp-gta6-zero-dollar-setup.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-gta6-zero-dollar-setup.mp4",
-    "local_path": "videos/purchasingcorp-gta6-zero-dollar-setup.mp4",
-    "caption": "POV: you built a GTA 6 setup and paid almost nothing. The trick isn't buying \u2014 it's trading up. New setup $560, old gear sold $520. Net cost: almost zero. Start at purchasingcorp.com",
+    "date": "2026-07-12",
+    "file": "purchasingcorp-reel-laptop-summer-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-laptop-summer-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-laptop-summer-cash.mp4",
+    "caption": "That old laptop in the closet could fund your summer \u2014 up to $700, free shipping, paid the day it arrives. Slow, scratched, battery shot? We still want it. purchasingcorp.com",
+    "hashtags": [
+      "laptop",
+      "summercash",
+      "selllaptop",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 21"
+  },
+  {
+    "date": "2026-07-12",
+    "file": "purchasingcorp-reel-gta6-preload-fund.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gta6-preload-fund.mp4",
+    "local_path": "videos/purchasingcorp-reel-gta6-preload-fund.mp4",
+    "caption": "GTA 6 preload dates are out. If your console can't handle launch day, the old one is your down payment \u2014 up to $430, paid the same day. Quote in 60 seconds at purchasingcorp.com",
     "hashtags": [
       "gta6",
-      "pov",
-      "sellyourtech",
       "gaming",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "2 of pool size 59"
-  },
-  {
-    "date": "2026-07-11",
-    "file": "purchasingcorp-iphone.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-iphone.mp4",
-    "local_path": "videos/purchasingcorp-iphone.mp4",
-    "caption": "Apple offers $650 for your iPhone. We pay $855. Same phone, same day, hundreds more in your pocket. Any model, any carrier. Get your real number at purchasingcorp.com",
-    "hashtags": [
-      "iphone",
-      "sellyouriphone",
-      "applealternative",
-      "buyback",
+      "consoleupgrade",
       "sellyourtech",
+      "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "2 of pool size 59"
+    "cycle_position": "1 of pool size 21"
   }
 ]
