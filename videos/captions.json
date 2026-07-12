@@ -1,62 +1,201 @@
 {
   "_comment": "Video pool for the daily social autoposter. pick_daily_video.py rotates through `pool`; video_publisher.py posts and then RETIRES each posted clip (removes its entry here and deletes the MP4). Refresh the pool from the factory vault (~/videos/_vault).",
   "base_url": "https://purchasingcorp.com/videos",
-  "default_hashtags": ["sellyourtech", "buyback", "techresale", "getpaid"],
+  "default_hashtags": [
+    "sellyourtech",
+    "buyback",
+    "techresale",
+    "getpaid"
+  ],
   "pool": [
     {
       "file": "purchasingcorp-reel-gta6-preload-fund.mp4",
-      "caption": "GTA 6 preload dates are out. If your console can't handle launch day, the old one is your down payment — up to $430, paid the same day. Quote in 60 seconds at purchasingcorp.com",
-      "hashtags": ["gta6", "gaming", "consoleupgrade"]
+      "caption": "GTA 6 preload dates are out. If your console can't handle launch day, the old one is your down payment \u2014 up to $430, paid the same day. Quote in 60 seconds at purchasingcorp.com",
+      "hashtags": [
+        "gta6",
+        "gaming",
+        "consoleupgrade"
+      ]
     },
     {
       "file": "purchasingcorp-reel-ps5-discs-dying.mp4",
-      "caption": "PlayStation is phasing out discs and even the EU says it can't stop them. Your disc console is worth up to $380 right now — sell it while discs still matter. purchasingcorp.com",
-      "hashtags": ["ps5", "playstation", "gaming"]
+      "caption": "PlayStation is phasing out discs and even the EU says it can't stop them. Your disc console is worth up to $380 right now \u2014 sell it while discs still matter. purchasingcorp.com",
+      "hashtags": [
+        "ps5",
+        "playstation",
+        "gaming"
+      ]
     },
     {
       "file": "purchasingcorp-reel-xbox-hardware-real.mp4",
-      "caption": "A court just ordered Xbox to restore a hacked account after telling the user to re-buy all his games. Digital can vanish. Hardware is real — and worth up to $310 cash. purchasingcorp.com",
-      "hashtags": ["xbox", "gaming", "digitalownership"]
+      "caption": "A court just ordered Xbox to restore a hacked account after telling the user to re-buy all his games. Digital can vanish. Hardware is real \u2014 and worth up to $310 cash. purchasingcorp.com",
+      "hashtags": [
+        "xbox",
+        "gaming",
+        "digitalownership"
+      ]
     },
     {
       "file": "purchasingcorp-reel-switch2-tradeup.mp4",
-      "caption": "Switch 2 hype is everywhere — and your old Switch still pays, up to $180 toward the upgrade. Don't let it collect dust. Quote in 60 seconds at purchasingcorp.com",
-      "hashtags": ["nintendoswitch", "switch2", "gaming"]
+      "caption": "Switch 2 hype is everywhere \u2014 and your old Switch still pays, up to $180 toward the upgrade. Don't let it collect dust. Quote in 60 seconds at purchasingcorp.com",
+      "hashtags": [
+        "nintendoswitch",
+        "switch2",
+        "gaming"
+      ]
     },
     {
       "file": "purchasingcorp-reel-own-your-stuff.mp4",
-      "caption": "You can't sell a download. But every device in your house is an asset — the average home has $500+ in unused tech. Own it? Sell it. purchasingcorp.com",
-      "hashtags": ["digitalownership", "declutter", "sidehustle"]
+      "caption": "You can't sell a download. But every device in your house is an asset \u2014 the average home has $500+ in unused tech. Own it? Sell it. purchasingcorp.com",
+      "hashtags": [
+        "digitalownership",
+        "declutter",
+        "sidehustle"
+      ]
     },
     {
       "file": "purchasingcorp-reel-drawer-audit-five.mp4",
       "caption": "Junk drawer audit: old earbuds $40, smartwatch $90, forgotten tablet $150, last phone $250, retired console $430. That drawer is a paycheck. purchasingcorp.com",
-      "hashtags": ["junkdrawer", "declutter", "hiddencash"]
+      "hashtags": [
+        "junkdrawer",
+        "declutter",
+        "hiddencash"
+      ]
     },
     {
       "file": "purchasingcorp-reel-laptop-summer-cash.mp4",
-      "caption": "That old laptop in the closet could fund your summer — up to $700, free shipping, paid the day it arrives. Slow, scratched, battery shot? We still want it. purchasingcorp.com",
-      "hashtags": ["laptop", "summercash", "selllaptop"]
+      "caption": "That old laptop in the closet could fund your summer \u2014 up to $700, free shipping, paid the day it arrives. Slow, scratched, battery shot? We still want it. purchasingcorp.com",
+      "hashtags": [
+        "laptop",
+        "summercash",
+        "selllaptop"
+      ]
     },
     {
       "file": "purchasingcorp-reel-gpu-upgrade-loop.mp4",
-      "caption": "PC gamers: your old GPU basically buys the new one. Used cards bring up to $680, paid same day. Sell the old card, cover the upgrade — that's the loop. purchasingcorp.com",
-      "hashtags": ["gpu", "pcgaming", "pcbuild"]
+      "caption": "PC gamers: your old GPU basically buys the new one. Used cards bring up to $680, paid same day. Sell the old card, cover the upgrade \u2014 that's the loop. purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
     },
     {
       "file": "purchasingcorp-reel-three-signs-sell-phone.mp4",
       "caption": "3 signs it's time to sell your phone: it dies before lunch, storage is always full, and you already know which one you want next. Average payout: $340. purchasingcorp.com",
-      "hashtags": ["sellyouriphone", "phoneupgrade", "smartphone"]
+      "hashtags": [
+        "sellyouriphone",
+        "phoneupgrade",
+        "smartphone"
+      ]
     },
     {
       "file": "purchasingcorp-reel-ipad-pays-forward.mp4",
-      "caption": "Everyone forgets the iPad — the most undersold device in the house. Used iPads bring up to $260 toward the new one. Check yours in 60 seconds at purchasingcorp.com",
-      "hashtags": ["ipad", "apple", "tablet"]
+      "caption": "Everyone forgets the iPad \u2014 the most undersold device in the house. Used iPads bring up to $260 toward the new one. Check yours in 60 seconds at purchasingcorp.com",
+      "hashtags": [
+        "ipad",
+        "apple",
+        "tablet"
+      ]
     },
     {
       "file": "purchasingcorp-reel-spotlight-0711-1505-01.mp4",
-      "caption": "That old iPhone in your drawer is worth real cash. Any model, any condition — we paid $635 the same day. Quote in 60 seconds, cash before bedtime. purchasingcorp.com",
-      "hashtags": ["sellyouriphone", "iphone", "samedaycash"]
+      "caption": "That old iPhone in your drawer is worth real cash. Any model, any condition \u2014 we paid $635 the same day. Quote in 60 seconds, cash before bedtime. purchasingcorp.com",
+      "hashtags": [
+        "sellyouriphone",
+        "iphone",
+        "samedaycash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-worldcup-watch-party.mp4",
+      "caption": "That golden goal has everyone hosting watch parties \u2014 and suddenly shopping. Before you spend, sell: the average home has $500 of unused tech sitting in drawers. Cash before kickoff at purchasingcorp.com",
+      "hashtags": [
+        "worldcup",
+        "watchparty",
+        "sellfirst"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-retro-worth-myth.mp4",
+      "caption": "Myth: old tech is worthless. Fact: a 4-year-old phone still brings $250, and older consoles sell every day. Old is an asset. purchasingcorp.com",
+      "hashtags": [
+        "mythbusting",
+        "retrotech",
+        "resale"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-accounts-inheritable-asset.mp4",
+      "caption": "Courts just ruled game accounts can be inherited \u2014 like property. The law is catching up: your tech is an asset. Your hardware can cash out today, up to $430 for a last-gen console. purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "digitalownership",
+        "techassets"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-remake-wave-top3.mp4",
+      "caption": "Black Flag is back, and every remake sends people console shopping. 3 things to sell before the wave: old headset $90, spare controllers $120, the console itself up to $430. purchasingcorp.com",
+      "hashtags": [
+        "blackflag",
+        "gaming",
+        "consoledeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-physical-vs-digital.mp4",
+      "caption": "Physical vs digital, round one: digital resale value is zero, forever. A disc console holds up to $380. Physical wins \u2014 cash the win at purchasingcorp.com",
+      "hashtags": [
+        "physicalmedia",
+        "gaming",
+        "resalevalue"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-cracked-phone-pays.mp4",
+      "caption": "Cracked screen, dead battery, three years old \u2014 guess what we paid for it. $50? Higher. $100? Higher. $190, for a phone with a shattered screen. Guess yours, then check for real: purchasingcorp.com",
+      "hashtags": [
+        "crackedphone",
+        "guessthepayout",
+        "anycondition"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-apple-watch-drawer.mp4",
+      "caption": "Confession: bought a smartwatch in January, wore it six weeks, drawer ever since. Two minutes on the couch \u2192 $140 the next day. Your drawer has a confession too. purchasingcorp.com",
+      "hashtags": [
+        "applewatch",
+        "smartwatch",
+        "confession"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-camera-gear-cash.mp4",
+      "caption": "Camera bag math: body $260, that 50mm you loved $180, flash + extras $80. That's $520 on one closet shelf. Do your own math at purchasingcorp.com",
+      "hashtags": [
+        "camera",
+        "photography",
+        "gearmath"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-macbook-still-worth.mp4",
+      "caption": "Your old MacBook loses ~$25 in value every month it sits. Sell in July: $480. Wait till October: $400. Same laptop \u2014 only the date changed. Lock today's price at purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-moving-day-payout.mp4",
+      "caption": "POV: the movers charge by the box and box seven is all old tech you'll never plug in again. Photograph it, quote it, ship it free \u2014 box seven just paid $600 toward the move. purchasingcorp.com",
+      "hashtags": [
+        "moving",
+        "declutter",
+        "pov"
+      ]
     }
   ]
 }
