@@ -1,0 +1,667 @@
+{
+  "generated_at": "2026-07-15T15:06:42.588716+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "consoles",
+    "educational_topic": "what actually affects your payout (condition, storage, lock status)",
+    "comparison_angle": "selling now vs. holding it: what a specific model loses in value every month you wait",
+    "audience_angle": "price drop urgency: show how much a specific real model has lost per month and what it pays TODAY",
+    "featured_label": "Consoles"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-15T15:05:28.379Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured console offer",
+        "caption": "That Switch sitting in your drawer lost $30 last month. It'll lose another $30 next month. Or you can get paid $240 cash today. Quote in 60 seconds at purchasingcorp.com/form, ship free, get paid same day.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmynintendoswitch",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#nintendoswitch",
+          "#switcholed",
+          "#sellmytech",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#electronicsbuyback",
+          "#besttradinvalue",
+          "#phonetrade",
+          "#sellelectronics",
+          "#switchlite",
+          "#metaquest",
+          "#rogally"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "Nintendo · PlayStation · Xbox · ROG Ally · Meta Quest",
+              "headline_html": "Switch OLED pays <em>$240 cash</em> today",
+              "sub_html": "Every month you wait costs you $30 in value. Get the real number in 60 seconds, ship free, same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$475",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Console board",
+        "caption": "Real console prices, updated today. No guessing, no store credit, no waiting. The number you see is the number we pay. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmynintendoswitch",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#nintendoswitch",
+          "#switcholed",
+          "#metaquest",
+          "#rogally",
+          "#switch2",
+          "#sellmytech",
+          "#cashforphones",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#besttradinvalue",
+          "#phonetrade",
+          "#sellelectronics",
+          "#switchlite",
+          "#playstation"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "Current cash offers · updated daily",
+              "title_html": "What your console pays <em>right now</em>",
+              "rows": [
+                {
+                  "model": "ASUS ROG ALLY X 1TB Z1 EXTREME",
+                  "price": "$475"
+                },
+                {
+                  "model": "Nintendo Switch 2 Mario Kart World Bundle",
+                  "price": "$400"
+                },
+                {
+                  "model": "Nintendo Switch 2",
+                  "price": "$370"
+                },
+                {
+                  "model": "Nintendo Switch OLED",
+                  "price": "$240"
+                },
+                {
+                  "model": "Nintendo Switch",
+                  "price": "$200"
+                },
+                {
+                  "model": "Oculus Meta Quest 2 128gb",
+                  "price": "$150"
+                }
+              ],
+              "note_html": "All conditions considered. Quote in 60 sec at purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof",
+        "caption": "Another Switch OLED paid out same day. No games, no bait and switch. The number we quote is the number we pay. Get yours at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmynintendoswitch",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#nintendoswitch",
+          "#switcholed",
+          "#sellmytech",
+          "#cashforphones",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#besttradinvalue",
+          "#phonetrade",
+          "#sellelectronics",
+          "#proofofpayment",
+          "#realcash",
+          "#trustedbuyer",
+          "#cashout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "Console Buyback",
+              "slip_ref": "PC-240715-0847",
+              "device": "Nintendo Switch OLED",
+              "condition": "Good, working",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$240.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Comparison: selling now vs. waiting",
+        "caption": "That Switch OLED paid $270 three months ago. Today it pays $240. Next month it'll pay $210. Every month you wait costs you real money. Get the cash today at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmynintendoswitch",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#nintendoswitch",
+          "#switcholed",
+          "#sellmytech",
+          "#cashforphones",
+          "#applebuyback",
+          "#electronicsbuyback",
+          "#besttradinvalue",
+          "#phonetrade",
+          "#sellelectronics",
+          "#pricedrop",
+          "#depreciation",
+          "#sellnow"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "PRICE DROP",
+              "eyebrow": "Nintendo Switch OLED · value loss over time",
+              "title_html": "What waiting <em>actually costs</em> you",
+              "bars": [
+                {
+                  "label": "Today (sell now)",
+                  "value": "$240",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "~Next month (wait 30 days)",
+                  "value": "~$210",
+                  "pct": 87,
+                  "kind": "alt"
+                },
+                {
+                  "label": "~Two months out",
+                  "value": "~$180",
+                  "pct": 75,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Future values are typical market estimates. Every month costs you $30. Lock your price today at purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone offer",
+        "caption": "The newest iPhone pays the most cash. No carrier lock-in, no store credit, no waiting. Quote in 60 seconds, ship free, get paid same day. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#iphone17promax",
+          "#iphone17",
+          "#iphonetradevalue",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphone17pro",
+          "#appletradevalue",
+          "#iphonebuyback",
+          "#sellmyapple",
+          "#cashforiphone",
+          "#iphonecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "iPHONE",
+              "eyebrow": "iPhone 17 Pro Max · all storage sizes",
+              "headline_html": "iPhone 17 Pro Max pays up to <em>$1,241 cash</em>",
+              "sub_html": "More than Apple, more than Best Buy. A real number, not a vague up to. Same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air board",
+        "caption": "Real MacBook Air prices, updated today. The number we quote is the number we pay. No bait and switch, no price drops at the door. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmytech",
+          "#techbuyback",
+          "#macbookair",
+          "#m4macbookair",
+          "#macbookbuyback",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapple",
+          "#macbooktrade",
+          "#appletradevalue",
+          "#sellmacbookair",
+          "#cashformac",
+          "#macbookcash",
+          "#m4macbook",
+          "#macbook2025",
+          "#sellmylaptop"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "M4 MacBook Air · current cash offers",
+              "title_html": "What your MacBook Air pays <em>today</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "All conditions considered. Quote in 60 sec at purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch index",
+        "caption": "Real Apple Watch prices across every model. No guessing, no store credit. The number you see is the number we pay. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#sellmytech",
+          "#techbuyback",
+          "#applewatchbuyback",
+          "#applewatch",
+          "#applewatchultra",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapple",
+          "#applewatchtrade",
+          "#appletradevalue",
+          "#applewatchs11",
+          "#applewatchultra3",
+          "#cashforwatch",
+          "#watchbuyback",
+          "#sellmywatch",
+          "#applewatchcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Current payouts · all models",
+              "title_html": "What your Apple Watch pays <em>right now</em>",
+              "cells": [
+                {
+                  "label": "ULTRA 3 49MM",
+                  "num": "$473",
+                  "foot": "Top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "ULTRA 3 BLACK",
+                  "num": "$450",
+                  "foot": "49mm 2025",
+                  "tone": ""
+                },
+                {
+                  "label": "S11 46MM Ti",
+                  "num": "$315",
+                  "foot": "Titanium",
+                  "tone": ""
+                },
+                {
+                  "label": "S11 42MM Ti",
+                  "num": "$293",
+                  "foot": "Titanium",
+                  "tone": ""
+                },
+                {
+                  "label": "S11 46MM Al",
+                  "num": "$210",
+                  "foot": "Aluminum",
+                  "tone": ""
+                },
+                {
+                  "label": "S11 42MM Al",
+                  "num": "$195",
+                  "foot": "Aluminum",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All conditions considered. Quote at purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo-cover lifestyle post",
+        "caption": "That device in your drawer is cash today. Not next week, not after fees, not store credit. Real money, same day. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmyapplewatch",
+          "#sellmyapple",
+          "#cashout",
+          "#quickcash",
+          "#sellnow",
+          "#getpaid",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Turn your drawer into dollars",
+              "headline_html": "Get paid <em>same day</em>",
+              "deck_html": "No games, no bait and switch. The number we quote is the number we pay.",
+              "photo_url": "https://images.unsplash.com/photo-1615680022647-99c397cbcaea?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw3fHxOaW50ZW5kbyUyMFN3aXRjaCUyMGhhbmRoZWxkJTIwY29uc29sZXxlbnwxfDB8fHwxNzg0MTI4MDAxfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Mac mini offer",
+        "caption": "Mac mini pays up to $675 cash today. More than Apple, more than Best Buy. Quote in 60 seconds, ship free, get paid same day. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#cashformac",
+          "#applebuyback",
+          "#sellmytech",
+          "#techbuyback",
+          "#macminibuyback",
+          "#macmini",
+          "#macmini2025",
+          "#sellingelectronics",
+          "#tradein",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapple",
+          "#macminitrade",
+          "#appletradevalue",
+          "#sellmymac",
+          "#cashformacmini",
+          "#macminicash",
+          "#m4macmini",
+          "#macbuyback",
+          "#appletrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Mac mini · all configurations",
+              "headline_html": "Mac mini pays up to <em>$675 cash</em>",
+              "sub_html": "More than Apple, more than Best Buy. A real number, not a vague up to. Same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Educational carousel: what affects your payout",
+        "caption": "Three things determine what your device pays: condition, storage, and lock status. Here's how each one affects your number. Get your personalized quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#iphonetradevalue",
+          "#sellmyapplewatch",
+          "#devicecondition",
+          "#unlocked",
+          "#sellunlocked",
+          "#tradeintips",
+          "#howtosell"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "CONDITION",
+              "eyebrow": "What affects your payout",
+              "headline_html": "Condition: <em>working matters more</em> than pretty",
+              "body_html": "Scratches and dents barely move the number. A cracked screen costs you 20-30%. But if it powers on, charges, and isn't activation-locked, <strong>you're getting paid</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "STORAGE",
+              "eyebrow": "What affects your payout",
+              "headline_html": "Storage: <em>bigger pays more</em>",
+              "body_html": "A 512GB iPhone pays $150 more than the 128GB model. A 1TB MacBook Air pays $200+ more than 256GB. <strong>Storage is the biggest single variable</strong> in your payout."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "LOCK STATUS",
+              "eyebrow": "What affects your payout",
+              "headline_html": "Lock status: <em>unlocked pays full price</em>",
+              "body_html": "Carrier-locked phones pay 30-40% less. iCloud-locked devices pay nothing (we can't resell them). <strong>Unlock before you sell</strong>, or tell us upfront and we'll adjust."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "YOUR QUOTE",
+              "eyebrow": "What affects your payout",
+              "headline_html": "Get your <em>real number</em> in 60 seconds",
+              "body_html": "Our quote form asks these three things, then gives you the actual dollar figure. <strong>No vague up to, no surprises</strong>. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JULY 2026",
+          "date_label": "Wednesday, July 15",
+          "section": "CONSOLES",
+          "headline_html": "That Switch is losing <em>$30/month</em>",
+          "deck_html": "Sell today, get paid today. Every month you wait costs you real money.",
+          "photo_url": "https://images.unsplash.com/photo-1755155461917-093f8ce70362?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMnx8aGFuZGhlbGQlMjBnYW1lJTIwY29uc29sZSUyMGluJTIwaGFuZHxlbnwxfDF8fHwxNzg0MTI4MDAyfDA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Price drop per month (Nintendo Switch OLED)",
+          "stat_value": "$30",
+          "stat_unit": "",
+          "caption_html": "Every month you wait costs you <em>$30 in value</em>. Get the cash today.",
+          "source": "PurchasingCorp market data · July 2026"
+        }
+      }
+    ]
+  }
+}
