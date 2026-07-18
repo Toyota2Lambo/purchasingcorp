@@ -1,0 +1,660 @@
+{
+  "generated_at": "2026-07-18T14:34:42.529361+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "mac-mini",
+    "educational_topic": "how we keep your sale safe (data wipe, insured label, same-day pay)",
+    "comparison_angle": "our cash offer vs. a big-box store gift card",
+    "audience_angle": "the upgrade enabler: sell your old device, get real cash, spend it on anything — not locked to one store",
+    "featured_label": "Mac Mini"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-18T14:33:39.871Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured Mac Mini offer",
+        "caption": "That Mac Mini sitting on your desk is worth $675 cash right now. Not store credit. Not a gift card. Real money in your account the same day we receive it. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminitrade",
+          "#applebuyback",
+          "#cashformac",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macmini",
+          "#appletrade",
+          "#sellmymac",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Top Mac Mini pays <em>$675</em> cash",
+              "sub_html": "Real money, not store credit. Same-day payout, no games.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$675",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Mac Mini price board",
+        "caption": "Here are the real numbers for Mac Mini. Not an estimate, not a range. The number you see is the number we pay. Quote takes 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#macminitrade",
+          "#sellmymacmini",
+          "#cashformac",
+          "#applebuyback",
+          "#sellmymac",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macmini",
+          "#appletrade",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmyapplewatch"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "CURRENT PAYOUTS",
+              "title_html": "Mac Mini <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB 512GB",
+                  "price": "$675",
+                  "note": ""
+                },
+                {
+                  "model": "MCYT4LL/A 24GB 512GB",
+                  "price": "$450",
+                  "note": ""
+                },
+                {
+                  "model": "MU9E3LL/A 16GB 512GB",
+                  "price": "$375",
+                  "note": ""
+                },
+                {
+                  "model": "MU9D3LL/A 16GB 256GB",
+                  "price": "$300",
+                  "note": ""
+                }
+              ],
+              "note_html": "All models. Working condition. Same-day pay."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof (Mac Mini)",
+        "caption": "This seller walked out of a big-box store with a gift card offer and came to us instead. Same Mac Mini, real cash, same-day payout. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminitrade",
+          "#cashformac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macmini",
+          "#appletrade",
+          "#sellmymac",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "PAYOUT RECEIPT",
+              "slip_ref": "#PC180726M",
+              "device": "Mac Mini MCX44LL/A PRO 24GB 512GB",
+              "condition": "Working, good cosmetic",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$675.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Compare: our cash vs. big-box gift card",
+        "caption": "Big-box stores pay you in gift cards that lock you into their inventory and prices. We pay cash you can spend anywhere. Same Mac Mini, wildly different outcomes. Get the real number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminitrade",
+          "#cashformac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macmini",
+          "#appletrade",
+          "#sellmymac",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARE",
+              "eyebrow": "MAC MINI MCX44LL/A PRO 24GB 512GB",
+              "title_html": "Cash vs. <em>gift card</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$675",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Big-box store (gift card)",
+                  "value": "~$425",
+                  "pct": 63,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Competitor figure is a typical store-credit estimate. Ours is real cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index: category top payouts",
+        "caption": "Here are the top cash offers across every category we buy. Real numbers, not ranges. Same-day payout on every sale. Start your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#applebuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmymacmini",
+          "#macminitrade",
+          "#sellmyapplewatch",
+          "#phonetrade",
+          "#cashformac",
+          "#appletrade",
+          "#sellmymac",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmyipad",
+          "#consoles"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORY INDEX",
+              "eyebrow": "CURRENT TOP PAYOUTS",
+              "title_html": "What we <em>pay today</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" 24GB M4",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "ULTRA 3 49MM",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Turnaround",
+                  "num": "Same day",
+                  "foot": "Every sale",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All working condition. Quote in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo post: lifestyle outcome",
+        "caption": "That device in your drawer is cash today. Not next week, not after a buyer flakes, not locked to one store. Real money you can spend on anything. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#applebuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmymacmini",
+          "#macminitrade",
+          "#cashformac",
+          "#appletrade",
+          "#sellmymac",
+          "#sellmyipad",
+          "#consoles"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "UPGRADE ENABLER",
+              "headline_html": "Turn that drawer phone into <em>real money</em>",
+              "sub_html": "Same-day payout. Spend it anywhere. No store credit, no games.",
+              "photo_url": "https://images.unsplash.com/photo-1518117946207-d26b51185902?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxfHxzdGFjayUyMG9mJTIwc21hcnRwaG9uZXMlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDB8fHwxNzg0Mzg1MjgyfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone offer",
+        "caption": "iPhone 17 Pro Max pays up to $1,241 cash today. Not an estimate. Not a gift card you have to spend at one store. Real money in your account the same day. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#iphone17tradevalue",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphone17promax",
+          "#iphonetradevalue",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#appletrade",
+          "#sellmymac"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "iPhone 17 Pro Max pays <em>$1,241</em> cash",
+              "sub_html": "Real money, not store credit. Same-day payout, no games.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$1,241",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air board",
+        "caption": "Here are the real numbers for MacBook Air. The number we quote is the number we pay. No bait and switch, no store credit. Quote takes 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#sellmacbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmymac",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macbookair",
+          "#appletrade",
+          "#phonetrade",
+          "#sellmymacmini",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmyapplewatch"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CURRENT PAYOUTS",
+              "title_html": "MacBook Air <em>cash offers</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560",
+                  "note": ""
+                }
+              ],
+              "note_html": "All models. Working condition. Same-day pay."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch offer",
+        "caption": "Apple Watch ULTRA 3 pays $473 cash today. Not a gift card locked to one retailer. Real money you can spend on anything. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#applewatchtrade",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#applewatch",
+          "#appletrade",
+          "#phonetrade",
+          "#sellmymacmini",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmymac"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Apple Watch ULTRA 3 pays <em>$473</em> cash",
+              "sub_html": "Real money, not store credit. Same-day payout, no games.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$473",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Educational carousel: how we keep your sale safe",
+        "caption": "Your device, your data, your money. Here is exactly how we keep every sale safe from quote to payout. Start your 60-second quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#applebuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#nocredit",
+          "#realcash",
+          "#sellmymacmini",
+          "#macminitrade",
+          "#cashformac",
+          "#appletrade",
+          "#sellmymac",
+          "#sellmyipad",
+          "#consoles"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "DATA WIPE",
+              "eyebrow": "HOW WE KEEP YOUR SALE SAFE",
+              "headline_html": "Your data is <em>wiped clean</em>",
+              "body_html": "Every device goes through a DOD-compliant data wipe. Your photos, messages, and accounts are <strong>permanently erased</strong> before resale."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "INSURED LABEL",
+              "eyebrow": "HOW WE KEEP YOUR SALE SAFE",
+              "headline_html": "Shipping is <em>fully insured</em>",
+              "body_html": "We send you a prepaid label with <strong>full insurance coverage</strong>. If anything happens in transit, we cover it. Zero risk to you."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "SAME-DAY PAY",
+              "eyebrow": "HOW WE KEEP YOUR SALE SAFE",
+              "headline_html": "You get paid <em>the same day</em>",
+              "body_html": "The number we quote is the number we pay. No inspection games. Your money hits your account <strong>the same day we receive your device</strong>."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "ISSUE 18·07·26",
+          "date_label": "SATURDAY",
+          "section": "UPGRADE ENABLER",
+          "headline_html": "Cash today, <em>spend anywhere</em>",
+          "deck_html": "That Mac Mini is worth $675. Real money, not store credit.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "TURNAROUND TIME",
+          "stat_value": "Same day",
+          "stat_unit": "",
+          "caption_html": "The number we quote is the number we pay. <em>Same-day payout</em> on every sale.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
