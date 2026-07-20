@@ -1,46 +1,29 @@
 [
   {
-    "date": "2026-07-19",
-    "file": "purchasingcorp-reel-clean-sheet-scoreboard.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-clean-sheet-scoreboard.mp4",
-    "local_path": "videos/purchasingcorp-reel-clean-sheet-scoreboard.mp4",
-    "caption": "Spain: 6 World Cup games, zero goals allowed. Your tech drawer: 6 years, zero dollars produced. One streak is legendary \u2014 the other has $500 waiting to get on the board. purchasingcorp.com",
+    "date": "2026-07-20",
+    "file": "purchasingcorp-reel-spotlight-0711-1505-01.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-spotlight-0711-1505-01.mp4",
+    "local_path": "videos/purchasingcorp-reel-spotlight-0711-1505-01.mp4",
+    "caption": "That old iPhone in your drawer is worth real cash. Any model, any condition \u2014 we paid $635 the same day. Quote in 60 seconds, cash before bedtime. purchasingcorp.com",
     "hashtags": [
-      "worldcup",
-      "cleansheet",
-      "scoreboard",
+      "sellyouriphone",
+      "iphone",
+      "samedaycash",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 10"
+    "cycle_position": "1 of pool size 7"
   },
   {
-    "date": "2026-07-19",
-    "file": "purchasingcorp-reel-cracked-phone-pays.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-cracked-phone-pays.mp4",
-    "local_path": "videos/purchasingcorp-reel-cracked-phone-pays.mp4",
-    "caption": "Cracked screen, dead battery, three years old \u2014 guess what we paid for it. $50? Higher. $100? Higher. $190, for a phone with a shattered screen. Guess yours, then check for real: purchasingcorp.com",
+    "date": "2026-07-20",
+    "file": "purchasingcorp-reel-grateful-drawer-list.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-grateful-drawer-list.mp4",
+    "local_path": "videos/purchasingcorp-reel-grateful-drawer-list.mp4",
+    "caption": "Gratitude list, tech drawer edition: the old phone $250, the forgotten tablet $150, the watch + earbuds $130. That's $530 of blessings in one drawer. Count yours at purchasingcorp.com",
     "hashtags": [
-      "crackedphone",
-      "guessthepayout",
-      "anycondition",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 10"
-  },
-  {
-    "date": "2026-07-19",
-    "file": "purchasingcorp-reel-drawer-audit-five.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-drawer-audit-five.mp4",
-    "local_path": "videos/purchasingcorp-reel-drawer-audit-five.mp4",
-    "caption": "Junk drawer audit: old earbuds $40, smartwatch $90, forgotten tablet $150, last phone $250, retired console $430. That drawer is a paycheck. purchasingcorp.com",
-    "hashtags": [
-      "junkdrawer",
+      "gratitude",
       "declutter",
       "hiddencash",
       "sellyourtech",
@@ -48,6 +31,23 @@
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 10"
+    "cycle_position": "1 of pool size 7"
+  },
+  {
+    "date": "2026-07-20",
+    "file": "purchasingcorp-reel-gpu-upgrade-loop.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gpu-upgrade-loop.mp4",
+    "local_path": "videos/purchasingcorp-reel-gpu-upgrade-loop.mp4",
+    "caption": "PC gamers: your old GPU basically buys the new one. Used cards bring up to $680, paid same day. Sell the old card, cover the upgrade \u2014 that's the loop. purchasingcorp.com",
+    "hashtags": [
+      "gpu",
+      "pcgaming",
+      "pcbuild",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 7"
   }
 ]
