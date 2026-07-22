@@ -10,10 +10,631 @@
   "pool": [
     {
       "file": "purchasingcorp-reel-macbook-still-worth.mp4",
-      "caption": "Your old MacBook loses ~$25 in value every month it sits. Sell in July: $480. Wait till October: $400. Same laptop \u2014 only the date changed. Lock today's price at purchasingcorp.com",
+      "caption": "Your old MacBook loses ~$25 in value every month it sits. Sell in July: $480. Wait till October: $400. Same laptop — only the date changed. Lock today's price at purchasingcorp.com",
       "hashtags": [
         "macbook",
         "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dram-shortage-goldmine.mp4",
+      "caption": "The AI boom just made your junk drawer valuable. Memory prices are up eighty nine percent this year. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "memoryshortage",
+        "pcbuild",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pc-price-hike.mp4",
+      "caption": "New PCs just jumped twenty percent overnight. We paid three forty, same day, for a used tower. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-rtx-gpu-fortune.mp4",
+      "caption": "That old graphics card is suddenly worth a fortune. The new flagship is pushing five thousand dollars. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-old-ram-cash.mp4",
+      "caption": "Those old RAM sticks are literally money right now. We paid a hundred twenty for a bag of old modules. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "memoryshortage",
+        "pcbuild",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-phone-price-up.mp4",
+      "caption": "Phone prices are climbing, and here's why it helps you. Top payout, six forty, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-galaxy-fold8-tradeup.mp4",
+      "caption": "Samsung just unveiled the new Fold. Cash out your old one. We paid five twenty for a used foldable, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "samsung",
+        "galaxy",
+        "foldable"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-flip8-fund-it.mp4",
+      "caption": "The new Flip 8 can basically pay for itself. Sixty second quote, no lowball, just the number. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "samsung",
+        "galaxy",
+        "foldable"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-samsung-eyewear.mp4",
+      "caption": "Everyone wants the new smart glasses. Cash out what you don't wear. We paid ninety five for a pile of old wearables. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "samsung",
+        "galaxy",
+        "foldable"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-iphone18-sell-now.mp4",
+      "caption": "A foldable iPhone lands this fall. Here's the move. We paid six ten for last year's iPhone, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-macbook-neo.mp4",
+      "caption": "The five ninety nine MacBook Neo just changed the upgrade math. We paid four thirty for a used MacBook, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-thinkpad-laptop.mp4",
+      "caption": "New laptops cost more this year, which means yours is worth more. We paid two eighty five for a used laptop, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-steam-deck-handheld.mp4",
+      "caption": "Handhelds keep getting better. Flip the one collecting dust. We paid one eighty for a used handheld. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-rog-controller-gear.mp4",
+      "caption": "New pro controllers just dropped. Your old gear adds up. We paid seventy five for a bundle of old gear. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-console-cash.mp4",
+      "caption": "That last gen console in the cabinet still pays real money. We paid two ten for a used console, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-ai-boom-irony.mp4",
+      "caption": "The AI boom is the reason your old junk is suddenly gold. Top payout, six forty, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "ainews",
+        "techtok",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-chatgpt-work-laptop.mp4",
+      "caption": "AI agents do the busywork now. Sell the old laptop you don't need. We paid three hundred for a spare laptop. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-worldcup-upgrade.mp4",
+      "caption": "Spain just took the World Cup. Time to fund your own win. Six forty, same day, no lowball. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "trending",
+        "upgrade",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-usa-250-independence.mp4",
+      "caption": "America just turned two fifty. Declare independence from your junk drawer. Sixty second quote. Freedom's fast. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "trending",
+        "upgrade",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-broken-still-pays.mp4",
+      "caption": "Cracked, dead, water damaged. In this market it still pays. We paid ninety for a cracked, dead phone. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "phonerepair",
+        "brokenphone",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-tablet-tradein.mp4",
+      "caption": "That old tablet buried in a drawer is a stack of cash. We paid two forty for a used tablet. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "ipad",
+        "tablet",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-smartwatch-cash.mp4",
+      "caption": "New watches drop every fall. The one you retired still pays. We paid one thirty for a used smartwatch. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "applewatch",
+        "smartwatch",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-ewaste-planet.mp4",
+      "caption": "Don't trash your old tech. Get paid and keep it out of the landfill. Sixty second quote. Good for everyone. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-fall-upgrade-window.mp4",
+      "caption": "Fall launches are coming. Sell before the drop to catch peak value. Top payout, six forty, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-why-expensive-explainer.mp4",
+      "caption": "Wondering why every gadget costs more? Here's how you actually win. Used tech is fetching double digits more this year. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "ainews",
+        "techtok",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-back-to-school.mp4",
+      "caption": "Back to school upgrade? The old laptop can fund the new one. We paid two eighty five for a student laptop. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-mining-rigs.mp4",
+      "caption": "Those old mining GPUs are back in serious demand. We paid nine hundred for a bundle of cards. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-junk-drawer-goldmine.mp4",
+      "caption": "Open your junk drawer. It's hiding hundreds of dollars. The average drawer we buy pays four thirty. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "declutter",
+        "juststart",
+        "foundmoney"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-earbuds-accessories.mp4",
+      "caption": "Dead earbuds, old chargers, spare cables. It all adds up to cash. We paid seventy for a box of accessories. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "airpods",
+        "earbuds",
+        "techresale"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-memory-crisis-tldr.mp4",
+      "caption": "The memory crisis in twenty seconds, plus the move that pays you. Cash out at the top, six forty, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "memoryshortage",
+        "pcbuild",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-found-13pro-drawer.mp4",
+      "caption": "Cleaning out my nightstand and there's an iPhone 13 Pro I forgot I owned. We'd pay three eighty for it. For the one I almost threw out. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dead-phone-410.mp4",
+      "caption": "This phone wouldn't even turn on. Guy assumed it was e-waste. I sent him four ten that same afternoon. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "phonerepair",
+        "brokenphone",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-drawer-audit-320.mp4",
+      "caption": "Did a junk drawer audit this weekend. Walked away with three hundred bucks. Three twenty, from one drawer, without leaving the house. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "declutter",
+        "juststart",
+        "foundmoney"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-m1-air-still-worth.mp4",
+      "caption": "People keep telling me their M1 MacBook Air is too old to bother with. It's not. We'd pay four thirty for it today. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-airpods-add-up.mp4",
+      "caption": "The little stuff surprises people the most. Even dead AirPods pay. We paid ninety for a beat-up pair of Pros last week. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "airpods",
+        "earbuds",
+        "techresale"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-in-a-box.mp4",
+      "caption": "If you upgraded your PC, there's probably a graphics card in a box worth real money. A used 3080 still moves for around four hundred. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-before-you-recycle.mp4",
+      "caption": "Quick heads up before you drop that old phone in a recycle bin. We'd have paid two sixty for the same phone. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "phonebuyback",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-carrier-trade-in-joke.mp4",
+      "caption": "Honest opinion? Carrier trade-in offers are kind of insulting. We'd pay four eighty. Cash. No plan attached. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "phonebuyback",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-upgrade-day-value-drops.mp4",
+      "caption": "Here's the timing nobody tells you. The day the new one drops, your old one loses value. Last year's Pro still gets six hundred if you move now. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-check-your-drawer-now.mp4",
+      "caption": "Genuinely, pause this and go open your junk drawer. The average drawer we buy pays about three hundred. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "declutter",
+        "juststart",
+        "foundmoney"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-stop-storing-old-phones.mp4",
+      "caption": "That old phone you keep just in case? It's quietly aging out of any value. Two forty now, less every month you wait. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-broken-worthless-myth.mp4",
+      "caption": "Biggest myth I hear? A broken phone is worthless. Completely wrong. We paid one fifty for a phone that wouldn't boot. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "phonerepair",
+        "brokenphone",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-too-old-myth-laptop.mp4",
+      "caption": "People swear their laptop is too old to be worth anything. Usually not true. We paid two eighty five for a five year old laptop. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-store-credit-myth.mp4",
+      "caption": "Everyone assumes old tech only gets you store credit. Nope. Real cash. Three forty in your account. Not a coupon. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gaming-junk-myth.mp4",
+      "caption": "Gamers assume nobody wants last-gen gear. The used market says otherwise. A used PS5 still pulls around two ten. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-things-secretly-worth.mp4",
+      "caption": "Three things in your house right now that are secretly worth real money. Number three, every old phone you've kept. Even the cracked ones. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-top-3-payouts-week.mp4",
+      "caption": "Three real payouts I sent out this week. The numbers surprised people. Third, four thirty for an M1 MacBook Air. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-signs-sell-phone.mp4",
+      "caption": "Three signs it's time to sell your phone before it loses more value. Three, battery health dipping under eighty five percent. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-devices-hold-value.mp4",
+      "caption": "The three devices that hold their resale value the longest. Sell these smart. Three, iPads. They age slow and buyers trust them. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-things-not-to-trash.mp4",
+      "caption": "Three things you should never throw in the trash. They're worth money. Three, chargers and cables. A box of them adds up. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dont-buy-fold8-yet.mp4",
+      "caption": "Samsung just showed the Fold 8. Before you pre-order, do one thing. A used foldable still gets five twenty, even creased. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "samsung",
+        "galaxy",
+        "foldable"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-memory-crisis-good-news.mp4",
+      "caption": "The whole memory shortage is bad news for buyers. Weirdly, it's good news for you. Used tech's fetching double digits more than last year. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "memoryshortage",
+        "pcbuild",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-foldable-iphone-move.mp4",
+      "caption": "A foldable iPhone is landing this fall. Here's the move if you want in. A 15 Pro still gets six hundred if you sell before then. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-599-macbook-math.mp4",
+      "caption": "There's a five ninety nine MacBook now. That changes the upgrade math completely. Sell it for four thirty and the new one's nearly free. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-prices-insane.mp4",
+      "caption": "New flagship graphics cards are pushing five grand. Which makes your old one gold. A used 3090 moves for six hundred right now. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pov-cleared-300.mp4",
+      "caption": "POV, you spent ten minutes on one drawer and cleared three hundred bucks. Three hundred hit the account before the box even arrived. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-watch-money-land.mp4",
+      "caption": "Sold an old laptop this morning. Watch how fast the money actually lands. Two eighty five, paid before lunch. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "applewatch",
+        "smartwatch",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pov-upgrade-funded.mp4",
+      "caption": "POV, you're about to upgrade and the old phone basically pays for it. Six ten straight toward the upgrade. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-us-vs-carrier-480.mp4",
+      "caption": "Same phone, two offers. Carrier said two hundred. We'd say four eighty. That's two eighty more, in cash, for one different call. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "phonebuyback",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-recycle-vs-sell.mp4",
+      "caption": "Two options for that old phone. Recycle it for nothing, or sell it for two sixty. One pays you two sixty. The other pays you zero. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "phonebuyback",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-cash-for-phone.mp4",
+      "caption": "That old phone in your hand is worth real cash, not a coupon. We paid three forty for one just like it, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-cracked-still-pays.mp4",
+      "caption": "Cracked, dead, water damaged — it still pays. People don't believe me. One fifty for a phone that wouldn't turn on. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "phonerepair",
+        "brokenphone",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-laptop-cash.mp4",
+      "caption": "The laptop sitting closed on your shelf is money losing value by the month. Two eighty five for a used one last week. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "laptop",
+        "techdeals"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-console-cash.mp4",
+      "caption": "That console you stopped playing still pays real money. Two ten for a used console, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellyourconsole"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-gpu-cash.mp4",
+      "caption": "That graphics card you boxed up after an upgrade is worth a lot right now. Four hundred for a used one, easily. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "pcbuild"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-drawer-goldmine.mp4",
+      "caption": "Open the drawer everyone has. It's hiding a few hundred bucks. The average drawer we buy pays about three hundred. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "declutter",
+        "juststart",
+        "foundmoney"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-smartwatch-cash.mp4",
+      "caption": "The smartwatch you retired for a new one still sells. One thirty for a used one, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "applewatch",
+        "smartwatch",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-earbuds-cash.mp4",
+      "caption": "Even old earbuds add up. The little stuff surprises everyone. Ninety for a used pair last week. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "airpods",
+        "earbuds",
+        "techresale"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-same-day-cash.mp4",
+      "caption": "Sold an old phone this morning. Watch how fast the money lands. Two eighty five, paid before lunch. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "oldtech",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-tablet-cash.mp4",
+      "caption": "That tablet you haven't touched in a year is a stack of cash. Two forty for a used one, same day. See what yours is worth → purchasingcorp.com",
+      "hashtags": [
+        "ipad",
+        "tablet",
         "sellnow"
       ]
     }
