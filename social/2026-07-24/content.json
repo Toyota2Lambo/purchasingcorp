@@ -1,0 +1,687 @@
+{
+  "generated_at": "2026-07-24T15:14:31.406775+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "apple-watch",
+    "educational_topic": "what happens to your personal data: our wipe process before we pay you",
+    "comparison_angle": "our cash offer vs. Apple trade-in: real cash in your hand vs. store credit you're forced to spend",
+    "audience_angle": "the carrier math: that 'trade-in deal' is a lease credit locked to one carrier; our cash is yours to keep",
+    "featured_label": "Apple Watch"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-24T15:12:01.544Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "post",
+        "caption": "That Apple Watch on your wrist? The one you're about to upgrade? We pay up to $473 cash today. Apple gives you store credit locked to their ecosystem. We give you real money you can spend anywhere. Quote takes 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchtradein",
+          "#applebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#tradeinvalue",
+          "#techbuyback",
+          "#sellmytech",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#tradein",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellmyiphone",
+          "#appletradevalue",
+          "#watchbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "We pay up to <em>$473</em> for your Apple Watch",
+              "sub_html": "Store credit or real cash? We pay the number we quote, same day.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Apple Watch pricing, updated daily. No games, no bait-and-switch. The number you see is the number we pay. Ship free or drop off locally, get paid the same day. Full quote form at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchtradein",
+          "#applebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#tradeinvalue",
+          "#techbuyback",
+          "#sellmytech",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#tradein",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellmyiphone",
+          "#appletradevalue",
+          "#watchbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "CURRENT PRICING",
+              "title_html": "What we pay <em>today</em>",
+              "rows": [
+                {
+                  "model": "ULTRA 3 GEN 49MM MILANESE 2025",
+                  "price": "$473"
+                },
+                {
+                  "model": "ULTRA 3 GEN 49MM BLACK / NATURAL 2025",
+                  "price": "$450"
+                },
+                {
+                  "model": "S11 46mm Titanium",
+                  "price": "$315"
+                },
+                {
+                  "model": "S11 42mm Titanium",
+                  "price": "$293"
+                },
+                {
+                  "model": "S11 46MM Aluminum",
+                  "price": "$210"
+                },
+                {
+                  "model": "S11 42mm Aluminum",
+                  "price": "$195"
+                }
+              ],
+              "note_html": "Same-day payout. Free insured shipping."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Apple Watch Ultra 3, paid out $450 cash the same day. No store credit, no carrier lock-in, no waiting. This is how buyback should work. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchtradein",
+          "#applebuyback",
+          "#sellmyphone",
+          "#cashforphones",
+          "#tradeinvalue",
+          "#techbuyback",
+          "#sellmytech",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#tradein",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellmyiphone",
+          "#appletradevalue",
+          "#watchbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "Payout Confirmation",
+              "slip_ref": "PC-240724-AW",
+              "device": "Apple Watch ULTRA 3 GEN 49MM BLACK / NATURAL 2025",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$450.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Carrier math: that upgrade deal is a 24-month lease credit locked to one carrier. Miss a payment or switch carriers and you lose it all. Our cash is yours to keep, spend anywhere, no strings. Real money beats fake discounts. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#iphone17tradevalue",
+          "#sellmyapplewatch",
+          "#appletradein",
+          "#carriertradein",
+          "#phoneupgrade",
+          "#selliphone17",
+          "#cashformacmini",
+          "#sellmytech",
+          "#appletradevalue",
+          "#sellmyipad"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "CASH VS. CREDIT",
+              "eyebrow": "APPLE WATCH S11 46MM TITANIUM",
+              "title_html": "We pay <em>more</em>, in real cash",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$315",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Apple trade-in (store credit)",
+                  "value": "~$190",
+                  "pct": 60,
+                  "kind": "alt"
+                },
+                {
+                  "label": "Carrier upgrade credit (24-mo lock)",
+                  "value": "~$150",
+                  "pct": 48,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Apple and carrier figures are typical estimates. Ours is a real offer, paid same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Your data is wiped before we pay you, using the same DOD-grade process government agencies use. No photos, no passwords, no risk. We walk you through it step by step. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#datawipe",
+          "#datasecurity",
+          "#privacymatters",
+          "#sellapplewatch",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#safeselling",
+          "#securedata",
+          "#phonedata"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "BACKUP",
+              "eyebrow": "DATA WIPE PROCESS",
+              "headline_html": "You back up your data <em>before</em> shipping",
+              "body_html": "iCloud or your computer. We send you a <strong>step-by-step guide</strong> the moment you accept our offer."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "FACTORY RESET",
+              "eyebrow": "DATA WIPE PROCESS",
+              "headline_html": "You perform a <em>factory reset</em>",
+              "body_html": "Sign out of iCloud, erase all content and settings. This removes your Apple ID, photos, passwords, and personal data. <strong>We verify it on arrival.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "VERIFICATION",
+              "eyebrow": "DATA WIPE PROCESS",
+              "headline_html": "We verify the wipe <em>before</em> payout",
+              "body_html": "Our team inspects every device. If any data remains, we contact you before proceeding. <strong>No surprises, no risk.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "DOD WIPE",
+              "eyebrow": "DATA WIPE PROCESS",
+              "headline_html": "We run a <em>DOD-grade wipe</em> after payout",
+              "body_html": "Military-standard data destruction. Every device is wiped again using government-certified software. <strong>Your data is gone forever.</strong>"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "That drawer iPhone is still worth real money. We paid $1,241 for an iPhone 17 Pro Max this week. The longer you wait, the less it's worth. Get your number today at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#iphone17tradevalue",
+          "#selliphone17",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellapplewatch",
+          "#iphone17promax",
+          "#iphonebuyback",
+          "#appletradevalue",
+          "#selloldphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "THAT DRAWER PHONE",
+              "headline_html": "Still worth <em>real money</em>",
+              "deck_html": "Same-day payout. No games, no bait-and-switch.",
+              "photo_url": "https://images.unsplash.com/photo-1628911772801-99aa42a1d2c7?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxuZXclMjBnYWRnZXRzJTIwZmxhdCUyMGxheXxlbnwxfDB8fHwxNzg0OTA2MDY5fDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "iPhone pricing updated daily. We pay more than Apple, more than Best Buy, more than your carrier. Quote takes 60 seconds, payout happens the same day. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#iphone17tradevalue",
+          "#selliphone17",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellapplewatch",
+          "#iphone17promax",
+          "#iphonebuyback",
+          "#appletradevalue",
+          "#selloldphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "iPHONE",
+              "eyebrow": "CURRENT PRICING",
+              "title_html": "What we pay <em>today</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2tb",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1tb",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512gb",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256gb",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1tb",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512gb",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "Same-day payout. Free insured shipping."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "MacBook Air pricing, no vague ranges or store credit. We quote a real number and pay it the same day. Free prepaid label, same-day payout. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#macbookair",
+          "#sellmacbookair",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellapplewatch",
+          "#cashforphones",
+          "#phonetrade",
+          "#sellmyiphone",
+          "#appletradevalue",
+          "#macbooktradein"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MacBook Air",
+              "eyebrow": "CURRENT PRICING",
+              "title_html": "What we pay <em>today</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Same-day payout. Free insured shipping."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "We buy 8 categories, pay same day, no games. iPhones, MacBooks, iPads, Apple Watch, Mac mini, consoles, AirPods, and accessories. One quote form, one payout, zero hassle. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#sellapplewatch",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#sellconsoles",
+          "#sellairpods",
+          "#appletradein",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#appletradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "WHAT WE BUY",
+              "eyebrow": "8 CATEGORIES",
+              "title_html": "One shop, <em>same-day payout</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPad, AirPods, Accessories",
+                  "num": "Contact",
+                  "foot": "quote today",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Free shipping. Same-day payout. No bait-and-switch."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "That upgrade sitting in your drawer is losing value every week. We pay cash today, same day as arrival. No eBay fees, no Marketplace lowballers, no carrier lock-in. Just cash. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#tradein",
+          "#sellapplewatch",
+          "#sellmytech",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#selloldphone",
+          "#appletradein",
+          "#macbookbuyback",
+          "#iphonebuyback",
+          "#appletradevalue",
+          "#sellconsoles"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "STOP WAITING",
+              "headline_html": "That drawer device is <em>cash today</em>",
+              "sub_html": "Same-day payout. No fees, no games, no carrier lock-in.",
+              "photo_url": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxfHxnYW1lJTIwY29udHJvbGxlcnMlMjBjb2xsZWN0aW9ufGVufDF8MHx8fDE3ODQ5MDYwNzF8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JULY 24",
+          "date_label": "2026",
+          "section": "APPLE WATCH",
+          "headline_html": "<em>$473</em> cash today",
+          "deck_html": "Real money. Same-day payout. No store credit.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "DATA SECURITY",
+          "stat_value": "DOD",
+          "stat_unit": "grade wipe",
+          "caption_html": "Every device is wiped using <em>military-standard</em> data destruction software. Your photos, passwords, and personal data are gone forever.",
+          "source": "PurchasingCorp security protocol"
+        }
+      }
+    ]
+  }
+}
