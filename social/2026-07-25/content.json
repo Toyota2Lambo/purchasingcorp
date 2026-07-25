@@ -1,0 +1,664 @@
+{
+  "generated_at": "2026-07-25T14:45:32.959508+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "consoles",
+    "educational_topic": "how selling to us works, end to end",
+    "comparison_angle": "our cash offer vs. a typical carrier trade-in credit",
+    "audience_angle": "the drawer device: most people have $200+ in old tech at home right now, sitting there losing value",
+    "featured_label": "Consoles"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-25T14:44:24.786Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured category hero offer",
+        "caption": "That Switch sitting in your drawer? It's still worth $240 cash today. Most people have $200+ in old tech at home losing value every month. Ship free, get paid same day. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#nintendoswitchtradevalue",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmygamingconsole",
+          "#gamingbuyback",
+          "#switchtradevalue",
+          "#metaquestbuyback",
+          "#rogallytradevalue",
+          "#cashforgaming"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "GAMING GEAR",
+              "headline_html": "Switch OLED pays <em>$240 cash</em>",
+              "sub_html": "All models, all conditions. That drawer console is money today.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$475",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Console price board",
+        "caption": "Real console prices, no games. The number you see is the number we pay. Every model, every condition. Quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#nintendoswitchtradevalue",
+          "#sellmyswitch",
+          "#consolebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#cashforgaming",
+          "#gamingbuyback",
+          "#switchtradevalue",
+          "#metaquestbuyback",
+          "#rogallytradevalue",
+          "#sellmygamingconsole",
+          "#switch2tradevalue",
+          "#oculusbuyback",
+          "#questbuyback",
+          "#switchlitetradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "JULY 2026 PRICING",
+              "title_html": "<em>Console</em> buyback rates",
+              "rows": [
+                {
+                  "model": "ASUS ROG ALLY X 1TB Z1 EXTREME",
+                  "price": "$475"
+                },
+                {
+                  "model": "Nintendo Switch 2 Mario Kart World Bundle",
+                  "price": "$400"
+                },
+                {
+                  "model": "Nintendo Switch 2",
+                  "price": "$370"
+                },
+                {
+                  "model": "Nintendo Switch OLED",
+                  "price": "$240"
+                },
+                {
+                  "model": "Oculus Meta Quest 2 128gb",
+                  "price": "$150"
+                },
+                {
+                  "model": "Nintendo Switch Lite",
+                  "price": "$140"
+                }
+              ],
+              "note_html": "Prices reflect excellent condition. Damaged units adjusted at inspection."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof",
+        "caption": "Same day means same day. This Mac mini went from quote to paid in under 24 hours. No waiting, no reversals, no store credit. Get your offer at purchasingcorp.com.",
+        "hashtags": [
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#macbuyback",
+          "#appletradevalue",
+          "#sellmyapple",
+          "#macminitrade",
+          "#cashmac",
+          "#macminitradevalue",
+          "#selltech",
+          "#techpayout",
+          "#payfastcash",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "Mac mini",
+              "slip_ref": "#PC072526A",
+              "device": "MCX44LL/A PRO 24GB 512GB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$675",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Compare post (carrier trade-in vs. us)",
+        "caption": "Carrier trade-ins cap out at store credit. We pay real cash, same day, more than any carrier. The math is simple. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#tradein",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#techbuyback",
+          "#sellmytech",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#electronicsbuyback",
+          "#iphone17tradevalue",
+          "#iphone17promax",
+          "#iphonetradevalue",
+          "#carriertradein",
+          "#notradinscam",
+          "#cashnotcredit",
+          "#realcash",
+          "#beatcarrier",
+          "#morethantradein",
+          "#nocredit"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARE",
+              "eyebrow": "IPHONE 17 PRO MAX 256GB",
+              "title_html": "<em>Cash offer</em> vs. carrier credit",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$855",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Carrier trade-in (credit)",
+                  "value": "~$500",
+                  "pct": 58,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Rival figure is a typical carrier trade-in credit estimate, not cash."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo post (lifestyle outcome)",
+        "caption": "Your old iPhone is cash today. Most people have $200+ in tech sitting in a drawer right now. Ship free, get paid same day. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#iphonetradevalue",
+          "#sellmyapple",
+          "#appletradevalue",
+          "#oldiphonecash",
+          "#drawertech",
+          "#unusedtech",
+          "#techcash",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "THAT DRAWER PHONE",
+              "headline_html": "<em>Cash today</em>, not someday",
+              "sub_html": "The number we quote is the number we pay. Same day, no games.",
+              "photo_url": "https://images.unsplash.com/photo-1770795263297-9289a582a68d?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw0fHxzbWFydHBob25lJTIwb24lMjBhJTIwZGFyayUyMHN1cmZhY2V8ZW58MXwwfHx8MTc4NDk5MDczMnww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "MacBook Air board",
+        "caption": "Real MacBook Air prices, updated daily. More than Apple, more than Best Buy. Quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#applebuyback",
+          "#macbookbuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#macbookairtradevalue",
+          "#sellmacbookair",
+          "#macbookairtrade",
+          "#m4macbookair",
+          "#macbookm4",
+          "#sellmymac",
+          "#mactradevalue",
+          "#cashmacbook",
+          "#macbookcash",
+          "#appletrade",
+          "#macbookpayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "JULY 2026 PRICING",
+              "title_html": "<em>MacBook Air</em> M4 rates",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices reflect excellent condition. Damaged units adjusted at inspection."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index reference grid",
+        "caption": "Eight categories, same-day payout, zero drama. The number we quote is the number we pay. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#sellmymacmini",
+          "#cashformacmini",
+          "#sellmyipad",
+          "#ipadbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORIES",
+              "eyebrow": "WHAT WE BUY",
+              "title_html": "<em>Top payouts</em> by category",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "ULTRA 3 49MM",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Turnaround",
+                  "num": "Same day",
+                  "foot": "Every category",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All prices reflect excellent condition. Quote-only categories available via form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Apple Watch payout proof",
+        "caption": "This Apple Watch ULTRA 3 went from quote to paid in one business day. No waiting, no reversals, no store credit. Get your number at purchasingcorp.com.",
+        "hashtags": [
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#applewatchtradevalue",
+          "#sellmywatch",
+          "#watchbuyback",
+          "#appleultra3",
+          "#ultrawatch",
+          "#applewatchultra",
+          "#cashforwatch",
+          "#watchtrade",
+          "#applewatchtrade",
+          "#sellultrawatch",
+          "#ultra3trade",
+          "#watchpayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT PROOF",
+              "slip_title": "Apple Watch",
+              "slip_ref": "#PC072527B",
+              "device": "ULTRA 3 GEN 49MM MILANESE 2025",
+              "condition": "Excellent",
+              "method": "PayPal",
+              "turnaround": "Same day",
+              "amount": "$473",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "iPhone offer (drawer device angle)",
+        "caption": "That old iPhone 17 Pro is still worth $725 cash today. It's sitting in your drawer losing value every month. Ship free, get paid same day. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#iphone17tradevalue",
+          "#iphone17pro",
+          "#iphonetradevalue",
+          "#drawertech",
+          "#unusedtech",
+          "#oldiphonecash",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#iphone17",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "DRAWER DEVICE",
+              "headline_html": "iPhone 17 Pro 512gb pays <em>$725 cash</em>",
+              "sub_html": "Most people have $200+ in old tech at home right now. That phone is money today.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$1,241",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Carousel: how it works",
+        "caption": "How selling to PurchasingCorp works, end to end. Quote, ship free, get paid same day. No games, no store credit, no waiting. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#sellmyconsole",
+          "#cashforconsoles",
+          "#howitworks",
+          "#easysell",
+          "#selltech",
+          "#techpayout",
+          "#nocredit",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "QUOTE",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Get a <em>real number</em> in 60 seconds",
+              "body_html": "Fill out the form at purchasingcorp.com/form. Select your device, condition, and specs. You get a <strong>real cash offer</strong>, not a vague 'up to' estimate."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "SHIP",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "Ship <em>free</em> with our prepaid label",
+              "body_html": "We email you a prepaid, insured shipping label. Pack your device, drop it off, done. <strong>Zero cost, zero risk</strong>. Local hand-off available in select areas."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "INSPECT",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "We inspect and <em>confirm your price</em>",
+              "body_html": "Your device arrives, we verify condition and specs. The number we quoted is the number we pay. <strong>No bait and switch</strong>, no surprise deductions."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "GET PAID",
+              "eyebrow": "HOW IT WORKS",
+              "headline_html": "<em>Same-day payout</em> via Zelle, PayPal, or check",
+              "body_html": "Once inspection clears, payment goes out the same business day. <strong>Real cash, in your account</strong>, not store credit. No waiting, no reversals."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "JULY 2026",
+          "date_label": "25 JULY",
+          "section": "CONSOLES",
+          "headline_html": "<em>$475</em> for gaming gear",
+          "deck_html": "ROG ALLY, Switch 2, Quest, all models. Cash today.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "DRAWER DEVICE",
+          "stat_value": "$200",
+          "stat_unit": "+",
+          "caption_html": "Most people have <em>this much</em> in old tech at home right now, losing value every month.",
+          "source": "PurchasingCorp data"
+        }
+      }
+    ]
+  }
+}
