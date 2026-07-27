@@ -1,13 +1,13 @@
 [
   {
     "date": "2026-07-27",
-    "file": "purchasingcorp-reel-ewaste-planet.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-ewaste-planet.mp4",
-    "local_path": "videos/purchasingcorp-reel-ewaste-planet.mp4",
-    "caption": "50 million tons of e-waste a year, and most of it still worked. Selling beats trashing \u2014 for you and the planet. purchasingcorp.com",
+    "file": "purchasingcorp-reel-gaming-junk-myth.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gaming-junk-myth.mp4",
+    "local_path": "videos/purchasingcorp-reel-gaming-junk-myth.mp4",
+    "caption": "'Old gaming gear is junk' \u2014 tell that to the $380 console and $200 controller stash. Bust the myth at purchasingcorp.com",
     "hashtags": [
-      "ewaste",
-      "sustainability",
+      "gaming",
+      "mythbusting",
       "sellyourtech",
       "buyback",
       "techresale",
@@ -17,14 +17,13 @@
   },
   {
     "date": "2026-07-27",
-    "file": "purchasingcorp-reel-upgrade-day-value-drops.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-upgrade-day-value-drops.mp4",
-    "local_path": "videos/purchasingcorp-reel-upgrade-day-value-drops.mp4",
-    "caption": "The day you upgrade is the day your old device's value starts dropping. Sell same-day and keep the peak price. purchasingcorp.com",
+    "file": "purchasingcorp-reel-worldcup-upgrade.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-worldcup-upgrade.mp4",
+    "local_path": "videos/purchasingcorp-reel-worldcup-upgrade.mp4",
+    "caption": "Upgrading your setup for the World Cup? Fund the big screen by selling the tech you've already outgrown. purchasingcorp.com",
     "hashtags": [
+      "worldcup",
       "upgrade",
-      "sellnow",
-      "tech",
       "sellyourtech",
       "buyback",
       "techresale",
@@ -34,16 +33,18 @@
   },
   {
     "date": "2026-07-27",
-    "file": "purchasingcorp-reel-recycle-vs-sell.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-recycle-vs-sell.mp4",
-    "local_path": "videos/purchasingcorp-reel-recycle-vs-sell.mp4",
-    "caption": "Recycle vs sell: recycling gets you a warm feeling, selling gets you $340. Do both \u2014 sell first at purchasingcorp.com",
+    "file": "purchasingcorp-reel-foldable-iphone-move.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-foldable-iphone-move.mp4",
+    "local_path": "videos/purchasingcorp-reel-foldable-iphone-move.mp4",
+    "caption": "A foldable iPhone is coming \u2014 and the smart move is to sell your current one now, before millions do the same. Beat the rush at purchasingcorp.com",
     "hashtags": [
-      "recycle",
+      "iphone",
+      "foldable",
+      "sellnow",
       "sellyourtech",
-      "getpaid",
       "buyback",
-      "techresale"
+      "techresale",
+      "getpaid"
     ],
     "cycle_position": "1 of pool size 69"
   }
