@@ -7,5 +7,627 @@
     "techresale",
     "getpaid"
   ],
-  "pool": []
+  "pool": [
+    {
+      "file": "purchasingcorp-reel-3-devices-hold-value.mp4",
+      "caption": "Three devices that actually hold their value: MacBooks, current-gen consoles, and flagship phones. The rest depreciate fast — so sell those first. See your payout at purchasingcorp.com",
+      "hashtags": [
+        "resalevalue",
+        "tech",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-signs-sell-phone.mp4",
+      "caption": "Three signs it's time to sell your phone: battery under 85%, you've stopped using it, and a new one just dropped. Wait and you lose ~$25/month. Cash out at purchasingcorp.com",
+      "hashtags": [
+        "sellyourphone",
+        "upgrade",
+        "tech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-things-not-to-trash.mp4",
+      "caption": "Three things you should never throw away: old phones, laptop chargers, and dead GPUs. People pay real money for all of them. Average drawer holds $500 in tech. purchasingcorp.com",
+      "hashtags": [
+        "ewaste",
+        "donttrash",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-3-things-secretly-worth.mp4",
+      "caption": "Three things in your house secretly worth cash: that cracked phone, the earbuds you replaced, and the tablet nobody uses. Cracked phones still pay up to $120. purchasingcorp.com",
+      "hashtags": [
+        "hiddenvalue",
+        "sellyourtech",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-599-macbook-math.mp4",
+      "caption": "The $599 MacBook math: buy used, use it a year, sell it back for $480. That's a $119 laptop for 12 months. Do the math at purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "apple",
+        "smartmoney"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-cash-for-phone.mp4",
+      "caption": "That old phone in your drawer isn't 'backup' — it's $340 losing value every month. Turn it into cash today at purchasingcorp.com",
+      "hashtags": [
+        "sellyourphone",
+        "cash",
+        "tech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-console-cash.mp4",
+      "caption": "Your old console is worth more than you think — disc models hold up to $380. Don't let it collect dust. Cash it in at purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-cracked-still-pays.mp4",
+      "caption": "Cracked screen? Still pays. A broken flagship can fetch $120+ for parts. 'Worthless' is a myth. See your quote at purchasingcorp.com",
+      "hashtags": [
+        "crackedphone",
+        "sellyourtech",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-drawer-goldmine.mp4",
+      "caption": "Your junk drawer is a goldmine. The average home has $500 of unused tech just sitting there. Dig it out and cash it in at purchasingcorp.com",
+      "hashtags": [
+        "junkdrawer",
+        "hiddenvalue",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-earbuds-cash.mp4",
+      "caption": "Those earbuds you upgraded from? Still worth $40-$90. Accessories add up fast. Sell the pile at purchasingcorp.com",
+      "hashtags": [
+        "earbuds",
+        "accessories",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-gpu-cash.mp4",
+      "caption": "That old GPU in the closet is worth a small fortune right now — prices are insane. Don't sit on it. Cash out at purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-laptop-cash.mp4",
+      "caption": "Old laptop gathering dust? Even a few-year-old model pays $200-$480. It only drops from here. Sell today at purchasingcorp.com",
+      "hashtags": [
+        "laptop",
+        "sellyourtech",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-same-day-cash.mp4",
+      "caption": "Same-day cash for your old tech — no haggling, no lowball trade-in. Get a real quote in 60 seconds at purchasingcorp.com",
+      "hashtags": [
+        "samedaycash",
+        "sellyourtech",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-smartwatch-cash.mp4",
+      "caption": "That drawer smartwatch still pays. Last-gen models fetch $80-$150. Stop storing it — sell it at purchasingcorp.com",
+      "hashtags": [
+        "smartwatch",
+        "wearables",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-acc-tablet-cash.mp4",
+      "caption": "The tablet nobody uses is worth real money — iPads hold value best, up to $300. Turn it into cash at purchasingcorp.com",
+      "hashtags": [
+        "tablet",
+        "ipad",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-ai-boom-irony.mp4",
+      "caption": "The AI boom's dirty secret: it's driving up the price of the exact chips in your old devices. Your 'outdated' tech is suddenly in demand. Cash in at purchasingcorp.com",
+      "hashtags": [
+        "ai",
+        "tech",
+        "resalevalue"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-airpods-add-up.mp4",
+      "caption": "AirPods, chargers, cases — the accessories add up fast. That pile can be $100+. Don't toss it, sell it at purchasingcorp.com",
+      "hashtags": [
+        "airpods",
+        "accessories",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-back-to-school.mp4",
+      "caption": "Back-to-school upgrade season: sell last year's laptop before everyone else floods the market. Early sellers get top dollar. purchasingcorp.com",
+      "hashtags": [
+        "backtoschool",
+        "laptop",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-before-you-recycle.mp4",
+      "caption": "Before you recycle that phone — recycling pays $0, we pay up to $340. Same drop-off, very different check. purchasingcorp.com",
+      "hashtags": [
+        "recycle",
+        "sellyourphone",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-broken-still-pays.mp4",
+      "caption": "Broken doesn't mean worthless. Cracked, water-damaged, won't turn on — we still pay for parts. Get a quote at purchasingcorp.com",
+      "hashtags": [
+        "brokenphone",
+        "sellyourtech",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-broken-worthless-myth.mp4",
+      "caption": "The 'broken tech is worthless' myth costs people hundreds. A dead flagship still pays $100+. Bust the myth at purchasingcorp.com",
+      "hashtags": [
+        "brokenphone",
+        "mythbusting",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-carrier-trade-in-joke.mp4",
+      "caption": "Your carrier's 'trade-in' is a joke — that $800 credit is spread over 36 months of bills. Get real cash today instead at purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "carrier",
+        "sellyourphone"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-chatgpt-work-laptop.mp4",
+      "caption": "Upgrading your work laptop for AI tools? Don't let the old one rot in a drawer — it still pays $300+. Fund the upgrade at purchasingcorp.com",
+      "hashtags": [
+        "laptop",
+        "ai",
+        "upgrade"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-check-your-drawer-now.mp4",
+      "caption": "Go check your drawer right now. Odds are there's $300+ of old tech in it losing value daily. Turn it into cash at purchasingcorp.com",
+      "hashtags": [
+        "junkdrawer",
+        "hiddenvalue",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-console-cash.mp4",
+      "caption": "Old console still in the closet? Current and last-gen models pay up to $380. Game over for dust — cash it at purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "console",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dead-phone-410.mp4",
+      "caption": "That 'dead' phone in your drawer? One customer got $410 for theirs. Don't assume worthless — get a quote at purchasingcorp.com",
+      "hashtags": [
+        "sellyourphone",
+        "hiddenvalue",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dont-buy-fold8-yet.mp4",
+      "caption": "Don't buy the Fold 8 yet — sell your current phone first and knock $500+ off the price. Sequence matters. Start at purchasingcorp.com",
+      "hashtags": [
+        "galaxyfold",
+        "sellfirst",
+        "upgrade"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-dram-shortage-goldmine.mp4",
+      "caption": "The DRAM shortage turned your old RAM into a goldmine. Prices are spiking. Sell those sticks while it's hot at purchasingcorp.com",
+      "hashtags": [
+        "dram",
+        "pcgaming",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-drawer-audit-320.mp4",
+      "caption": "Do a 5-minute drawer audit. The average person finds $320 of sellable tech. That's a free $320. Start at purchasingcorp.com",
+      "hashtags": [
+        "junkdrawer",
+        "hiddenvalue",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-earbuds-accessories.mp4",
+      "caption": "Old earbuds and accessories aren't trash — they're $40-$90 each. The pile adds up. Sell it at purchasingcorp.com",
+      "hashtags": [
+        "earbuds",
+        "accessories",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-ewaste-planet.mp4",
+      "caption": "50 million tons of e-waste a year, and most of it still worked. Selling beats trashing — for you and the planet. purchasingcorp.com",
+      "hashtags": [
+        "ewaste",
+        "sustainability",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-fall-upgrade-window.mp4",
+      "caption": "The fall upgrade window is closing. Sell your current phone before the new-model rush tanks resale prices. Lock today's value at purchasingcorp.com",
+      "hashtags": [
+        "upgrade",
+        "sellnow",
+        "tech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-flip8-fund-it.mp4",
+      "caption": "Want the Flip 8? Fund it. Your current phone plus that drawer tablet can cover most of it. See your total at purchasingcorp.com",
+      "hashtags": [
+        "galaxyflip",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-foldable-iphone-move.mp4",
+      "caption": "A foldable iPhone is coming — and the smart move is to sell your current one now, before millions do the same. Beat the rush at purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "foldable",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-found-13pro-drawer.mp4",
+      "caption": "Found an iPhone 13 Pro in a drawer — still worth $380. That's not clutter, that's a car payment. Cash it at purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "hiddenvalue",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-galaxy-fold8-tradeup.mp4",
+      "caption": "Trading up to the Galaxy Fold 8? Skip the carrier lowball and sell direct — hundreds more in your pocket. purchasingcorp.com",
+      "hashtags": [
+        "galaxyfold",
+        "tradein",
+        "sellyourphone"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gaming-junk-myth.mp4",
+      "caption": "'Old gaming gear is junk' — tell that to the $380 console and $200 controller stash. Bust the myth at purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "mythbusting",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-in-a-box.mp4",
+      "caption": "You've got a GPU in a box in the closet worth more than when you bought it. Prices are wild right now. Cash out at purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-mining-rigs.mp4",
+      "caption": "Retired mining rig collecting dust? Those GPUs are worth serious cash in today's market. Don't sit on it — sell at purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "mining",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-gpu-prices-insane.mp4",
+      "caption": "GPU prices are genuinely insane right now — which means your old card is a hidden asset. Cash it while it's hot at purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "pcgaming",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-iphone18-sell-now.mp4",
+      "caption": "iPhone 18 is coming, and the second it drops your current model loses value. Sell now, upgrade later, keep the difference. purchasingcorp.com",
+      "hashtags": [
+        "iphone",
+        "sellnow",
+        "upgrade"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-junk-drawer-goldmine.mp4",
+      "caption": "Everyone has one: the junk drawer that's secretly worth $500. Old phones, cables, chargers, earbuds — it all pays. purchasingcorp.com",
+      "hashtags": [
+        "junkdrawer",
+        "hiddenvalue",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-m1-air-still-worth.mp4",
+      "caption": "The M1 MacBook Air is still worth $480 — one of the best value-holders ever made. Sell before the M5 rush at purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "apple",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-macbook-neo.mp4",
+      "caption": "New MacBook dropping? Your current one still pays $400-$600. That's not a trade-in credit — that's cash. purchasingcorp.com",
+      "hashtags": [
+        "macbook",
+        "apple",
+        "upgrade"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-memory-crisis-good-news.mp4",
+      "caption": "The memory crisis is bad news for buyers, great news for you: your old RAM and SSDs are worth more than ever. Cash in at purchasingcorp.com",
+      "hashtags": [
+        "memory",
+        "pcgaming",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-memory-crisis-tldr.mp4",
+      "caption": "Memory crisis, TL;DR: chip prices are spiking, so the parts in your old devices just got valuable. Sell now at purchasingcorp.com",
+      "hashtags": [
+        "memory",
+        "tech",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-old-ram-cash.mp4",
+      "caption": "Old RAM sticks in a drawer? With today's shortage they're worth real cash. Don't toss them — sell at purchasingcorp.com",
+      "hashtags": [
+        "ram",
+        "pcgaming",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pc-price-hike.mp4",
+      "caption": "PC prices are climbing again — which means used parts are in demand. Your old build is worth more than last year. purchasingcorp.com",
+      "hashtags": [
+        "pcgaming",
+        "tech",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-phone-price-up.mp4",
+      "caption": "Phone prices keep climbing, and that lifts used values too. Your current phone is worth more today than it'll be next month. purchasingcorp.com",
+      "hashtags": [
+        "sellyourphone",
+        "tech",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pov-cleared-300.mp4",
+      "caption": "POV: you cleaned out one drawer and walked away with $300. That's the whole pitch. Try it at purchasingcorp.com",
+      "hashtags": [
+        "pov",
+        "junkdrawer",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-pov-upgrade-funded.mp4",
+      "caption": "POV: your upgrade just paid for itself because you sold the old one first. That's the move. purchasingcorp.com",
+      "hashtags": [
+        "pov",
+        "upgrade",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-recycle-vs-sell.mp4",
+      "caption": "Recycle vs sell: recycling gets you a warm feeling, selling gets you $340. Do both — sell first at purchasingcorp.com",
+      "hashtags": [
+        "recycle",
+        "sellyourtech",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-rog-controller-gear.mp4",
+      "caption": "Gaming controllers and accessories hold value better than you'd think — a good stash is $200+. Cash the gear at purchasingcorp.com",
+      "hashtags": [
+        "gaming",
+        "accessories",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-rtx-gpu-fortune.mp4",
+      "caption": "That RTX card you upgraded from is worth a small fortune in today's market. Don't let it depreciate in a box. purchasingcorp.com",
+      "hashtags": [
+        "gpu",
+        "rtx",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-samsung-eyewear.mp4",
+      "caption": "Samsung's new smart glasses are hyped — fund a pair by selling the gadgets you've already replaced. See your total at purchasingcorp.com",
+      "hashtags": [
+        "samsung",
+        "smartglasses",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-smartwatch-cash.mp4",
+      "caption": "Drawer smartwatch = easy cash. Last-gen models still pay $80-$150. Stop storing it, start selling at purchasingcorp.com",
+      "hashtags": [
+        "smartwatch",
+        "wearables",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-steam-deck-handheld.mp4",
+      "caption": "Upgrading your handheld? Your old Steam Deck or Switch still pays strong. Fund the new one at purchasingcorp.com",
+      "hashtags": [
+        "steamdeck",
+        "handheld",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-stop-storing-old-phones.mp4",
+      "caption": "Stop storing old phones 'just in case.' They lose ~$25/month doing nothing. Cash them out while they still pay at purchasingcorp.com",
+      "hashtags": [
+        "sellyourphone",
+        "hiddenvalue",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-store-credit-myth.mp4",
+      "caption": "Store credit isn't cash. That $200 'credit' locks you into spending more. Take real money instead at purchasingcorp.com",
+      "hashtags": [
+        "storecredit",
+        "tradein",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-tablet-tradein.mp4",
+      "caption": "Skip the tablet trade-in lowball. Selling direct gets you up to $300 vs a fraction in store credit. purchasingcorp.com",
+      "hashtags": [
+        "tablet",
+        "tradein",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-thinkpad-laptop.mp4",
+      "caption": "That old ThinkPad is a workhorse that still sells — business laptops hold value well. Cash it at purchasingcorp.com",
+      "hashtags": [
+        "thinkpad",
+        "laptop",
+        "sellyourtech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-too-old-myth-laptop.mp4",
+      "caption": "'My laptop's too old to sell' — that's the myth costing you $200+. Even 5-year-old models pay. Check yours at purchasingcorp.com",
+      "hashtags": [
+        "laptop",
+        "mythbusting",
+        "getpaid"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-top-3-payouts-week.mp4",
+      "caption": "This week's top 3 payouts: MacBook Pro $620, RTX GPU $410, iPhone 14 Pro $380. Your device could be next. purchasingcorp.com",
+      "hashtags": [
+        "payouts",
+        "sellyourtech",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-upgrade-day-value-drops.mp4",
+      "caption": "The day you upgrade is the day your old device's value starts dropping. Sell same-day and keep the peak price. purchasingcorp.com",
+      "hashtags": [
+        "upgrade",
+        "sellnow",
+        "tech"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-us-vs-carrier-480.mp4",
+      "caption": "Carrier offered $200 trade-in. We offered $480 cash for the same phone. Compare before you commit at purchasingcorp.com",
+      "hashtags": [
+        "tradein",
+        "carrier",
+        "sellyourphone"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-usa-250-independence.mp4",
+      "caption": "Declare independence from clutter: the average drawer holds $250 of sellable tech. Free your cash at purchasingcorp.com",
+      "hashtags": [
+        "independence",
+        "junkdrawer",
+        "cash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-watch-money-land.mp4",
+      "caption": "Watch the money land: quote, ship free, get paid. Selling old tech is easier than you think. Start at purchasingcorp.com",
+      "hashtags": [
+        "getpaid",
+        "sellyourtech",
+        "easycash"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-why-expensive-explainer.mp4",
+      "caption": "Why is everything getting more expensive? Chip shortages — which is exactly why your old tech is now worth more. Cash in at purchasingcorp.com",
+      "hashtags": [
+        "tech",
+        "inflation",
+        "sellnow"
+      ]
+    },
+    {
+      "file": "purchasingcorp-reel-worldcup-upgrade.mp4",
+      "caption": "Upgrading your setup for the World Cup? Fund the big screen by selling the tech you've already outgrown. purchasingcorp.com",
+      "hashtags": [
+        "worldcup",
+        "upgrade",
+        "sellyourtech"
+      ]
+    }
+  ]
 }
