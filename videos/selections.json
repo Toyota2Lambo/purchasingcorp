@@ -1,51 +1,52 @@
 [
   {
-    "date": "2026-07-27",
-    "file": "purchasingcorp-reel-gaming-junk-myth.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gaming-junk-myth.mp4",
-    "local_path": "videos/purchasingcorp-reel-gaming-junk-myth.mp4",
-    "caption": "'Old gaming gear is junk' \u2014 tell that to the $380 console and $200 controller stash. Bust the myth at purchasingcorp.com",
+    "date": "2026-07-28",
+    "file": "purchasingcorp-reel-acc-laptop-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-laptop-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-laptop-cash.mp4",
+    "caption": "Old laptop gathering dust? Even a few-year-old model pays $200-$480. It only drops from here. Sell today at purchasingcorp.com",
     "hashtags": [
-      "gaming",
-      "mythbusting",
+      "laptop",
       "sellyourtech",
+      "cash",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 69"
+    "cycle_position": "1 of pool size 66"
   },
   {
-    "date": "2026-07-27",
-    "file": "purchasingcorp-reel-worldcup-upgrade.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-worldcup-upgrade.mp4",
-    "local_path": "videos/purchasingcorp-reel-worldcup-upgrade.mp4",
-    "caption": "Upgrading your setup for the World Cup? Fund the big screen by selling the tech you've already outgrown. purchasingcorp.com",
+    "date": "2026-07-28",
+    "file": "purchasingcorp-reel-rtx-gpu-fortune.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-rtx-gpu-fortune.mp4",
+    "local_path": "videos/purchasingcorp-reel-rtx-gpu-fortune.mp4",
+    "caption": "That RTX card you upgraded from is worth a small fortune in today's market. Don't let it depreciate in a box. purchasingcorp.com",
     "hashtags": [
-      "worldcup",
-      "upgrade",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 69"
-  },
-  {
-    "date": "2026-07-27",
-    "file": "purchasingcorp-reel-foldable-iphone-move.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-foldable-iphone-move.mp4",
-    "local_path": "videos/purchasingcorp-reel-foldable-iphone-move.mp4",
-    "caption": "A foldable iPhone is coming \u2014 and the smart move is to sell your current one now, before millions do the same. Beat the rush at purchasingcorp.com",
-    "hashtags": [
-      "iphone",
-      "foldable",
+      "gpu",
+      "rtx",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 69"
+    "cycle_position": "1 of pool size 66"
+  },
+  {
+    "date": "2026-07-28",
+    "file": "purchasingcorp-reel-stop-storing-old-phones.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-stop-storing-old-phones.mp4",
+    "local_path": "videos/purchasingcorp-reel-stop-storing-old-phones.mp4",
+    "caption": "Stop storing old phones 'just in case.' They lose ~$25/month doing nothing. Cash them out while they still pay at purchasingcorp.com",
+    "hashtags": [
+      "sellyourphone",
+      "hiddenvalue",
+      "cash",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 66"
   }
 ]
