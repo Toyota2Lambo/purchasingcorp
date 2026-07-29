@@ -1,45 +1,12 @@
 [
   {
-    "date": "2026-07-28",
-    "file": "purchasingcorp-reel-acc-laptop-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-laptop-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-laptop-cash.mp4",
-    "caption": "Old laptop gathering dust? Even a few-year-old model pays $200-$480. It only drops from here. Sell today at purchasingcorp.com",
+    "date": "2026-07-29",
+    "file": "purchasingcorp-reel-acc-drawer-goldmine.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-drawer-goldmine.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-drawer-goldmine.mp4",
+    "caption": "Your junk drawer is a goldmine. The average home has $500 of unused tech just sitting there. Dig it out and cash it in at purchasingcorp.com",
     "hashtags": [
-      "laptop",
-      "sellyourtech",
-      "cash",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 66"
-  },
-  {
-    "date": "2026-07-28",
-    "file": "purchasingcorp-reel-rtx-gpu-fortune.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-rtx-gpu-fortune.mp4",
-    "local_path": "videos/purchasingcorp-reel-rtx-gpu-fortune.mp4",
-    "caption": "That RTX card you upgraded from is worth a small fortune in today's market. Don't let it depreciate in a box. purchasingcorp.com",
-    "hashtags": [
-      "gpu",
-      "rtx",
-      "sellnow",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 66"
-  },
-  {
-    "date": "2026-07-28",
-    "file": "purchasingcorp-reel-stop-storing-old-phones.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-stop-storing-old-phones.mp4",
-    "local_path": "videos/purchasingcorp-reel-stop-storing-old-phones.mp4",
-    "caption": "Stop storing old phones 'just in case.' They lose ~$25/month doing nothing. Cash them out while they still pay at purchasingcorp.com",
-    "hashtags": [
-      "sellyourphone",
+      "junkdrawer",
       "hiddenvalue",
       "cash",
       "sellyourtech",
@@ -47,6 +14,40 @@
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 66"
+    "cycle_position": "1 of pool size 63"
+  },
+  {
+    "date": "2026-07-29",
+    "file": "purchasingcorp-reel-airpods-add-up.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-airpods-add-up.mp4",
+    "local_path": "videos/purchasingcorp-reel-airpods-add-up.mp4",
+    "caption": "AirPods, chargers, cases \u2014 the accessories add up fast. That pile can be $100+. Don't toss it, sell it at purchasingcorp.com",
+    "hashtags": [
+      "airpods",
+      "accessories",
+      "cash",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 63"
+  },
+  {
+    "date": "2026-07-29",
+    "file": "purchasingcorp-reel-us-vs-carrier-480.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-us-vs-carrier-480.mp4",
+    "local_path": "videos/purchasingcorp-reel-us-vs-carrier-480.mp4",
+    "caption": "Carrier offered $200 trade-in. We offered $480 cash for the same phone. Compare before you commit at purchasingcorp.com",
+    "hashtags": [
+      "tradein",
+      "carrier",
+      "sellyourphone",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 63"
   }
 ]
