@@ -1,10 +1,10 @@
 [
   {
-    "date": "2026-07-29",
-    "file": "purchasingcorp-reel-acc-drawer-goldmine.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-drawer-goldmine.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-drawer-goldmine.mp4",
-    "caption": "Your junk drawer is a goldmine. The average home has $500 of unused tech just sitting there. Dig it out and cash it in at purchasingcorp.com",
+    "date": "2026-07-30",
+    "file": "purchasingcorp-reel-check-your-drawer-now.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-check-your-drawer-now.mp4",
+    "local_path": "videos/purchasingcorp-reel-check-your-drawer-now.mp4",
+    "caption": "Go check your drawer right now. Odds are there's $300+ of old tech in it losing value daily. Turn it into cash at purchasingcorp.com",
     "hashtags": [
       "junkdrawer",
       "hiddenvalue",
@@ -14,40 +14,39 @@
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 63"
+    "cycle_position": "1 of pool size 60"
   },
   {
-    "date": "2026-07-29",
-    "file": "purchasingcorp-reel-airpods-add-up.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-airpods-add-up.mp4",
-    "local_path": "videos/purchasingcorp-reel-airpods-add-up.mp4",
-    "caption": "AirPods, chargers, cases \u2014 the accessories add up fast. That pile can be $100+. Don't toss it, sell it at purchasingcorp.com",
+    "date": "2026-07-30",
+    "file": "purchasingcorp-reel-macbook-neo.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-macbook-neo.mp4",
+    "local_path": "videos/purchasingcorp-reel-macbook-neo.mp4",
+    "caption": "New MacBook dropping? Your current one still pays $400-$600. That's not a trade-in credit \u2014 that's cash. purchasingcorp.com",
     "hashtags": [
-      "airpods",
-      "accessories",
-      "cash",
+      "macbook",
+      "apple",
+      "upgrade",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 63"
+    "cycle_position": "1 of pool size 60"
   },
   {
-    "date": "2026-07-29",
-    "file": "purchasingcorp-reel-us-vs-carrier-480.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-us-vs-carrier-480.mp4",
-    "local_path": "videos/purchasingcorp-reel-us-vs-carrier-480.mp4",
-    "caption": "Carrier offered $200 trade-in. We offered $480 cash for the same phone. Compare before you commit at purchasingcorp.com",
+    "date": "2026-07-30",
+    "file": "purchasingcorp-reel-store-credit-myth.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-store-credit-myth.mp4",
+    "local_path": "videos/purchasingcorp-reel-store-credit-myth.mp4",
+    "caption": "Store credit isn't cash. That $200 'credit' locks you into spending more. Take real money instead at purchasingcorp.com",
     "hashtags": [
+      "storecredit",
       "tradein",
-      "carrier",
-      "sellyourphone",
+      "getpaid",
       "sellyourtech",
       "buyback",
-      "techresale",
-      "getpaid"
+      "techresale"
     ],
-    "cycle_position": "1 of pool size 63"
+    "cycle_position": "1 of pool size 60"
   }
 ]
