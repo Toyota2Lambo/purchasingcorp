@@ -1,0 +1,635 @@
+{
+  "generated_at": "2026-07-31T15:35:30.644538+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "iphone",
+    "educational_topic": "why your 'old' device is worth more than you think: real prices for models people assume are worthless",
+    "comparison_angle": "selling now vs. holding it: what a specific model loses in value every month you wait",
+    "audience_angle": "fast cash, real cash: some people need money this week, not in 3 weeks when a listing finally closes",
+    "featured_label": "iPhone"
+  },
+  "source": {
+    "pricing_snapshot": "2026-07-31T15:34:16.925Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "primary offer",
+        "caption": "That iPhone 12 you think is worthless? Not even close. We pay real cash for models most people assume are too old to matter. No store credit, no waiting three weeks for a buyer. Cash today. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#iphone12",
+          "#iphone13",
+          "#iphone14",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#selloldiphone",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Your old iPhone is worth <em>more than you think</em>",
+              "deck_html": "Real cash. Same-day payout. No games.",
+              "photo_url": "https://images.unsplash.com/photo-1656078411660-05f2cf994d33?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwzfHxhcHBsZSUyMGRldmljZXMlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDB8fHwxNzg1NTEyMTI5fDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "featured category offer",
+        "caption": "iPhone 17 Pro Max pays up to $1,241 cash here. That is more than Apple, more than Best Buy, and it is in your account the same day we receive it. The number we quote is the number we pay. Start at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#iphone17promax",
+          "#iphone17pro",
+          "#iphone17",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "FEATURED TODAY",
+              "headline_html": "iPhone 17 Pro Max pays up to <em>$1,241 cash</em>",
+              "sub_html": "More than Apple. More than Best Buy. Same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "All grades"
+            }
+          }
+        ]
+      },
+      {
+        "role": "board",
+        "caption": "Real iPhone prices, right now. No vague up-to numbers, no bait and switch. These are the actual offers live on our site today. If you need cash this week, not three weeks from now when your eBay listing maybe closes, this is the move. Quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#iphone17promax",
+          "#iphone17pro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "LIVE PRICES",
+              "title_html": "iPhone <em>cash offers</em> today",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2tb",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1tb",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512gb",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256gb",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1tb",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512gb",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "All prices cash, same-day payout. More models at purchasingcorp.com."
+            }
+          }
+        ]
+      },
+      {
+        "role": "payout proof",
+        "caption": "Another iPhone sold, another same-day payout. No waiting, no PayPal holds, no reversed payments. The number we quote is the number we pay, and it hits your account the day we receive your device. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech",
+          "#proofofpayment",
+          "#realpayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PROOF",
+              "slip_title": "Payout receipt",
+              "slip_ref": "#PC-78412",
+              "device": "iPhone 17 Pro Max 512gb",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$975",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "comparison",
+        "caption": "Holding your iPhone hoping the value goes up is costing you money every single month. Devices depreciate fast. The cash you get today is worth more than the smaller cash you will get in three months. Sell now at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech",
+          "#depreciation",
+          "#sellnow"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "TIMING",
+              "eyebrow": "SELL NOW VS. WAITING",
+              "title_html": "What your iPhone 17 Pro Max 512gb <em>loses every month</em>",
+              "bars": [
+                {
+                  "label": "Today (our offer)",
+                  "value": "$975",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "~3 months from now",
+                  "value": "~$875",
+                  "pct": 90,
+                  "kind": "alt"
+                },
+                {
+                  "label": "~6 months from now",
+                  "value": "~$775",
+                  "pct": 79,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Future values are typical market estimates. Devices depreciate. Sell today."
+            }
+          }
+        ]
+      },
+      {
+        "role": "index",
+        "caption": "Six categories, same-day cash. We buy iPhones, MacBooks, Apple Watch, iPads, consoles, and accessories. Real offers in 60 seconds, prepaid insured label, money in your account the day we receive it. Get started at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#cashformacmini",
+          "#sellmyapplewatch",
+          "#sellmyipad",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#cashforelectronics",
+          "#quickcash",
+          "#cashnow",
+          "#selltech",
+          "#appletradein",
+          "#gamingbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORIES",
+              "eyebrow": "WHAT WE BUY",
+              "title_html": "<em>Six categories</em>, same-day cash",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "top payout",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPad",
+                  "num": "Contact",
+                  "foot": "quote only",
+                  "tone": ""
+                }
+              ],
+              "note_html": "All payouts same-day. More at purchasingcorp.com."
+            }
+          }
+        ]
+      },
+      {
+        "role": "lifestyle outcome",
+        "caption": "That drawer phone is not a keepsake, it is cash. Every month it sits there, it loses value. Turn it into money today. Same-day payout, prepaid label, zero hassle. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech",
+          "#drawerphone",
+          "#oldphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "OUTCOME",
+              "eyebrow": "STOP WAITING",
+              "headline_html": "That drawer phone is <em>cash today</em>",
+              "sub_html": "Same-day payout. No listing, no lowballers, no part-time job.",
+              "photo_url": "https://images.unsplash.com/photo-1632037876903-a5ffe207cdd0?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxuZXclMjBnYWRnZXRzJTIwZmxhdCUyMGxheXxlbnwxfDB8fHwxNzg1NTEyMTMwfDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "secondary offer",
+        "caption": "MacBook Air pays up to $976 cash here. More than Apple trade-in, more than Best Buy, and you get paid the same day we receive it. No store credit, no waiting. Real cash. Get your number at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#macbookbuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#macbookair",
+          "#sellmymacbookair",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macbooktradevalue",
+          "#cashnow",
+          "#selltech",
+          "#appletradein",
+          "#quickcash",
+          "#cashformac",
+          "#sellmac",
+          "#macbooktrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "MacBook Air pays up to <em>$976 cash</em>",
+              "sub_html": "More than Apple. More than Best Buy. Same-day payout.",
+              "c1_label": "Top payout",
+              "c1_value": "$976",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "All grades"
+            }
+          }
+        ]
+      },
+      {
+        "role": "secondary offer",
+        "caption": "Apple Watch pays up to $473 cash here. No trade-in credit, no waiting for a Marketplace buyer to flake. Cash in your account the same day we receive it. Get your quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#cashforapplewatch",
+          "#applewatchbuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#applewatch",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#applewatchtradevalue",
+          "#cashnow",
+          "#selltech",
+          "#appletradein",
+          "#quickcash",
+          "#cashforwatch",
+          "#sellwatch",
+          "#watchtrade",
+          "#applewatchtrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Apple Watch pays up to <em>$473 cash</em>",
+              "sub_html": "Same-day payout. No flakes, no lowballers, no games.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "All grades"
+            }
+          }
+        ]
+      },
+      {
+        "role": "educational carousel",
+        "caption": "You think your old iPhone is worthless. It is not. Models people assume are too old to matter still pay real cash here. If you need money this week, not in three weeks when a listing maybe closes, stop waiting. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#selloldiphone",
+          "#iphone12",
+          "#iphone13",
+          "#iphone14",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphonetradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#quickcash",
+          "#cashnow",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "THE ASSUMPTION",
+              "eyebrow": "WHY YOUR OLD DEVICE IS WORTH MORE THAN YOU THINK",
+              "headline_html": "You assume it is <em>too old</em> to matter",
+              "body_html": "That iPhone 12 or 13 has been in your drawer for months. You figure it is worthless now. <strong>It is not.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "THE REALITY",
+              "eyebrow": "WHY YOUR OLD DEVICE IS WORTH MORE THAN YOU THINK",
+              "headline_html": "Older models still pay <em>real cash</em>",
+              "body_html": "iPhone 12, 13, 14: all still worth hundreds here. We buy <strong>all generations</strong>, all conditions, and pay the same day."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "THE COST OF WAITING",
+              "eyebrow": "WHY YOUR OLD DEVICE IS WORTH MORE THAN YOU THINK",
+              "headline_html": "Every month you wait, it <em>loses value</em>",
+              "body_html": "Devices depreciate fast. The cash you get today is worth more than the <strong>smaller cash</strong> you will get in three months."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "THE MOVE",
+              "eyebrow": "WHY YOUR OLD DEVICE IS WORTH MORE THAN YOU THINK",
+              "headline_html": "Get your number <em>right now</em>",
+              "body_html": "60-second quote at purchasingcorp.com/form. Prepaid label. <strong>Same-day payout.</strong> No games."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "FAST CASH",
+          "date_label": "JULY 31, 2026",
+          "section": "IPHONE",
+          "headline_html": "Cash today, not <em>three weeks</em> from now",
+          "deck_html": "Real offers. Same-day payout. No waiting for a buyer.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "SAME-DAY PAYOUT",
+          "stat_value": "$1,241",
+          "stat_unit": "",
+          "caption_html": "Top iPhone payout <em>right now</em>. Cash today.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
