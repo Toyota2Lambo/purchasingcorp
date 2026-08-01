@@ -1,0 +1,13 @@
+{
+  "_comment": "When you rotate a Meta token, update its date here (UTC, YYYY-MM-DD). social/token_check.py uses it to warn ~10 days before the 60-day expiry instead of letting a run fail silently.",
+  "ig": {
+    "rotated": "2026-08-01",
+    "account": "webuydmvphones",
+    "id": "28144911568430952"
+  },
+  "threads": {
+    "rotated": "2026-08-01",
+    "account": "webuydmvphones",
+    "id": "36263941966554911"
+  }
+}

@@ -1,0 +1,42 @@
+name: social · token check
+
+# Read-only health check for the Meta tokens the posters depend on.
+#
+# IG_ACCESS_TOKEN and THREADS_ACCESS_TOKEN are long-lived (~60 day) tokens. When
+# one lapses, the daily video/image jobs fail with OAuthException code 190 and
+# that day's posts are lost with no retry — and an expired token can NOT be
+# refreshed, only re-minted through Meta's OAuth flow. This job exists so the
+# expiry is caught with days of lead time rather than by a failed post.
+#
+# Runs weekly, and on demand after rotating a token to confirm it works before
+# the next scheduled post. Read-only: it never publishes and never mutates state.
+# Tokens go out as Bearer headers, never in a query string, and are never echoed.
+
+on:
+  schedule:
+    # 14:11 UTC Mondays — off the hour (GitHub drops far fewer odd-minute crons)
+    # and clear of the image (13:23) and video (17:07) jobs.
+    - cron: '11 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check Meta tokens
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_BUSINESS_ACCOUNT_ID: ${{ secrets.IG_BUSINESS_ACCOUNT_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python social/token_check.py
