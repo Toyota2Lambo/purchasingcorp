@@ -1,50 +1,53 @@
 [
   {
-    "date": "2026-07-31",
-    "file": "purchasingcorp-reel-top-3-payouts-week.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-top-3-payouts-week.mp4",
-    "local_path": "videos/purchasingcorp-reel-top-3-payouts-week.mp4",
-    "caption": "This week's top 3 payouts: MacBook Pro $620, RTX GPU $410, iPhone 14 Pro $380. Your device could be next. purchasingcorp.com",
+    "date": "2026-08-01",
+    "file": "purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "caption": "That drawer smartwatch still pays. Last-gen models fetch $80-$150. Stop storing it \u2014 sell it at purchasingcorp.com",
     "hashtags": [
-      "payouts",
+      "smartwatch",
+      "wearables",
+      "sellnow",
       "sellyourtech",
-      "cash",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 57"
+    "cycle_position": "1 of pool size 54"
   },
   {
-    "date": "2026-07-31",
-    "file": "purchasingcorp-reel-memory-crisis-tldr.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-memory-crisis-tldr.mp4",
-    "local_path": "videos/purchasingcorp-reel-memory-crisis-tldr.mp4",
-    "caption": "Memory crisis, TL;DR: chip prices are spiking, so the parts in your old devices just got valuable. Sell now at purchasingcorp.com",
+    "date": "2026-08-01",
+    "file": "purchasingcorp-reel-3-devices-hold-value.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-devices-hold-value.mp4",
+    "local_path": "videos/purchasingcorp-reel-3-devices-hold-value.mp4",
+    "caption": "Three devices that actually hold their value: MacBooks, current-gen consoles, and flagship phones. The rest depreciate fast \u2014 so sell those first. See your payout at purchasingcorp.com",
     "hashtags": [
-      "memory",
+      "resalevalue",
       "tech",
-      "getpaid",
+      "sellnow",
       "sellyourtech",
       "buyback",
-      "techresale"
+      "techresale",
+      "getpaid"
     ],
-    "cycle_position": "1 of pool size 57"
+    "cycle_position": "1 of pool size 54"
   },
   {
-    "date": "2026-07-31",
-    "file": "purchasingcorp-reel-dead-phone-410.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-dead-phone-410.mp4",
-    "local_path": "videos/purchasingcorp-reel-dead-phone-410.mp4",
-    "caption": "That 'dead' phone in your drawer? One customer got $410 for theirs. Don't assume worthless \u2014 get a quote at purchasingcorp.com",
+    "date": "2026-08-01",
+    "file": "purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "local_path": "videos/purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "caption": "Everyone has one: the junk drawer that's secretly worth $500. Old phones, cables, chargers, earbuds \u2014 it all pays. purchasingcorp.com",
     "hashtags": [
-      "sellyourphone",
+      "junkdrawer",
       "hiddenvalue",
-      "getpaid",
+      "cash",
       "sellyourtech",
       "buyback",
-      "techresale"
+      "techresale",
+      "getpaid"
     ],
-    "cycle_position": "1 of pool size 57"
+    "cycle_position": "1 of pool size 54"
   }
 ]
