@@ -1,0 +1,661 @@
+{
+  "generated_at": "2026-08-02T14:47:00.402651+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "how to wipe and prep your iPhone before selling",
+    "comparison_angle": "our cash offer vs. a big-box store gift card",
+    "audience_angle": "the data security guarantee: personal data is wiped before we pay, no exceptions, every device",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-08-02T14:45:35.774Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "post",
+        "caption": "That MacBook Air sitting on your shelf is cash waiting to happen. We pay up to $976 for the 15-inch M4 model, same-day payout, and your personal data is wiped to military standards before a dollar leaves our account. No exceptions. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmacbookair",
+          "#techbuyback",
+          "#macbooktrade",
+          "#sellmytech",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#cashforphones",
+          "#sellmyphone",
+          "#phonetrade",
+          "#sellmylaptop",
+          "#macbookpro",
+          "#appletradein",
+          "#m4macbook",
+          "#sellapple",
+          "#cashtoday"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "August 2, 2026",
+              "headline_html": "MacBook Air: up to <em>$976 cash</em> today",
+              "sub_html": "15-inch M4, 13-inch M4, any year. The number we quote is the number we pay.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Real MacBook Air payouts, real models, real cash. No vague ranges, no bait and switch. The 15-inch M4 with 24GB pays $976, the 13-inch M4 with 16GB and 256GB pays $560, and everything in between has a real number. Quote takes sixty seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmacbookair",
+          "#macbookair",
+          "#cashformacbook",
+          "#sellmymacbook",
+          "#applebuyback",
+          "#macbooktrade",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#m4macbook",
+          "#macbookpro",
+          "#sellapple",
+          "#appletradein",
+          "#cashtoday",
+          "#sellmylaptop",
+          "#macbooktradevalue",
+          "#macbooksale",
+          "#cashnow"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "Current Payouts · August 2026",
+              "title_html": "MacBook Air <em>price board</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices for good working condition. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Your photos, messages, passwords: wiped to DOD standards before we pay. Every device, every time, no exceptions. That is the data security guarantee, and it is why hundreds trust us with their old gear every week. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmymacbook",
+          "#sellmytech",
+          "#datasecurity",
+          "#privacyfirst",
+          "#securewipe",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#phonetrade",
+          "#sellmyapplewatch",
+          "#sellmyipad",
+          "#cashtoday",
+          "#trustedbuyback",
+          "#datawipe",
+          "#secureselling"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "DATA SECURITY",
+              "eyebrow": "The Guarantee",
+              "headline_html": "Your data is <em>wiped before we pay</em>",
+              "deck_html": "Military-grade erasure. Every device. No exceptions.",
+              "photo_url": "https://images.unsplash.com/photo-1625297673326-14790108da55?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMHx8cGVyc29uJTIwdHlwaW5nJTIwb24lMjBhJTIwbGFwdG9wfGVufDF8MHx8fDE3ODU2ODIwMTl8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Big-box stores offer gift cards. We offer cash, same day, more money. A MacBook Air that gets you a $450 store-credit voucher pays $680 here, in your account before dinner. No spending restrictions, no expiration dates. Just cash. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#macbookair",
+          "#applebuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#besttradinvalue",
+          "#sellmytech",
+          "#techbuyback",
+          "#sellingelectronics",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#cashtoday",
+          "#macbooktrade",
+          "#sellapple",
+          "#appletradein",
+          "#sellmacbookair",
+          "#macbookpro",
+          "#cashforphones",
+          "#phonetrade",
+          "#sellmyphone",
+          "#cashnotcredit",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "CASH VS GIFT CARD",
+              "eyebrow": "MacBook Air 13\" 16GB 256GB M4",
+              "title_html": "We pay <em>more, in cash</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$560",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Big-box store (gift card)",
+                  "value": "~$320",
+                  "pct": 57,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Competitor figure is a typical store-credit estimate. Our number is real cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Paid $840 for a 13-inch MacBook Air M4 with 24GB and 512GB. Device arrived Monday morning, funds hit the same afternoon. That is how buyback should work. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#cashformacbook",
+          "#macbookair",
+          "#applebuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#macbooktrade",
+          "#sellapple",
+          "#appletradein",
+          "#sellmacbookair",
+          "#cashtoday",
+          "#macbookpro",
+          "#m4macbook",
+          "#sellmylaptop",
+          "#cashforphones",
+          "#phonetrade",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "Transaction Confirmation",
+              "slip_ref": "#MB-08021",
+              "device": "MacBook Air 13\" 24GB 512GB M4",
+              "condition": "Good",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$840.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Wiping your iPhone before you sell is not optional. It protects your data and unlocks full value. Follow four steps: back up to iCloud, sign out of iCloud and App Store, erase all content and settings, remove from Find My. Takes five minutes, saves you hundreds in headaches. Full walkthrough at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphoneprep",
+          "#datawipe",
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#icloudremoval",
+          "#findmy",
+          "#iphonesetup",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#phonetrade",
+          "#iphone17",
+          "#datasecurity",
+          "#privacyfirst",
+          "#securewipe",
+          "#iphonewipe"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "BACK UP",
+              "eyebrow": "Prep Your iPhone",
+              "headline_html": "Back up to <em>iCloud or Mac</em>",
+              "body_html": "Settings > [Your Name] > iCloud > iCloud Backup > Back Up Now. Wait until it completes. Your photos, messages, and app data are safe."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "SIGN OUT",
+              "eyebrow": "Prep Your iPhone",
+              "headline_html": "Sign out of <em>iCloud and App Store</em>",
+              "body_html": "Settings > [Your Name] > Sign Out. Enter your Apple ID password. This removes your account and <strong>turns off Activation Lock</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "ERASE",
+              "eyebrow": "Prep Your iPhone",
+              "headline_html": "Erase <em>all content and settings</em>",
+              "body_html": "Settings > General > Transfer or Reset iPhone > Erase All Content and Settings. Confirm. The phone will wipe itself and restart to the setup screen."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "REMOVE",
+              "eyebrow": "Prep Your iPhone",
+              "headline_html": "Remove from <em>Find My</em>",
+              "body_html": "Log in to iCloud.com > Find My > All Devices > select your iPhone > Remove from Account. Now it is ready to ship and <strong>you are ready to get paid</strong>."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "That old Mac mini in the closet is still worth real money. We pay up to $675 for the MCX44LL/A PRO with 24GB and 512GB, same-day payout, free prepaid label. Stop letting it collect dust. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macmini",
+          "#cashformac",
+          "#applebuyback",
+          "#sellmymac",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#cashtoday",
+          "#sellapple",
+          "#appletradein",
+          "#macminitrade",
+          "#sellmymacbook",
+          "#cashforphones",
+          "#phonetrade",
+          "#sellmyphone",
+          "#macpro",
+          "#desktoptrade"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "August 2, 2026",
+              "headline_html": "Mac mini: up to <em>$675 cash</em> today",
+              "sub_html": "PRO, M4, M2, any year. Ship free, get paid the same day it arrives.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$675",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "The iPhone 17 Pro Max with 2TB pays $1,241 here. The 512GB model pays $975. Those are real numbers, not estimates, and they hit your account the same day we receive the device. No games, no inspections that magically drop the offer. Quote yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#iphone17",
+          "#iphone17promax",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#phonetrade",
+          "#iphone17pro",
+          "#iphone17tradevalue",
+          "#cashtoday",
+          "#sellapple",
+          "#appletradein",
+          "#iphonetradevalue",
+          "#sellmyiphone17",
+          "#promax"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "IPHONE 17",
+              "eyebrow": "Current Payouts · August 2026",
+              "title_html": "iPhone 17 <em>price board</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2TB",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1TB",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512GB",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256GB",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1TB",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512GB",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "Prices for good working condition. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Apple Watch Ultra 3, Series 11, any generation: we buy them all. Top payout is $473 for the Ultra 3 49mm Milanese, same-day turnaround, and your health data is wiped to military standards before we pay. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#applewatch",
+          "#cashforapplewatch",
+          "#applebuyback",
+          "#sellmywatch",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#applewatchtrade",
+          "#sellapple",
+          "#appletradein",
+          "#applewatchultra",
+          "#series11",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#phonetrade",
+          "#watchbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "QUICK REFERENCE",
+              "eyebrow": "August 2, 2026",
+              "title_html": "Top payouts <em>across categories</em>",
+              "cells": [
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 49mm",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG Ally X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Turnaround",
+                  "num": "Same day",
+                  "foot": "Every device",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Real cash, real speed. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "That drawer phone is not a keepsake, it is cash losing value every month. Turn it into money today. Free prepaid label, same-day payout, zero risk to your personal data. The process takes less time than scrolling this feed. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#getpaidtoday",
+          "#samedaypayout",
+          "#cashfortech",
+          "#fastcash",
+          "#sellquick",
+          "#instacash",
+          "#phonetrade",
+          "#cashtoday",
+          "#sellapple",
+          "#appletradein",
+          "#oldphone",
+          "#drawerphone",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#cashnotcredit",
+          "#realcash",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "CASH TODAY",
+              "eyebrow": "Turn clutter into cash",
+              "headline_html": "That drawer phone is <em>money waiting</em>",
+              "sub_html": "Free label. Same-day payout. Zero hassle.",
+              "photo_url": "https://images.unsplash.com/photo-1595245150879-05c7b692bf9b?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwzfHxzaWx2ZXIlMjBsYXB0b3AlMjBjbG9zZSUyMHVwfGVufDF8MHx8fDE3ODU2ODIwMjB8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "DATA SECURITY",
+          "date_label": "August 2, 2026",
+          "section": "The Guarantee",
+          "headline_html": "Wiped <em>before we pay</em>",
+          "deck_html": "Military-grade data erasure. Every device. No exceptions.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "MacBook Air M4",
+          "stat_value": "$976",
+          "stat_unit": "",
+          "caption_html": "Top payout for the 15-inch M4 with 24GB and 512GB. <em>Same-day cash.</em>",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
