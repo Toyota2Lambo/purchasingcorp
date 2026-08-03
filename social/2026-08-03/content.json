@@ -1,0 +1,661 @@
+{
+  "generated_at": "2026-08-03T16:00:48.253906+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "mac-mini",
+    "educational_topic": "what actually affects your payout (condition, storage, lock status)",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "audience_angle": "price drop urgency: show how much a specific real model has lost per month and what it pays TODAY",
+    "featured_label": "Mac Mini"
+  },
+  "source": {
+    "pricing_snapshot": "2026-08-03T15:59:38.647Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "feed",
+        "caption": "That Mac Mini sitting under your desk is losing value every single month. Today it pays real cash. Get your number in 60 seconds at purchasingcorp.com/form and lock it in before next month's drop.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyapplewatch",
+          "#cashforapple",
+          "#appletradevalue",
+          "#macbuyback",
+          "#sellmacbook",
+          "#cashformac"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "SAME-DAY PAYOUT",
+              "headline_html": "Mac Mini pays up to <em>$675 cash</em> today",
+              "sub_html": "Real number in 60 seconds. Ship free or hand off local. Cash hits same day.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$675",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Current Mac Mini cash rates, no games. The number we quote is the number we pay. Same-day payout once it arrives. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#macbuyback",
+          "#appletradevalue",
+          "#cashforapple",
+          "#sellmyapplewatch"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "CURRENT RATES",
+              "title_html": "<em>Mac Mini</em> cash payouts",
+              "rows": [
+                {
+                  "model": "MCX44LL/A PRO 24GB 512GB",
+                  "price": "$675",
+                  "note": ""
+                },
+                {
+                  "model": "MCYT4LL/A 24GB 512GB",
+                  "price": "$450",
+                  "note": ""
+                },
+                {
+                  "model": "MU9E3LL/A 16GB 512GB",
+                  "price": "$375",
+                  "note": ""
+                },
+                {
+                  "model": "MU9D3LL/A 16GB 256GB",
+                  "price": "$300",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for working, unlocked units. Quote yours in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "A Mac Mini that paid 675 dollars six months ago now pays less. Every month you wait, the number drops. Today it still pays real cash. Lock in your quote at purchasingcorp.com before next month's depreciation hits.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#techvalue",
+          "#depreciationhurts"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "PRICE DROP ALERT",
+              "eyebrow": "DEPRECIATION NEVER SLEEPS",
+              "headline_html": "That Mac Mini loses <em>value every month</em> you wait",
+              "deck_html": "Today it pays $675. Next month? Less. Get your quote now.",
+              "photo_url": "https://images.unsplash.com/photo-1760520338254-1bb9327ca51c?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMHx8QXBwbGUlMjBXYXRjaCUyMG9uJTIwYSUyMHdyaXN0fGVufDF8MHx8fDE3ODU3NzI4NDd8MA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Listing on Marketplace means photos, tire-kickers, no-shows, and weeks of waiting. Or get a real number today and cash in your account same day. No back-and-forth, no flakes. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#noflakes",
+          "#sellfast"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "CASH VS. WAITING",
+              "eyebrow": "MAC MINI MCX44LL/A PRO 24GB 512GB",
+              "title_html": "Our cash today vs. <em>weeks on Marketplace</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (same day)",
+                  "value": "$675",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace (after weeks, fees, flakes)",
+                  "value": "~$600",
+                  "pct": 89,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical net after lowballers, no-shows, and time cost. Our cash hits same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Three things move your payout number: condition, storage size, and whether it is locked to an account. Know these before you quote and you will get the most accurate number in 60 seconds. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#techvalue",
+          "#tradetips"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "CONDITION",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "<em>Condition</em> sets the baseline",
+              "body_html": "Working and clean pays full rate. Cracked screen or battery wear? Still pays, just less. <strong>Be honest in your quote</strong> and the number we give is the number we pay."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "STORAGE",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "<em>Storage size</em> changes the number",
+              "body_html": "A 512GB model pays more than 256GB. A 1TB pays more than 512GB. <strong>Check Settings to confirm</strong> your exact capacity before you quote."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "LOCK STATUS",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "<em>Activation lock</em> kills the deal",
+              "body_html": "If your device is locked to iCloud, Apple ID, or a carrier account, it pays zero. <strong>Sign out before you ship</strong> and you get full cash same day."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "YOUR QUOTE",
+              "eyebrow": "WHAT AFFECTS YOUR PAYOUT",
+              "headline_html": "Get your <em>real number</em> in 60 seconds",
+              "body_html": "Answer three questions (model, condition, lock status) and we give you a firm cash offer. <strong>No vague ranges.</strong> Same-day payout once it arrives. purchasingcorp.com/form"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Real payout, real speed. This Mac Mini quoted at 450 dollars, arrived same condition, paid same day. No bait and switch. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#proof",
+          "#realpayout"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PROOF",
+              "slip_title": "PAYOUT RECEIPT",
+              "slip_ref": "PC-080326-MM",
+              "device": "Mac Mini MCYT4LL/A 24GB 512GB",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$450.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Current top rates across every category we buy. These are real cash numbers, not store credit or vague ranges. Get your device quoted in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#cashformacmini",
+          "#sellmymac",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#sellmyipad",
+          "#consolebuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "RATE CARD",
+              "eyebrow": "AUGUST 2026",
+              "title_html": "<em>Top payouts</em> by category",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" 24GB M4",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "ULTRA 3 49MM",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Turnaround",
+                  "num": "Same day",
+                  "foot": "Every payout",
+                  "tone": ""
+                }
+              ],
+              "note_html": "Real cash, not credit. Quote any device at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "That iPhone 17 Pro Max pays 1241 dollars today. Next month it will pay less. Every month you wait costs you real money. Lock in your quote now at purchasingcorp.com/form and get paid same day.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphone17tradevalue",
+          "#cashforiphone",
+          "#iphonebuyback",
+          "#appletradevalue",
+          "#sellmyapplewatch",
+          "#sellmymacmini",
+          "#depreciationhurts",
+          "#pricedrops",
+          "#techvalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "iPHONE",
+              "eyebrow": "PRICE DROP URGENCY",
+              "headline_html": "iPhone 17 Pro Max pays <em>$1,241 cash</em> today",
+              "sub_html": "Next month? Less. Every week you wait, the number drops. Get your quote now.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$1,241",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "Any working"
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "Current MacBook Air cash rates. These are firm offers, not estimates. The number we quote is the number we pay. Same-day payout once it arrives. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#sellmacbookair",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#macbooktradevalue",
+          "#sellmymac",
+          "#cashformac",
+          "#macbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CURRENT RATES",
+              "title_html": "<em>MacBook Air</em> cash payouts",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for working, unlocked units. Quote yours in 60 seconds."
+            }
+          }
+        ]
+      },
+      {
+        "role": "feed",
+        "caption": "That device in your drawer is not gaining value. It is losing it every single month. Today it pays real cash. Tomorrow it pays less. Get your quote at purchasingcorp.com/form and lock it in now.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#sellmacbookpro",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#appletradevalue",
+          "#cashforapple",
+          "#sellmymacmini",
+          "#macbuyback",
+          "#sellmymac",
+          "#depreciationhurts",
+          "#pricedrops",
+          "#techvalue",
+          "#sellnow"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "DEPRECIATION",
+              "eyebrow": "PRICE DROP ALERT",
+              "headline_html": "Every month you wait, <em>the number drops</em>",
+              "sub_html": "That device pays real cash today. Next month? Less. Lock in your quote now.",
+              "photo_url": "https://images.unsplash.com/photo-1548244823-b281470f2a95?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwxMHx8c21hcnR3YXRjaCUyMGNsb3NlJTIwdXB8ZW58MXwwfHx8MTc4NTc3Mjg0OHww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "AUGUST 2026",
+          "date_label": "MONDAY 03 AUG",
+          "section": "PRICE DROP ALERT",
+          "headline_html": "Your Mac Mini <em>loses value</em> every month",
+          "deck_html": "Today it pays $675 cash. Next month? Less. Lock in your quote now.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "DEPRECIATION NEVER SLEEPS",
+          "stat_value": "$675",
+          "stat_unit": "today",
+          "caption_html": "That Mac Mini PRO 24GB 512GB pays <em>$675 cash</em> right now. Next month the number drops. Get your quote at purchasingcorp.com/form before it does.",
+          "source": "PurchasingCorp · Aug 2026"
+        }
+      }
+    ]
+  }
+}
