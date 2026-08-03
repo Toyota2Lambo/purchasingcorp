@@ -1,51 +1,52 @@
 [
   {
-    "date": "2026-08-02",
-    "file": "purchasingcorp-reel-back-to-school.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-back-to-school.mp4",
-    "local_path": "videos/purchasingcorp-reel-back-to-school.mp4",
-    "caption": "Back-to-school upgrade season: sell last year's laptop before everyone else floods the market. Early sellers get top dollar. purchasingcorp.com",
+    "date": "2026-08-03",
+    "file": "purchasingcorp-reel-fall-upgrade-window.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-fall-upgrade-window.mp4",
+    "local_path": "videos/purchasingcorp-reel-fall-upgrade-window.mp4",
+    "caption": "The fall upgrade window is closing. Sell your current phone before the new-model rush tanks resale prices. Lock today's value at purchasingcorp.com",
     "hashtags": [
-      "backtoschool",
-      "laptop",
-      "sellnow",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 54"
-  },
-  {
-    "date": "2026-08-02",
-    "file": "purchasingcorp-reel-flip8-fund-it.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-flip8-fund-it.mp4",
-    "local_path": "videos/purchasingcorp-reel-flip8-fund-it.mp4",
-    "caption": "Want the Flip 8? Fund it. Your current phone plus that drawer tablet can cover most of it. See your total at purchasingcorp.com",
-    "hashtags": [
-      "galaxyflip",
       "upgrade",
+      "sellnow",
+      "tech",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 54"
+    "cycle_position": "1 of pool size 51"
   },
   {
-    "date": "2026-08-02",
-    "file": "purchasingcorp-reel-before-you-recycle.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-before-you-recycle.mp4",
-    "local_path": "videos/purchasingcorp-reel-before-you-recycle.mp4",
-    "caption": "Before you recycle that phone \u2014 recycling pays $0, we pay up to $340. Same drop-off, very different check. purchasingcorp.com",
+    "date": "2026-08-03",
+    "file": "purchasingcorp-reel-galaxy-fold8-tradeup.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-galaxy-fold8-tradeup.mp4",
+    "local_path": "videos/purchasingcorp-reel-galaxy-fold8-tradeup.mp4",
+    "caption": "Trading up to the Galaxy Fold 8? Skip the carrier lowball and sell direct \u2014 hundreds more in your pocket. purchasingcorp.com",
     "hashtags": [
-      "recycle",
+      "galaxyfold",
+      "tradein",
       "sellyourphone",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 51"
+  },
+  {
+    "date": "2026-08-03",
+    "file": "purchasingcorp-reel-3-things-not-to-trash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-things-not-to-trash.mp4",
+    "local_path": "videos/purchasingcorp-reel-3-things-not-to-trash.mp4",
+    "caption": "Three things you should never throw away: old phones, laptop chargers, and dead GPUs. People pay real money for all of them. Average drawer holds $500 in tech. purchasingcorp.com",
+    "hashtags": [
+      "ewaste",
+      "donttrash",
       "getpaid",
       "sellyourtech",
       "buyback",
       "techresale"
     ],
-    "cycle_position": "1 of pool size 54"
+    "cycle_position": "1 of pool size 51"
   }
 ]
