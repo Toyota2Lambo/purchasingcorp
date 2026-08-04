@@ -1,0 +1,644 @@
+{
+  "generated_at": "2026-08-04T15:43:11.792670+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "apple-watch",
+    "educational_topic": "unlocked vs. carrier-locked: why it changes your offer",
+    "comparison_angle": "same-day cash vs. mail-in services that pay later",
+    "audience_angle": "the marketplace grind: eBay fees, no-shows, scammers, buyer disputes — vs. one real offer, done in a day",
+    "featured_label": "Apple Watch"
+  },
+  "source": {
+    "pricing_snapshot": "2026-08-04T15:41:56.737Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "featured-category-offer",
+        "caption": "That Apple Watch in your drawer is cash today. We pay up to $473 for ULTRA 3 models, same-day payout, no listing photos or buyer drama. Quote takes 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchtrade",
+          "#sellmywatch",
+          "#applebuyback",
+          "#techbuyback",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#cashforphones",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmyphone",
+          "#appletradevalue",
+          "#cashtoday",
+          "#nocreditjustcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "We pay up to <em>$473</em> for Apple Watch ULTRA 3",
+              "sub_html": "Series 11, ULTRA 3, all generations. No store credit, no waiting. Cash today.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Good to flawless"
+            }
+          }
+        ]
+      },
+      {
+        "role": "apple-watch-board",
+        "caption": "Real Apple Watch prices, right now. These are the numbers we pay today, not vague estimates. Get your quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchtrade",
+          "#applebuyback",
+          "#techbuyback",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#cashtoday",
+          "#nocreditjustcash",
+          "#sellmyphone",
+          "#appletradevalue",
+          "#applewatchtradevalue",
+          "#applewatchultra"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "AUGUST 2026 PRICING",
+              "title_html": "What we pay for <em>Apple Watch</em> today",
+              "rows": [
+                {
+                  "model": "ULTRA 3 49MM Milanese 2025",
+                  "price": "$473",
+                  "note": ""
+                },
+                {
+                  "model": "ULTRA 3 49MM Black/Natural 2025",
+                  "price": "$450",
+                  "note": ""
+                },
+                {
+                  "model": "S11 46mm Titanium",
+                  "price": "$315",
+                  "note": ""
+                },
+                {
+                  "model": "S11 42mm Titanium",
+                  "price": "$293",
+                  "note": ""
+                },
+                {
+                  "model": "S11 46mm Aluminum",
+                  "price": "$210",
+                  "note": ""
+                },
+                {
+                  "model": "S11 42mm Aluminum",
+                  "price": "$195",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for good condition, unlocked. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "marketplace-grind-photo",
+        "caption": "Skip the eBay fees, the no-shows, and the buyer disputes. One real offer, same-day payout, done. Get your number at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmyiphone",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#quickcash",
+          "#easycash",
+          "#nohasslecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "NO GAMES",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "Skip the <em>marketplace grind</em>",
+              "deck_html": "No listing photos. No lowball offers. No buyer disputes. Just cash, today.",
+              "photo_url": "https://images.unsplash.com/photo-1598978270333-62571dd762e9?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw5fHxkZXNrdG9wJTIwY29tcHV0ZXIlMjBvbiUyMGElMjBjbGVhbiUyMGRlc2t8ZW58MXwwfHx8MTc4NTg1ODE5MHww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "payout-proof",
+        "caption": "This is what same-day payout looks like. The number we quote is the number we pay, no games. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#nocreditjustcash",
+          "#sellmyphone",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#quickcash",
+          "#easycash",
+          "#nohasslecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "PAYOUT CONFIRMATION",
+              "slip_ref": "PC-080426-1847",
+              "device": "Apple Watch ULTRA 3 49MM",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$473",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "compare-same-day-vs-mail-in",
+        "caption": "Mail-in services that pay you a week later, after they inspect. We pay the same day your device arrives. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#cashtoday",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#phonetrade",
+          "#nocreditjustcash",
+          "#sellmyphone",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#quickcash",
+          "#easycash",
+          "#nohasslecash",
+          "#applewatchbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "SPEED MATTERS",
+              "eyebrow": "APPLE WATCH ULTRA 3 49MM",
+              "title_html": "Same-day cash vs. <em>mail-in services</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (same day)",
+                  "value": "$473",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Typical mail-in (7-10 days)",
+                  "value": "~$420",
+                  "pct": 89,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Rival figures are typical estimates for similar condition. We pay the day your device arrives."
+            }
+          }
+        ]
+      },
+      {
+        "role": "iphone-offer",
+        "caption": "iPhone 17 Pro Max pays up to $1,241 cash today. More than Apple, more than Best Buy, and you skip the eBay listing circus. Quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmyphone",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#iphone17promax",
+          "#iphone17tradevalue",
+          "#sellmyiphone17",
+          "#iphonebuyback",
+          "#appletradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "IPHONE",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "iPhone 17 Pro Max pays up to <em>$1,241</em>",
+              "sub_html": "All storage tiers, all iPhone models. A real number, not a vague 'up to'.",
+              "c1_label": "Top payout",
+              "c1_value": "$1,241",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "Good to mint"
+            }
+          }
+        ]
+      },
+      {
+        "role": "macbook-air-board",
+        "caption": "MacBook Air prices that beat store credit and skip the marketplace headache. Real offers, same-day payout. Get yours at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#cashformacbook",
+          "#sellmacbookair",
+          "#applebuyback",
+          "#techbuyback",
+          "#cashfortech",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#sellmyphone",
+          "#macbooktradevalue",
+          "#appletradevalue",
+          "#macbookm4"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "AUGUST 2026 PRICING",
+              "title_html": "What we pay for <em>MacBook Air</em> today",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "15\" 16GB 256GB SSD M4",
+                  "price": "$680",
+                  "note": ""
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560",
+                  "note": ""
+                }
+              ],
+              "note_html": "Prices for good condition. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "index-grid",
+        "caption": "Eight categories, same-day payout, no games. Get your quote in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#cashfortech",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#phonetrade",
+          "#quickcash",
+          "#easycash",
+          "#nohasslecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "WHAT WE BUY",
+              "eyebrow": "AUGUST 2026",
+              "title_html": "Top payouts by <em>category</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "ULTRA 3 49MM",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Nintendo Switch 2",
+                  "num": "$400",
+                  "foot": "Mario Kart bundle",
+                  "tone": "accent"
+                }
+              ],
+              "note_html": "All prices same-day payout. Quote at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "carousel-unlocked-vs-locked",
+        "caption": "Unlocked vs. carrier-locked: why it changes your offer. An unlocked device is worth more because it works on any carrier. Here's what that means for your payout. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmytech",
+          "#cashfortech",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#sellmyapplewatch",
+          "#unlockedphone",
+          "#carrierunlock",
+          "#iphoneunlocked",
+          "#appletradevalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "WHAT IT MEANS",
+              "eyebrow": "UNLOCKED VS. LOCKED",
+              "headline_html": "What <em>unlocked</em> actually means",
+              "body_html": "An unlocked device works on <strong>any carrier</strong>: AT&T, Verizon, T-Mobile, or international networks. A carrier-locked device only works on the carrier it was sold through."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "WHY IT MATTERS",
+              "eyebrow": "UNLOCKED VS. LOCKED",
+              "headline_html": "Why unlocked pays <em>more</em>",
+              "body_html": "Unlocked devices have <strong>higher resale demand</strong>. They reach more buyers, which means we can pay you more. Carrier-locked devices have a smaller market."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "HOW TO CHECK",
+              "eyebrow": "UNLOCKED VS. LOCKED",
+              "headline_html": "How to check your <em>lock status</em>",
+              "body_html": "iPhone: Settings > General > About > Carrier Lock. If it says <strong>No SIM restrictions</strong>, you're unlocked. Apple Watch: check the paired iPhone's carrier lock status."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "YOUR QUOTE",
+              "eyebrow": "UNLOCKED VS. LOCKED",
+              "headline_html": "We buy <em>both</em>, just tell us which",
+              "body_html": "Locked devices still have value. Just select your lock status in the quote form at <strong>purchasingcorp.com/form</strong>, and we'll give you the real number for your exact device."
+            }
+          }
+        ]
+      },
+      {
+        "role": "lifestyle-outcome",
+        "caption": "That drawer device is losing value every month you wait. Turn it into cash today, no eBay drama, no lowball offers, no buyer disputes. Get your quote at purchasingcorp.com.",
+        "hashtags": [
+          "#cashfortech",
+          "#techbuyback",
+          "#sellmytech",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#fastcash",
+          "#instacash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#nocreditjustcash",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#phonetrade",
+          "#quickcash",
+          "#easycash",
+          "#nohasslecash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "NO WAITING",
+              "eyebrow": "SAME-DAY CASH",
+              "headline_html": "Your drawer device is <em>cash today</em>",
+              "sub_html": "No listing photos. No no-shows. No buyer disputes. Just a real offer and same-day payout.",
+              "photo_url": "https://images.unsplash.com/photo-1629934266257-69467879efa7?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxtaW5pbWFsaXN0JTIwZGVzayUyMHNldHVwJTIwd2l0aCUyMG1vbml0b3J8ZW58MXwwfHx8MTc4NTg1ODE5MXww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "AUGUST 2026",
+          "date_label": "TUESDAY, AUGUST 4",
+          "section": "SAME-DAY CASH",
+          "headline_html": "Apple Watch pays up to <em>$473</em>",
+          "deck_html": "ULTRA 3, Series 11, all generations. Cash today, no games.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "MARKETPLACE GRIND",
+          "stat_value": "15",
+          "stat_unit": "%",
+          "caption_html": "That's the eBay fee <em>after</em> you've already dealt with lowballers, no-shows, and buyer disputes. We pay same-day, no fees, no drama.",
+          "source": "eBay seller fees, 2026"
+        }
+      }
+    ]
+  }
+}
