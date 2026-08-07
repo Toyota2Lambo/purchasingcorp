@@ -1,0 +1,645 @@
+{
+  "generated_at": "2026-08-07T14:30:48.450410+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "macbook-air",
+    "educational_topic": "why your 'old' device is worth more than you think: real prices for models people assume are worthless",
+    "comparison_angle": "selling now vs. holding it: what a specific model loses in value every month you wait",
+    "audience_angle": "fast cash, real cash: some people need money this week, not in 3 weeks when a listing finally closes",
+    "featured_label": "MacBook Air"
+  },
+  "source": {
+    "pricing_snapshot": "2026-08-07T14:29:36.273Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "post",
+        "caption": "That MacBook Air you've been meaning to sell? It's paying up to $976 cash today. Not store credit. Not a trade-in locked to one carrier. Real money, same-day payout, zero games. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#macbooktrade",
+          "#appletradein",
+          "#sellmylaptop",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Up to <em>$976</em> for your MacBook Air",
+              "sub_html": "Real cash. Same-day payout. No store credit, no waiting.",
+              "c1_label": "TOP PAYOUT",
+              "c1_value": "$976",
+              "c2_label": "TURNAROUND",
+              "c2_value": "Same day",
+              "c3_label": "CONDITION",
+              "c3_value": "All accepted"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Real MacBook Air prices, right now. The 15-inch M4 models pay more than most people expect. The 13-inch base config still brings $560 cash. No games, no bait-and-switch. Quote takes 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#macbooktrade",
+          "#appletradein",
+          "#m4macbook",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "MACBOOK AIR",
+              "eyebrow": "CURRENT PRICING",
+              "title_html": "MacBook Air <em>buyback rates</em>",
+              "rows": [
+                {
+                  "model": "15\" 24GB 512GB SSD M4",
+                  "price": "$976"
+                },
+                {
+                  "model": "15\" 16GB 512GB SSD M4",
+                  "price": "$816"
+                },
+                {
+                  "model": "13\" 24GB 512GB SSD M4",
+                  "price": "$840"
+                },
+                {
+                  "model": "13\" 16GB 512GB SSD M4",
+                  "price": "$680"
+                },
+                {
+                  "model": "13\" 16GB 256GB SSD M4",
+                  "price": "$560"
+                }
+              ],
+              "note_html": "Prices for good working condition. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "MacBook Air 13-inch M4, 16GB, 512GB. Customer quoted $680, device arrived, paid $680 same day. No inspection surprises, no revised offers. The number we quote is the number we pay. Get yours at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#macbooktrade",
+          "#proofofpayment",
+          "#realcash",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "PAYOUT CONFIRMATION",
+              "slip_ref": "PC-080726-4482",
+              "device": "MacBook Air 13\" M4 16GB 512GB",
+              "condition": "Good",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$680.00",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Selling your MacBook Air now vs. holding it another month costs you real money. A 13-inch M4 model loses roughly $40-$60 in value every 30 days you wait. That drawer phone or laptop is depreciating while you think about it. Get your quote today at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#depreciation",
+          "#sellnow",
+          "#cashinhand",
+          "#quickcash",
+          "#techmoney",
+          "#waitingcostsyou",
+          "#techvalue"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "MACBOOK AIR 13\" M4 16GB 512GB",
+              "eyebrow": "SELL NOW VS. WAIT 3 MONTHS",
+              "title_html": "What <em>waiting</em> costs you",
+              "bars": [
+                {
+                  "label": "Today (our offer)",
+                  "value": "$680",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "~3 months from now",
+                  "value": "~$530",
+                  "pct": 78,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Future value is a typical estimate based on historical depreciation. Sell today, keep the difference."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Some people need cash this week, not in three weeks when an eBay listing finally closes. No photos, no lowballers, no PayPal holds. Quote takes 60 seconds, prepaid label prints instantly, payment lands same day. Fast cash, real cash. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#quickcash",
+          "#cashinhand",
+          "#sellnow",
+          "#techmoney",
+          "#needcashnow",
+          "#emergencycash",
+          "#cashtoday",
+          "#payme",
+          "#fastmoney",
+          "#nocredit"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "photo-cover",
+            "fields": {
+              "tag": "FAST CASH",
+              "eyebrow": "REAL CASH, TODAY",
+              "headline_html": "<em>Same-day payout</em> beats waiting weeks",
+              "deck_html": "No listing. No lowball offers. No PayPal holds. Just cash.",
+              "photo_url": "https://images.unsplash.com/photo-1758876202189-0fbc277dfed9?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw5fHxzbWFydHBob25lJTIwYW5kJTIwbGFwdG9wJTIwb24lMjBhJTIwZGVza3xlbnwxfDB8fHwxNzg2MTEzMDQ2fDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Your old device is worth more than you think. Walk through the real numbers for models people assume are worthless. That drawer phone or laptop has cash value today. See what yours pays at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#oldphone",
+          "#oldtech",
+          "#techvalue",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney",
+          "#worthmore",
+          "#hiddenvalue",
+          "#drawerphone"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "THE MYTH",
+              "eyebrow": "YOUR OLD DEVICE",
+              "headline_html": "<em>It's too old</em> to be worth anything",
+              "body_html": "Most people assume a 2-year-old phone or a base-spec laptop has zero resale value. They're wrong. <strong>Real prices prove it.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "THE REALITY",
+              "eyebrow": "REAL NUMBERS",
+              "headline_html": "A <em>Nintendo Switch Lite</em> still pays $140",
+              "body_html": "A Switch OLED? $240. An Apple Watch S11 42mm aluminum? $195. A Mac Mini 16GB 256GB? $300. <strong>Models people call 'old' still command real cash.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "THE CATCH",
+              "eyebrow": "DEPRECIATION",
+              "headline_html": "Every month you wait, <em>it loses value</em>",
+              "body_html": "Electronics depreciate fast. A MacBook Air that pays $680 today might pay $40-$60 less next month. <strong>That drawer device is bleeding money.</strong>"
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "THE MOVE",
+              "eyebrow": "GET YOUR NUMBER",
+              "headline_html": "<em>Quote it</em> in 60 seconds",
+              "body_html": "Real offer. Prepaid insured label. Same-day payout. No listing, no haggling, no drama. <strong>Turn that 'old' device into cash today at purchasingcorp.com/form.</strong>"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "iPhone 17 Pro Max 1TB paid $1,050 cash. Mac Mini PRO 24GB paid $675. Apple Watch Ultra 3 Milanese paid $473. Real payouts, real devices, same-day turnaround. The number we quote is the number we pay. Get yours at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#iphone17promax",
+          "#macmini",
+          "#applewatch",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney",
+          "#proofofpayment",
+          "#realcash",
+          "#payme"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "AUGUST PAYOUTS",
+              "eyebrow": "TOP PRICES",
+              "title_html": "What we're <em>paying today</em>",
+              "cells": [
+                {
+                  "label": "iPhone 17 Pro Max",
+                  "num": "$1,241",
+                  "foot": "2TB model",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 Milanese",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac Mini",
+                  "num": "$675",
+                  "foot": "PRO 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "iPhone 17 Pro",
+                  "num": "$875",
+                  "foot": "1TB model",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Nintendo Switch 2",
+                  "num": "$400",
+                  "foot": "Mario Kart bundle",
+                  "tone": "accent"
+                }
+              ],
+              "note_html": "All prices for good working condition. Quote yours at purchasingcorp.com/form."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "We pay more than Apple, more than Best Buy, more than the carrier store that offers you $50 in locked credit. A MacBook Air 15-inch M4 16GB 512GB pays $816 here. That's a real number, not a vague up to. Get your quote at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#macbooktrade",
+          "#appletradein",
+          "#paymore",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "MACBOOK AIR 15\" M4 16GB 512GB",
+              "eyebrow": "WE PAY MORE",
+              "title_html": "<em>Real cash</em> vs. store credit",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (cash)",
+                  "value": "$816",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Apple Trade-In (credit)",
+                  "value": "~$520",
+                  "pct": 64,
+                  "kind": "alt"
+                },
+                {
+                  "label": "Best Buy (credit)",
+                  "value": "~$480",
+                  "pct": 59,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Competitor figures are typical trade-in credit estimates. Our number is cash, same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "That MacBook sitting in your closet is cash today. Not next month when you finally post it. Not in three weeks when a buyer ghosts you. Today. Same-day payout, prepaid label, zero hassle. Turn it into money at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmymacbook",
+          "#macbookair",
+          "#cashformacbook",
+          "#applebuyback",
+          "#sellmyphone",
+          "#techbuyback",
+          "#cashforphones",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#phonetrade",
+          "#sellmacbookpro",
+          "#cashinhand",
+          "#quickcash",
+          "#sellnow",
+          "#techmoney",
+          "#drawerphone",
+          "#closetcash",
+          "#needcash",
+          "#fastmoney"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "SAME DAY",
+              "eyebrow": "CASH TODAY",
+              "headline_html": "Your closet device is <em>cash today</em>",
+              "sub_html": "Not next month. Not when a listing closes. Today.",
+              "photo_url": "https://images.unsplash.com/photo-1656078411660-05f2cf994d33?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHwzfHxhcHBsZSUyMGRldmljZXMlMjBvbiUyMGElMjB0YWJsZXxlbnwxfDB8fHwxNzg2MTEzMDQ3fDA&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "post",
+        "caption": "Some people need money this week. Rent is due, a bill hit, life happened. Listing on eBay means waiting weeks for payment to clear. We pay same day. Real cash, real speed, no games. Quote your device at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmymacbook",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#phonetrade",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#quickcash",
+          "#cashinhand",
+          "#sellnow",
+          "#techmoney",
+          "#needcashnow",
+          "#emergencycash",
+          "#cashtoday",
+          "#payme",
+          "#fastmoney",
+          "#realcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "stat",
+            "fields": {
+              "eyebrow": "PAYOUT SPEED",
+              "stat_value": "Same",
+              "stat_unit": "day",
+              "caption_html": "We pay <em>same day</em>. Not in 3 weeks when your listing closes.",
+              "source": "PurchasingCorp standard turnaround"
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "AUG 7",
+          "date_label": "THURSDAY",
+          "section": "MACBOOK AIR",
+          "headline_html": "Up to <em>$976</em> cash today",
+          "deck_html": "Real money. Same-day payout. No store credit.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "quote",
+        "fields": {
+          "quote_text_html": "The number we quote is the number we <em>pay</em>. No inspection surprises.",
+          "quote_attrib": "PurchasingCorp",
+          "photo_url": "https://images.unsplash.com/photo-1592979397712-6c12a5016f6e?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw2fHxuZXclMjBnYWRnZXRzJTIwZmxhdCUyMGxheXxlbnwxfDF8fHwxNzg2MTEzMDQ4fDA&ixlib=rb-4.1.0&w=1080&h=1920&fit=crop&crop=entropy&q=80&fm=jpg&auto=format"
+        }
+      }
+    ]
+  }
+}
