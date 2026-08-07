@@ -1,52 +1,52 @@
 [
   {
-    "date": "2026-08-05",
-    "file": "purchasingcorp-reel-too-old-myth-laptop.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-too-old-myth-laptop.mp4",
-    "local_path": "videos/purchasingcorp-reel-too-old-myth-laptop.mp4",
-    "caption": "'My laptop's too old to sell' \u2014 that's the myth costing you $200+. Even 5-year-old models pay. Check yours at purchasingcorp.com",
+    "date": "2026-08-07",
+    "file": "purchasingcorp-reel-dont-buy-fold8-yet.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-dont-buy-fold8-yet.mp4",
+    "local_path": "videos/purchasingcorp-reel-dont-buy-fold8-yet.mp4",
+    "caption": "Don't buy the Fold 8 yet \u2014 sell your current phone first and knock $500+ off the price. Sequence matters. Start at purchasingcorp.com",
     "hashtags": [
-      "laptop",
-      "mythbusting",
-      "getpaid",
-      "sellyourtech",
-      "buyback",
-      "techresale"
-    ],
-    "cycle_position": "1 of pool size 45"
-  },
-  {
-    "date": "2026-08-05",
-    "file": "purchasingcorp-reel-pov-cleared-300.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-pov-cleared-300.mp4",
-    "local_path": "videos/purchasingcorp-reel-pov-cleared-300.mp4",
-    "caption": "POV: you cleaned out one drawer and walked away with $300. That's the whole pitch. Try it at purchasingcorp.com",
-    "hashtags": [
-      "pov",
-      "junkdrawer",
-      "cash",
+      "galaxyfold",
+      "sellfirst",
+      "upgrade",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 45"
+    "cycle_position": "1 of pool size 42"
   },
   {
-    "date": "2026-08-05",
-    "file": "purchasingcorp-reel-acc-console-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-console-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-console-cash.mp4",
-    "caption": "Your old console is worth more than you think \u2014 disc models hold up to $380. Don't let it collect dust. Cash it in at purchasingcorp.com",
+    "date": "2026-08-07",
+    "file": "purchasingcorp-reel-earbuds-accessories.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-earbuds-accessories.mp4",
+    "local_path": "videos/purchasingcorp-reel-earbuds-accessories.mp4",
+    "caption": "Old earbuds and accessories aren't trash \u2014 they're $40-$90 each. The pile adds up. Sell it at purchasingcorp.com",
     "hashtags": [
-      "gaming",
-      "console",
+      "earbuds",
+      "accessories",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 42"
+  },
+  {
+    "date": "2026-08-07",
+    "file": "purchasingcorp-reel-gpu-in-a-box.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gpu-in-a-box.mp4",
+    "local_path": "videos/purchasingcorp-reel-gpu-in-a-box.mp4",
+    "caption": "You've got a GPU in a box in the closet worth more than when you bought it. Prices are wild right now. Cash out at purchasingcorp.com",
+    "hashtags": [
+      "gpu",
+      "pcgaming",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 45"
+    "cycle_position": "1 of pool size 42"
   }
 ]
