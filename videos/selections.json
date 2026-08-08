@@ -1,52 +1,52 @@
 [
   {
-    "date": "2026-08-07",
-    "file": "purchasingcorp-reel-dont-buy-fold8-yet.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-dont-buy-fold8-yet.mp4",
-    "local_path": "videos/purchasingcorp-reel-dont-buy-fold8-yet.mp4",
-    "caption": "Don't buy the Fold 8 yet \u2014 sell your current phone first and knock $500+ off the price. Sequence matters. Start at purchasingcorp.com",
+    "date": "2026-08-08",
+    "file": "purchasingcorp-reel-pov-upgrade-funded.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-pov-upgrade-funded.mp4",
+    "local_path": "videos/purchasingcorp-reel-pov-upgrade-funded.mp4",
+    "caption": "POV: your upgrade just paid for itself because you sold the old one first. That's the move. purchasingcorp.com",
     "hashtags": [
-      "galaxyfold",
-      "sellfirst",
+      "pov",
       "upgrade",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 42"
+    "cycle_position": "1 of pool size 39"
   },
   {
-    "date": "2026-08-07",
-    "file": "purchasingcorp-reel-earbuds-accessories.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-earbuds-accessories.mp4",
-    "local_path": "videos/purchasingcorp-reel-earbuds-accessories.mp4",
-    "caption": "Old earbuds and accessories aren't trash \u2014 they're $40-$90 each. The pile adds up. Sell it at purchasingcorp.com",
+    "date": "2026-08-08",
+    "file": "purchasingcorp-reel-pc-price-hike.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-pc-price-hike.mp4",
+    "local_path": "videos/purchasingcorp-reel-pc-price-hike.mp4",
+    "caption": "PC prices are climbing again \u2014 which means used parts are in demand. Your old build is worth more than last year. purchasingcorp.com",
     "hashtags": [
-      "earbuds",
-      "accessories",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 42"
-  },
-  {
-    "date": "2026-08-07",
-    "file": "purchasingcorp-reel-gpu-in-a-box.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gpu-in-a-box.mp4",
-    "local_path": "videos/purchasingcorp-reel-gpu-in-a-box.mp4",
-    "caption": "You've got a GPU in a box in the closet worth more than when you bought it. Prices are wild right now. Cash out at purchasingcorp.com",
-    "hashtags": [
-      "gpu",
       "pcgaming",
+      "tech",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 42"
+    "cycle_position": "1 of pool size 39"
+  },
+  {
+    "date": "2026-08-08",
+    "file": "purchasingcorp-reel-ai-boom-irony.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-ai-boom-irony.mp4",
+    "local_path": "videos/purchasingcorp-reel-ai-boom-irony.mp4",
+    "caption": "The AI boom's dirty secret: it's driving up the price of the exact chips in your old devices. Your 'outdated' tech is suddenly in demand. Cash in at purchasingcorp.com",
+    "hashtags": [
+      "ai",
+      "tech",
+      "resalevalue",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 39"
   }
 ]
