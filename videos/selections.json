@@ -1,28 +1,29 @@
 [
   {
-    "date": "2026-08-08",
-    "file": "purchasingcorp-reel-pov-upgrade-funded.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-pov-upgrade-funded.mp4",
-    "local_path": "videos/purchasingcorp-reel-pov-upgrade-funded.mp4",
-    "caption": "POV: your upgrade just paid for itself because you sold the old one first. That's the move. purchasingcorp.com",
+    "date": "2026-08-09",
+    "file": "purchasingcorp-reel-gpu-mining-rigs.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gpu-mining-rigs.mp4",
+    "local_path": "videos/purchasingcorp-reel-gpu-mining-rigs.mp4",
+    "caption": "Retired mining rig collecting dust? Those GPUs are worth serious cash in today's market. Don't sit on it \u2014 sell at purchasingcorp.com",
     "hashtags": [
-      "pov",
-      "upgrade",
+      "gpu",
+      "mining",
+      "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 39"
+    "cycle_position": "1 of pool size 36"
   },
   {
-    "date": "2026-08-08",
-    "file": "purchasingcorp-reel-pc-price-hike.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-pc-price-hike.mp4",
-    "local_path": "videos/purchasingcorp-reel-pc-price-hike.mp4",
-    "caption": "PC prices are climbing again \u2014 which means used parts are in demand. Your old build is worth more than last year. purchasingcorp.com",
+    "date": "2026-08-09",
+    "file": "purchasingcorp-reel-phone-price-up.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-phone-price-up.mp4",
+    "local_path": "videos/purchasingcorp-reel-phone-price-up.mp4",
+    "caption": "Phone prices keep climbing, and that lifts used values too. Your current phone is worth more today than it'll be next month. purchasingcorp.com",
     "hashtags": [
-      "pcgaming",
+      "sellyourphone",
       "tech",
       "sellnow",
       "sellyourtech",
@@ -30,23 +31,22 @@
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 39"
+    "cycle_position": "1 of pool size 36"
   },
   {
-    "date": "2026-08-08",
-    "file": "purchasingcorp-reel-ai-boom-irony.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-ai-boom-irony.mp4",
-    "local_path": "videos/purchasingcorp-reel-ai-boom-irony.mp4",
-    "caption": "The AI boom's dirty secret: it's driving up the price of the exact chips in your old devices. Your 'outdated' tech is suddenly in demand. Cash in at purchasingcorp.com",
+    "date": "2026-08-09",
+    "file": "purchasingcorp-reel-steam-deck-handheld.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-steam-deck-handheld.mp4",
+    "local_path": "videos/purchasingcorp-reel-steam-deck-handheld.mp4",
+    "caption": "Upgrading your handheld? Your old Steam Deck or Switch still pays strong. Fund the new one at purchasingcorp.com",
     "hashtags": [
-      "ai",
-      "tech",
-      "resalevalue",
+      "steamdeck",
+      "handheld",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 39"
+    "cycle_position": "1 of pool size 36"
   }
 ]
