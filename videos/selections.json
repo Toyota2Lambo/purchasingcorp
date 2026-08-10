@@ -1,52 +1,52 @@
 [
   {
-    "date": "2026-08-09",
-    "file": "purchasingcorp-reel-gpu-mining-rigs.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-gpu-mining-rigs.mp4",
-    "local_path": "videos/purchasingcorp-reel-gpu-mining-rigs.mp4",
-    "caption": "Retired mining rig collecting dust? Those GPUs are worth serious cash in today's market. Don't sit on it \u2014 sell at purchasingcorp.com",
+    "date": "2026-08-10",
+    "file": "purchasingcorp-reel-console-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-console-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-console-cash.mp4",
+    "caption": "Old console still in the closet? Current and last-gen models pay up to $380. Game over for dust \u2014 cash it at purchasingcorp.com",
     "hashtags": [
-      "gpu",
-      "mining",
+      "gaming",
+      "console",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 36"
+    "cycle_position": "1 of pool size 33"
   },
   {
-    "date": "2026-08-09",
-    "file": "purchasingcorp-reel-phone-price-up.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-phone-price-up.mp4",
-    "local_path": "videos/purchasingcorp-reel-phone-price-up.mp4",
-    "caption": "Phone prices keep climbing, and that lifts used values too. Your current phone is worth more today than it'll be next month. purchasingcorp.com",
+    "date": "2026-08-10",
+    "file": "purchasingcorp-reel-thinkpad-laptop.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-thinkpad-laptop.mp4",
+    "local_path": "videos/purchasingcorp-reel-thinkpad-laptop.mp4",
+    "caption": "That old ThinkPad is a workhorse that still sells \u2014 business laptops hold value well. Cash it at purchasingcorp.com",
+    "hashtags": [
+      "thinkpad",
+      "laptop",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 33"
+  },
+  {
+    "date": "2026-08-10",
+    "file": "purchasingcorp-reel-acc-cash-for-phone.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-cash-for-phone.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-cash-for-phone.mp4",
+    "caption": "That old phone in your drawer isn't 'backup' \u2014 it's $340 losing value every month. Turn it into cash today at purchasingcorp.com",
     "hashtags": [
       "sellyourphone",
+      "cash",
       "tech",
-      "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 36"
-  },
-  {
-    "date": "2026-08-09",
-    "file": "purchasingcorp-reel-steam-deck-handheld.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-steam-deck-handheld.mp4",
-    "local_path": "videos/purchasingcorp-reel-steam-deck-handheld.mp4",
-    "caption": "Upgrading your handheld? Your old Steam Deck or Switch still pays strong. Fund the new one at purchasingcorp.com",
-    "hashtags": [
-      "steamdeck",
-      "handheld",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 36"
+    "cycle_position": "1 of pool size 33"
   }
 ]
