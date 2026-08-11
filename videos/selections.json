@@ -1,52 +1,51 @@
 [
   {
-    "date": "2026-08-10",
-    "file": "purchasingcorp-reel-console-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-console-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-console-cash.mp4",
-    "caption": "Old console still in the closet? Current and last-gen models pay up to $380. Game over for dust \u2014 cash it at purchasingcorp.com",
+    "date": "2026-08-11",
+    "file": "purchasingcorp-reel-samsung-eyewear.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-samsung-eyewear.mp4",
+    "local_path": "videos/purchasingcorp-reel-samsung-eyewear.mp4",
+    "caption": "Samsung's new smart glasses are hyped \u2014 fund a pair by selling the gadgets you've already replaced. See your total at purchasingcorp.com",
     "hashtags": [
-      "gaming",
-      "console",
-      "sellnow",
+      "samsung",
+      "smartglasses",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 33"
+    "cycle_position": "1 of pool size 30"
   },
   {
-    "date": "2026-08-10",
-    "file": "purchasingcorp-reel-thinkpad-laptop.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-thinkpad-laptop.mp4",
-    "local_path": "videos/purchasingcorp-reel-thinkpad-laptop.mp4",
-    "caption": "That old ThinkPad is a workhorse that still sells \u2014 business laptops hold value well. Cash it at purchasingcorp.com",
+    "date": "2026-08-11",
+    "file": "purchasingcorp-reel-drawer-audit-320.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-drawer-audit-320.mp4",
+    "local_path": "videos/purchasingcorp-reel-drawer-audit-320.mp4",
+    "caption": "Do a 5-minute drawer audit. The average person finds $320 of sellable tech. That's a free $320. Start at purchasingcorp.com",
     "hashtags": [
-      "thinkpad",
-      "laptop",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 33"
-  },
-  {
-    "date": "2026-08-10",
-    "file": "purchasingcorp-reel-acc-cash-for-phone.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-cash-for-phone.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-cash-for-phone.mp4",
-    "caption": "That old phone in your drawer isn't 'backup' \u2014 it's $340 losing value every month. Turn it into cash today at purchasingcorp.com",
-    "hashtags": [
-      "sellyourphone",
+      "junkdrawer",
+      "hiddenvalue",
       "cash",
-      "tech",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 33"
+    "cycle_position": "1 of pool size 30"
+  },
+  {
+    "date": "2026-08-11",
+    "file": "purchasingcorp-reel-broken-worthless-myth.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-broken-worthless-myth.mp4",
+    "local_path": "videos/purchasingcorp-reel-broken-worthless-myth.mp4",
+    "caption": "The 'broken tech is worthless' myth costs people hundreds. A dead flagship still pays $100+. Bust the myth at purchasingcorp.com",
+    "hashtags": [
+      "brokenphone",
+      "mythbusting",
+      "getpaid",
+      "sellyourtech",
+      "buyback",
+      "techresale"
+    ],
+    "cycle_position": "1 of pool size 30"
   }
 ]
