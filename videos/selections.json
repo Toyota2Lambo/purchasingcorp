@@ -1,51 +1,51 @@
 [
   {
-    "date": "2026-08-14",
-    "file": "purchasingcorp-reel-usa-250-independence.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-usa-250-independence.mp4",
-    "local_path": "videos/purchasingcorp-reel-usa-250-independence.mp4",
-    "caption": "Declare independence from clutter: the average drawer holds $250 of sellable tech. Free your cash at purchasingcorp.com",
+    "date": "2026-08-15",
+    "file": "purchasingcorp-reel-acc-same-day-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-same-day-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-same-day-cash.mp4",
+    "caption": "Same-day cash for your old tech \u2014 no haggling, no lowball trade-in. Get a real quote in 60 seconds at purchasingcorp.com",
     "hashtags": [
-      "independence",
-      "junkdrawer",
-      "cash",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 21"
-  },
-  {
-    "date": "2026-08-14",
-    "file": "purchasingcorp-reel-acc-cracked-still-pays.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-cracked-still-pays.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-cracked-still-pays.mp4",
-    "caption": "Cracked screen? Still pays. A broken flagship can fetch $120+ for parts. 'Worthless' is a myth. See your quote at purchasingcorp.com",
-    "hashtags": [
-      "crackedphone",
+      "samedaycash",
       "sellyourtech",
       "getpaid",
       "buyback",
       "techresale"
     ],
-    "cycle_position": "1 of pool size 21"
+    "cycle_position": "1 of pool size 18"
   },
   {
-    "date": "2026-08-14",
-    "file": "purchasingcorp-reel-why-expensive-explainer.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-why-expensive-explainer.mp4",
-    "local_path": "videos/purchasingcorp-reel-why-expensive-explainer.mp4",
-    "caption": "Why is everything getting more expensive? Chip shortages \u2014 which is exactly why your old tech is now worth more. Cash in at purchasingcorp.com",
+    "date": "2026-08-15",
+    "file": "purchasingcorp-reel-3-signs-sell-phone.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-signs-sell-phone.mp4",
+    "local_path": "videos/purchasingcorp-reel-3-signs-sell-phone.mp4",
+    "caption": "Three signs it's time to sell your phone: battery under 85%, you've stopped using it, and a new one just dropped. Wait and you lose ~$25/month. Cash out at purchasingcorp.com",
     "hashtags": [
+      "sellyourphone",
+      "upgrade",
       "tech",
-      "inflation",
-      "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 21"
+    "cycle_position": "1 of pool size 18"
+  },
+  {
+    "date": "2026-08-15",
+    "file": "purchasingcorp-reel-iphone18-sell-now.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-iphone18-sell-now.mp4",
+    "local_path": "videos/purchasingcorp-reel-iphone18-sell-now.mp4",
+    "caption": "iPhone 18 is coming, and the second it drops your current model loses value. Sell now, upgrade later, keep the difference. purchasingcorp.com",
+    "hashtags": [
+      "iphone",
+      "sellnow",
+      "upgrade",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 18"
   }
 ]
