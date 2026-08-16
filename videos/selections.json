@@ -1,51 +1,52 @@
 [
   {
-    "date": "2026-08-15",
-    "file": "purchasingcorp-reel-acc-same-day-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-same-day-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-same-day-cash.mp4",
-    "caption": "Same-day cash for your old tech \u2014 no haggling, no lowball trade-in. Get a real quote in 60 seconds at purchasingcorp.com",
+    "date": "2026-08-16",
+    "file": "purchasingcorp-reel-broken-still-pays.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-broken-still-pays.mp4",
+    "local_path": "videos/purchasingcorp-reel-broken-still-pays.mp4",
+    "caption": "Broken doesn't mean worthless. Cracked, water-damaged, won't turn on \u2014 we still pay for parts. Get a quote at purchasingcorp.com",
     "hashtags": [
-      "samedaycash",
+      "brokenphone",
       "sellyourtech",
-      "getpaid",
+      "cash",
       "buyback",
-      "techresale"
+      "techresale",
+      "getpaid"
     ],
-    "cycle_position": "1 of pool size 18"
+    "cycle_position": "1 of pool size 15"
   },
   {
-    "date": "2026-08-15",
-    "file": "purchasingcorp-reel-3-signs-sell-phone.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-signs-sell-phone.mp4",
-    "local_path": "videos/purchasingcorp-reel-3-signs-sell-phone.mp4",
-    "caption": "Three signs it's time to sell your phone: battery under 85%, you've stopped using it, and a new one just dropped. Wait and you lose ~$25/month. Cash out at purchasingcorp.com",
+    "date": "2026-08-16",
+    "file": "purchasingcorp-reel-chatgpt-work-laptop.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-chatgpt-work-laptop.mp4",
+    "local_path": "videos/purchasingcorp-reel-chatgpt-work-laptop.mp4",
+    "caption": "Upgrading your work laptop for AI tools? Don't let the old one rot in a drawer \u2014 it still pays $300+. Fund the upgrade at purchasingcorp.com",
     "hashtags": [
+      "laptop",
+      "ai",
+      "upgrade",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 15"
+  },
+  {
+    "date": "2026-08-16",
+    "file": "purchasingcorp-reel-carrier-trade-in-joke.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-carrier-trade-in-joke.mp4",
+    "local_path": "videos/purchasingcorp-reel-carrier-trade-in-joke.mp4",
+    "caption": "Your carrier's 'trade-in' is a joke \u2014 that $800 credit is spread over 36 months of bills. Get real cash today instead at purchasingcorp.com",
+    "hashtags": [
+      "tradein",
+      "carrier",
       "sellyourphone",
-      "upgrade",
-      "tech",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 18"
-  },
-  {
-    "date": "2026-08-15",
-    "file": "purchasingcorp-reel-iphone18-sell-now.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-iphone18-sell-now.mp4",
-    "local_path": "videos/purchasingcorp-reel-iphone18-sell-now.mp4",
-    "caption": "iPhone 18 is coming, and the second it drops your current model loses value. Sell now, upgrade later, keep the difference. purchasingcorp.com",
-    "hashtags": [
-      "iphone",
-      "sellnow",
-      "upgrade",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 18"
+    "cycle_position": "1 of pool size 15"
   }
 ]
