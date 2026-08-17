@@ -1,52 +1,51 @@
 [
   {
-    "date": "2026-08-16",
-    "file": "purchasingcorp-reel-broken-still-pays.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-broken-still-pays.mp4",
-    "local_path": "videos/purchasingcorp-reel-broken-still-pays.mp4",
-    "caption": "Broken doesn't mean worthless. Cracked, water-damaged, won't turn on \u2014 we still pay for parts. Get a quote at purchasingcorp.com",
+    "date": "2026-08-17",
+    "file": "purchasingcorp-reel-smartwatch-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-smartwatch-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-smartwatch-cash.mp4",
+    "caption": "Drawer smartwatch = easy cash. Last-gen models still pay $80-$150. Stop storing it, start selling at purchasingcorp.com",
     "hashtags": [
-      "brokenphone",
+      "smartwatch",
+      "wearables",
+      "sellnow",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 12"
+  },
+  {
+    "date": "2026-08-17",
+    "file": "purchasingcorp-reel-3-things-secretly-worth.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-things-secretly-worth.mp4",
+    "local_path": "videos/purchasingcorp-reel-3-things-secretly-worth.mp4",
+    "caption": "Three things in your house secretly worth cash: that cracked phone, the earbuds you replaced, and the tablet nobody uses. Cracked phones still pay up to $120. purchasingcorp.com",
+    "hashtags": [
+      "hiddenvalue",
       "sellyourtech",
       "cash",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 15"
+    "cycle_position": "1 of pool size 12"
   },
   {
-    "date": "2026-08-16",
-    "file": "purchasingcorp-reel-chatgpt-work-laptop.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-chatgpt-work-laptop.mp4",
-    "local_path": "videos/purchasingcorp-reel-chatgpt-work-laptop.mp4",
-    "caption": "Upgrading your work laptop for AI tools? Don't let the old one rot in a drawer \u2014 it still pays $300+. Fund the upgrade at purchasingcorp.com",
+    "date": "2026-08-17",
+    "file": "purchasingcorp-reel-acc-earbuds-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-earbuds-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-earbuds-cash.mp4",
+    "caption": "Those earbuds you upgraded from? Still worth $40-$90. Accessories add up fast. Sell the pile at purchasingcorp.com",
     "hashtags": [
-      "laptop",
-      "ai",
-      "upgrade",
+      "earbuds",
+      "accessories",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 15"
-  },
-  {
-    "date": "2026-08-16",
-    "file": "purchasingcorp-reel-carrier-trade-in-joke.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-carrier-trade-in-joke.mp4",
-    "local_path": "videos/purchasingcorp-reel-carrier-trade-in-joke.mp4",
-    "caption": "Your carrier's 'trade-in' is a joke \u2014 that $800 credit is spread over 36 months of bills. Get real cash today instead at purchasingcorp.com",
-    "hashtags": [
-      "tradein",
-      "carrier",
-      "sellyourphone",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 15"
+    "cycle_position": "1 of pool size 12"
   }
 ]
