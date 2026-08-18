@@ -1,51 +1,52 @@
 [
   {
-    "date": "2026-08-17",
-    "file": "purchasingcorp-reel-smartwatch-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-smartwatch-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-smartwatch-cash.mp4",
-    "caption": "Drawer smartwatch = easy cash. Last-gen models still pay $80-$150. Stop storing it, start selling at purchasingcorp.com",
+    "date": "2026-08-18",
+    "file": "purchasingcorp-reel-memory-crisis-good-news.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-memory-crisis-good-news.mp4",
+    "local_path": "videos/purchasingcorp-reel-memory-crisis-good-news.mp4",
+    "caption": "The memory crisis is bad news for buyers, great news for you: your old RAM and SSDs are worth more than ever. Cash in at purchasingcorp.com",
     "hashtags": [
-      "smartwatch",
-      "wearables",
+      "memory",
+      "pcgaming",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 12"
+    "cycle_position": "1 of pool size 9"
   },
   {
-    "date": "2026-08-17",
-    "file": "purchasingcorp-reel-3-things-secretly-worth.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-3-things-secretly-worth.mp4",
-    "local_path": "videos/purchasingcorp-reel-3-things-secretly-worth.mp4",
-    "caption": "Three things in your house secretly worth cash: that cracked phone, the earbuds you replaced, and the tablet nobody uses. Cracked phones still pay up to $120. purchasingcorp.com",
+    "date": "2026-08-18",
+    "file": "purchasingcorp-reel-dram-shortage-goldmine.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-dram-shortage-goldmine.mp4",
+    "local_path": "videos/purchasingcorp-reel-dram-shortage-goldmine.mp4",
+    "caption": "The DRAM shortage turned your old RAM into a goldmine. Prices are spiking. Sell those sticks while it's hot at purchasingcorp.com",
     "hashtags": [
-      "hiddenvalue",
-      "sellyourtech",
-      "cash",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 12"
-  },
-  {
-    "date": "2026-08-17",
-    "file": "purchasingcorp-reel-acc-earbuds-cash.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-earbuds-cash.mp4",
-    "local_path": "videos/purchasingcorp-reel-acc-earbuds-cash.mp4",
-    "caption": "Those earbuds you upgraded from? Still worth $40-$90. Accessories add up fast. Sell the pile at purchasingcorp.com",
-    "hashtags": [
-      "earbuds",
-      "accessories",
+      "dram",
+      "pcgaming",
+      "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 12"
+    "cycle_position": "1 of pool size 9"
+  },
+  {
+    "date": "2026-08-18",
+    "file": "purchasingcorp-reel-tablet-tradein.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-tablet-tradein.mp4",
+    "local_path": "videos/purchasingcorp-reel-tablet-tradein.mp4",
+    "caption": "Skip the tablet trade-in lowball. Selling direct gets you up to $300 vs a fraction in store credit. purchasingcorp.com",
+    "hashtags": [
+      "tablet",
+      "tradein",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "1 of pool size 9"
   }
 ]
