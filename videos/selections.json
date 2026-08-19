@@ -1,52 +1,52 @@
 [
   {
-    "date": "2026-08-18",
-    "file": "purchasingcorp-reel-memory-crisis-good-news.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-memory-crisis-good-news.mp4",
-    "local_path": "videos/purchasingcorp-reel-memory-crisis-good-news.mp4",
-    "caption": "The memory crisis is bad news for buyers, great news for you: your old RAM and SSDs are worth more than ever. Cash in at purchasingcorp.com",
+    "date": "2026-08-19",
+    "file": "purchasingcorp-reel-ewaste-planet.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-ewaste-planet.mp4",
+    "local_path": "videos/purchasingcorp-reel-ewaste-planet.mp4",
+    "caption": "50 million tons of e-waste a year, and most of it still worked. Selling beats trashing \u2014 for you and the planet. purchasingcorp.com",
     "hashtags": [
-      "memory",
-      "pcgaming",
+      "ewaste",
+      "sustainability",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "2 of pool size 6"
+  },
+  {
+    "date": "2026-08-19",
+    "file": "purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "local_path": "videos/purchasingcorp-reel-junk-drawer-goldmine.mp4",
+    "caption": "Everyone has one: the junk drawer that's secretly worth $500. Old phones, cables, chargers, earbuds \u2014 it all pays. purchasingcorp.com",
+    "hashtags": [
+      "junkdrawer",
+      "hiddenvalue",
+      "cash",
+      "sellyourtech",
+      "buyback",
+      "techresale",
+      "getpaid"
+    ],
+    "cycle_position": "2 of pool size 6"
+  },
+  {
+    "date": "2026-08-19",
+    "file": "purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "local_path": "videos/purchasingcorp-reel-acc-smartwatch-cash.mp4",
+    "caption": "That drawer smartwatch still pays. Last-gen models fetch $80-$150. Stop storing it \u2014 sell it at purchasingcorp.com",
+    "hashtags": [
+      "smartwatch",
+      "wearables",
       "sellnow",
       "sellyourtech",
       "buyback",
       "techresale",
       "getpaid"
     ],
-    "cycle_position": "1 of pool size 9"
-  },
-  {
-    "date": "2026-08-18",
-    "file": "purchasingcorp-reel-dram-shortage-goldmine.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-dram-shortage-goldmine.mp4",
-    "local_path": "videos/purchasingcorp-reel-dram-shortage-goldmine.mp4",
-    "caption": "The DRAM shortage turned your old RAM into a goldmine. Prices are spiking. Sell those sticks while it's hot at purchasingcorp.com",
-    "hashtags": [
-      "dram",
-      "pcgaming",
-      "sellnow",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 9"
-  },
-  {
-    "date": "2026-08-18",
-    "file": "purchasingcorp-reel-tablet-tradein.mp4",
-    "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-tablet-tradein.mp4",
-    "local_path": "videos/purchasingcorp-reel-tablet-tradein.mp4",
-    "caption": "Skip the tablet trade-in lowball. Selling direct gets you up to $300 vs a fraction in store credit. purchasingcorp.com",
-    "hashtags": [
-      "tablet",
-      "tradein",
-      "sellyourtech",
-      "buyback",
-      "techresale",
-      "getpaid"
-    ],
-    "cycle_position": "1 of pool size 9"
+    "cycle_position": "2 of pool size 6"
   }
 ]
