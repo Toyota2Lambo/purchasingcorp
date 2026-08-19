@@ -1,0 +1,664 @@
+{
+  "generated_at": "2026-08-19T14:04:40.138611+00:00",
+  "model": "claude-sonnet-4-5",
+  "theme": {
+    "featured_category": "apple-watch",
+    "educational_topic": "why your 'old' device is worth more than you think: real prices for models people assume are worthless",
+    "comparison_angle": "our cash offer vs. waiting weeks on a marketplace listing",
+    "audience_angle": "fast cash, real cash: some people need money this week, not in 3 weeks when a listing finally closes",
+    "featured_label": "Apple Watch"
+  },
+  "source": {
+    "pricing_snapshot": "2026-08-19T14:03:28.349Z",
+    "requested": {
+      "posts": 10,
+      "stories": 2
+    }
+  },
+  "content": {
+    "posts": [
+      {
+        "role": "Featured offer: Apple Watch",
+        "caption": "Apple Watch Ultra 3 pays $473 cash here. Same day. No waiting for a marketplace buyer who ghosts after three weeks. Get the number at purchasingcorp.com/form and ship free, or we'll meet you locally.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#sellmywatch",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#cashforphones",
+          "#sellmyphone",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#appletradein",
+          "#watchtradein",
+          "#smartwatchbuyback",
+          "#cashtoday"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Same-day payout",
+              "headline_html": "Apple Watch Ultra 3 pays <em>$473 cash</em>",
+              "sub_html": "No waiting for a marketplace buyer who ghosts after three weeks.",
+              "c1_label": "Top payout",
+              "c1_value": "$473",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to used"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Board: Apple Watch price list",
+        "caption": "Real numbers for every Apple Watch model. The number we quote is the number we pay. Get your offer in 60 seconds at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyphone",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#appletradein",
+          "#watchtradein",
+          "#smartwatchbuyback",
+          "#cashtoday",
+          "#sellmywatch",
+          "#cashforphones",
+          "#sellmymacbook"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "APPLE WATCH",
+              "eyebrow": "Cash offers",
+              "title_html": "Apple Watch <em>price list</em>",
+              "rows": [
+                {
+                  "model": "ULTRA 3 49MM MILANESE 2025",
+                  "price": "$473"
+                },
+                {
+                  "model": "ULTRA 3 49MM BLACK/NATURAL 2025",
+                  "price": "$450"
+                },
+                {
+                  "model": "S11 46mm Titanium",
+                  "price": "$315"
+                },
+                {
+                  "model": "S11 42mm Titanium",
+                  "price": "$293"
+                },
+                {
+                  "model": "S11 46mm Aluminum",
+                  "price": "$210"
+                },
+                {
+                  "model": "S11 42mm Aluminum",
+                  "price": "$195"
+                }
+              ],
+              "note_html": "All prices same-day payout. Free insured shipping."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Payout proof: Apple Watch",
+        "caption": "Paid same day. No bait and switch. This is how every transaction goes: quote, ship, get paid. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellmyapplewatch",
+          "#applewatchbuyback",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#sellmyphone",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#appletradein",
+          "#watchtradein",
+          "#smartwatchbuyback",
+          "#cashtoday",
+          "#sellmywatch",
+          "#cashforphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "payout",
+            "fields": {
+              "tag": "PAYOUT RECEIPT",
+              "slip_title": "Apple Watch payout",
+              "slip_ref": "#AW-8190",
+              "device": "Apple Watch S11 46mm Titanium",
+              "condition": "Excellent",
+              "method": "Zelle",
+              "turnaround": "Same day",
+              "amount": "$315",
+              "status": "PAID"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Compare: our cash vs. marketplace wait",
+        "caption": "Marketplace listing means photos, lowballers, no-shows, and 15% fees after the sale. Or cash today. Your choice. Get your offer at purchasingcorp.com.",
+        "hashtags": [
+          "#sellmyapplewatch",
+          "#applewatchtradevalue",
+          "#cashforapplewatch",
+          "#sellapplewatch",
+          "#applewatchbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#applebuyback",
+          "#techbuyback",
+          "#sellmyphone",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#appletradein",
+          "#watchtradein",
+          "#smartwatchbuyback",
+          "#cashtoday",
+          "#sellmywatch",
+          "#cashforphones"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "compare",
+            "fields": {
+              "tag": "COMPARE",
+              "eyebrow": "Apple Watch S11 46mm Titanium",
+              "title_html": "Our cash vs. <em>marketplace wait</em>",
+              "bars": [
+                {
+                  "label": "PurchasingCorp (same day)",
+                  "value": "$315",
+                  "pct": 100,
+                  "kind": "us"
+                },
+                {
+                  "label": "Marketplace (after fees, 3 weeks)",
+                  "value": "~$280",
+                  "pct": 89,
+                  "kind": "alt"
+                }
+              ],
+              "note_html": "Marketplace figure is a typical net after 15% fees and buyer negotiation. Timeframe assumes successful sale."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Photo post: lifestyle outcome",
+        "caption": "That drawer phone is rent money. Ship it free, get paid same day. Real cash, no store credit. Start at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#iphone14tradevalue",
+          "#sellmyapplewatch",
+          "#sellmymacbook",
+          "#cashtoday",
+          "#appletradein",
+          "#phonebuyback",
+          "#iphonebuyback",
+          "#quickcash",
+          "#selltech",
+          "#getpaid"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "lifestyle",
+            "fields": {
+              "tag": "FAST CASH",
+              "eyebrow": "Real cash, not store credit",
+              "headline_html": "That drawer phone is <em>rent money</em>",
+              "sub_html": "Ship it free, get paid same day. No waiting for a listing to close.",
+              "photo_url": "https://images.unsplash.com/photo-1782290546819-65707456e8e7?ixid=M3w5NjY4ODF8MHwxfHNlYXJjaHw3fHxnYW1lJTIwY29udHJvbGxlciUyMG9uJTIwYSUyMGRlc2t8ZW58MXwwfHx8MTc4NzE0ODI3OXww&ixlib=rb-4.1.0&w=1440&h=1080&fit=crop&crop=entropy&q=80&fm=jpg&auto=format",
+              "photo_credit": "PHOTO · UNSPLASH"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Index: category reference grid",
+        "caption": "Six categories, same-day payout on all of them. Get your number at purchasingcorp.com/form and ship free.",
+        "hashtags": [
+          "#techbuyback",
+          "#applebuyback",
+          "#sellmyiphone",
+          "#sellmyphone",
+          "#cashforphones",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#cashtoday",
+          "#appletradein",
+          "#macbookbuyback",
+          "#consolebuyback",
+          "#sellmyconsole",
+          "#sellmyipad",
+          "#iphonebuyback",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "index",
+            "fields": {
+              "tag": "CATEGORY INDEX",
+              "eyebrow": "Same-day payout",
+              "title_html": "What we buy: <em>top payouts</em>",
+              "cells": [
+                {
+                  "label": "iPhone",
+                  "num": "$1,241",
+                  "foot": "17 Pro Max 2tb",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Apple Watch",
+                  "num": "$473",
+                  "foot": "Ultra 3 Milanese",
+                  "tone": "accent"
+                },
+                {
+                  "label": "MacBook Air",
+                  "num": "$976",
+                  "foot": "15\" M4 24GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Mac mini",
+                  "num": "$675",
+                  "foot": "Pro 24GB 512GB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Consoles",
+                  "num": "$475",
+                  "foot": "ROG ALLY X 1TB",
+                  "tone": "accent"
+                },
+                {
+                  "label": "Nintendo Switch 2",
+                  "num": "$400",
+                  "foot": "Mario Kart bundle",
+                  "tone": "accent"
+                }
+              ],
+              "note_html": "Free insured shipping. Paid same day."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Offer: Mac mini",
+        "caption": "Mac mini Pro pays $675 cash today. More than Apple, more than Best Buy. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmymacmini",
+          "#macminibuyback",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellmyphone",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#macbookbuyback",
+          "#appletradein",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmac",
+          "#macbuyback",
+          "#sellmyapplewatch",
+          "#quickcash"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "MAC MINI",
+              "eyebrow": "Same-day payout",
+              "headline_html": "Mac mini Pro pays <em>$675 cash</em>",
+              "sub_html": "More than Apple, more than Best Buy.",
+              "c1_label": "Top payout",
+              "c1_value": "$675",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to used"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Board: iPhone price list",
+        "caption": "iPhone 17 Pro Max pays up to $1,241 cash. The number we quote is the number we pay. Get your offer at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyiphone",
+          "#cashforphones",
+          "#sellmyphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#iphone14tradevalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#appletradein",
+          "#iphonebuyback",
+          "#phonebuyback",
+          "#cashtoday",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#quickcash",
+          "#getpaid",
+          "#selltech"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "board",
+            "fields": {
+              "tag": "iPHONE",
+              "eyebrow": "Cash offers",
+              "title_html": "iPhone 17 Pro <em>price list</em>",
+              "rows": [
+                {
+                  "model": "iPhone 17 Pro Max 2tb",
+                  "price": "$1,241"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 1tb",
+                  "price": "$1,050"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 512gb",
+                  "price": "$975"
+                },
+                {
+                  "model": "iPhone 17 Pro Max 256gb",
+                  "price": "$855"
+                },
+                {
+                  "model": "iPhone 17 Pro 1tb",
+                  "price": "$875"
+                },
+                {
+                  "model": "iPhone 17 Pro 512gb",
+                  "price": "$725"
+                }
+              ],
+              "note_html": "All prices same-day payout. Free insured shipping."
+            }
+          }
+        ]
+      },
+      {
+        "role": "Offer: consoles",
+        "caption": "ROG ALLY X pays $475 cash today. Nintendo Switch 2 pays $400. Same-day payout, free shipping. Get your number at purchasingcorp.com/form.",
+        "hashtags": [
+          "#sellmyconsole",
+          "#consolebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#sellmyswitch",
+          "#nintendoswitchbuyback",
+          "#sellmyplaystation",
+          "#sellmyxbox",
+          "#cashtoday",
+          "#sellmyiphone",
+          "#cashforphones",
+          "#applebuyback",
+          "#sellmyphone",
+          "#phonetrade",
+          "#gamingbuyback",
+          "#quickcash",
+          "#getpaid"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "offer",
+            "fields": {
+              "tag": "CONSOLES",
+              "eyebrow": "Same-day payout",
+              "headline_html": "ROG ALLY X pays <em>$475 cash</em>",
+              "sub_html": "Nintendo Switch 2 pays $400. Free shipping, paid today.",
+              "c1_label": "Top payout",
+              "c1_value": "$475",
+              "c2_label": "Turnaround",
+              "c2_value": "Same day",
+              "c3_label": "Condition",
+              "c3_value": "New to used"
+            }
+          }
+        ]
+      },
+      {
+        "role": "Carousel: educational topic",
+        "caption": "That old device in your drawer is worth more than you think. Real prices for models people assume are worthless. Get your number at purchasingcorp.com/form and get paid today.",
+        "hashtags": [
+          "#sellmyphone",
+          "#cashforphones",
+          "#sellmyiphone",
+          "#applebuyback",
+          "#techbuyback",
+          "#tradein",
+          "#tradeinvalue",
+          "#samedaypayout",
+          "#getpaidtoday",
+          "#cashfortech",
+          "#instacash",
+          "#fastcash",
+          "#sellquick",
+          "#sellingelectronics",
+          "#besttradinvalue",
+          "#electronicsbuyback",
+          "#sellmytech",
+          "#phonetrade",
+          "#sellmymacbook",
+          "#sellmyapplewatch",
+          "#cashtoday",
+          "#appletradein",
+          "#iphonebuyback",
+          "#phonebuyback",
+          "#quickcash",
+          "#getpaid",
+          "#selltech",
+          "#sellmyconsole",
+          "#macbookbuyback"
+        ],
+        "size": "feed",
+        "slides": [
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "01",
+              "step_label": "The myth",
+              "eyebrow": "Why your old device is worth more than you think",
+              "headline_html": "<em>It's too old</em> to be worth anything",
+              "body_html": "People assume a device from two or three years ago has no value. They leave it in a drawer losing money every month."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "02",
+              "step_label": "The reality",
+              "eyebrow": "Why your old device is worth more than you think",
+              "headline_html": "Real prices for <em>older models</em>",
+              "body_html": "Apple Watch S11 Aluminum: <strong>$210 cash</strong>. Nintendo Switch OLED: <strong>$240</strong>. Mac mini 16GB: <strong>$375</strong>. MacBook Air 13\" M4: <strong>$680</strong>. These are not new flagship models."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "03",
+              "step_label": "The cost of waiting",
+              "eyebrow": "Why your old device is worth more than you think",
+              "headline_html": "Every month in the drawer is <em>lost cash</em>",
+              "body_html": "Electronics depreciate fast. A device worth $240 today will be worth $180 in six months. That drawer phone is <strong>rent money right now</strong>."
+            }
+          },
+          {
+            "template": "carousel",
+            "fields": {
+              "step_num": "04",
+              "step_label": "Get the number",
+              "eyebrow": "Why your old device is worth more than you think",
+              "headline_html": "60-second quote, <em>same-day payout</em>",
+              "body_html": "Get your real number at <strong>purchasingcorp.com/form</strong>. Free prepaid label. Paid the same day we receive it. No games."
+            }
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "template": "cover",
+        "fields": {
+          "issue": "AUGUST 19",
+          "date_label": "2026",
+          "section": "FAST CASH",
+          "headline_html": "Some people need money <em>this week</em>",
+          "deck_html": "Not in three weeks when a marketplace listing finally closes. Same-day payout.",
+          "photo_url": ""
+        }
+      },
+      {
+        "template": "stat",
+        "fields": {
+          "eyebrow": "Apple Watch Ultra 3",
+          "stat_value": "$473",
+          "stat_unit": "",
+          "caption_html": "Cash today. No waiting for a buyer who ghosts after <em>three weeks</em>.",
+          "source": "purchasingcorp.com"
+        }
+      }
+    ]
+  }
+}
