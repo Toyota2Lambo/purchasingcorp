@@ -1,16 +1,17 @@
 {
-  "date": "2026-08-19",
-  "file": "purchasingcorp-reel-ewaste-planet.mp4",
-  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-ewaste-planet.mp4",
-  "local_path": "videos/purchasingcorp-reel-ewaste-planet.mp4",
-  "caption": "50 million tons of e-waste a year, and most of it still worked. Selling beats trashing \u2014 for you and the planet. purchasingcorp.com",
+  "date": "2026-08-20",
+  "file": "purchasingcorp-reel-upgrade-day-value-drops.mp4",
+  "video_url": "https://purchasingcorp.com/videos/purchasingcorp-reel-upgrade-day-value-drops.mp4",
+  "local_path": "videos/purchasingcorp-reel-upgrade-day-value-drops.mp4",
+  "caption": "The day you upgrade is the day your old device's value starts dropping. Sell same-day and keep the peak price. purchasingcorp.com",
   "hashtags": [
-    "ewaste",
-    "sustainability",
+    "upgrade",
+    "sellnow",
+    "tech",
     "sellyourtech",
     "buyback",
     "techresale",
     "getpaid"
   ],
-  "cycle_position": "2 of pool size 6"
+  "cycle_position": "2 of pool size 3"
 }
