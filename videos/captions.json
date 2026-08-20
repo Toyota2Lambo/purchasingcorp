@@ -7,33 +7,5 @@
     "techresale",
     "getpaid"
   ],
-  "pool": [
-    {
-      "file": "purchasingcorp-reel-3-devices-hold-value.mp4",
-      "caption": "Three devices that actually hold their value: MacBooks, current-gen consoles, and flagship phones. The rest depreciate fast \u2014 so sell those first. See your payout at purchasingcorp.com",
-      "hashtags": [
-        "resalevalue",
-        "tech",
-        "sellnow"
-      ]
-    },
-    {
-      "file": "purchasingcorp-reel-recycle-vs-sell.mp4",
-      "caption": "Recycle vs sell: recycling gets you a warm feeling, selling gets you $340. Do both \u2014 sell first at purchasingcorp.com",
-      "hashtags": [
-        "recycle",
-        "sellyourtech",
-        "getpaid"
-      ]
-    },
-    {
-      "file": "purchasingcorp-reel-upgrade-day-value-drops.mp4",
-      "caption": "The day you upgrade is the day your old device's value starts dropping. Sell same-day and keep the peak price. purchasingcorp.com",
-      "hashtags": [
-        "upgrade",
-        "sellnow",
-        "tech"
-      ]
-    }
-  ]
+  "pool": []
 }
